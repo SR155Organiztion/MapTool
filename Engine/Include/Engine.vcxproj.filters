@@ -97,6 +97,9 @@
     <Filter Include="11. MapToolMgr">
       <UniqueIdentifier>{e5a63b78-3844-476e-9333-9aeea733fb07}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Component\00. VIBuffer\TileSquareTex">
+      <UniqueIdentifier>{b9d1e1fd-be39-46b9-a884-163a3c11bbdc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\CGraphicDev.cpp">
@@ -186,7 +189,7 @@
     <ClCompile Include="..\Code\CCalculator.cpp">
       <Filter>04. Component\03. Calculator</Filter>
     </ClCompile>
-    <ClCompile Include="CMapToolMgr.cpp">
+    <ClCompile Include="..\Code\CMapToolMgr.cpp">
       <Filter>11. MapToolMgr</Filter>
     </ClCompile>
   </ItemGroup>
@@ -297,7 +300,7 @@
     <ClInclude Include="..\Header\CCalculator.h">
       <Filter>04. Component\03. Calculator</Filter>
     </ClInclude>
-    <ClInclude Include="CMapToolMgr.h">
+    <ClInclude Include="..\Header\CMapToolMgr.h">
       <Filter>11. MapToolMgr</Filter>
     </ClInclude>
   </ItemGroup>
