@@ -169,6 +169,7 @@ call Copy.bat</Command>
     <ClInclude Include="..\Header\CLight.h" />
     <ClInclude Include="..\Header\CLightMgr.h" />
     <ClInclude Include="..\Header\CManagement.h" />
+    <ClInclude Include="..\Header\CMapToolMgr.h" />
     <ClInclude Include="..\Header\CPipeline.h" />
     <ClInclude Include="..\Header\CProtoMgr.h" />
     <ClInclude Include="..\Header\CRcCol.h" />
@@ -189,7 +190,6 @@ call Copy.bat</Command>
     <ClInclude Include="..\Header\Engine_Macro.h" />
     <ClInclude Include="..\Header\Engine_Struct.h" />
     <ClInclude Include="..\Header\Engine_Typedef.h" />
-    <ClInclude Include="CMapToolMgr.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +208,7 @@ call Copy.bat</Command>
     <ClCompile Include="..\Code\CLight.cpp" />
     <ClCompile Include="..\Code\CLightMgr.cpp" />
     <ClCompile Include="..\Code\CManagement.cpp" />
+    <ClCompile Include="..\Code\CMapToolMgr.cpp" />
     <ClCompile Include="..\Code\CPipeline.cpp" />
     <ClCompile Include="..\Code\CProtoMgr.cpp" />
     <ClCompile Include="..\Code\CRcCol.cpp" />
@@ -222,7 +223,6 @@ call Copy.bat</Command>
     <ClCompile Include="..\Code\CTransform.cpp" />
     <ClCompile Include="..\Code\CTriCol.cpp" />
     <ClCompile Include="..\Code\CVIBuffer.cpp" />
-    <ClCompile Include="CMapToolMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Engine.rc" />

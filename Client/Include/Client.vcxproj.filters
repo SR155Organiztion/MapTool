@@ -36,21 +36,6 @@
     <Filter Include="Object\02. DynamicCamera">
       <UniqueIdentifier>{f6b71e34-a61a-469f-9dfa-61284d1bb164}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\99.Test">
-      <UniqueIdentifier>{83ac3951-604d-4d92-b533-3d18d9121dac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\99.Test\10. Player">
-      <UniqueIdentifier>{b8abe5e0-1b82-4851-996c-66752cb43198}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\99.Test\05. SkyBox">
-      <UniqueIdentifier>{8c68e802-7465-4daa-88e0-36d1711e59d7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\99.Test\11. Monster">
-      <UniqueIdentifier>{1b555bf8-7eae-4724-b956-552958a8659a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\99.Test\06. TestTerrain">
-      <UniqueIdentifier>{e433daa4-3cc4-4da6-ba5b-75c03217abd9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object\리소스 파일">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -66,6 +51,21 @@
     </Filter>
     <Filter Include="01. Scene\Map">
       <UniqueIdentifier>{ed723cbb-566a-47a6-8ad8-e7060c557c9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\99. Test">
+      <UniqueIdentifier>{83ac3951-604d-4d92-b533-3d18d9121dac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\99. Test\10. Player">
+      <UniqueIdentifier>{b8abe5e0-1b82-4851-996c-66752cb43198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\99. Test\05. SkyBox">
+      <UniqueIdentifier>{8c68e802-7465-4daa-88e0-36d1711e59d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\99. Test\11. Monster">
+      <UniqueIdentifier>{1b555bf8-7eae-4724-b956-552958a8659a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\99. Test\06. TestTerrain">
+      <UniqueIdentifier>{e433daa4-3cc4-4da6-ba5b-75c03217abd9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -94,10 +94,10 @@
       <Filter>Object\00. BackGround</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CPlayer.h">
-      <Filter>Object\99.Test\10. Player</Filter>
+      <Filter>Object\99. Test\10. Player</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CMonster.h">
-      <Filter>Object\99.Test\11. Monster</Filter>
+      <Filter>Object\99. Test\11. Monster</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CStage.h">
       <Filter>01. Scene\Stage</Filter>
@@ -112,22 +112,22 @@
       <Filter>Object\02. DynamicCamera</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CSkyBox.h">
-      <Filter>Object\99.Test\05. SkyBox</Filter>
+      <Filter>Object\99. Test\05. SkyBox</Filter>
     </ClInclude>
-    <ClInclude Include="CTestTerrain.h">
-      <Filter>Object\99.Test\06. TestTerrain</Filter>
+    <ClInclude Include="..\Header\CMap.h">
+      <Filter>01. Scene\Map</Filter>
     </ClInclude>
-    <ClInclude Include="CTile.h">
-      <Filter>Object\04. Tile</Filter>
-    </ClInclude>
-    <ClInclude Include="CBlock.h">
-      <Filter>Object\05. Block</Filter>
-    </ClInclude>
-    <ClInclude Include="CShowBox.h">
+    <ClInclude Include="..\Header\CShowBox.h">
       <Filter>Object\03. ShowBox</Filter>
     </ClInclude>
-    <ClInclude Include="CMap.h">
-      <Filter>01. Scene\Map</Filter>
+    <ClInclude Include="..\Header\CTile.h">
+      <Filter>Object\04. Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CBlock.h">
+      <Filter>Object\05. Block</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CTestTerrain.h">
+      <Filter>Object\99. Test\06. TestTerrain</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -147,10 +147,10 @@
       <Filter>Object\00. BackGround</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CPlayer.cpp">
-      <Filter>Object\99.Test\10. Player</Filter>
+      <Filter>Object\99. Test\10. Player</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CMonster.cpp">
-      <Filter>Object\99.Test\11. Monster</Filter>
+      <Filter>Object\99. Test\11. Monster</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CStage.cpp">
       <Filter>01. Scene\Stage</Filter>
@@ -165,22 +165,22 @@
       <Filter>Object\02. DynamicCamera</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CSkyBox.cpp">
-      <Filter>Object\99.Test\05. SkyBox</Filter>
+      <Filter>Object\99. Test\05. SkyBox</Filter>
     </ClCompile>
-    <ClCompile Include="CTestTerrain.cpp">
-      <Filter>Object\99.Test\06. TestTerrain</Filter>
-    </ClCompile>
-    <ClCompile Include="CTile.cpp">
+    <ClCompile Include="..\Code\CTile.cpp">
       <Filter>Object\04. Tile</Filter>
     </ClCompile>
-    <ClCompile Include="CBlock.cpp">
+    <ClCompile Include="..\Code\CBlock.cpp">
       <Filter>Object\05. Block</Filter>
     </ClCompile>
-    <ClCompile Include="CShowBox.cpp">
+    <ClCompile Include="..\Code\CShowBox.cpp">
       <Filter>Object\03. ShowBox</Filter>
     </ClCompile>
-    <ClCompile Include="CMap.cpp">
+    <ClCompile Include="..\Code\CMap.cpp">
       <Filter>01. Scene\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CTestTerrain.cpp">
+      <Filter>Object\99. Test\06. TestTerrain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
