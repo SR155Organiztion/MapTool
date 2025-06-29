@@ -1,0 +1,114 @@
+\doxysection{Engine\+\_\+\+Function.\+h}
+\hypertarget{_engine___function_8h_source}{}\label{_engine___function_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/Engine\_Function.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/Engine\_Function.h}}
+\mbox{\hyperlink{_engine___function_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ Engine\_Function\_h\_\_}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ Engine\_Function\_h\_\_}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___typedef_8h}{Engine\_Typedef.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//\ 템플릿은\ 기능의\ 정해져있으나\ 자료형은\ 정해져있지\ 않은\ 것}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00009}00009\ \ \ \ \ \textcolor{comment}{//\ 기능을\ 인스턴스화\ 하기 위하여\ 만들어두는 틀}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00012}\mbox{\hyperlink{namespace_engine_a180eed9528c8c8d03752a78b7e10d647}{00012}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{namespace_engine_a180eed9528c8c8d03752a78b7e10d647}{Safe\_Delete}}(T\&\ Pointer)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ !=\ Pointer)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ Pointer;}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ Pointer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00022}\mbox{\hyperlink{namespace_engine_acd2a16c4c917038b077a4d9a624ad721}{00022}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{namespace_engine_acd2a16c4c917038b077a4d9a624ad721}{Safe\_Delete\_Array}}(T\&\ Pointer)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ !=\ Pointer)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ []\ Pointer;}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ Pointer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00032}\mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{00032}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(T\&\ pInstance)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \ \ \ \ \ \ dwRefCnt\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ !=\ pInstance)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ dwRefCnt\ =\ pInstance-\/>Release();}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ dwRefCnt)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pInstance\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dwRefCnt;}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ Functor}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00049}\mbox{\hyperlink{class_engine_1_1_c_tag___finder}{00049}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_c_tag___finder_adc68c19c6b24bff59b0011ef59728c6f}{CTag\_Finder}}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00052}\mbox{\hyperlink{class_engine_1_1_c_tag___finder_adc68c19c6b24bff59b0011ef59728c6f}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_engine_1_1_c_tag___finder_adc68c19c6b24bff59b0011ef59728c6f}{CTag\_Finder}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTag)\ :\ m\_pTargetTag(pTag)\{\}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00053}\mbox{\hyperlink{class_engine_1_1_c_tag___finder_aea4c3e6d88162f6fca447a7e9863656b}{00053}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_c_tag___finder_aea4c3e6d88162f6fca447a7e9863656b}{\string~CTag\_Finder}}(\textcolor{keywordtype}{void})\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00057}\mbox{\hyperlink{class_engine_1_1_c_tag___finder_a7c2f28922fd6620e17f06cb8a140e03a}{00057}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\_bool}}\ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_c_tag___finder_a7c2f28922fd6620e17f06cb8a140e03a}{operator()}}(\textcolor{keyword}{const}\ T\&\ pair)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ lstrcmpW(m\_pTargetTag,\ pair.first))}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ \ \ \ \ m\_pTargetTag\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00067}00067\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00069}\mbox{\hyperlink{class_engine_1_1_c_delete_obj}{00069}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_c_delete_obj_a0808178305f20d52f486ed1ebe3b97da}{CDeleteObj}}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00072}\mbox{\hyperlink{class_engine_1_1_c_delete_obj_a0808178305f20d52f486ed1ebe3b97da}{00072}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_engine_1_1_c_delete_obj_a0808178305f20d52f486ed1ebe3b97da}{CDeleteObj}}(\textcolor{keywordtype}{void})\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00073}\mbox{\hyperlink{class_engine_1_1_c_delete_obj_ae9384da010d7779fbab408da339782e6}{00073}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_c_delete_obj_ae9384da010d7779fbab408da339782e6}{\string~CDeleteObj}}(\textcolor{keywordtype}{void})\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{public}:\ \textcolor{comment}{//\ operator}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00076}\mbox{\hyperlink{class_engine_1_1_c_delete_obj_a69e5c9a7815cf7970a2653786a052317}{00076}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_c_delete_obj_a69e5c9a7815cf7970a2653786a052317}{operator\ ()\ }}(T\&\ pInstance)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ dwRefCnt\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ dwRefCnt\ =\ pInstance-\/>Release();}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ dwRefCnt)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pInstance\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00085}00085\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ 연관컨테이너 삭제용}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00088}\mbox{\hyperlink{class_engine_1_1_c_delete_map}{00088}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_engine_1_1_c_delete_map_a5958ac666f0315868a9e11f9f6cc8c3b}{CDeleteMap}}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00091}\mbox{\hyperlink{class_engine_1_1_c_delete_map_a5958ac666f0315868a9e11f9f6cc8c3b}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_engine_1_1_c_delete_map_a5958ac666f0315868a9e11f9f6cc8c3b}{CDeleteMap}}(\textcolor{keywordtype}{void})\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00092}\mbox{\hyperlink{class_engine_1_1_c_delete_map_a397de075742432cee080bf4a2caf0f0c}{00092}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_engine_1_1_c_delete_map_a397de075742432cee080bf4a2caf0f0c}{\string~CDeleteMap}}(\textcolor{keywordtype}{void})\ \{\}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{public}:\ \textcolor{comment}{//\ operator\ }}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00095}\mbox{\hyperlink{class_engine_1_1_c_delete_map_aac6b38c2dbed4e501c548c1b7c465916}{00095}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_engine_1_1_c_delete_map_aac6b38c2dbed4e501c548c1b7c465916}{operator\ ()\ }}(T\&\ Pair)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ dwRefCnt\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ dwRefCnt\ =\ Pair.second-\/>Release();}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0\ ==\ dwRefCnt)}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Pair.second\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00104}00104\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_engine___function_8h_source_l00108}00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ Engine\_Function\_h\_\_}}
+
+\end{DoxyCode}

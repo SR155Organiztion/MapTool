@@ -1,0 +1,34 @@
+\doxysection{CPipeline.\+h}
+\hypertarget{_c_pipeline_8h_source}{}\label{_c_pipeline_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CPipeline.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CPipeline.h}}
+\mbox{\hyperlink{_c_pipeline_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}CBase.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___define_8h}{Engine\_Define.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00005}00005\ \mbox{\hyperlink{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}{BEGIN}}(\mbox{\hyperlink{namespace_engine}{Engine}})}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00007}\mbox{\hyperlink{class_c_pipeline}{00007}}\ class\ \mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ \mbox{\hyperlink{class_c_pipeline}{CPipeline}}\ :\ \ public\ CBase}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00009}00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_pipeline_a69675e34506fe935ba844c713f52ebb2}{MakeTransformMatrix}}(\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\_matrix}}*\ pOut,\ }
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pRight,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pUp,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pLook,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pPos);}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_pipeline_a31adc312716302eb3bbaef7d4dd05050}{MakeViewSpaceMatrix}}(\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\_matrix}}*\ pOut,\ }
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pEye,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pAt,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pUp);}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_pipeline_a865d6ea88ba38828236d69b2e330ea6b}{MakeProjMatrix}}(\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\_matrix}}*\ pOut,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fFov,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fAspect,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fNear,}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fFar);}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00026}00026\ \};}
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_pipeline_8h_source_l00028}00028\ \mbox{\hyperlink{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}}
+
+\end{DoxyCode}

@@ -1,0 +1,122 @@
+\doxysection{CTexture Class Reference}
+\hypertarget{class_c_texture}{}\label{class_c_texture}\index{CTexture@{CTexture}}
+
+
+{\ttfamily \#include $<$CTexture.\+h$>$}
+
+
+
+Inheritance diagram for CTexture\+:
+% FIG 0
+
+
+Collaboration diagram for CTexture\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{class_c_texture_abc03523e2ce4c24eaf2a982399b90e1b}{Ready\+\_\+\+Texture}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Path, \mbox{\hyperlink{namespace_engine_a2a85e52e2ca49f116b3c133c21e1012b}{TEXTUREID}} e\+Type, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Cnt)
+\item 
+void \mbox{\hyperlink{class_c_texture_a476085bda1c1ff111395cee99f5ed30d}{Set\+\_\+\+Texture}} (const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Index=0)
+\item 
+virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_texture_a54c677fa75f7cee00e31017682fb5ca2}{Clone}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{Update\+\_\+\+Component}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{Late\+Update\+\_\+\+Component}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_texture}{CTexture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_texture_a908b5f9ae0fcb509a5f2ee1897f652d6}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Path, \mbox{\hyperlink{namespace_engine_a2a85e52e2ca49f116b3c133c21e1012b}{TEXTUREID}} e\+Type, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Cnt=1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
+\item 
+\mbox{\hyperlink{class_c_component_a1a84bf0dae9ecaa036636560068c939b}{CComponent}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_component_a32744beb6ac8573433668a2c37ae1f39}{CComponent}} (const \mbox{\hyperlink{class_c_component}{CComponent}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\texorpdfstring{$\sim$}{\string~}\+CComponent}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
+\item 
+\mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\+\_\+bool}} \mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{m\+\_\+b\+Clone}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_c_texture_8h_source_l00006}{6}} of file \mbox{\hyperlink{_c_texture_8h_source}{CTexture.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_texture_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_texture_a54c677fa75f7cee00e31017682fb5ca2}\index{CTexture@{CTexture}!Clone@{Clone}}
+\index{Clone@{Clone}!CTexture@{CTexture}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \label{class_c_texture_a54c677fa75f7cee00e31017682fb5ca2} 
+\mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} CTexture\+::\+Clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_texture_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{_c_texture_8cpp_source}{CTexture.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\Hypertarget{class_c_texture_a908b5f9ae0fcb509a5f2ee1897f652d6}\index{CTexture@{CTexture}!Create@{Create}}
+\index{Create@{Create}!CTexture@{CTexture}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{class_c_texture_a908b5f9ae0fcb509a5f2ee1897f652d6} 
+\mbox{\hyperlink{class_c_texture}{CTexture}} \texorpdfstring{$\ast$}{*} CTexture\+::\+Create (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{, }\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+Path}{, }\item[{\mbox{\hyperlink{namespace_engine_a2a85e52e2ca49f116b3c133c21e1012b}{TEXTUREID}}}]{e\+Type}{, }\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Cnt}{ = {\ttfamily 1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_texture_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_c_texture_8cpp_source}{CTexture.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{class_c_texture_abc03523e2ce4c24eaf2a982399b90e1b}\index{CTexture@{CTexture}!Ready\_Texture@{Ready\_Texture}}
+\index{Ready\_Texture@{Ready\_Texture}!CTexture@{CTexture}}
+\doxysubsubsection{\texorpdfstring{Ready\_Texture()}{Ready\_Texture()}}
+{\footnotesize\ttfamily \label{class_c_texture_abc03523e2ce4c24eaf2a982399b90e1b} 
+HRESULT CTexture\+::\+Ready\+\_\+\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+Path}{, }\item[{\mbox{\hyperlink{namespace_engine_a2a85e52e2ca49f116b3c133c21e1012b}{TEXTUREID}}}]{e\+Type}{, }\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Cnt}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_texture_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_c_texture_8cpp_source}{CTexture.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{class_c_texture_a476085bda1c1ff111395cee99f5ed30d}\index{CTexture@{CTexture}!Set\_Texture@{Set\_Texture}}
+\index{Set\_Texture@{Set\_Texture}!CTexture@{CTexture}}
+\doxysubsubsection{\texorpdfstring{Set\_Texture()}{Set\_Texture()}}
+{\footnotesize\ttfamily \label{class_c_texture_a476085bda1c1ff111395cee99f5ed30d} 
+void CTexture\+::\+Set\+\_\+\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_texture_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{_c_texture_8cpp_source}{CTexture.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_texture_8h}{CTexture.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_texture_8cpp}{CTexture.\+cpp}}\end{DoxyCompactItemize}

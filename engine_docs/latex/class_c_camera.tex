@@ -1,0 +1,286 @@
+\doxysection{CCamera Class Reference}
+\hypertarget{class_c_camera}{}\label{class_c_camera}\index{CCamera@{CCamera}}
+
+
+{\ttfamily \#include $<$CCamera.\+h$>$}
+
+
+
+Inheritance diagram for CCamera\+:
+% FIG 0
+
+
+Collaboration diagram for CCamera\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual HRESULT \mbox{\hyperlink{class_c_camera_af3353527f9db62ebfa74cb6cd3832ac9}{Ready\+\_\+\+Game\+Object}} ()
+\item 
+virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_camera_abe6cc3c64a1c8ff9d2c3271e3c827604}{Update\+\_\+\+Game\+Object}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_camera_a8469b8b157496b2349a739cc8a422f74}{Late\+Update\+\_\+\+Game\+Object}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+void \mbox{\hyperlink{class_c_camera_a526811649d5a6885190b14ac836d41e4}{Set\+\_\+\+Camera}} (\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} v\+Pos, \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} v\+Look)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_c_game_object}{CGame\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_game_object_a7a1935e69c417c41b8aa25970cc4722e}{Get\+\_\+\+Component}} (\mbox{\hyperlink{namespace_engine_acfa55bbe8070f616d90c632809572f0d}{COMPONENTID}} e\+ID, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Component\+Tag)
+\item 
+virtual void \mbox{\hyperlink{class_c_game_object_ab5a40b2628892842bd786651d711f960}{Render\+\_\+\+Game\+Object}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_camera_aeda45d30c01d8459732c0bcf0915099f}{CCamera}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+virtual \mbox{\hyperlink{class_c_camera_a0123231b9f52caebf8cc7e95baa1403e}{\texorpdfstring{$\sim$}{\string~}\+CCamera}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_camera_abf2f1e4e7125f66bba7892ed68468c30}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_game_object}{CGame\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_game_object_a5de26c22404a86ea1010b1d435d804f6}{CGame\+Object}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_game_object_a9ee98ca09bd81d733ffb0da90df4738c}{CGame\+Object}} (const \mbox{\hyperlink{class_c_game_object}{CGame\+Object}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_game_object_a2a248dc92f6c4eb96c484cc51f21010c}{\texorpdfstring{$\sim$}{\string~}\+CGame\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \mbox{\hyperlink{class_c_camera_a6835d286a04a590bd25e79bcd5e52783}{m\+\_\+mat\+View}}
+\item 
+\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \mbox{\hyperlink{class_c_camera_a01859706beb1338a4d866a18a8c47b5d}{m\+\_\+mat\+Proj}}
+\item 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_camera_a6a5ededef3435a5fb4c29005b0b0d049}{m\+\_\+v\+Eye}}
+\item 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_camera_a17c0be8e138f9cb24b072fcc3dffb5b7}{m\+\_\+v\+At}}
+\item 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_camera_abcaedca6ef0d52b7bbd6c82e24609e15}{m\+\_\+v\+Up}}
+\item 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_camera_a2af9e47ffb199e34efd510a2406acdb8}{m\+\_\+f\+Fov}}
+\item 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_camera_a3c2c4bffbae48bf64caca323c577791a}{m\+\_\+f\+Aspect}}
+\item 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_camera_ae8180f8da9eba81c7b23ffadea6f5700}{m\+\_\+f\+Near}}
+\item 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_camera_a83cffd85d8f7af070ec272338f071aef}{m\+\_\+f\+Far}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_game_object}{CGame\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_c_game_object_ae708c44eba3339469c6d4efb809f2df0}{m\+\_\+map\+Component}} \mbox{[}\mbox{\hyperlink{namespace_engine_acfa55bbe8070f616d90c632809572f0da770e062b2decdc8087a0f537b17a2510}{ID\+\_\+\+END}}\mbox{]}
+\item 
+LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_game_object_a9806ce4361249685d21af89a3c3d7fa6}{m\+\_\+p\+Graphic\+Dev}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_camera_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_camera_aeda45d30c01d8459732c0bcf0915099f}\index{CCamera@{CCamera}!CCamera@{CCamera}}
+\index{CCamera@{CCamera}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{CCamera()}{CCamera()}}
+{\footnotesize\ttfamily \label{class_c_camera_aeda45d30c01d8459732c0bcf0915099f} 
+CCamera\+::\+CCamera (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_c_camera_8cpp_source}{CCamera.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\Hypertarget{class_c_camera_a0123231b9f52caebf8cc7e95baa1403e}\index{CCamera@{CCamera}!````~CCamera@{\texorpdfstring{$\sim$}{\string~}CCamera}}
+\index{````~CCamera@{\texorpdfstring{$\sim$}{\string~}CCamera}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CCamera()}{\string~CCamera()}}
+{\footnotesize\ttfamily \label{class_c_camera_a0123231b9f52caebf8cc7e95baa1403e} 
+CCamera\+::\texorpdfstring{$\sim$}{\string~}\+CCamera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{_c_camera_8cpp_source}{CCamera.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_camera_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_camera_abf2f1e4e7125f66bba7892ed68468c30}\index{CCamera@{CCamera}!Free@{Free}}
+\index{Free@{Free}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_camera_abf2f1e4e7125f66bba7892ed68468c30} 
+void CCamera\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_game_object_a52898893b9dc1190830d1a5aca958b20}{CGame\+Object}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_c_camera_8cpp_source}{CCamera.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{class_c_camera_a8469b8b157496b2349a739cc8a422f74}\index{CCamera@{CCamera}!LateUpdate\_GameObject@{LateUpdate\_GameObject}}
+\index{LateUpdate\_GameObject@{LateUpdate\_GameObject}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{LateUpdate\_GameObject()}{LateUpdate\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_camera_a8469b8b157496b2349a739cc8a422f74} 
+void CCamera\+::\+Late\+Update\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_game_object_ab5cff966d4fe785b985a09997a589d1f}{CGame\+Object}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_c_camera_8cpp_source}{CCamera.\+cpp}}.
+
+\Hypertarget{class_c_camera_af3353527f9db62ebfa74cb6cd3832ac9}\index{CCamera@{CCamera}!Ready\_GameObject@{Ready\_GameObject}}
+\index{Ready\_GameObject@{Ready\_GameObject}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{Ready\_GameObject()}{Ready\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_camera_af3353527f9db62ebfa74cb6cd3832ac9} 
+HRESULT CCamera\+::\+Ready\+\_\+\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_game_object_a76768525e59d2c0a317f0e7a3c0b5707}{CGame\+Object}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_c_camera_8cpp_source}{CCamera.\+cpp}}.
+
+\Hypertarget{class_c_camera_a526811649d5a6885190b14ac836d41e4}\index{CCamera@{CCamera}!Set\_Camera@{Set\_Camera}}
+\index{Set\_Camera@{Set\_Camera}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{Set\_Camera()}{Set\_Camera()}}
+{\footnotesize\ttfamily \label{class_c_camera_a526811649d5a6885190b14ac836d41e4} 
+void CCamera\+::\+Set\+\_\+\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}}}]{v\+Pos}{, }\item[{\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}}}]{v\+Look}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_c_camera_8cpp_source}{CCamera.\+cpp}}.
+
+\Hypertarget{class_c_camera_abe6cc3c64a1c8ff9d2c3271e3c827604}\index{CCamera@{CCamera}!Update\_GameObject@{Update\_GameObject}}
+\index{Update\_GameObject@{Update\_GameObject}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{Update\_GameObject()}{Update\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_camera_abe6cc3c64a1c8ff9d2c3271e3c827604} 
+\mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} CCamera\+::\+Update\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_game_object_a434d549bc144bec54e1bfd2b8b719e3c}{CGame\+Object}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_c_camera_8cpp_source}{CCamera.\+cpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_camera_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_camera_a3c2c4bffbae48bf64caca323c577791a}\index{CCamera@{CCamera}!m\_fAspect@{m\_fAspect}}
+\index{m\_fAspect@{m\_fAspect}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_fAspect}{m\_fAspect}}
+{\footnotesize\ttfamily \label{class_c_camera_a3c2c4bffbae48bf64caca323c577791a} 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} CCamera\+::m\+\_\+f\+Aspect\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00023}{23}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+\Hypertarget{class_c_camera_a83cffd85d8f7af070ec272338f071aef}\index{CCamera@{CCamera}!m\_fFar@{m\_fFar}}
+\index{m\_fFar@{m\_fFar}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_fFar}{m\_fFar}}
+{\footnotesize\ttfamily \label{class_c_camera_a83cffd85d8f7af070ec272338f071aef} 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} CCamera\+::m\+\_\+f\+Far\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00023}{23}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+\Hypertarget{class_c_camera_a2af9e47ffb199e34efd510a2406acdb8}\index{CCamera@{CCamera}!m\_fFov@{m\_fFov}}
+\index{m\_fFov@{m\_fFov}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_fFov}{m\_fFov}}
+{\footnotesize\ttfamily \label{class_c_camera_a2af9e47ffb199e34efd510a2406acdb8} 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} CCamera\+::m\+\_\+f\+Fov\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00023}{23}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+\Hypertarget{class_c_camera_ae8180f8da9eba81c7b23ffadea6f5700}\index{CCamera@{CCamera}!m\_fNear@{m\_fNear}}
+\index{m\_fNear@{m\_fNear}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_fNear}{m\_fNear}}
+{\footnotesize\ttfamily \label{class_c_camera_ae8180f8da9eba81c7b23ffadea6f5700} 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} CCamera\+::m\+\_\+f\+Near\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00023}{23}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+\Hypertarget{class_c_camera_a01859706beb1338a4d866a18a8c47b5d}\index{CCamera@{CCamera}!m\_matProj@{m\_matProj}}
+\index{m\_matProj@{m\_matProj}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_matProj}{m\_matProj}}
+{\footnotesize\ttfamily \label{class_c_camera_a01859706beb1338a4d866a18a8c47b5d} 
+\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} CCamera\+::m\+\_\+mat\+Proj\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00021}{21}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+\Hypertarget{class_c_camera_a6835d286a04a590bd25e79bcd5e52783}\index{CCamera@{CCamera}!m\_matView@{m\_matView}}
+\index{m\_matView@{m\_matView}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_matView}{m\_matView}}
+{\footnotesize\ttfamily \label{class_c_camera_a6835d286a04a590bd25e79bcd5e52783} 
+\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} CCamera\+::m\+\_\+mat\+View\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00021}{21}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+\Hypertarget{class_c_camera_a17c0be8e138f9cb24b072fcc3dffb5b7}\index{CCamera@{CCamera}!m\_vAt@{m\_vAt}}
+\index{m\_vAt@{m\_vAt}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_vAt}{m\_vAt}}
+{\footnotesize\ttfamily \label{class_c_camera_a17c0be8e138f9cb24b072fcc3dffb5b7} 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} CCamera\+::m\+\_\+v\+At\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00022}{22}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+\Hypertarget{class_c_camera_a6a5ededef3435a5fb4c29005b0b0d049}\index{CCamera@{CCamera}!m\_vEye@{m\_vEye}}
+\index{m\_vEye@{m\_vEye}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_vEye}{m\_vEye}}
+{\footnotesize\ttfamily \label{class_c_camera_a6a5ededef3435a5fb4c29005b0b0d049} 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} CCamera\+::m\+\_\+v\+Eye\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00022}{22}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+\Hypertarget{class_c_camera_abcaedca6ef0d52b7bbd6c82e24609e15}\index{CCamera@{CCamera}!m\_vUp@{m\_vUp}}
+\index{m\_vUp@{m\_vUp}!CCamera@{CCamera}}
+\doxysubsubsection{\texorpdfstring{m\_vUp}{m\_vUp}}
+{\footnotesize\ttfamily \label{class_c_camera_abcaedca6ef0d52b7bbd6c82e24609e15} 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} CCamera\+::m\+\_\+v\+Up\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_camera_8h_source_l00022}{22}} of file \mbox{\hyperlink{_c_camera_8h_source}{CCamera.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_camera_8h}{CCamera.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_camera_8cpp}{CCamera.\+cpp}}\end{DoxyCompactItemize}

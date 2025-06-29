@@ -1,0 +1,82 @@
+\doxysection{CVIBuffer.\+cpp}
+\hypertarget{_c_v_i_buffer_8cpp_source}{}\label{_c_v_i_buffer_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CVIBuffer.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CVIBuffer.cpp}}
+\mbox{\hyperlink{_c_v_i_buffer_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_v_i_buffer_8h}{CVIBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00003}\mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{00003}}\ \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer::CVIBuffer}}()\ :\ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}(nullptr),\ \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00004}00004\ \mbox{\hyperlink{class_c_v_i_buffer_a217c6b46dea3c3641455fc1c8009e19f}{m\_dwVtxSize}}(0),\ \mbox{\hyperlink{class_c_v_i_buffer_a5896322c548cf9ce1a33416d6bc71222}{m\_dwTriCnt}}(0),\ \mbox{\hyperlink{class_c_v_i_buffer_a7753d95d573e0e866dc603ee412cbbad}{m\_dwVtxCnt}}(0),\ \mbox{\hyperlink{class_c_v_i_buffer_acc8d83cf6b63c83ff0394d47f9155aae}{m\_dwFVF}}(0),\ \mbox{\hyperlink{class_c_v_i_buffer_a0b10ee9da764baddde8854a829b150ac}{m\_dwIdxSize}}(0)}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00006}00006\ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00008}\mbox{\hyperlink{class_c_v_i_buffer_ac64c401b5da0a53f24649f16060f3cc4}{00008}}\ \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer::CVIBuffer}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00009}00009\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(pGraphicDev),\ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}(nullptr),\ \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a217c6b46dea3c3641455fc1c8009e19f}{m\_dwVtxSize}}(0),\ \mbox{\hyperlink{class_c_v_i_buffer_a5896322c548cf9ce1a33416d6bc71222}{m\_dwTriCnt}}(0),\ \mbox{\hyperlink{class_c_v_i_buffer_a7753d95d573e0e866dc603ee412cbbad}{m\_dwVtxCnt}}(0),\ \mbox{\hyperlink{class_c_v_i_buffer_acc8d83cf6b63c83ff0394d47f9155aae}{m\_dwFVF}}(0),\ \mbox{\hyperlink{class_c_v_i_buffer_a0b10ee9da764baddde8854a829b150ac}{m\_dwIdxSize}}(0)}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00015}\mbox{\hyperlink{class_c_v_i_buffer_a40d6fc3c54d46aa5a40289239c4e93d6}{00015}}\ \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer::CVIBuffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer}}\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00016}00016\ \ \ \ \ :\mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(rhs),\ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}(rhs.\mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}),\ \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}(rhs.\mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}),}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a217c6b46dea3c3641455fc1c8009e19f}{m\_dwVtxSize}}(rhs.\mbox{\hyperlink{class_c_v_i_buffer_a217c6b46dea3c3641455fc1c8009e19f}{m\_dwVtxSize}}),\ \mbox{\hyperlink{class_c_v_i_buffer_a5896322c548cf9ce1a33416d6bc71222}{m\_dwTriCnt}}(rhs.\mbox{\hyperlink{class_c_v_i_buffer_a5896322c548cf9ce1a33416d6bc71222}{m\_dwTriCnt}}),}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a7753d95d573e0e866dc603ee412cbbad}{m\_dwVtxCnt}}(rhs.\mbox{\hyperlink{class_c_v_i_buffer_a7753d95d573e0e866dc603ee412cbbad}{m\_dwVtxCnt}}),\ \mbox{\hyperlink{class_c_v_i_buffer_acc8d83cf6b63c83ff0394d47f9155aae}{m\_dwFVF}}(rhs.\mbox{\hyperlink{class_c_v_i_buffer_acc8d83cf6b63c83ff0394d47f9155aae}{m\_dwFVF}}),}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a0b10ee9da764baddde8854a829b150ac}{m\_dwIdxSize}}(rhs.\mbox{\hyperlink{class_c_v_i_buffer_a0b10ee9da764baddde8854a829b150ac}{m\_dwIdxSize}}),\ \mbox{\hyperlink{class_c_v_i_buffer_a75ba4fdcf1f90dbc35cbf9ea474dfcc9}{m\_IdxFmt}}(rhs.\mbox{\hyperlink{class_c_v_i_buffer_a75ba4fdcf1f90dbc35cbf9ea474dfcc9}{m\_IdxFmt}})}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}-\/>AddRef();}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}-\/>AddRef();}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00026}\mbox{\hyperlink{class_c_v_i_buffer_a22256631b045a81782966ce63b445858}{00026}}\ \mbox{\hyperlink{class_c_v_i_buffer_a22256631b045a81782966ce63b445858}{CVIBuffer::\string~CVIBuffer}}()}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00030}\mbox{\hyperlink{class_c_v_i_buffer_a9fc75b5bb482f6b3d6132cb054193bfe}{00030}}\ HRESULT\ \mbox{\hyperlink{class_c_v_i_buffer_a9fc75b5bb482f6b3d6132cb054193bfe}{CVIBuffer::Ready\_Buffer}}()}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>CreateVertexBuffer(\mbox{\hyperlink{class_c_v_i_buffer_a7753d95d573e0e866dc603ee412cbbad}{m\_dwVtxCnt}}\ *\ \mbox{\hyperlink{class_c_v_i_buffer_a217c6b46dea3c3641455fc1c8009e19f}{m\_dwVtxSize}},\ \textcolor{comment}{//\ 버텍스\ 버퍼 크기}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \textcolor{comment}{//\ 버퍼 속성(0인\ 경우\ 정적\ 버퍼)}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_acc8d83cf6b63c83ff0394d47f9155aae}{m\_dwFVF}},\ \ \ \ \textcolor{comment}{//\ 버텍스\ 속성}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ D3DPOOL\_MANAGED,\ \textcolor{comment}{//\ 정적\ 버퍼일 경우\ MANAGED}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}},\ \textcolor{comment}{//\ 생성한 버텍스\ 버퍼를\ 정보를\ 저장할\ 객체\ 주소}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ NULL)))}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>CreateIndexBuffer(\mbox{\hyperlink{class_c_v_i_buffer_a5896322c548cf9ce1a33416d6bc71222}{m\_dwTriCnt}}\ *\ \mbox{\hyperlink{class_c_v_i_buffer_a0b10ee9da764baddde8854a829b150ac}{m\_dwIdxSize}},\ \textcolor{comment}{//\ 인덱스\ 버퍼 크기}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ 0,\ \ \ \ \ \ \textcolor{comment}{//\ 버퍼 속성(0인\ 경우\ 정적\ 버퍼)}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a75ba4fdcf1f90dbc35cbf9ea474dfcc9}{m\_IdxFmt}},\ \ \ \ \textcolor{comment}{//\ 인덱스\ 속성}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ D3DPOOL\_MANAGED,\ \textcolor{comment}{//\ 정적\ 버퍼일 경우\ MANAGED}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}},\ \textcolor{comment}{//\ 생성한 인덱스\ 버퍼를\ 정보를\ 저장할\ 객체\ 주소}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ NULL)))}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00056}\mbox{\hyperlink{class_c_v_i_buffer_aff55d8ab824fe2972bce8f55a7b5519e}{00056}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_v_i_buffer_aff55d8ab824fe2972bce8f55a7b5519e}{CVIBuffer::Render\_Buffer}}()}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00057}00057\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>SetStreamSource(0,\ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}},\ 0,\ \mbox{\hyperlink{class_c_v_i_buffer_a217c6b46dea3c3641455fc1c8009e19f}{m\_dwVtxSize}});}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>SetFVF(\mbox{\hyperlink{class_c_v_i_buffer_acc8d83cf6b63c83ff0394d47f9155aae}{m\_dwFVF}});}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//m\_pGraphicDev-\/>DrawPrimitive(D3DPT\_TRIANGLELIST,\ 0,\ m\_dwTriCnt);}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>SetIndices(\mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}});}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00065}00065\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>DrawIndexedPrimitive(D3DPT\_TRIANGLELIST,\ 0,\ 0,\ \mbox{\hyperlink{class_c_v_i_buffer_a7753d95d573e0e866dc603ee412cbbad}{m\_dwVtxCnt}},\ 0,\ \mbox{\hyperlink{class_c_v_i_buffer_a5896322c548cf9ce1a33416d6bc71222}{m\_dwTriCnt}});}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00067}00067\ \}}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00070}\mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{00070}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{CVIBuffer::Free}}()}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00071}00071\ \{}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}});}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}});}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{CComponent::Free}}();}
+\DoxyCodeLine{\Hypertarget{_c_v_i_buffer_8cpp_source_l00076}00076\ \}}
+
+\end{DoxyCode}

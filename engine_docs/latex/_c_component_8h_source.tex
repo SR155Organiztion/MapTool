@@ -1,0 +1,37 @@
+\doxysection{CComponent.\+h}
+\hypertarget{_c_component_8h_source}{}\label{_c_component_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CComponent.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CComponent.h}}
+\mbox{\hyperlink{_c_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}CBase.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___define_8h}{Engine\_Define.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00006}00006\ \mbox{\hyperlink{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}{BEGIN}}(\mbox{\hyperlink{namespace_engine}{Engine}})}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00008}\mbox{\hyperlink{class_c_component}{00008}}\ class\ \mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}\ :\ public\ CBase}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00010}00010\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}();}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{\string~CComponent}}();}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00017}\mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{00017}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\_int}}\ \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{Update\_Component}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fTimeDelta)\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00018}\mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{00018}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{LateUpdate\_Component}}()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00020}00020\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00021}\mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{00021}}\ \ \ \ \ LPDIRECT3DDEVICE9\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}};}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00022}\mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{00022}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\_bool}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{m\_bClone}};}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00024}00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00025}\mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{00025}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}*\ \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{Clone}}()\ \ PURE;\ \ \ \ \ \ \ \textcolor{comment}{//\ 프로토타입\ 사용\ 예}}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00027}00027\ protected:}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00028}00028\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{Free}}();}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00029}00029\ \};}
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_component_8h_source_l00031}00031\ \mbox{\hyperlink{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}}
+
+\end{DoxyCode}

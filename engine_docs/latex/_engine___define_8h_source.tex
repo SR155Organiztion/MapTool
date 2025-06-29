@@ -1,0 +1,51 @@
+\doxysection{Engine\+\_\+\+Define.\+h}
+\hypertarget{_engine___define_8h_source}{}\label{_engine___define_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/Engine\_Define.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/Engine\_Define.h}}
+\mbox{\hyperlink{_engine___define_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ Engine\_Define\_h\_\_}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ Engine\_Define\_h\_\_}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <d3d9.h>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <d3dx9.h>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___enum_8h}{Engine\_Enum.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___macro_8h}{Engine\_Macro.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___struct_8h}{Engine\_Struct.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___typedef_8h}{Engine\_Typedef.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___function_8h}{Engine\_Function.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00022}\mbox{\hyperlink{_engine___define_8h_a1d7ab29fdefabdb4e7e7cd27ac4c9934}{00022}}\ \textcolor{preprocessor}{\#define\ DIRECTINPUT\_VERSION\ 0x0800}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <dinput.h>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00025}00025\ \textcolor{preprocessor}{\#pragma\ warning(disable\ :\ 4251)}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ \_CRTDBG\_MAP\_ALLOC}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <crtdbg.h>}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00033}00033\ \textcolor{preprocessor}{\#ifndef\ DBG\_NEW\ }}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00035}00035\ \textcolor{preprocessor}{\#define\ DBG\_NEW\ new\ (\ \_NORMAL\_BLOCK\ ,\ \_\_FILE\_\_\ ,\ \_\_LINE\_\_\ )\ }}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00036}00036\ \textcolor{preprocessor}{\#define\ new\ DBG\_NEW\ }}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00038}00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00039}00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00041}00041\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00042}00042\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}};}
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_engine___define_8h_source_l00045}00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ Engine\_Define\_h\_\_}}
+
+\end{DoxyCode}

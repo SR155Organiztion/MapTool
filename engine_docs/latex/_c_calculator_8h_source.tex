@@ -1,0 +1,43 @@
+\doxysection{CCalculator.\+h}
+\hypertarget{_c_calculator_8h_source}{}\label{_c_calculator_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CCalculator.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CCalculator.h}}
+\mbox{\hyperlink{_c_calculator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_component_8h}{CComponent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00004}00004\ \mbox{\hyperlink{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}{BEGIN}}(\mbox{\hyperlink{namespace_engine}{Engine}})}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00006}00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_terrain_tex}{CTerrainTex}};}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00007}00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00009}\mbox{\hyperlink{class_c_calculator}{00009}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ CCalculator\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00011}00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{explicit}\ CCalculator(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ CCalculator(\textcolor{keyword}{const}\ CCalculator\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CCalculator();}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00017}00017\ \ \ \ \ HRESULT\ \ \ \ \ \mbox{\hyperlink{class_c_calculator_a77718d28b5d64b2ae31e221469f28a94}{Ready\_Calculator}}();}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_calculator_a44d067ef394ac97830bb94358157966a}{Compute\_HeightOnTerrain}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pPos,}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}*\ pTerrainVtxPos,}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\&\ dwCntX\ =\ \mbox{\hyperlink{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}{VTXCNTX}},}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\&\ dwCntZ\ =\ \mbox{\hyperlink{_engine___macro_8h_a3a7212297e7d2ac4d31824a65a62dfbc}{VTXCNTZ}},}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\&\ dwVtxItv\ =\ \mbox{\hyperlink{_engine___macro_8h_a6ede635b64fff28b6302be246233023c}{VTXITV}});}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ \mbox{\hyperlink{class_c_calculator_a8eb02d09195681c196d232203c6d04f5}{Picking\_OnTerrain}}(HWND\ hWnd,}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_c_terrain_tex}{CTerrainTex}}*\ pTerrainBufferCom,}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_c_transform}{CTransform}}*\ pTerrainTransformCom);}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00028}00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{static}\ CCalculator*\ \mbox{\hyperlink{class_c_calculator_ab7340518b4587a2c69431ba02138fb53}{Create}}(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}*\ \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{Clone}}();}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00032}00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{Free}}();}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00035}00035\ \};}
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_calculator_8h_source_l00037}00037\ \mbox{\hyperlink{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}}
+
+\end{DoxyCode}

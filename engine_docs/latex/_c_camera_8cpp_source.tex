@@ -1,0 +1,56 @@
+\doxysection{CCamera.\+cpp}
+\hypertarget{_c_camera_8cpp_source}{}\label{_c_camera_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CCamera.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CCamera.cpp}}
+\mbox{\hyperlink{_c_camera_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_camera_8h}{CCamera.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_pipeline_8h}{CPipeline.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00004}\mbox{\hyperlink{class_c_camera_aeda45d30c01d8459732c0bcf0915099f}{00004}}\ \mbox{\hyperlink{class_c_camera_aeda45d30c01d8459732c0bcf0915099f}{CCamera::CCamera}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00005}00005\ \ \ \ \ :\ \mbox{\hyperlink{class_c_game_object_a5de26c22404a86ea1010b1d435d804f6}{CGameObject}}(pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00010}\mbox{\hyperlink{class_c_camera_a0123231b9f52caebf8cc7e95baa1403e}{00010}}\ \mbox{\hyperlink{class_c_camera_a0123231b9f52caebf8cc7e95baa1403e}{CCamera::\string~CCamera}}()}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00014}\mbox{\hyperlink{class_c_camera_af3353527f9db62ebfa74cb6cd3832ac9}{00014}}\ HRESULT\ \mbox{\hyperlink{class_c_camera_af3353527f9db62ebfa74cb6cd3832ac9}{CCamera::Ready\_GameObject}}()}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00016}00016\ \ \ \ \ D3DXMatrixLookAtLH(\&\mbox{\hyperlink{class_c_camera_a6835d286a04a590bd25e79bcd5e52783}{m\_matView}},\ \&\mbox{\hyperlink{class_c_camera_a6a5ededef3435a5fb4c29005b0b0d049}{m\_vEye}},\ \&\mbox{\hyperlink{class_c_camera_a17c0be8e138f9cb24b072fcc3dffb5b7}{m\_vAt}},\ \&\mbox{\hyperlink{class_c_camera_abcaedca6ef0d52b7bbd6c82e24609e15}{m\_vUp}});}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//CPipeline::MakeViewSpaceMatrix(\&m\_matView,\ \&m\_vEye,\ \&m\_vAt,\ \&m\_vUp);}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_c_game_object_a9806ce4361249685d21af89a3c3d7fa6}{m\_pGraphicDev}}-\/>SetTransform(D3DTS\_VIEW,\ \&\mbox{\hyperlink{class_c_camera_a6835d286a04a590bd25e79bcd5e52783}{m\_matView}});}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00020}00020\ \ \ \ \ D3DXMatrixPerspectiveFovLH(\&\mbox{\hyperlink{class_c_camera_a01859706beb1338a4d866a18a8c47b5d}{m\_matProj}},\ \mbox{\hyperlink{class_c_camera_a2af9e47ffb199e34efd510a2406acdb8}{m\_fFov}},\ \mbox{\hyperlink{class_c_camera_a3c2c4bffbae48bf64caca323c577791a}{m\_fAspect}},\ \mbox{\hyperlink{class_c_camera_ae8180f8da9eba81c7b23ffadea6f5700}{m\_fNear}},\ \mbox{\hyperlink{class_c_camera_a83cffd85d8f7af070ec272338f071aef}{m\_fFar}});}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//CPipeline::MakeProjMatrix(\&m\_matProj,\ m\_fFov,\ m\_fAspect,\ m\_fNear,\ m\_fFar);}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{class_c_game_object_a9806ce4361249685d21af89a3c3d7fa6}{m\_pGraphicDev}}-\/>SetTransform(D3DTS\_PROJECTION,\ \&\mbox{\hyperlink{class_c_camera_a01859706beb1338a4d866a18a8c47b5d}{m\_matProj}});}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00028}\mbox{\hyperlink{class_c_camera_abe6cc3c64a1c8ff9d2c3271e3c827604}{00028}}\ \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\_int}}\ \mbox{\hyperlink{class_c_camera_abe6cc3c64a1c8ff9d2c3271e3c827604}{CCamera::Update\_GameObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fTimeDelta)}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00030}00030\ \ \ \ \ D3DXMatrixLookAtLH(\&\mbox{\hyperlink{class_c_camera_a6835d286a04a590bd25e79bcd5e52783}{m\_matView}},\ \&\mbox{\hyperlink{class_c_camera_a6a5ededef3435a5fb4c29005b0b0d049}{m\_vEye}},\ \&\mbox{\hyperlink{class_c_camera_a17c0be8e138f9cb24b072fcc3dffb5b7}{m\_vAt}},\ \&\mbox{\hyperlink{class_c_camera_abcaedca6ef0d52b7bbd6c82e24609e15}{m\_vUp}});}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_c_game_object_a9806ce4361249685d21af89a3c3d7fa6}{m\_pGraphicDev}}-\/>SetTransform(D3DTS\_VIEW,\ \&\mbox{\hyperlink{class_c_camera_a6835d286a04a590bd25e79bcd5e52783}{m\_matView}});}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00036}\mbox{\hyperlink{class_c_camera_a8469b8b157496b2349a739cc8a422f74}{00036}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_camera_a8469b8b157496b2349a739cc8a422f74}{CCamera::LateUpdate\_GameObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fTimeDelta)}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00037}00037\ \{}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00040}\mbox{\hyperlink{class_c_camera_a526811649d5a6885190b14ac836d41e4}{00040}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_camera_a526811649d5a6885190b14ac836d41e4}{CCamera::Set\_Camera}}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ vPos,\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ vLook)}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_c_camera_a6a5ededef3435a5fb4c29005b0b0d049}{m\_vEye}}\ =\ vPos;}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ vDir\ =\ vLook\ -\/\ vPos;}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00044}00044\ \ \ \ \ D3DXVec3Normalize(\&\mbox{\hyperlink{class_c_camera_a17c0be8e138f9cb24b072fcc3dffb5b7}{m\_vAt}},\ \&(vDir));}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00047}\mbox{\hyperlink{class_c_camera_abf2f1e4e7125f66bba7892ed68468c30}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_camera_abf2f1e4e7125f66bba7892ed68468c30}{CCamera::Free}}()}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{class_c_game_object_a52898893b9dc1190830d1a5aca958b20}{CGameObject::Free}}();}
+\DoxyCodeLine{\Hypertarget{_c_camera_8cpp_source_l00050}00050\ \}}
+
+\end{DoxyCode}

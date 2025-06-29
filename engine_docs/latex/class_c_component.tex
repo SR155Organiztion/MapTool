@@ -1,0 +1,195 @@
+\doxysection{CComponent Class Reference}
+\hypertarget{class_c_component}{}\label{class_c_component}\index{CComponent@{CComponent}}
+
+
+{\ttfamily \#include $<$CComponent.\+h$>$}
+
+
+
+Inheritance diagram for CComponent\+:
+% FIG 0
+
+
+Collaboration diagram for CComponent\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{Update\+\_\+\+Component}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{Late\+Update\+\_\+\+Component}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{Clone}} () PURE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
+\item 
+\mbox{\hyperlink{class_c_component_a1a84bf0dae9ecaa036636560068c939b}{CComponent}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_component_a32744beb6ac8573433668a2c37ae1f39}{CComponent}} (const \mbox{\hyperlink{class_c_component}{CComponent}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\texorpdfstring{$\sim$}{\string~}\+CComponent}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
+\item 
+\mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\+\_\+bool}} \mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{m\+\_\+b\+Clone}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_c_component_8h_source_l00008}{8}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_component_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_component_ab87a6940be69962c3f4f5a8552643245}\index{CComponent@{CComponent}!CComponent@{CComponent}}
+\index{CComponent@{CComponent}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{CComponent()}{CComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_c_component_ab87a6940be69962c3f4f5a8552643245} 
+CComponent\+::\+CComponent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{class_c_component_a1a84bf0dae9ecaa036636560068c939b}\index{CComponent@{CComponent}!CComponent@{CComponent}}
+\index{CComponent@{CComponent}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{CComponent()}{CComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_c_component_a1a84bf0dae9ecaa036636560068c939b} 
+CComponent\+::\+CComponent (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+
+\Hypertarget{class_c_component_a32744beb6ac8573433668a2c37ae1f39}\index{CComponent@{CComponent}!CComponent@{CComponent}}
+\index{CComponent@{CComponent}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{CComponent()}{CComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_c_component_a32744beb6ac8573433668a2c37ae1f39} 
+CComponent\+::\+CComponent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_c_component}{CComponent}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{class_c_component_a29bac312efea3e13a92aaa7213081fa8}\index{CComponent@{CComponent}!````~CComponent@{\texorpdfstring{$\sim$}{\string~}CComponent}}
+\index{````~CComponent@{\texorpdfstring{$\sim$}{\string~}CComponent}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CComponent()}{\string~CComponent()}}
+{\footnotesize\ttfamily \label{class_c_component_a29bac312efea3e13a92aaa7213081fa8} 
+CComponent\+::\texorpdfstring{$\sim$}{\string~}\+CComponent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_component_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}\index{CComponent@{CComponent}!Clone@{Clone}}
+\index{Clone@{Clone}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \label{class_c_component_aa999b573db0494f2772e1ef75a45e5a1} 
+virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} CComponent\+::\+Clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_calculator_a00135cd3f07f3938a268e1f1584cf6e2}{CCalculator}}, \mbox{\hyperlink{class_c_cube_tex_a9007c2a2ff6d6e1133b69212803f4018}{CCube\+Tex}}, \mbox{\hyperlink{class_c_rc_col_aa0ea9235fc66f7cc03b63832fa232585}{CRc\+Col}}, \mbox{\hyperlink{class_c_rc_tex_a6b802a23bc1862d35a58ed0b612475fe}{CRc\+Tex}}, \mbox{\hyperlink{class_c_terrain_col_a33a0574e932db7a41b101b68c3a276e2}{CTerrain\+Col}}, \mbox{\hyperlink{class_c_terrain_tex_abd89070d55ec5e2f68b11fad4a07c0ef}{CTerrain\+Tex}}, \mbox{\hyperlink{class_c_texture_a54c677fa75f7cee00e31017682fb5ca2}{CTexture}}, \mbox{\hyperlink{class_c_transform_a748230a163cf504daa34cc4a359de71b}{CTransform}}, and \mbox{\hyperlink{class_c_tri_col_a5bb83c7947170af0ce01dae5e6e9852c}{CTri\+Col}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{class_c_component_abb47ac0113a8e99501af4213a4db2528}\index{CComponent@{CComponent}!Free@{Free}}
+\index{Free@{Free}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_component_abb47ac0113a8e99501af4213a4db2528} 
+void CComponent\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{CVIBuffer}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\Hypertarget{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}\index{CComponent@{CComponent}!LateUpdate\_Component@{LateUpdate\_Component}}
+\index{LateUpdate\_Component@{LateUpdate\_Component}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{LateUpdate\_Component()}{LateUpdate\_Component()}}
+{\footnotesize\ttfamily \label{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5} 
+virtual void CComponent\+::\+Late\+Update\+\_\+\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_transform_ad0be300418898e5db44175f8f5be733f}{CTransform}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8h_source_l00018}{18}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+
+\Hypertarget{class_c_component_aa24cb04c74c24659780a73296775d209}\index{CComponent@{CComponent}!Update\_Component@{Update\_Component}}
+\index{Update\_Component@{Update\_Component}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{Update\_Component()}{Update\_Component()}}
+{\footnotesize\ttfamily \label{class_c_component_aa24cb04c74c24659780a73296775d209} 
+virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} CComponent\+::\+Update\+\_\+\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_c_transform_a6734b800b2921b20879ebd683e21da01}{CTransform}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8h_source_l00017}{17}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_component_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}\index{CComponent@{CComponent}!m\_bClone@{m\_bClone}}
+\index{m\_bClone@{m\_bClone}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{m\_bClone}{m\_bClone}}
+{\footnotesize\ttfamily \label{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9} 
+\mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\+\_\+bool}} CComponent\+::m\+\_\+b\+Clone\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8h_source_l00022}{22}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+
+\Hypertarget{class_c_component_abc146a40254f300ae6b897cfa61fb62d}\index{CComponent@{CComponent}!m\_pGraphicDev@{m\_pGraphicDev}}
+\index{m\_pGraphicDev@{m\_pGraphicDev}!CComponent@{CComponent}}
+\doxysubsubsection{\texorpdfstring{m\_pGraphicDev}{m\_pGraphicDev}}
+{\footnotesize\ttfamily \label{class_c_component_abc146a40254f300ae6b897cfa61fb62d} 
+LPDIRECT3\+DDEVICE9 CComponent\+::m\+\_\+p\+Graphic\+Dev\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_component_8h_source_l00021}{21}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_component_8h}{CComponent.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_component_8cpp}{CComponent.\+cpp}}\end{DoxyCompactItemize}

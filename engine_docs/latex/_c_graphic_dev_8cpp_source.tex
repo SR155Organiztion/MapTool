@@ -1,0 +1,121 @@
+\doxysection{CGraphic\+Dev.\+cpp}
+\hypertarget{_c_graphic_dev_8cpp_source}{}\label{_c_graphic_dev_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CGraphicDev.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CGraphicDev.cpp}}
+\mbox{\hyperlink{_c_graphic_dev_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_graphic_dev_8h}{CGraphicDev.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00003}00003\ \mbox{\hyperlink{_engine___macro_8h_a27a2ec109f7264210d9c43433d1c8b61}{IMPLEMENT\_SINGLETON}}(\mbox{\hyperlink{class_c_graphic_dev}{CGraphicDev}})}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00005}00005\ CGraphicDev::CGraphicDev()\ :\ m\_pSDK(nullptr),\ m\_pGraphicDev(nullptr)}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00007}00007\ \}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00009}00009\ CGraphicDev::\string~CGraphicDev()}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00013}\mbox{\hyperlink{class_c_graphic_dev_a941b356148ffcaa744e0b3a15372aa42}{00013}}\ HRESULT\ \mbox{\hyperlink{class_c_graphic_dev_a941b356148ffcaa744e0b3a15372aa42}{CGraphicDev::Ready\_GraphicDev}}(HWND\ hWnd,\ \mbox{\hyperlink{namespace_engine_a0679810ca5150bcaca8939b8058b9abd}{WINMODE}}\ eMode,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iSizeX,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iSizeY,\ CGraphicDev**\ ppGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//\ 1.\ 그래픽\ 카드의\ 성능을\ 조사할\ 객체\ 생성}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00016}00016\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00017}00017\ \ \ \ \ m\_pSDK\ =\ Direct3DCreate9(D3D\_SDK\_VERSION);}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ m\_pSDK)}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00021}00021\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ 2.\ 그래픽\ 카드의\ 성능 조사}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00024}00024\ \ \ \ \ D3DCAPS9\ \ \ \ \ \ \ \ DeviceCaps;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00025}00025\ \ \ \ \ ZeroMemory(\&DeviceCaps,\ \textcolor{keyword}{sizeof}(D3DCAPS9));}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ D3DADAPTER\_DEFAULT\ :\ 현재\ 컴퓨터에\ 설치된 기본\ 그래픽\ 카드}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(m\_pSDK-\/>GetDeviceCaps(D3DADAPTER\_DEFAULT,\ D3DDEVTYPE\_HAL,\ \&DeviceCaps)))}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ \ \ \ dwFlag(0);}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (DeviceCaps.DevCaps\ \&\ D3DDEVCAPS\_HWTRANSFORMANDLIGHT)}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ dwFlag\ |=\ D3DCREATE\_HARDWARE\_VERTEXPROCESSING\ |\ D3DCREATE\_MULTITHREADED;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ dwFlag\ |=\ D3DCREATE\_SOFTWARE\_VERTEXPROCESSING\ |\ D3DCREATE\_MULTITHREADED;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00040}00040\ \ \ \ \ D3DPRESENT\_PARAMETERS\ \ \ \ \ \ \ d3dpp;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00041}00041\ \ \ \ \ ZeroMemory(\&d3dpp,\ \textcolor{keyword}{sizeof}(D3DPRESENT\_PARAMETERS));}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00043}00043\ \ \ \ \ d3dpp.BackBufferWidth\ =\ iSizeX;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00044}00044\ \ \ \ \ d3dpp.BackBufferHeight\ =\ iSizeY;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00045}00045\ \ \ \ \ d3dpp.BackBufferFormat\ =\ D3DFMT\_A8R8G8B8;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00046}00046\ \ \ \ \ d3dpp.BackBufferCount\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00047}00047\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00048}00048\ \ \ \ \ d3dpp.MultiSampleType\ =\ D3DMULTISAMPLE\_NONE;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00049}00049\ \ \ \ \ d3dpp.MultiSampleQuality\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ D3DSWAPEFFECT\_DISCARD\ =\ 스왑 체인\ 방식}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ D3DSWAPEFFECT\_FLIP\ =\ \ 하나의\ 버퍼를\ 번갈아\ 사용}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//\ D3DSWAPEFFECT\_COPY\ =\ 더블 버퍼링과 비슷한 기법}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00054}00054\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00055}00055\ \ \ \ \ d3dpp.SwapEffect\ =\ D3DSWAPEFFECT\_DISCARD;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00057}00057\ \ \ \ \ d3dpp.hDeviceWindow\ =\ hWnd;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00058}00058\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00059}00059\ \ \ \ \ d3dpp.Windowed\ =\ eMode;\ \textcolor{comment}{//\ 창\ 모드 또는 전체화면 모드}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00061}00061\ \ \ \ \ d3dpp.EnableAutoDepthStencil\ =\ TRUE;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00062}00062\ \ \ \ \ d3dpp.AutoDepthStencilFormat\ =\ D3DFMT\_D24S8;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00063}00063\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00064}00064\ \ \ \ \ d3dpp.FullScreen\_RefreshRateInHz\ =\ D3DPRESENT\_RATE\_DEFAULT;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00065}00065\ \ \ \ \ d3dpp.PresentationInterval\ =\ D3DPRESENT\_INTERVAL\_IMMEDIATE;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ 3.\ 그래픽\ 카드의\ 기능을\ 사용할\ 객체\ 생성}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(m\_pSDK-\/>CreateDevice(D3DADAPTER\_DEFAULT,\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D3DDEVTYPE\_HAL,}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hWnd,\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dwFlag,\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&d3dpp,\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&m\_pGraphicDev)))}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00078}00078\ \ \ \ \ *ppGraphicDev\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00083}00083\ \textcolor{comment}{//\ \ 후면버퍼\ 동작\ 1.\ 지우기}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00084}00084\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2.\ 픽셀\ 값을\ 채울것\ 명령}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00086}\mbox{\hyperlink{class_c_graphic_dev_a35c25fa25b1451202b6446c46b81a798}{00086}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_graphic_dev_a35c25fa25b1451202b6446c46b81a798}{CGraphicDev::Render\_Begin}}(D3DXCOLOR\ Color)}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00087}00087\ \{}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00088}00088\ \ \ \ \ m\_pGraphicDev-\/>Clear(0,}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NULL,}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D3DCLEAR\_TARGET\ |\ D3DCLEAR\_STENCIL\ |\ D3DCLEAR\_ZBUFFER,}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color,\ \ \ \ \ \ \textcolor{comment}{//\ 후면 버퍼 텍스처\ 색상}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.f,\ \ \ \ \ \ \ \ \textcolor{comment}{//\ z버퍼 초기화\ 값}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0);\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 스텐실 초기화\ 값}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00095}00095\ \ \ \ \ m\_pGraphicDev-\/>BeginScene();}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00099}00099\ \textcolor{comment}{//\ \ 후면버퍼\ 동작\ 1.\ 픽셀\ 값\ 채우기\ 종료}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00100}00100\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2.\ 전면 버퍼와 서피스\ 교환}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00102}\mbox{\hyperlink{class_c_graphic_dev_abf2c714dad1e3698c166baf8901897e2}{00102}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_graphic_dev_abf2c714dad1e3698c166baf8901897e2}{CGraphicDev::Render\_End}}()}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00103}00103\ \{}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00104}00104\ \ \ \ \ m\_pGraphicDev-\/>EndScene();}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00106}00106\ \ \ \ \ m\_pGraphicDev-\/>Present(NULL,\ NULL,\ NULL,\ NULL);}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ 3\ 인자\ :\ 핸들 값}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00111}00111\ \textcolor{keywordtype}{void}\ CGraphicDev::Free()}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00112}00112\ \{}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pSDK);}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00115}00115\ \}}
+
+\end{DoxyCode}

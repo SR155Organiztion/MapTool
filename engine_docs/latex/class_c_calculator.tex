@@ -1,0 +1,136 @@
+\doxysection{CCalculator Class Reference}
+\hypertarget{class_c_calculator}{}\label{class_c_calculator}\index{CCalculator@{CCalculator}}
+
+
+{\ttfamily \#include $<$CCalculator.\+h$>$}
+
+
+
+Inheritance diagram for CCalculator\+:
+% FIG 0
+
+
+Collaboration diagram for CCalculator\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{class_c_calculator_a77718d28b5d64b2ae31e221469f28a94}{Ready\+\_\+\+Calculator}} ()
+\item 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_calculator_a44d067ef394ac97830bb94358157966a}{Compute\+\_\+\+Height\+On\+Terrain}} (const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Pos, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Terrain\+Vtx\+Pos, const \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\+\_\+ulong}} \&dw\+CntX=\mbox{\hyperlink{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}{VTXCNTX}}, const \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\+\_\+ulong}} \&dw\+CntZ=\mbox{\hyperlink{_engine___macro_8h_a3a7212297e7d2ac4d31824a65a62dfbc}{VTXCNTZ}}, const \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\+\_\+ulong}} \&dw\+Vtx\+Itv=\mbox{\hyperlink{_engine___macro_8h_a6ede635b64fff28b6302be246233023c}{VTXITV}})
+\item 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_calculator_a8eb02d09195681c196d232203c6d04f5}{Picking\+\_\+\+On\+Terrain}} (HWND h\+Wnd, const \mbox{\hyperlink{class_c_terrain_tex}{CTerrain\+Tex}} \texorpdfstring{$\ast$}{*}p\+Terrain\+Buffer\+Com, const \mbox{\hyperlink{class_c_transform}{CTransform}} \texorpdfstring{$\ast$}{*}p\+Terrain\+Transform\+Com)
+\item 
+virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_calculator_a00135cd3f07f3938a268e1f1584cf6e2}{Clone}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{Update\+\_\+\+Component}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{Late\+Update\+\_\+\+Component}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_calculator}{CCalculator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_calculator_ab7340518b4587a2c69431ba02138fb53}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
+\item 
+\mbox{\hyperlink{class_c_component_a1a84bf0dae9ecaa036636560068c939b}{CComponent}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_component_a32744beb6ac8573433668a2c37ae1f39}{CComponent}} (const \mbox{\hyperlink{class_c_component}{CComponent}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\texorpdfstring{$\sim$}{\string~}\+CComponent}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
+\item 
+\mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\+\_\+bool}} \mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{m\+\_\+b\+Clone}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_c_calculator_8h_source_l00009}{9}} of file \mbox{\hyperlink{_c_calculator_8h_source}{CCalculator.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_calculator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_calculator_a00135cd3f07f3938a268e1f1584cf6e2}\index{CCalculator@{CCalculator}!Clone@{Clone}}
+\index{Clone@{Clone}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \label{class_c_calculator_a00135cd3f07f3938a268e1f1584cf6e2} 
+\mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} CCalculator\+::\+Clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00179}{179}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\Hypertarget{class_c_calculator_a44d067ef394ac97830bb94358157966a}\index{CCalculator@{CCalculator}!Compute\_HeightOnTerrain@{Compute\_HeightOnTerrain}}
+\index{Compute\_HeightOnTerrain@{Compute\_HeightOnTerrain}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{Compute\_HeightOnTerrain()}{Compute\_HeightOnTerrain()}}
+{\footnotesize\ttfamily \label{class_c_calculator_a44d067ef394ac97830bb94358157966a} 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} CCalculator\+::\+Compute\+\_\+\+Height\+On\+Terrain (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Pos}{, }\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Terrain\+Vtx\+Pos}{, }\item[{const \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\+\_\+ulong}} \&}]{dw\+CntX}{ = {\ttfamily \mbox{\hyperlink{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}{VTXCNTX}}}, }\item[{const \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\+\_\+ulong}} \&}]{dw\+CntZ}{ = {\ttfamily \mbox{\hyperlink{_engine___macro_8h_a3a7212297e7d2ac4d31824a65a62dfbc}{VTXCNTZ}}}, }\item[{const \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\+\_\+ulong}} \&}]{dw\+Vtx\+Itv}{ = {\ttfamily \mbox{\hyperlink{_engine___macro_8h_a6ede635b64fff28b6302be246233023c}{VTXITV}}}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+
+\Hypertarget{class_c_calculator_ab7340518b4587a2c69431ba02138fb53}\index{CCalculator@{CCalculator}!Create@{Create}}
+\index{Create@{Create}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{class_c_calculator_ab7340518b4587a2c69431ba02138fb53} 
+\mbox{\hyperlink{class_c_calculator}{CCalculator}} \texorpdfstring{$\ast$}{*} CCalculator\+::\+Create (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{class_c_calculator_a8eb02d09195681c196d232203c6d04f5}\index{CCalculator@{CCalculator}!Picking\_OnTerrain@{Picking\_OnTerrain}}
+\index{Picking\_OnTerrain@{Picking\_OnTerrain}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{Picking\_OnTerrain()}{Picking\_OnTerrain()}}
+{\footnotesize\ttfamily \label{class_c_calculator_a8eb02d09195681c196d232203c6d04f5} 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} CCalculator\+::\+Picking\+\_\+\+On\+Terrain (\begin{DoxyParamCaption}\item[{HWND}]{h\+Wnd}{, }\item[{const \mbox{\hyperlink{class_c_terrain_tex}{CTerrain\+Tex}} \texorpdfstring{$\ast$}{*}}]{p\+Terrain\+Buffer\+Com}{, }\item[{const \mbox{\hyperlink{class_c_transform}{CTransform}} \texorpdfstring{$\ast$}{*}}]{p\+Terrain\+Transform\+Com}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+\Hypertarget{class_c_calculator_a77718d28b5d64b2ae31e221469f28a94}\index{CCalculator@{CCalculator}!Ready\_Calculator@{Ready\_Calculator}}
+\index{Ready\_Calculator@{Ready\_Calculator}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{Ready\_Calculator()}{Ready\_Calculator()}}
+{\footnotesize\ttfamily \label{class_c_calculator_a77718d28b5d64b2ae31e221469f28a94} 
+HRESULT CCalculator\+::\+Ready\+\_\+\+Calculator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_calculator_8h}{CCalculator.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_calculator_8cpp}{CCalculator.\+cpp}}\end{DoxyCompactItemize}

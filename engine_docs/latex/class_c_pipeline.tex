@@ -1,0 +1,75 @@
+\doxysection{CPipeline Class Reference}
+\hypertarget{class_c_pipeline}{}\label{class_c_pipeline}\index{CPipeline@{CPipeline}}
+
+
+{\ttfamily \#include $<$CPipeline.\+h$>$}
+
+
+
+Inheritance diagram for CPipeline\+:
+% FIG 0
+
+
+Collaboration diagram for CPipeline\+:
+% FIG 1
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_c_pipeline_a69675e34506fe935ba844c713f52ebb2}{Make\+Transform\+Matrix}} (\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}p\+Out, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Right, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Up, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Look, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Pos)
+\item 
+static void \mbox{\hyperlink{class_c_pipeline_a31adc312716302eb3bbaef7d4dd05050}{Make\+View\+Space\+Matrix}} (\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}p\+Out, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Eye, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+At, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Up)
+\item 
+static void \mbox{\hyperlink{class_c_pipeline_a865d6ea88ba38828236d69b2e330ea6b}{Make\+Proj\+Matrix}} (\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}p\+Out, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Fov, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Aspect, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Near, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Far)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_c_pipeline_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_pipeline_8h_source}{CPipeline.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_pipeline_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_pipeline_a865d6ea88ba38828236d69b2e330ea6b}\index{CPipeline@{CPipeline}!MakeProjMatrix@{MakeProjMatrix}}
+\index{MakeProjMatrix@{MakeProjMatrix}!CPipeline@{CPipeline}}
+\doxysubsubsection{\texorpdfstring{MakeProjMatrix()}{MakeProjMatrix()}}
+{\footnotesize\ttfamily \label{class_c_pipeline_a865d6ea88ba38828236d69b2e330ea6b} 
+void CPipeline\+::\+Make\+Proj\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}}]{p\+Out}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Fov}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Aspect}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Near}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Far}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_pipeline_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}}.
+
+\Hypertarget{class_c_pipeline_a69675e34506fe935ba844c713f52ebb2}\index{CPipeline@{CPipeline}!MakeTransformMatrix@{MakeTransformMatrix}}
+\index{MakeTransformMatrix@{MakeTransformMatrix}!CPipeline@{CPipeline}}
+\doxysubsubsection{\texorpdfstring{MakeTransformMatrix()}{MakeTransformMatrix()}}
+{\footnotesize\ttfamily \label{class_c_pipeline_a69675e34506fe935ba844c713f52ebb2} 
+void CPipeline\+::\+Make\+Transform\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}}]{p\+Out}{, }\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Right}{, }\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Up}{, }\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Look}{, }\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_pipeline_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{class_c_pipeline_a31adc312716302eb3bbaef7d4dd05050}\index{CPipeline@{CPipeline}!MakeViewSpaceMatrix@{MakeViewSpaceMatrix}}
+\index{MakeViewSpaceMatrix@{MakeViewSpaceMatrix}!CPipeline@{CPipeline}}
+\doxysubsubsection{\texorpdfstring{MakeViewSpaceMatrix()}{MakeViewSpaceMatrix()}}
+{\footnotesize\ttfamily \label{class_c_pipeline_a31adc312716302eb3bbaef7d4dd05050} 
+void CPipeline\+::\+Make\+View\+Space\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}}]{p\+Out}{, }\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Eye}{, }\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+At}{, }\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Up}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_pipeline_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_pipeline_8h}{CPipeline.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_pipeline_8cpp}{CPipeline.\+cpp}}\end{DoxyCompactItemize}

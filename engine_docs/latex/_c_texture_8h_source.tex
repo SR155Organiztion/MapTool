@@ -1,0 +1,39 @@
+\doxysection{CTexture.\+h}
+\hypertarget{_c_texture_8h_source}{}\label{_c_texture_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CTexture.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CTexture.h}}
+\mbox{\hyperlink{_c_texture_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_component_8h}{CComponent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00004}00004\ \mbox{\hyperlink{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}{BEGIN}}(\mbox{\hyperlink{namespace_engine}{Engine}})}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00006}\mbox{\hyperlink{class_c_texture}{00006}}\ class\ \mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ CTexture\ :\ \ public\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00008}00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{explicit}\ CTexture(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{explicit}\ CTexture(\textcolor{keyword}{const}\ CTexture\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CTexture();}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00013}00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00014}00014\ \ \ \ \ HRESULT\ \ \ \ \ \mbox{\hyperlink{class_c_texture_abc03523e2ce4c24eaf2a982399b90e1b}{Ready\_Texture}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pPath,\ \mbox{\hyperlink{namespace_engine_a2a85e52e2ca49f116b3c133c21e1012b}{TEXTUREID}}\ eType,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iCnt);}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_texture_a476085bda1c1ff111395cee99f5ed30d}{Set\_Texture}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iIndex\ =\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00018}00018\ \ \ \ \ vector<IDirect3DBaseTexture9*>\ \ \ \ \ \ \ \ \ \ m\_vecTexture;}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}*\ \mbox{\hyperlink{class_c_texture_a54c677fa75f7cee00e31017682fb5ca2}{Clone}}();}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{static}\ CTexture*\ \mbox{\hyperlink{class_c_texture_a908b5f9ae0fcb509a5f2ee1897f652d6}{Create}}(LPDIRECT3DDEVICE9\ pGraphicDev,}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pPath,\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a2a85e52e2ca49f116b3c133c21e1012b}{TEXTUREID}}\ eType,\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iCnt\ =\ 1);}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00027}00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00030}00030\ \};}
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_texture_8h_source_l00033}00033\ \mbox{\hyperlink{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}}
+
+\end{DoxyCode}

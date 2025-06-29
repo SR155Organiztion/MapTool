@@ -1,0 +1,11 @@
+digraph "CRcTex::Ready_Buffer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="CRcTex::Ready_Buffer",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CRcTex::Create",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_rc_tex.html#a77ff13acf4240d95fe2c861a6018b6e8",tooltip=" "];
+}

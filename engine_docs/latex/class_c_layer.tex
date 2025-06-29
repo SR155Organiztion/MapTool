@@ -1,0 +1,114 @@
+\doxysection{CLayer Class Reference}
+\hypertarget{class_c_layer}{}\label{class_c_layer}\index{CLayer@{CLayer}}
+
+
+{\ttfamily \#include $<$CLayer.\+h$>$}
+
+
+
+Inheritance diagram for CLayer\+:
+% FIG 0
+
+
+Collaboration diagram for CLayer\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_layer_a726d75ec5e5a82c807111436164d7620}{Get\+\_\+\+Component}} (\mbox{\hyperlink{namespace_engine_acfa55bbe8070f616d90c632809572f0d}{COMPONENTID}} e\+ID, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Obj\+Tag, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Component\+Tag)
+\item 
+HRESULT \mbox{\hyperlink{class_c_layer_a4765e187554712ec172ee759f0e6ecd2}{Add\+\_\+\+Game\+Object}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Obj\+Tag, \mbox{\hyperlink{class_c_game_object}{CGame\+Object}} \texorpdfstring{$\ast$}{*}p\+Game\+Object)
+\item 
+HRESULT \mbox{\hyperlink{class_c_layer_aa41345b1c872e1758c141456fa91fadc}{Ready\+\_\+\+Layer}} ()
+\item 
+\mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_layer_af9d44d92c024dea447e9923111600216}{Update\+\_\+\+Layer}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+void \mbox{\hyperlink{class_c_layer_a73ec9ab7c71ceae8f084d9026e54738e}{Late\+Update\+\_\+\+Layer}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_layer}{CLayer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_layer_aa856187ebf6d56ddfb7d991507b1a63e}{Create}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_c_layer_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_layer_8h_source}{CLayer.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_layer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_layer_a4765e187554712ec172ee759f0e6ecd2}\index{CLayer@{CLayer}!Add\_GameObject@{Add\_GameObject}}
+\index{Add\_GameObject@{Add\_GameObject}!CLayer@{CLayer}}
+\doxysubsubsection{\texorpdfstring{Add\_GameObject()}{Add\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_layer_a4765e187554712ec172ee759f0e6ecd2} 
+HRESULT CLayer\+::\+Add\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+Obj\+Tag}{, }\item[{\mbox{\hyperlink{class_c_game_object}{CGame\+Object}} \texorpdfstring{$\ast$}{*}}]{p\+Game\+Object}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_layer_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_c_layer_8cpp_source}{CLayer.\+cpp}}.
+
+\Hypertarget{class_c_layer_aa856187ebf6d56ddfb7d991507b1a63e}\index{CLayer@{CLayer}!Create@{Create}}
+\index{Create@{Create}!CLayer@{CLayer}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{class_c_layer_aa856187ebf6d56ddfb7d991507b1a63e} 
+\mbox{\hyperlink{class_c_layer}{CLayer}} \texorpdfstring{$\ast$}{*} CLayer\+::\+Create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_layer_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_c_layer_8cpp_source}{CLayer.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\Hypertarget{class_c_layer_a726d75ec5e5a82c807111436164d7620}\index{CLayer@{CLayer}!Get\_Component@{Get\_Component}}
+\index{Get\_Component@{Get\_Component}!CLayer@{CLayer}}
+\doxysubsubsection{\texorpdfstring{Get\_Component()}{Get\_Component()}}
+{\footnotesize\ttfamily \label{class_c_layer_a726d75ec5e5a82c807111436164d7620} 
+\mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} CLayer\+::\+Get\+\_\+\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_acfa55bbe8070f616d90c632809572f0d}{COMPONENTID}}}]{e\+ID}{, }\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+Obj\+Tag}{, }\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+Component\+Tag}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_layer_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_c_layer_8cpp_source}{CLayer.\+cpp}}.
+
+\Hypertarget{class_c_layer_a73ec9ab7c71ceae8f084d9026e54738e}\index{CLayer@{CLayer}!LateUpdate\_Layer@{LateUpdate\_Layer}}
+\index{LateUpdate\_Layer@{LateUpdate\_Layer}!CLayer@{CLayer}}
+\doxysubsubsection{\texorpdfstring{LateUpdate\_Layer()}{LateUpdate\_Layer()}}
+{\footnotesize\ttfamily \label{class_c_layer_a73ec9ab7c71ceae8f084d9026e54738e} 
+void CLayer\+::\+Late\+Update\+\_\+\+Layer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_layer_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{_c_layer_8cpp_source}{CLayer.\+cpp}}.
+
+\Hypertarget{class_c_layer_aa41345b1c872e1758c141456fa91fadc}\index{CLayer@{CLayer}!Ready\_Layer@{Ready\_Layer}}
+\index{Ready\_Layer@{Ready\_Layer}!CLayer@{CLayer}}
+\doxysubsubsection{\texorpdfstring{Ready\_Layer()}{Ready\_Layer()}}
+{\footnotesize\ttfamily \label{class_c_layer_aa41345b1c872e1758c141456fa91fadc} 
+HRESULT CLayer\+::\+Ready\+\_\+\+Layer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_layer_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_c_layer_8cpp_source}{CLayer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{class_c_layer_af9d44d92c024dea447e9923111600216}\index{CLayer@{CLayer}!Update\_Layer@{Update\_Layer}}
+\index{Update\_Layer@{Update\_Layer}!CLayer@{CLayer}}
+\doxysubsubsection{\texorpdfstring{Update\_Layer()}{Update\_Layer()}}
+{\footnotesize\ttfamily \label{class_c_layer_af9d44d92c024dea447e9923111600216} 
+\mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} CLayer\+::\+Update\+\_\+\+Layer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_layer_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_c_layer_8cpp_source}{CLayer.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_layer_8h}{CLayer.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_layer_8cpp}{CLayer.\+cpp}}\end{DoxyCompactItemize}

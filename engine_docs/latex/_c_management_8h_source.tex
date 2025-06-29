@@ -1,0 +1,41 @@
+\doxysection{CManagement.\+h}
+\hypertarget{_c_management_8h_source}{}\label{_c_management_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CManagement.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CManagement.h}}
+\mbox{\hyperlink{_c_management_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ \ \ \ "{}CBase.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ \ \ \ "{}\mbox{\hyperlink{_c_scene_8h}{CScene.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00006}00006\ \mbox{\hyperlink{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}{BEGIN}}(\mbox{\hyperlink{namespace_engine}{Engine}})}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00008}\mbox{\hyperlink{class_c_management}{00008}}\ class\ \mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ CManagement\ :\ public\ CBase}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_aac1c62eff2519d6fefa3719e8f8b298c}{DECLARE\_SINGLETON}}(CManagement)}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00012}00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ CManagement();}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \string~CManagement();}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_c_component}{CComponent}}*\ \mbox{\hyperlink{class_c_management_adc24a894e51c307e06f4a49ec59ef95d}{Get\_Component}}(\mbox{\hyperlink{namespace_engine_acfa55bbe8070f616d90c632809572f0d}{COMPONENTID}}\ eID,}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pLayerTag,}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pObjTag,}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pComponentTag);}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00022}00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00023}00023\ \ \ \ \ HRESULT\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_management_a28110f514609e777cfe22b9ad3ff5a0a}{Set\_Scene}}(\mbox{\hyperlink{class_c_scene}{CScene}}*\ pScene);}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\_int}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_management_a21b941f346e4f6483422548eaaa5a3e1}{Update\_Scene}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_management_af4967600130f8c13fce550d07276faa6}{LateUpdate\_Scene}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_management_a5ba25d32eed8e5aa54caf21de37f0434}{Render\_Scene}}(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00028}00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_c_scene}{CScene}}*\ m\_pScene;}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00031}00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_management_a4ca84147289cd2ff88d465828357218e}{Free}}();}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00033}00033\ \};}
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_management_8h_source_l00035}00035\ \mbox{\hyperlink{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}}
+
+\end{DoxyCode}

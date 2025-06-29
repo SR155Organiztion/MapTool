@@ -1,0 +1,82 @@
+\doxysection{CFont Class Reference}
+\hypertarget{class_c_font}{}\label{class_c_font}\index{CFont@{CFont}}
+
+
+{\ttfamily \#include $<$CFont.\+h$>$}
+
+
+
+Inheritance diagram for CFont\+:
+% FIG 0
+
+
+Collaboration diagram for CFont\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{class_c_font_a82338a7f899cbc3ff9e48de69f7ab78c}{Ready\+\_\+\+Font}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Font\+Type, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Width, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Height, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Weight)
+\item 
+void \mbox{\hyperlink{class_c_font_ae5db54d9149678c13f5bb2338dea6fdf}{Render\+\_\+\+Font}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+String, const \mbox{\hyperlink{namespace_engine_a17e948ff0cce3b4820ddb35f155a0ca8}{\+\_\+vec2}} \texorpdfstring{$\ast$}{*}p\+Pos, D3\+DXCOLOR Color)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_font}{CFont}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Font\+Type, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Width, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Height, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Weight)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_c_font_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_font_8h_source}{CFont.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_font_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf}\index{CFont@{CFont}!Create@{Create}}
+\index{Create@{Create}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf} 
+\mbox{\hyperlink{class_c_font}{CFont}} \texorpdfstring{$\ast$}{*} CFont\+::\+Create (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{, }\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+Font\+Type}{, }\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Width}{, }\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Height}{, }\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Weight}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_font_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{class_c_font_a82338a7f899cbc3ff9e48de69f7ab78c}\index{CFont@{CFont}!Ready\_Font@{Ready\_Font}}
+\index{Ready\_Font@{Ready\_Font}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{Ready\_Font()}{Ready\_Font()}}
+{\footnotesize\ttfamily \label{class_c_font_a82338a7f899cbc3ff9e48de69f7ab78c} 
+HRESULT CFont\+::\+Ready\+\_\+\+Font (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+Font\+Type}{, }\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Width}{, }\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Height}{, }\item[{const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&}]{i\+Weight}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_font_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{class_c_font_ae5db54d9149678c13f5bb2338dea6fdf}\index{CFont@{CFont}!Render\_Font@{Render\_Font}}
+\index{Render\_Font@{Render\_Font}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{Render\_Font()}{Render\_Font()}}
+{\footnotesize\ttfamily \label{class_c_font_ae5db54d9149678c13f5bb2338dea6fdf} 
+void CFont\+::\+Render\+\_\+\+Font (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+String}{, }\item[{const \mbox{\hyperlink{namespace_engine_a17e948ff0cce3b4820ddb35f155a0ca8}{\+\_\+vec2}} \texorpdfstring{$\ast$}{*}}]{p\+Pos}{, }\item[{D3\+DXCOLOR}]{Color}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_font_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_font_8h}{CFont.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_font_8cpp}{CFont.\+cpp}}\end{DoxyCompactItemize}

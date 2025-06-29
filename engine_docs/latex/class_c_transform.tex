@@ -1,0 +1,281 @@
+\doxysection{CTransform Class Reference}
+\hypertarget{class_c_transform}{}\label{class_c_transform}\index{CTransform@{CTransform}}
+
+
+{\ttfamily \#include $<$CTransform.\+h$>$}
+
+
+
+Inheritance diagram for CTransform\+:
+% FIG 0
+
+
+Collaboration diagram for CTransform\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_c_transform_ad3a7a5aaa6bf2ea55641fb80fb538c8e}{Get\+\_\+\+Info}} (\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057}{INFO}} e\+Type, \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Info)
+\item 
+void \mbox{\hyperlink{class_c_transform_aaaef4a63acbf3ea172d1537cc4080b21}{Move\+\_\+\+Pos}} (const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Dir, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Speed, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+void \mbox{\hyperlink{class_c_transform_a421d9fc88c09c95c6ab2e22dc3dbed68}{Rotation}} (\mbox{\hyperlink{namespace_engine_aec0a702ab15205b711d0204b8e7f8f84}{ROTATION}} e\+Type, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Angle)
+\item 
+void \mbox{\hyperlink{class_c_transform_a84684d1cd46d196c308ed0ecb5ee7852}{Get\+\_\+\+World}} (\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}p\+World) const
+\item 
+void \mbox{\hyperlink{class_c_transform_a2dc6305f019beb234b1c2d983ad1e4cf}{Chase\+\_\+\+Target}} (const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Target\+Pos, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Speed, const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+const \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_transform_a087c802dfae831f695ae95c94996a947}{Compute\+\_\+\+Look\+At\+Target}} (const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Target\+Pos)
+\item 
+void \mbox{\hyperlink{class_c_transform_a12d464bd3860a5fde6e485660f37c505}{Set\+\_\+\+Pos}} (\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \+\_\+fX, \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \+\_\+fY, \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \+\_\+fZ)
+\item 
+HRESULT \mbox{\hyperlink{class_c_transform_a72957afa6c292a39d291d7bc0024550a}{Ready\+\_\+\+Transform}} ()
+\item 
+virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_transform_a6734b800b2921b20879ebd683e21da01}{Update\+\_\+\+Component}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_transform_ad0be300418898e5db44175f8f5be733f}{Late\+Update\+\_\+\+Component}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_transform_a748230a163cf504daa34cc4a359de71b}{Clone}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_transform}{CTransform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_transform_a0cdd415c4c547689b736698492c002a6}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\+\_\+v\+Info}} \mbox{[}\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a7bb3a995646752fe3a8fadee4d89b491}{INFO\+\_\+\+END}}\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\+\_\+v\+Scale}}
+\item 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\+\_\+v\+Angle}}
+\item 
+\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\+\_\+mat\+World}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
+\item 
+\mbox{\hyperlink{class_c_component_a1a84bf0dae9ecaa036636560068c939b}{CComponent}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_component_a32744beb6ac8573433668a2c37ae1f39}{CComponent}} (const \mbox{\hyperlink{class_c_component}{CComponent}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\texorpdfstring{$\sim$}{\string~}\+CComponent}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
+\item 
+\mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\+\_\+bool}} \mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{m\+\_\+b\+Clone}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00006}{6}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_transform_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_transform_a2dc6305f019beb234b1c2d983ad1e4cf}\index{CTransform@{CTransform}!Chase\_Target@{Chase\_Target}}
+\index{Chase\_Target@{Chase\_Target}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Chase\_Target()}{Chase\_Target()}}
+{\footnotesize\ttfamily \label{class_c_transform_a2dc6305f019beb234b1c2d983ad1e4cf} 
+void CTransform\+::\+Chase\+\_\+\+Target (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Target\+Pos}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Speed}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+\Hypertarget{class_c_transform_a748230a163cf504daa34cc4a359de71b}\index{CTransform@{CTransform}!Clone@{Clone}}
+\index{Clone@{Clone}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \label{class_c_transform_a748230a163cf504daa34cc4a359de71b} 
+\mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} CTransform\+::\+Clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{class_c_transform_a087c802dfae831f695ae95c94996a947}\index{CTransform@{CTransform}!Compute\_LookAtTarget@{Compute\_LookAtTarget}}
+\index{Compute\_LookAtTarget@{Compute\_LookAtTarget}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Compute\_LookAtTarget()}{Compute\_LookAtTarget()}}
+{\footnotesize\ttfamily \label{class_c_transform_a087c802dfae831f695ae95c94996a947} 
+const \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*} CTransform\+::\+Compute\+\_\+\+Look\+At\+Target (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Target\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{class_c_transform_a0cdd415c4c547689b736698492c002a6}\index{CTransform@{CTransform}!Create@{Create}}
+\index{Create@{Create}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{class_c_transform_a0cdd415c4c547689b736698492c002a6} 
+\mbox{\hyperlink{class_c_transform}{CTransform}} \texorpdfstring{$\ast$}{*} CTransform\+::\+Create (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\Hypertarget{class_c_transform_ad3a7a5aaa6bf2ea55641fb80fb538c8e}\index{CTransform@{CTransform}!Get\_Info@{Get\_Info}}
+\index{Get\_Info@{Get\_Info}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Get\_Info()}{Get\_Info()}}
+{\footnotesize\ttfamily \label{class_c_transform_ad3a7a5aaa6bf2ea55641fb80fb538c8e} 
+void CTransform\+::\+Get\+\_\+\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057}{INFO}}}]{e\+Type}{, }\item[{\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Info}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00015}{15}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+\Hypertarget{class_c_transform_a84684d1cd46d196c308ed0ecb5ee7852}\index{CTransform@{CTransform}!Get\_World@{Get\_World}}
+\index{Get\_World@{Get\_World}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Get\_World()}{Get\_World()}}
+{\footnotesize\ttfamily \label{class_c_transform_a84684d1cd46d196c308ed0ecb5ee7852} 
+void CTransform\+::\+Get\+\_\+\+World (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}}]{p\+World}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00032}{32}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{class_c_transform_ad0be300418898e5db44175f8f5be733f}\index{CTransform@{CTransform}!LateUpdate\_Component@{LateUpdate\_Component}}
+\index{LateUpdate\_Component@{LateUpdate\_Component}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{LateUpdate\_Component()}{LateUpdate\_Component()}}
+{\footnotesize\ttfamily \label{class_c_transform_ad0be300418898e5db44175f8f5be733f} 
+void CTransform\+::\+Late\+Update\+\_\+\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{CComponent}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+
+\Hypertarget{class_c_transform_aaaef4a63acbf3ea172d1537cc4080b21}\index{CTransform@{CTransform}!Move\_Pos@{Move\_Pos}}
+\index{Move\_Pos@{Move\_Pos}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Move\_Pos()}{Move\_Pos()}}
+{\footnotesize\ttfamily \label{class_c_transform_aaaef4a63acbf3ea172d1537cc4080b21} 
+void CTransform\+::\+Move\+\_\+\+Pos (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}}]{p\+Dir}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Speed}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00022}{22}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+\Hypertarget{class_c_transform_a72957afa6c292a39d291d7bc0024550a}\index{CTransform@{CTransform}!Ready\_Transform@{Ready\_Transform}}
+\index{Ready\_Transform@{Ready\_Transform}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Ready\_Transform()}{Ready\_Transform()}}
+{\footnotesize\ttfamily \label{class_c_transform_a72957afa6c292a39d291d7bc0024550a} 
+HRESULT CTransform\+::\+Ready\+\_\+\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\Hypertarget{class_c_transform_a421d9fc88c09c95c6ab2e22dc3dbed68}\index{CTransform@{CTransform}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Rotation()}{Rotation()}}
+{\footnotesize\ttfamily \label{class_c_transform_a421d9fc88c09c95c6ab2e22dc3dbed68} 
+void CTransform\+::\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_aec0a702ab15205b711d0204b8e7f8f84}{ROTATION}}}]{e\+Type}{, }\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Angle}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00027}{27}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+\Hypertarget{class_c_transform_a12d464bd3860a5fde6e485660f37c505}\index{CTransform@{CTransform}!Set\_Pos@{Set\_Pos}}
+\index{Set\_Pos@{Set\_Pos}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Set\_Pos()}{Set\_Pos()}}
+{\footnotesize\ttfamily \label{class_c_transform_a12d464bd3860a5fde6e485660f37c505} 
+void CTransform\+::\+Set\+\_\+\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}}}]{\+\_\+fX}{, }\item[{\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}}}]{\+\_\+fY}{, }\item[{\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}}}]{\+\_\+fZ}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00038}{38}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+\Hypertarget{class_c_transform_a6734b800b2921b20879ebd683e21da01}\index{CTransform@{CTransform}!Update\_Component@{Update\_Component}}
+\index{Update\_Component@{Update\_Component}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Update\_Component()}{Update\_Component()}}
+{\footnotesize\ttfamily \label{class_c_transform_a6734b800b2921b20879ebd683e21da01} 
+\mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} CTransform\+::\+Update\+\_\+\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{CComponent}}.
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_transform_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}\index{CTransform@{CTransform}!m\_matWorld@{m\_matWorld}}
+\index{m\_matWorld@{m\_matWorld}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{m\_matWorld}{m\_matWorld}}
+{\footnotesize\ttfamily \label{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b} 
+\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} CTransform\+::m\+\_\+mat\+World}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00054}{54}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+\Hypertarget{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}\index{CTransform@{CTransform}!m\_vAngle@{m\_vAngle}}
+\index{m\_vAngle@{m\_vAngle}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{m\_vAngle}{m\_vAngle}}
+{\footnotesize\ttfamily \label{class_c_transform_a864a470069e959392fdb3c781ff6ac2f} 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} CTransform\+::m\+\_\+v\+Angle}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00052}{52}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+\Hypertarget{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}\index{CTransform@{CTransform}!m\_vInfo@{m\_vInfo}}
+\index{m\_vInfo@{m\_vInfo}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{m\_vInfo}{m\_vInfo}}
+{\footnotesize\ttfamily \label{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2} 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} CTransform\+::m\+\_\+v\+Info\mbox{[}\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a7bb3a995646752fe3a8fadee4d89b491}{INFO\+\_\+\+END}}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00050}{50}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+\Hypertarget{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}\index{CTransform@{CTransform}!m\_vScale@{m\_vScale}}
+\index{m\_vScale@{m\_vScale}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{m\_vScale}{m\_vScale}}
+{\footnotesize\ttfamily \label{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f} 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} CTransform\+::m\+\_\+v\+Scale}
+
+
+
+Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00051}{51}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_transform_8h}{CTransform.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_transform_8cpp}{CTransform.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+\doxysection{CTimer\+Mgr.\+cpp}
+\hypertarget{_c_timer_mgr_8cpp_source}{}\label{_c_timer_mgr_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CTimerMgr.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CTimerMgr.cpp}}
+\mbox{\hyperlink{_c_timer_mgr_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_timer_mgr_8h}{CTimerMgr.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00003}00003\ \mbox{\hyperlink{_engine___macro_8h_a27a2ec109f7264210d9c43433d1c8b61}{IMPLEMENT\_SINGLETON}}(\mbox{\hyperlink{class_c_timer_mgr}{CTimerMgr}})}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00005}00005\ CTimerMgr::CTimerMgr()}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00007}00007\ \}}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00009}00009\ CTimerMgr::\string~CTimerMgr()}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00011}00011\ \ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00014}\mbox{\hyperlink{class_c_timer_mgr_ab16c0b993bffc2c928567afcf4cad30f}{00014}}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \mbox{\hyperlink{class_c_timer_mgr_ab16c0b993bffc2c928567afcf4cad30f}{CTimerMgr::Get\_TimeDelta}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTimerTag)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_c_timer}{CTimer}}*\ pTimer\ =\ Find\_Timer(pTimerTag);}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pTimer)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.f;}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ pTimer-\/>\mbox{\hyperlink{class_c_timer_a7272990be54f390f4c5701f3ffb69d23}{Get\_TimeDelta}}();}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00023}\mbox{\hyperlink{class_c_timer_mgr_aae36eb02ab3fc6f8c993bd5177ad0126}{00023}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_timer_mgr_aae36eb02ab3fc6f8c993bd5177ad0126}{CTimerMgr::Set\_TimeDelta}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTimerTag)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_c_timer}{CTimer}}*\ pTimer\ =\ Find\_Timer(pTimerTag);}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pTimer)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00029}00029\ \ \ \ \ pTimer-\/>\mbox{\hyperlink{class_c_timer_ab02e145d6cdc46233bd89a8ca727b97d}{Update\_Timer}}();}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00032}\mbox{\hyperlink{class_c_timer_mgr_addec83ec3d04bea245466d0124a9f612}{00032}}\ HRESULT\ \mbox{\hyperlink{class_c_timer_mgr_addec83ec3d04bea245466d0124a9f612}{CTimerMgr::Ready\_Timer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTimerTag)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_c_timer}{CTimer}}*\ pTimer\ =\ Find\_Timer(pTimerTag);}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ !=\ pTimer)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00039}00039\ \ \ \ \ pTimer\ =\ \mbox{\hyperlink{class_c_timer_aafb22675c7c1bf353f3d373f8429e5cc}{CTimer::Create}}();}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pTimer)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00043}00043\ \ \ \ \ m\_mapTimer.insert(\{\ pTimerTag,\ pTimer\ \});}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00048}00048\ \mbox{\hyperlink{class_c_timer}{CTimer}}*\ CTimerMgr::Find\_Timer(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTimerTag)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00049}00049\ \{}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{auto}\ \ \ \ \ \ \ \ iter\ =\ find\_if(m\_mapTimer.begin(),\ m\_mapTimer.end(),\ \mbox{\hyperlink{class_engine_1_1_c_tag___finder}{CTag\_Finder}}(pTimerTag));}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (iter\ ==\ m\_mapTimer.end())}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ iter-\/>second;}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00058}00058\ \textcolor{keywordtype}{void}\ CTimerMgr::Free()}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00059}00059\ \{}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00060}00060\ \ \ \ \ for\_each(m\_mapTimer.begin(),\ m\_mapTimer.end(),\ CDeleteMap());}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00061}00061\ \ \ \ \ m\_mapTimer.clear();}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8cpp_source_l00062}00062\ \}}
+
+\end{DoxyCode}
