@@ -1,0 +1,102 @@
+\doxysection{CDynamic\+Camera 클래스 참조}
+\hypertarget{class_c_dynamic_camera}{}\label{class_c_dynamic_camera}\index{CDynamicCamera@{CDynamicCamera}}
+
+
+{\ttfamily \#include $<$CDynamic\+Camera.\+h$>$}
+
+
+
+CDynamic\+Camera에 대한 상속 다이어그램 \+: 
+% FIG 0
+
+
+CDynamic\+Camera에 대한 협력 다이어그램\+:
+% FIG 1
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{class_c_dynamic_camera_a511f9c7044e07cfe6449897e6dff6d43}{Ready\+\_\+\+Game\+Object}} (const \+\_\+vec3 \texorpdfstring{$\ast$}{*}p\+Eye, const \+\_\+vec3 \texorpdfstring{$\ast$}{*}p\+At, const \+\_\+vec3 \texorpdfstring{$\ast$}{*}p\+Up, const \+\_\+float \&f\+Fov, const \+\_\+float \&f\+Aspect, const \+\_\+float \&f\+Near, const \+\_\+float \&f\+Far)
+\item 
+virtual \+\_\+int \mbox{\hyperlink{class_c_dynamic_camera_a1c0ac8e434485b2ef05a0c7202ec278d}{Update\+\_\+\+Game\+Object}} (const \+\_\+float \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_dynamic_camera_a3b231f7bb1d3e08c9c2ade1455c1509b}{Late\+Update\+\_\+\+Game\+Object}} (const \+\_\+float \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_dynamic_camera_a1e59c755fda2eb14c03bb4996c166a3c}{Render\+\_\+\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_dynamic_camera}{CDynamic\+Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_dynamic_camera_a80770a2e8e7a03f3f46b8baa4de0beea}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev, const \+\_\+vec3 \texorpdfstring{$\ast$}{*}p\+Eye, const \+\_\+vec3 \texorpdfstring{$\ast$}{*}p\+At, const \+\_\+vec3 \texorpdfstring{$\ast$}{*}p\+Up, const \+\_\+float \&f\+Fov=D3\+DXTo\+Radian(60.f), const \+\_\+float \&f\+Aspect=(\+\_\+float) WINCX/WINCY, const \+\_\+float \&f\+Near=0.\+1f, const \+\_\+float \&f\+Far=1000.f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_c_dynamic_camera_8h_source}{CDynamic\+Camera.\+h}} 파일의 \mbox{\hyperlink{_c_dynamic_camera_8h_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_dynamic_camera_doc-func-members}
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_c_dynamic_camera_a80770a2e8e7a03f3f46b8baa4de0beea}\index{CDynamicCamera@{CDynamicCamera}!Create@{Create}}
+\index{Create@{Create}!CDynamicCamera@{CDynamicCamera}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{class_c_dynamic_camera_a80770a2e8e7a03f3f46b8baa4de0beea} 
+\mbox{\hyperlink{class_c_dynamic_camera}{CDynamic\+Camera}} \texorpdfstring{$\ast$}{*} CDynamic\+Camera\+::\+Create (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{, }\item[{const \+\_\+vec3 \texorpdfstring{$\ast$}{*}}]{p\+Eye}{, }\item[{const \+\_\+vec3 \texorpdfstring{$\ast$}{*}}]{p\+At}{, }\item[{const \+\_\+vec3 \texorpdfstring{$\ast$}{*}}]{p\+Up}{, }\item[{const \+\_\+float \&}]{f\+Fov}{ = {\ttfamily D3DXToRadian(60.f)}, }\item[{const \+\_\+float \&}]{f\+Aspect}{ = {\ttfamily (\+\_\+float)WINCX~/~WINCY}, }\item[{const \+\_\+float \&}]{f\+Near}{ = {\ttfamily 0.1f}, }\item[{const \+\_\+float \&}]{f\+Far}{ = {\ttfamily 1000.f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_c_dynamic_camera_8cpp_source}{CDynamic\+Camera.\+cpp}} 파일의 \mbox{\hyperlink{_c_dynamic_camera_8cpp_source_l00229}{229}} 번째 라인에서 정의되었습니다.
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\Hypertarget{class_c_dynamic_camera_a3b231f7bb1d3e08c9c2ade1455c1509b}\index{CDynamicCamera@{CDynamicCamera}!LateUpdate\_GameObject@{LateUpdate\_GameObject}}
+\index{LateUpdate\_GameObject@{LateUpdate\_GameObject}!CDynamicCamera@{CDynamicCamera}}
+\doxysubsubsection{\texorpdfstring{LateUpdate\_GameObject()}{LateUpdate\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_dynamic_camera_a3b231f7bb1d3e08c9c2ade1455c1509b} 
+void CDynamic\+Camera\+::\+Late\+Update\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{const \+\_\+float \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_dynamic_camera_8cpp_source}{CDynamic\+Camera.\+cpp}} 파일의 \mbox{\hyperlink{_c_dynamic_camera_8cpp_source_l00054}{54}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_dynamic_camera_a511f9c7044e07cfe6449897e6dff6d43}\index{CDynamicCamera@{CDynamicCamera}!Ready\_GameObject@{Ready\_GameObject}}
+\index{Ready\_GameObject@{Ready\_GameObject}!CDynamicCamera@{CDynamicCamera}}
+\doxysubsubsection{\texorpdfstring{Ready\_GameObject()}{Ready\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_dynamic_camera_a511f9c7044e07cfe6449897e6dff6d43} 
+HRESULT CDynamic\+Camera\+::\+Ready\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{const \+\_\+vec3 \texorpdfstring{$\ast$}{*}}]{p\+Eye}{, }\item[{const \+\_\+vec3 \texorpdfstring{$\ast$}{*}}]{p\+At}{, }\item[{const \+\_\+vec3 \texorpdfstring{$\ast$}{*}}]{p\+Up}{, }\item[{const \+\_\+float \&}]{f\+Fov}{, }\item[{const \+\_\+float \&}]{f\+Aspect}{, }\item[{const \+\_\+float \&}]{f\+Near}{, }\item[{const \+\_\+float \&}]{f\+Far}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_c_dynamic_camera_8cpp_source}{CDynamic\+Camera.\+cpp}} 파일의 \mbox{\hyperlink{_c_dynamic_camera_8cpp_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_dynamic_camera_a1e59c755fda2eb14c03bb4996c166a3c}\index{CDynamicCamera@{CDynamicCamera}!Render\_GameObject@{Render\_GameObject}}
+\index{Render\_GameObject@{Render\_GameObject}!CDynamicCamera@{CDynamicCamera}}
+\doxysubsubsection{\texorpdfstring{Render\_GameObject()}{Render\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_dynamic_camera_a1e59c755fda2eb14c03bb4996c166a3c} 
+virtual void CDynamic\+Camera\+::\+Render\+\_\+\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_dynamic_camera_8h_source}{CDynamic\+Camera.\+h}} 파일의 \mbox{\hyperlink{_c_dynamic_camera_8h_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_dynamic_camera_a1c0ac8e434485b2ef05a0c7202ec278d}\index{CDynamicCamera@{CDynamicCamera}!Update\_GameObject@{Update\_GameObject}}
+\index{Update\_GameObject@{Update\_GameObject}!CDynamicCamera@{CDynamicCamera}}
+\doxysubsubsection{\texorpdfstring{Update\_GameObject()}{Update\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_dynamic_camera_a1c0ac8e434485b2ef05a0c7202ec278d} 
+\+\_\+int CDynamic\+Camera\+::\+Update\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{const \+\_\+float \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_dynamic_camera_8cpp_source}{CDynamic\+Camera.\+cpp}} 파일의 \mbox{\hyperlink{_c_dynamic_camera_8cpp_source_l00045}{45}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Client/\+Header/\mbox{\hyperlink{_c_dynamic_camera_8h}{CDynamic\+Camera.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Client/\+Code/\mbox{\hyperlink{_c_dynamic_camera_8cpp}{CDynamic\+Camera.\+cpp}}\end{DoxyCompactItemize}

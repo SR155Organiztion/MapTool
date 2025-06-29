@@ -1,0 +1,105 @@
+\doxysection{CStage 클래스 참조}
+\hypertarget{class_c_stage}{}\label{class_c_stage}\index{CStage@{CStage}}
+
+
+{\ttfamily \#include $<$CStage.\+h$>$}
+
+
+
+CStage에 대한 상속 다이어그램 \+: 
+% FIG 0
+
+
+CStage에 대한 협력 다이어그램\+:
+% FIG 1
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+virtual HRESULT \mbox{\hyperlink{class_c_stage_a4b10452ab0fca05719f5f1e45ecee564}{Ready\+\_\+\+Scene}} ()
+\item 
+virtual \+\_\+int \mbox{\hyperlink{class_c_stage_a779b95da227c7f9dd5317cda92cc7e91}{Update\+\_\+\+Scene}} (const \+\_\+float \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_stage_a8a4e5bef291932038fb9fbcd5cb48ae8}{Late\+Update\+\_\+\+Scene}} (const \+\_\+float \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_stage_ae49f7676ea5bf77ac893b0ca9ea25d7e}{Render\+\_\+\+Scene}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_stage}{CStage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_stage_abe672b3213138ebe14dce57ef9fc4fe4}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_c_stage_8h_source}{CStage.\+h}} 파일의 \mbox{\hyperlink{_c_stage_8h_source_l00005}{5}} 번째 라인에서 정의되었습니다.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_stage_doc-func-members}
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_c_stage_abe672b3213138ebe14dce57ef9fc4fe4}\index{CStage@{CStage}!Create@{Create}}
+\index{Create@{Create}!CStage@{CStage}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{class_c_stage_abe672b3213138ebe14dce57ef9fc4fe4} 
+\mbox{\hyperlink{class_c_stage}{CStage}} \texorpdfstring{$\ast$}{*} CStage\+::\+Create (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_c_stage_8cpp_source}{CStage.\+cpp}} 파일의 \mbox{\hyperlink{_c_stage_8cpp_source_l00155}{155}} 번째 라인에서 정의되었습니다.
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_stage_a8a4e5bef291932038fb9fbcd5cb48ae8}\index{CStage@{CStage}!LateUpdate\_Scene@{LateUpdate\_Scene}}
+\index{LateUpdate\_Scene@{LateUpdate\_Scene}!CStage@{CStage}}
+\doxysubsubsection{\texorpdfstring{LateUpdate\_Scene()}{LateUpdate\_Scene()}}
+{\footnotesize\ttfamily \label{class_c_stage_a8a4e5bef291932038fb9fbcd5cb48ae8} 
+void CStage\+::\+Late\+Update\+\_\+\+Scene (\begin{DoxyParamCaption}\item[{const \+\_\+float \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_stage_8cpp_source}{CStage.\+cpp}} 파일의 \mbox{\hyperlink{_c_stage_8cpp_source_l00145}{145}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_stage_a4b10452ab0fca05719f5f1e45ecee564}\index{CStage@{CStage}!Ready\_Scene@{Ready\_Scene}}
+\index{Ready\_Scene@{Ready\_Scene}!CStage@{CStage}}
+\doxysubsubsection{\texorpdfstring{Ready\_Scene()}{Ready\_Scene()}}
+{\footnotesize\ttfamily \label{class_c_stage_a4b10452ab0fca05719f5f1e45ecee564} 
+HRESULT CStage\+::\+Ready\+\_\+\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_stage_8cpp_source}{CStage.\+cpp}} 파일의 \mbox{\hyperlink{_c_stage_8cpp_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\Hypertarget{class_c_stage_ae49f7676ea5bf77ac893b0ca9ea25d7e}\index{CStage@{CStage}!Render\_Scene@{Render\_Scene}}
+\index{Render\_Scene@{Render\_Scene}!CStage@{CStage}}
+\doxysubsubsection{\texorpdfstring{Render\_Scene()}{Render\_Scene()}}
+{\footnotesize\ttfamily \label{class_c_stage_ae49f7676ea5bf77ac893b0ca9ea25d7e} 
+void CStage\+::\+Render\+\_\+\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_stage_8cpp_source}{CStage.\+cpp}} 파일의 \mbox{\hyperlink{_c_stage_8cpp_source_l00150}{150}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_stage_a779b95da227c7f9dd5317cda92cc7e91}\index{CStage@{CStage}!Update\_Scene@{Update\_Scene}}
+\index{Update\_Scene@{Update\_Scene}!CStage@{CStage}}
+\doxysubsubsection{\texorpdfstring{Update\_Scene()}{Update\_Scene()}}
+{\footnotesize\ttfamily \label{class_c_stage_a779b95da227c7f9dd5317cda92cc7e91} 
+\+\_\+int CStage\+::\+Update\+\_\+\+Scene (\begin{DoxyParamCaption}\item[{const \+\_\+float \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_stage_8cpp_source}{CStage.\+cpp}} 파일의 \mbox{\hyperlink{_c_stage_8cpp_source_l00140}{140}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Client/\+Header/\mbox{\hyperlink{_c_stage_8h}{CStage.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Client/\+Code/\mbox{\hyperlink{_c_logo_8cpp}{CLogo.\+cpp}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Client/\+Code/\mbox{\hyperlink{_c_stage_8cpp}{CStage.\+cpp}}\end{DoxyCompactItemize}

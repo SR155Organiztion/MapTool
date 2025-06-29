@@ -1,0 +1,44 @@
+\doxysection{CTest\+Terrain.\+h}
+\hypertarget{_c_test_terrain_8h_source}{}\label{_c_test_terrain_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CTestTerrain.h@{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CTestTerrain.h}}
+\mbox{\hyperlink{_c_test_terrain_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}CGameObject.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}}}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{class\ }CTerrainCol;}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{class\ }CTransform;}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{class\ }CTexture;}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00011}\mbox{\hyperlink{class_c_test_terrain}{00011}}\ \textcolor{keyword}{class\ }CTestTerrain\ :\ \textcolor{keyword}{public}\ Engine::CGameObject}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00013}00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{explicit}\ CTestTerrain(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{explicit}\ CTestTerrain(\textcolor{keyword}{const}\ CGameObject\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CTestTerrain();}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00018}00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ HRESULT\ \ \ \ \ \mbox{\hyperlink{class_c_test_terrain_aa3b3bb022ef479d2019983cc6333687e}{Ready\_GameObject}}();}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \_int\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_test_terrain_ab63d0e2ab300bf7f641515cdffc2213b}{Update\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_test_terrain_a00c567f42a7acc448ca5fe9017472f23}{LateUpdate\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_test_terrain_affc51d121abbe72a2bab4f1db6ec90e8}{Render\_GameObject}}();}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00024}00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00025}00025\ \ \ \ \ HRESULT\ \ \ \ \ Add\_Component();}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00027}00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00028}00028\ \ \ \ \ Engine::CTerrainCol\ *m\_pBufferCom;}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00029}00029\ \ \ \ \ Engine::CTransform*\ m\_pTransformCom;}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00031}00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{static}\ CTestTerrain*\ \mbox{\hyperlink{class_c_test_terrain_a503f9a3a7f9dde71a71dcde974d434cf}{Create}}(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00034}00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00037}00037\ \};}
+\DoxyCodeLine{\Hypertarget{_c_test_terrain_8h_source_l00038}00038\ }
+
+\end{DoxyCode}

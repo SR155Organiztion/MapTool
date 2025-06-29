@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MapTool: C:/Users/shs26/Desktop/SR/MapTool/Client/Code/CTestTerrain.cpp 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MapTool<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_c_test_terrain_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CTestTerrain.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_c_test_terrain_8cpp.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_c_test_terrain_8h.html">CTestTerrain.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;CProtoMgr.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;CRenderer.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>CTestTerrain::CTestTerrain(LPDIRECT3DDEVICE9 pGraphicDev)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    : <a class="code hl_namespace" href="namespace_engine.html">Engine</a>::CGameObject(pGraphicDev)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>CTestTerrain::CTestTerrain(<span class="keyword">const</span> CGameObject&amp; rhs)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    : <a class="code hl_namespace" href="namespace_engine.html">Engine</a>::CGameObject(rhs)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>CTestTerrain::~CTestTerrain()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_c_test_terrain.html#aa3b3bb022ef479d2019983cc6333687e">   20</a></span>HRESULT <a class="code hl_function" href="class_c_test_terrain.html#aa3b3bb022ef479d2019983cc6333687e">CTestTerrain::Ready_GameObject</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (FAILED(Add_Component()))</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">//m_pTransformCom-&gt;Set_Sca</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_c_test_terrain.html#ab63d0e2ab300bf7f641515cdffc2213b">   30</a></span>_int <a class="code hl_function" href="class_c_test_terrain.html#ab63d0e2ab300bf7f641515cdffc2213b">CTestTerrain::Update_GameObject</a>(<span class="keyword">const</span> _float&amp; fTimeDelta)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    CRenderer::GetInstance()-&gt;Add_RenderGroup(RENDER_NONALPHA, <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> iExit;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_c_test_terrain.html#a00c567f42a7acc448ca5fe9017472f23">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_c_test_terrain.html#a00c567f42a7acc448ca5fe9017472f23">CTestTerrain::LateUpdate_GameObject</a>(<span class="keyword">const</span> _float&amp; fTimeDelta)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    Engine::CGameObject::LateUpdate_GameObject(fTimeDelta);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_c_test_terrain.html#affc51d121abbe72a2bab4f1db6ec90e8">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_c_test_terrain.html#affc51d121abbe72a2bab4f1db6ec90e8">CTestTerrain::Render_GameObject</a>()</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    D3DXMATRIX matWorld;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    m_pTransformCom-&gt;Get_World(&amp;matWorld);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    m_pGraphicDev-&gt;SetTransform(D3DTS_WORLD, &amp;matWorld);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    m_pGraphicDev-&gt;SetRenderState(D3DRS_LIGHTING, FALSE);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    m_pGraphicDev-&gt;SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    m_pBufferCom-&gt;Render_Buffer();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    m_pGraphicDev-&gt;SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    m_pGraphicDev-&gt;SetRenderState(D3DRS_LIGHTING, TRUE);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>HRESULT CTestTerrain::Add_Component()</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    CComponent* pComponent = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    pComponent = m_pBufferCom = <span class="keyword">dynamic_cast&lt;</span>Engine::CTerrainCol*<span class="keyword">&gt;</span>(CProtoMgr::GetInstance()-&gt;Clone_Prototype(L<span class="stringliteral">&quot;Proto_TerrainCol&quot;</span>));</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == pComponent)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    m_mapComponent[ID_STATIC].insert({ L<span class="stringliteral">&quot;Com_Buffer&quot;</span>, pComponent });</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    pComponent = m_pTransformCom = <span class="keyword">dynamic_cast&lt;</span>Engine::CTransform*<span class="keyword">&gt;</span>(CProtoMgr::GetInstance()-&gt;Clone_Prototype(L<span class="stringliteral">&quot;Proto_Transform&quot;</span>));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == pComponent)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    m_mapComponent[ID_DYNAMIC].insert({ L<span class="stringliteral">&quot;Com_Transform&quot;</span>, pComponent });</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_c_test_terrain.html#a503f9a3a7f9dde71a71dcde974d434cf">   80</a></span>CTestTerrain* <a class="code hl_function" href="class_c_test_terrain.html#a503f9a3a7f9dde71a71dcde974d434cf">CTestTerrain::Create</a>(LPDIRECT3DDEVICE9 pGraphicDev)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    CTestTerrain* pTestTerrain = <span class="keyword">new</span> CTestTerrain(pGraphicDev);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (FAILED(pTestTerrain-&gt;<a class="code hl_function" href="class_c_test_terrain.html#aa3b3bb022ef479d2019983cc6333687e">Ready_GameObject</a>()))</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        Safe_Release(pTestTerrain);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        MSG_BOX(<span class="stringliteral">&quot;pTestTerrain Create Failed&quot;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> pTestTerrain;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keywordtype">void</span> CTestTerrain::Free()</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    Engine::CGameObject::Free();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
+<div class="ttc" id="a_c_test_terrain_8h_html"><div class="ttname"><a href="_c_test_terrain_8h.html">CTestTerrain.h</a></div></div>
+<div class="ttc" id="aclass_c_test_terrain_html_a00c567f42a7acc448ca5fe9017472f23"><div class="ttname"><a href="class_c_test_terrain.html#a00c567f42a7acc448ca5fe9017472f23">CTestTerrain::LateUpdate_GameObject</a></div><div class="ttdeci">virtual void LateUpdate_GameObject(const _float &amp;fTimeDelta)</div><div class="ttdef"><b>Definition</b> <a href="#l00039">CTestTerrain.cpp:39</a></div></div>
+<div class="ttc" id="aclass_c_test_terrain_html_a503f9a3a7f9dde71a71dcde974d434cf"><div class="ttname"><a href="class_c_test_terrain.html#a503f9a3a7f9dde71a71dcde974d434cf">CTestTerrain::Create</a></div><div class="ttdeci">static CTestTerrain * Create(LPDIRECT3DDEVICE9 pGraphicDev)</div><div class="ttdef"><b>Definition</b> <a href="#l00080">CTestTerrain.cpp:80</a></div></div>
+<div class="ttc" id="aclass_c_test_terrain_html_aa3b3bb022ef479d2019983cc6333687e"><div class="ttname"><a href="class_c_test_terrain.html#aa3b3bb022ef479d2019983cc6333687e">CTestTerrain::Ready_GameObject</a></div><div class="ttdeci">virtual HRESULT Ready_GameObject()</div><div class="ttdef"><b>Definition</b> <a href="#l00020">CTestTerrain.cpp:20</a></div></div>
+<div class="ttc" id="aclass_c_test_terrain_html_ab63d0e2ab300bf7f641515cdffc2213b"><div class="ttname"><a href="class_c_test_terrain.html#ab63d0e2ab300bf7f641515cdffc2213b">CTestTerrain::Update_GameObject</a></div><div class="ttdeci">virtual _int Update_GameObject(const _float &amp;fTimeDelta)</div><div class="ttdef"><b>Definition</b> <a href="#l00030">CTestTerrain.cpp:30</a></div></div>
+<div class="ttc" id="aclass_c_test_terrain_html_affc51d121abbe72a2bab4f1db6ec90e8"><div class="ttname"><a href="class_c_test_terrain.html#affc51d121abbe72a2bab4f1db6ec90e8">CTestTerrain::Render_GameObject</a></div><div class="ttdeci">virtual void Render_GameObject()</div><div class="ttdef"><b>Definition</b> <a href="#l00047">CTestTerrain.cpp:47</a></div></div>
+<div class="ttc" id="anamespace_engine_html"><div class="ttname"><a href="namespace_engine.html">Engine</a></div><div class="ttdef"><b>Definition</b> <a href="_c_back_ground_8h_source.html#l00004">CBackGround.h:5</a></div></div>
+<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_922c588100a187620fdc1533bc178f73.html">Client</a></li><li class="navelem"><a href="dir_65f72dfa66d9a3714b171c01549bb855.html">Code</a></li><li class="navelem"><a href="_c_test_terrain_8cpp.html">CTestTerrain.cpp</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+\doxysection{CMonster 클래스 참조}
+\hypertarget{class_c_monster}{}\label{class_c_monster}\index{CMonster@{CMonster}}
+
+
+{\ttfamily \#include $<$CMonster.\+h$>$}
+
+
+
+CMonster에 대한 상속 다이어그램 \+: 
+% FIG 0
+
+
+CMonster에 대한 협력 다이어그램\+:
+% FIG 1
+\doxysubsubsection*{Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+virtual HRESULT \mbox{\hyperlink{class_c_monster_a4f97671760f0484f16f427a4c59ff504}{Ready\+\_\+\+Game\+Object}} ()
+\item 
+virtual \+\_\+int \mbox{\hyperlink{class_c_monster_a095a1e7daadc538fa33e5a6ffffd44a4}{Update\+\_\+\+Game\+Object}} (const \+\_\+float \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_monster_adea5c5dacab62b4d823b44d7a6aa0daa}{Late\+Update\+\_\+\+Game\+Object}} (const \+\_\+float \&f\+Time\+Delta)
+\item 
+virtual void \mbox{\hyperlink{class_c_monster_aed9de3777d730207c142515c4f7c030f}{Render\+\_\+\+Game\+Object}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{정적 Public 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_monster}{CMonster}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_monster_aa1ae7be809c54e529cf6d7e8df09e864}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{상세한 설명}
+
+
+\mbox{\hyperlink{_c_monster_8h_source}{CMonster.\+h}} 파일의 \mbox{\hyperlink{_c_monster_8h_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_monster_doc-func-members}
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_c_monster_aa1ae7be809c54e529cf6d7e8df09e864}\index{CMonster@{CMonster}!Create@{Create}}
+\index{Create@{Create}!CMonster@{CMonster}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{class_c_monster_aa1ae7be809c54e529cf6d7e8df09e864} 
+\mbox{\hyperlink{class_c_monster}{CMonster}} \texorpdfstring{$\ast$}{*} CMonster\+::\+Create (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{_c_monster_8cpp_source}{CMonster.\+cpp}} 파일의 \mbox{\hyperlink{_c_monster_8cpp_source_l00089}{89}} 번째 라인에서 정의되었습니다.
+
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\Hypertarget{class_c_monster_adea5c5dacab62b4d823b44d7a6aa0daa}\index{CMonster@{CMonster}!LateUpdate\_GameObject@{LateUpdate\_GameObject}}
+\index{LateUpdate\_GameObject@{LateUpdate\_GameObject}!CMonster@{CMonster}}
+\doxysubsubsection{\texorpdfstring{LateUpdate\_GameObject()}{LateUpdate\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_monster_adea5c5dacab62b4d823b44d7a6aa0daa} 
+void CMonster\+::\+Late\+Update\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{const \+\_\+float \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_monster_8cpp_source}{CMonster.\+cpp}} 파일의 \mbox{\hyperlink{_c_monster_8cpp_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_monster_a4f97671760f0484f16f427a4c59ff504}\index{CMonster@{CMonster}!Ready\_GameObject@{Ready\_GameObject}}
+\index{Ready\_GameObject@{Ready\_GameObject}!CMonster@{CMonster}}
+\doxysubsubsection{\texorpdfstring{Ready\_GameObject()}{Ready\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_monster_a4f97671760f0484f16f427a4c59ff504} 
+HRESULT CMonster\+::\+Ready\+\_\+\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_monster_8cpp_source}{CMonster.\+cpp}} 파일의 \mbox{\hyperlink{_c_monster_8cpp_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_monster_aed9de3777d730207c142515c4f7c030f}\index{CMonster@{CMonster}!Render\_GameObject@{Render\_GameObject}}
+\index{Render\_GameObject@{Render\_GameObject}!CMonster@{CMonster}}
+\doxysubsubsection{\texorpdfstring{Render\_GameObject()}{Render\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_monster_aed9de3777d730207c142515c4f7c030f} 
+void CMonster\+::\+Render\+\_\+\+Game\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_monster_8cpp_source}{CMonster.\+cpp}} 파일의 \mbox{\hyperlink{_c_monster_8cpp_source_l00051}{51}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_monster_a095a1e7daadc538fa33e5a6ffffd44a4}\index{CMonster@{CMonster}!Update\_GameObject@{Update\_GameObject}}
+\index{Update\_GameObject@{Update\_GameObject}!CMonster@{CMonster}}
+\doxysubsubsection{\texorpdfstring{Update\_GameObject()}{Update\_GameObject()}}
+{\footnotesize\ttfamily \label{class_c_monster_a095a1e7daadc538fa33e5a6ffffd44a4} 
+\+\_\+int CMonster\+::\+Update\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{const \+\_\+float \&}]{f\+Time\+Delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_monster_8cpp_source}{CMonster.\+cpp}} 파일의 \mbox{\hyperlink{_c_monster_8cpp_source_l00028}{28}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Client/\+Header/\mbox{\hyperlink{_c_monster_8h}{CMonster.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Client/\+Code/\mbox{\hyperlink{_c_monster_8cpp}{CMonster.\+cpp}}\end{DoxyCompactItemize}

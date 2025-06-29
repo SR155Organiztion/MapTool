@@ -1,0 +1,43 @@
+\doxysection{CMonster.\+h}
+\hypertarget{_c_monster_8h_source}{}\label{_c_monster_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CMonster.h@{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CMonster.h}}
+\mbox{\hyperlink{_c_monster_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}CGameObject.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}}}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{class\ }CTriCol;}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{class\ }CTransform;}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00010}\mbox{\hyperlink{class_c_monster}{00010}}\ \textcolor{keyword}{class\ }CMonster\ :\ \textcolor{keyword}{public}\ Engine::CGameObject}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00012}00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ CMonster(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{explicit}\ CMonster(\textcolor{keyword}{const}\ CGameObject\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CMonster();}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ HRESULT\ \ \ \ \ \mbox{\hyperlink{class_c_monster_a4f97671760f0484f16f427a4c59ff504}{Ready\_GameObject}}();}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \_int\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_monster_a095a1e7daadc538fa33e5a6ffffd44a4}{Update\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_monster_adea5c5dacab62b4d823b44d7a6aa0daa}{LateUpdate\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_monster_aed9de3777d730207c142515c4f7c030f}{Render\_GameObject}}();}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00023}00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00024}00024\ \ \ \ \ HRESULT\ \ \ \ \ Add\_Component();}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00025}00025\ \ \ \ \ HRESULT\ \ \ \ \ Set\_Metarial();}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00026}00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00027}00027\ \ \ \ \ Engine::CTriCol*\ \ \ \ \ \ \ \ m\_pBufferCom;}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00028}00028\ \ \ \ \ Engine::CTransform*\ \ \ \ \ m\_pTransformCom;}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00030}00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{static}\ CMonster*\ \mbox{\hyperlink{class_c_monster_aa1ae7be809c54e529cf6d7e8df09e864}{Create}}(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00033}00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00036}00036\ \};}
+\DoxyCodeLine{\Hypertarget{_c_monster_8h_source_l00037}00037\ }
+
+\end{DoxyCode}

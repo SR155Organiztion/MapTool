@@ -1,0 +1,39 @@
+\doxysection{CStage.\+h}
+\hypertarget{_c_stage_8h_source}{}\label{_c_stage_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CStage.h@{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CStage.h}}
+\mbox{\hyperlink{_c_stage_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}CScene.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00005}\mbox{\hyperlink{class_c_stage}{00005}}\ \textcolor{keyword}{class\ }CStage\ :\ \textcolor{keyword}{public}\ Engine::CScene}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00007}00007\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{explicit}\ CStage(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CStage();}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00011}00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ HRESULT\ \ \ \ \ \mbox{\hyperlink{class_c_stage_a4b10452ab0fca05719f5f1e45ecee564}{Ready\_Scene}}();}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \_int\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_stage_a779b95da227c7f9dd5317cda92cc7e91}{Update\_Scene}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_stage_a8a4e5bef291932038fb9fbcd5cb48ae8}{LateUpdate\_Scene}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_stage_ae49f7676ea5bf77ac893b0ca9ea25d7e}{Render\_Scene}}();}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00018}00018\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_Environment\_Layer(\textcolor{keyword}{const}\ \_tchar*\ pLayerTag);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00019}00019\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_Tile\_Layer(\textcolor{keyword}{const}\ \_tchar*\ pLayerTag);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00020}00020\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_Block\_Layer(\textcolor{keyword}{const}\ \_tchar*\ pLayerTag);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00021}00021\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_GameObject\_Layer(\textcolor{keyword}{const}\ \_tchar*\ pLayerTag);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00022}00022\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_UI\_Layer(\textcolor{keyword}{const}\ \_tchar*\ pLayerTag);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00024}00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00025}00025\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_Prototype();}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00026}00026\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_Light();}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00027}00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{static}\ CStage*\ \mbox{\hyperlink{class_c_stage_abe672b3213138ebe14dce57ef9fc4fe4}{Create}}(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00029}00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00032}00032\ \};}
+\DoxyCodeLine{\Hypertarget{_c_stage_8h_source_l00033}00033\ }
+
+\end{DoxyCode}

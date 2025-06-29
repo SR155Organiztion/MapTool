@@ -1,0 +1,121 @@
+\doxysection{CSky\+Box.\+cpp}
+\hypertarget{_c_sky_box_8cpp_source}{}\label{_c_sky_box_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Code/CSkyBox.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Client/Code/CSkyBox.cpp}}
+\mbox{\hyperlink{_c_sky_box_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_sky_box_8h}{CSkyBox.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}CProtoMgr.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}CRenderer.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00006}00006\ CSkyBox::CSkyBox(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00007}00007\ \ \ \ \ :\ \mbox{\hyperlink{namespace_engine}{Engine}}::CGameObject(pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00011}00011\ CSkyBox::CSkyBox(\textcolor{keyword}{const}\ CGameObject\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00012}00012\ \ \ \ \ :\ \mbox{\hyperlink{namespace_engine}{Engine}}::CGameObject(rhs)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00016}00016\ CSkyBox::\string~CSkyBox()}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00020}\mbox{\hyperlink{class_c_sky_box_a055e2a508dfbd3c94c23bf0f8cc03307}{00020}}\ HRESULT\ \mbox{\hyperlink{class_c_sky_box_a055e2a508dfbd3c94c23bf0f8cc03307}{CSkyBox::Ready\_GameObject}}()}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(Add\_Component()))}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00025}00025\ \ \ \ \ m\_pTransformCom-\/>m\_vScale\ =\ \{\ 40.f,\ 40.f,\ 40.f\ \};}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00031}\mbox{\hyperlink{class_c_sky_box_a9061ee5910212099749be9d04294719f}{00031}}\ \_int\ \mbox{\hyperlink{class_c_sky_box_a9061ee5910212099749be9d04294719f}{CSkyBox::Update\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00033}00033\ \ \ \ \ Engine::CGameObject::Update\_GameObject(fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00035}00035\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00037}00037\ \ \ \ \ CRenderer::GetInstance()-\/>Add\_RenderGroup(RENDER\_PRIORITY,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00042}\mbox{\hyperlink{class_c_sky_box_a4aeff4d3d3d25c5246147f21ee3a13b3}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_sky_box_a4aeff4d3d3d25c5246147f21ee3a13b3}{CSkyBox::LateUpdate\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00043}00043\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00044}00044\ \ \ \ \ Engine::CGameObject::LateUpdate\_GameObject(fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00046}00046\ \ \ \ \ \_matrix\ matView;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00048}00048\ \ \ \ \ m\_pGraphicDev-\/>GetTransform(D3DTS\_VIEW,\ \&matView);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00049}00049\ \ \ \ \ D3DXMatrixInverse(\&matView,\ 0,\ \&matView);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00051}00051\ \ \ \ \ m\_pTransformCom-\/>Set\_Pos(matView.\_41,\ matView.\_42\ +\ 3.f,\ matView.\_43);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00052}00052\ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00055}\mbox{\hyperlink{class_c_sky_box_a3df02586c8ff682a8846f1bcd5533896}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_sky_box_a3df02586c8ff682a8846f1bcd5533896}{CSkyBox::Render\_GameObject}}()}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00056}00056\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00057}00057\ \ \ \ \ D3DXMATRIX\ matWorld;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00058}00058\ \ \ \ \ m\_pTransformCom-\/>Get\_World(\&matWorld);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00059}00059\ \ \ \ \ m\_pGraphicDev-\/>SetTransform(D3DTS\_WORLD,\ \&matWorld);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00061}00061\ \ \ \ \ m\_pGraphicDev-\/>SetRenderState(D3DRS\_CULLMODE,\ D3DCULL\_NONE);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00062}00062\ \ \ \ \ m\_pGraphicDev-\/>SetRenderState(D3DRS\_ZWRITEENABLE,\ FALSE);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00063}00063\ \ \ \ \ m\_pGraphicDev-\/>SetRenderState(D3DRS\_LIGHTING,\ FALSE);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00065}00065\ \ \ \ \ m\_pTextureCom-\/>Set\_Texture(3);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00067}00067\ \ \ \ \ m\_pBufferCom-\/>Render\_Buffer();}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00069}00069\ \ \ \ \ m\_pGraphicDev-\/>SetRenderState(D3DRS\_LIGHTING,\ TRUE);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00070}00070\ \ \ \ \ m\_pGraphicDev-\/>SetRenderState(D3DRS\_ZWRITEENABLE,\ TRUE);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00071}00071\ \ \ \ \ m\_pGraphicDev-\/>SetRenderState(D3DRS\_CULLMODE,\ D3DCULL\_CCW);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00074}00074\ HRESULT\ CSkyBox::Add\_Component()}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00075}00075\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00076}00076\ \ \ \ \ CComponent*\ pComponent\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00078}00078\ \ \ \ \ pComponent\ =\ m\_pBufferCom\ =\ \textcolor{keyword}{dynamic\_cast<}Engine::CCubeTex*\textcolor{keyword}{>}(CProtoMgr::GetInstance()-\/>Clone\_Prototype(L\textcolor{stringliteral}{"{}Proto\_CubeTex"{}}));}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pComponent)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00081}00081\ \ \ \ \ m\_mapComponent[ID\_STATIC].insert(\{\ L\textcolor{stringliteral}{"{}Com\_Buffer"{}},\ pComponent\ \});}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00083}00083\ \ \ \ \ pComponent\ =\ m\_pTextureCom\ =\ \textcolor{keyword}{dynamic\_cast<}Engine::CTexture*\textcolor{keyword}{>}(CProtoMgr::GetInstance()-\/>Clone\_Prototype(L\textcolor{stringliteral}{"{}Proto\_SkyBoxTexture"{}}));}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pComponent)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00086}00086\ \ \ \ \ m\_mapComponent[ID\_STATIC].insert(\{\ L\textcolor{stringliteral}{"{}Com\_Texture"{}},\ pComponent\ \});}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00088}00088\ \ \ \ \ pComponent\ =\ m\_pTransformCom\ =\ \textcolor{keyword}{dynamic\_cast<}Engine::CTransform*\textcolor{keyword}{>}(CProtoMgr::GetInstance()-\/>Clone\_Prototype(L\textcolor{stringliteral}{"{}Proto\_Transform"{}}));}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pComponent)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00091}00091\ \ \ \ \ m\_mapComponent[ID\_DYNAMIC].insert(\{\ L\textcolor{stringliteral}{"{}Com\_Transform"{}},\ pComponent\ \});}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00097}\mbox{\hyperlink{class_c_sky_box_a67b6db8ec17645ee78d49c50a0e75239}{00097}}\ CSkyBox*\ \mbox{\hyperlink{class_c_sky_box_a67b6db8ec17645ee78d49c50a0e75239}{CSkyBox::Create}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00098}00098\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00099}00099\ \ \ \ \ CSkyBox*\ pBackGround\ =\ \textcolor{keyword}{new}\ CSkyBox(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pBackGround-\/>\mbox{\hyperlink{class_c_sky_box_a055e2a508dfbd3c94c23bf0f8cc03307}{Ready\_GameObject}}()))}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ Safe\_Release(pBackGround);}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ MSG\_BOX(\textcolor{stringliteral}{"{}pBackGround\ Create\ Failed"{}});}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{return}\ pBackGround;}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00110}00110\ \}}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00112}00112\ \textcolor{keywordtype}{void}\ CSkyBox::Free()}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00113}00113\ \{}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00114}00114\ \ \ \ \ Engine::CGameObject::Free();}
+\DoxyCodeLine{\Hypertarget{_c_sky_box_8cpp_source_l00115}00115\ \}}
+
+\end{DoxyCode}

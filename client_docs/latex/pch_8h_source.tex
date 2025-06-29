@@ -1,0 +1,49 @@
+\doxysection{pch.\+h}
+\hypertarget{pch_8h_source}{}\label{pch_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Include/pch.h@{C:/Users/shs26/Desktop/SR/MapTool/Client/Include/pch.h}}
+\mbox{\hyperlink{pch_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00001}00001\ \textcolor{comment}{//\ pch.h:\ 미리\ 컴파일된\ 헤더\ 파일입니다.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00002}00002\ \textcolor{comment}{//\ 아래\ 나열된\ 파일은\ 한\ 번만\ 컴파일되었으며,\ 향후\ 빌드에\ 대한\ 빌드\ 성능을\ 향상합니다.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00003}00003\ \textcolor{comment}{//\ 코드\ 컴파일\ 및\ 여러\ 코드\ 검색\ 기능을\ 포함하여\ IntelliSense\ 성능에도\ 영향을\ 미칩니다.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00004}00004\ \textcolor{comment}{//\ 그러나\ 여기에\ 나열된\ 파일은\ 빌드\ 간\ 업데이트되는\ 경우\ 모두\ 다시\ 컴파일됩니다.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00005}00005\ \textcolor{comment}{//\ 여기에\ 자주\ 업데이트할\ 파일을\ 추가하지\ 마세요.\ 그러면\ 성능이\ 저하됩니다.}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00007}00007\ \textcolor{preprocessor}{\#ifndef\ PCH\_H}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00008}00008\ \textcolor{preprocessor}{\#define\ PCH\_H}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{framework_8h}{framework.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00013}00013\ \textcolor{keyword}{extern}\ HINSTANCE\ \mbox{\hyperlink{_client_8cpp_af03f36c7876ed17a936f00434a9236c4}{g\_hInst}};}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00014}00014\ \textcolor{keyword}{extern}\ HWND\ \mbox{\hyperlink{_client_8cpp_af6e451d84715c224b60977594e800b81}{g\_hWnd}};}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <d3d9.h>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <d3dx9.h>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <process.h>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00027}00027\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00029}00029\ \textcolor{preprocessor}{\#define\ \_CRTDBG\_MAP\_ALLOC}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <crtdbg.h>}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00033}00033\ \textcolor{preprocessor}{\#ifndef\ DBG\_NEW\ }}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00034}00034\ \textcolor{preprocessor}{\#define\ DBG\_NEW\ new\ (\ \_NORMAL\_BLOCK\ ,\ \_\_FILE\_\_\ ,\ \_\_LINE\_\_\ )\ }}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00035}00035\ \textcolor{preprocessor}{\#define\ new\ DBG\_NEW\ }}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00037}00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00038}00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00040}00040\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{pch_8h_source_l00043}00043\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PCH\_H}}
+
+\end{DoxyCode}

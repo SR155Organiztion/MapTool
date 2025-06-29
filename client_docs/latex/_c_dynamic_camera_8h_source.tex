@@ -1,0 +1,65 @@
+\doxysection{CDynamic\+Camera.\+h}
+\hypertarget{_c_dynamic_camera_8h_source}{}\label{_c_dynamic_camera_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CDynamicCamera.h@{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CDynamicCamera.h}}
+\mbox{\hyperlink{_c_dynamic_camera_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}CCamera.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}}}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{class\ }CCalculator;}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00010}\mbox{\hyperlink{class_c_dynamic_camera}{00010}}\ \textcolor{keyword}{class\ }CDynamicCamera\ :\ \ \textcolor{keyword}{public}\ CCamera}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00012}00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ CDynamicCamera(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CDynamicCamera();}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00016}00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00017}00017\ \ \ \ \ HRESULT\ \mbox{\hyperlink{class_c_dynamic_camera_a511f9c7044e07cfe6449897e6dff6d43}{Ready\_GameObject}}(\textcolor{keyword}{const}\ \_vec3*\ pEye,\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_vec3*\ pAt,\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_vec3*\ pUp,\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_float\&\ fFov,\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_float\&\ fAspect,}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_float\&\ fNear,}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_float\&\ fFar);}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \_int\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_dynamic_camera_a1c0ac8e434485b2ef05a0c7202ec278d}{Update\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_dynamic_camera_a3b231f7bb1d3e08c9c2ade1455c1509b}{LateUpdate\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00027}\mbox{\hyperlink{class_c_dynamic_camera_a1e59c755fda2eb14c03bb4996c166a3c}{00027}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_dynamic_camera_a1e59c755fda2eb14c03bb4996c166a3c}{Render\_GameObject}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00029}00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Key\_Input(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Mouse\_Move();}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Mouse\_Fix();}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Peeking\_Objects();}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Show\_Peek()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Set\_Greed()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Get\_CamInfo(\_vec3*\ vEye,\ \_vec3*\&\ vAt)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00038}00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00039}00039\ \ \ \ \ \_float\ \ \ \ \ \ m\_fSpeed;}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00040}00040\ \ \ \ \ \_bool\ \ \ \ \ \ \ m\_bFix;}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00041}00041\ \ \ \ \ \_bool\ \ \ \ \ \ \ m\_bCheck;}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00042}00042\ \ \ \ \ Engine::CCalculator*\ m\_pCalculatorCom;}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00044}00044\ \ \ \ \ \_bool\ \ \ \ \ \ \ m\_bShowBox;}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00046}00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{static}\ CDynamicCamera*\ \mbox{\hyperlink{class_c_dynamic_camera_a80770a2e8e7a03f3f46b8baa4de0beea}{Create}}(LPDIRECT3DDEVICE9\ pGraphicDev,}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_vec3*\ pEye,}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_vec3*\ pAt,}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_vec3*\ pUp,}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_float\&\ fFov\ =\ D3DXToRadian(60.f),}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_float\&\ fAspect\ =\ (\_float)WINCX\ /\ WINCY,}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_float\&\ fNear\ =\ 0.1f,}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \_float\&\ fFar\ =\ 1000.f);}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00056}00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00058}00058\ \};}
+\DoxyCodeLine{\Hypertarget{_c_dynamic_camera_8h_source_l00059}00059\ }
+
+\end{DoxyCode}

@@ -1,0 +1,43 @@
+\doxysection{CBack\+Ground.\+h}
+\hypertarget{_c_back_ground_8h_source}{}\label{_c_back_ground_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CBackGround.h@{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CBackGround.h}}
+\mbox{\hyperlink{_c_back_ground_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}CGameObject.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00004}\mbox{\hyperlink{namespace_engine}{00004}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_engine}{Engine}}}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{class\ }CRcTex;}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{class\ }CTexture;}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00010}\mbox{\hyperlink{class_c_back_ground}{00010}}\ \textcolor{keyword}{class\ }CBackGround\ :\ \textcolor{keyword}{public}\ Engine::CGameObject}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00012}00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ CBackGround(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{explicit}\ CBackGround(\textcolor{keyword}{const}\ CGameObject\&\ rhs);}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CBackGround();}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ HRESULT\ \ \ \ \ \mbox{\hyperlink{class_c_back_ground_a2b7a959499ce3e1c8e0f6550c827058c}{Ready\_GameObject}}();}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \_int\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_back_ground_a6bdc2f6f8a483010cf4a11d2e69dadab}{Update\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_back_ground_a2abeac1eb286b09a101bca4ddcfb8b9f}{LateUpdate\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_back_ground_a7abb422e33c579e54663f7adf6bccc27}{Render\_GameObject}}();}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00023}00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00024}00024\ \ \ \ \ HRESULT\ \ \ \ \ Add\_Component();}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00026}00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00027}00027\ \ \ \ \ Engine::CRcTex*\ \ \ \ \ m\_pBufferCom;}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00028}00028\ \ \ \ \ Engine::CTexture*\ m\_pTextureCom;}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00030}00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{static}\ CBackGround*\ \mbox{\hyperlink{class_c_back_ground_a6520604bb576b613d4400870bae69079}{Create}}(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00033}00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00036}00036\ \};}
+\DoxyCodeLine{\Hypertarget{_c_back_ground_8h_source_l00037}00037\ }
+
+\end{DoxyCode}

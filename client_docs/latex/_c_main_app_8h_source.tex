@@ -1,0 +1,58 @@
+\doxysection{CMain\+App.\+h}
+\hypertarget{_c_main_app_8h_source}{}\label{_c_main_app_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CMainApp.h@{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CMainApp.h}}
+\mbox{\hyperlink{_c_main_app_8h}{Ïù¥ ÌååÏùºÏùò Î¨∏ÏÑúÌôî ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../../Base/CBase.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}Engine\_Define.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}CGraphicDev.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}CManagement.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00008}00008\ \textcolor{comment}{//\ namespace\ Engine}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00009}00009\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00010}00010\ \textcolor{comment}{//\ \ class\ CGraphicDev;}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00011}00011\ \textcolor{comment}{//\ \ class\ CManagement;}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00012}00012\ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00015}\mbox{\hyperlink{class_c_main_app}{00015}}\ \textcolor{keyword}{class\ }CMainApp\ :\ \textcolor{keyword}{public}\ CBase}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00017}00017\ \textcolor{keyword}{private}:\textcolor{comment}{//\ ª˝º∫¿⁄,\ º“∏Í¿⁄}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{explicit}\ CMainApp();}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CMainApp();}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00022}00022\ \ \ \ \ HRESULT\ \ \ \ \ \mbox{\hyperlink{class_c_main_app_abd6bbe56671b14e4214690f9ddb8afa0}{Ready\_MainApp}}();}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_main_app_ac7a5e951b20370ca07ec724d2262f553}{Update\_MainApp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_main_app_a5536a6ed9dbc0b7e4570abacfc5cdf8c}{LateUpdate\_MainApp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_main_app_ad52a6c8abdf680c83b79ebe88ecbe06c}{Render\_MainApp}}();}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00027}00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00028}00028\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_DefaultSetting(LPDIRECT3DDEVICE9*\ ppGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00029}00029\ \ \ \ \ HRESULT\ \ \ \ \ Ready\_Scene(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00032}00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00033}00033\ \ \ \ \ Engine::CGraphicDev*\ \ \ \ m\_pDeviceClass;}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00034}00034\ \ \ \ \ Engine::CManagement*\ \ \ \ m\_pManagementClass;}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00035}00035\ \ \ \ \ LPDIRECT3DDEVICE9\ \ \ \ \ \ \ m\_pGraphicDev;}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00038}00038\ \textcolor{keyword}{public}:\ \textcolor{comment}{//ø‹∫Œ ª˝º∫ «‘ºˆ}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{static}\ CMainApp*\ \mbox{\hyperlink{class_c_main_app_ac6c0789f2196cecf8119f1cb8f2fa0f4}{Create}}();}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00041}00041\ \textcolor{keyword}{private}:\ \textcolor{comment}{//\ ø‹∫Œ º“∏Í «‘ºˆ}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00044}00044\ \};}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00046}00046\ \textcolor{comment}{//\ 1.\ ∆Ú∏È¿«\ πÊ¡§Ωƒ¿ª\ ¿ÃøÎ«œø©\ ¡ˆ«¸¿ª\ ≈∏¥¬ «√∑π¿ÃæÓ ªÛ≈¬∏¶\ ±∏«ˆ«œ∂Û.(≈∞∫∏µÂ ¿‘∑¬)}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00048}00048\ \textcolor{comment}{//\ ax\ +\ by\ +\ cz\ +\ d\ =\ 0;}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00049}00049\ \textcolor{comment}{//\ D3DXPLANE\ Plane;}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00051}00051\ \textcolor{comment}{//\ 2.\ ∏∂øÏΩ∫\ √Êµπ¿ª\ ¿ÃøÎ«œø©\ ¡ˆ«¸¿ª\ ≈∏¥¬ «√∑π¿ÃæÓ ªÛ≈¬∏¶\ ±∏«ˆ«œ∂Û.}}
+\DoxyCodeLine{\Hypertarget{_c_main_app_8h_source_l00052}00052\ \textcolor{comment}{//\ D3DXIntersectTri();\ \ //ray-\/picking}}
+
+\end{DoxyCode}

@@ -1,0 +1,130 @@
+\doxysection{CTerrain.\+cpp}
+\hypertarget{_c_terrain_8cpp_source}{}\label{_c_terrain_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Code/CTerrain.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Client/Code/CTerrain.cpp}}
+\mbox{\hyperlink{_c_terrain_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_terrain_8h}{CTerrain.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}CProtoMgr.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}CRenderer.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00006}00006\ CTerrain::CTerrain(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00007}00007\ \ \ \ \ :\ \mbox{\hyperlink{namespace_engine}{Engine}}::CGameObject(pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00011}00011\ CTerrain::CTerrain(\textcolor{keyword}{const}\ CGameObject\&\ rhs)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00012}00012\ \ \ \ \ :\ \mbox{\hyperlink{namespace_engine}{Engine}}::CGameObject(rhs)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00016}00016\ CTerrain::\string~CTerrain()}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00020}\mbox{\hyperlink{class_c_terrain_ac379af855dc7d545e0c9f6b574782274}{00020}}\ HRESULT\ \mbox{\hyperlink{class_c_terrain_ac379af855dc7d545e0c9f6b574782274}{CTerrain::Ready\_GameObject}}()}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(Add\_Component()))}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//m\_pTransformCom-\/>Set\_Sca}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00030}\mbox{\hyperlink{class_c_terrain_acd5418e4f1af0e3a37e1b6c6355535e7}{00030}}\ \_int\ \mbox{\hyperlink{class_c_terrain_acd5418e4f1af0e3a37e1b6c6355535e7}{CTerrain::Update\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00032}00032\ \ \ \ \ \_uint\ iExit\ =\ Engine::CGameObject::Update\_GameObject(fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00034}00034\ \ \ \ \ CRenderer::GetInstance()-\/>Add\_RenderGroup(RENDER\_NONALPHA,\ \textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ iExit;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00039}\mbox{\hyperlink{class_c_terrain_a39428c20156edcaed7fdf449cb47f12e}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_terrain_a39428c20156edcaed7fdf449cb47f12e}{CTerrain::LateUpdate\_GameObject}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00042}00042\ \ \ \ \ Engine::CGameObject::LateUpdate\_GameObject(fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00044}00044\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00047}\mbox{\hyperlink{class_c_terrain_a9f64998c60182b4fcc4b778c47663d2f}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_terrain_a9f64998c60182b4fcc4b778c47663d2f}{CTerrain::Render\_GameObject}}()}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00049}00049\ \ \ \ \ D3DXMATRIX\ matWorld;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00050}00050\ \ \ \ \ m\_pTransformCom-\/>Get\_World(\&matWorld);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00051}00051\ \ \ \ \ m\_pGraphicDev-\/>SetTransform(D3DTS\_WORLD,\ \&matWorld);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//m\_pGraphicDev-\/>SetRenderState(D3DRS\_CULLMODE,\ D3DCULL\_NONE);}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00054}00054\ \ \ \ \textcolor{comment}{//m\_pGraphicDev-\/>SetRenderState(D3DRS\_FILLMODE,\ D3DFILL\_WIREFRAME);}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00056}00056\ \ \ \ \ m\_pTextureCom-\/>Set\_Texture(2);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(Set\_Material()))}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00061}00061\ \ \ \ \ m\_pBufferCom-\/>Render\_Buffer();}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00062}00062\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ m\_pGraphicDev-\/>SetRenderState(D3DRS\_FILLMODE,\ D3DFILL\_SOLID);}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//m\_pGraphicDev-\/>SetRenderState(D3DRS\_CULLMODE,\ D3DCULL\_CCW);}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00067}00067\ HRESULT\ CTerrain::Add\_Component()}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00068}00068\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00069}00069\ \ \ \ \ CComponent*\ pComponent\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00071}00071\ \ \ \ \ pComponent\ =\ m\_pBufferCom\ =\ \textcolor{keyword}{dynamic\_cast<}Engine::CTerrainTex*\textcolor{keyword}{>}(CProtoMgr::GetInstance()-\/>Clone\_Prototype(L\textcolor{stringliteral}{"{}Proto\_TerrainTex"{}}));}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pComponent)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00074}00074\ \ \ \ \ m\_mapComponent[ID\_STATIC].insert(\{\ L\textcolor{stringliteral}{"{}Com\_Buffer"{}},\ pComponent\ \});}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00076}00076\ \ \ \ \ pComponent\ =\ m\_pTextureCom\ =\ \textcolor{keyword}{dynamic\_cast<}Engine::CTexture*\textcolor{keyword}{>}(CProtoMgr::GetInstance()-\/>Clone\_Prototype(L\textcolor{stringliteral}{"{}Proto\_TerrainTexture"{}}));}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pComponent)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00079}00079\ \ \ \ \ m\_mapComponent[ID\_STATIC].insert(\{\ L\textcolor{stringliteral}{"{}Com\_Texture"{}},\ pComponent\ \});}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00081}00081\ \ \ \ \ pComponent\ =\ m\_pTransformCom\ =\ \textcolor{keyword}{dynamic\_cast<}Engine::CTransform*\textcolor{keyword}{>}(CProtoMgr::GetInstance()-\/>Clone\_Prototype(L\textcolor{stringliteral}{"{}Proto\_Transform"{}}));}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pComponent)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00084}00084\ \ \ \ \ m\_mapComponent[ID\_DYNAMIC].insert(\{\ L\textcolor{stringliteral}{"{}Com\_Transform"{}},\ pComponent\ \});}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00089}00089\ HRESULT\ CTerrain::Set\_Material()}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00091}00091\ \ \ \ \ D3DMATERIAL9\ tMetarial;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00092}00092\ \ \ \ \ ZeroMemory(\&tMetarial,\ \textcolor{keyword}{sizeof}(D3DMATERIAL9));}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00094}00094\ \ \ \ \ tMetarial.Diffuse\ =\ D3DXCOLOR(1.f,\ 1.f,\ 1.f,\ 1.f);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00095}00095\ \ \ \ \ tMetarial.Specular\ =\ D3DXCOLOR(1.f,\ 1.f,\ 1.f,\ 1.f);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00096}00096\ \ \ \ \ tMetarial.Ambient\ =\ D3DXCOLOR(0.2f,\ 0.2f,\ 0.2f,\ 0.2f);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00098}00098\ \ \ \ \ tMetarial.Emissive\ =\ D3DXCOLOR(0.f,\ 0.f,\ 0.f,\ 1.f);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00099}00099\ \ \ \ \ tMetarial.Power\ =\ 0.f;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00101}00101\ \ \ \ \ m\_pGraphicDev-\/>SetMaterial(\&tMetarial);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00107}\mbox{\hyperlink{class_c_terrain_aacf0ef27e81b29cd0f0407fe8e7314a1}{00107}}\ CTerrain*\ \mbox{\hyperlink{class_c_terrain_aacf0ef27e81b29cd0f0407fe8e7314a1}{CTerrain::Create}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00108}00108\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00109}00109\ \ \ \ \ CTerrain*\ pPlayer\ =\ \textcolor{keyword}{new}\ CTerrain(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pPlayer-\/>\mbox{\hyperlink{class_c_terrain_ac379af855dc7d545e0c9f6b574782274}{Ready\_GameObject}}()))}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00112}00112\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ Safe\_Release(pPlayer);}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ MSG\_BOX(\textcolor{stringliteral}{"{}pPlayer\ Create\ Failed"{}});}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00117}00117\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{return}\ pPlayer;}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00121}00121\ \textcolor{keywordtype}{void}\ CTerrain::Free()}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00122}00122\ \{}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00123}00123\ \ \ \ \ Engine::CGameObject::Free();}
+\DoxyCodeLine{\Hypertarget{_c_terrain_8cpp_source_l00124}00124\ \}}
+
+\end{DoxyCode}

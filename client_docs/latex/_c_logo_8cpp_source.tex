@@ -1,0 +1,147 @@
+\doxysection{CLogo.\+cpp}
+\hypertarget{_c_logo_8cpp_source}{}\label{_c_logo_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Code/CLogo.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Client/Code/CLogo.cpp}}
+\mbox{\hyperlink{_c_logo_8cpp}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_logo_8h}{CLogo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_back_ground_8h}{CBackGround.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}CProtoMgr.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}CTriCol.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_stage_8h}{CStage.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}CManagement.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}CFontMgr.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}CLightMgr.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00011}00011\ CLogo::CLogo(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00012}00012\ \ \ \ \ :\ \mbox{\hyperlink{namespace_engine}{Engine}}::CScene(pGraphicDev),\ m\_pLoading(nullptr)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00016}00016\ CLogo::\string~CLogo()}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00020}\mbox{\hyperlink{class_c_logo_a1f3ddc6b95ddcdd55147196fa9c761fb}{00020}}\ HRESULT\ \mbox{\hyperlink{class_c_logo_a1f3ddc6b95ddcdd55147196fa9c761fb}{CLogo::Ready\_Scene}}()}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(Ready\_Prototype()))}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(Ready\_Environment\_Layer(L\textcolor{stringliteral}{"{}Environment\_Layer"{}})))}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00028}00028\ \ \ \ \ m\_pLoading\ =\ \mbox{\hyperlink{class_c_loading_ae4f70fb60ae5fbf89197d782eb63ef9f}{CLoading::Create}}(m\_pGraphicDev,\ \mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1aae3fc8fffd895b8e1355007d6a3a5aab6}{CLoading::LOADING\_STAGE}});}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ m\_pLoading)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00035}00035\ HRESULT\ CLogo::Ready\_Environment\_Layer(\textcolor{keyword}{const}\ \_tchar*\ pLayerTag)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00037}00037\ \ \ \ \ Engine::CLayer*\ pLayer\ =\ CLayer::Create();}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pLayer)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00041}00041\ \ \ \ \ Engine::CGameObject*\ pGameObject\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ BackGround}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00045}00045\ \ \ \ \ pGameObject\ =\ \mbox{\hyperlink{class_c_back_ground_a6520604bb576b613d4400870bae69079}{CBackGround::Create}}(m\_pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pGameObject)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pLayer-\/>Add\_GameObject(L\textcolor{stringliteral}{"{}BackGround"{}},\ pGameObject)))}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00050}00050\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00052}00052\ \ \ \ \ m\_mapLayer.insert(\{pLayerTag,\ pLayer\ \});}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00057}\mbox{\hyperlink{class_c_logo_a8d39aef492daeb11204950878ef077f0}{00057}}\ \_int\ \mbox{\hyperlink{class_c_logo_a8d39aef492daeb11204950878ef077f0}{CLogo::Update\_Scene}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00058}00058\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00059}00059\ \ \ \ \ \_int\ iExit\ =\ Engine::CScene::Update\_Scene(fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{true}\ ==\ m\_pLoading-\/>Get\_Finish())}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GetAsyncKeyState(VK\_RETURN))}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ Engine::CScene*\ pScene\ =\ \mbox{\hyperlink{class_c_stage_abe672b3213138ebe14dce57ef9fc4fe4}{CStage::Create}}(m\_pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pScene)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(CManagement::GetInstance()-\/>Set\_Scene(pScene)))}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ iExit;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00077}\mbox{\hyperlink{class_c_logo_afbfb3f5dc7b74f0ab222fae6350d3704}{00077}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_logo_afbfb3f5dc7b74f0ab222fae6350d3704}{CLogo::LateUpdate\_Scene}}(\textcolor{keyword}{const}\ \_float\&\ fTimeDelta)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00078}00078\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00079}00079\ \ \ \ \ Engine::CScene::LateUpdate\_Scene(fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00082}\mbox{\hyperlink{class_c_logo_ab5a50aa9cc3ff476bcb7ca122df6c732}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_logo_ab5a50aa9cc3ff476bcb7ca122df6c732}{CLogo::Render\_Scene}}()}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00083}00083\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00084}00084\ \ \ \ \ \_vec2\ \ \ vPos\{\ (\_float)WINCX\ /\ 2.f,\ (\_float)WINCY\ -\/\ 100.f\};}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00086}00086\ \ \ \ \ CFontMgr::GetInstance()-\/>Render\_Font(L\textcolor{stringliteral}{"{}Font\_Default"{}},\ m\_pLoading-\/>Get\_String(),\ \&vPos,\ D3DXCOLOR(1.f,\ 0.f,\ 0.f,\ 1.f));}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00090}00090\ HRESULT\ CLogo::Ready\_Prototype()}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00091}00091\ \{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(CProtoMgr::GetInstance()-\/>Ready\_Prototype}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00093}00093\ \ \ \ \ (L\textcolor{stringliteral}{"{}Proto\_RcTex"{}},\ Engine::CRcTex::Create(m\_pGraphicDev))))}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(CProtoMgr::GetInstance()-\/>Ready\_Prototype}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00097}00097\ \ \ \ \ (L\textcolor{stringliteral}{"{}Proto\_LogoTexture"{}},\ Engine::CTexture::Create(m\_pGraphicDev,\ L\textcolor{stringliteral}{"{}../Bin/Resource/Texture/Logo/logo.png"{}},\ TEX\_NORMAL))))}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00103}00103\ HRESULT\ CStage::Ready\_Light()}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00104}00104\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00105}00105\ \ \ \ \ D3DLIGHT9\ tLightInfo;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00106}00106\ \ \ \ \ ZeroMemory(\&tLightInfo,\ \textcolor{keyword}{sizeof}(D3DLIGHT9));}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00108}00108\ \ \ \ \ tLightInfo.Type\ =\ D3DLIGHT\_DIRECTIONAL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00110}00110\ \ \ \ \ tLightInfo.Diffuse\ =\ D3DXCOLOR(1.f,\ 1.f,\ 1.f,\ 1.f);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00111}00111\ \ \ \ \ tLightInfo.Specular\ =\ D3DXCOLOR(1.f,\ 1.f,\ 1.f,\ 1.f);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00112}00112\ \ \ \ \ tLightInfo.Ambient\ =\ D3DXCOLOR(1.f,\ 1.f,\ 1.f,\ 1.f);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00113}00113\ \ \ \ \ tLightInfo.Direction\ =\ \{\ 1.f,\ -\/1.f,\ 1.f\ \};}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(CLightMgr::GetInstance()-\/>Ready\_Light(m\_pGraphicDev,\ \&tLightInfo,\ 0)))\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00122}\mbox{\hyperlink{class_c_logo_a51f78451ee26a1da778e226c80ef7f03}{00122}}\ CLogo*\ \mbox{\hyperlink{class_c_logo_a51f78451ee26a1da778e226c80ef7f03}{CLogo::Create}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00124}00124\ \ \ \ \ CLogo*\ pLogo\ =\ \textcolor{keyword}{new}\ CLogo(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pLogo-\/>\mbox{\hyperlink{class_c_logo_a1f3ddc6b95ddcdd55147196fa9c761fb}{Ready\_Scene}}()))}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ Safe\_Release(pLogo);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ MSG\_BOX(\textcolor{stringliteral}{"{}Logo\ Create\ Failed"{}});}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{return}\ pLogo;}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00134}00134\ \}}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00136}00136\ \textcolor{keywordtype}{void}\ CLogo::Free()}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00137}00137\ \{}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00138}00138\ \ \ \ \ Safe\_Release(m\_pLoading);}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00140}00140\ \ \ \ \ Engine::CScene::Free();}
+\DoxyCodeLine{\Hypertarget{_c_logo_8cpp_source_l00141}00141\ \}}
+
+\end{DoxyCode}

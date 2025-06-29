@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MapTool: C:/Users/shs26/Desktop/SR/MapTool/Client/Code/CLogo.cpp 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MapTool<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','검색',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_c_logo_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CLogo.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_c_logo_8cpp.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="pch_8h.html">pch.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_c_logo_8h.html">CLogo.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_c_back_ground_8h.html">CBackGround.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;CProtoMgr.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;CTriCol.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_c_stage_8h.html">CStage.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;CManagement.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;CFontMgr.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;CLightMgr.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>CLogo::CLogo(LPDIRECT3DDEVICE9 pGraphicDev)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    : <a class="code hl_namespace" href="namespace_engine.html">Engine</a>::CScene(pGraphicDev), m_pLoading(nullptr)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>CLogo::~CLogo()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_c_logo.html#a1f3ddc6b95ddcdd55147196fa9c761fb">   20</a></span>HRESULT <a class="code hl_function" href="class_c_logo.html#a1f3ddc6b95ddcdd55147196fa9c761fb">CLogo::Ready_Scene</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (FAILED(Ready_Prototype()))</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (FAILED(Ready_Environment_Layer(L<span class="stringliteral">&quot;Environment_Layer&quot;</span>)))</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    m_pLoading = <a class="code hl_function" href="class_c_loading.html#ae4f70fb60ae5fbf89197d782eb63ef9f">CLoading::Create</a>(m_pGraphicDev, <a class="code hl_enumvalue" href="class_c_loading.html#a333c92f5fd5e86026dd73bd67cf0ab1aae3fc8fffd895b8e1355007d6a3a5aab6">CLoading::LOADING_STAGE</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == m_pLoading)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>HRESULT CLogo::Ready_Environment_Layer(<span class="keyword">const</span> _tchar* pLayerTag)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    Engine::CLayer* pLayer = CLayer::Create();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == pLayer)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    Engine::CGameObject* pGameObject = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// BackGround</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    pGameObject = <a class="code hl_function" href="class_c_back_ground.html#a6520604bb576b613d4400870bae69079">CBackGround::Create</a>(m_pGraphicDev);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == pGameObject)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (FAILED(pLayer-&gt;Add_GameObject(L<span class="stringliteral">&quot;BackGround&quot;</span>, pGameObject)))</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>     </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    m_mapLayer.insert({pLayerTag, pLayer });</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_c_logo.html#a8d39aef492daeb11204950878ef077f0">   57</a></span>_int <a class="code hl_function" href="class_c_logo.html#a8d39aef492daeb11204950878ef077f0">CLogo::Update_Scene</a>(<span class="keyword">const</span> _float&amp; fTimeDelta)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    _int iExit = Engine::CScene::Update_Scene(fTimeDelta);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (<span class="keyword">true</span> == m_pLoading-&gt;Get_Finish())</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">if</span> (GetAsyncKeyState(VK_RETURN))</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            Engine::CScene* pScene = <a class="code hl_function" href="class_c_stage.html#abe672b3213138ebe14dce57ef9fc4fe4">CStage::Create</a>(m_pGraphicDev);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == pScene)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">if</span> (FAILED(CManagement::GetInstance()-&gt;Set_Scene(pScene)))</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }      </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> iExit;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_c_logo.html#afbfb3f5dc7b74f0ab222fae6350d3704">   77</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_c_logo.html#afbfb3f5dc7b74f0ab222fae6350d3704">CLogo::LateUpdate_Scene</a>(<span class="keyword">const</span> _float&amp; fTimeDelta)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    Engine::CScene::LateUpdate_Scene(fTimeDelta);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_c_logo.html#ab5a50aa9cc3ff476bcb7ca122df6c732">   82</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_c_logo.html#ab5a50aa9cc3ff476bcb7ca122df6c732">CLogo::Render_Scene</a>()</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    _vec2   vPos{ (_float)WINCX / 2.f, (_float)WINCY - 100.f};</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    CFontMgr::GetInstance()-&gt;Render_Font(L<span class="stringliteral">&quot;Font_Default&quot;</span>, m_pLoading-&gt;Get_String(), &amp;vPos, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>HRESULT CLogo::Ready_Prototype()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{    </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">if</span> (FAILED(CProtoMgr::GetInstance()-&gt;Ready_Prototype</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    (L<span class="stringliteral">&quot;Proto_RcTex&quot;</span>, Engine::CRcTex::Create(m_pGraphicDev))))</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (FAILED(CProtoMgr::GetInstance()-&gt;Ready_Prototype</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    (L<span class="stringliteral">&quot;Proto_LogoTexture&quot;</span>, Engine::CTexture::Create(m_pGraphicDev, L<span class="stringliteral">&quot;../Bin/Resource/Texture/Logo/logo.png&quot;</span>, TEX_NORMAL))))</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>HRESULT CStage::Ready_Light()</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    D3DLIGHT9 tLightInfo;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    ZeroMemory(&amp;tLightInfo, <span class="keyword">sizeof</span>(D3DLIGHT9));</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    tLightInfo.Type = D3DLIGHT_DIRECTIONAL;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    tLightInfo.Diffuse = D3DXCOLOR(1.f, 1.f, 1.f, 1.f);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    tLightInfo.Specular = D3DXCOLOR(1.f, 1.f, 1.f, 1.f);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    tLightInfo.Ambient = D3DXCOLOR(1.f, 1.f, 1.f, 1.f);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    tLightInfo.Direction = { 1.f, -1.f, 1.f };</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (FAILED(CLightMgr::GetInstance()-&gt;Ready_Light(m_pGraphicDev, &amp;tLightInfo, 0))) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">return</span> E_FAIL;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> S_OK;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_c_logo.html#a51f78451ee26a1da778e226c80ef7f03">  122</a></span>CLogo* <a class="code hl_function" href="class_c_logo.html#a51f78451ee26a1da778e226c80ef7f03">CLogo::Create</a>(LPDIRECT3DDEVICE9 pGraphicDev)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>{</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    CLogo* pLogo = <span class="keyword">new</span> CLogo(pGraphicDev);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span> (FAILED(pLogo-&gt;<a class="code hl_function" href="class_c_logo.html#a1f3ddc6b95ddcdd55147196fa9c761fb">Ready_Scene</a>()))</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        Safe_Release(pLogo);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        MSG_BOX(<span class="stringliteral">&quot;Logo Create Failed&quot;</span>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">return</span> pLogo;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keywordtype">void</span> CLogo::Free()</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    Safe_Release(m_pLoading);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    Engine::CScene::Free();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
+<div class="ttc" id="a_c_back_ground_8h_html"><div class="ttname"><a href="_c_back_ground_8h.html">CBackGround.h</a></div></div>
+<div class="ttc" id="a_c_logo_8h_html"><div class="ttname"><a href="_c_logo_8h.html">CLogo.h</a></div></div>
+<div class="ttc" id="a_c_stage_8h_html"><div class="ttname"><a href="_c_stage_8h.html">CStage.h</a></div></div>
+<div class="ttc" id="aclass_c_back_ground_html_a6520604bb576b613d4400870bae69079"><div class="ttname"><a href="class_c_back_ground.html#a6520604bb576b613d4400870bae69079">CBackGround::Create</a></div><div class="ttdeci">static CBackGround * Create(LPDIRECT3DDEVICE9 pGraphicDev)</div><div class="ttdef"><b>Definition</b> <a href="_c_back_ground_8cpp_source.html#l00068">CBackGround.cpp:68</a></div></div>
+<div class="ttc" id="aclass_c_loading_html_a333c92f5fd5e86026dd73bd67cf0ab1aae3fc8fffd895b8e1355007d6a3a5aab6"><div class="ttname"><a href="class_c_loading.html#a333c92f5fd5e86026dd73bd67cf0ab1aae3fc8fffd895b8e1355007d6a3a5aab6">CLoading::LOADING_STAGE</a></div><div class="ttdeci">@ LOADING_STAGE</div><div class="ttdef"><b>Definition</b> <a href="_c_loading_8h_source.html#l00009">CLoading.h:9</a></div></div>
+<div class="ttc" id="aclass_c_loading_html_ae4f70fb60ae5fbf89197d782eb63ef9f"><div class="ttname"><a href="class_c_loading.html#ae4f70fb60ae5fbf89197d782eb63ef9f">CLoading::Create</a></div><div class="ttdeci">static CLoading * Create(LPDIRECT3DDEVICE9 pGraphicDev, LOADINGID eID)</div><div class="ttdef"><b>Definition</b> <a href="_c_loading_8cpp_source.html#l00120">CLoading.cpp:120</a></div></div>
+<div class="ttc" id="aclass_c_logo_html_a1f3ddc6b95ddcdd55147196fa9c761fb"><div class="ttname"><a href="class_c_logo.html#a1f3ddc6b95ddcdd55147196fa9c761fb">CLogo::Ready_Scene</a></div><div class="ttdeci">virtual HRESULT Ready_Scene()</div><div class="ttdef"><b>Definition</b> <a href="#l00020">CLogo.cpp:20</a></div></div>
+<div class="ttc" id="aclass_c_logo_html_a51f78451ee26a1da778e226c80ef7f03"><div class="ttname"><a href="class_c_logo.html#a51f78451ee26a1da778e226c80ef7f03">CLogo::Create</a></div><div class="ttdeci">static CLogo * Create(LPDIRECT3DDEVICE9 pGraphicDev)</div><div class="ttdef"><b>Definition</b> <a href="#l00122">CLogo.cpp:122</a></div></div>
+<div class="ttc" id="aclass_c_logo_html_a8d39aef492daeb11204950878ef077f0"><div class="ttname"><a href="class_c_logo.html#a8d39aef492daeb11204950878ef077f0">CLogo::Update_Scene</a></div><div class="ttdeci">virtual _int Update_Scene(const _float &amp;fTimeDelta)</div><div class="ttdef"><b>Definition</b> <a href="#l00057">CLogo.cpp:57</a></div></div>
+<div class="ttc" id="aclass_c_logo_html_ab5a50aa9cc3ff476bcb7ca122df6c732"><div class="ttname"><a href="class_c_logo.html#ab5a50aa9cc3ff476bcb7ca122df6c732">CLogo::Render_Scene</a></div><div class="ttdeci">virtual void Render_Scene()</div><div class="ttdef"><b>Definition</b> <a href="#l00082">CLogo.cpp:82</a></div></div>
+<div class="ttc" id="aclass_c_logo_html_afbfb3f5dc7b74f0ab222fae6350d3704"><div class="ttname"><a href="class_c_logo.html#afbfb3f5dc7b74f0ab222fae6350d3704">CLogo::LateUpdate_Scene</a></div><div class="ttdeci">virtual void LateUpdate_Scene(const _float &amp;fTimeDelta)</div><div class="ttdef"><b>Definition</b> <a href="#l00077">CLogo.cpp:77</a></div></div>
+<div class="ttc" id="aclass_c_stage_html_abe672b3213138ebe14dce57ef9fc4fe4"><div class="ttname"><a href="class_c_stage.html#abe672b3213138ebe14dce57ef9fc4fe4">CStage::Create</a></div><div class="ttdeci">static CStage * Create(LPDIRECT3DDEVICE9 pGraphicDev)</div><div class="ttdef"><b>Definition</b> <a href="_c_stage_8cpp_source.html#l00155">CStage.cpp:155</a></div></div>
+<div class="ttc" id="anamespace_engine_html"><div class="ttname"><a href="namespace_engine.html">Engine</a></div><div class="ttdef"><b>Definition</b> <a href="_c_back_ground_8h_source.html#l00004">CBackGround.h:5</a></div></div>
+<div class="ttc" id="apch_8h_html"><div class="ttname"><a href="pch_8h.html">pch.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_922c588100a187620fdc1533bc178f73.html">Client</a></li><li class="navelem"><a href="dir_65f72dfa66d9a3714b171c01549bb855.html">Code</a></li><li class="navelem"><a href="_c_logo_8cpp.html">CLogo.cpp</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

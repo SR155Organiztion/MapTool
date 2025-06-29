@@ -1,0 +1,56 @@
+\doxysection{CLoading.\+h}
+\hypertarget{_c_loading_8h_source}{}\label{_c_loading_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CLoading.h@{C:/Users/shs26/Desktop/SR/MapTool/Client/Header/CLoading.h}}
+\mbox{\hyperlink{_c_loading_8h}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}CBase.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}Engine\_Define.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00006}\mbox{\hyperlink{class_c_loading}{00006}}\ \textcolor{keyword}{class\ }CLoading\ :\ \textcolor{keyword}{public}\ CBase}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00008}00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00009}\mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1aa0ca1204da6215caf61fcc95af0bb69a9}{00009}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1a}{LOADINGID}}\ \{\ \mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1aae3fc8fffd895b8e1355007d6a3a5aab6}{LOADING\_STAGE}},\ \mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1aa0ca1204da6215caf61fcc95af0bb69a9}{LOADING\_BOSS}},\ \mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1aa5e4fe515109dffd2d59ad46f10eab49f}{LOADING\_END}}\ \};}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00011}00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_c_loading}{CLoading}}(LPDIRECT3DDEVICE9\ pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_c_loading}{\string~CLoading}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00016}\mbox{\hyperlink{class_c_loading_ad3b8e61e4622ea95baf7cb613fd7cd33}{00016}}\ \ \ \ \ \mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1a}{LOADINGID}}\ \ \ \ \ \ \mbox{\hyperlink{class_c_loading_ad3b8e61e4622ea95baf7cb613fd7cd33}{Get\_LoadingID}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_LoadingID;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00017}\mbox{\hyperlink{class_c_loading_a31653c59b41ab7a88c8ccbc1f0480f96}{00017}}\ \ \ \ \ \_bool\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_loading_a31653c59b41ab7a88c8ccbc1f0480f96}{Get\_Finish}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_bFinish;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00018}\mbox{\hyperlink{class_c_loading_ad7fe981f0c88b6fc265320dcdf84d959}{00018}}\ \ \ \ \ CRITICAL\_SECTION*\ \mbox{\hyperlink{class_c_loading_ad7fe981f0c88b6fc265320dcdf84d959}{Get\_Crt}}()\ \ \{\ \textcolor{keywordflow}{return}\ \&m\_Crt;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00020}\mbox{\hyperlink{class_c_loading_ac64900bfa090a5e5ff130c097fa163bc}{00020}}\ \ \ \ \ \textcolor{keyword}{const}\ \_tchar*\ \mbox{\hyperlink{class_c_loading_ac64900bfa090a5e5ff130c097fa163bc}{Get\_String}}()\ \{\ \textcolor{keywordflow}{return}\ m\_szLoading;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00022}00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_\_stdcall\ \mbox{\hyperlink{class_c_loading_afb20c2534ef7fbdd7ae45ef78d282fc7}{Thread\_Main}}(\textcolor{keywordtype}{void}*\ pArg);}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00025}00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00026}00026\ \ \ \ \ HRESULT\ \mbox{\hyperlink{class_c_loading_ad9b032bbc723f9e911c063a3a567c423}{Ready\_Loading}}(\mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1a}{LOADINGID}}\ eID);}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00027}00027\ \ \ \ \ \_uint\ \ \mbox{\hyperlink{class_c_loading_a854250b9455cc9093c052516162c30df}{Loaing\_ForStage}}();}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00030}00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00031}00031\ \ \ \ \ LPDIRECT3DDEVICE9\ \ \ \ \ \ \ \ \ \ \ m\_pGraphicDev;}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00033}00033\ \ \ \ \ \_bool\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_bFinish;}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1a}{LOADINGID}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_LoadingID;}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00036}00036\ \ \ \ \ HANDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_hThread;}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00038}00038\ \ \ \ \ CRITICAL\_SECTION\ \ \ \ \ \ \ \ \ \ \ \ m\_Crt;}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00040}00040\ \ \ \ \ \_tchar\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_szLoading[128];}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00042}00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_c_loading}{CLoading}}*\ \mbox{\hyperlink{class_c_loading_ae4f70fb60ae5fbf89197d782eb63ef9f}{Create}}(LPDIRECT3DDEVICE9\ pGraphicDev,\ \mbox{\hyperlink{class_c_loading_a333c92f5fd5e86026dd73bd67cf0ab1a}{LOADINGID}}\ eID);}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00045}00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00049}00049\ \};}
+\DoxyCodeLine{\Hypertarget{_c_loading_8h_source_l00050}00050\ }
+
+\end{DoxyCode}
