@@ -37,9 +37,6 @@
     <Filter Include="04. Component\00. VIBuffer">
       <UniqueIdentifier>{c4e9d142-dee6-4b83-a16f-443a51290797}</UniqueIdentifier>
     </Filter>
-    <Filter Include="04. Component\00. VIBuffer\TriCol">
-      <UniqueIdentifier>{cb32add2-3c7d-404e-af4a-b5c349c20aeb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="05. ProtoMgr">
       <UniqueIdentifier>{c1d37408-864a-4271-b41d-ba49e663c909}</UniqueIdentifier>
     </Filter>
@@ -100,6 +97,9 @@
     <Filter Include="04. Component\00. VIBuffer\TileSquareTex">
       <UniqueIdentifier>{b9d1e1fd-be39-46b9-a884-163a3c11bbdc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Component\00. VIBuffer\TileSquareTex\TriCol">
+      <UniqueIdentifier>{cb32add2-3c7d-404e-af4a-b5c349c20aeb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\CGraphicDev.cpp">
@@ -133,7 +133,7 @@
       <Filter>03. Management</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CTriCol.cpp">
-      <Filter>04. Component\00. VIBuffer\TriCol</Filter>
+      <Filter>04. Component\00. VIBuffer\TileSquareTex\TriCol</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CVIBuffer.cpp">
       <Filter>04. Component\00. VIBuffer</Filter>
@@ -243,7 +243,7 @@
       <Filter>03. Management</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CTriCol.h">
-      <Filter>04. Component\00. VIBuffer\TriCol</Filter>
+      <Filter>04. Component\00. VIBuffer\TileSquareTex\TriCol</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CVIBuffer.h">
       <Filter>04. Component\00. VIBuffer</Filter>
