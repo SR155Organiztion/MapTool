@@ -1,0 +1,13 @@
+digraph "CProtoMgr::Find_Prototype"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="CProtoMgr::Find_Prototype",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CProtoMgr::Clone_Prototype",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_proto_mgr.html#a20b1853184d2c0b02277f62e0f53a09a",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CProtoMgr::Ready_Prototype",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_proto_mgr.html#a7bb9bf5dae4cb609e89ff1a78fef91ee",tooltip=" "];
+}

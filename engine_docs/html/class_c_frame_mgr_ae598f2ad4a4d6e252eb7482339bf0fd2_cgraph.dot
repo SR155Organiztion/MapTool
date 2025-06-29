@@ -7,5 +7,7 @@ digraph "CFrameMgr::IsPermit_Call"
   rankdir="LR";
   Node1 [id="Node000001",label="CFrameMgr::IsPermit_Call",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CFrame::IsPermit_Call",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#a3a808a56934afb992fc14be05a821ac5",tooltip=" "];
+  Node2 [id="Node000002",label="CFrameMgr::Find_Frame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame_mgr.html#a5cb5b1f466934d73e3e0c199eb73b026",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CFrame::IsPermit_Call",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#a3a808a56934afb992fc14be05a821ac5",tooltip=" "];
 }

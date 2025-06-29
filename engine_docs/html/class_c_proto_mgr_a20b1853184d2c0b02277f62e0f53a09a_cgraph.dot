@@ -14,4 +14,6 @@ digraph "CProtoMgr::Clone_Prototype"
   Node4 [id="Node000004",label="CComponent::Free",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_component.html#abb47ac0113a8e99501af4213a4db2528",tooltip=" "];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CProtoMgr::Find_Prototype",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_proto_mgr.html#ac9f8b78135e8ee54ae138200870879ff",tooltip=" "];
 }

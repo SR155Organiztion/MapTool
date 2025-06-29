@@ -1,25 +1,25 @@
 \doxysection{CGraphic\+Dev.\+cpp}
 \hypertarget{_c_graphic_dev_8cpp_source}{}\label{_c_graphic_dev_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CGraphicDev.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CGraphicDev.cpp}}
-\mbox{\hyperlink{_c_graphic_dev_8cpp}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_graphic_dev_8cpp}{ì´ íŒŒì¼ì˜ ë¬¸ì„œí™” íŽ˜ì´ì§€ë¡œ ê°€ê¸°}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_graphic_dev_8h}{CGraphicDev.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00003}00003\ \mbox{\hyperlink{_engine___macro_8h_a27a2ec109f7264210d9c43433d1c8b61}{IMPLEMENT\_SINGLETON}}(\mbox{\hyperlink{class_c_graphic_dev}{CGraphicDev}})}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00005}00005\ CGraphicDev::CGraphicDev()\ :\ m\_pSDK(nullptr),\ m\_pGraphicDev(nullptr)}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00005}\mbox{\hyperlink{class_c_graphic_dev_aba29dad3e5da8c16dea60bc2a71bf256}{00005}}\ \mbox{\hyperlink{class_c_graphic_dev_aba29dad3e5da8c16dea60bc2a71bf256}{CGraphicDev}}::\mbox{\hyperlink{class_c_graphic_dev_aba29dad3e5da8c16dea60bc2a71bf256}{CGraphicDev}}()\ :\ \mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}}(\textcolor{keywordtype}{nullptr}),\ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}(\textcolor{keywordtype}{nullptr})}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00006}00006\ \{}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00007}00007\ \}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00009}00009\ CGraphicDev::\string~CGraphicDev()}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00009}\mbox{\hyperlink{class_c_graphic_dev_a6e039b1b8bb40bc42251b5c70ff96882}{00009}}\ \mbox{\hyperlink{class_c_graphic_dev_a6e039b1b8bb40bc42251b5c70ff96882}{CGraphicDev::\string~CGraphicDev}}()}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00010}00010\ \{}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00011}00011\ \}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00013}\mbox{\hyperlink{class_c_graphic_dev_a941b356148ffcaa744e0b3a15372aa42}{00013}}\ HRESULT\ \mbox{\hyperlink{class_c_graphic_dev_a941b356148ffcaa744e0b3a15372aa42}{CGraphicDev::Ready\_GraphicDev}}(HWND\ hWnd,\ \mbox{\hyperlink{namespace_engine_a0679810ca5150bcaca8939b8058b9abd}{WINMODE}}\ eMode,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iSizeX,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iSizeY,\ CGraphicDev**\ ppGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00013}\mbox{\hyperlink{class_c_graphic_dev_a941b356148ffcaa744e0b3a15372aa42}{00013}}\ HRESULT\ \mbox{\hyperlink{class_c_graphic_dev_a941b356148ffcaa744e0b3a15372aa42}{CGraphicDev::Ready\_GraphicDev}}(HWND\ hWnd,\ \mbox{\hyperlink{namespace_engine_a0679810ca5150bcaca8939b8058b9abd}{WINMODE}}\ eMode,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iSizeX,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iSizeY,\ \mbox{\hyperlink{class_c_graphic_dev_aba29dad3e5da8c16dea60bc2a71bf256}{CGraphicDev}}**\ ppGraphicDev)}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00014}00014\ \{}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//\ 1.\ ±×·¡ÇÈ\ Ä«µåÀÇ\ ¼º´ÉÀ»\ Á¶»çÇÒ\ °´Ã¼\ »ý¼º}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00016}00016\ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00017}00017\ \ \ \ \ m\_pSDK\ =\ Direct3DCreate9(D3D\_SDK\_VERSION);}
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ m\_pSDK)}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}}\ =\ Direct3DCreate9(D3D\_SDK\_VERSION);}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ \mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}})}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00020}00020\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00021}00021\ \ \ \ \ \ }
@@ -30,7 +30,7 @@
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ D3DADAPTER\_DEFAULT\ :\ ÇöÀç\ ÄÄÇ»ÅÍ¿¡\ ¼³Ä¡µÈ ±âº»\ ±×·¡ÇÈ\ Ä«µå}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(m\_pSDK-\/>GetDeviceCaps(D3DADAPTER\_DEFAULT,\ D3DDEVTYPE\_HAL,\ \&DeviceCaps)))}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}}-\/>GetDeviceCaps(D3DADAPTER\_DEFAULT,\ D3DDEVTYPE\_HAL,\ \&DeviceCaps)))}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00031}00031\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ \ \ \ dwFlag(0);}
@@ -71,12 +71,12 @@
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00067}00067\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ 3.\ ±×·¡ÇÈ\ Ä«µåÀÇ\ ±â´ÉÀ»\ »ç¿ëÇÒ\ °´Ã¼\ »ý¼º}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(m\_pSDK-\/>CreateDevice(D3DADAPTER\_DEFAULT,\ }
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}}-\/>CreateDevice(D3DADAPTER\_DEFAULT,\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D3DDEVTYPE\_HAL,}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hWnd,\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dwFlag,\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&d3dpp,\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&m\_pGraphicDev)))}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}})))}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00077}00077\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00078}00078\ \ \ \ \ *ppGraphicDev\ =\ \textcolor{keyword}{this};}
@@ -89,14 +89,14 @@
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00085}00085\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00086}\mbox{\hyperlink{class_c_graphic_dev_a35c25fa25b1451202b6446c46b81a798}{00086}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_graphic_dev_a35c25fa25b1451202b6446c46b81a798}{CGraphicDev::Render\_Begin}}(D3DXCOLOR\ Color)}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00087}00087\ \{}
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00088}00088\ \ \ \ \ m\_pGraphicDev-\/>Clear(0,}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}-\/>Clear(0,}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NULL,}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D3DCLEAR\_TARGET\ |\ D3DCLEAR\_STENCIL\ |\ D3DCLEAR\_ZBUFFER,}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color,\ \ \ \ \ \ \textcolor{comment}{//\ ÈÄ¸é ¹öÆÛ ÅØ½ºÃ³\ »ö»ó}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.f,\ \ \ \ \ \ \ \ \textcolor{comment}{//\ z¹öÆÛ ÃÊ±âÈ­\ °ª}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0);\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ½ºÅÙ½Ç ÃÊ±âÈ­\ °ª}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00094}00094\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00095}00095\ \ \ \ \ m\_pGraphicDev-\/>BeginScene();}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}-\/>BeginScene();}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00096}00096\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00097}00097\ \}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00098}00098\ }
@@ -105,17 +105,17 @@
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00101}00101\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00102}\mbox{\hyperlink{class_c_graphic_dev_abf2c714dad1e3698c166baf8901897e2}{00102}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_graphic_dev_abf2c714dad1e3698c166baf8901897e2}{CGraphicDev::Render\_End}}()}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00103}00103\ \{}
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00104}00104\ \ \ \ \ m\_pGraphicDev-\/>EndScene();}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}-\/>EndScene();}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00106}00106\ \ \ \ \ m\_pGraphicDev-\/>Present(NULL,\ NULL,\ NULL,\ NULL);}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}-\/>Present(NULL,\ NULL,\ NULL,\ NULL);}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00107}00107\ }
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ 3\ ÀÎÀÚ\ :\ ÇÚµé °ª}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00109}00109\ \}}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00110}00110\ }
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00111}00111\ \textcolor{keywordtype}{void}\ CGraphicDev::Free()}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00111}\mbox{\hyperlink{class_c_graphic_dev_aaee37c803c0b92903f2f8e3d0f832add}{00111}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_graphic_dev_aaee37c803c0b92903f2f8e3d0f832add}{CGraphicDev::Free}}()}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00112}00112\ \{}
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pGraphicDev);}
-\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pSDK);}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}});}
+\DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}});}
 \DoxyCodeLine{\Hypertarget{_c_graphic_dev_8cpp_source_l00115}00115\ \}}
 
 \end{DoxyCode}

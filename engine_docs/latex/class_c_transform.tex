@@ -1,4 +1,4 @@
-\doxysection{CTransform Class Reference}
+\doxysection{CTransform 클래스 참조}
 \hypertarget{class_c_transform}{}\label{class_c_transform}\index{CTransform@{CTransform}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CTransform\+:
+CTransform에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CTransform\+:
+CTransform에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_c_transform_ad3a7a5aaa6bf2ea55641fb80fb538c8e}{Get\+\_\+\+Info}} (\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057}{INFO}} e\+Type, \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Info)
@@ -37,12 +37,12 @@ virtual void \mbox{\hyperlink{class_c_transform_ad0be300418898e5db44175f8f5be733
 \item 
 virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_transform_a748230a163cf504daa34cc4a359de71b}{Clone}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_c_transform}{CTransform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_transform_a0cdd415c4c547689b736698492c002a6}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
+\doxysubsubsection*{Public 속성}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\+\_\+v\+Info}} \mbox{[}\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a7bb3a995646752fe3a8fadee4d89b491}{INFO\+\_\+\+END}}\mbox{]}
@@ -53,8 +53,21 @@ static \mbox{\hyperlink{class_c_transform}{CTransform}} \texorpdfstring{$\ast$}{
 \item 
 \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\+\_\+mat\+World}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}} ()
+\item 
+\mbox{\hyperlink{class_c_transform_ae4cd3a1174c9f6162a396ff4ff536b89}{CTransform}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_transform_ad162850e6840a15b620c7e0b0189f29c}{CTransform}} (const \mbox{\hyperlink{class_c_transform}{CTransform}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_transform_a90d72f6ed0c3b0e5401365ba6fe2bdc5}{\texorpdfstring{$\sim$}{\string~}\+CTransform}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_transform_abf64d82457b6e77d48a6f491dfc25334}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{추가로 상속된 멤버들}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
@@ -65,7 +78,7 @@ static \mbox{\hyperlink{class_c_transform}{CTransform}} \texorpdfstring{$\ast$}{
 \item 
 virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\texorpdfstring{$\sim$}{\string~}\+CComponent}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
@@ -74,16 +87,102 @@ LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cf
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00006}{6}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00006}{6}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_transform_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}\index{CTransform@{CTransform}!CTransform@{CTransform}}
+\index{CTransform@{CTransform}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{CTransform()}{CTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4} 
+CTransform\+::\+CTransform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ :\ \mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}}(1.f,\ 1.f,\ 1.f),\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}(0.f,\ 0.f,\ 0.f) }
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ ZeroMemory(\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}));}
+\DoxyCodeLine{00007\ \ \ \ \ D3DXMatrixIdentity(\&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}});}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\Hypertarget{class_c_transform_ae4cd3a1174c9f6162a396ff4ff536b89}\index{CTransform@{CTransform}!CTransform@{CTransform}}
+\index{CTransform@{CTransform}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{CTransform()}{CTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_c_transform_ae4cd3a1174c9f6162a396ff4ff536b89} 
+CTransform\+::\+CTransform (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(pGraphicDev),\ \mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}}(1.f,\ 1.f,\ 1.f),\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}(0.f,\ 0.f,\ 0.f) }
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ ZeroMemory(\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}));}
+\DoxyCodeLine{00014\ \ \ \ \ D3DXMatrixIdentity(\&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}});}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_transform_ad162850e6840a15b620c7e0b0189f29c}\index{CTransform@{CTransform}!CTransform@{CTransform}}
+\index{CTransform@{CTransform}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{CTransform()}{CTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_c_transform_ad162850e6840a15b620c7e0b0189f29c} 
+CTransform\+::\+CTransform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_c_transform}{CTransform}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(rhs),\ \mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}}(rhs.\mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}}),\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}(rhs.\mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}) }
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a7bb3a995646752fe3a8fadee4d89b491}{INFO\_END}};\ ++i)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i]\ =\ rhs.\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i];}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}}\ =\ rhs.\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}};}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\Hypertarget{class_c_transform_a90d72f6ed0c3b0e5401365ba6fe2bdc5}\index{CTransform@{CTransform}!````~CTransform@{\texorpdfstring{$\sim$}{\string~}CTransform}}
+\index{````~CTransform@{\texorpdfstring{$\sim$}{\string~}CTransform}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CTransform()}{\string~CTransform()}}
+{\footnotesize\ttfamily \label{class_c_transform_a90d72f6ed0c3b0e5401365ba6fe2bdc5} 
+CTransform\+::\texorpdfstring{$\sim$}{\string~}\+CTransform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00026}{26}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_transform_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_transform_a2dc6305f019beb234b1c2d983ad1e4cf}\index{CTransform@{CTransform}!Chase\_Target@{Chase\_Target}}
 \index{Chase\_Target@{Chase\_Target}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Chase\_Target()}{Chase\_Target()}}
@@ -92,10 +191,29 @@ void CTransform\+::\+Chase\+\_\+\+Target (\begin{DoxyParamCaption}\item[{const \
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00030}{30}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ \ \ \ \ vDir\ =\ *pTargetPos\ -\/\ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}}];}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}}]\ +=\ *D3DXVec3Normalize(\&vDir,\ \&vDir)\ *\ fSpeed\ *\ fTimeDelta;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\_matrix}}\ \ matRot\ =\ *\mbox{\hyperlink{class_c_transform_a087c802dfae831f695ae95c94996a947}{Compute\_LookAtTarget}}(pTargetPos);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\_matrix}}\ \ matScale,\ matTrans;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ D3DXMatrixScaling(\&matScale,\ 1.f,\ 1.f,\ 1.f);}
+\DoxyCodeLine{00042\ \ \ \ \ D3DXMatrixTranslation(\&matTrans,\ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}}].x,\ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}}].y,\ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}}].z);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}}\ =\ matScale\ *\ matRot\ *\ matTrans;}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 \Hypertarget{class_c_transform_a748230a163cf504daa34cc4a359de71b}\index{CTransform@{CTransform}!Clone@{Clone}}
 \index{Clone@{Clone}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
@@ -104,14 +222,21 @@ Here is the call graph for this function\+:
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}.
+\mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00127}{127}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 3
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00130\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
 \Hypertarget{class_c_transform_a087c802dfae831f695ae95c94996a947}\index{CTransform@{CTransform}!Compute\_LookAtTarget@{Compute\_LookAtTarget}}
 \index{Compute\_LookAtTarget@{Compute\_LookAtTarget}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Compute\_LookAtTarget()}{Compute\_LookAtTarget()}}
@@ -120,10 +245,39 @@ const \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00047}{47}} 번째 라인에서 정의되었습니다.
 
-Here is the caller graph for this function\+:
-% FIG 4
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ vDir\ =\ *pTargetPos\ -\/\ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}}];}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//D3DXVec3Normalize(\&vDir,\ \&vDir);}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\_vec3\ vAxis\ =\ *D3DXVec3Cross(\&vAxis,\ \&m\_vInfo[INFO\_UP],\ \&vDir);}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ vAxis;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//D3DXVec3Cross(\&vAxis,\ \&m\_vInfo[INFO\_UP],\ \&vDir);}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ vUp;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//D3DXVec3Normalize(\&vUp,\ \&m\_vInfo[INFO\_UP]);}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\_float\ \ \ \ fDot\ =\ D3DXVec3Dot(\&vDir,\ \&vUp);}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\_float\ \ \ \ fAngle\ =\ acosf(fDot);}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\_matrix}}\ \ matRot;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ D3DXMatrixRotationAxis(\&matRot,\ \&vAxis,\ fAngle);}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{return}\ D3DXMatrixRotationAxis(\&matRot,\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D3DXVec3Cross(\&vAxis,\ \&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a2a7cb4efd67446e1c13cb68788a46d7b}{INFO\_UP}}],\ \&vDir),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acosf(D3DXVec3Dot(D3DXVec3Normalize(\&vDir,\ \&vDir),\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D3DXVec3Normalize(\&vUp,\ \&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a2a7cb4efd67446e1c13cb68788a46d7b}{INFO\_UP}}]))));}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
 \Hypertarget{class_c_transform_a0cdd415c4c547689b736698492c002a6}\index{CTransform@{CTransform}!Create@{Create}}
 \index{Create@{Create}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Create()}{Create()}}
@@ -132,10 +286,50 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00132}{132}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 5
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}}*\ pTransform\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}}(pGraphicDev);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pTransform-\/>\mbox{\hyperlink{class_c_transform_a72957afa6c292a39d291d7bc0024550a}{Ready\_Transform}}()))}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(pTransform);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}Transform\ Create\ Failed"{}});}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{return}\ pTransform;}
+\DoxyCodeLine{00144\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+\Hypertarget{class_c_transform_abf64d82457b6e77d48a6f491dfc25334}\index{CTransform@{CTransform}!Free@{Free}}
+\index{Free@{Free}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_transform_abf64d82457b6e77d48a6f491dfc25334} 
+void CTransform\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{CComponent}}(으)로부터 재구현되었습니다.
+
+
+
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00146}{146}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{CComponent::Free}}();}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
 \Hypertarget{class_c_transform_ad3a7a5aaa6bf2ea55641fb80fb538c8e}\index{CTransform@{CTransform}!Get\_Info@{Get\_Info}}
 \index{Get\_Info@{Get\_Info}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Get\_Info()}{Get\_Info()}}
@@ -144,8 +338,15 @@ void CTransform\+::\+Get\+\_\+\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hype
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00015}{15}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00015}{15}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ memcpy(pInfo,\ \&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}}.m[eType][0],\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}));}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_transform_a84684d1cd46d196c308ed0ecb5ee7852}\index{CTransform@{CTransform}!Get\_World@{Get\_World}}
 \index{Get\_World@{Get\_World}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Get\_World()}{Get\_World()}}
@@ -154,10 +355,15 @@ void CTransform\+::\+Get\+\_\+\+World (\begin{DoxyParamCaption}\item[{\mbox{\hyp
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00032}{32}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00032}{32}} 번째 라인에서 정의되었습니다.
 
-Here is the caller graph for this function\+:
-% FIG 6
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{\ *pWorld\ =\ \mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}};\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
 \Hypertarget{class_c_transform_ad0be300418898e5db44175f8f5be733f}\index{CTransform@{CTransform}!LateUpdate\_Component@{LateUpdate\_Component}}
 \index{LateUpdate\_Component@{LateUpdate\_Component}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{LateUpdate\_Component()}{LateUpdate\_Component()}}
@@ -166,12 +372,18 @@ void CTransform\+::\+Late\+Update\+\_\+\+Component (\begin{DoxyParamCaption}{}{}
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{CComponent}}.
+\mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{CComponent}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00123}{123}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \{}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_transform_aaaef4a63acbf3ea172d1537cc4080b21}\index{CTransform@{CTransform}!Move\_Pos@{Move\_Pos}}
 \index{Move\_Pos@{Move\_Pos}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Move\_Pos()}{Move\_Pos()}}
@@ -180,8 +392,15 @@ void CTransform\+::\+Move\+\_\+\+Pos (\begin{DoxyParamCaption}\item[{const \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00022}{22}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00022}{22}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}}]\ +=\ *pDir\ *\ fSpeed\ *\ fTimeDelta;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_transform_a72957afa6c292a39d291d7bc0024550a}\index{CTransform@{CTransform}!Ready\_Transform@{Ready\_Transform}}
 \index{Ready\_Transform@{Ready\_Transform}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Ready\_Transform()}{Ready\_Transform()}}
@@ -190,10 +409,22 @@ HRESULT CTransform\+::\+Ready\+\_\+\+Transform (\begin{DoxyParamCaption}{}{}\end
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00074}{74}} 번째 라인에서 정의되었습니다.
 
-Here is the caller graph for this function\+:
-% FIG 7
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ D3DXMatrixIdentity(\&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a7bb3a995646752fe3a8fadee4d89b491}{INFO\_END}};\ ++i)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ memcpy(\&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i],\ \&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}}.m[i][0],\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}));}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00082\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
 \Hypertarget{class_c_transform_a421d9fc88c09c95c6ab2e22dc3dbed68}\index{CTransform@{CTransform}!Rotation@{Rotation}}
 \index{Rotation@{Rotation}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Rotation()}{Rotation()}}
@@ -202,8 +433,15 @@ void CTransform\+::\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{n
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00027}{27}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00027}{27}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ *(((\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}*)\&\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}})\ +\ eType)\ +=\ fAngle;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_transform_a12d464bd3860a5fde6e485660f37c505}\index{CTransform@{CTransform}!Set\_Pos@{Set\_Pos}}
 \index{Set\_Pos@{Set\_Pos}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Set\_Pos()}{Set\_Pos()}}
@@ -212,8 +450,15 @@ void CTransform\+::\+Set\+\_\+\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyper
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00038}{38}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00038}{38}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[\mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}}]\ =\ \{\ \_fX,\ \_fY,\ \_fZ\ \};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_transform_a6734b800b2921b20879ebd683e21da01}\index{CTransform@{CTransform}!Update\_Component@{Update\_Component}}
 \index{Update\_Component@{Update\_Component}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{Update\_Component()}{Update\_Component()}}
@@ -222,17 +467,58 @@ Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00038}{38}} of file 
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{CComponent}}.
+\mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{CComponent}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}}.
+\mbox{\hyperlink{_c_transform_8cpp_source}{CTransform.\+cpp}} 파일의 \mbox{\hyperlink{_c_transform_8cpp_source_l00084}{84}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ D3DXMatrixIdentity(\&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}};\ ++i)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ memcpy(\&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i],\ \&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}}.m[i][0],\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}));}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ ũ�� ��ȯ}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}};\ ++i)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ D3DXVec3Normalize(\&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i],\ \&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i]);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i]\ *=\ *(((\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}*)\&\mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}})\ +\ i);}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ ȸ��\ ��ȯ}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\_matrix}}\ \ \ \ \ \ matRot[\mbox{\hyperlink{namespace_engine_aec0a702ab15205b711d0204b8e7f8f84a5cf10ab729285b275c90cb79e4b955a5}{ROT\_END}}];}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ D3DXMatrixRotationX(\&matRot[\mbox{\hyperlink{namespace_engine_aec0a702ab15205b711d0204b8e7f8f84a2df716551f75f9ce41f916958939f0d0}{ROT\_X}}],\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}.x);}
+\DoxyCodeLine{00104\ \ \ \ \ D3DXMatrixRotationY(\&matRot[\mbox{\hyperlink{namespace_engine_aec0a702ab15205b711d0204b8e7f8f84ac85701a14aa19e348957297a376940a0}{ROT\_Y}}],\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}.y);}
+\DoxyCodeLine{00105\ \ \ \ \ D3DXMatrixRotationZ(\&matRot[\mbox{\hyperlink{namespace_engine_aec0a702ab15205b711d0204b8e7f8f84a5f4632e03a655fd7ec0016ad25efffa8}{ROT\_Z}}],\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}.z);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a70b8147a4362ee44eef997c440635181}{INFO\_POS}};\ ++i)}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{namespace_engine_aec0a702ab15205b711d0204b8e7f8f84a5cf10ab729285b275c90cb79e4b955a5}{ROT\_END}};\ ++j)}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ D3DXVec3TransformNormal(\&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i],\ \&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i],\ \&matRot[j]);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a7bb3a995646752fe3a8fadee4d89b491}{INFO\_END}};\ ++i)}
+\DoxyCodeLine{00116\ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ memcpy(\&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}}.m[i][0],\ \&\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i],\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}));}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00121\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-variable-members}
 \Hypertarget{class_c_transform_doc-variable-members}
-\doxysubsection{Member Data Documentation}
+\doxysubsection{멤버 데이터 문서화}
 \Hypertarget{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}\index{CTransform@{CTransform}!m\_matWorld@{m\_matWorld}}
 \index{m\_matWorld@{m\_matWorld}!CTransform@{CTransform}}
 \doxysubsubsection{\texorpdfstring{m\_matWorld}{m\_matWorld}}
@@ -241,7 +527,7 @@ Definition at line \mbox{\hyperlink{_c_transform_8cpp_source_l00084}{84}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00054}{54}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00054}{54}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}\index{CTransform@{CTransform}!m\_vAngle@{m\_vAngle}}
 \index{m\_vAngle@{m\_vAngle}!CTransform@{CTransform}}
@@ -251,7 +537,7 @@ Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00054}{54}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00052}{52}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00052}{52}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}\index{CTransform@{CTransform}!m\_vInfo@{m\_vInfo}}
 \index{m\_vInfo@{m\_vInfo}!CTransform@{CTransform}}
@@ -261,7 +547,7 @@ Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00052}{52}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00050}{50}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00050}{50}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}\index{CTransform@{CTransform}!m\_vScale@{m\_vScale}}
 \index{m\_vScale@{m\_vScale}!CTransform@{CTransform}}
@@ -271,11 +557,11 @@ Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00050}{50}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_c_transform_8h_source_l00051}{51}} of file \mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}}.
+\mbox{\hyperlink{_c_transform_8h_source}{CTransform.\+h}} 파일의 \mbox{\hyperlink{_c_transform_8h_source_l00051}{51}} 번째 라인에서 정의되었습니다.
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_transform_8h}{CTransform.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_transform_8cpp}{CTransform.\+cpp}}\end{DoxyCompactItemize}

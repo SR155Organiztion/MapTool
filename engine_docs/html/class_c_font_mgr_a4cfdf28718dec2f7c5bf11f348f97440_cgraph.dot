@@ -7,5 +7,7 @@ digraph "CFontMgr::Render_Font"
   rankdir="LR";
   Node1 [id="Node000001",label="CFontMgr::Render_Font",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CFont::Render_Font",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_font.html#ae5db54d9149678c13f5bb2338dea6fdf",tooltip=" "];
+  Node2 [id="Node000002",label="CFontMgr::Find_Font",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_font_mgr.html#a567231113fa5641f1d90f8e485244c99",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CFont::Render_Font",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_font.html#ae5db54d9149678c13f5bb2338dea6fdf",tooltip=" "];
 }

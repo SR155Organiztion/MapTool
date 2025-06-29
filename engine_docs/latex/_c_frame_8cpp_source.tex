@@ -1,24 +1,24 @@
 \doxysection{CFrame.\+cpp}
 \hypertarget{_c_frame_8cpp_source}{}\label{_c_frame_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CFrame.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CFrame.cpp}}
-\mbox{\hyperlink{_c_frame_8cpp}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_frame_8cpp}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_frame_8h}{CFrame.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00003}00003\ CFrame::CFrame()\ :\ m\_fCallLimit(0.f),\ m\_fAccTimeDelta(0.f)}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00003}\mbox{\hyperlink{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}{00003}}\ \mbox{\hyperlink{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}{CFrame::CFrame}}()\ :\ \mbox{\hyperlink{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2}{m\_fCallLimit}}(0.f),\ \mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\_fAccTimeDelta}}(0.f)}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00004}00004\ \{}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00005}00005\ \}}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00007}00007\ CFrame::\string~CFrame()}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00007}\mbox{\hyperlink{class_c_frame_a6a1cd5a47dbde7799f2c58d14e4adcc2}{00007}}\ \mbox{\hyperlink{class_c_frame_a6a1cd5a47dbde7799f2c58d14e4adcc2}{CFrame::\string~CFrame}}()}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00008}00008\ \{}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00009}00009\ \}}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00010}00010\ }
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00011}\mbox{\hyperlink{class_c_frame_a3a808a56934afb992fc14be05a821ac5}{00011}}\ \mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\_bool}}\ \mbox{\hyperlink{class_c_frame_a3a808a56934afb992fc14be05a821ac5}{CFrame::IsPermit\_Call}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fTimeDelta)}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00012}00012\ \{}
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00013}00013\ \ \ \ \ m\_fAccTimeDelta\ +=\ fTimeDelta;}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\_fAccTimeDelta}}\ +=\ fTimeDelta;}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_fAccTimeDelta\ >=\ m\_fCallLimit)}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\_fAccTimeDelta}}\ >=\ \mbox{\hyperlink{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2}{m\_fCallLimit}})}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00016}00016\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ m\_fAccTimeDelta\ =\ 0.f;}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\_fAccTimeDelta}}\ =\ 0.f;}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00018}00018\ }
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00020}00020\ \ \ \ \ \}}
@@ -28,15 +28,15 @@
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00024}00024\ }
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00025}\mbox{\hyperlink{class_c_frame_acfb5befa7f30a0cefd1e885623a39c69}{00025}}\ HRESULT\ \mbox{\hyperlink{class_c_frame_acfb5befa7f30a0cefd1e885623a39c69}{CFrame::Ready\_Frame}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fCallLimit)}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00026}00026\ \{}
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00027}00027\ \ \ \ \ m\_fCallLimit\ =\ 1.f\ /\ fCallLimit;}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2}{m\_fCallLimit}}\ =\ 1.f\ /\ fCallLimit;}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00028}00028\ }
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00031}00031\ \}}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00033}\mbox{\hyperlink{class_c_frame_a4b039b5ced5c92ca1c7dfce83adb359f}{00033}}\ CFrame*\ \mbox{\hyperlink{class_c_frame_a4b039b5ced5c92ca1c7dfce83adb359f}{CFrame::Create}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fCallLimit)}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00033}\mbox{\hyperlink{class_c_frame_a4b039b5ced5c92ca1c7dfce83adb359f}{00033}}\ \mbox{\hyperlink{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}{CFrame}}*\ \mbox{\hyperlink{class_c_frame_a4b039b5ced5c92ca1c7dfce83adb359f}{CFrame::Create}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fCallLimit)}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00034}00034\ \{}
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00035}00035\ \ \ \ \ CFrame*\ pFrame\ =\ \textcolor{keyword}{new}\ CFrame;}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}{CFrame}}*\ pFrame\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}{CFrame}};}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pFrame-\/>\mbox{\hyperlink{class_c_frame_acfb5befa7f30a0cefd1e885623a39c69}{Ready\_Frame}}(fCallLimit)))}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00038}00038\ \ \ \ \ \{}
@@ -48,7 +48,7 @@
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ pFrame;}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00045}00045\ \}}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00047}00047\ \textcolor{keywordtype}{void}\ CFrame::Free()}
+\DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00047}\mbox{\hyperlink{class_c_frame_a50178219f2ff03b4d2d2b3663ef074b1}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_frame_a50178219f2ff03b4d2d2b3663ef074b1}{CFrame::Free}}()}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00048}00048\ \{}
 \DoxyCodeLine{\Hypertarget{_c_frame_8cpp_source_l00049}00049\ \}}
 

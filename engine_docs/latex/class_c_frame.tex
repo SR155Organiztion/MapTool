@@ -1,4 +1,4 @@
-\doxysection{CFrame Class Reference}
+\doxysection{CFrame 클래스 참조}
 \hypertarget{class_c_frame}{}\label{class_c_frame}\index{CFrame@{CFrame}}
 
 
@@ -6,36 +6,92 @@
 
 
 
-Inheritance diagram for CFrame\+:
+CFrame에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CFrame\+:
+CFrame에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespace_engine_ad0fa303c1ef2a0c0b65f1b37bbe1e156}{\+\_\+bool}} \mbox{\hyperlink{class_c_frame_a3a808a56934afb992fc14be05a821ac5}{Is\+Permit\+\_\+\+Call}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
 \item 
 HRESULT \mbox{\hyperlink{class_c_frame_acfb5befa7f30a0cefd1e885623a39c69}{Ready\+\_\+\+Frame}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Call\+Limit)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_c_frame}{CFrame}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_frame_a4b039b5ced5c92ca1c7dfce83adb359f}{Create}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Call\+Limit)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}{CFrame}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_frame_a6a1cd5a47dbde7799f2c58d14e4adcc2}{\texorpdfstring{$\sim$}{\string~}\+CFrame}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_frame_a50178219f2ff03b4d2d2b3663ef074b1}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2}{m\+\_\+f\+Call\+Limit}}
+\item 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\+\_\+f\+Acc\+Time\+Delta}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_frame_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_frame_8h_source}{CFrame.\+h}}.
+\mbox{\hyperlink{_c_frame_8h_source}{CFrame.\+h}} 파일의 \mbox{\hyperlink{_c_frame_8h_source_l00007}{7}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_frame_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}\index{CFrame@{CFrame}!CFrame@{CFrame}}
+\index{CFrame@{CFrame}!CFrame@{CFrame}}
+\doxysubsubsection{\texorpdfstring{CFrame()}{CFrame()}}
+{\footnotesize\ttfamily \label{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386} 
+CFrame\+::\+CFrame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}} 파일의 \mbox{\hyperlink{_c_frame_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2}{m\_fCallLimit}}(0.f),\ \mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\_fAccTimeDelta}}(0.f) }
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\Hypertarget{class_c_frame_a6a1cd5a47dbde7799f2c58d14e4adcc2}\index{CFrame@{CFrame}!````~CFrame@{\texorpdfstring{$\sim$}{\string~}CFrame}}
+\index{````~CFrame@{\texorpdfstring{$\sim$}{\string~}CFrame}!CFrame@{CFrame}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CFrame()}{\string~CFrame()}}
+{\footnotesize\ttfamily \label{class_c_frame_a6a1cd5a47dbde7799f2c58d14e4adcc2} 
+CFrame\+::\texorpdfstring{$\sim$}{\string~}\+CFrame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}} 파일의 \mbox{\hyperlink{_c_frame_8cpp_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_frame_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_frame_a4b039b5ced5c92ca1c7dfce83adb359f}\index{CFrame@{CFrame}!Create@{Create}}
 \index{Create@{Create}!CFrame@{CFrame}}
 \doxysubsubsection{\texorpdfstring{Create()}{Create()}}
@@ -44,12 +100,44 @@ Definition at line \mbox{\hyperlink{_c_frame_8h_source_l00007}{7}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_c_frame_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}}.
+\mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}} 파일의 \mbox{\hyperlink{_c_frame_8cpp_source_l00033}{33}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
-Here is the caller graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}{CFrame}}*\ pFrame\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_frame_af0e3dd238c2ea178e71889d1c0c5a386}{CFrame}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pFrame-\/>\mbox{\hyperlink{class_c_frame_acfb5befa7f30a0cefd1e885623a39c69}{Ready\_Frame}}(fCallLimit)))}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(pFrame);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}frame\ create\ Failed"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ pFrame;}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\Hypertarget{class_c_frame_a50178219f2ff03b4d2d2b3663ef074b1}\index{CFrame@{CFrame}!Free@{Free}}
+\index{Free@{Free}!CFrame@{CFrame}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_frame_a50178219f2ff03b4d2d2b3663ef074b1} 
+void CFrame\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}} 파일의 \mbox{\hyperlink{_c_frame_8cpp_source_l00047}{47}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_frame_a3a808a56934afb992fc14be05a821ac5}\index{CFrame@{CFrame}!IsPermit\_Call@{IsPermit\_Call}}
 \index{IsPermit\_Call@{IsPermit\_Call}!CFrame@{CFrame}}
 \doxysubsubsection{\texorpdfstring{IsPermit\_Call()}{IsPermit\_Call()}}
@@ -58,10 +146,26 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_frame_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}}.
+\mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}} 파일의 \mbox{\hyperlink{_c_frame_8cpp_source_l00011}{11}} 번째 라인에서 정의되었습니다.
 
-Here is the caller graph for this function\+:
-% FIG 4
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\_fAccTimeDelta}}\ +=\ fTimeDelta;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\_fAccTimeDelta}}\ >=\ \mbox{\hyperlink{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2}{m\_fCallLimit}})}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}{m\_fAccTimeDelta}}\ =\ 0.f;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 \Hypertarget{class_c_frame_acfb5befa7f30a0cefd1e885623a39c69}\index{CFrame@{CFrame}!Ready\_Frame@{Ready\_Frame}}
 \index{Ready\_Frame@{Ready\_Frame}!CFrame@{CFrame}}
 \doxysubsubsection{\texorpdfstring{Ready\_Frame()}{Ready\_Frame()}}
@@ -70,13 +174,48 @@ HRESULT CFrame\+::\+Ready\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{const \mb
 
 
 
-Definition at line \mbox{\hyperlink{_c_frame_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}}.
-
-Here is the caller graph for this function\+:
-% FIG 5
+\mbox{\hyperlink{_c_frame_8cpp_source}{CFrame.\+cpp}} 파일의 \mbox{\hyperlink{_c_frame_8cpp_source_l00025}{25}} 번째 라인에서 정의되었습니다.
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2}{m\_fCallLimit}}\ =\ 1.f\ /\ fCallLimit;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_frame_doc-variable-members}
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367}\index{CFrame@{CFrame}!m\_fAccTimeDelta@{m\_fAccTimeDelta}}
+\index{m\_fAccTimeDelta@{m\_fAccTimeDelta}!CFrame@{CFrame}}
+\doxysubsubsection{\texorpdfstring{m\_fAccTimeDelta}{m\_fAccTimeDelta}}
+{\footnotesize\ttfamily \label{class_c_frame_a4de984d0e80b38c9e1434c1cb0cf5367} 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} CFrame\+::m\+\_\+f\+Acc\+Time\+Delta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_frame_8h_source}{CFrame.\+h}} 파일의 \mbox{\hyperlink{_c_frame_8h_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2}\index{CFrame@{CFrame}!m\_fCallLimit@{m\_fCallLimit}}
+\index{m\_fCallLimit@{m\_fCallLimit}!CFrame@{CFrame}}
+\doxysubsubsection{\texorpdfstring{m\_fCallLimit}{m\_fCallLimit}}
+{\footnotesize\ttfamily \label{class_c_frame_a03cb5271dd0c368c4ba2429b62da18a2} 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} CFrame\+::m\+\_\+f\+Call\+Limit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_frame_8h_source}{CFrame.\+h}} 파일의 \mbox{\hyperlink{_c_frame_8h_source_l00020}{20}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_frame_8h}{CFrame.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_frame_8cpp}{CFrame.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-\doxysection{CTimer\+Mgr Class Reference}
+\doxysection{CTimer\+Mgr 클래스 참조}
 \hypertarget{class_c_timer_mgr}{}\label{class_c_timer_mgr}\index{CTimerMgr@{CTimerMgr}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CTimer\+Mgr\+:
+CTimer\+Mgr에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CTimer\+Mgr\+:
+CTimer\+Mgr에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_timer_mgr_ab16c0b993bffc2c928567afcf4cad30f}{Get\+\_\+\+Time\+Delta}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Timer\+Tag)
@@ -21,18 +21,122 @@ void \mbox{\hyperlink{class_c_timer_mgr_aae36eb02ab3fc6f8c993bd5177ad0126}{Set\+
 \item 
 HRESULT \mbox{\hyperlink{class_c_timer_mgr_addec83ec3d04bea245466d0124a9f612}{Ready\+\_\+\+Timer}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Timer\+Tag)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_timer_mgr_a5654b763478de65695f327413bfc6eb6}{CTimer\+Mgr}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_timer_mgr_a0fcd69198fe856497f29440bd482bfe0}{\texorpdfstring{$\sim$}{\string~}\+CTimer\+Mgr}} ()
+\item 
+\mbox{\hyperlink{class_c_timer}{CTimer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_timer_mgr_ad27444b9877ecaa53909130a2d811934}{Find\+\_\+\+Timer}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Timer\+Tag)
+\item 
+virtual void \mbox{\hyperlink{class_c_timer_mgr_a3187a3bf3586c3876da8de66bc712848}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_c_timer}{CTimer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\+\_\+map\+Timer}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_timer_mgr_8h_source_l00008}{8}} of file \mbox{\hyperlink{_c_timer_mgr_8h_source}{CTimer\+Mgr.\+h}}.
+\mbox{\hyperlink{_c_timer_mgr_8h_source}{CTimer\+Mgr.\+h}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8h_source_l00008}{8}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_timer_mgr_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_timer_mgr_a5654b763478de65695f327413bfc6eb6}\index{CTimerMgr@{CTimerMgr}!CTimerMgr@{CTimerMgr}}
+\index{CTimerMgr@{CTimerMgr}!CTimerMgr@{CTimerMgr}}
+\doxysubsubsection{\texorpdfstring{CTimerMgr()}{CTimerMgr()}}
+{\footnotesize\ttfamily \label{class_c_timer_mgr_a5654b763478de65695f327413bfc6eb6} 
+CTimer\+Mgr\+::\+CTimer\+Mgr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00005}{5}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_timer_mgr_a0fcd69198fe856497f29440bd482bfe0}\index{CTimerMgr@{CTimerMgr}!````~CTimerMgr@{\texorpdfstring{$\sim$}{\string~}CTimerMgr}}
+\index{````~CTimerMgr@{\texorpdfstring{$\sim$}{\string~}CTimerMgr}!CTimerMgr@{CTimerMgr}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CTimerMgr()}{\string~CTimerMgr()}}
+{\footnotesize\ttfamily \label{class_c_timer_mgr_a0fcd69198fe856497f29440bd482bfe0} 
+CTimer\+Mgr\+::\texorpdfstring{$\sim$}{\string~}\+CTimer\+Mgr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_c_timer_mgr_a3187a3bf3586c3876da8de66bc712848}{Free}}();}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_timer_mgr_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_c_timer_mgr_ad27444b9877ecaa53909130a2d811934}\index{CTimerMgr@{CTimerMgr}!Find\_Timer@{Find\_Timer}}
+\index{Find\_Timer@{Find\_Timer}!CTimerMgr@{CTimerMgr}}
+\doxysubsubsection{\texorpdfstring{Find\_Timer()}{Find\_Timer()}}
+{\footnotesize\ttfamily \label{class_c_timer_mgr_ad27444b9877ecaa53909130a2d811934} 
+\mbox{\hyperlink{class_c_timer}{CTimer}} \texorpdfstring{$\ast$}{*} CTimer\+Mgr\+::\+Find\+\_\+\+Timer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}}]{p\+Timer\+Tag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00048}{48}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{auto}\ \ \ \ \ \ \ \ iter\ =\ find\_if(\mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\_mapTimer}}.begin(),\ \mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\_mapTimer}}.end(),\ CTag\_Finder(pTimerTag));}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (iter\ ==\ \mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\_mapTimer}}.end())}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ iter-\/>second;}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\Hypertarget{class_c_timer_mgr_a3187a3bf3586c3876da8de66bc712848}\index{CTimerMgr@{CTimerMgr}!Free@{Free}}
+\index{Free@{Free}!CTimerMgr@{CTimerMgr}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_timer_mgr_a3187a3bf3586c3876da8de66bc712848} 
+void CTimer\+Mgr\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00058}{58}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ for\_each(\mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\_mapTimer}}.begin(),\ \mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\_mapTimer}}.end(),\ CDeleteMap());}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\_mapTimer}}.clear();}
+\DoxyCodeLine{00062\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
 \Hypertarget{class_c_timer_mgr_ab16c0b993bffc2c928567afcf4cad30f}\index{CTimerMgr@{CTimerMgr}!Get\_TimeDelta@{Get\_TimeDelta}}
 \index{Get\_TimeDelta@{Get\_TimeDelta}!CTimerMgr@{CTimerMgr}}
 \doxysubsubsection{\texorpdfstring{Get\_TimeDelta()}{Get\_TimeDelta()}}
@@ -41,10 +145,21 @@ Definition at line \mbox{\hyperlink{_c_timer_mgr_8h_source_l00008}{8}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}}.
+\mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00014}{14}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ CTimer*\ pTimer\ =\ \mbox{\hyperlink{class_c_timer_mgr_ad27444b9877ecaa53909130a2d811934}{Find\_Timer}}(pTimerTag);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pTimer)}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.f;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ pTimer-\/>\mbox{\hyperlink{class_c_timer_a7272990be54f390f4c5701f3ffb69d23}{Get\_TimeDelta}}();}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
 \Hypertarget{class_c_timer_mgr_addec83ec3d04bea245466d0124a9f612}\index{CTimerMgr@{CTimerMgr}!Ready\_Timer@{Ready\_Timer}}
 \index{Ready\_Timer@{Ready\_Timer}!CTimerMgr@{CTimerMgr}}
 \doxysubsubsection{\texorpdfstring{Ready\_Timer()}{Ready\_Timer()}}
@@ -53,10 +168,28 @@ HRESULT CTimer\+Mgr\+::\+Ready\+\_\+\+Timer (\begin{DoxyParamCaption}\item[{cons
 
 
 
-Definition at line \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}}.
+\mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00032}{32}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 3
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ CTimer*\ pTimer\ =\ \mbox{\hyperlink{class_c_timer_mgr_ad27444b9877ecaa53909130a2d811934}{Find\_Timer}}(pTimerTag);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ !=\ pTimer)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ pTimer\ =\ \mbox{\hyperlink{class_c_timer_aafb22675c7c1bf353f3d373f8429e5cc}{CTimer::Create}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pTimer)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\_mapTimer}}.insert(\{\ pTimerTag,\ pTimer\ \});}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
 \Hypertarget{class_c_timer_mgr_aae36eb02ab3fc6f8c993bd5177ad0126}\index{CTimerMgr@{CTimerMgr}!Set\_TimeDelta@{Set\_TimeDelta}}
 \index{Set\_TimeDelta@{Set\_TimeDelta}!CTimerMgr@{CTimerMgr}}
 \doxysubsubsection{\texorpdfstring{Set\_TimeDelta()}{Set\_TimeDelta()}}
@@ -65,13 +198,39 @@ void CTimer\+Mgr\+::\+Set\+\_\+\+Time\+Delta (\begin{DoxyParamCaption}\item[{con
 
 
 
-Definition at line \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}}.
-
-Here is the call graph for this function\+:
-% FIG 4
+\mbox{\hyperlink{_c_timer_mgr_8cpp_source}{CTimer\+Mgr.\+cpp}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8cpp_source_l00023}{23}} 번째 라인에서 정의되었습니다.
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ CTimer*\ pTimer\ =\ \mbox{\hyperlink{class_c_timer_mgr_ad27444b9877ecaa53909130a2d811934}{Find\_Timer}}(pTimerTag);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pTimer)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ pTimer-\/>\mbox{\hyperlink{class_c_timer_ab02e145d6cdc46233bd89a8ca727b97d}{Update\_Timer}}();}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_timer_mgr_doc-variable-members}
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}\index{CTimerMgr@{CTimerMgr}!m\_mapTimer@{m\_mapTimer}}
+\index{m\_mapTimer@{m\_mapTimer}!CTimerMgr@{CTimerMgr}}
+\doxysubsubsection{\texorpdfstring{m\_mapTimer}{m\_mapTimer}}
+{\footnotesize\ttfamily \label{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a} 
+map$<$const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}}\texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_c_timer}{CTimer}}\texorpdfstring{$\ast$}{*}$>$ CTimer\+Mgr\+::m\+\_\+map\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_timer_mgr_8h_source}{CTimer\+Mgr.\+h}} 파일의 \mbox{\hyperlink{_c_timer_mgr_8h_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_timer_mgr_8h}{CTimer\+Mgr.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_timer_mgr_8cpp}{CTimer\+Mgr.\+cpp}}\end{DoxyCompactItemize}

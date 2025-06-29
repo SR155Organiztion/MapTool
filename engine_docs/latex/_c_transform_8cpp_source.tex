@@ -1,33 +1,33 @@
 \doxysection{CTransform.\+cpp}
 \hypertarget{_c_transform_8cpp_source}{}\label{_c_transform_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CTransform.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CTransform.cpp}}
-\mbox{\hyperlink{_c_transform_8cpp}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_transform_8cpp}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_transform_8h}{CTransform.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00003}00003\ CTransform::CTransform()}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00004}00004\ \ \ \ \ :\ m\_vScale(1.f,\ 1.f,\ 1.f),\ m\_vAngle(0.f,\ 0.f,\ 0.f)}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00003}\mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{00003}}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform::CTransform}}()}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00004}00004\ \ \ \ \ :\ \mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}}(1.f,\ 1.f,\ 1.f),\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}(0.f,\ 0.f,\ 0.f)}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00005}00005\ \{}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00006}00006\ \ \ \ \ ZeroMemory(m\_vInfo,\ \textcolor{keyword}{sizeof}(m\_vInfo));}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00007}00007\ \ \ \ \ D3DXMatrixIdentity(\&m\_matWorld);}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00006}00006\ \ \ \ \ ZeroMemory(\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}));}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00007}00007\ \ \ \ \ D3DXMatrixIdentity(\&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}});}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00008}00008\ \}}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00010}00010\ CTransform::CTransform(LPDIRECT3DDEVICE9\ pGraphicDev)}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00011}00011\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component}{CComponent}}(pGraphicDev),\ m\_vScale(1.f,\ 1.f,\ 1.f),\ m\_vAngle(0.f,\ 0.f,\ 0.f)}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00010}\mbox{\hyperlink{class_c_transform_ae4cd3a1174c9f6162a396ff4ff536b89}{00010}}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform::CTransform}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00011}00011\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(pGraphicDev),\ \mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}}(1.f,\ 1.f,\ 1.f),\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}(0.f,\ 0.f,\ 0.f)}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00012}00012\ \{}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00013}00013\ \ \ \ \ ZeroMemory(m\_vInfo,\ \textcolor{keyword}{sizeof}(m\_vInfo));}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00014}00014\ \ \ \ \ D3DXMatrixIdentity(\&m\_matWorld);}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00013}00013\ \ \ \ \ ZeroMemory(\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}));}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00014}00014\ \ \ \ \ D3DXMatrixIdentity(\&\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}});}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00015}00015\ \}}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00017}00017\ CTransform::CTransform(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_c_transform}{CTransform}}\&\ rhs)\ }
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00018}00018\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component}{CComponent}}(rhs),\ m\_vScale(rhs.m\_vScale),\ m\_vAngle(rhs.m\_vAngle)}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00017}\mbox{\hyperlink{class_c_transform_ad162850e6840a15b620c7e0b0189f29c}{00017}}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform::CTransform}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}}\&\ rhs)\ }
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00018}00018\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(rhs),\ \mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}}(rhs.\mbox{\hyperlink{class_c_transform_a5c967206d8e0d5b0c16de5f390b3f60f}{m\_vScale}}),\ \mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}}(rhs.\mbox{\hyperlink{class_c_transform_a864a470069e959392fdb3c781ff6ac2f}{m\_vAngle}})}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00019}00019\ \{}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a9c50b3535e8a34583bb62b4200f60057a7bb3a995646752fe3a8fadee4d89b491}{INFO\_END}};\ ++i)}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ m\_vInfo[i]\ =\ rhs.\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i];}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i]\ =\ rhs.\mbox{\hyperlink{class_c_transform_adeb0cd223075b51ba9209ddabe052dc2}{m\_vInfo}}[i];}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00023}00023\ \ \ \ \ m\_matWorld\ =\ rhs.\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}};}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}}\ =\ rhs.\mbox{\hyperlink{class_c_transform_ad55e5375c1a916da38aefa6ee4ee272b}{m\_matWorld}};}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00024}00024\ \}}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00026}00026\ CTransform::\string~CTransform()}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00026}\mbox{\hyperlink{class_c_transform_a90d72f6ed0c3b0e5401365ba6fe2bdc5}{00026}}\ \mbox{\hyperlink{class_c_transform_a90d72f6ed0c3b0e5401365ba6fe2bdc5}{CTransform::\string~CTransform}}()}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00027}00027\ \{}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00028}00028\ \}}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00029}00029\ }
@@ -130,12 +130,12 @@
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00126}00126\ }
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00127}\mbox{\hyperlink{class_c_transform_a748230a163cf504daa34cc4a359de71b}{00127}}\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}*\ \mbox{\hyperlink{class_c_transform_a748230a163cf504daa34cc4a359de71b}{CTransform::Clone}}()}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00128}00128\ \{}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CTransform(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}}(*\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00130}00130\ \}}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00131}00131\ }
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00132}\mbox{\hyperlink{class_c_transform_a0cdd415c4c547689b736698492c002a6}{00132}}\ CTransform*\ \mbox{\hyperlink{class_c_transform_a0cdd415c4c547689b736698492c002a6}{CTransform::Create}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00132}\mbox{\hyperlink{class_c_transform_a0cdd415c4c547689b736698492c002a6}{00132}}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}}*\ \mbox{\hyperlink{class_c_transform_a0cdd415c4c547689b736698492c002a6}{CTransform::Create}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00133}00133\ \{}
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00134}00134\ \ \ \ \ CTransform*\ pTransform\ =\ \textcolor{keyword}{new}\ CTransform(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00134}00134\ \ \ \ \ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}}*\ pTransform\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}}(pGraphicDev);}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00135}00135\ }
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pTransform-\/>\mbox{\hyperlink{class_c_transform_a72957afa6c292a39d291d7bc0024550a}{Ready\_Transform}}()))}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00137}00137\ \ \ \ \ \{}
@@ -147,7 +147,7 @@
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{return}\ pTransform;}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00144}00144\ \}}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00145}00145\ }
-\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00146}00146\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{CTransform::Free}}()}
+\DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00146}\mbox{\hyperlink{class_c_transform_abf64d82457b6e77d48a6f491dfc25334}{00146}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_transform_abf64d82457b6e77d48a6f491dfc25334}{CTransform::Free}}()}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00147}00147\ \{}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{CComponent::Free}}();}
 \DoxyCodeLine{\Hypertarget{_c_transform_8cpp_source_l00149}00149\ }

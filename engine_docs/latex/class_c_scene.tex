@@ -1,4 +1,4 @@
-\doxysection{CScene Class Reference}
+\doxysection{CScene 클래스 참조}
 \hypertarget{class_c_scene}{}\label{class_c_scene}\index{CScene@{CScene}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CScene\+:
+CScene에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CScene\+:
+CScene에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_scene_adbae90cf966c15987c2057eb5e34ac4a}{Get\+\_\+\+Component}} (\mbox{\hyperlink{namespace_engine_acfa55bbe8070f616d90c632809572f0d}{COMPONENTID}} e\+ID, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Layer\+Tag, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Obj\+Tag, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Component\+Tag)
@@ -25,7 +25,7 @@ virtual void \mbox{\hyperlink{class_c_scene_a602122b5f8b51df6992e17a82d336b7d}{L
 \item 
 virtual void \mbox{\hyperlink{class_c_scene_a2c984005f38a2f8fd8ecc02539325e2d}{Render\+\_\+\+Scene}} () PURE
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Member Functions}
+\doxysubsubsection*{Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_scene_a1faac456239bf825e2216f47a1a90475}{CScene}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
@@ -34,7 +34,7 @@ virtual \mbox{\hyperlink{class_c_scene_a8f230d53cbde78e2a0d4a94fca1653b7}{\texor
 \item 
 virtual void \mbox{\hyperlink{class_c_scene_abd26bd1d6294a3c66e8e11c68bf1e6e5}{Free}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Attributes}
+\doxysubsubsection*{Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 map$<$ const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_c_layer}{CLayer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\+\_\+map\+Layer}}
@@ -43,16 +43,16 @@ LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_scene_abc030beb4350369be21cc38594cb
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8h_source_l00008}{8}} of file \mbox{\hyperlink{_c_scene_8h_source}{CScene.\+h}}.
+\mbox{\hyperlink{_c_scene_8h_source}{CScene.\+h}} 파일의 \mbox{\hyperlink{_c_scene_8h_source_l00008}{8}} 번째 라인에서 정의되었습니다.
 
 
 
 \label{doc-constructors}
 \Hypertarget{class_c_scene_doc-constructors}
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{생성자 \& 소멸자 문서화}
 \Hypertarget{class_c_scene_a1faac456239bf825e2216f47a1a90475}\index{CScene@{CScene}!CScene@{CScene}}
 \index{CScene@{CScene}!CScene@{CScene}}
 \doxysubsubsection{\texorpdfstring{CScene()}{CScene()}}
@@ -61,8 +61,16 @@ CScene\+::\+CScene (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Grap
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}}.
+\mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}} 파일의 \mbox{\hyperlink{_c_scene_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ :\ \mbox{\hyperlink{class_c_scene_abc030beb4350369be21cc38594cbc9df}{m\_pGraphicDev}}(pGraphicDev) }
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{class_c_scene_abc030beb4350369be21cc38594cbc9df}{m\_pGraphicDev}}-\/>AddRef();}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_scene_a8f230d53cbde78e2a0d4a94fca1653b7}\index{CScene@{CScene}!````~CScene@{\texorpdfstring{$\sim$}{\string~}CScene}}
 \index{````~CScene@{\texorpdfstring{$\sim$}{\string~}CScene}!CScene@{CScene}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CScene()}{\string~CScene()}}
@@ -71,13 +79,19 @@ CScene\+::\texorpdfstring{$\sim$}{\string~}\+CScene (\begin{DoxyParamCaption}{}{
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}}.
+\mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}} 파일의 \mbox{\hyperlink{_c_scene_8cpp_source_l00009}{9}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_scene_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_scene_abd26bd1d6294a3c66e8e11c68bf1e6e5}\index{CScene@{CScene}!Free@{Free}}
 \index{Free@{Free}!CScene@{CScene}}
 \doxysubsubsection{\texorpdfstring{Free()}{Free()}}
@@ -86,9 +100,19 @@ void CScene\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspac
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}}.
+\mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}} 파일의 \mbox{\hyperlink{_c_scene_8cpp_source_l00043}{43}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ for\_each(\mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\_mapLayer}}.begin(),\ \mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\_mapLayer}}.end(),\ CDeleteMap());}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\_mapLayer}}.clear();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_scene_abc030beb4350369be21cc38594cbc9df}{m\_pGraphicDev}});}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 2
 \Hypertarget{class_c_scene_adbae90cf966c15987c2057eb5e34ac4a}\index{CScene@{CScene}!Get\_Component@{Get\_Component}}
 \index{Get\_Component@{Get\_Component}!CScene@{CScene}}
@@ -98,8 +122,20 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}}.
+\mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}} 파일의 \mbox{\hyperlink{_c_scene_8cpp_source_l00013}{13}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{auto}\ \ \ \ iter\ =\ find\_if(\mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\_mapLayer}}.begin(),\ \mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\_mapLayer}}.end(),\ CTag\_Finder(pLayerTag));}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (iter\ ==\ \mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\_mapLayer}}.end())}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ iter-\/>second-\/>Get\_Component(eID,\ pObjTag,\ pComponentTag);}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_scene_a602122b5f8b51df6992e17a82d336b7d}\index{CScene@{CScene}!LateUpdate\_Scene@{LateUpdate\_Scene}}
 \index{LateUpdate\_Scene@{LateUpdate\_Scene}!CScene@{CScene}}
 \doxysubsubsection{\texorpdfstring{LateUpdate\_Scene()}{LateUpdate\_Scene()}}
@@ -108,8 +144,16 @@ void CScene\+::\+Late\+Update\+\_\+\+Scene (\begin{DoxyParamCaption}\item[{const
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}}.
+\mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}} 파일의 \mbox{\hyperlink{_c_scene_8cpp_source_l00036}{36}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pLayer\ :\ \mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\_mapLayer}})}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ pLayer.second-\/>LateUpdate\_Layer(fTimeDelta);}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_scene_ad2c90e053cea681db9f0835d0f62485b}\index{CScene@{CScene}!Ready\_Scene@{Ready\_Scene}}
 \index{Ready\_Scene@{Ready\_Scene}!CScene@{CScene}}
 \doxysubsubsection{\texorpdfstring{Ready\_Scene()}{Ready\_Scene()}}
@@ -118,8 +162,15 @@ HRESULT CScene\+::\+Ready\+\_\+\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}}.
+\mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}} 파일의 \mbox{\hyperlink{_c_scene_8cpp_source_l00023}{23}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_scene_a2c984005f38a2f8fd8ecc02539325e2d}\index{CScene@{CScene}!Render\_Scene@{Render\_Scene}}
 \index{Render\_Scene@{Render\_Scene}!CScene@{CScene}}
 \doxysubsubsection{\texorpdfstring{Render\_Scene()}{Render\_Scene()}}
@@ -134,13 +185,23 @@ virtual void CScene\+::\+Render\+\_\+\+Scene (\begin{DoxyParamCaption}{}{}\end{D
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}}.
+\mbox{\hyperlink{_c_scene_8cpp_source}{CScene.\+cpp}} 파일의 \mbox{\hyperlink{_c_scene_8cpp_source_l00028}{28}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pLayer\ :\ \mbox{\hyperlink{class_c_scene_a03262803a9e92404edfb6b427a08177f}{m\_mapLayer}})}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ pLayer.second-\/>Update\_Layer(fTimeDelta);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-variable-members}
 \Hypertarget{class_c_scene_doc-variable-members}
-\doxysubsection{Member Data Documentation}
+\doxysubsection{멤버 데이터 문서화}
 \Hypertarget{class_c_scene_a03262803a9e92404edfb6b427a08177f}\index{CScene@{CScene}!m\_mapLayer@{m\_mapLayer}}
 \index{m\_mapLayer@{m\_mapLayer}!CScene@{CScene}}
 \doxysubsubsection{\texorpdfstring{m\_mapLayer}{m\_mapLayer}}
@@ -149,7 +210,7 @@ map$<$const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8h_source_l00027}{27}} of file \mbox{\hyperlink{_c_scene_8h_source}{CScene.\+h}}.
+\mbox{\hyperlink{_c_scene_8h_source}{CScene.\+h}} 파일의 \mbox{\hyperlink{_c_scene_8h_source_l00027}{27}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_c_scene_abc030beb4350369be21cc38594cbc9df}\index{CScene@{CScene}!m\_pGraphicDev@{m\_pGraphicDev}}
 \index{m\_pGraphicDev@{m\_pGraphicDev}!CScene@{CScene}}
@@ -159,11 +220,11 @@ LPDIRECT3\+DDEVICE9 CScene\+::m\+\_\+p\+Graphic\+Dev\hspace{0.3cm}{\ttfamily [pr
 
 
 
-Definition at line \mbox{\hyperlink{_c_scene_8h_source_l00028}{28}} of file \mbox{\hyperlink{_c_scene_8h_source}{CScene.\+h}}.
+\mbox{\hyperlink{_c_scene_8h_source}{CScene.\+h}} 파일의 \mbox{\hyperlink{_c_scene_8h_source_l00028}{28}} 번째 라인에서 정의되었습니다.
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_scene_8h}{CScene.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_scene_8cpp}{CScene.\+cpp}}\end{DoxyCompactItemize}

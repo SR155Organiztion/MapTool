@@ -1,4 +1,4 @@
-\doxysection{CGraphic\+Dev Class Reference}
+\doxysection{CGraphic\+Dev 클래스 참조}
 \hypertarget{class_c_graphic_dev}{}\label{class_c_graphic_dev}\index{CGraphicDev@{CGraphicDev}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CGraphic\+Dev\+:
+CGraphic\+Dev에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CGraphic\+Dev\+:
+CGraphic\+Dev에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_graphic_dev_aec9eef5cd5dd93e975823bbfb62b294b}{Get\+\_\+\+Graphic\+Dev}} ()
@@ -23,18 +23,96 @@ void \mbox{\hyperlink{class_c_graphic_dev_a35c25fa25b1451202b6446c46b81a798}{Ren
 \item 
 void \mbox{\hyperlink{class_c_graphic_dev_abf2c714dad1e3698c166baf8901897e2}{Render\+\_\+\+End}} ()
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_graphic_dev_aba29dad3e5da8c16dea60bc2a71bf256}{CGraphic\+Dev}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_graphic_dev_a6e039b1b8bb40bc42251b5c70ff96882}{\texorpdfstring{$\sim$}{\string~}\+CGraphic\+Dev}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_graphic_dev_aaee37c803c0b92903f2f8e3d0f832add}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+LPDIRECT3\+D9 \mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\+\_\+p\+SDK}}
+\item 
+LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\+\_\+p\+Graphic\+Dev}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_graphic_dev_8h_source_l00008}{8}} of file \mbox{\hyperlink{_c_graphic_dev_8h_source}{CGraphic\+Dev.\+h}}.
+\mbox{\hyperlink{_c_graphic_dev_8h_source}{CGraphic\+Dev.\+h}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8h_source_l00008}{8}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_graphic_dev_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_graphic_dev_aba29dad3e5da8c16dea60bc2a71bf256}\index{CGraphicDev@{CGraphicDev}!CGraphicDev@{CGraphicDev}}
+\index{CGraphicDev@{CGraphicDev}!CGraphicDev@{CGraphicDev}}
+\doxysubsubsection{\texorpdfstring{CGraphicDev()}{CGraphicDev()}}
+{\footnotesize\ttfamily \label{class_c_graphic_dev_aba29dad3e5da8c16dea60bc2a71bf256} 
+CGraphic\+Dev\+::\+CGraphic\+Dev (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00005}{5}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}}(\textcolor{keyword}{nullptr}),\ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}(\textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_graphic_dev_a6e039b1b8bb40bc42251b5c70ff96882}\index{CGraphicDev@{CGraphicDev}!````~CGraphicDev@{\texorpdfstring{$\sim$}{\string~}CGraphicDev}}
+\index{````~CGraphicDev@{\texorpdfstring{$\sim$}{\string~}CGraphicDev}!CGraphicDev@{CGraphicDev}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CGraphicDev()}{\string~CGraphicDev()}}
+{\footnotesize\ttfamily \label{class_c_graphic_dev_a6e039b1b8bb40bc42251b5c70ff96882} 
+CGraphic\+Dev\+::\texorpdfstring{$\sim$}{\string~}\+CGraphic\+Dev (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_graphic_dev_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
+\Hypertarget{class_c_graphic_dev_aaee37c803c0b92903f2f8e3d0f832add}\index{CGraphicDev@{CGraphicDev}!Free@{Free}}
+\index{Free@{Free}!CGraphicDev@{CGraphicDev}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_graphic_dev_aaee37c803c0b92903f2f8e3d0f832add} 
+void CGraphic\+Dev\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00111}{111}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}});}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}});}
+\DoxyCodeLine{00115\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
 \Hypertarget{class_c_graphic_dev_aec9eef5cd5dd93e975823bbfb62b294b}\index{CGraphicDev@{CGraphicDev}!Get\_GraphicDev@{Get\_GraphicDev}}
 \index{Get\_GraphicDev@{Get\_GraphicDev}!CGraphicDev@{CGraphicDev}}
 \doxysubsubsection{\texorpdfstring{Get\_GraphicDev()}{Get\_GraphicDev()}}
@@ -43,8 +121,13 @@ LPDIRECT3\+DDEVICE9 CGraphic\+Dev\+::\+Get\+\_\+\+Graphic\+Dev (\begin{DoxyParam
 
 
 
-Definition at line \mbox{\hyperlink{_c_graphic_dev_8h_source_l00017}{17}} of file \mbox{\hyperlink{_c_graphic_dev_8h_source}{CGraphic\+Dev.\+h}}.
+\mbox{\hyperlink{_c_graphic_dev_8h_source}{CGraphic\+Dev.\+h}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8h_source_l00017}{17}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}};\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_graphic_dev_a941b356148ffcaa744e0b3a15372aa42}\index{CGraphicDev@{CGraphicDev}!Ready\_GraphicDev@{Ready\_GraphicDev}}
 \index{Ready\_GraphicDev@{Ready\_GraphicDev}!CGraphicDev@{CGraphicDev}}
 \doxysubsubsection{\texorpdfstring{Ready\_GraphicDev()}{Ready\_GraphicDev()}}
@@ -53,8 +136,82 @@ HRESULT CGraphic\+Dev\+::\+Ready\+\_\+\+Graphic\+Dev (\begin{DoxyParamCaption}\i
 
 
 
-Definition at line \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}}.
+\mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00013}{13}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ 1.\ �׷���\ ī����\ ������\ ������\ ��ü\ ����}}
+\DoxyCodeLine{00016\ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}}\ =\ Direct3DCreate9(D3D\_SDK\_VERSION);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ \mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}})}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ 2.\ �׷���\ ī����\ ���� ����}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ D3DCAPS9\ \ \ \ \ \ \ \ DeviceCaps;}
+\DoxyCodeLine{00025\ \ \ \ \ ZeroMemory(\&DeviceCaps,\ \textcolor{keyword}{sizeof}(D3DCAPS9));}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ D3DADAPTER\_DEFAULT\ :\ ����\ ��ǻ�Ϳ�\ ��ġ�� �⺻\ �׷���\ ī��}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}}-\/>GetDeviceCaps(D3DADAPTER\_DEFAULT,\ D3DDEVTYPE\_HAL,\ \&DeviceCaps)))}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ \ \ \ dwFlag(0);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (DeviceCaps.DevCaps\ \&\ D3DDEVCAPS\_HWTRANSFORMANDLIGHT)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ dwFlag\ |=\ D3DCREATE\_HARDWARE\_VERTEXPROCESSING\ |\ D3DCREATE\_MULTITHREADED;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ dwFlag\ |=\ D3DCREATE\_SOFTWARE\_VERTEXPROCESSING\ |\ D3DCREATE\_MULTITHREADED;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ D3DPRESENT\_PARAMETERS\ \ \ \ \ \ \ d3dpp;}
+\DoxyCodeLine{00041\ \ \ \ \ ZeroMemory(\&d3dpp,\ \textcolor{keyword}{sizeof}(D3DPRESENT\_PARAMETERS));}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ d3dpp.BackBufferWidth\ =\ iSizeX;}
+\DoxyCodeLine{00044\ \ \ \ \ d3dpp.BackBufferHeight\ =\ iSizeY;}
+\DoxyCodeLine{00045\ \ \ \ \ d3dpp.BackBufferFormat\ =\ D3DFMT\_A8R8G8B8;}
+\DoxyCodeLine{00046\ \ \ \ \ d3dpp.BackBufferCount\ =\ 1;}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ d3dpp.MultiSampleType\ =\ D3DMULTISAMPLE\_NONE;}
+\DoxyCodeLine{00049\ \ \ \ \ d3dpp.MultiSampleQuality\ =\ 0;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ D3DSWAPEFFECT\_DISCARD\ =\ ���� ü��\ ���}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ D3DSWAPEFFECT\_FLIP\ =\ \ �ϳ���\ ���۸�\ ������\ ���}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ D3DSWAPEFFECT\_COPY\ =\ ���� ���۸��� ����� ���}}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ d3dpp.SwapEffect\ =\ D3DSWAPEFFECT\_DISCARD;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ d3dpp.hDeviceWindow\ =\ hWnd;}
+\DoxyCodeLine{00058\ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ d3dpp.Windowed\ =\ eMode;\ \textcolor{comment}{//\ â\ ��� �Ǵ� ��üȭ�� ���}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ d3dpp.EnableAutoDepthStencil\ =\ TRUE;}
+\DoxyCodeLine{00062\ \ \ \ \ d3dpp.AutoDepthStencilFormat\ =\ D3DFMT\_D24S8;}
+\DoxyCodeLine{00063\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ d3dpp.FullScreen\_RefreshRateInHz\ =\ D3DPRESENT\_RATE\_DEFAULT;}
+\DoxyCodeLine{00065\ \ \ \ \ d3dpp.PresentationInterval\ =\ D3DPRESENT\_INTERVAL\_IMMEDIATE;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ 3.\ �׷���\ ī����\ �����\ �����\ ��ü\ ����}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}{m\_pSDK}}-\/>CreateDevice(D3DADAPTER\_DEFAULT,\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D3DDEVTYPE\_HAL,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hWnd,\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dwFlag,\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&d3dpp,\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}})))}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ *ppGraphicDev\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 \Hypertarget{class_c_graphic_dev_a35c25fa25b1451202b6446c46b81a798}\index{CGraphicDev@{CGraphicDev}!Render\_Begin@{Render\_Begin}}
 \index{Render\_Begin@{Render\_Begin}!CGraphicDev@{CGraphicDev}}
 \doxysubsubsection{\texorpdfstring{Render\_Begin()}{Render\_Begin()}}
@@ -63,8 +220,23 @@ void CGraphic\+Dev\+::\+Render\+\_\+\+Begin (\begin{DoxyParamCaption}\item[{D3\+
 
 
 
-Definition at line \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}}.
+\mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00086}{86}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}-\/>Clear(0,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NULL,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ D3DCLEAR\_TARGET\ |\ D3DCLEAR\_STENCIL\ |\ D3DCLEAR\_ZBUFFER,}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Color,\ \ \ \ \ \ \textcolor{comment}{//\ �ĸ� ���� �ؽ�ó\ ����}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.f,\ \ \ \ \ \ \ \ \textcolor{comment}{//\ z���� �ʱ�ȭ\ ��}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0);\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ���ٽ� �ʱ�ȭ\ ��}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}-\/>BeginScene();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_graphic_dev_abf2c714dad1e3698c166baf8901897e2}\index{CGraphicDev@{CGraphicDev}!Render\_End@{Render\_End}}
 \index{Render\_End@{Render\_End}!CGraphicDev@{CGraphicDev}}
 \doxysubsubsection{\texorpdfstring{Render\_End()}{Render\_End()}}
@@ -73,11 +245,47 @@ void CGraphic\+Dev\+::\+Render\+\_\+\+End (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-Definition at line \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}}.
+\mbox{\hyperlink{_c_graphic_dev_8cpp_source}{CGraphic\+Dev.\+cpp}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8cpp_source_l00102}{102}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}-\/>EndScene();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}{m\_pGraphicDev}}-\/>Present(NULL,\ NULL,\ NULL,\ NULL);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ 3\ ����\ :\ �ڵ� ��}}
+\DoxyCodeLine{00109\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_graphic_dev_doc-variable-members}
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8}\index{CGraphicDev@{CGraphicDev}!m\_pGraphicDev@{m\_pGraphicDev}}
+\index{m\_pGraphicDev@{m\_pGraphicDev}!CGraphicDev@{CGraphicDev}}
+\doxysubsubsection{\texorpdfstring{m\_pGraphicDev}{m\_pGraphicDev}}
+{\footnotesize\ttfamily \label{class_c_graphic_dev_a7cb404fa8237298a3d1851b84a77d7d8} 
+LPDIRECT3\+DDEVICE9 CGraphic\+Dev\+::m\+\_\+p\+Graphic\+Dev\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\mbox{\hyperlink{_c_graphic_dev_8h_source}{CGraphic\+Dev.\+h}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8h_source_l00033}{33}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07}\index{CGraphicDev@{CGraphicDev}!m\_pSDK@{m\_pSDK}}
+\index{m\_pSDK@{m\_pSDK}!CGraphicDev@{CGraphicDev}}
+\doxysubsubsection{\texorpdfstring{m\_pSDK}{m\_pSDK}}
+{\footnotesize\ttfamily \label{class_c_graphic_dev_a1e4eb3edb0d2ce60c2406e0ced25cd07} 
+LPDIRECT3\+D9 CGraphic\+Dev\+::m\+\_\+p\+SDK\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_graphic_dev_8h_source}{CGraphic\+Dev.\+h}} 파일의 \mbox{\hyperlink{_c_graphic_dev_8h_source_l00032}{32}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_graphic_dev_8h}{CGraphic\+Dev.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_graphic_dev_8cpp}{CGraphic\+Dev.\+cpp}}\end{DoxyCompactItemize}

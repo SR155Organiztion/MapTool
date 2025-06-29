@@ -15,7 +15,7 @@ var dir_d2221ef502370e2b20748ff9c4915b4f =
     [ "CLight.h", "_c_light_8h.html", "_c_light_8h" ],
     [ "CLightMgr.h", "_c_light_mgr_8h.html", "_c_light_mgr_8h" ],
     [ "CManagement.h", "_c_management_8h.html", "_c_management_8h" ],
-    [ "CMapToolMgr.h", "_c_map_tool_mgr_8h.html", null ],
+    [ "CMapToolMgr.h", "_c_map_tool_mgr_8h.html", "_c_map_tool_mgr_8h" ],
     [ "CPipeline.h", "_c_pipeline_8h.html", "_c_pipeline_8h" ],
     [ "CProtoMgr.h", "_c_proto_mgr_8h.html", "_c_proto_mgr_8h" ],
     [ "CRcCol.h", "_c_rc_col_8h.html", "_c_rc_col_8h" ],

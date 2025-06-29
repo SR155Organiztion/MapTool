@@ -1,23 +1,23 @@
 \doxysection{CFont\+Mgr.\+cpp}
 \hypertarget{_c_font_mgr_8cpp_source}{}\label{_c_font_mgr_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CFontMgr.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CFontMgr.cpp}}
-\mbox{\hyperlink{_c_font_mgr_8cpp}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_font_mgr_8cpp}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_font_mgr_8h}{CFontMgr.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00003}00003\ \mbox{\hyperlink{_engine___macro_8h_a27a2ec109f7264210d9c43433d1c8b61}{IMPLEMENT\_SINGLETON}}(\mbox{\hyperlink{class_c_font_mgr}{CFontMgr}})}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00005}00005\ CFontMgr::CFontMgr()}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00005}\mbox{\hyperlink{class_c_font_mgr_a686d1ee82d79ddc0d3cbc09b4975a35f}{00005}}\ \mbox{\hyperlink{class_c_font_mgr_a686d1ee82d79ddc0d3cbc09b4975a35f}{CFontMgr}}::\mbox{\hyperlink{class_c_font_mgr_a686d1ee82d79ddc0d3cbc09b4975a35f}{CFontMgr}}()}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00006}00006\ \{}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00007}00007\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00009}00009\ CFontMgr::\string~CFontMgr()}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00009}\mbox{\hyperlink{class_c_font_mgr_a013848bc75d0872d4a1c46e28049ecad}{00009}}\ \mbox{\hyperlink{class_c_font_mgr_a013848bc75d0872d4a1c46e28049ecad}{CFontMgr::\string~CFontMgr}}()}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00010}00010\ \{}
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00011}00011\ \ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_c_font_mgr_a63e3d3e2a245e44685c580590d34f988}{Free}}();}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00012}00012\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00014}\mbox{\hyperlink{class_c_font_mgr_af0ec6f3fe5cfa4b3122d5853fcf4463e}{00014}}\ HRESULT\ \mbox{\hyperlink{class_c_font_mgr_af0ec6f3fe5cfa4b3122d5853fcf4463e}{CFontMgr::Ready\_Font}}(LPDIRECT3DDEVICE9\ pGraphicDev,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pFontTag,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pFontType,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iWidth,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iHeight,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iWeight)}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00015}00015\ \{}
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_c_font}{CFont}}*\ pMyFont\ =\ Find\_Font(pFontTag);}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_c_font}{CFont}}*\ pMyFont\ =\ \mbox{\hyperlink{class_c_font_mgr_a567231113fa5641f1d90f8e485244c99}{Find\_Font}}(pFontTag);}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ !=\ pMyFont)}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
@@ -27,32 +27,32 @@
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pMyFont)}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00026}00026\ \ \ \ \ m\_mapFont.insert(\{\ pFontTag,\ pMyFont\ \});}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_c_font_mgr_a75c140cbf9f731c34fa6f770e03a11f4}{m\_mapFont}}.insert(\{\ pFontTag,\ pMyFont\ \});}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00027}00027\ }
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00029}00029\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00030}00030\ }
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00031}\mbox{\hyperlink{class_c_font_mgr_a4cfdf28718dec2f7c5bf11f348f97440}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_font_mgr_a4cfdf28718dec2f7c5bf11f348f97440}{CFontMgr::Render\_Font}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pFontTag,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pString,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a17e948ff0cce3b4820ddb35f155a0ca8}{\_vec2}}*\ pPos,\ D3DXCOLOR\ Color)}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00032}00032\ \{}
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{class_c_font}{CFont}}*\ pFont\ =\ Find\_Font(pFontTag);}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{class_c_font}{CFont}}*\ pFont\ =\ \mbox{\hyperlink{class_c_font_mgr_a567231113fa5641f1d90f8e485244c99}{Find\_Font}}(pFontTag);}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00034}00034\ }
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00035}00035\ \ \ \ \ pFont-\/>\mbox{\hyperlink{class_c_font_ae5db54d9149678c13f5bb2338dea6fdf}{Render\_Font}}(pString,\ pPos,\ Color);}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00036}00036\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00038}00038\ \mbox{\hyperlink{class_c_font}{CFont}}*\ CFontMgr::Find\_Font(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pFontTag)}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00038}\mbox{\hyperlink{class_c_font_mgr_a567231113fa5641f1d90f8e485244c99}{00038}}\ \mbox{\hyperlink{class_c_font}{CFont}}*\ \mbox{\hyperlink{class_c_font_mgr_a567231113fa5641f1d90f8e485244c99}{CFontMgr::Find\_Font}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pFontTag)}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00039}00039\ \{}
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{auto}\ \ \ \ iter\ =\ find\_if(m\_mapFont.begin(),\ m\_mapFont.end(),\ \mbox{\hyperlink{class_engine_1_1_c_tag___finder}{CTag\_Finder}}(pFontTag));}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{auto}\ \ \ \ iter\ =\ find\_if(\mbox{\hyperlink{class_c_font_mgr_a75c140cbf9f731c34fa6f770e03a11f4}{m\_mapFont}}.begin(),\ \mbox{\hyperlink{class_c_font_mgr_a75c140cbf9f731c34fa6f770e03a11f4}{m\_mapFont}}.end(),\ \mbox{\hyperlink{class_engine_1_1_c_tag___finder}{CTag\_Finder}}(pFontTag));}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (iter\ ==\ m\_mapFont.end())}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (iter\ ==\ \mbox{\hyperlink{class_c_font_mgr_a75c140cbf9f731c34fa6f770e03a11f4}{m\_mapFont}}.end())}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00044}00044\ }
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ iter-\/>second;}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00046}00046\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00048}00048\ \textcolor{keywordtype}{void}\ CFontMgr::Free()}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00048}\mbox{\hyperlink{class_c_font_mgr_a63e3d3e2a245e44685c580590d34f988}{00048}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_font_mgr_a63e3d3e2a245e44685c580590d34f988}{CFontMgr::Free}}()}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00049}00049\ \{}
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00050}00050\ \ \ \ \ for\_each(m\_mapFont.begin(),\ m\_mapFont.end(),\ CDeleteMap());}
-\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00051}00051\ \ \ \ \ m\_mapFont.clear();}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00050}00050\ \ \ \ \ for\_each(\mbox{\hyperlink{class_c_font_mgr_a75c140cbf9f731c34fa6f770e03a11f4}{m\_mapFont}}.begin(),\ \mbox{\hyperlink{class_c_font_mgr_a75c140cbf9f731c34fa6f770e03a11f4}{m\_mapFont}}.end(),\ \mbox{\hyperlink{class_engine_1_1_c_delete_map}{CDeleteMap}}());}
+\DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{class_c_font_mgr_a75c140cbf9f731c34fa6f770e03a11f4}{m\_mapFont}}.clear();}
 \DoxyCodeLine{\Hypertarget{_c_font_mgr_8cpp_source_l00052}00052\ \}}
 
 \end{DoxyCode}

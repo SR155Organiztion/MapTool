@@ -1,27 +1,27 @@
 \doxysection{CManagement.\+cpp}
 \hypertarget{_c_management_8cpp_source}{}\label{_c_management_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CManagement.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CManagement.cpp}}
-\mbox{\hyperlink{_c_management_8cpp}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_management_8cpp}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_management_8h}{CManagement.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_renderer_8h}{CRenderer.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00003}00003\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00004}00004\ \mbox{\hyperlink{_engine___macro_8h_a27a2ec109f7264210d9c43433d1c8b61}{IMPLEMENT\_SINGLETON}}(\mbox{\hyperlink{class_c_management}{CManagement}})}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00005}00005\ }
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00006}00006\ CManagement::CManagement()\ :\ m\_pScene(nullptr)}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00006}\mbox{\hyperlink{class_c_management_ac5585090b22283637688f6cfbaffe551}{00006}}\ \mbox{\hyperlink{class_c_management_ac5585090b22283637688f6cfbaffe551}{CManagement}}::\mbox{\hyperlink{class_c_management_ac5585090b22283637688f6cfbaffe551}{CManagement}}()\ :\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}(\textcolor{keywordtype}{nullptr})}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00007}00007\ \{}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00008}00008\ \}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00010}00010\ CManagement::\string~CManagement()}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00010}\mbox{\hyperlink{class_c_management_a455ae7de928a6892941adcb0d8e40819}{00010}}\ \mbox{\hyperlink{class_c_management_a455ae7de928a6892941adcb0d8e40819}{CManagement::\string~CManagement}}()}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00011}00011\ \{}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_c_management_a4ca84147289cd2ff88d465828357218e}{Free}}();}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00013}00013\ \}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00014}00014\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00015}\mbox{\hyperlink{class_c_management_adc24a894e51c307e06f4a49ec59ef95d}{00015}}\ \mbox{\hyperlink{class_c_component}{CComponent}}*\ \mbox{\hyperlink{class_c_management_adc24a894e51c307e06f4a49ec59ef95d}{CManagement::Get\_Component}}(\mbox{\hyperlink{namespace_engine_acfa55bbe8070f616d90c632809572f0d}{COMPONENTID}}\ eID,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pLayerTag,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pObjTag,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pComponentTag)}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00016}00016\ \{}
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ m\_pScene)}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}})}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_pScene-\/>Get\_Component(eID,\ pLayerTag,\ pObjTag,\ pComponentTag);}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}-\/>Get\_Component(eID,\ pLayerTag,\ pObjTag,\ pComponentTag);}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00021}00021\ \}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00022}00022\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00023}\mbox{\hyperlink{class_c_management_a28110f514609e777cfe22b9ad3ff5a0a}{00023}}\ HRESULT\ \mbox{\hyperlink{class_c_management_a28110f514609e777cfe22b9ad3ff5a0a}{CManagement::Set\_Scene}}(\mbox{\hyperlink{class_c_scene}{CScene}}*\ pScene)}
@@ -29,38 +29,38 @@
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pScene)}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ E\_FAIL;}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pScene);}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}});}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00030}00030\ \ \ \ \ CRenderer::GetInstance()-\/>Clear\_RenderGroup();}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00032}00032\ \ \ \ \ m\_pScene\ =\ pScene;}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}\ =\ pScene;}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00033}00033\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00035}00035\ \}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00037}\mbox{\hyperlink{class_c_management_a21b941f346e4f6483422548eaaa5a3e1}{00037}}\ \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\_int}}\ \mbox{\hyperlink{class_c_management_a21b941f346e4f6483422548eaaa5a3e1}{CManagement::Update\_Scene}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fTimeDelta)}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00038}00038\ \{}
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ m\_pScene)}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}})}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_pScene-\/>Update\_Scene(fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}-\/>Update\_Scene(fTimeDelta);}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00043}00043\ \}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00044}00044\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00045}\mbox{\hyperlink{class_c_management_af4967600130f8c13fce550d07276faa6}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_management_af4967600130f8c13fce550d07276faa6}{CManagement::LateUpdate\_Scene}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\&\ fTimeDelta)}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00046}00046\ \{}
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00047}00047\ \ \ \ \ m\_pScene-\/>LateUpdate\_Scene(fTimeDelta);}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}-\/>LateUpdate\_Scene(fTimeDelta);}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00048}00048\ \}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00049}00049\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00050}\mbox{\hyperlink{class_c_management_a5ba25d32eed8e5aa54caf21de37f0434}{00050}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_management_a5ba25d32eed8e5aa54caf21de37f0434}{CManagement::Render\_Scene}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00051}00051\ \{}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00052}00052\ \ \ \ \ CRenderer::GetInstance()-\/>Render\_GameObject(pGraphicDev);}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00054}00054\ \ \ \ \ m\_pScene-\/>Render\_Scene();}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}-\/>Render\_Scene();}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00055}00055\ \}}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00056}00056\ }
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00057}\mbox{\hyperlink{class_c_management_a4ca84147289cd2ff88d465828357218e}{00057}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_management_a4ca84147289cd2ff88d465828357218e}{CManagement::Free}}()}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00058}00058\ \{}
-\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pScene);}
+\DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}});}
 \DoxyCodeLine{\Hypertarget{_c_management_8cpp_source_l00060}00060\ \}}
 
 \end{DoxyCode}

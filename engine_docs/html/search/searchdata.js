@@ -1,11 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "_abcdefgilmnoprstuvw~",
-  1: "ct",
+  0: "_abcdefgiklmnoprstuvw~",
+  1: "cst",
   2: "e",
   3: "cer",
-  4: "acfgilmoprsu~",
-  5: "_dfmv",
+  4: "acfgiklmoprsu~",
+  5: "_bcdefmprtv",
   6: "_iv",
   7: "cimrtw",
   8: "dimrt",
@@ -28,15 +28,15 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "All",
-  1: "Classes",
-  2: "Namespaces",
-  3: "Files",
-  4: "Functions",
-  5: "Variables",
-  6: "Typedefs",
-  7: "Enumerations",
-  8: "Enumerator",
-  9: "Macros"
+  0: "모두",
+  1: "클래스",
+  2: "네임스페이스들",
+  3: "파일들",
+  4: "함수",
+  5: "변수",
+  6: "타입정의",
+  7: "열거형 타입",
+  8: "열거형 멤버",
+  9: "매크로"
 };
 

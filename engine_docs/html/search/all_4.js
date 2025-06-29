@@ -10,5 +10,6 @@ var searchData=
   ['dims_5fy_7',['DIMS_Y',['../namespace_engine.html#a7affcf08644a3b90c140b085438a6b73a9ef2b133905b434646f234c295e6ea5a',1,'Engine']]],
   ['dims_5fz_8',['DIMS_Z',['../namespace_engine.html#a7affcf08644a3b90c140b085438a6b73a56d351aab0e0b2c9114a44c8d0109a7b',1,'Engine']]],
   ['directinput_5fversion_9',['DIRECTINPUT_VERSION',['../_engine___define_8h.html#a1d7ab29fdefabdb4e7e7cd27ac4c9934',1,'Engine_Define.h']]],
-  ['dwcolor_10',['dwColor',['../struct_engine_1_1tag_vertex_color.html#ae2727da81de4bba43bbeab9301a06fcf',1,'Engine::tagVertexColor']]]
+  ['direction_10',['Direction',['../struct_s___b_l_o_c_k.html#a3c74528cfdf06a94449856a1d0855b74',1,'S_BLOCK::Direction'],['../struct_s___t_i_l_e.html#aebb171f87ec60b01139bf44109629966',1,'S_TILE::Direction'],['../struct_s___e_n_v_i_r_o_n_m_e_n_t.html#af40eeaf926558473c392506a1fae4976',1,'S_ENVIRONMENT::Direction']]],
+  ['dwcolor_11',['dwColor',['../struct_engine_1_1tag_vertex_color.html#ae2727da81de4bba43bbeab9301a06fcf',1,'Engine::tagVertexColor']]]
 ];

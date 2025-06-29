@@ -1,7 +1,88 @@
 \doxysection{CMap\+Tool\+Mgr.\+h}
 \hypertarget{_c_map_tool_mgr_8h_source}{}\label{_c_map_tool_mgr_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CMapToolMgr.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CMapToolMgr.h}}
-\mbox{\hyperlink{_c_map_tool_mgr_8h}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_map_tool_mgr_8h}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00009}00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}CBase.h"{}}}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine___define_8h}{Engine\_Define.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00013}00013\ \mbox{\hyperlink{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}{BEGIN}}(\mbox{\hyperlink{namespace_engine}{Engine}})}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00018}\mbox{\hyperlink{struct_s___b_l_o_c_k}{00018}}\ struct\ \mbox{\hyperlink{struct_s___b_l_o_c_k}{S\_BLOCK}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00019}\mbox{\hyperlink{struct_s___b_l_o_c_k_a5d2d5ac7c36af3de91c9f162549c8cea}{00019}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_s___b_l_o_c_k_a5d2d5ac7c36af3de91c9f162549c8cea}{Block\_Name}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00020}\mbox{\hyperlink{struct_s___b_l_o_c_k_a96177efb4eab574a0166b7713993f8d8}{00020}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \mbox{\hyperlink{struct_s___b_l_o_c_k_a96177efb4eab574a0166b7713993f8d8}{vPos}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00021}\mbox{\hyperlink{struct_s___b_l_o_c_k_a3c74528cfdf06a94449856a1d0855b74}{00021}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_s___b_l_o_c_k_a3c74528cfdf06a94449856a1d0855b74}{Direction}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00022}00022\ \};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00027}\mbox{\hyperlink{struct_s___t_i_l_e}{00027}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___t_i_l_e}{S\_TILE}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00028}\mbox{\hyperlink{struct_s___t_i_l_e_ac318bc9e5a93da50839a65b28c0251dc}{00028}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_s___t_i_l_e_ac318bc9e5a93da50839a65b28c0251dc}{Tile\_Name}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00029}\mbox{\hyperlink{struct_s___t_i_l_e_af692636caf945e7f3ea7afc30f7db542}{00029}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \mbox{\hyperlink{struct_s___t_i_l_e_af692636caf945e7f3ea7afc30f7db542}{vPos}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00030}\mbox{\hyperlink{struct_s___t_i_l_e_aebb171f87ec60b01139bf44109629966}{00030}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_s___t_i_l_e_aebb171f87ec60b01139bf44109629966}{Direction}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00036}\mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t}{00036}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t}{S\_ENVIRONMENT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00037}\mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t_a1ada85d170eaf7728e541ecd349132f2}{00037}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t_a1ada85d170eaf7728e541ecd349132f2}{Tile\_Name}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00038}\mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t_ab51a20fc03f2c32ba4ffdbfa97414038}{00038}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t_ab51a20fc03f2c32ba4ffdbfa97414038}{vPos}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00039}\mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t_af40eeaf926558473c392506a1fae4976}{00039}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t_af40eeaf926558473c392506a1fae4976}{Direction}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00040}00040\ \};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00045}\mbox{\hyperlink{struct_s___c_a_m}{00045}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___c_a_m}{S\_CAM}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00046}\mbox{\hyperlink{struct_s___c_a_m_a6aacf477884d5e4b5f40a3bef6dea014}{00046}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \mbox{\hyperlink{struct_s___c_a_m_a6aacf477884d5e4b5f40a3bef6dea014}{vEye}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00047}\mbox{\hyperlink{struct_s___c_a_m_acf7420e5a11f5e8615a4060bceda0797}{00047}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \mbox{\hyperlink{struct_s___c_a_m_acf7420e5a11f5e8615a4060bceda0797}{vAt}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00048}00048\ \};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00053}\mbox{\hyperlink{struct_s___p_l_a_y_e_r}{00053}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___p_l_a_y_e_r}{S\_PLAYER}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00054}\mbox{\hyperlink{struct_s___p_l_a_y_e_r_a73832548a94ee629d1b74ceeb1e41dae}{00054}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \mbox{\hyperlink{struct_s___p_l_a_y_e_r_a73832548a94ee629d1b74ceeb1e41dae}{P1}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00055}\mbox{\hyperlink{struct_s___p_l_a_y_e_r_ad1a5011fd7d583c115de9d63e21f617b}{00055}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \mbox{\hyperlink{struct_s___p_l_a_y_e_r_ad1a5011fd7d583c115de9d63e21f617b}{P2}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00056}00056\ \};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00061}\mbox{\hyperlink{struct_s___s_t_a_g_e}{00061}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___s_t_a_g_e}{S\_STAGE}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00062}\mbox{\hyperlink{struct_s___s_t_a_g_e_a968766db65d4f44ce9d64656b3cc99a7}{00062}}\ \ \ \ \ \mbox{\hyperlink{struct_s___c_a_m}{S\_CAM}}\ \mbox{\hyperlink{struct_s___s_t_a_g_e_a968766db65d4f44ce9d64656b3cc99a7}{Cam}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00063}\mbox{\hyperlink{struct_s___s_t_a_g_e_a077a8661437ca7660c1fb58a1dc12d7c}{00063}}\ \ \ \ \ \mbox{\hyperlink{struct_s___p_l_a_y_e_r}{S\_PLAYER}}\ \mbox{\hyperlink{struct_s___s_t_a_g_e_a077a8661437ca7660c1fb58a1dc12d7c}{Player}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00064}\mbox{\hyperlink{struct_s___s_t_a_g_e_a9edd250c07c44b490e3459b2a22aa2d3}{00064}}\ \ \ \ \ std::vector<string>\ \mbox{\hyperlink{struct_s___s_t_a_g_e_a9edd250c07c44b490e3459b2a22aa2d3}{Recipe}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00065}\mbox{\hyperlink{struct_s___s_t_a_g_e_a0349c08b323f9a68a863a43fc333b766}{00065}}\ \ \ \ \ std::vector<S\_BLOCK>\ \mbox{\hyperlink{struct_s___s_t_a_g_e_a0349c08b323f9a68a863a43fc333b766}{Block}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00066}\mbox{\hyperlink{struct_s___s_t_a_g_e_a43ce5592846c6737f8f2f35144633961}{00066}}\ \ \ \ \ std::vector<S\_TILE>\ \mbox{\hyperlink{struct_s___s_t_a_g_e_a43ce5592846c6737f8f2f35144633961}{Tiles}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00067}\mbox{\hyperlink{struct_s___s_t_a_g_e_ab78a6fe33903cca184b48cfb54290bc3}{00067}}\ \ \ \ \ std::vector<S\_ENVIRONMENT>\ \mbox{\hyperlink{struct_s___s_t_a_g_e_ab78a6fe33903cca184b48cfb54290bc3}{Environment}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00068}00068\ \};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00072}\mbox{\hyperlink{class_c_map_tool_mgr}{00072}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ \mbox{\hyperlink{class_c_map_tool_mgr_a7fb071447e8c41bd1bf97fab3eedb22e}{CMapToolMgr}}\ :\ \textcolor{keyword}{public}\ CBase}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00073}00073\ \{}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_aac1c62eff2519d6fefa3719e8f8b298c}{DECLARE\_SINGLETON}}(\mbox{\hyperlink{class_c_map_tool_mgr_a7fb071447e8c41bd1bf97fab3eedb22e}{CMapToolMgr}})}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00076}00076\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_c_map_tool_mgr_a7fb071447e8c41bd1bf97fab3eedb22e}{CMapToolMgr}}();}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_c_map_tool_mgr_a7fb071447e8c41bd1bf97fab3eedb22e}{\string~CMapToolMgr}}();}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00080}00080\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_ac7a430673ed313c33d58786b0488c8e3}{Plant\_Block}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_a5da3f9d836bdd5be6e879475d224b509}{Plant\_Tile}}();\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_adb3ca819d5bbc96dae7804adfc1c358f}{Plant\_Environment}}();\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_a94ad3532c4fdb73afd472b94e25e27f6}{Plant\_Camera}}();\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_a5c8450e0ef26f3cb1f56302bb6c4485b}{Plant\_Player}}();\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00086}00086\ \ \ \ \ HRESULT\ \mbox{\hyperlink{class_c_map_tool_mgr_a9d409ae53a47f5814d829b62981c63f5}{Save\_Json}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00087}00087\ \ \ \ \ HRESULT\ \mbox{\hyperlink{class_c_map_tool_mgr_aed85a66b7b0072cb10ba9c25a071c868}{Load\_Json}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_ac73e6d99a0245d4c5ddd453a4ab9db3b}{Reset}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00090}00090\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_a893b8aee20d1b7333f6bacbb07d739c8}{Key\_Input}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00093}00093\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00094}\mbox{\hyperlink{class_c_map_tool_mgr_af9cf1c006516a795478f3e3366ec4777}{00094}}\ \ \ \ \ vector<S\_BLOCK*>\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_af9cf1c006516a795478f3e3366ec4777}{m\_pBlockData}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00095}\mbox{\hyperlink{class_c_map_tool_mgr_a8bebef33aa7c5925ca18a935101aff86}{00095}}\ \ \ \ \ vector<S\_TILE*>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_a8bebef33aa7c5925ca18a935101aff86}{m\_pTileData}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00096}\mbox{\hyperlink{class_c_map_tool_mgr_a716d84979014315232db5f9185eaf21c}{00096}}\ \ \ \ \ vector<S\_ENVIRONMENT*>\ \ \mbox{\hyperlink{class_c_map_tool_mgr_a716d84979014315232db5f9185eaf21c}{m\_pEnvData}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00097}\mbox{\hyperlink{class_c_map_tool_mgr_a69c4a9e88e64df44a65f91d55160d9dd}{00097}}\ \ \ \ \ \mbox{\hyperlink{struct_s___c_a_m}{S\_CAM}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_a69c4a9e88e64df44a65f91d55160d9dd}{m\_tCam}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00098}\mbox{\hyperlink{class_c_map_tool_mgr_a7f106f997b21845a571dedec17899f46}{00098}}\ \ \ \ \ \mbox{\hyperlink{struct_s___p_l_a_y_e_r}{S\_PLAYER}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_a7f106f997b21845a571dedec17899f46}{m\_tPlayer}};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00100}\mbox{\hyperlink{class_c_map_tool_mgr_a9ecfd5c435c6fbc80b9e9e144432f523}{00100}}\ \ \ \ \ map<string,\ vector<S\_STAGE>>\ \mbox{\hyperlink{class_c_map_tool_mgr_a9ecfd5c435c6fbc80b9e9e144432f523}{m\_mapJson}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00102}\mbox{\hyperlink{class_c_map_tool_mgr_a8b2b8f7854d8933c10660ae99ee7e7fe}{00102}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\ \ \mbox{\hyperlink{class_c_map_tool_mgr_a8b2b8f7854d8933c10660ae99ee7e7fe}{m\_iSet\_Player}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00103}\mbox{\hyperlink{class_c_map_tool_mgr_adf629e27be621438bd455ec13c6dd1a3}{00103}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \ \mbox{\hyperlink{class_c_map_tool_mgr_adf629e27be621438bd455ec13c6dd1a3}{m\_sStage}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00104}\mbox{\hyperlink{class_c_map_tool_mgr_ab29206977a9c8fdb144d66a027659be7}{00104}}\ \ \ \ \ \textcolor{keywordtype}{string}\ \ \mbox{\hyperlink{class_c_map_tool_mgr_ab29206977a9c8fdb144d66a027659be7}{m\_sDir}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00105}\mbox{\hyperlink{class_c_map_tool_mgr_a40fa58aa00894abbafdcf62553131b33}{00105}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ \mbox{\hyperlink{class_c_map_tool_mgr_a40fa58aa00894abbafdcf62553131b33}{m\_vecDir}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00106}\mbox{\hyperlink{class_c_map_tool_mgr_a4d27e1625d575a380d7b6d5df7bbcc92}{00106}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_a4d27e1625d575a380d7b6d5df7bbcc92}{m\_fAngle}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00108}00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_map_tool_mgr_ac27cf751eece0c1ca793e4b9dced2f5f}{Free}}();}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00111}00111\ \};}
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_c_map_tool_mgr_8h_source_l00113}00113\ \mbox{\hyperlink{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}}
 
 \end{DoxyCode}

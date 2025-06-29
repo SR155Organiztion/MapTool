@@ -1,0 +1,793 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MapTool: CMapToolMgr í´ë˜ìŠ¤ ì°¸ì¡°</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">MapTool<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Engine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- ë‹¤ìŒì— ì˜í•´ ìƒì„±ë¨ :  Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','ê²€ìƒ‰',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_c_map_tool_mgr.html','','class_c_map_tool_mgr-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">ë¡œë”©ì¤‘...</div>
+<div class="SRStatus" id="Searching">ê²€ìƒ‰ì¤‘...</div>
+<div class="SRStatus" id="NoMatches">ì¼ì¹˜í•˜ëŠ”ê²ƒ ì—†ìŒ</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CMapToolMgr í´ë˜ìŠ¤ ì°¸ì¡°</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a>&gt;</code></p>
+<div class="dynheader">
+CMapToolMgrì— ëŒ€í•œ ìƒì† ë‹¤ì´ì–´ê·¸ë¨ : </div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_map_tool_mgr__inherit__graph.png" border="0" usemap="#a_c_map_tool_mgr_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">ë²”ë¡€</a>]</span></center></div>
+<div class="dynheader">
+CMapToolMgrì— ëŒ€í•œ í˜‘ë ¥ ë‹¤ì´ì–´ê·¸ë¨:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_map_tool_mgr__coll__graph.png" border="0" usemap="#a_c_map_tool_mgr_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">ë²”ë¡€</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public ë©¤ë²„ í•¨ìˆ˜</h2></td></tr>
+<tr class="memitem:ac7a430673ed313c33d58786b0488c8e3" id="r_ac7a430673ed313c33d58786b0488c8e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7a430673ed313c33d58786b0488c8e3">Plant_Block</a> ()</td></tr>
+<tr class="memitem:a5da3f9d836bdd5be6e879475d224b509" id="r_a5da3f9d836bdd5be6e879475d224b509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5da3f9d836bdd5be6e879475d224b509">Plant_Tile</a> ()</td></tr>
+<tr class="memdesc:a5da3f9d836bdd5be6e879475d224b509"><td class="mdescLeft">&#160;</td><td class="mdescRight">¼³Ä¡ÇÑ ºí·ÏÀÇ Á¤º¸¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½  <br /></td></tr>
+<tr class="memitem:adb3ca819d5bbc96dae7804adfc1c358f" id="r_adb3ca819d5bbc96dae7804adfc1c358f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb3ca819d5bbc96dae7804adfc1c358f">Plant_Environment</a> ()</td></tr>
+<tr class="memdesc:adb3ca819d5bbc96dae7804adfc1c358f"><td class="mdescLeft">&#160;</td><td class="mdescRight">¼³Ä¡ÇÑ Å¸ÀÏÀÇ Á¤º¸¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½  <br /></td></tr>
+<tr class="memitem:a94ad3532c4fdb73afd472b94e25e27f6" id="r_a94ad3532c4fdb73afd472b94e25e27f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94ad3532c4fdb73afd472b94e25e27f6">Plant_Camera</a> ()</td></tr>
+<tr class="memdesc:a94ad3532c4fdb73afd472b94e25e27f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">¼³Ä¡ÇÑ È¯°æ ¿ÀºêÁ§Æ®¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½  <br /></td></tr>
+<tr class="memitem:a5c8450e0ef26f3cb1f56302bb6c4485b" id="r_a5c8450e0ef26f3cb1f56302bb6c4485b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c8450e0ef26f3cb1f56302bb6c4485b">Plant_Player</a> ()</td></tr>
+<tr class="memdesc:a5c8450e0ef26f3cb1f56302bb6c4485b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ¹Ù¶óº¸°í ÀÖ´Â °÷ÀÇ Eye¿Í atÀ» ÀúÀå  <br /></td></tr>
+<tr class="memitem:a9d409ae53a47f5814d829b62981c63f5" id="r_a9d409ae53a47f5814d829b62981c63f5"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d409ae53a47f5814d829b62981c63f5">Save_Json</a> ()</td></tr>
+<tr class="memdesc:a9d409ae53a47f5814d829b62981c63f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇÃ·¹ÀÌ¾îÀÇ ½ºÆù À§Ä¡ ¼³Á¤  <br /></td></tr>
+<tr class="memitem:aed85a66b7b0072cb10ba9c25a071c868" id="r_aed85a66b7b0072cb10ba9c25a071c868"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed85a66b7b0072cb10ba9c25a071c868">Load_Json</a> ()</td></tr>
+<tr class="memdesc:aed85a66b7b0072cb10ba9c25a071c868"><td class="mdescLeft">&#160;</td><td class="mdescRight">json¿¡ µ¥ÀÌÅÍ ÀúÀå  <br /></td></tr>
+<tr class="memitem:ac73e6d99a0245d4c5ddd453a4ab9db3b" id="r_ac73e6d99a0245d4c5ddd453a4ab9db3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac73e6d99a0245d4c5ddd453a4ab9db3b">Reset</a> ()</td></tr>
+<tr class="memdesc:ac73e6d99a0245d4c5ddd453a4ab9db3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">json µ¥ÀÌÅÍ ºÒ·¯¿À±â  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private ë©¤ë²„ í•¨ìˆ˜</h2></td></tr>
+<tr class="memitem:a7fb071447e8c41bd1bf97fab3eedb22e" id="r_a7fb071447e8c41bd1bf97fab3eedb22e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fb071447e8c41bd1bf97fab3eedb22e">CMapToolMgr</a> ()</td></tr>
+<tr class="memitem:aa7aeccc8a1df3f558c07529604725158" id="r_aa7aeccc8a1df3f558c07529604725158"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7aeccc8a1df3f558c07529604725158">~CMapToolMgr</a> ()</td></tr>
+<tr class="memitem:a893b8aee20d1b7333f6bacbb07d739c8" id="r_a893b8aee20d1b7333f6bacbb07d739c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a893b8aee20d1b7333f6bacbb07d739c8">Key_Input</a> ()</td></tr>
+<tr class="memdesc:a893b8aee20d1b7333f6bacbb07d739c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç º¤ÅÍ¸®½ºÆ®¸¦ ¸ğµÎ ÃÊ±âÈ­ ¹× ¼³Ä¡ÇÑ ºí·Ï Á¦°Å  <br /></td></tr>
+<tr class="memitem:ac27cf751eece0c1ca793e4b9dced2f5f" id="r_ac27cf751eece0c1ca793e4b9dced2f5f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac27cf751eece0c1ca793e4b9dced2f5f">Free</a> ()</td></tr>
+<tr class="memdesc:ac27cf751eece0c1ca793e4b9dced2f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç °¢µµ  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private ì†ì„±</h2></td></tr>
+<tr class="memitem:af9cf1c006516a795478f3e3366ec4777" id="r_af9cf1c006516a795478f3e3366ec4777"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_s___b_l_o_c_k.html">S_BLOCK</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9cf1c006516a795478f3e3366ec4777">m_pBlockData</a></td></tr>
+<tr class="memdesc:af9cf1c006516a795478f3e3366ec4777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Å°ÀÔ·Â  <br /></td></tr>
+<tr class="memitem:a8bebef33aa7c5925ca18a935101aff86" id="r_a8bebef33aa7c5925ca18a935101aff86"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_s___t_i_l_e.html">S_TILE</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bebef33aa7c5925ca18a935101aff86">m_pTileData</a></td></tr>
+<tr class="memdesc:a8bebef33aa7c5925ca18a935101aff86"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â ºí·ÏÀÇ µ¥ÀÌÅÍ  <br /></td></tr>
+<tr class="memitem:a716d84979014315232db5f9185eaf21c" id="r_a716d84979014315232db5f9185eaf21c"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="struct_s___e_n_v_i_r_o_n_m_e_n_t.html">S_ENVIRONMENT</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a716d84979014315232db5f9185eaf21c">m_pEnvData</a></td></tr>
+<tr class="memdesc:a716d84979014315232db5f9185eaf21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â Å¸ÀÏÀÇ µ¥ÀÌÅÍ  <br /></td></tr>
+<tr class="memitem:a69c4a9e88e64df44a65f91d55160d9dd" id="r_a69c4a9e88e64df44a65f91d55160d9dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s___c_a_m.html">S_CAM</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69c4a9e88e64df44a65f91d55160d9dd">m_tCam</a></td></tr>
+<tr class="memdesc:a69c4a9e88e64df44a65f91d55160d9dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ¼³Ä¡ µÇ¾îÀÖ´Â È¯°æºí·ÏÀÇ µ¥ÀÌÅÍ  <br /></td></tr>
+<tr class="memitem:a7f106f997b21845a571dedec17899f46" id="r_a7f106f997b21845a571dedec17899f46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_s___p_l_a_y_e_r.html">S_PLAYER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f106f997b21845a571dedec17899f46">m_tPlayer</a></td></tr>
+<tr class="memdesc:a7f106f997b21845a571dedec17899f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ÇÃ·¹ÀÌ¾îµéÀÇ ½ÃÀÛ À§Ä¡  <br /></td></tr>
+<tr class="memitem:a9ecfd5c435c6fbc80b9e9e144432f523" id="r_a9ecfd5c435c6fbc80b9e9e144432f523"><td class="memItemLeft" align="right" valign="top">map&lt; string, vector&lt; <a class="el" href="struct_s___s_t_a_g_e.html">S_STAGE</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ecfd5c435c6fbc80b9e9e144432f523">m_mapJson</a></td></tr>
+<tr class="memitem:a8b2b8f7854d8933c10660ae99ee7e7fe" id="r_a8b2b8f7854d8933c10660ae99ee7e7fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_engine.html#a2af98d02a95f5fac45e314e46a40df20">_uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b2b8f7854d8933c10660ae99ee7e7fe">m_iSet_Player</a></td></tr>
+<tr class="memdesc:a8b2b8f7854d8933c10660ae99ee7e7fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÀüÃ¼ ½ºÅ×ÀÌÁöÀÇ µ¥ÀÌÅÍ°ª  <br /></td></tr>
+<tr class="memitem:adf629e27be621438bd455ec13c6dd1a3" id="r_adf629e27be621438bd455ec13c6dd1a3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf629e27be621438bd455ec13c6dd1a3">m_sStage</a></td></tr>
+<tr class="memdesc:adf629e27be621438bd455ec13c6dd1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ¼±ÅÃÁßÀÎ ÇÃ·¹ÀÌ¾î  <br /></td></tr>
+<tr class="memitem:ab29206977a9c8fdb144d66a027659be7" id="r_ab29206977a9c8fdb144d66a027659be7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab29206977a9c8fdb144d66a027659be7">m_sDir</a></td></tr>
+<tr class="memdesc:ab29206977a9c8fdb144d66a027659be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ¼±ÅÃÁßÀÎ ½ºÅ×ÀÌÁö ÀÌ¸§  <br /></td></tr>
+<tr class="memitem:a40fa58aa00894abbafdcf62553131b33" id="r_a40fa58aa00894abbafdcf62553131b33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_engine.html#ac5557eef869da19ab2f38535b6fa3345">_vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40fa58aa00894abbafdcf62553131b33">m_vecDir</a></td></tr>
+<tr class="memdesc:a40fa58aa00894abbafdcf62553131b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ¼±ÅÃÁßÀÎ ¹æÇâ °ª (°íÁ¤µÈ 4¹æÇâ °¢µµ)  <br /></td></tr>
+<tr class="memitem:a4d27e1625d575a380d7b6d5df7bbcc92" id="r_a4d27e1625d575a380d7b6d5df7bbcc92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_engine.html#a0f9446bedae7a5d11532d5e768d8b6f6">_float</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d27e1625d575a380d7b6d5df7bbcc92">m_fAngle</a></td></tr>
+<tr class="memdesc:a4d27e1625d575a380d7b6d5df7bbcc92"><td class="mdescLeft">&#160;</td><td class="mdescRight">ÇöÀç ¼±ÅÃÁßÀÎ ¹æÇâ º¤ÅÍ°ª(°íÁ¤µÇÁö ¾ÊÀº °¢µµ)  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">ìƒì„¸í•œ ì„¤ëª…</h2>
+<div class="textblock">
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00072">72</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">ìƒì„±ì &amp; ì†Œë©¸ì ë¬¸ì„œí™”</h2>
+<a id="a7fb071447e8c41bd1bf97fab3eedb22e" name="a7fb071447e8c41bd1bf97fab3eedb22e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fb071447e8c41bd1bf97fab3eedb22e">&#9670;&#160;</a></span>CMapToolMgr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CMapToolMgr::CMapToolMgr </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00003">3</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>{</div>
+<div class="line"><span class="lineno">    5</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa7aeccc8a1df3f558c07529604725158" name="aa7aeccc8a1df3f558c07529604725158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7aeccc8a1df3f558c07529604725158">&#9670;&#160;</a></span>~CMapToolMgr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CMapToolMgr::~CMapToolMgr </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00007">7</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>{</div>
+<div class="line"><span class="lineno">    9</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">ë©¤ë²„ í•¨ìˆ˜ ë¬¸ì„œí™”</h2>
+<a id="ac27cf751eece0c1ca793e4b9dced2f5f" name="ac27cf751eece0c1ca793e4b9dced2f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac27cf751eece0c1ca793e4b9dced2f5f">&#9670;&#160;</a></span>Free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMapToolMgr::Free </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç °¢µµ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00049">49</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> pBlock : <a class="code hl_variable" href="#af9cf1c006516a795478f3e3366ec4777">m_pBlockData</a>) {</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_function" href="namespace_engine.html#a180eed9528c8c8d03752a78b7e10d647">Safe_Delete</a>(pBlock);</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> pTile : <a class="code hl_variable" href="#a8bebef33aa7c5925ca18a935101aff86">m_pTileData</a>) {</div>
+<div class="line"><span class="lineno">   55</span>        <a class="code hl_function" href="namespace_engine.html#a180eed9528c8c8d03752a78b7e10d647">Safe_Delete</a>(pTile);</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> pEnv : <a class="code hl_variable" href="#a716d84979014315232db5f9185eaf21c">m_pEnvData</a>) {</div>
+<div class="line"><span class="lineno">   58</span>        <a class="code hl_function" href="namespace_engine.html#a180eed9528c8c8d03752a78b7e10d647">Safe_Delete</a>(pEnv);</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span>}</div>
+<div class="ttc" id="aclass_c_map_tool_mgr_html_a716d84979014315232db5f9185eaf21c"><div class="ttname"><a href="#a716d84979014315232db5f9185eaf21c">CMapToolMgr::m_pEnvData</a></div><div class="ttdeci">vector&lt; S_ENVIRONMENT * &gt; m_pEnvData</div><div class="ttdoc">ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â Å¸ÀÏÀÇ µ¥ÀÌÅÍ</div><div class="ttdef"><b>Definition</b> <a href="_c_map_tool_mgr_8h_source.html#l00096">CMapToolMgr.h:96</a></div></div>
+<div class="ttc" id="aclass_c_map_tool_mgr_html_a8bebef33aa7c5925ca18a935101aff86"><div class="ttname"><a href="#a8bebef33aa7c5925ca18a935101aff86">CMapToolMgr::m_pTileData</a></div><div class="ttdeci">vector&lt; S_TILE * &gt; m_pTileData</div><div class="ttdoc">ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â ºí·ÏÀÇ µ¥ÀÌÅÍ</div><div class="ttdef"><b>Definition</b> <a href="_c_map_tool_mgr_8h_source.html#l00095">CMapToolMgr.h:95</a></div></div>
+<div class="ttc" id="aclass_c_map_tool_mgr_html_af9cf1c006516a795478f3e3366ec4777"><div class="ttname"><a href="#af9cf1c006516a795478f3e3366ec4777">CMapToolMgr::m_pBlockData</a></div><div class="ttdeci">vector&lt; S_BLOCK * &gt; m_pBlockData</div><div class="ttdoc">Å°ÀÔ·Â</div><div class="ttdef"><b>Definition</b> <a href="_c_map_tool_mgr_8h_source.html#l00094">CMapToolMgr.h:94</a></div></div>
+<div class="ttc" id="anamespace_engine_html_a180eed9528c8c8d03752a78b7e10d647"><div class="ttname"><a href="namespace_engine.html#a180eed9528c8c8d03752a78b7e10d647">Engine::Safe_Delete</a></div><div class="ttdeci">void Safe_Delete(T &amp;Pointer)</div><div class="ttdef"><b>Definition</b> <a href="_engine___function_8h_source.html#l00012">Engine_Function.h:12</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+ì´ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_map_tool_mgr_ac27cf751eece0c1ca793e4b9dced2f5f_cgraph.png" border="0" usemap="#aclass_c_map_tool_mgr_ac27cf751eece0c1ca793e4b9dced2f5f_cgraph" loading="lazy" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a893b8aee20d1b7333f6bacbb07d739c8" name="a893b8aee20d1b7333f6bacbb07d739c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a893b8aee20d1b7333f6bacbb07d739c8">&#9670;&#160;</a></span>Key_Input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMapToolMgr::Key_Input </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç º¤ÅÍ¸®½ºÆ®¸¦ ¸ğµÎ ÃÊ±âÈ­ ¹× ¼³Ä¡ÇÑ ºí·Ï Á¦°Å </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00045">45</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed85a66b7b0072cb10ba9c25a071c868" name="aed85a66b7b0072cb10ba9c25a071c868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed85a66b7b0072cb10ba9c25a071c868">&#9670;&#160;</a></span>Load_Json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT CMapToolMgr::Load_Json </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>json¿¡ µ¥ÀÌÅÍ ÀúÀå </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00036">36</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> E_NOTIMPL;</div>
+<div class="line"><span class="lineno">   39</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac7a430673ed313c33d58786b0488c8e3" name="ac7a430673ed313c33d58786b0488c8e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7a430673ed313c33d58786b0488c8e3">&#9670;&#160;</a></span>Plant_Block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMapToolMgr::Plant_Block </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00011">11</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a94ad3532c4fdb73afd472b94e25e27f6" name="a94ad3532c4fdb73afd472b94e25e27f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94ad3532c4fdb73afd472b94e25e27f6">&#9670;&#160;</a></span>Plant_Camera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMapToolMgr::Plant_Camera </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>¼³Ä¡ÇÑ È¯°æ ¿ÀºêÁ§Æ®¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00023">23</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
+<div class="line"><span class="lineno">   25</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adb3ca819d5bbc96dae7804adfc1c358f" name="adb3ca819d5bbc96dae7804adfc1c358f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb3ca819d5bbc96dae7804adfc1c358f">&#9670;&#160;</a></span>Plant_Environment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMapToolMgr::Plant_Environment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>¼³Ä¡ÇÑ Å¸ÀÏÀÇ Á¤º¸¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00019">19</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5c8450e0ef26f3cb1f56302bb6c4485b" name="a5c8450e0ef26f3cb1f56302bb6c4485b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8450e0ef26f3cb1f56302bb6c4485b">&#9670;&#160;</a></span>Plant_Player()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMapToolMgr::Plant_Player </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ¹Ù¶óº¸°í ÀÖ´Â °÷ÀÇ Eye¿Í atÀ» ÀúÀå </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00027">27</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>{</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5da3f9d836bdd5be6e879475d224b509" name="a5da3f9d836bdd5be6e879475d224b509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da3f9d836bdd5be6e879475d224b509">&#9670;&#160;</a></span>Plant_Tile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMapToolMgr::Plant_Tile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>¼³Ä¡ÇÑ ºí·ÏÀÇ Á¤º¸¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00015">15</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
+<div class="line"><span class="lineno">   17</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac73e6d99a0245d4c5ddd453a4ab9db3b" name="ac73e6d99a0245d4c5ddd453a4ab9db3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac73e6d99a0245d4c5ddd453a4ab9db3b">&#9670;&#160;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CMapToolMgr::Reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>json µ¥ÀÌÅÍ ºÒ·¯¿À±â </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00041">41</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9d409ae53a47f5814d829b62981c63f5" name="a9d409ae53a47f5814d829b62981c63f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d409ae53a47f5814d829b62981c63f5">&#9670;&#160;</a></span>Save_Json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT CMapToolMgr::Save_Json </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ÇÃ·¹ÀÌ¾îÀÇ ½ºÆù À§Ä¡ ¼³Á¤ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8cpp_source.html#l00031">31</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> E_NOTIMPL;</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">ë©¤ë²„ ë°ì´í„° ë¬¸ì„œí™”</h2>
+<a id="a4d27e1625d575a380d7b6d5df7bbcc92" name="a4d27e1625d575a380d7b6d5df7bbcc92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d27e1625d575a380d7b6d5df7bbcc92">&#9670;&#160;</a></span>m_fAngle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_engine.html#a0f9446bedae7a5d11532d5e768d8b6f6">_float</a> CMapToolMgr::m_fAngle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ¼±ÅÃÁßÀÎ ¹æÇâ º¤ÅÍ°ª(°íÁ¤µÇÁö ¾ÊÀº °¢µµ) </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00106">106</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="a8b2b8f7854d8933c10660ae99ee7e7fe" name="a8b2b8f7854d8933c10660ae99ee7e7fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b2b8f7854d8933c10660ae99ee7e7fe">&#9670;&#160;</a></span>m_iSet_Player</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_engine.html#a2af98d02a95f5fac45e314e46a40df20">_uint</a> CMapToolMgr::m_iSet_Player</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÀüÃ¼ ½ºÅ×ÀÌÁöÀÇ µ¥ÀÌÅÍ°ª </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00102">102</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="a9ecfd5c435c6fbc80b9e9e144432f523" name="a9ecfd5c435c6fbc80b9e9e144432f523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ecfd5c435c6fbc80b9e9e144432f523">&#9670;&#160;</a></span>m_mapJson</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt;string, vector&lt;<a class="el" href="struct_s___s_t_a_g_e.html">S_STAGE</a>&gt; &gt; CMapToolMgr::m_mapJson</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00100">100</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="af9cf1c006516a795478f3e3366ec4777" name="af9cf1c006516a795478f3e3366ec4777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9cf1c006516a795478f3e3366ec4777">&#9670;&#160;</a></span>m_pBlockData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="struct_s___b_l_o_c_k.html">S_BLOCK</a>*&gt; CMapToolMgr::m_pBlockData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Å°ÀÔ·Â </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00094">94</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="a716d84979014315232db5f9185eaf21c" name="a716d84979014315232db5f9185eaf21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a716d84979014315232db5f9185eaf21c">&#9670;&#160;</a></span>m_pEnvData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="struct_s___e_n_v_i_r_o_n_m_e_n_t.html">S_ENVIRONMENT</a>*&gt; CMapToolMgr::m_pEnvData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â Å¸ÀÏÀÇ µ¥ÀÌÅÍ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00096">96</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="a8bebef33aa7c5925ca18a935101aff86" name="a8bebef33aa7c5925ca18a935101aff86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bebef33aa7c5925ca18a935101aff86">&#9670;&#160;</a></span>m_pTileData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="struct_s___t_i_l_e.html">S_TILE</a>*&gt; CMapToolMgr::m_pTileData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â ºí·ÏÀÇ µ¥ÀÌÅÍ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00095">95</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="ab29206977a9c8fdb144d66a027659be7" name="ab29206977a9c8fdb144d66a027659be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab29206977a9c8fdb144d66a027659be7">&#9670;&#160;</a></span>m_sDir</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CMapToolMgr::m_sDir</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ¼±ÅÃÁßÀÎ ½ºÅ×ÀÌÁö ÀÌ¸§ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00104">104</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="adf629e27be621438bd455ec13c6dd1a3" name="adf629e27be621438bd455ec13c6dd1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf629e27be621438bd455ec13c6dd1a3">&#9670;&#160;</a></span>m_sStage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CMapToolMgr::m_sStage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ¼±ÅÃÁßÀÎ ÇÃ·¹ÀÌ¾î </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00103">103</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="a69c4a9e88e64df44a65f91d55160d9dd" name="a69c4a9e88e64df44a65f91d55160d9dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c4a9e88e64df44a65f91d55160d9dd">&#9670;&#160;</a></span>m_tCam</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s___c_a_m.html">S_CAM</a> CMapToolMgr::m_tCam</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ¼³Ä¡ µÇ¾îÀÖ´Â È¯°æºí·ÏÀÇ µ¥ÀÌÅÍ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00097">97</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="a7f106f997b21845a571dedec17899f46" name="a7f106f997b21845a571dedec17899f46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f106f997b21845a571dedec17899f46">&#9670;&#160;</a></span>m_tPlayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_s___p_l_a_y_e_r.html">S_PLAYER</a> CMapToolMgr::m_tPlayer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ÇÃ·¹ÀÌ¾îµéÀÇ ½ÃÀÛ À§Ä¡ </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00098">98</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<a id="a40fa58aa00894abbafdcf62553131b33" name="a40fa58aa00894abbafdcf62553131b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40fa58aa00894abbafdcf62553131b33">&#9670;&#160;</a></span>m_vecDir</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_engine.html#ac5557eef869da19ab2f38535b6fa3345">_vec3</a> CMapToolMgr::m_vecDir</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ÇöÀç ¼±ÅÃÁßÀÎ ¹æÇâ °ª (°íÁ¤µÈ 4¹æÇâ °¢µµ) </p>
+
+<p class="definition"><a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a> íŒŒì¼ì˜ <a class="el" href="_c_map_tool_mgr_8h_source.html#l00105">105</a> ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+
+</div>
+</div>
+<hr/>ì´ í´ë˜ìŠ¤ì— ëŒ€í•œ ë¬¸ì„œí™” í˜ì´ì§€ëŠ” ë‹¤ìŒì˜ íŒŒì¼ë“¤ë¡œë¶€í„° ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.:<ul>
+<li>C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/<a class="el" href="_c_map_tool_mgr_8h_source.html">CMapToolMgr.h</a></li>
+<li>C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/<a class="el" href="_c_map_tool_mgr_8cpp_source.html">CMapToolMgr.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_c_map_tool_mgr.html">CMapToolMgr</a></li>
+    <li class="footer">ë‹¤ìŒì— ì˜í•´ ìƒì„±ë¨ :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

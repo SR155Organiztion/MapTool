@@ -1,4 +1,4 @@
-\doxysection{CFont Class Reference}
+\doxysection{CFont 클래스 참조}
 \hypertarget{class_c_font}{}\label{class_c_font}\index{CFont@{CFont}}
 
 
@@ -6,36 +6,95 @@
 
 
 
-Inheritance diagram for CFont\+:
+CFont에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CFont\+:
+CFont에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 HRESULT \mbox{\hyperlink{class_c_font_a82338a7f899cbc3ff9e48de69f7ab78c}{Ready\+\_\+\+Font}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Font\+Type, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Width, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Height, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Weight)
 \item 
 void \mbox{\hyperlink{class_c_font_ae5db54d9149678c13f5bb2338dea6fdf}{Render\+\_\+\+Font}} (const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+String, const \mbox{\hyperlink{namespace_engine_a17e948ff0cce3b4820ddb35f155a0ca8}{\+\_\+vec2}} \texorpdfstring{$\ast$}{*}p\+Pos, D3\+DXCOLOR Color)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_c_font}{CFont}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Font\+Type, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Width, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Height, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Weight)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}{CFont}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+virtual \mbox{\hyperlink{class_c_font_a1e1d2d4b4d14c7004289291785d75728}{\texorpdfstring{$\sim$}{\string~}\+CFont}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_font_ab197433d78fb7087a987425834368194}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\+\_\+p\+Graphic\+Dev}}
+\item 
+LPD3\+DXSPRITE \mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\+\_\+p\+Sprite}}
+\item 
+LPD3\+DXFONT \mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\+\_\+p\+Font}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_font_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_font_8h_source}{CFont.\+h}}.
+\mbox{\hyperlink{_c_font_8h_source}{CFont.\+h}} 파일의 \mbox{\hyperlink{_c_font_8h_source_l00007}{7}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_font_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}\index{CFont@{CFont}!CFont@{CFont}}
+\index{CFont@{CFont}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{CFont()}{CFont()}}
+{\footnotesize\ttfamily \label{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830} 
+CFont\+::\+CFont (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}} 파일의 \mbox{\hyperlink{_c_font_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ :\ \mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}}(pGraphicDev),\ \mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\_pFont}}(\textcolor{keyword}{nullptr}),\ \mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}}(\textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}}-\/>AddRef();}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\Hypertarget{class_c_font_a1e1d2d4b4d14c7004289291785d75728}\index{CFont@{CFont}!````~CFont@{\texorpdfstring{$\sim$}{\string~}CFont}}
+\index{````~CFont@{\texorpdfstring{$\sim$}{\string~}CFont}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CFont()}{\string~CFont()}}
+{\footnotesize\ttfamily \label{class_c_font_a1e1d2d4b4d14c7004289291785d75728} 
+CFont\+::\texorpdfstring{$\sim$}{\string~}\+CFont (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}} 파일의 \mbox{\hyperlink{_c_font_8cpp_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_font_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf}\index{CFont@{CFont}!Create@{Create}}
 \index{Create@{Create}!CFont@{CFont}}
 \doxysubsubsection{\texorpdfstring{Create()}{Create()}}
@@ -44,12 +103,50 @@ Definition at line \mbox{\hyperlink{_c_font_8h_source_l00007}{7}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{_c_font_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}}.
+\mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}} 파일의 \mbox{\hyperlink{_c_font_8cpp_source_l00053}{53}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
-Here is the caller graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}{CFont}}*\ pInstance\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}{CFont}}(pGraphicDev);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pInstance-\/>\mbox{\hyperlink{class_c_font_a82338a7f899cbc3ff9e48de69f7ab78c}{Ready\_Font}}(pFontType,\ iWidth,\ iHeight,\ iWeight)))}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(pInstance);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}��Ʈ\ ����"{}});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ pInstance;}
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\Hypertarget{class_c_font_ab197433d78fb7087a987425834368194}\index{CFont@{CFont}!Free@{Free}}
+\index{Free@{Free}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_font_ab197433d78fb7087a987425834368194} 
+void CFont\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}} 파일의 \mbox{\hyperlink{_c_font_8cpp_source_l00067}{67}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\_pFont}});}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}});}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 \Hypertarget{class_c_font_a82338a7f899cbc3ff9e48de69f7ab78c}\index{CFont@{CFont}!Ready\_Font@{Ready\_Font}}
 \index{Ready\_Font@{Ready\_Font}!CFont@{CFont}}
 \doxysubsubsection{\texorpdfstring{Ready\_Font()}{Ready\_Font()}}
@@ -58,10 +155,38 @@ HRESULT CFont\+::\+Ready\+\_\+\+Font (\begin{DoxyParamCaption}\item[{const \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_c_font_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}}.
+\mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}} 파일의 \mbox{\hyperlink{_c_font_8cpp_source_l00013}{13}} 번째 라인에서 정의되었습니다.
 
-Here is the caller graph for this function\+:
-% FIG 4
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ D3DXFONT\_DESC\ \ \ \ \ \ \ \ \ \ \ tFont\_Desc;}
+\DoxyCodeLine{00019\ \ \ \ \ ZeroMemory(\&tFont\_Desc,\ \textcolor{keyword}{sizeof}(D3DXFONT\_DESC));}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ tFont\_Desc.CharSet\ =\ HANGEUL\_CHARSET;}
+\DoxyCodeLine{00022\ \ \ \ \ tFont\_Desc.Width\ =\ iWidth;}
+\DoxyCodeLine{00023\ \ \ \ \ tFont\_Desc.Height\ =\ iHeight;}
+\DoxyCodeLine{00024\ \ \ \ \ tFont\_Desc.Weight\ =\ iWeight;}
+\DoxyCodeLine{00025\ \ \ \ \ lstrcpy(tFont\_Desc.FaceName,\ pFontType);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(D3DXCreateFontIndirect(\mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}},\ \&tFont\_Desc,\ \&\mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\_pFont}})))}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}Font\ Create\ Failed"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(D3DXCreateSprite(\mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}},\ \&\mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}})))}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}Sprite\ Create\ Failed"{}});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
 \Hypertarget{class_c_font_ae5db54d9149678c13f5bb2338dea6fdf}\index{CFont@{CFont}!Render\_Font@{Render\_Font}}
 \index{Render\_Font@{Render\_Font}!CFont@{CFont}}
 \doxysubsubsection{\texorpdfstring{Render\_Font()}{Render\_Font()}}
@@ -70,13 +195,61 @@ void CFont\+::\+Render\+\_\+\+Font (\begin{DoxyParamCaption}\item[{const \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_c_font_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}}.
-
-Here is the caller graph for this function\+:
-% FIG 5
+\mbox{\hyperlink{_c_font_8cpp_source}{CFont.\+cpp}} 파일의 \mbox{\hyperlink{_c_font_8cpp_source_l00042}{42}} 번째 라인에서 정의되었습니다.
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ RECT\ \ \ \ rc\{\ (\mbox{\hyperlink{namespace_engine_a8dd4c87606163b94435bf04a261eda6e}{\_long}})pPos-\/>x,\ (\mbox{\hyperlink{namespace_engine_a8dd4c87606163b94435bf04a261eda6e}{\_long}})pPos-\/>y\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}}-\/>Begin(D3DXSPRITE\_ALPHABLEND);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\_pFont}}-\/>DrawTextW(\mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}},\ pString,\ lstrlen(pString),\ \&rc,\ DT\_NOCLIP,\ Color);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}}-\/>End();}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_font_doc-variable-members}
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}\index{CFont@{CFont}!m\_pFont@{m\_pFont}}
+\index{m\_pFont@{m\_pFont}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{m\_pFont}{m\_pFont}}
+{\footnotesize\ttfamily \label{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21} 
+LPD3\+DXFONT CFont\+::m\+\_\+p\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_font_8h_source}{CFont.\+h}} 파일의 \mbox{\hyperlink{_c_font_8h_source_l00023}{23}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}\index{CFont@{CFont}!m\_pGraphicDev@{m\_pGraphicDev}}
+\index{m\_pGraphicDev@{m\_pGraphicDev}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{m\_pGraphicDev}{m\_pGraphicDev}}
+{\footnotesize\ttfamily \label{class_c_font_ac40be7041813e2d4a4f18a66d93a6585} 
+LPDIRECT3\+DDEVICE9 CFont\+::m\+\_\+p\+Graphic\+Dev\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_font_8h_source}{CFont.\+h}} 파일의 \mbox{\hyperlink{_c_font_8h_source_l00021}{21}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_font_a2afbcd29c004e437a339fad01a67a12d}\index{CFont@{CFont}!m\_pSprite@{m\_pSprite}}
+\index{m\_pSprite@{m\_pSprite}!CFont@{CFont}}
+\doxysubsubsection{\texorpdfstring{m\_pSprite}{m\_pSprite}}
+{\footnotesize\ttfamily \label{class_c_font_a2afbcd29c004e437a339fad01a67a12d} 
+LPD3\+DXSPRITE CFont\+::m\+\_\+p\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_font_8h_source}{CFont.\+h}} 파일의 \mbox{\hyperlink{_c_font_8h_source_l00022}{22}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_font_8h}{CFont.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_font_8cpp}{CFont.\+cpp}}\end{DoxyCompactItemize}

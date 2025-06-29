@@ -1,16 +1,16 @@
 \doxysection{CFont.\+cpp}
 \hypertarget{_c_font_8cpp_source}{}\label{_c_font_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CFont.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CFont.cpp}}
-\mbox{\hyperlink{_c_font_8cpp}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_font_8cpp}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_font_8h}{CFont.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00003}00003\ CFont::CFont(LPDIRECT3DDEVICE9\ pGraphicDev)}
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00004}00004\ \ \ \ \ :\ m\_pGraphicDev(pGraphicDev),\ m\_pFont(nullptr),\ m\_pSprite(nullptr)}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00003}\mbox{\hyperlink{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}{00003}}\ \mbox{\hyperlink{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}{CFont::CFont}}(LPDIRECT3DDEVICE9\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00004}00004\ \ \ \ \ :\ \mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}}(pGraphicDev),\ \mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\_pFont}}(nullptr),\ \mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}}(nullptr)}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00005}00005\ \{}
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00006}00006\ \ \ \ \ m\_pGraphicDev-\/>AddRef();}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}}-\/>AddRef();}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00007}00007\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00009}00009\ CFont::\string~CFont()}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00009}\mbox{\hyperlink{class_c_font_a1e1d2d4b4d14c7004289291785d75728}{00009}}\ \mbox{\hyperlink{class_c_font_a1e1d2d4b4d14c7004289291785d75728}{CFont::\string~CFont}}()}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00010}00010\ \{}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00011}00011\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00012}00012\ }
@@ -28,13 +28,13 @@
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00024}00024\ \ \ \ \ tFont\_Desc.Weight\ =\ iWeight;}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00025}00025\ \ \ \ \ lstrcpy(tFont\_Desc.FaceName,\ pFontType);}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(D3DXCreateFontIndirect(m\_pGraphicDev,\ \&tFont\_Desc,\ \&m\_pFont)))}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(D3DXCreateFontIndirect(\mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}},\ \&tFont\_Desc,\ \&\mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\_pFont}})))}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00028}00028\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}Font\ Create\ Failed"{}});}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00031}00031\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(D3DXCreateSprite(m\_pGraphicDev,\ \&m\_pSprite)))}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(D3DXCreateSprite(\mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}},\ \&\mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}})))}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00034}00034\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}Sprite\ Create\ Failed"{}});}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
@@ -47,16 +47,16 @@
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00043}00043\ \{}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00044}00044\ \ \ \ \ RECT\ \ \ \ rc\{\ (\mbox{\hyperlink{namespace_engine_a8dd4c87606163b94435bf04a261eda6e}{\_long}})pPos-\/>x,\ (\mbox{\hyperlink{namespace_engine_a8dd4c87606163b94435bf04a261eda6e}{\_long}})pPos-\/>y\ \};}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00046}00046\ \ \ \ \ m\_pSprite-\/>Begin(D3DXSPRITE\_ALPHABLEND);}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}}-\/>Begin(D3DXSPRITE\_ALPHABLEND);}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00048}00048\ \ \ \ \ m\_pFont-\/>DrawTextW(m\_pSprite,\ pString,\ lstrlen(pString),\ \&rc,\ DT\_NOCLIP,\ Color);}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\_pFont}}-\/>DrawTextW(\mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}},\ pString,\ lstrlen(pString),\ \&rc,\ DT\_NOCLIP,\ Color);}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00050}00050\ \ \ \ \ m\_pSprite-\/>End();}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}}-\/>End();}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00051}00051\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00053}\mbox{\hyperlink{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf}{00053}}\ CFont*\ \mbox{\hyperlink{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf}{CFont::Create}}(LPDIRECT3DDEVICE9\ pGraphicDev,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pFontType,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iWidth,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iHeight,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iWeight)}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00053}\mbox{\hyperlink{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf}{00053}}\ \mbox{\hyperlink{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}{CFont}}*\ \mbox{\hyperlink{class_c_font_a4e5b6118e07edf22bc59f5d12a129dbf}{CFont::Create}}(LPDIRECT3DDEVICE9\ pGraphicDev,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pFontType,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iWidth,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iHeight,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\_uint}}\&\ iWeight)}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00054}00054\ \{}
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00055}00055\ \ \ \ \ CFont*\ pInstance\ =\ \textcolor{keyword}{new}\ CFont(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}{CFont}}*\ pInstance\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_font_a58e3f34a3bb6a25434d7da8e0988f830}{CFont}}(pGraphicDev);}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00056}00056\ }
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pInstance-\/>\mbox{\hyperlink{class_c_font_a82338a7f899cbc3ff9e48de69f7ab78c}{Ready\_Font}}(pFontType,\ iWidth,\ iHeight,\ iWeight)))}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00058}00058\ \ \ \ \ \{}
@@ -68,12 +68,12 @@
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{return}\ pInstance;}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00065}00065\ \}}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00067}00067\ \textcolor{keywordtype}{void}\ CFont::Free()}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00067}\mbox{\hyperlink{class_c_font_ab197433d78fb7087a987425834368194}{00067}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_font_ab197433d78fb7087a987425834368194}{CFont::Free}}()}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00068}00068\ \{}
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pFont);}
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pSprite);}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_font_ad4f442c4eef73a1c94cc4e1bf293df21}{m\_pFont}});}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_font_a2afbcd29c004e437a339fad01a67a12d}{m\_pSprite}});}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(m\_pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_font_ac40be7041813e2d4a4f18a66d93a6585}{m\_pGraphicDev}});}
 \DoxyCodeLine{\Hypertarget{_c_font_8cpp_source_l00073}00073\ \}}
 
 \end{DoxyCode}

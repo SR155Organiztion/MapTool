@@ -7,7 +7,9 @@ digraph "CFrame::Create"
   rankdir="LR";
   Node1 [id="Node000001",label="CFrame::Create",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CFrame::Ready_Frame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#acfb5befa7f30a0cefd1e885623a39c69",tooltip=" "];
+  Node2 [id="Node000002",label="CFrame::CFrame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#af0e3dd238c2ea178e71889d1c0c5a386",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
+  Node3 [id="Node000003",label="CFrame::Ready_Frame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#acfb5befa7f30a0cefd1e885623a39c69",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
 }

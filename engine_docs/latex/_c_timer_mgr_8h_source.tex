@@ -1,6 +1,6 @@
 \doxysection{CTimer\+Mgr.\+h}
 \hypertarget{_c_timer_mgr_8h_source}{}\label{_c_timer_mgr_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CTimerMgr.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CTimerMgr.h}}
-\mbox{\hyperlink{_c_timer_mgr_8h}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_timer_mgr_8h}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00002}00002\ }
@@ -9,13 +9,13 @@
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00005}00005\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00006}00006\ \mbox{\hyperlink{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}{BEGIN}}(\mbox{\hyperlink{namespace_engine}{Engine}})}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00008}\mbox{\hyperlink{class_c_timer_mgr}{00008}}\ class\ \mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ CTimerMgr\ :\ public\ CBase}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00008}\mbox{\hyperlink{class_c_timer_mgr}{00008}}\ class\ \mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ \mbox{\hyperlink{class_c_timer_mgr_a5654b763478de65695f327413bfc6eb6}{CTimerMgr}}\ :\ public\ CBase}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00009}00009\ \{}
-\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_aac1c62eff2519d6fefa3719e8f8b298c}{DECLARE\_SINGLETON}}(CTimerMgr)}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_aac1c62eff2519d6fefa3719e8f8b298c}{DECLARE\_SINGLETON}}(\mbox{\hyperlink{class_c_timer_mgr_a5654b763478de65695f327413bfc6eb6}{CTimerMgr}})}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00011}00011\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00012}00012\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ CTimerMgr();}
-\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~CTimerMgr();}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_c_timer_mgr_a5654b763478de65695f327413bfc6eb6}{CTimerMgr}}();}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_c_timer_mgr_a5654b763478de65695f327413bfc6eb6}{\string~CTimerMgr}}();}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00015}00015\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00016}00016\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_mgr_ab16c0b993bffc2c928567afcf4cad30f}{Get\_TimeDelta}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTimerTag);}
@@ -25,13 +25,13 @@
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00021}00021\ \ \ \ \ HRESULT\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_mgr_addec83ec3d04bea245466d0124a9f612}{Ready\_Timer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTimerTag);}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00022}00022\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00023}00023\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{class_c_timer}{CTimer}}*\ Find\_Timer(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTimerTag);}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{class_c_timer}{CTimer}}*\ \mbox{\hyperlink{class_c_timer_mgr_ad27444b9877ecaa53909130a2d811934}{Find\_Timer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\_tchar}}*\ pTimerTag);}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00025}00025\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00026}00026\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00027}00027\ \ \ \ \ map<const\ \_tchar*,\ CTimer*>\ \ \ \ \ m\_mapTimer;}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00027}\mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{00027}}\ \ \ \ \ map<const\ \_tchar*,\ CTimer*>\ \ \ \ \ \mbox{\hyperlink{class_c_timer_mgr_ac04af9cf9a7c72ba2d7573a01f37989a}{m\_mapTimer}};}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00028}00028\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00029}00029\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_mgr_a3187a3bf3586c3876da8de66bc712848}{Free}}();}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00031}00031\ \};}
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00032}00032\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_mgr_8h_source_l00033}00033\ \mbox{\hyperlink{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}}

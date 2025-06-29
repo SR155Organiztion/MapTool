@@ -1,18 +1,18 @@
 \doxysection{CRenderer.\+cpp}
 \hypertarget{_c_renderer_8cpp_source}{}\label{_c_renderer_8cpp_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CRenderer.cpp@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Code/CRenderer.cpp}}
-\mbox{\hyperlink{_c_renderer_8cpp}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_renderer_8cpp}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_c_renderer_8h}{CRenderer.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00002}00002\ }
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00003}00003\ \mbox{\hyperlink{_engine___macro_8h_a27a2ec109f7264210d9c43433d1c8b61}{IMPLEMENT\_SINGLETON}}(\mbox{\hyperlink{class_c_renderer}{CRenderer}})}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00005}00005\ CRenderer::CRenderer()}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00005}\mbox{\hyperlink{class_c_renderer_a0405b4e5059dcda9c5072d5fd7e7d6fc}{00005}}\ \mbox{\hyperlink{class_c_renderer_a0405b4e5059dcda9c5072d5fd7e7d6fc}{CRenderer}}::\mbox{\hyperlink{class_c_renderer_a0405b4e5059dcda9c5072d5fd7e7d6fc}{CRenderer}}()}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00006}00006\ \{}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00007}00007\ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00009}00009\ CRenderer::\string~CRenderer()}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00009}\mbox{\hyperlink{class_c_renderer_acb0a66a0d9205fe5f24cec41f0e0b249}{00009}}\ \mbox{\hyperlink{class_c_renderer_acb0a66a0d9205fe5f24cec41f0e0b249}{CRenderer::\string~CRenderer}}()}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00010}00010\ \{}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00011}00011\ \ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_ac54a1d10ccdc44f24ac0c943ee1f1a04}{Free}}();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00012}00012\ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00014}\mbox{\hyperlink{class_c_renderer_adf825bbf33636ef286806e81d7d21479}{00014}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_renderer_adf825bbf33636ef286806e81d7d21479}{CRenderer::Add\_RenderGroup}}(\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057b}{RENDERID}}\ eType,\ \mbox{\hyperlink{class_c_game_object}{CGameObject}}*\ pGameObject)}
@@ -20,16 +20,16 @@
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057baa8baf72cf7dc024088042486ab918270}{RENDER\_END}}\ <=\ eType\ ||\ \textcolor{keyword}{nullptr}\ ==\ pGameObject)}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00019}00019\ \ \ \ \ m\_RenderGroup[eType].push\_back(pGameObject);}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[eType].push\_back(pGameObject);}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00020}00020\ \ \ \ \ pGameObject-\/>AddRef();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00021}00021\ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00022}00022\ }
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00023}\mbox{\hyperlink{class_c_renderer_a0197705e4816bdd08c0a97e7119a2490}{00023}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_renderer_a0197705e4816bdd08c0a97e7119a2490}{CRenderer::Render\_GameObject}}(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00024}00024\ \{}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00025}00025\ \ \ \ \ Render\_Priority(pGraphicDev);}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00026}00026\ \ \ \ \ Render\_NonAlpha(pGraphicDev);}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00027}00027\ \ \ \ \ Render\_Alpha(pGraphicDev);}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00028}00028\ \ \ \ \ Render\_UI(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a9967e6700965183c69c7e32654b52a69}{Render\_Priority}}(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a6692f7a57e4ec7861cee420517f050e0}{Render\_NonAlpha}}(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a1eb2961d5ebf2ec23dbb9d725702d0f3}{Render\_Alpha}}(pGraphicDev);}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a90f42b007e07c55a854dba21aad89aa7}{Render\_UI}}(pGraphicDev);}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a11a2164436c9422949e145fcd5e1b82b}{Clear\_RenderGroup}}();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00031}00031\ \}}
@@ -38,24 +38,24 @@
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00034}00034\ \{}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057baa8baf72cf7dc024088042486ab918270}{RENDER\_END}};\ ++i)}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00036}00036\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ for\_each(m\_RenderGroup[i].begin(),\ m\_RenderGroup[i].end(),\ \mbox{\hyperlink{class_engine_1_1_c_delete_obj}{CDeleteObj}}());}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ m\_RenderGroup[i].clear();}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ for\_each(\mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[i].begin(),\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[i].end(),\ \mbox{\hyperlink{class_engine_1_1_c_delete_obj}{CDeleteObj}}());}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[i].clear();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00039}00039\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00040}00040\ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00042}00042\ \textcolor{keywordtype}{void}\ CRenderer::Render\_Priority(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00042}\mbox{\hyperlink{class_c_renderer_a9967e6700965183c69c7e32654b52a69}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_renderer_a9967e6700965183c69c7e32654b52a69}{CRenderer::Render\_Priority}}(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00043}00043\ \{}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ m\_RenderGroup[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057babd693b04420a20903b008a4d428057b9}{RENDER\_PRIORITY}}])}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057babd693b04420a20903b008a4d428057b9}{RENDER\_PRIORITY}}])}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ pObj-\/>Render\_GameObject();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00046}00046\ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00048}00048\ \textcolor{keywordtype}{void}\ CRenderer::Render\_NonAlpha(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00048}\mbox{\hyperlink{class_c_renderer_a6692f7a57e4ec7861cee420517f050e0}{00048}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_renderer_a6692f7a57e4ec7861cee420517f050e0}{CRenderer::Render\_NonAlpha}}(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00049}00049\ \{}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ m\_RenderGroup[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057bad63327e660a4a305093faf0ca04549a5}{RENDER\_NONALPHA}}])}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057bad63327e660a4a305093faf0ca04549a5}{RENDER\_NONALPHA}}])}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ pObj-\/>Render\_GameObject();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00052}00052\ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00054}00054\ \textcolor{keywordtype}{void}\ CRenderer::Render\_Alpha(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00054}\mbox{\hyperlink{class_c_renderer_a1eb2961d5ebf2ec23dbb9d725702d0f3}{00054}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_renderer_a1eb2961d5ebf2ec23dbb9d725702d0f3}{CRenderer::Render\_Alpha}}(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00055}00055\ \{}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00056}00056\ \ \ \ \ pGraphicDev-\/>SetRenderState(D3DRS\_ALPHABLENDENABLE,\ TRUE);}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00057}00057\ }
@@ -68,7 +68,7 @@
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//pGraphicDev-\/>SetRenderState(D3DRS\_ALPHAREF,\ 0xc0);}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00065}00065\ }
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ m\_RenderGroup[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057ba5b31a7ae36bbc8dd33f45a9be63a09aa}{RENDER\_ALPHA}}])}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057ba5b31a7ae36bbc8dd33f45a9be63a09aa}{RENDER\_ALPHA}}])}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ pObj-\/>Render\_GameObject();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00069}00069\ }
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00070}00070\ }
@@ -76,13 +76,13 @@
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00072}00072\ \ \ \ \ pGraphicDev-\/>SetRenderState(D3DRS\_ALPHABLENDENABLE,\ FALSE);}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00073}00073\ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00075}00075\ \textcolor{keywordtype}{void}\ CRenderer::Render\_UI(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00075}\mbox{\hyperlink{class_c_renderer_a90f42b007e07c55a854dba21aad89aa7}{00075}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_renderer_a90f42b007e07c55a854dba21aad89aa7}{CRenderer::Render\_UI}}(LPDIRECT3DDEVICE9\&\ pGraphicDev)}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00076}00076\ \{}
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ m\_RenderGroup[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057bae3d85ffd40dbf55a5e07530db4efa316}{RENDER\_UI}}])}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057bae3d85ffd40dbf55a5e07530db4efa316}{RENDER\_UI}}])}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ pObj-\/>Render\_GameObject();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00079}00079\ \}}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00081}00081\ \textcolor{keywordtype}{void}\ CRenderer::Free()}
+\DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00081}\mbox{\hyperlink{class_c_renderer_ac54a1d10ccdc44f24ac0c943ee1f1a04}{00081}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_renderer_ac54a1d10ccdc44f24ac0c943ee1f1a04}{CRenderer::Free}}()}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00082}00082\ \{}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a11a2164436c9422949e145fcd5e1b82b}{Clear\_RenderGroup}}();}
 \DoxyCodeLine{\Hypertarget{_c_renderer_8cpp_source_l00084}00084\ \}}

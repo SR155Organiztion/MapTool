@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['_7eccamera_0',['~CCamera',['../class_c_camera.html#a0123231b9f52caebf8cc7e95baa1403e',1,'CCamera']]],
-  ['_7eccomponent_1',['~CComponent',['../class_c_component.html#a29bac312efea3e13a92aaa7213081fa8',1,'CComponent']]],
-  ['_7ecdeletemap_2',['~CDeleteMap',['../class_engine_1_1_c_delete_map.html#a397de075742432cee080bf4a2caf0f0c',1,'Engine::CDeleteMap']]],
-  ['_7ecdeleteobj_3',['~CDeleteObj',['../class_engine_1_1_c_delete_obj.html#ae9384da010d7779fbab408da339782e6',1,'Engine::CDeleteObj']]],
-  ['_7ecgameobject_4',['~CGameObject',['../class_c_game_object.html#a2a248dc92f6c4eb96c484cc51f21010c',1,'CGameObject']]],
-  ['_7ecscene_5',['~CScene',['../class_c_scene.html#a8f230d53cbde78e2a0d4a94fca1653b7',1,'CScene']]],
-  ['_7ectag_5ffinder_6',['~CTag_Finder',['../class_engine_1_1_c_tag___finder.html#aea4c3e6d88162f6fca447a7e9863656b',1,'Engine::CTag_Finder']]],
-  ['_7ecvibuffer_7',['~CVIBuffer',['../class_c_v_i_buffer.html#a22256631b045a81782966ce63b445858',1,'CVIBuffer']]]
+  ['update_5fcomponent_0',['Update_Component',['../class_c_component.html#aa24cb04c74c24659780a73296775d209',1,'CComponent::Update_Component()'],['../class_c_transform.html#a6734b800b2921b20879ebd683e21da01',1,'CTransform::Update_Component()']]],
+  ['update_5fgameobject_1',['Update_GameObject',['../class_c_camera.html#abe6cc3c64a1c8ff9d2c3271e3c827604',1,'CCamera::Update_GameObject()'],['../class_c_game_object.html#a434d549bc144bec54e1bfd2b8b719e3c',1,'CGameObject::Update_GameObject()']]],
+  ['update_5finputdev_2',['Update_InputDev',['../class_c_d_input_mgr.html#a2498ec7649cbf137c35bd684574c77d8',1,'CDInputMgr']]],
+  ['update_5flayer_3',['Update_Layer',['../class_c_layer.html#af9d44d92c024dea447e9923111600216',1,'CLayer']]],
+  ['update_5fscene_4',['Update_Scene',['../class_c_management.html#a21b941f346e4f6483422548eaaa5a3e1',1,'CManagement::Update_Scene()'],['../class_c_scene.html#ac0228d0a111d027e2024c791615b68d7',1,'CScene::Update_Scene()']]],
+  ['update_5ftimer_5',['Update_Timer',['../class_c_timer.html#ab02e145d6cdc46233bd89a8ca727b97d',1,'CTimer']]]
 ];

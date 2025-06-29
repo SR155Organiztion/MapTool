@@ -1,4 +1,4 @@
-\doxysection{CCube\+Tex Class Reference}
+\doxysection{CCube\+Tex 클래스 참조}
 \hypertarget{class_c_cube_tex}{}\label{class_c_cube_tex}\index{CCubeTex@{CCubeTex}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CCube\+Tex\+:
+CCube\+Tex에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CCube\+Tex\+:
+CCube\+Tex에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 virtual HRESULT \mbox{\hyperlink{class_c_cube_tex_aadf87ee263a1448e107d008b60c7d8a6}{Ready\+\_\+\+Buffer}} ()
@@ -21,20 +21,33 @@ virtual void \mbox{\hyperlink{class_c_cube_tex_a12d22400fab1fb71a4cd8e838a044cfa
 \item 
 virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_cube_tex_a9007c2a2ff6d6e1133b69212803f4018}{Clone}} () override
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{Update\+\_\+\+Component}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
 \item 
 virtual void \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{Late\+Update\+\_\+\+Component}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_c_cube_tex}{CCube\+Tex}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_cube_tex_ab51a54e381a5d5aa64b764be1391b802}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_v_i_buffer}{CVIBuffer}}}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_cube_tex_a60db79d673909f284a259fb519441b7b}{CCube\+Tex}} ()
+\item 
+\mbox{\hyperlink{class_c_cube_tex_a74392dfdd9efb482647746dba3f461e5}{CCube\+Tex}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_cube_tex_a83318ad0f63d3b1a34d97ad31694e131}{CCube\+Tex}} (const \mbox{\hyperlink{class_c_cube_tex}{CCube\+Tex}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_cube_tex_a3312699c45d57300ce2bbed566910a52}{\texorpdfstring{$\sim$}{\string~}\+CCube\+Tex}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_cube_tex_aa468ec67a233e075ef639d04030dd385}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{추가로 상속된 멤버들}
+\doxysubsection*{\mbox{\hyperlink{class_c_v_i_buffer}{CVIBuffer}}(으)로부터 상속된 Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer}} ()
@@ -45,7 +58,7 @@ static \mbox{\hyperlink{class_c_cube_tex}{CCube\+Tex}} \texorpdfstring{$\ast$}{*
 \item 
 virtual \mbox{\hyperlink{class_c_v_i_buffer_a22256631b045a81782966ce63b445858}{\texorpdfstring{$\sim$}{\string~}\+CVIBuffer}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
@@ -56,7 +69,7 @@ virtual \mbox{\hyperlink{class_c_v_i_buffer_a22256631b045a81782966ce63b445858}{\
 \item 
 virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\texorpdfstring{$\sim$}{\string~}\+CComponent}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_v_i_buffer}{CVIBuffer}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_v_i_buffer}{CVIBuffer}}(으)로부터 상속된 Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 LPDIRECT3\+DVERTEXBUFFER9 \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\+\_\+p\+VB}}
@@ -75,7 +88,7 @@ LPDIRECT3\+DINDEXBUFFER9 \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d
 \item 
 D3\+DFORMAT \mbox{\hyperlink{class_c_v_i_buffer_a75ba4fdcf1f90dbc35cbf9ea474dfcc9}{m\+\_\+\+Idx\+Fmt}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
@@ -84,16 +97,93 @@ LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cf
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_cube_tex_8h_source_l00006}{6}} of file \mbox{\hyperlink{_c_cube_tex_8h_source}{CCube\+Tex.\+h}}.
+\mbox{\hyperlink{_c_cube_tex_8h_source}{CCube\+Tex.\+h}} 파일의 \mbox{\hyperlink{_c_cube_tex_8h_source_l00006}{6}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_cube_tex_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_cube_tex_a60db79d673909f284a259fb519441b7b}\index{CCubeTex@{CCubeTex}!CCubeTex@{CCubeTex}}
+\index{CCubeTex@{CCubeTex}!CCubeTex@{CCubeTex}}
+\doxysubsubsection{\texorpdfstring{CCubeTex()}{CCubeTex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_c_cube_tex_a60db79d673909f284a259fb519441b7b} 
+CCube\+Tex\+::\+CCube\+Tex (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\Hypertarget{class_c_cube_tex_a74392dfdd9efb482647746dba3f461e5}\index{CCubeTex@{CCubeTex}!CCubeTex@{CCubeTex}}
+\index{CCubeTex@{CCubeTex}!CCubeTex@{CCubeTex}}
+\doxysubsubsection{\texorpdfstring{CCubeTex()}{CCubeTex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_c_cube_tex_a74392dfdd9efb482647746dba3f461e5} 
+CCube\+Tex\+::\+CCube\+Tex (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ :\ \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer}}(pGraphicDev) }
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_cube_tex_a83318ad0f63d3b1a34d97ad31694e131}\index{CCubeTex@{CCubeTex}!CCubeTex@{CCubeTex}}
+\index{CCubeTex@{CCubeTex}!CCubeTex@{CCubeTex}}
+\doxysubsubsection{\texorpdfstring{CCubeTex()}{CCubeTex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_c_cube_tex_a83318ad0f63d3b1a34d97ad31694e131} 
+CCube\+Tex\+::\+CCube\+Tex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_c_cube_tex}{CCube\+Tex}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ :\ \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer}}(rhs) }
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\Hypertarget{class_c_cube_tex_a3312699c45d57300ce2bbed566910a52}\index{CCubeTex@{CCubeTex}!````~CCubeTex@{\texorpdfstring{$\sim$}{\string~}CCubeTex}}
+\index{````~CCubeTex@{\texorpdfstring{$\sim$}{\string~}CCubeTex}!CCubeTex@{CCubeTex}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CCubeTex()}{\string~CCubeTex()}}
+{\footnotesize\ttfamily \label{class_c_cube_tex_a3312699c45d57300ce2bbed566910a52} 
+CCube\+Tex\+::\texorpdfstring{$\sim$}{\string~}\+CCube\+Tex (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_cube_tex_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_cube_tex_a9007c2a2ff6d6e1133b69212803f4018}\index{CCubeTex@{CCubeTex}!Clone@{Clone}}
 \index{Clone@{Clone}!CCubeTex@{CCubeTex}}
 \doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
@@ -102,14 +192,21 @@ Definition at line \mbox{\hyperlink{_c_cube_tex_8h_source_l00006}{6}} of file \m
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}.
+\mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00149}{149}} of file \mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}}.
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00149}{149}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_cube_tex_a60db79d673909f284a259fb519441b7b}{CCubeTex}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00152\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 \Hypertarget{class_c_cube_tex_ab51a54e381a5d5aa64b764be1391b802}\index{CCubeTex@{CCubeTex}!Create@{Create}}
 \index{Create@{Create}!CCubeTex@{CCubeTex}}
 \doxysubsubsection{\texorpdfstring{Create()}{Create()}}
@@ -118,10 +215,49 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}}.
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00154}{154}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 3
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{class_c_cube_tex_a60db79d673909f284a259fb519441b7b}{CCubeTex}}*\ pCubeTex\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_cube_tex_a60db79d673909f284a259fb519441b7b}{CCubeTex}}(pGraphicDev);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pCubeTex-\/>\mbox{\hyperlink{class_c_cube_tex_aadf87ee263a1448e107d008b60c7d8a6}{Ready\_Buffer}}()))}
+\DoxyCodeLine{00159\ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(pCubeTex);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}CubeTex\ Create\ Failed"{}});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{return}\ pCubeTex;}
+\DoxyCodeLine{00166\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\Hypertarget{class_c_cube_tex_aa468ec67a233e075ef639d04030dd385}\index{CCubeTex@{CCubeTex}!Free@{Free}}
+\index{Free@{Free}!CCubeTex@{CCubeTex}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_cube_tex_aa468ec67a233e075ef639d04030dd385} 
+void CCube\+Tex\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{CVIBuffer}}(으)로부터 재구현되었습니다.
+
+
+
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00168}{168}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00169\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{CVIBuffer::Free}}();}
+\DoxyCodeLine{00171\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
 \Hypertarget{class_c_cube_tex_aadf87ee263a1448e107d008b60c7d8a6}\index{CCubeTex@{CCubeTex}!Ready\_Buffer@{Ready\_Buffer}}
 \index{Ready\_Buffer@{Ready\_Buffer}!CCubeTex@{CCubeTex}}
 \doxysubsubsection{\texorpdfstring{Ready\_Buffer()}{Ready\_Buffer()}}
@@ -130,16 +266,141 @@ HRESULT CCube\+Tex\+::\+Ready\+\_\+\+Buffer (\begin{DoxyParamCaption}{}{}\end{Do
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_v_i_buffer_a9fc75b5bb482f6b3d6132cb054193bfe}{CVIBuffer}}.
+\mbox{\hyperlink{class_c_v_i_buffer_a9fc75b5bb482f6b3d6132cb054193bfe}{CVIBuffer}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}}.
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00021}{21}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 4
-Here is the caller graph for this function\+:
-% FIG 5
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a5896322c548cf9ce1a33416d6bc71222}{m\_dwTriCnt}}\ =\ 12;}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a7753d95d573e0e866dc603ee412cbbad}{m\_dwVtxCnt}}\ =\ 8;}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a217c6b46dea3c3641455fc1c8009e19f}{m\_dwVtxSize}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_a162dd44550535ea53756859b46ad7ae7}{VTXCUBE}});}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_acc8d83cf6b63c83ff0394d47f9155aae}{m\_dwFVF}}\ =\ \mbox{\hyperlink{namespace_engine_ab421b7d09ac1c15f1b851913f8adbd1b}{FVF\_CUBE}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a0b10ee9da764baddde8854a829b150ac}{m\_dwIdxSize}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_a4e4c357987184de31ed34bd0fbd38555}{INDEX32}});}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a75ba4fdcf1f90dbc35cbf9ea474dfcc9}{m\_IdxFmt}}\ =\ D3DFMT\_INDEX32;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_v_i_buffer_a9fc75b5bb482f6b3d6132cb054193bfe}{CVIBuffer::Ready\_Buffer}}()))}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a162dd44550535ea53756859b46ad7ae7}{VTXCUBE}}*\ pVertex\ =\ NULL;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ ���ؽ�\ ���ۿ�\ ������ ����\ ��\ ù\ ��° ������\ �ּҸ�\ ������ �Ű�\ ����}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}-\/>Lock(0,\ 0,\ (\textcolor{keywordtype}{void}**)\&pVertex,\ 0);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ ����}}
+\DoxyCodeLine{00041\ \ \ \ \ pVertex[0].vPosition\ =\ \{\ -\/1.f,\ 1.f,\ -\/1.f\ \};}
+\DoxyCodeLine{00042\ \ \ \ \ pVertex[0].vTexUV\ =\ pVertex[0].vPosition;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ pVertex[1].vPosition\ =\ \{\ 1.f,\ 1.f,\ -\/1.f\ \};}
+\DoxyCodeLine{00045\ \ \ \ \ pVertex[1].vTexUV\ =\ pVertex[1].vPosition;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ pVertex[2].vPosition\ =\ \{\ 1.f,\ -\/1.f,\ -\/1.f\ \};}
+\DoxyCodeLine{00048\ \ \ \ \ pVertex[2].vTexUV\ =\ pVertex[2].vPosition;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ pVertex[3].vPosition\ =\ \{\ -\/1.f,\ -\/1.f,\ -\/1.f\ \};}
+\DoxyCodeLine{00051\ \ \ \ \ pVertex[3].vTexUV\ =\ pVertex[3].vPosition;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ �ĸ�}}
+\DoxyCodeLine{00054\ \ \ \ \ pVertex[4].vPosition\ =\ \{\ -\/1.f,\ 1.f,\ 1.f\ \};}
+\DoxyCodeLine{00055\ \ \ \ \ pVertex[4].vTexUV\ =\ pVertex[4].vPosition;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ pVertex[5].vPosition\ =\ \{\ 1.f,\ 1.f,\ 1.f\ \};}
+\DoxyCodeLine{00058\ \ \ \ \ pVertex[5].vTexUV\ =\ pVertex[5].vPosition;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ pVertex[6].vPosition\ =\ \{\ 1.f,\ -\/1.f,\ 1.f\ \};}
+\DoxyCodeLine{00061\ \ \ \ \ pVertex[6].vTexUV\ =\ pVertex[6].vPosition;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ pVertex[7].vPosition\ =\ \{\ -\/1.f,\ -\/1.f,\ 1.f\ \};}
+\DoxyCodeLine{00064\ \ \ \ \ pVertex[7].vTexUV\ =\ pVertex[7].vPosition;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}-\/>Unlock();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a4e4c357987184de31ed34bd0fbd38555}{INDEX32}}*\ pIndex\ =\ NULL;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}-\/>Lock(0,\ 0,\ (\textcolor{keywordtype}{void}**)\&pIndex,\ 0);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ X+}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00074\ \ \ \ \ pIndex[0].\_0\ =\ 1;}
+\DoxyCodeLine{00075\ \ \ \ \ pIndex[0].\_1\ =\ 5;}
+\DoxyCodeLine{00076\ \ \ \ \ pIndex[0].\_2\ =\ 6;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00079\ \ \ \ \ pIndex[1].\_0\ =\ 1;}
+\DoxyCodeLine{00080\ \ \ \ \ pIndex[1].\_1\ =\ 6;}
+\DoxyCodeLine{00081\ \ \ \ \ pIndex[1].\_2\ =\ 2;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ X-\/}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00085\ \ \ \ \ pIndex[2].\_0\ =\ 4;}
+\DoxyCodeLine{00086\ \ \ \ \ pIndex[2].\_1\ =\ 0;}
+\DoxyCodeLine{00087\ \ \ \ \ pIndex[2].\_2\ =\ 3;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00090\ \ \ \ \ pIndex[3].\_0\ =\ 4;}
+\DoxyCodeLine{00091\ \ \ \ \ pIndex[3].\_1\ =\ 3;}
+\DoxyCodeLine{00092\ \ \ \ \ pIndex[3].\_2\ =\ 7;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ Y+}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00096\ \ \ \ \ pIndex[4].\_0\ =\ 4;}
+\DoxyCodeLine{00097\ \ \ \ \ pIndex[4].\_1\ =\ 5;}
+\DoxyCodeLine{00098\ \ \ \ \ pIndex[4].\_2\ =\ 1;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00101\ \ \ \ \ pIndex[5].\_0\ =\ 4;}
+\DoxyCodeLine{00102\ \ \ \ \ pIndex[5].\_1\ =\ 1;}
+\DoxyCodeLine{00103\ \ \ \ \ pIndex[5].\_2\ =\ 0;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{//\ Y-\/}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00107\ \ \ \ \ pIndex[6].\_0\ =\ 3;}
+\DoxyCodeLine{00108\ \ \ \ \ pIndex[6].\_1\ =\ 2;}
+\DoxyCodeLine{00109\ \ \ \ \ pIndex[6].\_2\ =\ 6;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00112\ \ \ \ \ pIndex[7].\_0\ =\ 3;}
+\DoxyCodeLine{00113\ \ \ \ \ pIndex[7].\_1\ =\ 6;}
+\DoxyCodeLine{00114\ \ \ \ \ pIndex[7].\_2\ =\ 7;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Z+}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00118\ \ \ \ \ pIndex[8].\_0\ =\ 7;}
+\DoxyCodeLine{00119\ \ \ \ \ pIndex[8].\_1\ =\ 6;}
+\DoxyCodeLine{00120\ \ \ \ \ pIndex[8].\_2\ =\ 5;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00123\ \ \ \ \ pIndex[9].\_0\ =\ 7;}
+\DoxyCodeLine{00124\ \ \ \ \ pIndex[9].\_1\ =\ 5;}
+\DoxyCodeLine{00125\ \ \ \ \ pIndex[9].\_2\ =\ 4;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ Z-\/}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00129\ \ \ \ \ pIndex[10].\_0\ =\ 0;}
+\DoxyCodeLine{00130\ \ \ \ \ pIndex[10].\_1\ =\ 1;}
+\DoxyCodeLine{00131\ \ \ \ \ pIndex[10].\_2\ =\ 2;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00134\ \ \ \ \ pIndex[11].\_0\ =\ 0;}
+\DoxyCodeLine{00135\ \ \ \ \ pIndex[11].\_1\ =\ 2;}
+\DoxyCodeLine{00136\ \ \ \ \ pIndex[11].\_2\ =\ 3;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}-\/>Unlock();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00142\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
 \Hypertarget{class_c_cube_tex_a12d22400fab1fb71a4cd8e838a044cfa}\index{CCubeTex@{CCubeTex}!Render\_Buffer@{Render\_Buffer}}
 \index{Render\_Buffer@{Render\_Buffer}!CCubeTex@{CCubeTex}}
 \doxysubsubsection{\texorpdfstring{Render\_Buffer()}{Render\_Buffer()}}
@@ -148,17 +409,24 @@ void CCube\+Tex\+::\+Render\+\_\+\+Buffer (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_v_i_buffer_aff55d8ab824fe2972bce8f55a7b5519e}{CVIBuffer}}.
+\mbox{\hyperlink{class_c_v_i_buffer_aff55d8ab824fe2972bce8f55a7b5519e}{CVIBuffer}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}}.
-
-Here is the call graph for this function\+:
-% FIG 6
+\mbox{\hyperlink{_c_cube_tex_8cpp_source}{CCube\+Tex.\+cpp}} 파일의 \mbox{\hyperlink{_c_cube_tex_8cpp_source_l00144}{144}} 번째 라인에서 정의되었습니다.
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00145\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_aff55d8ab824fe2972bce8f55a7b5519e}{CVIBuffer::Render\_Buffer}}();}
+\DoxyCodeLine{00147\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_cube_tex_8h}{CCube\+Tex.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_cube_tex_8cpp}{CCube\+Tex.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-digraph "Graphical Class Hierarchy"
+digraph "그래픽컬한 클래스 계통도"
 {
  // LATEX_PDF_SIZE
   bgcolor="transparent";

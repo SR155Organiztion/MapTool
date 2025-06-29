@@ -1,13 +1,13 @@
-\doxysection{C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\+Engine\+\_\+\+Macro.h File Reference}
+\doxysection{C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\+Engine\+\_\+\+Macro.h 파일 참조}
 \hypertarget{_engine___macro_8h}{}\label{_engine___macro_8h}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/Engine\_Macro.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/Engine\_Macro.h}}
-This graph shows which files directly or indirectly include this file\+:
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
 % FIG 0
-\doxysubsubsection*{Namespaces}
+\doxysubsubsection*{네임스페이스}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespace_engine}{Engine}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Macros}
+\doxysubsubsection*{매크로}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{_engine___macro_8h_acbf0378589572858aad69eace5595f88}{WINCX}}~800
@@ -40,21 +40,21 @@ namespace \mbox{\hyperlink{namespace_engine}{Engine}}
 
 \label{doc-define-members}
 \Hypertarget{_engine___macro_8h_doc-define-members}
-\doxysubsection{Macro Definition Documentation}
+\doxysubsection{매크로 문서화}
 \Hypertarget{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}\index{Engine\_Macro.h@{Engine\_Macro.h}!BEGIN@{BEGIN}}
 \index{BEGIN@{BEGIN}!Engine\_Macro.h@{Engine\_Macro.h}}
 \doxysubsubsection{\texorpdfstring{BEGIN}{BEGIN}}
 {\footnotesize\ttfamily \label{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36} 
 \#define BEGIN(\begin{DoxyParamCaption}\item[{}]{NAMESPACE}{}\end{DoxyParamCaption})}
 
-{\bfseries Value\+:}
+{\bfseries 값\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{namespace\ }NAMESPACE\ \{}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00018}{18}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00018}{18}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_aac1c62eff2519d6fefa3719e8f8b298c}\index{Engine\_Macro.h@{Engine\_Macro.h}!DECLARE\_SINGLETON@{DECLARE\_SINGLETON}}
 \index{DECLARE\_SINGLETON@{DECLARE\_SINGLETON}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -62,7 +62,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00018}{18}} of fi
 {\footnotesize\ttfamily \label{_engine___macro_8h_aac1c62eff2519d6fefa3719e8f8b298c} 
 \#define DECLARE\+\_\+\+SINGLETON(\begin{DoxyParamCaption}\item[{}]{CLASSNAME}{}\end{DoxyParamCaption})}
 
-{\bfseries Value\+:}
+{\bfseries 값\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_af5b3bc1265f08c3cd35732df9926c823}{NO\_COPY}}(CLASSNAME)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{private}:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
@@ -74,8 +74,19 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00018}{18}} of fi
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00034}{34}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00034}{34}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ DECLARE\_SINGLETON(CLASSNAME)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ NO\_COPY(CLASSNAME)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ private:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ CLASSNAME*\ \ \ m\_pInstance;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ public:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ CLASSNAME*\ \ \ GetInstance(\ void\ );\ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ void\ DestroyInstance(\ void\ );\ \ \ \ \ \ \ \ \ \ \ \  }}
+
+\end{DoxyCode}
 \Hypertarget{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}\index{Engine\_Macro.h@{Engine\_Macro.h}!END@{END}}
 \index{END@{END}!Engine\_Macro.h@{Engine\_Macro.h}}
 \doxysubsubsection{\texorpdfstring{END}{END}}
@@ -84,7 +95,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00034}{34}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00019}{19}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}\index{Engine\_Macro.h@{Engine\_Macro.h}!ENGINE\_DLL@{ENGINE\_DLL}}
 \index{ENGINE\_DLL@{ENGINE\_DLL}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -94,7 +105,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00019}{19}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00026}{26}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00026}{26}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_a27a2ec109f7264210d9c43433d1c8b61}\index{Engine\_Macro.h@{Engine\_Macro.h}!IMPLEMENT\_SINGLETON@{IMPLEMENT\_SINGLETON}}
 \index{IMPLEMENT\_SINGLETON@{IMPLEMENT\_SINGLETON}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -102,7 +113,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00026}{26}} of fi
 {\footnotesize\ttfamily \label{_engine___macro_8h_a27a2ec109f7264210d9c43433d1c8b61} 
 \#define IMPLEMENT\+\_\+\+SINGLETON(\begin{DoxyParamCaption}\item[{}]{CLASSNAME}{}\end{DoxyParamCaption})}
 
-{\bfseries Value\+:}
+{\bfseries 값\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ CLASSNAME*\ \ CLASSNAME::m\_pInstance\ =\ NULL;\ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ CLASSNAME*\ \ CLASSNAME::GetInstance(\ \textcolor{keywordtype}{void}\ )\ \ \{\ \ \ \(\backslash\)}
@@ -121,22 +132,40 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00026}{26}} of fi
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00042}{42}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00042}{42}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ IMPLEMENT\_SINGLETON(CLASSNAME)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ CLASSNAME*\ \ CLASSNAME::m\_pInstance\ =\ NULL;\ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ CLASSNAME*\ \ CLASSNAME::GetInstance(\ void\ )\ \ \{\ \ \ \(\backslash\) }}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ if(NULL\ ==\ m\_pInstance)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_pInstance\ =\ new\ CLASSNAME;\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ m\_pInstance;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ void\ CLASSNAME::DestroyInstance(\ void\ )\ \{\ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ if(NULL\ !=\ m\_pInstance)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ delete\ m\_pInstance;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_pInstance\ =\ NULL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \} }}
+
+\end{DoxyCode}
 \Hypertarget{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}\index{Engine\_Macro.h@{Engine\_Macro.h}!MSG\_BOX@{MSG\_BOX}}
 \index{MSG\_BOX@{MSG\_BOX}!Engine\_Macro.h@{Engine\_Macro.h}}
 \doxysubsubsection{\texorpdfstring{MSG\_BOX}{MSG\_BOX}}
 {\footnotesize\ttfamily \label{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c} 
 \#define MSG\+\_\+\+BOX(\begin{DoxyParamCaption}\item[{}]{\+\_\+message}{}\end{DoxyParamCaption})}
 
-{\bfseries Value\+:}
+{\bfseries 값\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{MessageBox(NULL,\ TEXT(\_message),\ L\textcolor{stringliteral}{"{}System\ Message"{}},\ MB\_OK)}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00015}{15}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00015}{15}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_af5b3bc1265f08c3cd35732df9926c823}\index{Engine\_Macro.h@{Engine\_Macro.h}!NO\_COPY@{NO\_COPY}}
 \index{NO\_COPY@{NO\_COPY}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -144,7 +173,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00015}{15}} of fi
 {\footnotesize\ttfamily \label{_engine___macro_8h_af5b3bc1265f08c3cd35732df9926c823} 
 \#define NO\+\_\+\+COPY(\begin{DoxyParamCaption}\item[{}]{CLASSNAME}{}\end{DoxyParamCaption})}
 
-{\bfseries Value\+:}
+{\bfseries 값\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{private}:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ CLASSNAME(\textcolor{keyword}{const}\ CLASSNAME\&)\ =\ \textcolor{keyword}{delete};\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
@@ -153,22 +182,30 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00015}{15}} of fi
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00029}{29}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00029}{29}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ NO\_COPY(CLASSNAME)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ private:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ CLASSNAME(const\ CLASSNAME\&)\ =\ delete;\ \ \ \ \ \ \ \ \ \ \ \(\backslash\) }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ CLASSNAME\&\ operator\ =\ (const\ CLASSNAME\&)=\ delete;\ \ \ \ \ \ \  }}
+
+\end{DoxyCode}
 \Hypertarget{_engine___macro_8h_a215073e622d7ee5ed13ab041b60d7f14}\index{Engine\_Macro.h@{Engine\_Macro.h}!USING@{USING}}
 \index{USING@{USING}!Engine\_Macro.h@{Engine\_Macro.h}}
 \doxysubsubsection{\texorpdfstring{USING}{USING}}
 {\footnotesize\ttfamily \label{_engine___macro_8h_a215073e622d7ee5ed13ab041b60d7f14} 
 \#define USING(\begin{DoxyParamCaption}\item[{}]{NAMESPACE}{}\end{DoxyParamCaption})}
 
-{\bfseries Value\+:}
+{\bfseries 값\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{using\ namespace\ }NAMESPACE;}
 
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00021}{21}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00021}{21}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}\index{Engine\_Macro.h@{Engine\_Macro.h}!VTXCNTX@{VTXCNTX}}
 \index{VTXCNTX@{VTXCNTX}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -178,7 +215,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00021}{21}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00009}{9}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00009}{9}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_a3a7212297e7d2ac4d31824a65a62dfbc}\index{Engine\_Macro.h@{Engine\_Macro.h}!VTXCNTZ@{VTXCNTZ}}
 \index{VTXCNTZ@{VTXCNTZ}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -188,7 +225,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00009}{9}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00010}{10}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00010}{10}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_a6ede635b64fff28b6302be246233023c}\index{Engine\_Macro.h@{Engine\_Macro.h}!VTXITV@{VTXITV}}
 \index{VTXITV@{VTXITV}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -198,7 +235,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00010}{10}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00012}{12}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00012}{12}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_acbf0378589572858aad69eace5595f88}\index{Engine\_Macro.h@{Engine\_Macro.h}!WINCX@{WINCX}}
 \index{WINCX@{WINCX}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -208,7 +245,7 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00012}{12}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00006}{6}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00006}{6}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{_engine___macro_8h_a7aa50a914f1e3b1f7dd504b2bb9c3f7c}\index{Engine\_Macro.h@{Engine\_Macro.h}!WINCY@{WINCY}}
 \index{WINCY@{WINCY}!Engine\_Macro.h@{Engine\_Macro.h}}
@@ -218,5 +255,5 @@ Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00006}{6}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{_engine___macro_8h_source_l00007}{7}} of file \mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}}.
+\mbox{\hyperlink{_engine___macro_8h_source}{Engine\+\_\+\+Macro.\+h}} 파일의 \mbox{\hyperlink{_engine___macro_8h_source_l00007}{7}} 번째 라인에서 정의되었습니다.
 

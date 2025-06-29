@@ -1,4 +1,4 @@
-\doxysection{CPipeline Class Reference}
+\doxysection{CPipeline 클래스 참조}
 \hypertarget{class_c_pipeline}{}\label{class_c_pipeline}\index{CPipeline@{CPipeline}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CPipeline\+:
+CPipeline에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CPipeline\+:
+CPipeline에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{class_c_pipeline_a69675e34506fe935ba844c713f52ebb2}{Make\+Transform\+Matrix}} (\mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\+\_\+matrix}} \texorpdfstring{$\ast$}{*}p\+Out, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Right, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Up, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Look, const \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \texorpdfstring{$\ast$}{*}p\+Pos)
@@ -23,16 +23,16 @@ static void \mbox{\hyperlink{class_c_pipeline_a865d6ea88ba38828236d69b2e330ea6b}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_pipeline_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_pipeline_8h_source}{CPipeline.\+h}}.
+\mbox{\hyperlink{_c_pipeline_8h_source}{CPipeline.\+h}} 파일의 \mbox{\hyperlink{_c_pipeline_8h_source_l00007}{7}} 번째 라인에서 정의되었습니다.
 
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_pipeline_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_pipeline_a865d6ea88ba38828236d69b2e330ea6b}\index{CPipeline@{CPipeline}!MakeProjMatrix@{MakeProjMatrix}}
 \index{MakeProjMatrix@{MakeProjMatrix}!CPipeline@{CPipeline}}
 \doxysubsubsection{\texorpdfstring{MakeProjMatrix()}{MakeProjMatrix()}}
@@ -41,8 +41,23 @@ void CPipeline\+::\+Make\+Proj\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hy
 
 
 
-Definition at line \mbox{\hyperlink{_c_pipeline_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}}.
+\mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}} 파일의 \mbox{\hyperlink{_c_pipeline_8cpp_source_l00046}{46}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ D3DXMatrixIdentity(pOut);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ pOut-\/>\_11\ =\ (1.f\ /\ tanf(fFov\ /\ 2.f))\ /\ fAspect;}
+\DoxyCodeLine{00051\ \ \ \ \ pOut-\/>\_22\ =\ 1.f\ /\ (tanf(fFov\ /\ 2.f));}
+\DoxyCodeLine{00052\ \ \ \ \ pOut-\/>\_33\ =\ fFar\ /\ (fFar\ -\/\ fNear);}
+\DoxyCodeLine{00053\ \ \ \ \ pOut-\/>\_44\ =\ 0.f;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ pOut-\/>\_34\ =\ 1.f;}
+\DoxyCodeLine{00056\ \ \ \ \ pOut-\/>\_43\ =\ (-\/fNear\ *\ fFar)\ /\ (fFar\ -\/\ fNear);}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_pipeline_a69675e34506fe935ba844c713f52ebb2}\index{CPipeline@{CPipeline}!MakeTransformMatrix@{MakeTransformMatrix}}
 \index{MakeTransformMatrix@{MakeTransformMatrix}!CPipeline@{CPipeline}}
 \doxysubsubsection{\texorpdfstring{MakeTransformMatrix()}{MakeTransformMatrix()}}
@@ -51,9 +66,19 @@ void CPipeline\+::\+Make\+Transform\+Matrix (\begin{DoxyParamCaption}\item[{\mbo
 
 
 
-Definition at line \mbox{\hyperlink{_c_pipeline_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}}.
+\mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}} 파일의 \mbox{\hyperlink{_c_pipeline_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
 
-Here is the caller graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ memcpy(\&pOut-\/>m[0][0],\ pRight,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}));}
+\DoxyCodeLine{00006\ \ \ \ \ memcpy(\&pOut-\/>m[1][0],\ pUp,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}));}
+\DoxyCodeLine{00007\ \ \ \ \ memcpy(\&pOut-\/>m[2][0],\ pLook,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}));}
+\DoxyCodeLine{00008\ \ \ \ \ memcpy(\&pOut-\/>m[3][0],\ pPos,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}));}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 2
 \Hypertarget{class_c_pipeline_a31adc312716302eb3bbaef7d4dd05050}\index{CPipeline@{CPipeline}!MakeViewSpaceMatrix@{MakeViewSpaceMatrix}}
 \index{MakeViewSpaceMatrix@{MakeViewSpaceMatrix}!CPipeline@{CPipeline}}
@@ -63,13 +88,46 @@ void CPipeline\+::\+Make\+View\+Space\+Matrix (\begin{DoxyParamCaption}\item[{\m
 
 
 
-Definition at line \mbox{\hyperlink{_c_pipeline_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}}.
+\mbox{\hyperlink{_c_pipeline_8cpp_source}{CPipeline.\+cpp}} 파일의 \mbox{\hyperlink{_c_pipeline_8cpp_source_l00011}{11}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ D3DXMatrixIdentity(pOut);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ vRight\ \ \ \{\ 1.f,\ 0.f,\ 0.f\ \};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ vUp\ \ \ \ \ \ \{\ 0.f,\ 1.f,\ 0.f\ \};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ vLook\ \ \ \ \ \ \ \ \{\ 0.f,\ 0.f,\ 1.f\ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ vPos\ \ \ \ \ \{\ 0.f,\ 0.f,\ 0.f\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ vLook;}}
+\DoxyCodeLine{00024\ \ \ \ \ vLook\ =\ *pAt\ -\/\ *pEye;}
+\DoxyCodeLine{00025\ \ \ \ \ D3DXVec3Normalize(\&vLook,\ \&vLook);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ right}}
+\DoxyCodeLine{00028\ \ \ \ \ D3DXVec3Cross(\&vRight,\ pUp,\ \&vLook);}
+\DoxyCodeLine{00029\ \ \ \ \ D3DXVec3Normalize(\&vRight,\ \&vRight);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ up}}
+\DoxyCodeLine{00032\ \ \ \ \ D3DXVec3Cross(\&vUp,\ \&vLook,\ \&vRight);}
+\DoxyCodeLine{00033\ \ \ \ \ D3DXVec3Normalize(\&vUp,\ \&vUp);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ pos}}
+\DoxyCodeLine{00036\ \ \ \ \ vPos\ =\ *pEye;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ ī�޶� ���� ���}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_c_pipeline_a69675e34506fe935ba844c713f52ebb2}{MakeTransformMatrix}}(pOut,\ \&vRight,\ \&vUp,\ \&vLook,\ \&vPos);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\ �佺���̽�\ ��ȯ\ ���(ī�޶� ���� �����\ �����)}}
+\DoxyCodeLine{00042\ \ \ \ \ D3DXMatrixInverse(pOut,\ NULL,\ pOut);}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 3
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_pipeline_8h}{CPipeline.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_pipeline_8cpp}{CPipeline.\+cpp}}\end{DoxyCompactItemize}

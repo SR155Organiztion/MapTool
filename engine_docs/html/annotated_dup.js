@@ -25,7 +25,8 @@ var annotated_dup =
     [ "CLight", "class_c_light.html", "class_c_light" ],
     [ "CLightMgr", "class_c_light_mgr.html", "class_c_light_mgr" ],
     [ "CManagement", "class_c_management.html", "class_c_management" ],
-    [ "CPipeline", "class_c_pipeline.html", null ],
+    [ "CMapToolMgr", "class_c_map_tool_mgr.html", "class_c_map_tool_mgr" ],
+    [ "CPipeline", "class_c_pipeline.html", "class_c_pipeline" ],
     [ "CProtoMgr", "class_c_proto_mgr.html", "class_c_proto_mgr" ],
     [ "CRcCol", "class_c_rc_col.html", "class_c_rc_col" ],
     [ "CRcTex", "class_c_rc_tex.html", "class_c_rc_tex" ],
@@ -38,5 +39,12 @@ var annotated_dup =
     [ "CTimerMgr", "class_c_timer_mgr.html", "class_c_timer_mgr" ],
     [ "CTransform", "class_c_transform.html", "class_c_transform" ],
     [ "CTriCol", "class_c_tri_col.html", "class_c_tri_col" ],
-    [ "CVIBuffer", "class_c_v_i_buffer.html", "class_c_v_i_buffer" ]
+    [ "CVIBuffer", "class_c_v_i_buffer.html", "class_c_v_i_buffer" ],
+    [ "S_BLOCK", "struct_s___b_l_o_c_k.html", "struct_s___b_l_o_c_k" ],
+    [ "S_CAM", "struct_s___c_a_m.html", "struct_s___c_a_m" ],
+    [ "S_ENVIRONMENT", "struct_s___e_n_v_i_r_o_n_m_e_n_t.html", "struct_s___e_n_v_i_r_o_n_m_e_n_t" ],
+    [ "S_PLAYER", "struct_s___p_l_a_y_e_r.html", "struct_s___p_l_a_y_e_r" ],
+    [ "S_STAGE", "struct_s___s_t_a_g_e.html", "struct_s___s_t_a_g_e" ],
+    [ "S_TILE", "struct_s___t_i_l_e.html", "struct_s___t_i_l_e" ],
+    [ "S_Tile", "struct_s___tile.html", null ]
 ];

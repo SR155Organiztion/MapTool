@@ -6,7 +6,7 @@ set ORG_MKIDX_CMD=%MKIDX_CMD%
 set ORG_BIBTEX_CMD=%BIBTEX_CMD%
 set ORG_LATEX_COUNT=%LATEX_COUNT%
 set ORG_MANUAL_FILE=%MANUAL_FILE%
-if "X"%LATEX_CMD% == "X" set LATEX_CMD=pdflatex
+if "X"%LATEX_CMD% == "X" set LATEX_CMD=xelatex
 if "X"%MKIDX_CMD% == "X" set MKIDX_CMD=makeindex
 if "X"%BIBTEX_CMD% == "X" set BIBTEX_CMD=bibtex
 if "X"%LATEX_COUNT% == "X" set LATEX_COUNT=8

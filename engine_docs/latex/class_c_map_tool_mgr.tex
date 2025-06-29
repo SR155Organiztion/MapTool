@@ -1,0 +1,488 @@
+\doxysection{CMap\+Tool\+Mgr í´ë˜ìŠ¤ ì°¸ì¡°}
+\hypertarget{class_c_map_tool_mgr}{}\label{class_c_map_tool_mgr}\index{CMapToolMgr@{CMapToolMgr}}
+
+
+{\ttfamily \#include $<$CMap\+Tool\+Mgr.\+h$>$}
+
+
+
+CMap\+Tool\+Mgrì— ëŒ€í•œ ìƒì† ë‹¤ì´ì–´ê·¸ë¨ \+: 
+% FIG 0
+
+
+CMap\+Tool\+Mgrì— ëŒ€í•œ í˜‘ë ¥ ë‹¤ì´ì–´ê·¸ë¨\+:
+% FIG 1
+\doxysubsubsection*{Public ë©¤ë²„ í•¨ìˆ˜}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_c_map_tool_mgr_ac7a430673ed313c33d58786b0488c8e3}{Plant\+\_\+\+Block}} ()
+\item 
+void \mbox{\hyperlink{class_c_map_tool_mgr_a5da3f9d836bdd5be6e879475d224b509}{Plant\+\_\+\+Tile}} ()
+\begin{DoxyCompactList}\small\item\em ¼³Ä¡ÇÑ ºí·ÏÀÇ Á¤º¸¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_map_tool_mgr_adb3ca819d5bbc96dae7804adfc1c358f}{Plant\+\_\+\+Environment}} ()
+\begin{DoxyCompactList}\small\item\em ¼³Ä¡ÇÑ Å¸ÀÏÀÇ Á¤º¸¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_map_tool_mgr_a94ad3532c4fdb73afd472b94e25e27f6}{Plant\+\_\+\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em ¼³Ä¡ÇÑ È¯°æ ¿ÀºêÁ§Æ®¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_map_tool_mgr_a5c8450e0ef26f3cb1f56302bb6c4485b}{Plant\+\_\+\+Player}} ()
+\begin{DoxyCompactList}\small\item\em ÇöÀç ¹Ù¶óº¸°í ÀÖ´Â °÷ÀÇ Eye¿Í atÀ» ÀúÀå \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_c_map_tool_mgr_a9d409ae53a47f5814d829b62981c63f5}{Save\+\_\+\+Json}} ()
+\begin{DoxyCompactList}\small\item\em ÇÃ·¹ÀÌ¾îÀÇ ½ºÆù À§Ä¡ ¼³Á¤ \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_c_map_tool_mgr_aed85a66b7b0072cb10ba9c25a071c868}{Load\+\_\+\+Json}} ()
+\begin{DoxyCompactList}\small\item\em json¿¡ µ¥ÀÌÅÍ ÀúÀå \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_map_tool_mgr_ac73e6d99a0245d4c5ddd453a4ab9db3b}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em json µ¥ÀÌÅÍ ºÒ·¯¿À±â \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private ë©¤ë²„ í•¨ìˆ˜}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_map_tool_mgr_a7fb071447e8c41bd1bf97fab3eedb22e}{CMap\+Tool\+Mgr}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_map_tool_mgr_aa7aeccc8a1df3f558c07529604725158}{\texorpdfstring{$\sim$}{\string~}\+CMap\+Tool\+Mgr}} ()
+\item 
+void \mbox{\hyperlink{class_c_map_tool_mgr_a893b8aee20d1b7333f6bacbb07d739c8}{Key\+\_\+\+Input}} ()
+\begin{DoxyCompactList}\small\item\em ÇöÀç º¤ÅÍ¸®½ºÆ®¸¦ ¸ğµÎ ÃÊ±âÈ­ ¹× ¼³Ä¡ÇÑ ºí·Ï Á¦°Å \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_c_map_tool_mgr_ac27cf751eece0c1ca793e4b9dced2f5f}{Free}} ()
+\begin{DoxyCompactList}\small\item\em ÇöÀç °¢µµ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private ì†ì„±}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{struct_s___b_l_o_c_k}{S\+\_\+\+BLOCK}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_c_map_tool_mgr_af9cf1c006516a795478f3e3366ec4777}{m\+\_\+p\+Block\+Data}}
+\begin{DoxyCompactList}\small\item\em Å°ÀÔ·Â \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_s___t_i_l_e}{S\+\_\+\+TILE}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_c_map_tool_mgr_a8bebef33aa7c5925ca18a935101aff86}{m\+\_\+p\+Tile\+Data}}
+\begin{DoxyCompactList}\small\item\em ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â ºí·ÏÀÇ µ¥ÀÌÅÍ \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t}{S\+\_\+\+ENVIRONMENT}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_c_map_tool_mgr_a716d84979014315232db5f9185eaf21c}{m\+\_\+p\+Env\+Data}}
+\begin{DoxyCompactList}\small\item\em ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â Å¸ÀÏÀÇ µ¥ÀÌÅÍ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s___c_a_m}{S\+\_\+\+CAM}} \mbox{\hyperlink{class_c_map_tool_mgr_a69c4a9e88e64df44a65f91d55160d9dd}{m\+\_\+t\+Cam}}
+\begin{DoxyCompactList}\small\item\em ÇöÀç ¼³Ä¡ µÇ¾îÀÖ´Â È¯°æºí·ÏÀÇ µ¥ÀÌÅÍ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s___p_l_a_y_e_r}{S\+\_\+\+PLAYER}} \mbox{\hyperlink{class_c_map_tool_mgr_a7f106f997b21845a571dedec17899f46}{m\+\_\+t\+Player}}
+\begin{DoxyCompactList}\small\item\em ÇöÀç ÇÃ·¹ÀÌ¾îµéÀÇ ½ÃÀÛ À§Ä¡ \end{DoxyCompactList}\item 
+map$<$ string, vector$<$ \mbox{\hyperlink{struct_s___s_t_a_g_e}{S\+\_\+\+STAGE}} $>$ $>$ \mbox{\hyperlink{class_c_map_tool_mgr_a9ecfd5c435c6fbc80b9e9e144432f523}{m\+\_\+map\+Json}}
+\item 
+\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \mbox{\hyperlink{class_c_map_tool_mgr_a8b2b8f7854d8933c10660ae99ee7e7fe}{m\+\_\+i\+Set\+\_\+\+Player}}
+\begin{DoxyCompactList}\small\item\em ÀüÃ¼ ½ºÅ×ÀÌÁöÀÇ µ¥ÀÌÅÍ°ª \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_c_map_tool_mgr_adf629e27be621438bd455ec13c6dd1a3}{m\+\_\+s\+Stage}}
+\begin{DoxyCompactList}\small\item\em ÇöÀç ¼±ÅÃÁßÀÎ ÇÃ·¹ÀÌ¾î \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_c_map_tool_mgr_ab29206977a9c8fdb144d66a027659be7}{m\+\_\+s\+Dir}}
+\begin{DoxyCompactList}\small\item\em ÇöÀç ¼±ÅÃÁßÀÎ ½ºÅ×ÀÌÁö ÀÌ¸§ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} \mbox{\hyperlink{class_c_map_tool_mgr_a40fa58aa00894abbafdcf62553131b33}{m\+\_\+vec\+Dir}}
+\begin{DoxyCompactList}\small\item\em ÇöÀç ¼±ÅÃÁßÀÎ ¹æÇâ °ª (°íÁ¤µÈ 4¹æÇâ °¢µµ) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \mbox{\hyperlink{class_c_map_tool_mgr_a4d27e1625d575a380d7b6d5df7bbcc92}{m\+\_\+f\+Angle}}
+\begin{DoxyCompactList}\small\item\em ÇöÀç ¼±ÅÃÁßÀÎ ¹æÇâ º¤ÅÍ°ª(°íÁ¤µÇÁö ¾ÊÀº °¢µµ) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{ìƒì„¸í•œ ì„¤ëª…}
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00072}{72}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_map_tool_mgr_doc-constructors}
+\doxysubsection{ìƒì„±ì \& ì†Œë©¸ì ë¬¸ì„œí™”}
+\Hypertarget{class_c_map_tool_mgr_a7fb071447e8c41bd1bf97fab3eedb22e}\index{CMapToolMgr@{CMapToolMgr}!CMapToolMgr@{CMapToolMgr}}
+\index{CMapToolMgr@{CMapToolMgr}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{CMapToolMgr()}{CMapToolMgr()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a7fb071447e8c41bd1bf97fab3eedb22e} 
+CMap\+Tool\+Mgr\+::\+CMap\+Tool\+Mgr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00003}{3}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_aa7aeccc8a1df3f558c07529604725158}\index{CMapToolMgr@{CMapToolMgr}!````~CMapToolMgr@{\texorpdfstring{$\sim$}{\string~}CMapToolMgr}}
+\index{````~CMapToolMgr@{\texorpdfstring{$\sim$}{\string~}CMapToolMgr}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CMapToolMgr()}{\string~CMapToolMgr()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_aa7aeccc8a1df3f558c07529604725158} 
+CMap\+Tool\+Mgr\+::\texorpdfstring{$\sim$}{\string~}\+CMap\+Tool\+Mgr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00007}{7}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_map_tool_mgr_doc-func-members}
+\doxysubsection{ë©¤ë²„ í•¨ìˆ˜ ë¬¸ì„œí™”}
+\Hypertarget{class_c_map_tool_mgr_ac27cf751eece0c1ca793e4b9dced2f5f}\index{CMapToolMgr@{CMapToolMgr}!Free@{Free}}
+\index{Free@{Free}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_ac27cf751eece0c1ca793e4b9dced2f5f} 
+void CMap\+Tool\+Mgr\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+ÇöÀç °¢µµ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00049}{49}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ pBlock\ :\ \mbox{\hyperlink{class_c_map_tool_mgr_af9cf1c006516a795478f3e3366ec4777}{m\_pBlockData}})\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a180eed9528c8c8d03752a78b7e10d647}{Safe\_Delete}}(pBlock);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ pTile\ :\ \mbox{\hyperlink{class_c_map_tool_mgr_a8bebef33aa7c5925ca18a935101aff86}{m\_pTileData}})\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a180eed9528c8c8d03752a78b7e10d647}{Safe\_Delete}}(pTile);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ pEnv\ :\ \mbox{\hyperlink{class_c_map_tool_mgr_a716d84979014315232db5f9185eaf21c}{m\_pEnvData}})\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a180eed9528c8c8d03752a78b7e10d647}{Safe\_Delete}}(pEnv);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+ì´ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+% FIG 2
+\Hypertarget{class_c_map_tool_mgr_a893b8aee20d1b7333f6bacbb07d739c8}\index{CMapToolMgr@{CMapToolMgr}!Key\_Input@{Key\_Input}}
+\index{Key\_Input@{Key\_Input}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Key\_Input()}{Key\_Input()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a893b8aee20d1b7333f6bacbb07d739c8} 
+void CMap\+Tool\+Mgr\+::\+Key\+\_\+\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç º¤ÅÍ¸®½ºÆ®¸¦ ¸ğµÎ ÃÊ±âÈ­ ¹× ¼³Ä¡ÇÑ ºí·Ï Á¦°Å 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00045}{45}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_aed85a66b7b0072cb10ba9c25a071c868}\index{CMapToolMgr@{CMapToolMgr}!Load\_Json@{Load\_Json}}
+\index{Load\_Json@{Load\_Json}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Load\_Json()}{Load\_Json()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_aed85a66b7b0072cb10ba9c25a071c868} 
+HRESULT CMap\+Tool\+Mgr\+::\+Load\+\_\+\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+json¿¡ µ¥ÀÌÅÍ ÀúÀå 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00036}{36}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ E\_NOTIMPL;}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_ac7a430673ed313c33d58786b0488c8e3}\index{CMapToolMgr@{CMapToolMgr}!Plant\_Block@{Plant\_Block}}
+\index{Plant\_Block@{Plant\_Block}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Plant\_Block()}{Plant\_Block()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_ac7a430673ed313c33d58786b0488c8e3} 
+void CMap\+Tool\+Mgr\+::\+Plant\+\_\+\+Block (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00011}{11}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_a94ad3532c4fdb73afd472b94e25e27f6}\index{CMapToolMgr@{CMapToolMgr}!Plant\_Camera@{Plant\_Camera}}
+\index{Plant\_Camera@{Plant\_Camera}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Plant\_Camera()}{Plant\_Camera()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a94ad3532c4fdb73afd472b94e25e27f6} 
+void CMap\+Tool\+Mgr\+::\+Plant\+\_\+\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+¼³Ä¡ÇÑ È¯°æ ¿ÀºêÁ§Æ®¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00023}{23}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_adb3ca819d5bbc96dae7804adfc1c358f}\index{CMapToolMgr@{CMapToolMgr}!Plant\_Environment@{Plant\_Environment}}
+\index{Plant\_Environment@{Plant\_Environment}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Plant\_Environment()}{Plant\_Environment()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_adb3ca819d5bbc96dae7804adfc1c358f} 
+void CMap\+Tool\+Mgr\+::\+Plant\+\_\+\+Environment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+¼³Ä¡ÇÑ Å¸ÀÏÀÇ Á¤º¸¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00019}{19}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_a5c8450e0ef26f3cb1f56302bb6c4485b}\index{CMapToolMgr@{CMapToolMgr}!Plant\_Player@{Plant\_Player}}
+\index{Plant\_Player@{Plant\_Player}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Plant\_Player()}{Plant\_Player()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a5c8450e0ef26f3cb1f56302bb6c4485b} 
+void CMap\+Tool\+Mgr\+::\+Plant\+\_\+\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+ÇöÀç ¹Ù¶óº¸°í ÀÖ´Â °÷ÀÇ Eye¿Í atÀ» ÀúÀå 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00027}{27}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_a5da3f9d836bdd5be6e879475d224b509}\index{CMapToolMgr@{CMapToolMgr}!Plant\_Tile@{Plant\_Tile}}
+\index{Plant\_Tile@{Plant\_Tile}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Plant\_Tile()}{Plant\_Tile()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a5da3f9d836bdd5be6e879475d224b509} 
+void CMap\+Tool\+Mgr\+::\+Plant\+\_\+\+Tile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+¼³Ä¡ÇÑ ºí·ÏÀÇ Á¤º¸¸¦ º¤ÅÍ ¸®½ºÆ®¿¡ ³ÖÀ½ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00015}{15}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_ac73e6d99a0245d4c5ddd453a4ab9db3b}\index{CMapToolMgr@{CMapToolMgr}!Reset@{Reset}}
+\index{Reset@{Reset}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_ac73e6d99a0245d4c5ddd453a4ab9db3b} 
+void CMap\+Tool\+Mgr\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+json µ¥ÀÌÅÍ ºÒ·¯¿À±â 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00041}{41}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_map_tool_mgr_a9d409ae53a47f5814d829b62981c63f5}\index{CMapToolMgr@{CMapToolMgr}!Save\_Json@{Save\_Json}}
+\index{Save\_Json@{Save\_Json}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{Save\_Json()}{Save\_Json()}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a9d409ae53a47f5814d829b62981c63f5} 
+HRESULT CMap\+Tool\+Mgr\+::\+Save\+\_\+\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+ÇÃ·¹ÀÌ¾îÀÇ ½ºÆù À§Ä¡ ¼³Á¤ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8cpp_source}{CMap\+Tool\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8cpp_source_l00031}{31}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ E\_NOTIMPL;}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_map_tool_mgr_doc-variable-members}
+\doxysubsection{ë©¤ë²„ ë°ì´í„° ë¬¸ì„œí™”}
+\Hypertarget{class_c_map_tool_mgr_a4d27e1625d575a380d7b6d5df7bbcc92}\index{CMapToolMgr@{CMapToolMgr}!m\_fAngle@{m\_fAngle}}
+\index{m\_fAngle@{m\_fAngle}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_fAngle}{m\_fAngle}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a4d27e1625d575a380d7b6d5df7bbcc92} 
+\mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} CMap\+Tool\+Mgr\+::m\+\_\+f\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç ¼±ÅÃÁßÀÎ ¹æÇâ º¤ÅÍ°ª(°íÁ¤µÇÁö ¾ÊÀº °¢µµ) 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00106}{106}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_a8b2b8f7854d8933c10660ae99ee7e7fe}\index{CMapToolMgr@{CMapToolMgr}!m\_iSet\_Player@{m\_iSet\_Player}}
+\index{m\_iSet\_Player@{m\_iSet\_Player}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_iSet\_Player}{m\_iSet\_Player}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a8b2b8f7854d8933c10660ae99ee7e7fe} 
+\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} CMap\+Tool\+Mgr\+::m\+\_\+i\+Set\+\_\+\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÀüÃ¼ ½ºÅ×ÀÌÁöÀÇ µ¥ÀÌÅÍ°ª 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00102}{102}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_a9ecfd5c435c6fbc80b9e9e144432f523}\index{CMapToolMgr@{CMapToolMgr}!m\_mapJson@{m\_mapJson}}
+\index{m\_mapJson@{m\_mapJson}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_mapJson}{m\_mapJson}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a9ecfd5c435c6fbc80b9e9e144432f523} 
+map$<$string, vector$<$\mbox{\hyperlink{struct_s___s_t_a_g_e}{S\+\_\+\+STAGE}}$>$ $>$ CMap\+Tool\+Mgr\+::m\+\_\+map\+Json\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00100}{100}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_af9cf1c006516a795478f3e3366ec4777}\index{CMapToolMgr@{CMapToolMgr}!m\_pBlockData@{m\_pBlockData}}
+\index{m\_pBlockData@{m\_pBlockData}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_pBlockData}{m\_pBlockData}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_af9cf1c006516a795478f3e3366ec4777} 
+vector$<$\mbox{\hyperlink{struct_s___b_l_o_c_k}{S\+\_\+\+BLOCK}}\texorpdfstring{$\ast$}{*}$>$ CMap\+Tool\+Mgr\+::m\+\_\+p\+Block\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Å°ÀÔ·Â 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00094}{94}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_a716d84979014315232db5f9185eaf21c}\index{CMapToolMgr@{CMapToolMgr}!m\_pEnvData@{m\_pEnvData}}
+\index{m\_pEnvData@{m\_pEnvData}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_pEnvData}{m\_pEnvData}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a716d84979014315232db5f9185eaf21c} 
+vector$<$\mbox{\hyperlink{struct_s___e_n_v_i_r_o_n_m_e_n_t}{S\+\_\+\+ENVIRONMENT}}\texorpdfstring{$\ast$}{*}$>$ CMap\+Tool\+Mgr\+::m\+\_\+p\+Env\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â Å¸ÀÏÀÇ µ¥ÀÌÅÍ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00096}{96}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_a8bebef33aa7c5925ca18a935101aff86}\index{CMapToolMgr@{CMapToolMgr}!m\_pTileData@{m\_pTileData}}
+\index{m\_pTileData@{m\_pTileData}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_pTileData}{m\_pTileData}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a8bebef33aa7c5925ca18a935101aff86} 
+vector$<$\mbox{\hyperlink{struct_s___t_i_l_e}{S\+\_\+\+TILE}}\texorpdfstring{$\ast$}{*}$>$ CMap\+Tool\+Mgr\+::m\+\_\+p\+Tile\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç ¼³Ä¡µÇ¾îÀÖ´Â ºí·ÏÀÇ µ¥ÀÌÅÍ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00095}{95}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_ab29206977a9c8fdb144d66a027659be7}\index{CMapToolMgr@{CMapToolMgr}!m\_sDir@{m\_sDir}}
+\index{m\_sDir@{m\_sDir}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_sDir}{m\_sDir}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_ab29206977a9c8fdb144d66a027659be7} 
+string CMap\+Tool\+Mgr\+::m\+\_\+s\+Dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç ¼±ÅÃÁßÀÎ ½ºÅ×ÀÌÁö ÀÌ¸§ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00104}{104}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_adf629e27be621438bd455ec13c6dd1a3}\index{CMapToolMgr@{CMapToolMgr}!m\_sStage@{m\_sStage}}
+\index{m\_sStage@{m\_sStage}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_sStage}{m\_sStage}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_adf629e27be621438bd455ec13c6dd1a3} 
+string CMap\+Tool\+Mgr\+::m\+\_\+s\+Stage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç ¼±ÅÃÁßÀÎ ÇÃ·¹ÀÌ¾î 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00103}{103}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_a69c4a9e88e64df44a65f91d55160d9dd}\index{CMapToolMgr@{CMapToolMgr}!m\_tCam@{m\_tCam}}
+\index{m\_tCam@{m\_tCam}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_tCam}{m\_tCam}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a69c4a9e88e64df44a65f91d55160d9dd} 
+\mbox{\hyperlink{struct_s___c_a_m}{S\+\_\+\+CAM}} CMap\+Tool\+Mgr\+::m\+\_\+t\+Cam\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç ¼³Ä¡ µÇ¾îÀÖ´Â È¯°æºí·ÏÀÇ µ¥ÀÌÅÍ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00097}{97}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_a7f106f997b21845a571dedec17899f46}\index{CMapToolMgr@{CMapToolMgr}!m\_tPlayer@{m\_tPlayer}}
+\index{m\_tPlayer@{m\_tPlayer}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_tPlayer}{m\_tPlayer}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a7f106f997b21845a571dedec17899f46} 
+\mbox{\hyperlink{struct_s___p_l_a_y_e_r}{S\+\_\+\+PLAYER}} CMap\+Tool\+Mgr\+::m\+\_\+t\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç ÇÃ·¹ÀÌ¾îµéÀÇ ½ÃÀÛ À§Ä¡ 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00098}{98}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_map_tool_mgr_a40fa58aa00894abbafdcf62553131b33}\index{CMapToolMgr@{CMapToolMgr}!m\_vecDir@{m\_vecDir}}
+\index{m\_vecDir@{m\_vecDir}!CMapToolMgr@{CMapToolMgr}}
+\doxysubsubsection{\texorpdfstring{m\_vecDir}{m\_vecDir}}
+{\footnotesize\ttfamily \label{class_c_map_tool_mgr_a40fa58aa00894abbafdcf62553131b33} 
+\mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\+\_\+vec3}} CMap\+Tool\+Mgr\+::m\+\_\+vec\+Dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ÇöÀç ¼±ÅÃÁßÀÎ ¹æÇâ °ª (°íÁ¤µÈ 4¹æÇâ °¢µµ) 
+
+
+
+\mbox{\hyperlink{_c_map_tool_mgr_8h_source}{CMap\+Tool\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_map_tool_mgr_8h_source_l00105}{105}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+
+ì´ í´ë˜ìŠ¤ì— ëŒ€í•œ ë¬¸ì„œí™” í˜ì´ì§€ëŠ” ë‹¤ìŒì˜ íŒŒì¼ë“¤ë¡œë¶€í„° ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_map_tool_mgr_8h}{CMap\+Tool\+Mgr.\+h}}\item 
+C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_map_tool_mgr_8cpp}{CMap\+Tool\+Mgr.\+cpp}}\end{DoxyCompactItemize}

@@ -6,12 +6,14 @@ digraph "CTerrainCol::Create"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
   Node1 [id="Node000001",label="CTerrainCol::Create",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [id="edge5_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CTerrainCol::Ready\l_Buffer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_terrain_col.html#aa3ea43e0981e445d08a309728577a3f1",tooltip=" "];
-  Node2 -> Node3 [id="edge6_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="CVIBuffer::Ready_Buffer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_v_i_buffer.html#a9fc75b5bb482f6b3d6132cb054193bfe",tooltip=" "];
-  Node2 -> Node4 [id="edge7_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="Engine::Safe_Delete\l_Array",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#acd2a16c4c917038b077a4d9a624ad721",tooltip=" "];
-  Node1 -> Node5 [id="edge8_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
+  Node1 -> Node2 [id="edge6_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CTerrainCol::CTerrainCol",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_terrain_col.html#a9d4b5366c5a16aee27eaf6e9d2f3dc5f",tooltip=" "];
+  Node1 -> Node3 [id="edge7_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CTerrainCol::Ready\l_Buffer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_terrain_col.html#aa3ea43e0981e445d08a309728577a3f1",tooltip=" "];
+  Node3 -> Node4 [id="edge8_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="CVIBuffer::Ready_Buffer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_v_i_buffer.html#a9fc75b5bb482f6b3d6132cb054193bfe",tooltip=" "];
+  Node3 -> Node5 [id="edge9_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Engine::Safe_Delete\l_Array",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#acd2a16c4c917038b077a4d9a624ad721",tooltip=" "];
+  Node1 -> Node6 [id="edge10_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
 }

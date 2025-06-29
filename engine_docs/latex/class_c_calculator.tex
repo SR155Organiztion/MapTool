@@ -1,4 +1,4 @@
-\doxysection{CCalculator Class Reference}
+\doxysection{CCalculator 클래스 참조}
 \hypertarget{class_c_calculator}{}\label{class_c_calculator}\index{CCalculator@{CCalculator}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CCalculator\+:
+CCalculator에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CCalculator\+:
+CCalculator에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 HRESULT \mbox{\hyperlink{class_c_calculator_a77718d28b5d64b2ae31e221469f28a94}{Ready\+\_\+\+Calculator}} ()
@@ -23,20 +23,31 @@ HRESULT \mbox{\hyperlink{class_c_calculator_a77718d28b5d64b2ae31e221469f28a94}{R
 \item 
 virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_calculator_a00135cd3f07f3938a268e1f1584cf6e2}{Clone}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{Update\+\_\+\+Component}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
 \item 
 virtual void \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{Late\+Update\+\_\+\+Component}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_c_calculator}{CCalculator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_calculator_ab7340518b4587a2c69431ba02138fb53}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_calculator_aa00ea10ea01dfa85fbd08f5a36a1a351}{CCalculator}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_calculator_a5de8c632aeed64d9e65e0a4990d91d8e}{CCalculator}} (const \mbox{\hyperlink{class_c_calculator}{CCalculator}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_calculator_a17e0248c90eb1ca55609733571a64cea}{\texorpdfstring{$\sim$}{\string~}\+CCalculator}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_calculator_ada8c7ab2c5ef723eb91b6cc9ce6b9a88}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{추가로 상속된 멤버들}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
@@ -47,7 +58,7 @@ static \mbox{\hyperlink{class_c_calculator}{CCalculator}} \texorpdfstring{$\ast$
 \item 
 virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\texorpdfstring{$\sim$}{\string~}\+CComponent}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
@@ -56,16 +67,77 @@ LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cf
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_calculator_8h_source_l00009}{9}} of file \mbox{\hyperlink{_c_calculator_8h_source}{CCalculator.\+h}}.
+\mbox{\hyperlink{_c_calculator_8h_source}{CCalculator.\+h}} 파일의 \mbox{\hyperlink{_c_calculator_8h_source_l00009}{9}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_calculator_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_calculator_aa00ea10ea01dfa85fbd08f5a36a1a351}\index{CCalculator@{CCalculator}!CCalculator@{CCalculator}}
+\index{CCalculator@{CCalculator}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{CCalculator()}{CCalculator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_calculator_aa00ea10ea01dfa85fbd08f5a36a1a351} 
+CCalculator\+::\+CCalculator (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00005}{5}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \ \ \ \ :\mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(pGraphicDev) }
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_calculator_a5de8c632aeed64d9e65e0a4990d91d8e}\index{CCalculator@{CCalculator}!CCalculator@{CCalculator}}
+\index{CCalculator@{CCalculator}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{CCalculator()}{CCalculator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_calculator_a5de8c632aeed64d9e65e0a4990d91d8e} 
+CCalculator\+::\+CCalculator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_c_calculator}{CCalculator}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}}(rhs) }
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\Hypertarget{class_c_calculator_a17e0248c90eb1ca55609733571a64cea}\index{CCalculator@{CCalculator}!````~CCalculator@{\texorpdfstring{$\sim$}{\string~}CCalculator}}
+\index{````~CCalculator@{\texorpdfstring{$\sim$}{\string~}CCalculator}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CCalculator()}{\string~CCalculator()}}
+{\footnotesize\ttfamily \label{class_c_calculator_a17e0248c90eb1ca55609733571a64cea} 
+CCalculator\+::\texorpdfstring{$\sim$}{\string~}\+CCalculator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00015}{15}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_calculator_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_calculator_a00135cd3f07f3938a268e1f1584cf6e2}\index{CCalculator@{CCalculator}!Clone@{Clone}}
 \index{Clone@{Clone}!CCalculator@{CCalculator}}
 \doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
@@ -74,14 +146,21 @@ Definition at line \mbox{\hyperlink{_c_calculator_8h_source_l00009}{9}} of file 
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}.
+\mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00179}{179}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00179}{179}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00180\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_calculator_aa00ea10ea01dfa85fbd08f5a36a1a351}{CCalculator}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00182\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 \Hypertarget{class_c_calculator_a44d067ef394ac97830bb94358157966a}\index{CCalculator@{CCalculator}!Compute\_HeightOnTerrain@{Compute\_HeightOnTerrain}}
 \index{Compute\_HeightOnTerrain@{Compute\_HeightOnTerrain}!CCalculator@{CCalculator}}
 \doxysubsubsection{\texorpdfstring{Compute\_HeightOnTerrain()}{Compute\_HeightOnTerrain()}}
@@ -90,8 +169,46 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00024}{24}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ \ \ \ dwIndex\ =\ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}(pPos-\/>z\ /\ dwVtxItv)\ *\ dwCntX\ +\ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}(pPos-\/>x\ /\ dwVtxItv);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ fWidth\ =\ (pPos-\/>x\ -\/\ pTerrainVtxPos[dwIndex\ +\ dwCntX].x)\ /\ dwVtxItv;}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ fHeight\ =\ (pTerrainVtxPos[dwIndex\ +\ dwCntX].z\ -\/\ pPos-\/>z)\ /\ dwVtxItv;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ D3DXPLANE\ \ \ Plane;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (fWidth\ >\ fHeight)}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ D3DXPlaneFromPoints(\&Plane,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtxPos[dwIndex\ +\ dwCntX],}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtxPos[dwIndex\ +\ dwCntX\ +\ 1],}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtxPos[dwIndex\ +\ 1]);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ D3DXPlaneFromPoints(\&Plane,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtxPos[dwIndex\ +\ dwCntX],}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtxPos[dwIndex\ +\ 1],}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtxPos[dwIndex]);}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\ ax\ +\ by\ +\ cz\ +\ d}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ -\/by\ =\ ax\ +\ cz\ +\ d}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ y\ =\ (-\/ax\ -\/\ cz\ -\/\ d)\ /\ b;}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ (-\/Plane.a\ *\ pPos-\/>x\ -\/\ Plane.c\ *\ pPos-\/>z\ -\/\ Plane.d)\ /\ Plane.b;}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_calculator_ab7340518b4587a2c69431ba02138fb53}\index{CCalculator@{CCalculator}!Create@{Create}}
 \index{Create@{Create}!CCalculator@{CCalculator}}
 \doxysubsubsection{\texorpdfstring{Create()}{Create()}}
@@ -100,10 +217,49 @@ Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00024}{24}} of fi
 
 
 
-Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00165}{165}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00165}{165}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 3
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{class_c_calculator_aa00ea10ea01dfa85fbd08f5a36a1a351}{CCalculator}}*\ pCalculator\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_calculator_aa00ea10ea01dfa85fbd08f5a36a1a351}{CCalculator}}(pGraphicDev);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pCalculator-\/>\mbox{\hyperlink{class_c_calculator_a77718d28b5d64b2ae31e221469f28a94}{Ready\_Calculator}}()))}
+\DoxyCodeLine{00170\ \ \ \ \ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(pCalculator);}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}CCalculator\ Create\ Failed"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordflow}{return}\ pCalculator;}
+\DoxyCodeLine{00177\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\Hypertarget{class_c_calculator_ada8c7ab2c5ef723eb91b6cc9ce6b9a88}\index{CCalculator@{CCalculator}!Free@{Free}}
+\index{Free@{Free}!CCalculator@{CCalculator}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_calculator_ada8c7ab2c5ef723eb91b6cc9ce6b9a88} 
+void CCalculator\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{CComponent}}(으)로부터 재구현되었습니다.
+
+
+
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00184}{184}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00185\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{CComponent::Free}}();}
+\DoxyCodeLine{00187\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
 \Hypertarget{class_c_calculator_a8eb02d09195681c196d232203c6d04f5}\index{CCalculator@{CCalculator}!Picking\_OnTerrain@{Picking\_OnTerrain}}
 \index{Picking\_OnTerrain@{Picking\_OnTerrain}!CCalculator@{CCalculator}}
 \doxysubsubsection{\texorpdfstring{Picking\_OnTerrain()}{Picking\_OnTerrain()}}
@@ -112,10 +268,114 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00063}{63}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 4
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ POINT\ \ \ ptMouse\{\};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ GetCursorPos(\&ptMouse);}
+\DoxyCodeLine{00068\ \ \ \ \ ScreenToClient(hWnd,\ \&ptMouse);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ ����Ʈ\ -\/>\ ����}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ \ \ \ \ vMousePos;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ D3DVIEWPORT9\ \ \ \ \ \ \ \ ViewPort;}
+\DoxyCodeLine{00075\ \ \ \ \ ZeroMemory(\&ViewPort,\ \textcolor{keyword}{sizeof}(D3DVIEWPORT9));}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>GetViewport(\&ViewPort);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ vMousePos.x\ =\ ptMouse.x\ /\ (ViewPort.Width\ *\ 0.5f)\ -\/\ 1.f;}
+\DoxyCodeLine{00080\ \ \ \ \ vMousePos.y\ =\ ptMouse.y\ /\ -\/(ViewPort.Height\ *\ 0.5f)\ +\ 1.f;}
+\DoxyCodeLine{00081\ \ \ \ \ vMousePos.z\ =\ 0.f;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ ����\ -\/>\ �� �����̽�}}
+\DoxyCodeLine{00084\ \ \ \ \ D3DXMATRIX\ \ matProj;}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>GetTransform(D3DTS\_PROJECTION,\ \&matProj);}
+\DoxyCodeLine{00086\ \ \ \ \ D3DXMatrixInverse(\&matProj,\ 0,\ \&matProj);}
+\DoxyCodeLine{00087\ \ \ \ \ D3DXVec3TransformCoord(\&vMousePos,\ \&vMousePos,\ \&matProj);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ �� �����̽�\ -\/>\ ����}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ D3DXMATRIX\ \ matView;}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>GetTransform(D3DTS\_VIEW,\ \&matView);}
+\DoxyCodeLine{00093\ \ \ \ \ D3DXMatrixInverse(\&matView,\ 0,\ \&matView);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ \ \ \ \ vRayPos\{\ 0.f,\ 0.f,\ 0.f\ \};}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}\ \ \ \ \ \ vRayDir\ =\ vMousePos\ -\/\ vRayPos;}
+\DoxyCodeLine{00097\ \ \ \ \ D3DXVec3Normalize(\&vRayDir,\ \&vRayDir);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ D3DXVec3TransformCoord(\&vRayPos,\ \&vRayPos,\ \&matView);}
+\DoxyCodeLine{00100\ \ \ \ \ D3DXVec3TransformNormal(\&vRayDir,\ \&vRayDir,\ \&matView);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ ���� -\/>\ ����}}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a71a603c8c4e34b71b7f9b0db9b589dda}{\_matrix}}\ \ \ \ \ \ matWorld;}
+\DoxyCodeLine{00104\ \ \ \ \ pTerrainTransformCom-\/>\mbox{\hyperlink{class_c_transform_a84684d1cd46d196c308ed0ecb5ee7852}{Get\_World}}(\&matWorld);}
+\DoxyCodeLine{00105\ \ \ \ \ D3DXMatrixInverse(\&matWorld,\ 0,\ \&matWorld);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ D3DXVec3TransformCoord(\&vRayPos,\ \&vRayPos,\ \&matWorld);}
+\DoxyCodeLine{00108\ \ \ \ \ D3DXVec3TransformNormal(\&vRayDir,\ \&vRayDir,\ \&matWorld);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ \ \ \ dwVtxIdx[3]\{\};}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ fU(0.f),\ fV(0.f),\ fDist(0.f);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_engine_a27c68378c3ff51da81671359783f0b2a}{VTXTEX}}*\ pTerrainVtx\ =\ pTerrainBufferCom-\/>\mbox{\hyperlink{class_c_terrain_tex_af45fca7feb10c8a365a83e38b25ad106}{Get\_VTXTEX}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{_engine___macro_8h_a3a7212297e7d2ac4d31824a65a62dfbc}{VTXCNTZ}}\ -\/\ 1;\ ++i)}
+\DoxyCodeLine{00116\ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}{VTXCNTX}}\ -\/\ 1;\ ++j)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_a44f4c544f084728645ca1cb923e78b28}{\_ulong}}\ \ \ \ dwIndex\ =\ i\ *\ \mbox{\hyperlink{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}{VTXCNTX}}\ +\ j;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ dwVtxIdx[0]\ =\ dwIndex\ +\ \mbox{\hyperlink{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}{VTXCNTX}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ dwVtxIdx[1]\ =\ dwIndex\ +\ \mbox{\hyperlink{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}{VTXCNTX}}\ +\ 1;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ dwVtxIdx[2]\ =\ dwIndex\ +\ 1;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ V1\ +\ U(V2\ -\/\ V1)\ +\ V(V3\ -\/\ V1)\ //\ �Լ��� �Ű�\ ������ ������ ������\ �ٰ��� ���}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (D3DXIntersectTri(\&pTerrainVtx[dwVtxIdx[1]].vPosition,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtx[dwVtxIdx[0]].vPosition,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtx[dwVtxIdx[2]].vPosition,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&vRayPos,\ \&vRayDir,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&fU,\ \&fV,\ \&fDist))}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}(pTerrainVtx[dwVtxIdx[1]].vPosition.x\ +\ (fU\ *\ (pTerrainVtx[dwVtxIdx[0]].vPosition.x\ -\/\ pTerrainVtx[dwVtxIdx[1]].vPosition.x)),}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.f,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pTerrainVtx[dwVtxIdx[1]].vPosition.z\ +\ (fV\ *\ (pTerrainVtx[dwVtxIdx[2]].vPosition.z\ -\/\ pTerrainVtx[dwVtxIdx[1]].vPosition.z)));}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ dwVtxIdx[0]\ =\ dwIndex\ +\ \mbox{\hyperlink{_engine___macro_8h_a33ac765da94e2bb427a4fe0312977b70}{VTXCNTX}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ dwVtxIdx[1]\ =\ dwIndex\ +\ 1;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ dwVtxIdx[2]\ =\ dwIndex;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ V1\ +\ U(V2\ -\/\ V1)\ +\ V(V3\ -\/\ V1)\ }}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (D3DXIntersectTri(\&pTerrainVtx[dwVtxIdx[2]].vPosition,}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtx[dwVtxIdx[1]].vPosition,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&pTerrainVtx[dwVtxIdx[0]].vPosition,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&vRayPos,\ \&vRayDir,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&fU,\ \&fV,\ \&fDist))}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}(pTerrainVtx[dwVtxIdx[2]].vPosition.x\ +\ (fU\ *\ (pTerrainVtx[dwVtxIdx[1]].vPosition.x\ -\/\ pTerrainVtx[dwVtxIdx[2]].vPosition.x)),}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.f,}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pTerrainVtx[dwVtxIdx[2]].vPosition.z\ +\ (fV\ *\ (pTerrainVtx[dwVtxIdx[0]].vPosition.z\ -\/\ pTerrainVtx[dwVtxIdx[2]].vPosition.z)));}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_engine_ac5557eef869da19ab2f38535b6fa3345}{\_vec3}}(0.f,\ 0.f,\ 0.f);}
+\DoxyCodeLine{00163\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
 \Hypertarget{class_c_calculator_a77718d28b5d64b2ae31e221469f28a94}\index{CCalculator@{CCalculator}!Ready\_Calculator@{Ready\_Calculator}}
 \index{Ready\_Calculator@{Ready\_Calculator}!CCalculator@{CCalculator}}
 \doxysubsubsection{\texorpdfstring{Ready\_Calculator()}{Ready\_Calculator()}}
@@ -124,13 +384,20 @@ HRESULT CCalculator\+::\+Ready\+\_\+\+Calculator (\begin{DoxyParamCaption}{}{}\e
 
 
 
-Definition at line \mbox{\hyperlink{_c_calculator_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}}.
-
-Here is the caller graph for this function\+:
-% FIG 5
+\mbox{\hyperlink{_c_calculator_8cpp_source}{CCalculator.\+cpp}} 파일의 \mbox{\hyperlink{_c_calculator_8cpp_source_l00019}{19}} 번째 라인에서 정의되었습니다.
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_calculator_8h}{CCalculator.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_calculator_8cpp}{CCalculator.\+cpp}}\end{DoxyCompactItemize}

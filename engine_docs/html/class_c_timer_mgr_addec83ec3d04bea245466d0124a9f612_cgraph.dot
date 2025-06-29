@@ -9,7 +9,11 @@ digraph "CTimerMgr::Ready_Timer"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="CTimer::Create",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer.html#aafb22675c7c1bf353f3d373f8429e5cc",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="CTimer::Ready_Timer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer.html#a44a6a9f60cdc4e70607f58fc735170ba",tooltip=" "];
+  Node3 [id="Node000003",label="CTimer::CTimer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer.html#a93e4d770fd09f5e1b984768620cc52bf",tooltip=" "];
   Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
+  Node4 [id="Node000004",label="CTimer::Ready_Timer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer.html#a44a6a9f60cdc4e70607f58fc735170ba",tooltip=" "];
+  Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CTimerMgr::Find_Timer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer_mgr.html#ad27444b9877ecaa53909130a2d811934",tooltip=" "];
 }

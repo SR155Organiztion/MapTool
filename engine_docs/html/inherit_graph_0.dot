@@ -1,4 +1,4 @@
-digraph "Graphical Class Hierarchy"
+digraph "그래픽컬한 클래스 계통도"
 {
  // LATEX_PDF_SIZE
   bgcolor="transparent";
@@ -53,15 +53,17 @@ digraph "Graphical Class Hierarchy"
   Node0 -> Node23 [id="edge23_Node000000_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="CManagement",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_management.html",tooltip=" "];
   Node0 -> Node24 [id="edge24_Node000000_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node24 [id="Node000024",label="CPipeline",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_pipeline.html",tooltip=" "];
+  Node24 [id="Node000024",label="CMapToolMgr",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_map_tool_mgr.html",tooltip=" "];
   Node0 -> Node25 [id="edge25_Node000000_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node25 [id="Node000025",label="CProtoMgr",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_proto_mgr.html",tooltip=" "];
+  Node25 [id="Node000025",label="CPipeline",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_pipeline.html",tooltip=" "];
   Node0 -> Node26 [id="edge26_Node000000_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node26 [id="Node000026",label="CRenderer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_renderer.html",tooltip=" "];
+  Node26 [id="Node000026",label="CProtoMgr",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_proto_mgr.html",tooltip=" "];
   Node0 -> Node27 [id="edge27_Node000000_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="CScene",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_scene.html",tooltip=" "];
+  Node27 [id="Node000027",label="CRenderer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_renderer.html",tooltip=" "];
   Node0 -> Node28 [id="edge28_Node000000_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node28 [id="Node000028",label="CTimer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer.html",tooltip=" "];
+  Node28 [id="Node000028",label="CScene",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_scene.html",tooltip=" "];
   Node0 -> Node29 [id="edge29_Node000000_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node29 [id="Node000029",label="CTimerMgr",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer_mgr.html",tooltip=" "];
+  Node29 [id="Node000029",label="CTimer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer.html",tooltip=" "];
+  Node0 -> Node30 [id="edge30_Node000000_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node30 [id="Node000030",label="CTimerMgr",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_timer_mgr.html",tooltip=" "];
 }

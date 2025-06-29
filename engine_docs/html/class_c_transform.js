@@ -1,8 +1,14 @@
 var class_c_transform =
 [
+    [ "CTransform", "class_c_transform.html#a6cc4e6c97dbb86326341aa1a468986d4", null ],
+    [ "CTransform", "class_c_transform.html#ae4cd3a1174c9f6162a396ff4ff536b89", null ],
+    [ "CTransform", "class_c_transform.html#ad162850e6840a15b620c7e0b0189f29c", null ],
+    [ "~CTransform", "class_c_transform.html#a90d72f6ed0c3b0e5401365ba6fe2bdc5", null ],
     [ "Chase_Target", "class_c_transform.html#a2dc6305f019beb234b1c2d983ad1e4cf", null ],
     [ "Clone", "class_c_transform.html#a748230a163cf504daa34cc4a359de71b", null ],
     [ "Compute_LookAtTarget", "class_c_transform.html#a087c802dfae831f695ae95c94996a947", null ],
+    [ "Create", "class_c_transform.html#a0cdd415c4c547689b736698492c002a6", null ],
+    [ "Free", "class_c_transform.html#abf64d82457b6e77d48a6f491dfc25334", null ],
     [ "Get_Info", "class_c_transform.html#ad3a7a5aaa6bf2ea55641fb80fb538c8e", null ],
     [ "Get_World", "class_c_transform.html#a84684d1cd46d196c308ed0ecb5ee7852", null ],
     [ "LateUpdate_Component", "class_c_transform.html#ad0be300418898e5db44175f8f5be733f", null ],

@@ -1,4 +1,4 @@
-\doxysection{CRenderer Class Reference}
+\doxysection{CRenderer 클래스 참조}
 \hypertarget{class_c_renderer}{}\label{class_c_renderer}\index{CRenderer@{CRenderer}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CRenderer\+:
+CRenderer에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CRenderer\+:
+CRenderer에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_c_renderer_adf825bbf33636ef286806e81d7d21479}{Add\+\_\+\+Render\+Group}} (\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057b}{RENDERID}} e\+Type, \mbox{\hyperlink{class_c_game_object}{CGame\+Object}} \texorpdfstring{$\ast$}{*}p\+Game\+Object)
@@ -21,18 +21,84 @@ void \mbox{\hyperlink{class_c_renderer_a0197705e4816bdd08c0a97e7119a2490}{Render
 \item 
 void \mbox{\hyperlink{class_c_renderer_a11a2164436c9422949e145fcd5e1b82b}{Clear\+\_\+\+Render\+Group}} ()
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_renderer_a0405b4e5059dcda9c5072d5fd7e7d6fc}{CRenderer}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_renderer_acb0a66a0d9205fe5f24cec41f0e0b249}{\texorpdfstring{$\sim$}{\string~}\+CRenderer}} ()
+\item 
+void \mbox{\hyperlink{class_c_renderer_a9967e6700965183c69c7e32654b52a69}{Render\+\_\+\+Priority}} (LPDIRECT3\+DDEVICE9 \&p\+Graphic\+Dev)
+\item 
+void \mbox{\hyperlink{class_c_renderer_a6692f7a57e4ec7861cee420517f050e0}{Render\+\_\+\+Non\+Alpha}} (LPDIRECT3\+DDEVICE9 \&p\+Graphic\+Dev)
+\item 
+void \mbox{\hyperlink{class_c_renderer_a1eb2961d5ebf2ec23dbb9d725702d0f3}{Render\+\_\+\+Alpha}} (LPDIRECT3\+DDEVICE9 \&p\+Graphic\+Dev)
+\item 
+void \mbox{\hyperlink{class_c_renderer_a90f42b007e07c55a854dba21aad89aa7}{Render\+\_\+\+UI}} (LPDIRECT3\+DDEVICE9 \&p\+Graphic\+Dev)
+\item 
+virtual void \mbox{\hyperlink{class_c_renderer_ac54a1d10ccdc44f24ac0c943ee1f1a04}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ \mbox{\hyperlink{class_c_game_object}{CGame\+Object}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\+\_\+\+Render\+Group}} \mbox{[}\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057baa8baf72cf7dc024088042486ab918270}{RENDER\+\_\+\+END}}\mbox{]}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_renderer_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_renderer_8h_source}{CRenderer.\+h}}.
+\mbox{\hyperlink{_c_renderer_8h_source}{CRenderer.\+h}} 파일의 \mbox{\hyperlink{_c_renderer_8h_source_l00007}{7}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_renderer_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_renderer_a0405b4e5059dcda9c5072d5fd7e7d6fc}\index{CRenderer@{CRenderer}!CRenderer@{CRenderer}}
+\index{CRenderer@{CRenderer}!CRenderer@{CRenderer}}
+\doxysubsubsection{\texorpdfstring{CRenderer()}{CRenderer()}}
+{\footnotesize\ttfamily \label{class_c_renderer_a0405b4e5059dcda9c5072d5fd7e7d6fc} 
+CRenderer\+::\+CRenderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00005}{5}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_renderer_acb0a66a0d9205fe5f24cec41f0e0b249}\index{CRenderer@{CRenderer}!````~CRenderer@{\texorpdfstring{$\sim$}{\string~}CRenderer}}
+\index{````~CRenderer@{\texorpdfstring{$\sim$}{\string~}CRenderer}!CRenderer@{CRenderer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CRenderer()}{\string~CRenderer()}}
+{\footnotesize\ttfamily \label{class_c_renderer_acb0a66a0d9205fe5f24cec41f0e0b249} 
+CRenderer\+::\texorpdfstring{$\sim$}{\string~}\+CRenderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00009}{9}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_ac54a1d10ccdc44f24ac0c943ee1f1a04}{Free}}();}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_renderer_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_renderer_adf825bbf33636ef286806e81d7d21479}\index{CRenderer@{CRenderer}!Add\_RenderGroup@{Add\_RenderGroup}}
 \index{Add\_RenderGroup@{Add\_RenderGroup}!CRenderer@{CRenderer}}
 \doxysubsubsection{\texorpdfstring{Add\_RenderGroup()}{Add\_RenderGroup()}}
@@ -41,8 +107,19 @@ void CRenderer\+::\+Add\+\_\+\+Render\+Group (\begin{DoxyParamCaption}\item[{\mb
 
 
 
-Definition at line \mbox{\hyperlink{_c_renderer_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}}.
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00014}{14}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057baa8baf72cf7dc024088042486ab918270}{RENDER\_END}}\ <=\ eType\ ||\ \textcolor{keyword}{nullptr}\ ==\ pGameObject)}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[eType].push\_back(pGameObject);}
+\DoxyCodeLine{00020\ \ \ \ \ pGameObject-\/>AddRef();}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_renderer_a11a2164436c9422949e145fcd5e1b82b}\index{CRenderer@{CRenderer}!Clear\_RenderGroup@{Clear\_RenderGroup}}
 \index{Clear\_RenderGroup@{Clear\_RenderGroup}!CRenderer@{CRenderer}}
 \doxysubsubsection{\texorpdfstring{Clear\_RenderGroup()}{Clear\_RenderGroup()}}
@@ -51,10 +128,77 @@ void CRenderer\+::\+Clear\+\_\+\+Render\+Group (\begin{DoxyParamCaption}{}{}\end
 
 
 
-Definition at line \mbox{\hyperlink{_c_renderer_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}}.
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00033}{33}} 번째 라인에서 정의되었습니다.
 
-Here is the caller graph for this function\+:
-% FIG 2
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057baa8baf72cf7dc024088042486ab918270}{RENDER\_END}};\ ++i)}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ for\_each(\mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[i].begin(),\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[i].end(),\ CDeleteObj());}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[i].clear();}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\Hypertarget{class_c_renderer_ac54a1d10ccdc44f24ac0c943ee1f1a04}\index{CRenderer@{CRenderer}!Free@{Free}}
+\index{Free@{Free}!CRenderer@{CRenderer}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_renderer_ac54a1d10ccdc44f24ac0c943ee1f1a04} 
+void CRenderer\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00081}{81}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a11a2164436c9422949e145fcd5e1b82b}{Clear\_RenderGroup}}();}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\Hypertarget{class_c_renderer_a1eb2961d5ebf2ec23dbb9d725702d0f3}\index{CRenderer@{CRenderer}!Render\_Alpha@{Render\_Alpha}}
+\index{Render\_Alpha@{Render\_Alpha}!CRenderer@{CRenderer}}
+\doxysubsubsection{\texorpdfstring{Render\_Alpha()}{Render\_Alpha()}}
+{\footnotesize\ttfamily \label{class_c_renderer_a1eb2961d5ebf2ec23dbb9d725702d0f3} 
+void CRenderer\+::\+Render\+\_\+\+Alpha (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9 \&}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00054}{54}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ pGraphicDev-\/>SetRenderState(D3DRS\_ALPHABLENDENABLE,\ TRUE);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ pGraphicDev-\/>SetRenderState(D3DRS\_SRCBLEND,\ D3DBLEND\_SRCALPHA);}
+\DoxyCodeLine{00059\ \ \ \ \ pGraphicDev-\/>SetRenderState(D3DRS\_DESTBLEND,\ D3DBLEND\_INVSRCALPHA);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//pGraphicDev-\/>SetRenderState(D3DRS\_ALPHATESTENABLE,\ TRUE);}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//pGraphicDev-\/>SetRenderState(D3DRS\_ALPHAFUNC,\ D3DCMP\_GREATER);}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//pGraphicDev-\/>SetRenderState(D3DRS\_ALPHAREF,\ 0xc0);}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057ba5b31a7ae36bbc8dd33f45a9be63a09aa}{RENDER\_ALPHA}}])}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ pObj-\/>Render\_GameObject();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//pGraphicDev-\/>SetRenderState(D3DRS\_ALPHATESTENABLE,\ FALSE);}}
+\DoxyCodeLine{00072\ \ \ \ \ pGraphicDev-\/>SetRenderState(D3DRS\_ALPHABLENDENABLE,\ FALSE);}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
 \Hypertarget{class_c_renderer_a0197705e4816bdd08c0a97e7119a2490}\index{CRenderer@{CRenderer}!Render\_GameObject@{Render\_GameObject}}
 \index{Render\_GameObject@{Render\_GameObject}!CRenderer@{CRenderer}}
 \doxysubsubsection{\texorpdfstring{Render\_GameObject()}{Render\_GameObject()}}
@@ -63,13 +207,100 @@ void CRenderer\+::\+Render\+\_\+\+Game\+Object (\begin{DoxyParamCaption}\item[{L
 
 
 
-Definition at line \mbox{\hyperlink{_c_renderer_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}}.
-
-Here is the call graph for this function\+:
-% FIG 3
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00023}{23}} 번째 라인에서 정의되었습니다.
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a9967e6700965183c69c7e32654b52a69}{Render\_Priority}}(pGraphicDev);}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a6692f7a57e4ec7861cee420517f050e0}{Render\_NonAlpha}}(pGraphicDev);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a1eb2961d5ebf2ec23dbb9d725702d0f3}{Render\_Alpha}}(pGraphicDev);}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a90f42b007e07c55a854dba21aad89aa7}{Render\_UI}}(pGraphicDev);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_c_renderer_a11a2164436c9422949e145fcd5e1b82b}{Clear\_RenderGroup}}();}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+\Hypertarget{class_c_renderer_a6692f7a57e4ec7861cee420517f050e0}\index{CRenderer@{CRenderer}!Render\_NonAlpha@{Render\_NonAlpha}}
+\index{Render\_NonAlpha@{Render\_NonAlpha}!CRenderer@{CRenderer}}
+\doxysubsubsection{\texorpdfstring{Render\_NonAlpha()}{Render\_NonAlpha()}}
+{\footnotesize\ttfamily \label{class_c_renderer_a6692f7a57e4ec7861cee420517f050e0} 
+void CRenderer\+::\+Render\+\_\+\+Non\+Alpha (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9 \&}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00048}{48}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057bad63327e660a4a305093faf0ca04549a5}{RENDER\_NONALPHA}}])}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ pObj-\/>Render\_GameObject();}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+\Hypertarget{class_c_renderer_a9967e6700965183c69c7e32654b52a69}\index{CRenderer@{CRenderer}!Render\_Priority@{Render\_Priority}}
+\index{Render\_Priority@{Render\_Priority}!CRenderer@{CRenderer}}
+\doxysubsubsection{\texorpdfstring{Render\_Priority()}{Render\_Priority()}}
+{\footnotesize\ttfamily \label{class_c_renderer_a9967e6700965183c69c7e32654b52a69} 
+void CRenderer\+::\+Render\+\_\+\+Priority (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9 \&}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00042}{42}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057babd693b04420a20903b008a4d428057b9}{RENDER\_PRIORITY}}])}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ pObj-\/>Render\_GameObject();}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
+\Hypertarget{class_c_renderer_a90f42b007e07c55a854dba21aad89aa7}\index{CRenderer@{CRenderer}!Render\_UI@{Render\_UI}}
+\index{Render\_UI@{Render\_UI}!CRenderer@{CRenderer}}
+\doxysubsubsection{\texorpdfstring{Render\_UI()}{Render\_UI()}}
+{\footnotesize\ttfamily \label{class_c_renderer_a90f42b007e07c55a854dba21aad89aa7} 
+void CRenderer\+::\+Render\+\_\+\+UI (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9 \&}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_renderer_8cpp_source}{CRenderer.\+cpp}} 파일의 \mbox{\hyperlink{_c_renderer_8cpp_source_l00075}{75}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pObj\ :\ \mbox{\hyperlink{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}{m\_RenderGroup}}[\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057bae3d85ffd40dbf55a5e07530db4efa316}{RENDER\_UI}}])}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ pObj-\/>Render\_GameObject();}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 12
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_renderer_doc-variable-members}
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22}\index{CRenderer@{CRenderer}!m\_RenderGroup@{m\_RenderGroup}}
+\index{m\_RenderGroup@{m\_RenderGroup}!CRenderer@{CRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_RenderGroup}{m\_RenderGroup}}
+{\footnotesize\ttfamily \label{class_c_renderer_af91a4bb6ebe113123b22afb3c538af22} 
+list$<$\mbox{\hyperlink{class_c_game_object}{CGame\+Object}}\texorpdfstring{$\ast$}{*}$>$ CRenderer\+::m\+\_\+\+Render\+Group\mbox{[}\mbox{\hyperlink{namespace_engine_a0d6c4ffbb9a576d75e0d818a63d6057baa8baf72cf7dc024088042486ab918270}{RENDER\+\_\+\+END}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_renderer_8h_source}{CRenderer.\+h}} 파일의 \mbox{\hyperlink{_c_renderer_8h_source_l00027}{27}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_renderer_8h}{CRenderer.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_renderer_8cpp}{CRenderer.\+cpp}}\end{DoxyCompactItemize}

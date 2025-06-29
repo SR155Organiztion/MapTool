@@ -1,4 +1,4 @@
-\doxysection{CDInput\+Mgr Class Reference}
+\doxysection{CDInput\+Mgr í´ë˜ìŠ¤ ì°¸ì¡°}
 \hypertarget{class_c_d_input_mgr}{}\label{class_c_d_input_mgr}\index{CDInputMgr@{CDInputMgr}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CDInput\+Mgr\+:
+CDInput\+Mgrì— ëŒ€í•œ ìƒì† ë‹¤ì´ì–´ê·¸ë¨ \+: 
 % FIG 0
 
 
-Collaboration diagram for CDInput\+Mgr\+:
+CDInput\+Mgrì— ëŒ€í•œ í˜‘ë ¥ ë‹¤ì´ì–´ê·¸ë¨\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public ë©¤ë²„ í•¨ìˆ˜}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespace_engine_a0372e3835ad47b8cb3c9e34a8eea28aa}{\+\_\+byte}} \mbox{\hyperlink{class_c_d_input_mgr_ae3c8819ae70446ac84b7915113e3ef64}{Get\+\_\+\+DIKey\+State}} (\mbox{\hyperlink{namespace_engine_a289fd321512842a9ab1d95d7ebbb83a1}{\+\_\+ubyte}} by\+Key\+ID)
@@ -27,18 +27,83 @@ void \mbox{\hyperlink{class_c_d_input_mgr_a2498ec7649cbf137c35bd684574c77d8}{Upd
 \item 
 virtual void \mbox{\hyperlink{class_c_d_input_mgr_ad376111beb1ff59989e792b1e13d25b5}{Free}} (void)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private ë©¤ë²„ í•¨ìˆ˜}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_d_input_mgr_aea70a05a2b1ec55a9ba28423fee034bb}{CDInput\+Mgr}} (void)
+\item 
+virtual \mbox{\hyperlink{class_c_d_input_mgr_acb61669e00298c4437b36159a3db668d}{\texorpdfstring{$\sim$}{\string~}\+CDInput\+Mgr}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private ì†ì„±}
+\begin{DoxyCompactItemize}
+\item 
+LPDIRECTINPUT8 \mbox{\hyperlink{class_c_d_input_mgr_abda99ad4cf01296b483b08c412b7cd98}{m\+\_\+p\+Input\+SDK}} = nullptr
+\item 
+LPDIRECTINPUTDEVICE8 \mbox{\hyperlink{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9}{m\+\_\+p\+Key\+Board}} = nullptr
+\item 
+LPDIRECTINPUTDEVICE8 \mbox{\hyperlink{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893}{m\+\_\+p\+Mouse}} = nullptr
+\item 
+\mbox{\hyperlink{namespace_engine_a0372e3835ad47b8cb3c9e34a8eea28aa}{\+\_\+byte}} \mbox{\hyperlink{class_c_d_input_mgr_af28ce65ec2d8065d1b15f10134e51c61}{m\+\_\+by\+Key\+State}} \mbox{[}256\mbox{]}
+\item 
+DIMOUSESTATE \mbox{\hyperlink{class_c_d_input_mgr_a2be31542229ac6ad023ee36a0adb794e}{m\+\_\+t\+Mouse\+State}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{ìƒì„¸í•œ ì„¤ëª…}
 
 
-Definition at line \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00010}{10}} of file \mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}}.
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00010}{10}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_d_input_mgr_doc-constructors}
+\doxysubsection{ìƒì„±ì \& ì†Œë©¸ì ë¬¸ì„œí™”}
+\Hypertarget{class_c_d_input_mgr_aea70a05a2b1ec55a9ba28423fee034bb}\index{CDInputMgr@{CDInputMgr}!CDInputMgr@{CDInputMgr}}
+\index{CDInputMgr@{CDInputMgr}!CDInputMgr@{CDInputMgr}}
+\doxysubsubsection{\texorpdfstring{CDInputMgr()}{CDInputMgr()}}
+{\footnotesize\ttfamily \label{class_c_d_input_mgr_aea70a05a2b1ec55a9ba28423fee034bb} 
+CDInput\+Mgr\+::\+CDInput\+Mgr (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_d_input_mgr_8cpp_source}{CDInput\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8cpp_source_l00005}{5}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ ZeroMemory(\mbox{\hyperlink{class_c_d_input_mgr_af28ce65ec2d8065d1b15f10134e51c61}{m\_byKeyState}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_c_d_input_mgr_af28ce65ec2d8065d1b15f10134e51c61}{m\_byKeyState}}));}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+ì´ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+% FIG 2
+ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+% FIG 3
+\Hypertarget{class_c_d_input_mgr_acb61669e00298c4437b36159a3db668d}\index{CDInputMgr@{CDInputMgr}!````~CDInputMgr@{\texorpdfstring{$\sim$}{\string~}CDInputMgr}}
+\index{````~CDInputMgr@{\texorpdfstring{$\sim$}{\string~}CDInputMgr}!CDInputMgr@{CDInputMgr}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CDInputMgr()}{\string~CDInputMgr()}}
+{\footnotesize\ttfamily \label{class_c_d_input_mgr_acb61669e00298c4437b36159a3db668d} 
+CDInput\+Mgr\+::\texorpdfstring{$\sim$}{\string~}\+CDInput\+Mgr (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_d_input_mgr_8cpp_source}{CDInput\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8cpp_source_l00010}{10}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_ad376111beb1ff59989e792b1e13d25b5}{Free}}();}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+ì´ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+% FIG 4
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_d_input_mgr_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{ë©¤ë²„ í•¨ìˆ˜ ë¬¸ì„œí™”}
 \Hypertarget{class_c_d_input_mgr_ad376111beb1ff59989e792b1e13d25b5}\index{CDInputMgr@{CDInputMgr}!Free@{Free}}
 \index{Free@{Free}!CDInputMgr@{CDInputMgr}}
 \doxysubsubsection{\texorpdfstring{Free()}{Free()}}
@@ -47,10 +112,21 @@ void CDInput\+Mgr\+::\+Free (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyP
 
 
 
-Definition at line \mbox{\hyperlink{_c_d_input_mgr_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_c_d_input_mgr_8cpp_source}{CDInput\+Mgr.\+cpp}}.
+\mbox{\hyperlink{_c_d_input_mgr_8cpp_source}{CDInput\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8cpp_source_l00064}{64}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
 
-Here is the call graph for this function\+:
-% FIG 2
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9}{m\_pKeyBoard}});}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893}{m\_pMouse}});}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_d_input_mgr_abda99ad4cf01296b483b08c412b7cd98}{m\_pInputSDK}});}
+\DoxyCodeLine{00069\ \}}
+
+\end{DoxyCode}
+ì´ í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+% FIG 5
+ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë“¤ì— ëŒ€í•œ ê·¸ë˜í”„ì…ë‹ˆë‹¤.\+:
+% FIG 6
 \Hypertarget{class_c_d_input_mgr_ae3c8819ae70446ac84b7915113e3ef64}\index{CDInputMgr@{CDInputMgr}!Get\_DIKeyState@{Get\_DIKeyState}}
 \index{Get\_DIKeyState@{Get\_DIKeyState}!CDInputMgr@{CDInputMgr}}
 \doxysubsubsection{\texorpdfstring{Get\_DIKeyState()}{Get\_DIKeyState()}}
@@ -59,8 +135,15 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00019}{19}} of file \mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}}.
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00019}{19}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_c_d_input_mgr_af28ce65ec2d8065d1b15f10134e51c61}{m\_byKeyState}}[byKeyID];}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_d_input_mgr_afbb9cfca9900405904b2c4b14c3fe71d}\index{CDInputMgr@{CDInputMgr}!Get\_DIMouseMove@{Get\_DIMouseMove}}
 \index{Get\_DIMouseMove@{Get\_DIMouseMove}!CDInputMgr@{CDInputMgr}}
 \doxysubsubsection{\texorpdfstring{Get\_DIMouseMove()}{Get\_DIMouseMove()}}
@@ -69,8 +152,15 @@ Definition at line \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00019}{19}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00030}{30}} of file \mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}}.
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00030}{30}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *(((\mbox{\hyperlink{namespace_engine_a8dd4c87606163b94435bf04a261eda6e}{\_long}}*)\&\mbox{\hyperlink{class_c_d_input_mgr_a2be31542229ac6ad023ee36a0adb794e}{m\_tMouseState}})\ +\ eMouseState);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_d_input_mgr_ad9964f9aa2bdd596f4fce15a47b3b87e}\index{CDInputMgr@{CDInputMgr}!Get\_DIMouseState@{Get\_DIMouseState}}
 \index{Get\_DIMouseState@{Get\_DIMouseState}!CDInputMgr@{CDInputMgr}}
 \doxysubsubsection{\texorpdfstring{Get\_DIMouseState()}{Get\_DIMouseState()}}
@@ -79,8 +169,15 @@ Definition at line \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00030}{30}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00024}{24}} of file \mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}}.
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00024}{24}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_c_d_input_mgr_a2be31542229ac6ad023ee36a0adb794e}{m\_tMouseState}}.rgbButtons[eMouse];}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_d_input_mgr_affd3386b2a3131728afc9398d175a629}\index{CDInputMgr@{CDInputMgr}!Ready\_InputDev@{Ready\_InputDev}}
 \index{Ready\_InputDev@{Ready\_InputDev}!CDInputMgr@{CDInputMgr}}
 \doxysubsubsection{\texorpdfstring{Ready\_InputDev()}{Ready\_InputDev()}}
@@ -89,8 +186,53 @@ HRESULT CDInput\+Mgr\+::\+Ready\+\_\+\+Input\+Dev (\begin{DoxyParamCaption}\item
 
 
 
-Definition at line \mbox{\hyperlink{_c_d_input_mgr_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_c_d_input_mgr_8cpp_source}{CDInput\+Mgr.\+cpp}}.
+\mbox{\hyperlink{_c_d_input_mgr_8cpp_source}{CDInput\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8cpp_source_l00015}{15}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ DInput\ ÄÄ°´Ã¼¸¦\ »ı¼ºÇÏ´Â ÇÔ¼ö}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}(FAILED(DirectInput8Create(hInst,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___define_8h_a1d7ab29fdefabdb4e7e7cd27ac4c9934}{DIRECTINPUT\_VERSION}},}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ IID\_IDirectInput8,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}**)\&\mbox{\hyperlink{class_c_d_input_mgr_abda99ad4cf01296b483b08c412b7cd98}{m\_pInputSDK}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ NULL)))}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Å°º¸µå °´Ã¼\ »ı¼º}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}(FAILED(\mbox{\hyperlink{class_c_d_input_mgr_abda99ad4cf01296b483b08c412b7cd98}{m\_pInputSDK}}-\/>CreateDevice(GUID\_SysKeyboard,\ \&\mbox{\hyperlink{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9}{m\_pKeyBoard}},\ \textcolor{keyword}{nullptr})))}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ »ı¼ºµÈ Å°º¸µå °´Ã¼ÀÇ\ ´ëÇÑ\ Á¤º¸¸¦\ ÄÄ\ °´Ã¼¿¡°Ô Àü´ŞÇÏ´Â ÇÔ¼ö}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9}{m\_pKeyBoard}}-\/>SetDataFormat(\&c\_dfDIKeyboard);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ ÀåÄ¡¿¡\ ´ëÇÑ\ µ¶Á¡±ÇÀ»\ ¼³Á¤ÇØÁÖ´Â ÇÔ¼ö, (Å¬¶óÀÌ¾ğÆ®°¡\ ¶°ÀÖ´Â »óÅÂ¿¡¼­\ Å°\ ÀÔ·ÂÀ»\ ¹ŞÀ»Áö\ ¸»Áö¸¦\ °áÁ¤ÇÏ´Â ÇÔ¼ö)}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9}{m\_pKeyBoard}}-\/>SetCooperativeLevel(hWnd,\ DISCL\_BACKGROUND\ |\ DISCL\_NONEXCLUSIVE);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ ÀåÄ¡¿¡\ ´ëÇÑ\ access\ ¹öÀüÀ»\ ¹Ş¾Æ¿À´Â ÇÔ¼ö}}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9}{m\_pKeyBoard}}-\/>Acquire();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ ¸¶¿ì½º\ °´Ã¼\ »ı¼º}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_d_input_mgr_abda99ad4cf01296b483b08c412b7cd98}{m\_pInputSDK}}-\/>CreateDevice(GUID\_SysMouse,\ \&\mbox{\hyperlink{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893}{m\_pMouse}},\ \textcolor{keyword}{nullptr})))}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ »ı¼ºµÈ ¸¶¿ì½º\ °´Ã¼ÀÇ\ ´ëÇÑ\ Á¤º¸¸¦\ ÄÄ\ °´Ã¼¿¡°Ô Àü´ŞÇÏ´Â ÇÔ¼ö}}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893}{m\_pMouse}}-\/>SetDataFormat(\&c\_dfDIMouse);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ ÀåÄ¡¿¡\ ´ëÇÑ\ µ¶Á¡±ÇÀ»\ ¼³Á¤ÇØÁÖ´Â ÇÔ¼ö, Å¬¶óÀÌ¾ğÆ®°¡\ ¶°ÀÖ´Â »óÅÂ¿¡¼­\ Å°\ ÀÔ·ÂÀ»\ ¹ŞÀ»Áö\ ¸»Áö¸¦\ °áÁ¤ÇÏ´Â ÇÔ¼ö}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893}{m\_pMouse}}-\/>SetCooperativeLevel(hWnd,\ DISCL\_BACKGROUND\ |\ DISCL\_NONEXCLUSIVE);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ ÀåÄ¡¿¡\ ´ëÇÑ\ access\ ¹öÀüÀ»\ ¹Ş¾Æ¿À´Â ÇÔ¼ö}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893}{m\_pMouse}}-\/>Acquire();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_d_input_mgr_a2498ec7649cbf137c35bd684574c77d8}\index{CDInputMgr@{CDInputMgr}!Update\_InputDev@{Update\_InputDev}}
 \index{Update\_InputDev@{Update\_InputDev}!CDInputMgr@{CDInputMgr}}
 \doxysubsubsection{\texorpdfstring{Update\_InputDev()}{Update\_InputDev()}}
@@ -99,11 +241,74 @@ void CDInput\+Mgr\+::\+Update\+\_\+\+Input\+Dev (\begin{DoxyParamCaption}\item[{
 
 
 
-Definition at line \mbox{\hyperlink{_c_d_input_mgr_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{_c_d_input_mgr_8cpp_source}{CDInput\+Mgr.\+cpp}}.
+\mbox{\hyperlink{_c_d_input_mgr_8cpp_source}{CDInput\+Mgr.\+cpp}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8cpp_source_l00058}{58}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9}{m\_pKeyBoard}}-\/>GetDeviceState(256,\ \mbox{\hyperlink{class_c_d_input_mgr_af28ce65ec2d8065d1b15f10134e51c61}{m\_byKeyState}});}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893}{m\_pMouse}}-\/>GetDeviceState(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{class_c_d_input_mgr_a2be31542229ac6ad023ee36a0adb794e}{m\_tMouseState}}),\ \&\mbox{\hyperlink{class_c_d_input_mgr_a2be31542229ac6ad023ee36a0adb794e}{m\_tMouseState}});}
+\DoxyCodeLine{00062\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_d_input_mgr_doc-variable-members}
+\doxysubsection{ë©¤ë²„ ë°ì´í„° ë¬¸ì„œí™”}
+\Hypertarget{class_c_d_input_mgr_af28ce65ec2d8065d1b15f10134e51c61}\index{CDInputMgr@{CDInputMgr}!m\_byKeyState@{m\_byKeyState}}
+\index{m\_byKeyState@{m\_byKeyState}!CDInputMgr@{CDInputMgr}}
+\doxysubsubsection{\texorpdfstring{m\_byKeyState}{m\_byKeyState}}
+{\footnotesize\ttfamily \label{class_c_d_input_mgr_af28ce65ec2d8065d1b15f10134e51c61} 
+\mbox{\hyperlink{namespace_engine_a0372e3835ad47b8cb3c9e34a8eea28aa}{\+\_\+byte}} CDInput\+Mgr\+::m\+\_\+by\+Key\+State\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00047}{47}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_d_input_mgr_abda99ad4cf01296b483b08c412b7cd98}\index{CDInputMgr@{CDInputMgr}!m\_pInputSDK@{m\_pInputSDK}}
+\index{m\_pInputSDK@{m\_pInputSDK}!CDInputMgr@{CDInputMgr}}
+\doxysubsubsection{\texorpdfstring{m\_pInputSDK}{m\_pInputSDK}}
+{\footnotesize\ttfamily \label{class_c_d_input_mgr_abda99ad4cf01296b483b08c412b7cd98} 
+LPDIRECTINPUT8 CDInput\+Mgr\+::m\+\_\+p\+Input\+SDK = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00040}{40}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9}\index{CDInputMgr@{CDInputMgr}!m\_pKeyBoard@{m\_pKeyBoard}}
+\index{m\_pKeyBoard@{m\_pKeyBoard}!CDInputMgr@{CDInputMgr}}
+\doxysubsubsection{\texorpdfstring{m\_pKeyBoard}{m\_pKeyBoard}}
+{\footnotesize\ttfamily \label{class_c_d_input_mgr_aafe69b6c5ae712aa4958aa59f9b64be9} 
+LPDIRECTINPUTDEVICE8 CDInput\+Mgr\+::m\+\_\+p\+Key\+Board = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00043}{43}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893}\index{CDInputMgr@{CDInputMgr}!m\_pMouse@{m\_pMouse}}
+\index{m\_pMouse@{m\_pMouse}!CDInputMgr@{CDInputMgr}}
+\doxysubsubsection{\texorpdfstring{m\_pMouse}{m\_pMouse}}
+{\footnotesize\ttfamily \label{class_c_d_input_mgr_ad33acf4ece1d112c483bd9e8d53e6893} 
+LPDIRECTINPUTDEVICE8 CDInput\+Mgr\+::m\+\_\+p\+Mouse = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00044}{44}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+\Hypertarget{class_c_d_input_mgr_a2be31542229ac6ad023ee36a0adb794e}\index{CDInputMgr@{CDInputMgr}!m\_tMouseState@{m\_tMouseState}}
+\index{m\_tMouseState@{m\_tMouseState}!CDInputMgr@{CDInputMgr}}
+\doxysubsubsection{\texorpdfstring{m\_tMouseState}{m\_tMouseState}}
+{\footnotesize\ttfamily \label{class_c_d_input_mgr_a2be31542229ac6ad023ee36a0adb794e} 
+DIMOUSESTATE CDInput\+Mgr\+::m\+\_\+t\+Mouse\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_d_input_mgr_8h_source}{CDInput\+Mgr.\+h}} íŒŒì¼ì˜ \mbox{\hyperlink{_c_d_input_mgr_8h_source_l00048}{48}} ë²ˆì§¸ ë¼ì¸ì—ì„œ ì •ì˜ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+
+
+ì´ í´ë˜ìŠ¤ì— ëŒ€í•œ ë¬¸ì„œí™” í˜ì´ì§€ëŠ” ë‹¤ìŒì˜ íŒŒì¼ë“¤ë¡œë¶€í„° ìƒì„±ë˜ì—ˆìŠµë‹ˆë‹¤.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_d_input_mgr_8h}{CDInput\+Mgr.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_d_input_mgr_8cpp}{CDInput\+Mgr.\+cpp}}\end{DoxyCompactItemize}

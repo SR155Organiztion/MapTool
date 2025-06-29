@@ -9,7 +9,11 @@ digraph "CFrameMgr::Ready_Frame"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="CFrame::Create",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#a4b039b5ced5c92ca1c7dfce83adb359f",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="CFrame::Ready_Frame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#acfb5befa7f30a0cefd1e885623a39c69",tooltip=" "];
+  Node3 [id="Node000003",label="CFrame::CFrame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#af0e3dd238c2ea178e71889d1c0c5a386",tooltip=" "];
   Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
+  Node4 [id="Node000004",label="CFrame::Ready_Frame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame.html#acfb5befa7f30a0cefd1e885623a39c69",tooltip=" "];
+  Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CFrameMgr::Find_Frame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_frame_mgr.html#a5cb5b1f466934d73e3e0c199eb73b026",tooltip=" "];
 }

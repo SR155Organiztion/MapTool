@@ -1,4 +1,4 @@
-\doxysection{CRc\+Col Class Reference}
+\doxysection{CRc\+Col 클래스 참조}
 \hypertarget{class_c_rc_col}{}\label{class_c_rc_col}\index{CRcCol@{CRcCol}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CRc\+Col\+:
+CRc\+Col에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CRc\+Col\+:
+CRc\+Col에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 virtual HRESULT \mbox{\hyperlink{class_c_rc_col_afab33b1d1eb3e956ac8343a1c336a1ec}{Ready\+\_\+\+Buffer}} ()
@@ -21,20 +21,33 @@ virtual void \mbox{\hyperlink{class_c_rc_col_a6e5508270549f29f15673518e63bef6d}{
 \item 
 virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_rc_col_aa0ea9235fc66f7cc03b63832fa232585}{Clone}} () override
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{Update\+\_\+\+Component}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
 \item 
 virtual void \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}{Late\+Update\+\_\+\+Component}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_c_rc_col}{CRc\+Col}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_rc_col_a9f800af16367bb8a6905ac1c247d3ea9}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_v_i_buffer}{CVIBuffer}}}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_rc_col_a4c0d4359c249fdf246607a8b4b59adbd}{CRc\+Col}} ()
+\item 
+\mbox{\hyperlink{class_c_rc_col_ae2619cd1519fd15830a48a5cbd6b8003}{CRc\+Col}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+\mbox{\hyperlink{class_c_rc_col_a626f35bfb16fab4fb6b8fb7603b1ab54}{CRc\+Col}} (const \mbox{\hyperlink{class_c_rc_col}{CRc\+Col}} \&rhs)
+\item 
+virtual \mbox{\hyperlink{class_c_rc_col_afeaac4b6d8601624a82c26160152eaf5}{\texorpdfstring{$\sim$}{\string~}\+CRc\+Col}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_rc_col_af981542c81601114b2db8b75b3947aea}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{추가로 상속된 멤버들}
+\doxysubsection*{\mbox{\hyperlink{class_c_v_i_buffer}{CVIBuffer}}(으)로부터 상속된 Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer}} ()
@@ -45,7 +58,7 @@ static \mbox{\hyperlink{class_c_rc_col}{CRc\+Col}} \texorpdfstring{$\ast$}{*} \m
 \item 
 virtual \mbox{\hyperlink{class_c_v_i_buffer_a22256631b045a81782966ce63b445858}{\texorpdfstring{$\sim$}{\string~}\+CVIBuffer}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
@@ -56,7 +69,7 @@ virtual \mbox{\hyperlink{class_c_v_i_buffer_a22256631b045a81782966ce63b445858}{\
 \item 
 virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\texorpdfstring{$\sim$}{\string~}\+CComponent}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_v_i_buffer}{CVIBuffer}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_v_i_buffer}{CVIBuffer}}(으)로부터 상속된 Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 LPDIRECT3\+DVERTEXBUFFER9 \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\+\_\+p\+VB}}
@@ -75,7 +88,7 @@ LPDIRECT3\+DINDEXBUFFER9 \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d
 \item 
 D3\+DFORMAT \mbox{\hyperlink{class_c_v_i_buffer_a75ba4fdcf1f90dbc35cbf9ea474dfcc9}{m\+\_\+\+Idx\+Fmt}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_c_component}{CComponent}}}
+\doxysubsection*{\mbox{\hyperlink{class_c_component}{CComponent}}(으)로부터 상속된 Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
@@ -84,16 +97,93 @@ LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cf
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_rc_col_8h_source_l00006}{6}} of file \mbox{\hyperlink{_c_rc_col_8h_source}{CRc\+Col.\+h}}.
+\mbox{\hyperlink{_c_rc_col_8h_source}{CRc\+Col.\+h}} 파일의 \mbox{\hyperlink{_c_rc_col_8h_source_l00006}{6}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_rc_col_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_rc_col_a4c0d4359c249fdf246607a8b4b59adbd}\index{CRcCol@{CRcCol}!CRcCol@{CRcCol}}
+\index{CRcCol@{CRcCol}!CRcCol@{CRcCol}}
+\doxysubsubsection{\texorpdfstring{CRcCol()}{CRcCol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_c_rc_col_a4c0d4359c249fdf246607a8b4b59adbd} 
+CRc\+Col\+::\+CRc\+Col (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \{}
+\DoxyCodeLine{00005\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\Hypertarget{class_c_rc_col_ae2619cd1519fd15830a48a5cbd6b8003}\index{CRcCol@{CRcCol}!CRcCol@{CRcCol}}
+\index{CRcCol@{CRcCol}!CRcCol@{CRcCol}}
+\doxysubsubsection{\texorpdfstring{CRcCol()}{CRcCol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_c_rc_col_ae2619cd1519fd15830a48a5cbd6b8003} 
+CRc\+Col\+::\+CRc\+Col (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00007}{7}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ :\ \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer}}(pGraphicDev) }
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_rc_col_a626f35bfb16fab4fb6b8fb7603b1ab54}\index{CRcCol@{CRcCol}!CRcCol@{CRcCol}}
+\index{CRcCol@{CRcCol}!CRcCol@{CRcCol}}
+\doxysubsubsection{\texorpdfstring{CRcCol()}{CRcCol()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_c_rc_col_a626f35bfb16fab4fb6b8fb7603b1ab54} 
+CRc\+Col\+::\+CRc\+Col (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_c_rc_col}{CRc\+Col}} \&}]{rhs}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00012}{12}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ :\ \mbox{\hyperlink{class_c_v_i_buffer_a4843c93fb33f16a227a743937e06d215}{CVIBuffer}}(rhs) }
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\Hypertarget{class_c_rc_col_afeaac4b6d8601624a82c26160152eaf5}\index{CRcCol@{CRcCol}!````~CRcCol@{\texorpdfstring{$\sim$}{\string~}CRcCol}}
+\index{````~CRcCol@{\texorpdfstring{$\sim$}{\string~}CRcCol}!CRcCol@{CRcCol}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CRcCol()}{\string~CRcCol()}}
+{\footnotesize\ttfamily \label{class_c_rc_col_afeaac4b6d8601624a82c26160152eaf5} 
+CRc\+Col\+::\texorpdfstring{$\sim$}{\string~}\+CRc\+Col (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_rc_col_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_rc_col_aa0ea9235fc66f7cc03b63832fa232585}\index{CRcCol@{CRcCol}!Clone@{Clone}}
 \index{Clone@{Clone}!CRcCol@{CRcCol}}
 \doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
@@ -102,14 +192,21 @@ Definition at line \mbox{\hyperlink{_c_rc_col_8h_source_l00006}{6}} of file \mbo
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}.
+\mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{CComponent}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_rc_col_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}}.
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00123}{123}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_rc_col_a4c0d4359c249fdf246607a8b4b59adbd}{CRcCol}}(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00126\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 \Hypertarget{class_c_rc_col_a9f800af16367bb8a6905ac1c247d3ea9}\index{CRcCol@{CRcCol}!Create@{Create}}
 \index{Create@{Create}!CRcCol@{CRcCol}}
 \doxysubsubsection{\texorpdfstring{Create()}{Create()}}
@@ -118,10 +215,49 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_rc_col_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}}.
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00128}{128}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 3
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_c_rc_col_a4c0d4359c249fdf246607a8b4b59adbd}{CRcCol}}*\ pRcCol\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_rc_col_a4c0d4359c249fdf246607a8b4b59adbd}{CRcCol}}(pGraphicDev);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pRcCol-\/>\mbox{\hyperlink{class_c_rc_col_afab33b1d1eb3e956ac8343a1c336a1ec}{Ready\_Buffer}}()))}
+\DoxyCodeLine{00133\ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(pRcCol);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}pRcCol\ Create\ Failed"{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ pRcCol;}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\Hypertarget{class_c_rc_col_af981542c81601114b2db8b75b3947aea}\index{CRcCol@{CRcCol}!Free@{Free}}
+\index{Free@{Free}!CRcCol@{CRcCol}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_rc_col_af981542c81601114b2db8b75b3947aea} 
+void CRc\+Col\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{CVIBuffer}}(으)로부터 재구현되었습니다.
+
+
+
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00142}{142}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{CVIBuffer::Free}}();}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
 \Hypertarget{class_c_rc_col_afab33b1d1eb3e956ac8343a1c336a1ec}\index{CRcCol@{CRcCol}!Ready\_Buffer@{Ready\_Buffer}}
 \index{Ready\_Buffer@{Ready\_Buffer}!CRcCol@{CRcCol}}
 \doxysubsubsection{\texorpdfstring{Ready\_Buffer()}{Ready\_Buffer()}}
@@ -130,16 +266,112 @@ HRESULT CRc\+Col\+::\+Ready\+\_\+\+Buffer (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_v_i_buffer_a9fc75b5bb482f6b3d6132cb054193bfe}{CVIBuffer}}.
+\mbox{\hyperlink{class_c_v_i_buffer_a9fc75b5bb482f6b3d6132cb054193bfe}{CVIBuffer}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_rc_col_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}}.
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00021}{21}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 4
-Here is the caller graph for this function\+:
-% FIG 5
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#pragma\ region\ \ ���ؽ���\ ��� }}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//m\_dwTriCnt\ =\ 2;}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//m\_dwVtxCnt\ =\ 6;}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//m\_dwVtxSize\ =\ sizeof(VTXCOL);}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//m\_dwFVF\ =\ FVF\_COL;}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//if\ (FAILED(CVIBuffer::Ready\_Buffer()))}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ \ return\ E\_FAIL;}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//VTXCOL*\ pVertex\ =\ NULL;}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//m\_pVB-\/>Lock(0,\ 0,\ (void**)\&pVertex,\ 0);}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//pVertex[0].vPosition\ =\ \{\ -\/1.f,\ 1.f,\ 0.f\ \};}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//pVertex[0].dwColor\ =\ D3DXCOLOR(1.f,\ 0.f,\ 0.f,\ 1.f);}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//pVertex[1].vPosition\ =\ \{\ 1.f,\ 1.f,\ 0.f\ \};}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//pVertex[1].dwColor\ =\ D3DXCOLOR(1.f,\ 0.f,\ 0.f,\ 1.f);}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//pVertex[2].vPosition\ =\ \{\ 1.f,\ -\/1.f,\ 0.f\ \};}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//pVertex[2].dwColor\ =\ D3DXCOLOR(1.f,\ 0.f,\ 0.f,\ 1.f);}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//pVertex[3].vPosition\ =\ \{\ -\/1.f,\ 1.f,\ 0.f\ \};}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//pVertex[3].dwColor\ =\ D3DXCOLOR(0.f,\ 1.f,\ 0.f,\ 1.f);}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//pVertex[4].vPosition\ =\ \{\ 1.f,\ -\/1.f,\ 0.f\ \};}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//pVertex[4].dwColor\ =\ D3DXCOLOR(0.f,\ 1.f,\ 0.f,\ 1.f);}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//pVertex[5].vPosition\ =\ \{\ -\/1.f,\ -\/1.f,\ 0.f\ \};}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//pVertex[5].dwColor\ =\ D3DXCOLOR(0.f,\ 1.f,\ 0.f,\ 1.f);}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//m\_pVB-\/>Unlock();}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#pragma\ endregion }}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a5896322c548cf9ce1a33416d6bc71222}{m\_dwTriCnt}}\ =\ 2;}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a7753d95d573e0e866dc603ee412cbbad}{m\_dwVtxCnt}}\ =\ 4;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a217c6b46dea3c3641455fc1c8009e19f}{m\_dwVtxSize}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_a203c75cee41771da6430fdb155a8745c}{VTXCOL}});}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_acc8d83cf6b63c83ff0394d47f9155aae}{m\_dwFVF}}\ =\ \mbox{\hyperlink{namespace_engine_af7114a08111183dbdd9535e838bbcebd}{FVF\_COL}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a0b10ee9da764baddde8854a829b150ac}{m\_dwIdxSize}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespace_engine_a4e4c357987184de31ed34bd0fbd38555}{INDEX32}});}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a75ba4fdcf1f90dbc35cbf9ea474dfcc9}{m\_IdxFmt}}\ =\ D3DFMT\_INDEX32;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(\mbox{\hyperlink{class_c_v_i_buffer_a9fc75b5bb482f6b3d6132cb054193bfe}{CVIBuffer::Ready\_Buffer}}()))}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ E\_FAIL;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a203c75cee41771da6430fdb155a8745c}{VTXCOL}}*\ pVertex\ =\ NULL;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ ���ؽ�\ ���ۿ�\ ������ ����\ ��\ ù\ ��° ������\ �ּҸ�\ ������ �Ű�\ ����}}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}-\/>Lock(0,\ 0,\ (\textcolor{keywordtype}{void}**)\&pVertex,\ 0);}
+\DoxyCodeLine{00081\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ pVertex[0].vPosition\ =\ \{\ -\/1.f,\ 1.f,\ 0.f\ \};}
+\DoxyCodeLine{00085\ \ \ \ \ pVertex[0].dwColor\ =\ D3DXCOLOR(1.f,\ 0.f,\ 0.f,\ 1.f);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ pVertex[1].vPosition\ =\ \{\ 1.f,\ 1.f,\ 0.f\ \};}
+\DoxyCodeLine{00088\ \ \ \ \ pVertex[1].dwColor\ =\ D3DXCOLOR(1.f,\ 0.f,\ 0.f,\ 1.f);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ pVertex[2].vPosition\ =\ \{\ 1.f,\ -\/1.f,\ 0.f\ \};}
+\DoxyCodeLine{00091\ \ \ \ \ pVertex[2].dwColor\ =\ D3DXCOLOR(1.f,\ 0.f,\ 0.f,\ 1.f);}
+\DoxyCodeLine{00092\ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ pVertex[3].vPosition\ =\ \{\ -\/1.f,\ -\/1.f,\ 0.f\ \};}
+\DoxyCodeLine{00094\ \ \ \ \ pVertex[3].dwColor\ =\ D3DXCOLOR(0.f,\ 1.f,\ 0.f,\ 1.f);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a5d55841f841256891acf756c170e7b37}{m\_pVB}}-\/>Unlock();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a4e4c357987184de31ed34bd0fbd38555}{INDEX32}}*\ pIndex\ =\ NULL;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}-\/>Lock(0,\ 0,\ (\textcolor{keywordtype}{void}**)\&pIndex,\ 0);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ ������\ ��}}
+\DoxyCodeLine{00103\ \ \ \ \ pIndex[0].\_0\ =\ 0;}
+\DoxyCodeLine{00104\ \ \ \ \ pIndex[0].\_1\ =\ 1;}
+\DoxyCodeLine{00105\ \ \ \ \ pIndex[0].\_2\ =\ 2;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ ���� �Ʒ�}}
+\DoxyCodeLine{00108\ \ \ \ \ pIndex[1].\_0\ =\ 0;}
+\DoxyCodeLine{00109\ \ \ \ \ pIndex[1].\_1\ =\ 2;}
+\DoxyCodeLine{00110\ \ \ \ \ pIndex[1].\_2\ =\ 3;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_a0aa8f993cce6decb3d240343ba7d6ea1}{m\_pIB}}-\/>Unlock();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00116\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
 \Hypertarget{class_c_rc_col_a6e5508270549f29f15673518e63bef6d}\index{CRcCol@{CRcCol}!Render\_Buffer@{Render\_Buffer}}
 \index{Render\_Buffer@{Render\_Buffer}!CRcCol@{CRcCol}}
 \doxysubsubsection{\texorpdfstring{Render\_Buffer()}{Render\_Buffer()}}
@@ -148,17 +380,24 @@ void CRc\+Col\+::\+Render\+\_\+\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 
 
-Reimplemented from \mbox{\hyperlink{class_c_v_i_buffer_aff55d8ab824fe2972bce8f55a7b5519e}{CVIBuffer}}.
+\mbox{\hyperlink{class_c_v_i_buffer_aff55d8ab824fe2972bce8f55a7b5519e}{CVIBuffer}}(으)로부터 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_rc_col_8cpp_source_l00118}{118}} of file \mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}}.
-
-Here is the call graph for this function\+:
-% FIG 6
+\mbox{\hyperlink{_c_rc_col_8cpp_source}{CRc\+Col.\+cpp}} 파일의 \mbox{\hyperlink{_c_rc_col_8cpp_source_l00118}{118}} 번째 라인에서 정의되었습니다.
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00119\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{class_c_v_i_buffer_aff55d8ab824fe2972bce8f55a7b5519e}{CVIBuffer::Render\_Buffer}}();}
+\DoxyCodeLine{00121\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_rc_col_8h}{CRc\+Col.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_rc_col_8cpp}{CRc\+Col.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-\doxysection{CManagement Class Reference}
+\doxysection{CManagement 클래스 참조}
 \hypertarget{class_c_management}{}\label{class_c_management}\index{CManagement@{CManagement}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CManagement\+:
+CManagement에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CManagement\+:
+CManagement에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_management_adc24a894e51c307e06f4a49ec59ef95d}{Get\+\_\+\+Component}} (\mbox{\hyperlink{namespace_engine_acfa55bbe8070f616d90c632809572f0d}{COMPONENTID}} e\+ID, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Layer\+Tag, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Obj\+Tag, const \mbox{\hyperlink{namespace_engine_ad1ef2a87578bf9f080ab9b1dd1732a0c}{\+\_\+tchar}} \texorpdfstring{$\ast$}{*}p\+Component\+Tag)
@@ -27,18 +27,75 @@ void \mbox{\hyperlink{class_c_management_a5ba25d32eed8e5aa54caf21de37f0434}{Rend
 \item 
 virtual void \mbox{\hyperlink{class_c_management_a4ca84147289cd2ff88d465828357218e}{Free}} ()
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_management_ac5585090b22283637688f6cfbaffe551}{CManagement}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_management_a455ae7de928a6892941adcb0d8e40819}{\texorpdfstring{$\sim$}{\string~}\+CManagement}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_scene}{CScene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\+\_\+p\+Scene}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_management_8h_source_l00008}{8}} of file \mbox{\hyperlink{_c_management_8h_source}{CManagement.\+h}}.
+\mbox{\hyperlink{_c_management_8h_source}{CManagement.\+h}} 파일의 \mbox{\hyperlink{_c_management_8h_source_l00008}{8}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_management_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_management_ac5585090b22283637688f6cfbaffe551}\index{CManagement@{CManagement}!CManagement@{CManagement}}
+\index{CManagement@{CManagement}!CManagement@{CManagement}}
+\doxysubsubsection{\texorpdfstring{CManagement()}{CManagement()}}
+{\footnotesize\ttfamily \label{class_c_management_ac5585090b22283637688f6cfbaffe551} 
+CManagement\+::\+CManagement (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}} 파일의 \mbox{\hyperlink{_c_management_8cpp_source_l00006}{6}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}(\textcolor{keyword}{nullptr}) }
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\Hypertarget{class_c_management_a455ae7de928a6892941adcb0d8e40819}\index{CManagement@{CManagement}!````~CManagement@{\texorpdfstring{$\sim$}{\string~}CManagement}}
+\index{````~CManagement@{\texorpdfstring{$\sim$}{\string~}CManagement}!CManagement@{CManagement}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CManagement()}{\string~CManagement()}}
+{\footnotesize\ttfamily \label{class_c_management_a455ae7de928a6892941adcb0d8e40819} 
+CManagement\+::\texorpdfstring{$\sim$}{\string~}\+CManagement (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}} 파일의 \mbox{\hyperlink{_c_management_8cpp_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_c_management_a4ca84147289cd2ff88d465828357218e}{Free}}();}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_management_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_management_a4ca84147289cd2ff88d465828357218e}\index{CManagement@{CManagement}!Free@{Free}}
 \index{Free@{Free}!CManagement@{CManagement}}
 \doxysubsubsection{\texorpdfstring{Free()}{Free()}}
@@ -47,10 +104,19 @@ void CManagement\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\
 
 
 
-Definition at line \mbox{\hyperlink{_c_management_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}}.
+\mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}} 파일의 \mbox{\hyperlink{_c_management_8cpp_source_l00057}{57}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}});}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
 \Hypertarget{class_c_management_adc24a894e51c307e06f4a49ec59ef95d}\index{CManagement@{CManagement}!Get\_Component@{Get\_Component}}
 \index{Get\_Component@{Get\_Component}!CManagement@{CManagement}}
 \doxysubsubsection{\texorpdfstring{Get\_Component()}{Get\_Component()}}
@@ -59,8 +125,18 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_management_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}}.
+\mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}} 파일의 \mbox{\hyperlink{_c_management_8cpp_source_l00015}{15}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}})}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}-\/>Get\_Component(eID,\ pLayerTag,\ pObjTag,\ pComponentTag);}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_management_af4967600130f8c13fce550d07276faa6}\index{CManagement@{CManagement}!LateUpdate\_Scene@{LateUpdate\_Scene}}
 \index{LateUpdate\_Scene@{LateUpdate\_Scene}!CManagement@{CManagement}}
 \doxysubsubsection{\texorpdfstring{LateUpdate\_Scene()}{LateUpdate\_Scene()}}
@@ -69,8 +145,15 @@ void CManagement\+::\+Late\+Update\+\_\+\+Scene (\begin{DoxyParamCaption}\item[{
 
 
 
-Definition at line \mbox{\hyperlink{_c_management_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}}.
+\mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}} 파일의 \mbox{\hyperlink{_c_management_8cpp_source_l00045}{45}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}-\/>LateUpdate\_Scene(fTimeDelta);}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_management_a5ba25d32eed8e5aa54caf21de37f0434}\index{CManagement@{CManagement}!Render\_Scene@{Render\_Scene}}
 \index{Render\_Scene@{Render\_Scene}!CManagement@{CManagement}}
 \doxysubsubsection{\texorpdfstring{Render\_Scene()}{Render\_Scene()}}
@@ -79,8 +162,17 @@ void CManagement\+::\+Render\+\_\+\+Scene (\begin{DoxyParamCaption}\item[{LPDIRE
 
 
 
-Definition at line \mbox{\hyperlink{_c_management_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}}.
+\mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}} 파일의 \mbox{\hyperlink{_c_management_8cpp_source_l00050}{50}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ CRenderer::GetInstance()-\/>Render\_GameObject(pGraphicDev);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}-\/>Render\_Scene();}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_management_a28110f514609e777cfe22b9ad3ff5a0a}\index{CManagement@{CManagement}!Set\_Scene@{Set\_Scene}}
 \index{Set\_Scene@{Set\_Scene}!CManagement@{CManagement}}
 \doxysubsubsection{\texorpdfstring{Set\_Scene()}{Set\_Scene()}}
@@ -89,10 +181,26 @@ HRESULT CManagement\+::\+Set\+\_\+\+Scene (\begin{DoxyParamCaption}\item[{\mbox{
 
 
 
-Definition at line \mbox{\hyperlink{_c_management_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}}.
+\mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}} 파일의 \mbox{\hyperlink{_c_management_8cpp_source_l00023}{23}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 3
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ pScene)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ E\_FAIL;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ CRenderer::GetInstance()-\/>Clear\_RenderGroup();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}\ =\ pScene;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
 \Hypertarget{class_c_management_a21b941f346e4f6483422548eaaa5a3e1}\index{CManagement@{CManagement}!Update\_Scene@{Update\_Scene}}
 \index{Update\_Scene@{Update\_Scene}!CManagement@{CManagement}}
 \doxysubsubsection{\texorpdfstring{Update\_Scene()}{Update\_Scene()}}
@@ -101,11 +209,36 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{_c_management_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}}.
+\mbox{\hyperlink{_c_management_8cpp_source}{CManagement.\+cpp}} 파일의 \mbox{\hyperlink{_c_management_8cpp_source_l00037}{37}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{nullptr}\ ==\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}})}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}{m\_pScene}}-\/>Update\_Scene(fTimeDelta);}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_management_doc-variable-members}
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452}\index{CManagement@{CManagement}!m\_pScene@{m\_pScene}}
+\index{m\_pScene@{m\_pScene}!CManagement@{CManagement}}
+\doxysubsubsection{\texorpdfstring{m\_pScene}{m\_pScene}}
+{\footnotesize\ttfamily \label{class_c_management_ad7ea7eb702e921b00e24593a5c2c5452} 
+\mbox{\hyperlink{class_c_scene}{CScene}}\texorpdfstring{$\ast$}{*} CManagement\+::m\+\_\+p\+Scene\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\mbox{\hyperlink{_c_management_8h_source}{CManagement.\+h}} 파일의 \mbox{\hyperlink{_c_management_8h_source_l00029}{29}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_management_8h}{CManagement.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_management_8cpp}{CManagement.\+cpp}}\end{DoxyCompactItemize}

@@ -1,6 +1,6 @@
 \doxysection{CTimer.\+h}
 \hypertarget{_c_timer_8h_source}{}\label{_c_timer_8h_source}\index{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CTimer.h@{C:/Users/shs26/Desktop/SR/MapTool/Engine/Header/CTimer.h}}
-\mbox{\hyperlink{_c_timer_8h}{Go to the documentation of this file.}}
+\mbox{\hyperlink{_c_timer_8h}{이 파일의 문서화 페이지로 가기}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00002}00002\ }
@@ -9,32 +9,32 @@
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00005}00005\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00006}00006\ \mbox{\hyperlink{_engine___macro_8h_aa651adf8bcf0de56f4d43076393b5d36}{BEGIN}}(\mbox{\hyperlink{namespace_engine}{Engine}})}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00008}\mbox{\hyperlink{class_c_timer}{00008}}\ class\ \mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ CTimer\ :\ public\ CBase}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00008}\mbox{\hyperlink{class_c_timer}{00008}}\ class\ \mbox{\hyperlink{_engine___macro_8h_a11da8f518df94837b1e1ca75701798ad}{ENGINE\_DLL}}\ \mbox{\hyperlink{class_c_timer_a93e4d770fd09f5e1b984768620cc52bf}{CTimer}}\ :\ public\ CBase}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00009}00009\ \{}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00010}00010\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ CTimer();}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \string~CTimer();}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \mbox{\hyperlink{class_c_timer_a93e4d770fd09f5e1b984768620cc52bf}{CTimer}}();}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \mbox{\hyperlink{class_c_timer_a93e4d770fd09f5e1b984768620cc52bf}{\string~CTimer}}();}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00014}00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00015}\mbox{\hyperlink{class_c_timer_a7272990be54f390f4c5701f3ffb69d23}{00015}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_a7272990be54f390f4c5701f3ffb69d23}{Get\_TimeDelta}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_fTimeDelta;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00015}\mbox{\hyperlink{class_c_timer_a7272990be54f390f4c5701f3ffb69d23}{00015}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_a7272990be54f390f4c5701f3ffb69d23}{Get\_TimeDelta}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_c_timer_a54f58a2f34187dcc638d21284d0ec474}{m\_fTimeDelta}};\ \}}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00017}00017\ \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00018}00018\ \ \ \ \ HRESULT\ \ \ \ \ \ \ \ \ Ready\_Timer();}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ Update\_Timer();}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00020}00020\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00021}00021\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00022}00022\ \ \ \ \ LARGE\_INTEGER\ \ \ \ \ \ \ m\_FrameTime;}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00023}00023\ \ \ \ \ LARGE\_INTEGER\ \ \ \ \ \ \ m\_FixTime;}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00024}00024\ \ \ \ \ LARGE\_INTEGER\ \ \ \ \ \ \ m\_LastTime;}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00025}00025\ \ \ \ \ LARGE\_INTEGER\ \ \ \ \ \ \ m\_CpuTick;}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00022}\mbox{\hyperlink{class_c_timer_ab00be20924c1d54eeb0e3381f3f000e2}{00022}}\ \ \ \ \ LARGE\_INTEGER\ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_ab00be20924c1d54eeb0e3381f3f000e2}{m\_FrameTime}};}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00023}\mbox{\hyperlink{class_c_timer_a7885b90ec4d3d5206af63829790a65a9}{00023}}\ \ \ \ \ LARGE\_INTEGER\ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_a7885b90ec4d3d5206af63829790a65a9}{m\_FixTime}};}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00024}\mbox{\hyperlink{class_c_timer_a96bc7251fe8213f9d70115309d08a1b7}{00024}}\ \ \ \ \ LARGE\_INTEGER\ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_a96bc7251fe8213f9d70115309d08a1b7}{m\_LastTime}};}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00025}\mbox{\hyperlink{class_c_timer_ac574308a619975a1cb379f49ead6e87d}{00025}}\ \ \ \ \ LARGE\_INTEGER\ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_ac574308a619975a1cb379f49ead6e87d}{m\_CpuTick}};}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fTimeDelta;}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00027}\mbox{\hyperlink{class_c_timer_a54f58a2f34187dcc638d21284d0ec474}{00027}}\ \ \ \ \ \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\_float}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_a54f58a2f34187dcc638d21284d0ec474}{m\_fTimeDelta}};}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00028}00028\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{static}\ \ \ \ \ \ \mbox{\hyperlink{class_c_timer}{CTimer}}*\ Create();}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{static}\ \ \ \ \ \ \mbox{\hyperlink{class_c_timer_a93e4d770fd09f5e1b984768620cc52bf}{CTimer}}*\ \mbox{\hyperlink{class_c_timer_aafb22675c7c1bf353f3d373f8429e5cc}{Create}}();}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00031}00031\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00032}00032\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ Free();}
+\DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_c_timer_a8ab164ea6bfa6b5a69c2fb6642bce9aa}{Free}}();}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00034}00034\ \};}
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00035}00035\ }
 \DoxyCodeLine{\Hypertarget{_c_timer_8h_source_l00036}00036\ \mbox{\hyperlink{_engine___macro_8h_a29fd18bed01c4d836c7ebfe73a125c3f}{END}}}

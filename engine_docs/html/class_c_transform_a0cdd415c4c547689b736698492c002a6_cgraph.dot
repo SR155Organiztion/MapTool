@@ -7,7 +7,9 @@ digraph "CTransform::Create"
   rankdir="LR";
   Node1 [id="Node000001",label="CTransform::Create",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CTransform::Ready_Transform",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_transform.html#a72957afa6c292a39d291d7bc0024550a",tooltip=" "];
+  Node2 [id="Node000002",label="CTransform::CTransform",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_transform.html#a6cc4e6c97dbb86326341aa1a468986d4",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
+  Node3 [id="Node000003",label="CTransform::Ready_Transform",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_transform.html#a72957afa6c292a39d291d7bc0024550a",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Engine::Safe_Release",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespace_engine.html#ad37fed3c004c6a871158232eb2d7daff",tooltip=" "];
 }

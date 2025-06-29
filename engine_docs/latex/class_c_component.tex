@@ -1,4 +1,4 @@
-\doxysection{CComponent Class Reference}
+\doxysection{CComponent 클래스 참조}
 \hypertarget{class_c_component}{}\label{class_c_component}\index{CComponent@{CComponent}}
 
 
@@ -6,13 +6,13 @@
 
 
 
-Inheritance diagram for CComponent\+:
+CComponent에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CComponent\+:
+CComponent에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\_\+int}} \mbox{\hyperlink{class_c_component_aa24cb04c74c24659780a73296775d209}{Update\+\_\+\+Component}} (const \mbox{\hyperlink{namespace_engine_a0f9446bedae7a5d11532d5e768d8b6f6}{\+\_\+float}} \&f\+Time\+Delta)
@@ -21,7 +21,7 @@ virtual void \mbox{\hyperlink{class_c_component_a95c89988430aa27bfc83d6c3c47e20a
 \item 
 virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}{Clone}} () PURE
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Member Functions}
+\doxysubsubsection*{Protected 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_c_component_ab87a6940be69962c3f4f5a8552643245}{CComponent}} ()
@@ -34,7 +34,7 @@ virtual \mbox{\hyperlink{class_c_component_a29bac312efea3e13a92aaa7213081fa8}{\t
 \item 
 virtual void \mbox{\hyperlink{class_c_component_abb47ac0113a8e99501af4213a4db2528}{Free}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Attributes}
+\doxysubsubsection*{Protected 속성}
 \begin{DoxyCompactItemize}
 \item 
 LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\+\_\+p\+Graphic\+Dev}}
@@ -43,16 +43,16 @@ LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cf
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_component_8h_source_l00008}{8}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+\mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}} 파일의 \mbox{\hyperlink{_c_component_8h_source_l00008}{8}} 번째 라인에서 정의되었습니다.
 
 
 
 \label{doc-constructors}
 \Hypertarget{class_c_component_doc-constructors}
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{생성자 \& 소멸자 문서화}
 \Hypertarget{class_c_component_ab87a6940be69962c3f4f5a8552643245}\index{CComponent@{CComponent}!CComponent@{CComponent}}
 \index{CComponent@{CComponent}!CComponent@{CComponent}}
 \doxysubsubsection{\texorpdfstring{CComponent()}{CComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
@@ -61,9 +61,16 @@ CComponent\+::\+CComponent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+\mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}} 파일의 \mbox{\hyperlink{_c_component_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
 
-Here is the caller graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}(\textcolor{keyword}{nullptr}),\ \mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{m\_bClone}}(\textcolor{keyword}{false}) }
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 2
 \Hypertarget{class_c_component_a1a84bf0dae9ecaa036636560068c939b}\index{CComponent@{CComponent}!CComponent@{CComponent}}
 \index{CComponent@{CComponent}!CComponent@{CComponent}}
@@ -73,8 +80,16 @@ CComponent\+::\+CComponent (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+\mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}} 파일의 \mbox{\hyperlink{_c_component_8cpp_source_l00008}{8}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}(pGraphicDev),\ \mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{m\_bClone}}(\textcolor{keyword}{false}) }
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>AddRef();}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_component_a32744beb6ac8573433668a2c37ae1f39}\index{CComponent@{CComponent}!CComponent@{CComponent}}
 \index{CComponent@{CComponent}!CComponent@{CComponent}}
 \doxysubsubsection{\texorpdfstring{CComponent()}{CComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -83,9 +98,17 @@ CComponent\+::\+CComponent (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlin
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+\mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}} 파일의 \mbox{\hyperlink{_c_component_8cpp_source_l00014}{14}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ :\ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}(rhs.\mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}),\ \mbox{\hyperlink{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}{m\_bClone}}(\textcolor{keyword}{true}) }
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}}-\/>AddRef();}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 3
 \Hypertarget{class_c_component_a29bac312efea3e13a92aaa7213081fa8}\index{CComponent@{CComponent}!````~CComponent@{\texorpdfstring{$\sim$}{\string~}CComponent}}
 \index{````~CComponent@{\texorpdfstring{$\sim$}{\string~}CComponent}!CComponent@{CComponent}}
@@ -95,13 +118,19 @@ CComponent\+::\texorpdfstring{$\sim$}{\string~}\+CComponent (\begin{DoxyParamCap
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+\mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}} 파일의 \mbox{\hyperlink{_c_component_8cpp_source_l00020}{20}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_component_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_component_aa999b573db0494f2772e1ef75a45e5a1}\index{CComponent@{CComponent}!Clone@{Clone}}
 \index{Clone@{Clone}!CComponent@{CComponent}}
 \doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
@@ -110,11 +139,11 @@ virtual \mbox{\hyperlink{class_c_component}{CComponent}} \texorpdfstring{$\ast$}
 
 
 
-Reimplemented in \mbox{\hyperlink{class_c_calculator_a00135cd3f07f3938a268e1f1584cf6e2}{CCalculator}}, \mbox{\hyperlink{class_c_cube_tex_a9007c2a2ff6d6e1133b69212803f4018}{CCube\+Tex}}, \mbox{\hyperlink{class_c_rc_col_aa0ea9235fc66f7cc03b63832fa232585}{CRc\+Col}}, \mbox{\hyperlink{class_c_rc_tex_a6b802a23bc1862d35a58ed0b612475fe}{CRc\+Tex}}, \mbox{\hyperlink{class_c_terrain_col_a33a0574e932db7a41b101b68c3a276e2}{CTerrain\+Col}}, \mbox{\hyperlink{class_c_terrain_tex_abd89070d55ec5e2f68b11fad4a07c0ef}{CTerrain\+Tex}}, \mbox{\hyperlink{class_c_texture_a54c677fa75f7cee00e31017682fb5ca2}{CTexture}}, \mbox{\hyperlink{class_c_transform_a748230a163cf504daa34cc4a359de71b}{CTransform}}, and \mbox{\hyperlink{class_c_tri_col_a5bb83c7947170af0ce01dae5e6e9852c}{CTri\+Col}}.
+\mbox{\hyperlink{class_c_calculator_a00135cd3f07f3938a268e1f1584cf6e2}{CCalculator}}, \mbox{\hyperlink{class_c_cube_tex_a9007c2a2ff6d6e1133b69212803f4018}{CCube\+Tex}}, \mbox{\hyperlink{class_c_rc_col_aa0ea9235fc66f7cc03b63832fa232585}{CRc\+Col}}, \mbox{\hyperlink{class_c_rc_tex_a6b802a23bc1862d35a58ed0b612475fe}{CRc\+Tex}}, \mbox{\hyperlink{class_c_terrain_col_a33a0574e932db7a41b101b68c3a276e2}{CTerrain\+Col}}, \mbox{\hyperlink{class_c_terrain_tex_abd89070d55ec5e2f68b11fad4a07c0ef}{CTerrain\+Tex}}, \mbox{\hyperlink{class_c_texture_a54c677fa75f7cee00e31017682fb5ca2}{CTexture}}, \mbox{\hyperlink{class_c_transform_a748230a163cf504daa34cc4a359de71b}{CTransform}}, \mbox{\hyperlink{class_c_tri_col_a5bb83c7947170af0ce01dae5e6e9852c}{CTri\+Col}}에서 재구현되었습니다.
 
-Here is the call graph for this function\+:
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 4
-Here is the caller graph for this function\+:
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 5
 \Hypertarget{class_c_component_abb47ac0113a8e99501af4213a4db2528}\index{CComponent@{CComponent}!Free@{Free}}
 \index{Free@{Free}!CComponent@{CComponent}}
@@ -124,15 +153,22 @@ void CComponent\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\h
 
 
 
-Reimplemented in \mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{CVIBuffer}}.
+\mbox{\hyperlink{class_c_calculator_ada8c7ab2c5ef723eb91b6cc9ce6b9a88}{CCalculator}}, \mbox{\hyperlink{class_c_cube_tex_aa468ec67a233e075ef639d04030dd385}{CCube\+Tex}}, \mbox{\hyperlink{class_c_rc_col_af981542c81601114b2db8b75b3947aea}{CRc\+Col}}, \mbox{\hyperlink{class_c_rc_tex_a6be8af6f5088f97404400bd8d2ccc2cc}{CRc\+Tex}}, \mbox{\hyperlink{class_c_terrain_col_a275dba339bf41afcbebb2e5dfcf105fd}{CTerrain\+Col}}, \mbox{\hyperlink{class_c_terrain_tex_ac0f0a333547f868d3c02ddf3e21ea0bc}{CTerrain\+Tex}}, \mbox{\hyperlink{class_c_texture_addb99560be7532b24ecde7358ebd6970}{CTexture}}, \mbox{\hyperlink{class_c_transform_abf64d82457b6e77d48a6f491dfc25334}{CTransform}}, \mbox{\hyperlink{class_c_tri_col_a081b0f9c608e53e3382bb19990e2ec90}{CTri\+Col}}, \mbox{\hyperlink{class_c_v_i_buffer_a7d2b83dc8132f02206dba94379752540}{CVIBuffer}}에서 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}}.
+\mbox{\hyperlink{_c_component_8cpp_source}{CComponent.\+cpp}} 파일의 \mbox{\hyperlink{_c_component_8cpp_source_l00024}{24}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_component_abc146a40254f300ae6b897cfa61fb62d}{m\_pGraphicDev}});}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 6
-Here is the caller graph for this function\+:
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 7
 \Hypertarget{class_c_component_a95c89988430aa27bfc83d6c3c47e20a5}\index{CComponent@{CComponent}!LateUpdate\_Component@{LateUpdate\_Component}}
 \index{LateUpdate\_Component@{LateUpdate\_Component}!CComponent@{CComponent}}
@@ -142,12 +178,17 @@ virtual void CComponent\+::\+Late\+Update\+\_\+\+Component (\begin{DoxyParamCapt
 
 
 
-Reimplemented in \mbox{\hyperlink{class_c_transform_ad0be300418898e5db44175f8f5be733f}{CTransform}}.
+\mbox{\hyperlink{class_c_transform_ad0be300418898e5db44175f8f5be733f}{CTransform}}에서 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8h_source_l00018}{18}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+\mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}} 파일의 \mbox{\hyperlink{_c_component_8h_source_l00018}{18}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_c_component_aa24cb04c74c24659780a73296775d209}\index{CComponent@{CComponent}!Update\_Component@{Update\_Component}}
 \index{Update\_Component@{Update\_Component}!CComponent@{CComponent}}
 \doxysubsubsection{\texorpdfstring{Update\_Component()}{Update\_Component()}}
@@ -156,17 +197,22 @@ virtual \mbox{\hyperlink{namespace_engine_a4171141552ff438d2dbe1a30a9d0d627}{\+\
 
 
 
-Reimplemented in \mbox{\hyperlink{class_c_transform_a6734b800b2921b20879ebd683e21da01}{CTransform}}.
+\mbox{\hyperlink{class_c_transform_a6734b800b2921b20879ebd683e21da01}{CTransform}}에서 재구현되었습니다.
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8h_source_l00017}{17}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+\mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}} 파일의 \mbox{\hyperlink{_c_component_8h_source_l00017}{17}} 번째 라인에서 정의되었습니다.
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-variable-members}
 \Hypertarget{class_c_component_doc-variable-members}
-\doxysubsection{Member Data Documentation}
+\doxysubsection{멤버 데이터 문서화}
 \Hypertarget{class_c_component_a46c5cfb55b42f4cd751f0403b81f5ab9}\index{CComponent@{CComponent}!m\_bClone@{m\_bClone}}
 \index{m\_bClone@{m\_bClone}!CComponent@{CComponent}}
 \doxysubsubsection{\texorpdfstring{m\_bClone}{m\_bClone}}
@@ -175,7 +221,7 @@ Definition at line \mbox{\hyperlink{_c_component_8h_source_l00017}{17}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8h_source_l00022}{22}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+\mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}} 파일의 \mbox{\hyperlink{_c_component_8h_source_l00022}{22}} 번째 라인에서 정의되었습니다.
 
 \Hypertarget{class_c_component_abc146a40254f300ae6b897cfa61fb62d}\index{CComponent@{CComponent}!m\_pGraphicDev@{m\_pGraphicDev}}
 \index{m\_pGraphicDev@{m\_pGraphicDev}!CComponent@{CComponent}}
@@ -185,11 +231,11 @@ LPDIRECT3\+DDEVICE9 CComponent\+::m\+\_\+p\+Graphic\+Dev\hspace{0.3cm}{\ttfamily
 
 
 
-Definition at line \mbox{\hyperlink{_c_component_8h_source_l00021}{21}} of file \mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}}.
+\mbox{\hyperlink{_c_component_8h_source}{CComponent.\+h}} 파일의 \mbox{\hyperlink{_c_component_8h_source_l00021}{21}} 번째 라인에서 정의되었습니다.
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_component_8h}{CComponent.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_component_8cpp}{CComponent.\+cpp}}\end{DoxyCompactItemize}

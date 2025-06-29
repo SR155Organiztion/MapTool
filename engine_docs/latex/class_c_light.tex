@@ -1,4 +1,4 @@
-\doxysection{CLight Class Reference}
+\doxysection{CLight 클래스 참조}
 \hypertarget{class_c_light}{}\label{class_c_light}\index{CLight@{CLight}}
 
 
@@ -6,34 +6,94 @@
 
 
 
-Inheritance diagram for CLight\+:
+CLight에 대한 상속 다이어그램 \+: 
 % FIG 0
 
 
-Collaboration diagram for CLight\+:
+CLight에 대한 협력 다이어그램\+:
 % FIG 1
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 HRESULT \mbox{\hyperlink{class_c_light_a61ed2ea079d5483062c8507e35f2b7a3}{Ready\+\_\+\+Light}} (const D3\+DLIGHT9 \texorpdfstring{$\ast$}{*}p\+Light\+Info, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Index)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsubsection*{정적 Public 멤버 함수}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_c_light}{CLight}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_c_light_abb44b3e36537a9120cf4944de406f800}{Create}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev, const D3\+DLIGHT9 \texorpdfstring{$\ast$}{*}p\+Light\+Info, const \mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \&i\+Index)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private 멤버 함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_light_aa31f96d01a437d3b114b13789e0982fb}{CLight}} (LPDIRECT3\+DDEVICE9 p\+Graphic\+Dev)
+\item 
+virtual \mbox{\hyperlink{class_c_light_aef6c25b7608cf6776c3a627c03f70ff2}{\texorpdfstring{$\sim$}{\string~}\+CLight}} ()
+\item 
+virtual void \mbox{\hyperlink{class_c_light_a5e086d8d078a463653c4a88c471f9237}{Free}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 속성}
+\begin{DoxyCompactItemize}
+\item 
+LPDIRECT3\+DDEVICE9 \mbox{\hyperlink{class_c_light_a5059a8a8660430af6c2df8a172e2b603}{m\+\_\+p\+Graphic\+Dev}}
+\item 
+D3\+DLIGHT9 \mbox{\hyperlink{class_c_light_afa6fd2b0f0a5e5a1949326dfa864b4e3}{m\+\_\+t\+Light\+Info}}
+\item 
+\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} \mbox{\hyperlink{class_c_light_af534906a1af8e461b41471a2ab683f9b}{m\+\_\+i\+Index}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{상세한 설명}
 
 
-Definition at line \mbox{\hyperlink{_c_light_8h_source_l00007}{7}} of file \mbox{\hyperlink{_c_light_8h_source}{CLight.\+h}}.
+\mbox{\hyperlink{_c_light_8h_source}{CLight.\+h}} 파일의 \mbox{\hyperlink{_c_light_8h_source_l00007}{7}} 번째 라인에서 정의되었습니다.
 
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_light_doc-constructors}
+\doxysubsection{생성자 \& 소멸자 문서화}
+\Hypertarget{class_c_light_aa31f96d01a437d3b114b13789e0982fb}\index{CLight@{CLight}!CLight@{CLight}}
+\index{CLight@{CLight}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{CLight()}{CLight()}}
+{\footnotesize\ttfamily \label{class_c_light_aa31f96d01a437d3b114b13789e0982fb} 
+CLight\+::\+CLight (\begin{DoxyParamCaption}\item[{LPDIRECT3\+DDEVICE9}]{p\+Graphic\+Dev}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_light_8cpp_source}{CLight.\+cpp}} 파일의 \mbox{\hyperlink{_c_light_8cpp_source_l00003}{3}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ :\ \mbox{\hyperlink{class_c_light_a5059a8a8660430af6c2df8a172e2b603}{m\_pGraphicDev}}(pGraphicDev),\ \mbox{\hyperlink{class_c_light_af534906a1af8e461b41471a2ab683f9b}{m\_iIndex}}(0) }
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ ZeroMemory(\&\mbox{\hyperlink{class_c_light_afa6fd2b0f0a5e5a1949326dfa864b4e3}{m\_tLightInfo}},\ \textcolor{keyword}{sizeof}(D3DLIGHT9));}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{class_c_light_a5059a8a8660430af6c2df8a172e2b603}{m\_pGraphicDev}}-\/>AddRef();}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\Hypertarget{class_c_light_aef6c25b7608cf6776c3a627c03f70ff2}\index{CLight@{CLight}!````~CLight@{\texorpdfstring{$\sim$}{\string~}CLight}}
+\index{````~CLight@{\texorpdfstring{$\sim$}{\string~}CLight}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CLight()}{\string~CLight()}}
+{\footnotesize\ttfamily \label{class_c_light_aef6c25b7608cf6776c3a627c03f70ff2} 
+CLight\+::\texorpdfstring{$\sim$}{\string~}\+CLight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_light_8cpp_source}{CLight.\+cpp}} 파일의 \mbox{\hyperlink{_c_light_8cpp_source_l00010}{10}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{class_c_light_doc-func-members}
-\doxysubsection{Member Function Documentation}
+\doxysubsection{멤버 함수 문서화}
 \Hypertarget{class_c_light_abb44b3e36537a9120cf4944de406f800}\index{CLight@{CLight}!Create@{Create}}
 \index{Create@{Create}!CLight@{CLight}}
 \doxysubsubsection{\texorpdfstring{Create()}{Create()}}
@@ -42,12 +102,45 @@ Definition at line \mbox{\hyperlink{_c_light_8h_source_l00007}{7}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{_c_light_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_c_light_8cpp_source}{CLight.\+cpp}}.
+\mbox{\hyperlink{_c_light_8cpp_source}{CLight.\+cpp}} 파일의 \mbox{\hyperlink{_c_light_8cpp_source_l00026}{26}} 번째 라인에서 정의되었습니다.
 
-Here is the call graph for this function\+:
-% FIG 2
-Here is the caller graph for this function\+:
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_c_light_aa31f96d01a437d3b114b13789e0982fb}{CLight}}*\ pLight\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_c_light_aa31f96d01a437d3b114b13789e0982fb}{CLight}}(pGraphicDev);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (FAILED(pLight-\/>\mbox{\hyperlink{class_c_light_a61ed2ea079d5483062c8507e35f2b7a3}{Ready\_Light}}(pLightInfo,\ iIndex)))\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(pLight);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_engine___macro_8h_a0b4a757b251723fc308d7d6969866b2c}{MSG\_BOX}}(\textcolor{stringliteral}{"{}CLight\ Create\ Failed"{}});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ pLight;}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
 % FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\Hypertarget{class_c_light_a5e086d8d078a463653c4a88c471f9237}\index{CLight@{CLight}!Free@{Free}}
+\index{Free@{Free}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{Free()}{Free()}}
+{\footnotesize\ttfamily \label{class_c_light_a5e086d8d078a463653c4a88c471f9237} 
+void CLight\+::\+Free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{_c_light_8cpp_source}{CLight.\+cpp}} 파일의 \mbox{\hyperlink{_c_light_8cpp_source_l00037}{37}} 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_c_light_a5059a8a8660430af6c2df8a172e2b603}{m\_pGraphicDev}}-\/>LightEnable(\mbox{\hyperlink{class_c_light_af534906a1af8e461b41471a2ab683f9b}{m\_iIndex}},\ FALSE);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{namespace_engine_ad37fed3c004c6a871158232eb2d7daff}{Safe\_Release}}(\mbox{\hyperlink{class_c_light_a5059a8a8660430af6c2df8a172e2b603}{m\_pGraphicDev}});}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
 \Hypertarget{class_c_light_a61ed2ea079d5483062c8507e35f2b7a3}\index{CLight@{CLight}!Ready\_Light@{Ready\_Light}}
 \index{Ready\_Light@{Ready\_Light}!CLight@{CLight}}
 \doxysubsubsection{\texorpdfstring{Ready\_Light()}{Ready\_Light()}}
@@ -56,13 +149,62 @@ HRESULT CLight\+::\+Ready\+\_\+\+Light (\begin{DoxyParamCaption}\item[{const D3\
 
 
 
-Definition at line \mbox{\hyperlink{_c_light_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_c_light_8cpp_source}{CLight.\+cpp}}.
-
-Here is the caller graph for this function\+:
-% FIG 4
+\mbox{\hyperlink{_c_light_8cpp_source}{CLight.\+cpp}} 파일의 \mbox{\hyperlink{_c_light_8cpp_source_l00014}{14}} 번째 라인에서 정의되었습니다.
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ memcpy(\&\mbox{\hyperlink{class_c_light_afa6fd2b0f0a5e5a1949326dfa864b4e3}{m\_tLightInfo}},\ pLightInfo,\ \textcolor{keyword}{sizeof}(D3DLIGHT9));}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_c_light_af534906a1af8e461b41471a2ab683f9b}{m\_iIndex}}\ =\ iIndex;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_c_light_a5059a8a8660430af6c2df8a172e2b603}{m\_pGraphicDev}}-\/>SetLight(iIndex,\ pLightInfo);}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_c_light_a5059a8a8660430af6c2df8a172e2b603}{m\_pGraphicDev}}-\/>LightEnable(iIndex,\ TRUE);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ S\_OK;}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_light_doc-variable-members}
+\doxysubsection{멤버 데이터 문서화}
+\Hypertarget{class_c_light_af534906a1af8e461b41471a2ab683f9b}\index{CLight@{CLight}!m\_iIndex@{m\_iIndex}}
+\index{m\_iIndex@{m\_iIndex}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{m\_iIndex}{m\_iIndex}}
+{\footnotesize\ttfamily \label{class_c_light_af534906a1af8e461b41471a2ab683f9b} 
+\mbox{\hyperlink{namespace_engine_a2af98d02a95f5fac45e314e46a40df20}{\+\_\+uint}} CLight\+::m\+\_\+i\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_light_8h_source}{CLight.\+h}} 파일의 \mbox{\hyperlink{_c_light_8h_source_l00019}{19}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_light_a5059a8a8660430af6c2df8a172e2b603}\index{CLight@{CLight}!m\_pGraphicDev@{m\_pGraphicDev}}
+\index{m\_pGraphicDev@{m\_pGraphicDev}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{m\_pGraphicDev}{m\_pGraphicDev}}
+{\footnotesize\ttfamily \label{class_c_light_a5059a8a8660430af6c2df8a172e2b603} 
+LPDIRECT3\+DDEVICE9 CLight\+::m\+\_\+p\+Graphic\+Dev\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_light_8h_source}{CLight.\+h}} 파일의 \mbox{\hyperlink{_c_light_8h_source_l00017}{17}} 번째 라인에서 정의되었습니다.
+
+\Hypertarget{class_c_light_afa6fd2b0f0a5e5a1949326dfa864b4e3}\index{CLight@{CLight}!m\_tLightInfo@{m\_tLightInfo}}
+\index{m\_tLightInfo@{m\_tLightInfo}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{m\_tLightInfo}{m\_tLightInfo}}
+{\footnotesize\ttfamily \label{class_c_light_afa6fd2b0f0a5e5a1949326dfa864b4e3} 
+D3\+DLIGHT9 CLight\+::m\+\_\+t\+Light\+Info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{_c_light_8h_source}{CLight.\+h}} 파일의 \mbox{\hyperlink{_c_light_8h_source_l00018}{18}} 번째 라인에서 정의되었습니다.
+
+
+
+이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
 \item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Header/\mbox{\hyperlink{_c_light_8h}{CLight.\+h}}\item 
 C\+:/\+Users/shs26/\+Desktop/\+SR/\+Map\+Tool/\+Engine/\+Code/\mbox{\hyperlink{_c_light_8cpp}{CLight.\+cpp}}\end{DoxyCompactItemize}

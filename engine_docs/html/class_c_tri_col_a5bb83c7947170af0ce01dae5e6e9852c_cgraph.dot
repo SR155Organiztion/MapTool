@@ -8,4 +8,6 @@ digraph "CTriCol::Clone"
   Node1 [id="Node000001",label="CTriCol::Clone",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="CComponent::CComponent",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_component.html#ab87a6940be69962c3f4f5a8552643245",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CTriCol::CTriCol",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_tri_col.html#a820eb1ebdce34f3b2db94720a449ef88",tooltip=" "];
 }

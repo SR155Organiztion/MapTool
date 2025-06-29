@@ -8,4 +8,12 @@ digraph "CRenderer::Render_GameObject"
   Node1 [id="Node000001",label="CRenderer::Render_GameObject",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="CRenderer::Clear_RenderGroup",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_renderer.html#a11a2164436c9422949e145fcd5e1b82b",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CRenderer::Render_Alpha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_renderer.html#a1eb2961d5ebf2ec23dbb9d725702d0f3",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="CRenderer::Render_NonAlpha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_renderer.html#a6692f7a57e4ec7861cee420517f050e0",tooltip=" "];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="CRenderer::Render_Priority",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_renderer.html#a9967e6700965183c69c7e32654b52a69",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CRenderer::Render_UI",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_c_renderer.html#a90f42b007e07c55a854dba21aad89aa7",tooltip=" "];
 }
