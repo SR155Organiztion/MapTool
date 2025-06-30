@@ -192,6 +192,9 @@
     <ClCompile Include="..\Code\CMapToolMgr.cpp">
       <Filter>11. MapToolMgr</Filter>
     </ClCompile>
+    <ClCompile Include="..\Code\CTileSquareTex.cpp">
+      <Filter>04. Component\00. VIBuffer\TileSquareTex</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Header\CGraphicDev.h">
@@ -302,6 +305,9 @@
     </ClInclude>
     <ClInclude Include="..\Header\CMapToolMgr.h">
       <Filter>11. MapToolMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CTileSquareTex.h">
+      <Filter>04. Component\00. VIBuffer\TileSquareTex</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
