@@ -9,6 +9,9 @@
 #pragma once
 #include "CBase.h"
 #include "Engine_Define.h"
+#include "json.hpp"
+
+using json = nlohmann::json;
 
 BEGIN(Engine)
 /**
