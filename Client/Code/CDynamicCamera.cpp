@@ -7,6 +7,7 @@
 #include "CTerrain.h"
 #include "CCalculator.h"
 #include "CProtoMgr.h"
+#include "CMapToolMgr.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false)
@@ -54,8 +55,6 @@ _int CDynamicCamera::Update_GameObject(const _float& fTimeDelta)
 void CDynamicCamera::LateUpdate_GameObject(const _float& fTimeDelta)
 {
 	Engine::CCamera::LateUpdate_GameObject(fTimeDelta);
-
-	
 
 	if (false == m_bFix)
 	{
@@ -154,7 +153,14 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	}
 	//¼³Ä¡
 	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_LB) & 0x80) {
-		Peeking_Objects();
+		//Peeking_Objects();
+		CMapToolMgr::GetInstance()->Load_Json();
+		_vec3 s = CMapToolMgr::GetInstance()->Get_Data("Stage1").Cam.vAt;
+		int a = 2;
+	}
+
+	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_RB) & 0x80) {
+		CMapToolMgr::GetInstance()->Save_Json();
 	}
 
 	if (false == m_bFix)
