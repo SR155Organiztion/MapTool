@@ -309,6 +309,9 @@
     <ClInclude Include="..\Header\CTileSquareTex.h">
       <Filter>04. Component\00. VIBuffer\TileSquareTex</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\json.hpp">
+      <Filter>99. Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Engine.rc" />

@@ -217,18 +217,44 @@ void CDynamicCamera::Mouse_Fix()
 
 void CDynamicCamera::Peeking_Objects()
 {
-	Engine::CTerrainTex* pTerrainBufferCom = dynamic_cast<Engine::CTerrainTex*>
-		(CManagement::GetInstance()->Get_Component(ID_STATIC, L"Environment_Layer", L"Terrain", L"Com_Buffer"));
+	POINT	ptMouse{};
 
-	Engine::CTransform* pTerrainTransformCom = dynamic_cast<Engine::CTransform*>
-		(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"Environment_Layer", L"Terrain", L"Com_Transform"));
+	GetCursorPos(&ptMouse);
+	ScreenToClient(g_hWnd, &ptMouse);
 
-	Engine::CTransform* pPlayerTransformCom = dynamic_cast<Engine::CTransform*>
-		(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"Player", L"Com_Transform"));
+	// 뷰포트 -> 투영
 
-	_vec3 vPos = m_pCalculatorCom->Picking_OnTerrain(g_hWnd, pTerrainBufferCom, pTerrainTransformCom);
-	
-	pPlayerTransformCom->Set_Pos(vPos.x, vPos.y + 1.f, vPos.z);
+	_vec3		vMousePos;
+
+	D3DVIEWPORT9		ViewPort;
+	ZeroMemory(&ViewPort, sizeof(D3DVIEWPORT9));
+
+	m_pGraphicDev->GetViewport(&ViewPort);
+
+	vMousePos.x = ptMouse.x / (ViewPort.Width * 0.5f) - 1.f;
+	vMousePos.y = ptMouse.y / -(ViewPort.Height * 0.5f) + 1.f;
+	vMousePos.z = 0.f;
+
+	// 투영 -> 뷰 스페이스
+	D3DXMATRIX	matProj;
+	m_pGraphicDev->GetTransform(D3DTS_PROJECTION, &matProj);
+	D3DXMatrixInverse(&matProj, 0, &matProj);
+	D3DXVec3TransformCoord(&vMousePos, &vMousePos, &matProj);
+
+	// 뷰 스페이스 -> 월드
+
+	D3DXMATRIX	matView;
+	m_pGraphicDev->GetTransform(D3DTS_VIEW, &matView);
+	D3DXMatrixInverse(&matView, 0, &matView);
+
+	_vec3		vRayPos{ 0.f, 0.f, 0.f };
+	_vec3		vRayDir = vMousePos - vRayPos;
+	D3DXVec3Normalize(&vRayDir, &vRayDir);
+
+	D3DXVec3TransformCoord(&vRayPos, &vRayPos, &matView);
+	D3DXVec3TransformNormal(&vRayDir, &vRayDir, &matView);
+
+
 }
 
 

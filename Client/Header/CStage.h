@@ -30,4 +30,3 @@ private:
 	virtual void	Free();
 
 };
-
