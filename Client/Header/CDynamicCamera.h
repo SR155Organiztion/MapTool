@@ -33,15 +33,18 @@ private:
 
 	void		Peeking_Objects();
 	void		Show_Peek() {}
-	void		Set_Greed() {}
+	
 	void		Get_CamInfo(_vec3* vEye, _vec3*& vAt) {}
+
+	HRESULT		Create_Block();
+	_vec3		Set_Greed(_vec3 _v);
 
 private:
 	_float		m_fSpeed;
 	_bool		m_bFix;
 	_bool		m_bCheck;
 	Engine::CCalculator* m_pCalculatorCom;
-
+	_bool		m_bClicked;
 	_bool		m_bShowBox;
 
 public:

@@ -53,7 +53,7 @@ void CShowBox::Render_GameObject()
 
     m_pTextureCom->Set_Texture(0);
 
-
+  
     if (FAILED(Set_Metarial()))
         return;
 
