@@ -1,13 +1,12 @@
 #include "pch.h"
 #include "CStage.h"
-#include "CPlayer.h"
-#include "CMonster.h"
+#include "CShowBox.h"
 #include "CTerrain.h"
-#include "CTestTerrain.h"
 #include "CProtoMgr.h"
 #include "CDynamicCamera.h"
 #include "CSkyBox.h"
 #include "CLightMgr.h"
+#include "CBlock.h"
 
 CStage::CStage(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CScene(pGraphicDev)
@@ -35,9 +34,6 @@ HRESULT CStage::Ready_Scene()
     if (FAILED(Ready_UI_Layer(L"UI_Layer")))
         return E_FAIL;
 
-    if (FAILED(Ready_Light()))
-        return E_FAIL;
-
     return S_OK;
 }
 
@@ -58,25 +54,12 @@ HRESULT CStage::Ready_Environment_Layer(const _tchar* pLayerTag)
         return E_FAIL;
     if (FAILED(pLayer->Add_GameObject(L"DynamicCamera", pGameObject)))
         return E_FAIL;
-
-    pGameObject = CSkyBox::Create(m_pGraphicDev);
-    if (nullptr == pGameObject)
-        return E_FAIL;
-    if (FAILED(pLayer->Add_GameObject(L"SkyBox", pGameObject)))
-        return E_FAIL;
-      
-
+        
     pGameObject = CTerrain::Create(m_pGraphicDev);
     if (nullptr == pGameObject)
         return E_FAIL;
     if (FAILED(pLayer->Add_GameObject(L"Terrain", pGameObject)))
         return E_FAIL;
-
-    //pGameObject = CTestTerrain::Create(m_pGraphicDev);
-    //if (nullptr == pGameObject)
-    //    return E_FAIL;
-    //if (FAILED(pLayer->Add_GameObject(L"TestTerrain", pGameObject)))
-    //    return E_FAIL;
 
     m_mapLayer.insert({ pLayerTag, pLayer });
 
@@ -91,6 +74,8 @@ HRESULT CStage::Ready_Tile_Layer(const _tchar* pLayerTag)
 
     Engine::CGameObject* pGameObject = nullptr;
 
+    m_mapLayer.insert({ pLayerTag, pLayer });
+
     return S_OK;
 }
 
@@ -102,6 +87,8 @@ HRESULT CStage::Ready_Block_Layer(const _tchar* pLayerTag)
 
     Engine::CGameObject* pGameObject = nullptr;
 
+    m_mapLayer.insert({ pLayerTag, pLayer });
+
     return S_OK;
 }
 
@@ -112,12 +99,12 @@ HRESULT CStage::Ready_GameObject_Layer(const _tchar* pLayerTag)
         return E_FAIL;
 
     Engine::CGameObject* pGameObject = nullptr;
-  
-    pGameObject = CPlayer::Create(m_pGraphicDev);
-    if (nullptr == pGameObject)
-        return E_FAIL;
-    if (FAILED(pLayer->Add_GameObject(L"Player", pGameObject)))
-        return E_FAIL;
+
+    //pGameObject = CShowBox::Create(m_pGraphicDev);
+    //if (nullptr == pGameObject)
+    //    return E_FAIL;
+    //if (FAILED(pLayer->Add_GameObject(L"ShowBox", pGameObject)))
+    //    return E_FAIL;
 
     m_mapLayer.insert({ pLayerTag, pLayer });
 

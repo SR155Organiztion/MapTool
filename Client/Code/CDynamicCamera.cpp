@@ -8,9 +8,10 @@
 #include "CCalculator.h"
 #include "CProtoMgr.h"
 #include "CMapToolMgr.h"
+#include "CBlock.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
-	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false)
+	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false), m_bClicked(false)
 {
 }
 
@@ -60,6 +61,7 @@ void CDynamicCamera::LateUpdate_GameObject(const _float& fTimeDelta)
 	{
 		Mouse_Move();
 		Mouse_Fix();
+		Peeking_Objects();
 	}
 }
 
@@ -68,7 +70,6 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	_matrix	matCamWorld;
 	D3DXMatrixInverse(&matCamWorld, 0, &m_matView);
 	_float fSpeed = m_fSpeed;
-
 
 	//달리기
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_LSHIFT) & 0x80) {
@@ -153,10 +154,13 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	}
 	//설치
 	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_LB) & 0x80) {
-		//Peeking_Objects();
-		CMapToolMgr::GetInstance()->Load_Json();
-		_vec3 s = CMapToolMgr::GetInstance()->Get_Data("Stage1").Cam.vAt;
-		int a = 2;
+		if (!m_bClicked) {
+			Create_Block();
+			m_bClicked = true;
+		}
+	}
+	else {
+		m_bClicked = false;
 	}
 
 	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_RB) & 0x80) {
@@ -217,18 +221,99 @@ void CDynamicCamera::Mouse_Fix()
 
 void CDynamicCamera::Peeking_Objects()
 {
-	Engine::CTerrainTex* pTerrainBufferCom = dynamic_cast<Engine::CTerrainTex*>
-		(CManagement::GetInstance()->Get_Component(ID_STATIC, L"Environment_Layer", L"Terrain", L"Com_Buffer"));
+	POINT	ptMouse{};
 
-	Engine::CTransform* pTerrainTransformCom = dynamic_cast<Engine::CTransform*>
-		(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"Environment_Layer", L"Terrain", L"Com_Transform"));
+	GetCursorPos(&ptMouse);
+	ScreenToClient(g_hWnd, &ptMouse);
 
-	Engine::CTransform* pPlayerTransformCom = dynamic_cast<Engine::CTransform*>
-		(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"Player", L"Com_Transform"));
+	// 뷰포트 -> 투영
 
-	_vec3 vPos = m_pCalculatorCom->Picking_OnTerrain(g_hWnd, pTerrainBufferCom, pTerrainTransformCom);
-	
-	pPlayerTransformCom->Set_Pos(vPos.x, vPos.y + 1.f, vPos.z);
+	_vec3		vMousePos;
+
+	D3DVIEWPORT9		ViewPort;
+	ZeroMemory(&ViewPort, sizeof(D3DVIEWPORT9));
+
+	m_pGraphicDev->GetViewport(&ViewPort);
+
+	vMousePos.x = ptMouse.x / (ViewPort.Width * 0.5f) - 1.f;
+	vMousePos.y = ptMouse.y / -(ViewPort.Height * 0.5f) + 1.f;
+	vMousePos.z = 0.f;
+
+	// 투영 -> 뷰 스페이스
+	D3DXMATRIX	matProj;
+	m_pGraphicDev->GetTransform(D3DTS_PROJECTION, &matProj);
+	D3DXMatrixInverse(&matProj, 0, &matProj);
+	D3DXVec3TransformCoord(&vMousePos, &vMousePos, &matProj);
+
+	// 뷰 스페이스 -> 월드
+
+	D3DXMATRIX	matView;
+	m_pGraphicDev->GetTransform(D3DTS_VIEW, &matView);
+	D3DXMatrixInverse(&matView, 0, &matView);
+
+	_vec3		vRayPos{ 0.f, 0.f, 0.f };
+	_vec3		vRayDir = vMousePos - vRayPos;
+	D3DXVec3Normalize(&vRayDir, &vRayDir);
+
+	D3DXVec3TransformCoord(&vRayPos, &vRayPos, &matView);
+	D3DXVec3TransformNormal(&vRayDir, &vRayDir, &matView);
+}
+
+HRESULT CDynamicCamera::Create_Block()
+{
+	static int s_BlockIndex = 0;
+
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"Block_Layer");
+
+	if (nullptr == pLayer)
+		return E_FAIL;
+
+	Engine::CGameObject* pGameObject = nullptr;
+
+	pGameObject = CBlock::Create(m_pGraphicDev);
+
+	if (nullptr == pGameObject)
+		return E_FAIL;
+
+	CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+	//pObjectTransformCom->Set_Pos(m_vEye.x, m_vEye.y, m_vEye.z);
+	_vec3 vTmp = Set_Greed(m_vEye);
+	pObjectTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
+
+	_tchar szTag[64] = {};
+
+	while (true) {
+		_stprintf_s(szTag, 64, L"Block_%d", s_BlockIndex);
+		_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
+		lstrcpy(pTag, szTag);
+
+		if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+			break; // 성공 시 탈출
+		}
+		else {
+			Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
+			++s_BlockIndex;
+		}
+	}
+
+	//지금 오류가 계속 뜨는이유? << const TChar*로 되어있어서 지금 주소가 같아서 오류가 나는것 << 이거어떻게해야함?
+	//임시방편으로 new를 이용해서 만들고 있지만 수정할 방안필요. 
+
+	CMapToolMgr::GetInstance()->Plant_Block("NORMAL", m_vEye, "DOWN");
+	s_BlockIndex++;
+	return S_OK;
+}
+
+_vec3 CDynamicCamera::Set_Greed(_vec3 _v)
+{
+	_vec3 vTmp;
+
+	vTmp.x = floor(_v.x) + 0.5f;
+	vTmp.y = floor(_v.y) + 0.5f;
+	vTmp.z = floor(_v.z) + 0.5f;
+
+	return vTmp;
 }
 
 

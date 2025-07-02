@@ -19,6 +19,8 @@ public:
 		const _tchar* pObjTag,
 		const _tchar* pComponentTag);
 
+	CScene* Get_Scene();
+
 public:
 	HRESULT			Set_Scene(CScene* pScene);
 	_int			Update_Scene(const _float& fTimeDelta);

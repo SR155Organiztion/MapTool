@@ -76,12 +76,6 @@
     <Filter Include="09. Pipeline">
       <UniqueIdentifier>{bdfee11f-4953-44b7-b488-bfaf8f53a845}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03. Management\01. Layer\02. GameObject">
-      <UniqueIdentifier>{b29d663a-b3e6-4330-a212-f5abed48b195}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03. Management\01. Layer\02. GameObject\Camera">
-      <UniqueIdentifier>{8c89783c-90bb-46a9-95aa-8866f3b9fa12}</UniqueIdentifier>
-    </Filter>
     <Filter Include="10. LightMgr">
       <UniqueIdentifier>{6014b76e-49dc-4666-a309-8adced7167a8}</UniqueIdentifier>
     </Filter>
@@ -99,6 +93,12 @@
     </Filter>
     <Filter Include="04. Component\00. VIBuffer\TileSquareTex">
       <UniqueIdentifier>{b9d1e1fd-be39-46b9-a884-163a3c11bbdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Management\02. GameObject">
+      <UniqueIdentifier>{b29d663a-b3e6-4330-a212-f5abed48b195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Management\02. GameObject\Camera">
+      <UniqueIdentifier>{8c89783c-90bb-46a9-95aa-8866f3b9fa12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -119,9 +119,6 @@
     </ClCompile>
     <ClCompile Include="..\Code\CComponent.cpp">
       <Filter>03. Management\03. Component</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Code\CGameObject.cpp">
-      <Filter>03. Management\01. Layer\02. GameObject</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CLayer.cpp">
       <Filter>03. Management\01. Layer</Filter>
@@ -166,7 +163,7 @@
       <Filter>08. DInputMgr</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CCamera.cpp">
-      <Filter>03. Management\01. Layer\02. GameObject\Camera</Filter>
+      <Filter>03. Management\02. GameObject\Camera</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CCubeTex.cpp">
       <Filter>04. Component\00. VIBuffer\CubeTex</Filter>
@@ -194,6 +191,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\CTileSquareTex.cpp">
       <Filter>04. Component\00. VIBuffer\TileSquareTex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CGameObject.cpp">
+      <Filter>03. Management\02. GameObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -232,9 +232,6 @@
     </ClInclude>
     <ClInclude Include="..\Header\CComponent.h">
       <Filter>03. Management\03. Component</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Header\CGameObject.h">
-      <Filter>03. Management\01. Layer\02. GameObject</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CLayer.h">
       <Filter>03. Management\01. Layer</Filter>
@@ -279,7 +276,7 @@
       <Filter>08. DInputMgr</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CCamera.h">
-      <Filter>03. Management\01. Layer\02. GameObject\Camera</Filter>
+      <Filter>03. Management\02. GameObject\Camera</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="..\Header\CCubeTex.h">
@@ -308,6 +305,12 @@
     </ClInclude>
     <ClInclude Include="..\Header\CTileSquareTex.h">
       <Filter>04. Component\00. VIBuffer\TileSquareTex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\json.hpp">
+      <Filter>99. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CGameObject.h">
+      <Filter>03. Management\02. GameObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

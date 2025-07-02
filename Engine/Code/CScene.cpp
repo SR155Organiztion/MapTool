@@ -20,6 +20,16 @@ CComponent* CScene::Get_Component(COMPONENTID eID, const _tchar* pLayerTag, cons
     return iter->second->Get_Component(eID, pObjTag, pComponentTag);
 }
 
+CLayer* CScene::Get_Layer(const _tchar* pLayerTag)
+{
+    for (auto it = m_mapLayer.begin(); it != m_mapLayer.end(); ++it) {
+        if (0 == lstrcmpW(pLayerTag, it->first))
+            return it->second;
+    }
+
+    return nullptr;
+}
+
 HRESULT CScene::Ready_Scene()
 {
     return S_OK;
