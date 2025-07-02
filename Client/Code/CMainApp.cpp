@@ -41,10 +41,7 @@ int CMainApp::Update_MainApp(const float& fTimeDelta)
 {
 	CDInputMgr::GetInstance()->Update_InputDev();
 
-
 	m_pManagementClass->Update_Scene(fTimeDelta);
-
-
 
 	return 0;
 }

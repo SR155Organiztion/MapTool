@@ -23,7 +23,15 @@ HRESULT CLayer::Add_GameObject(const _tchar* pObjTag, CGameObject* pGameObject)
 	if (nullptr == pGameObject)
 		return E_FAIL;
 
-	m_mapObject.insert({ pObjTag, pGameObject });
+	auto result = m_mapObject.insert({ pObjTag, pGameObject });
+
+
+	if (!result.second) // 이미 존재함
+	{
+		Safe_Release(pGameObject); // 누수 방지
+		//MSG_BOX("[CLayer] Add_GameObject 실패 - 태그 중복\n");
+		return E_FAIL;
+	}
 	
 	return S_OK;
 }

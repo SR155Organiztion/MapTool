@@ -20,6 +20,14 @@ CComponent* CManagement::Get_Component(COMPONENTID eID, const _tchar* pLayerTag,
     return m_pScene->Get_Component(eID, pLayerTag, pObjTag, pComponentTag);
 }
 
+CScene* CManagement::Get_Scene()
+{
+    if (nullptr == m_pScene)
+        return nullptr;
+    
+    return m_pScene;
+}
+
 HRESULT CManagement::Set_Scene(CScene* pScene)
 {
     if (nullptr == pScene)

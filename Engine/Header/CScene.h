@@ -17,6 +17,8 @@ public:
 		const _tchar* pObjTag,
 		const _tchar* pComponentTag);
 
+	CLayer* Get_Layer(const _tchar* pLayerTag);
+
 public:
 	virtual			HRESULT		Ready_Scene();
 	virtual			_int		Update_Scene(const _float& fTimeDelta);
