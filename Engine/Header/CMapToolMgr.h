@@ -9,10 +9,6 @@
 #pragma once
 #include "CBase.h"
 #include "Engine_Define.h"
-#include "../Header/json.hpp"
-
-using json = nlohmann::json;
-
 
 /**
 * @struct S_BLOCK
@@ -77,15 +73,6 @@ struct S_STAGE {
 	std::vector<S_ENVIRONMENT> Environment;
 };
 
-
-
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(_vec3, x, y, z)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_TILE, Tile_Type, vPos, Direction)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVIRONMENT, Env_Type, vPos, Direction)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_CAM, vEye, vAt)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_PLAYER, P1, P2)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Recipe, Block, Tiles, Environment);
 ///////////////////////////////////////////////////////////////////////////////
 BEGIN(Engine)
 class ENGINE_DLL CMapToolMgr : public CBase
@@ -97,14 +84,11 @@ private:
 	virtual ~CMapToolMgr();
 
 public:
-	void	Ready_Manager();			
-
-public:
-	void	Plant_Block();				///설치한 블록의 정보를 벡터 리스트에 넣음
-	void	Plant_Tile();				///설치한 타일의 정보를 벡터 리스트에 넣음
-	void	Plant_Environment();		///설치한 환경 오브젝트를 벡터 리스트에 넣음
-	void	Plant_Camera();				///현재 바라보고 있는 곳의 Eye와 at을 저장
-	void	Plant_Player();				///플레이어의 스폰 위치 설정
+	void	Plant_Block(string _sType, _vec3 _vPos, string _sDir);		///설치한 블록의 정보를 벡터 리스트에 넣음
+	void	Plant_Tile(string _sType, _vec3 _vPos, string _sDir);		///설치한 타일의 정보를 벡터 리스트에 넣음
+	void	Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
+	void	Plant_Camera(_vec3 _vEye, _vec3 _vAt);						///현재 바라보고 있는 곳의 Eye와 at을 저장
+	void	Plant_Player(_int _iPlayer,_vec3 _vPos);					///플레이어의 스폰 위치 설정
 
 	HRESULT Save_Json();				///json에 데이터 저장
 	HRESULT Load_Json();				///json 데이터 불러오기

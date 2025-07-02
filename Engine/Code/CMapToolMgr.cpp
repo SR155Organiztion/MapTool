@@ -1,12 +1,20 @@
+#include "../Header/json.hpp"
 #include "CMapToolMgr.h"
 #include <fstream>
 
-//#include "CJsonConverter.h"
+using json = nlohmann::json;
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(_vec3, x, y, z)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_TILE, Tile_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVIRONMENT, Env_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_CAM, vEye, vAt)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_PLAYER, P1, P2)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Recipe, Block, Tiles, Environment);
 
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
 CMapToolMgr::CMapToolMgr()
-    : m_fAngle(0.f), m_iSet_Player(0), m_sName("Stage13123321"), m_iSelectName(0)
+    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0)
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
@@ -19,30 +27,38 @@ CMapToolMgr::~CMapToolMgr()
 {
 }
 
-void CMapToolMgr::Plant_Block()
+void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos, string _sDir)
+{
+    S_BLOCK tBlock = { _sType, _vPos, _sDir };
+    m_tBlockVec.push_back(tBlock);
+}
+
+void CMapToolMgr::Plant_Tile(string _sType, _vec3 _vPos, string _sDir)
+{
+    S_TILE tTile = { _sType, _vPos, _sDir };
+    m_tTileVec.push_back(tTile);
+}
+
+void CMapToolMgr::Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir)
 {
 }
 
-void CMapToolMgr::Plant_Tile()
+void CMapToolMgr::Plant_Camera(_vec3 _vEye, _vec3 _vAt)
 {
 }
 
-void CMapToolMgr::Plant_Environment()
+void CMapToolMgr::Plant_Player(_int _iPlayer, _vec3 _vPos)
 {
 }
 
-void CMapToolMgr::Plant_Camera()
-{
-}
 
-void CMapToolMgr::Plant_Player()
-{
-}
 
 HRESULT CMapToolMgr::Save_Json()
 {
-    Dummy_Data();
-
+    MSG_BOX("저장호출");
+    //테스트용
+    //Dummy_Data();
+    m_mapJson.clear();
     //////////////////////////////////////
     //데이터 종합
     S_STAGE stage = { m_tCam, m_tPlayer, m_sRecipeVec, m_tBlockVec, m_tTileVec, m_tEnvVec };
@@ -51,60 +67,67 @@ HRESULT CMapToolMgr::Save_Json()
 
     /////////////////////////////////////
     ///데이터 저장시점
+    {
+        std::ofstream file("../Bin/Data/SaveData.json");
 
-    std::ofstream file("../Bin/Data/SaveData.json");
+        if (!file.is_open()) {
+            MSG_BOX("저장 오류");
+            return E_FAIL;
+        }
 
-    if (!file.is_open()) {
-        MSG_BOX("저장 오류");
-        return E_FAIL;
+        file << j.dump(2);
+        file.close();
     }
 
-    file << j.dump(2);
-    file.close();
-
+    MSG_BOX("저장 완료");
     return S_OK;
 }
 
 HRESULT CMapToolMgr::Load_Json()
 {
+    MSG_BOX("로드호출");
     Reset();
     m_mapJson.clear();
 
     std::ifstream file("../Bin/Data/SaveData.json");
+
     if (!file.is_open()) {
         MSG_BOX("파일 열기 실패");
         return E_FAIL;
     }
 
-    json j;
-    file >> j;
-
-    bool firstKey = false;
-    // 순회하며 각 요소를 map<string, S_STAGE>로 변환
-    for (const auto& Stage : j)
     {
-        if (!Stage.is_object()) continue;
+        json j;
+        file >> j;
 
-        for (auto it = Stage.begin(); it != Stage.end(); ++it)
+        bool firstKey = false;
+        // 순회하며 각 요소를 map<string, S_STAGE>로 변환
+        for (const auto& Stage : j)
         {
-            
-            const std::string& stageName = it.key();      
-            const json& stageJson = it.value();
-            
-            if (!firstKey)
-            {
-                m_sName = stageName;
-                firstKey = true;
-            }
-            // 변환 시도
-            m_sNameVec.push_back(stageName);
-            S_STAGE stage = stageJson.get<S_STAGE>();
-            m_mapJson[stageName] = stage;
-        }
-    }
-    Select_Map();
+            if (!Stage.is_object()) continue;
 
-    file.close();
+            for (auto it = Stage.begin(); it != Stage.end(); ++it)
+            {
+
+                const std::string& stageName = it.key();
+                const json& stageJson = it.value();
+
+                if (!firstKey)
+                {
+                    m_sName = stageName;
+                    firstKey = true;
+                }
+                // 변환 시도
+                m_sNameVec.push_back(stageName);
+                S_STAGE stage = stageJson.get<S_STAGE>();
+                m_mapJson[stageName] = stage;
+            }
+        }
+        Select_Map();
+
+        file.close();
+    }
+    MSG_BOX("로드완료");
     return S_OK;
 }
         
@@ -142,6 +165,7 @@ void CMapToolMgr::Key_Input()
 
 void CMapToolMgr::Dummy_Data()
 {
+    MSG_BOX("더미호출");
     m_sName = "Stage1";
 
     _vec3 v = { 1.f, 2.f, 3.f };
