@@ -100,6 +100,9 @@
     <Filter Include="03. Management\02. GameObject\Camera">
       <UniqueIdentifier>{8c89783c-90bb-46a9-95aa-8866f3b9fa12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="12. CollisionMgr">
+      <UniqueIdentifier>{b3bc810e-07ff-4fb2-8fb7-f441e4b4a2fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\CGraphicDev.cpp">
@@ -194,6 +197,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\CGameObject.cpp">
       <Filter>03. Management\02. GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CCollisionMgr.cpp">
+      <Filter>12. CollisionMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -311,6 +317,9 @@
     </ClInclude>
     <ClInclude Include="..\Header\CGameObject.h">
       <Filter>03. Management\02. GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CCollisionMgr.h">
+      <Filter>12. CollisionMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
