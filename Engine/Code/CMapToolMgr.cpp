@@ -14,7 +14,7 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Recipe, Block, Tiles, E
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
 CMapToolMgr::CMapToolMgr()
-    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0)
+    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_eDir(PX)
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();

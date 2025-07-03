@@ -100,7 +100,6 @@ public:
 
 private:
 	void	Key_Input();				///키입력
-
 	void	Dummy_Data();				///테스트용
 
 private:
@@ -111,15 +110,15 @@ private:
 	S_CAM					m_tCam;				///설치를 한 카메라의 
 	S_PLAYER				m_tPlayer;			///현재 플레이어들의 시작 위치
 
-	map<string, S_STAGE> m_mapJson;		///전체 스테이지의 데이터값
+	map<string, S_STAGE> m_mapJson;				///전체 스테이지의 데이터값
 
-	_uint	m_iSet_Player;						///현재 선택중인 플레이어
+	_uint			m_iSet_Player;				///현재 선택중인 플레이어
 	vector<string>	m_sNameVec;					///전체 스테이지 이름
-	_uint	m_iSelectName;						///내가 선택중인 스테이지
-	string	m_sName;							///저장하거나 불러올 이름
-	string	m_sDir;								///현재 선택중인 방향 값	(고정된 4방향 각도)
-	_vec3	m_vecDir;							///현재 선택중인 방향 벡터값(고정되지 않은 각도) 
-	_float	m_fAngle;							///현재 각도
+	_uint			m_iSelectName;				///내가 선택중인 스테이지
+	string			m_sName;					///저장하거나 불러올 이름
+	DIRECTIONID		m_eDir;						///현재 선택중인 방향 값	(고정된 6 방향)
+	_vec3			m_vecDir;					///현재 선택중인 방향 벡터값(고정되지 않은 각도) 
+	_float			m_fAngle;					///현재 각도
 
 private:
 	virtual void		Free();

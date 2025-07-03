@@ -34,6 +34,8 @@ private:
 	void		Show_Peek() {}
 	void		Get_CamInfo(_vec3* vEye, _vec3*& vAt) {}
 
+	HRESULT		Create_Block();
+
 private:
 	_float		m_fSpeed;
 	_bool		m_bFix;

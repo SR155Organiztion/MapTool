@@ -27,7 +27,7 @@ private:
 
 	void		Set_Greed(_vec3 _v);
 
-	HRESULT		Create_Block();
+
 
 private:
 	Engine::CCubeTex* m_pBufferCom;
