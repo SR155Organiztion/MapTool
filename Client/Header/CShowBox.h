@@ -25,11 +25,15 @@ private:
 	HRESULT		Add_Component();
 	HRESULT		Set_Metarial();
 
+	void		Set_Greed(_vec3 _v);
+
+	HRESULT		Create_Block();
+
 private:
 	Engine::CCubeTex* m_pBufferCom;
 	Engine::CTransform* m_pTransformCom;
 	Engine::CTexture* m_pTextureCom;
-
+	_bool		m_bClicked;
 public:
 	static CShowBox* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 

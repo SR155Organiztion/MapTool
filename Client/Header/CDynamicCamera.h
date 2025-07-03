@@ -31,13 +31,8 @@ private:
 	void		Mouse_Move();
 	void		Mouse_Fix();
 
-	void		Peeking_Objects();
 	void		Show_Peek() {}
-	
 	void		Get_CamInfo(_vec3* vEye, _vec3*& vAt) {}
-
-	HRESULT		Create_Block();
-	_vec3		Set_Greed(_vec3 _v);
 
 private:
 	_float		m_fSpeed;
