@@ -41,7 +41,7 @@ _int CShowBox::Update_GameObject(const _float& fTimeDelta)
 
 void CShowBox::LateUpdate_GameObject(const _float& fTimeDelta)
 {
-    _vec3 vPos = CCollisionMgr::GetInstance()->Get_CalPos();
+    _vec3 vPos = CCollisionMgr::GetInstance()->Get_ColPos();
     
     Set_Greed(vPos);
 

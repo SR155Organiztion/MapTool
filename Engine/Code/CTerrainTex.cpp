@@ -54,7 +54,7 @@ HRESULT CTerrainTex::Ready_Buffer(const _ulong& dwCntX,
 	m_dwTriCnt = (dwCntX - 1) * (dwCntZ - 1) * 2;
 	m_dwVtxCnt = dwCntX * dwCntZ;
 	m_vMin = { 0.f, 0.f, 0.f };
-	m_vMax = _vec3((m_dwCntX - 1) * m_dwVtxItv, 0.f, (m_dwCntZ - 1) * m_dwVtxItv);
+	m_vMax = _vec3(float((m_dwCntX - 1) * m_dwVtxItv), 0.f, float((m_dwCntZ - 1) * m_dwVtxItv));
 	m_dwVtxSize = sizeof(VTXTEX);
 	m_dwFVF = FVF_TEX;
 

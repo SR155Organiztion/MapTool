@@ -57,7 +57,7 @@ void CCalculator::Calculate_AABB(_vec3* _vMin, _vec3* _vMax)
     if (tMin < 0.0f)
         return; // Ray가 박스 뒤에서 시작
 
-    CCollisionMgr::GetInstance()->Set_CalPos((vRayPos + vRayDir * tMin));
+    CCollisionMgr::GetInstance()->Set_ColPos((vRayPos + vRayDir * tMin));
 }
 
 
