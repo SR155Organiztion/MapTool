@@ -29,6 +29,8 @@ HRESULT CTerrain::Ready_GameObject()
 
 _int CTerrain::Update_GameObject(const _float& fTimeDelta)
 {
+    m_pCalculatorCom->Calculate_AABB(m_pBufferCom->Get_Min(), m_pBufferCom->Get_Max());
+
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
@@ -38,10 +40,8 @@ _int CTerrain::Update_GameObject(const _float& fTimeDelta)
 
 void CTerrain::LateUpdate_GameObject(const _float& fTimeDelta)
 {
-
     Engine::CGameObject::LateUpdate_GameObject(fTimeDelta);
-
-   
+    
 }
 
 void CTerrain::Render_GameObject()
@@ -77,6 +77,11 @@ HRESULT CTerrain::Add_Component()
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_DYNAMIC].insert({ L"Com_Transform", pComponent });
+
+    pComponent = m_pCalculatorCom = dynamic_cast<Engine::CCalculator*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_Calculator"));
+    if (nullptr == pComponent)
+        return E_FAIL;
+    m_mapComponent[ID_DYNAMIC].insert({ L"Proto_Calculator", pComponent });
 
     return S_OK;
 }

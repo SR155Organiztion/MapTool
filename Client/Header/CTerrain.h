@@ -6,6 +6,7 @@ namespace Engine
 	class CTerrainTex;
 	class CTransform;
 	class CTexture;
+	class CCalculator;
 }
 
 class CTerrain : public Engine::CGameObject
@@ -29,6 +30,7 @@ private:
 	Engine::CTerrainTex* m_pBufferCom;
 	Engine::CTransform*	 m_pTransformCom;
 	Engine::CTexture*	 m_pTextureCom;
+	Engine::CCalculator* m_pCalculatorCom;
 
 public:
 	static CTerrain* Create(LPDIRECT3DDEVICE9 pGraphicDev);

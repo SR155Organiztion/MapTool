@@ -25,7 +25,6 @@ private:
 	_ulong				m_dwCntZ;
 	_ulong				m_dwVtxItv;
 
-	VTXTEX*		m_pVertex;
 	INDEX32*	m_pIndex;
 public:
 	virtual CComponent* Clone() override;

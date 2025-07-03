@@ -17,7 +17,7 @@ public:
 
 public:
 	virtual CComponent* Clone() override;
-	static CCubeTex* Create(LPDIRECT3DDEVICE9 pGraphicDev);
+	static  CCubeTex*	Create(LPDIRECT3DDEVICE9 pGraphicDev);
 
 private:
 	virtual void		Free();

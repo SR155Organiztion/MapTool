@@ -9,6 +9,7 @@
 #include "CDInputMgr.h"
 #include "CLightMgr.h"
 #include "CMapToolMgr.h"
+#include "CCollisionMgr.h"
 
 CMainApp::CMainApp() : m_pDeviceClass(nullptr), m_pGraphicDev(nullptr)
 , m_pManagementClass(CManagement::GetInstance())
@@ -40,6 +41,7 @@ HRESULT CMainApp::Ready_MainApp()
 int CMainApp::Update_MainApp(const float& fTimeDelta)
 {
 	CDInputMgr::GetInstance()->Update_InputDev();
+
 
 	m_pManagementClass->Update_Scene(fTimeDelta);
 
@@ -155,5 +157,5 @@ void CMainApp::Free()
 	CFrameMgr::GetInstance()->DestroyInstance();
 	m_pManagementClass->DestroyInstance();
 	CGraphicDev::GetInstance()->DestroyInstance();
-
+	CCollisionMgr::GetInstance()->DestroyInstance();
 }

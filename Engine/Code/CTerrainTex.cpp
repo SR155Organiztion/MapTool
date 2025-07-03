@@ -15,7 +15,6 @@ CTerrainTex::CTerrainTex(const CTerrainTex& rhs)
 	m_dwCntX = rhs.m_dwCntX;
 	m_dwCntZ = rhs.m_dwCntZ;
 	m_dwVtxItv = rhs.m_dwVtxItv;
-	m_pVertex = rhs.m_pVertex;
 	m_pIndex = rhs.m_pIndex;
 }
 
@@ -54,6 +53,8 @@ HRESULT CTerrainTex::Ready_Buffer(const _ulong& dwCntX,
 	m_dwVtxItv = dwVtxItv;
 	m_dwTriCnt = (dwCntX - 1) * (dwCntZ - 1) * 2;
 	m_dwVtxCnt = dwCntX * dwCntZ;
+	m_vMin = { 0.f, 0.f, 0.f };
+	m_vMax = _vec3((m_dwCntX - 1) * m_dwVtxItv, 0.f, (m_dwCntZ - 1) * m_dwVtxItv);
 	m_dwVtxSize = sizeof(VTXTEX);
 	m_dwFVF = FVF_TEX;
 
@@ -144,6 +145,7 @@ HRESULT CTerrainTex::Ready_Buffer(const _ulong& dwCntX,
 	m_pVB->Unlock();
 	m_pIB->Unlock();
 
+	
     return S_OK;
 }
 
