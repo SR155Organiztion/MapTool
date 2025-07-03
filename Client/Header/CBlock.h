@@ -6,6 +6,7 @@ namespace Engine
 	class CCubeTex;
 	class CTransform;
 	class CTexture;
+	class CCalculator;
 }
 
 class CBlock : public Engine::CGameObject
@@ -29,7 +30,7 @@ private:
 	Engine::CCubeTex* m_pBufferCom;
 	Engine::CTransform* m_pTransformCom;
 	Engine::CTexture* m_pTextureCom;
-
+	Engine::CCalculator* m_pCalculatorCom;
 public:
 	static CBlock* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 

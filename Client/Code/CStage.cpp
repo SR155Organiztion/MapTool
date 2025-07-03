@@ -7,6 +7,7 @@
 #include "CSkyBox.h"
 #include "CLightMgr.h"
 #include "CBlock.h"
+#include "CCollisionMgr.h"
 
 CStage::CStage(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CScene(pGraphicDev)
@@ -100,11 +101,11 @@ HRESULT CStage::Ready_GameObject_Layer(const _tchar* pLayerTag)
 
     Engine::CGameObject* pGameObject = nullptr;
 
-    //pGameObject = CShowBox::Create(m_pGraphicDev);
-    //if (nullptr == pGameObject)
-    //    return E_FAIL;
-    //if (FAILED(pLayer->Add_GameObject(L"ShowBox", pGameObject)))
-    //    return E_FAIL;
+    pGameObject = CShowBox::Create(m_pGraphicDev);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"ShowBox", pGameObject)))
+        return E_FAIL;
 
     m_mapLayer.insert({ pLayerTag, pLayer });
 
@@ -126,6 +127,8 @@ HRESULT CStage::Ready_UI_Layer(const _tchar* pLayerTag)
 
 _int CStage::Update_Scene(const _float& fTimeDelta)
 {
+    CCollisionMgr::GetInstance()->Compute_Ray(m_pGraphicDev, g_hWnd);
+
     return Engine::CScene::Update_Scene(fTimeDelta);
 }
 

@@ -15,6 +15,9 @@ public:
 	virtual HRESULT		Ready_Buffer();
 	virtual void		Render_Buffer();
 
+	virtual _vec3* Get_Max() { return &m_vMax; }
+	virtual _vec3* Get_Min() { return &m_vMin; }
+
 protected:
 	LPDIRECT3DVERTEXBUFFER9		m_pVB;
 	LPDIRECT3DINDEXBUFFER9		m_pIB;
@@ -26,6 +29,10 @@ protected:
 
 	_ulong						m_dwIdxSize;
 	D3DFORMAT					m_IdxFmt;
+
+	VTXTEX*				m_pVertex;
+	_vec3				m_vMax;
+	_vec3				m_vMin;
 
 public:
 	virtual void Free();

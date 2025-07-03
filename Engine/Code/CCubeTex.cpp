@@ -22,6 +22,8 @@ HRESULT CCubeTex::Ready_Buffer()
 {
 	m_dwTriCnt = 12;
 	m_dwVtxCnt = 8;
+	m_vMax = { 0.5f, 0.5f, 0.5f };
+	m_vMin = { -0.5f, -0.5f, -0.5f };
 	m_dwVtxSize = sizeof(VTXCUBE);
 	m_dwFVF = FVF_CUBE;
 

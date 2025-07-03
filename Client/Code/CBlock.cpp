@@ -28,8 +28,10 @@ HRESULT CBlock::Ready_GameObject()
 
 _int CBlock::Update_GameObject(const _float& fTimeDelta)
 {
-    _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
+    m_pCalculatorCom->Calculate_AABB(m_pBufferCom->Get_Min(), m_pBufferCom->Get_Max());
 
+    _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
+   
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
 
     return iExit;
@@ -81,6 +83,10 @@ HRESULT CBlock::Add_Component()
         return E_FAIL;
     m_mapComponent[ID_DYNAMIC].insert({ L"Com_Transform", pComponent });
 
+    pComponent = m_pCalculatorCom = dynamic_cast<Engine::CCalculator*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_Calculator"));
+    if (nullptr == pComponent)
+        return E_FAIL;
+    m_mapComponent[ID_DYNAMIC].insert({ L"Proto_Calculator", pComponent });
 
     return S_OK;
 }
