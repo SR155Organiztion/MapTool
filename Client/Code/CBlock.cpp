@@ -29,7 +29,15 @@ HRESULT CBlock::Ready_GameObject()
 
 _int CBlock::Update_GameObject(const _float& fTimeDelta)
 {
-    m_pCalculatorCom->Calculate_AABB(m_pBufferCom->Get_Min(), m_pBufferCom->Get_Max());
+    _vec3 vPos;
+    m_pTransformCom->Get_Info(INFO_POS, &vPos);
+    _vec3 min = *(m_pBufferCom->Get_Min());
+    min = { min.x + vPos.x, min.y + vPos.y ,min.z + vPos.z };
+
+    _vec3 max = *(m_pBufferCom->Get_Max());
+    max = { max.x + vPos.x, max.y + vPos.y ,max.z + vPos.z };
+
+    m_pCalculatorCom->Calculate_AABB(&min, &max);
 
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
    

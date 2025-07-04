@@ -10,6 +10,7 @@
 #include "CCollisionMgr.h"
 #include "CFontMgr.h"
 #include "CMapToolMgr.h"
+#include <iomanip> 
 
 CStage::CStage(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CScene(pGraphicDev)
@@ -144,6 +145,28 @@ void CStage::Render_Scene()
     //임시 방향확인용
     _vec2 vPos = { 10.f, 10.f };
     CFontMgr::GetInstance()->Render_Font(L"Font_Default", CMapToolMgr::GetInstance()->Imsi_Get_Dir(), &vPos, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
+
+    //
+    _vec2 vPos2 = { 10.f, 30.f };
+    _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
+
+    _tchar dwColPos[64];
+    _stprintf_s(dwColPos, 64, _T("X: %.2f | Y: %.2f | Z: %.2f"),
+        colpos.x, colpos.y, colpos.z);
+
+    CFontMgr::GetInstance()->Render_Font(L"Font_Default", dwColPos, &vPos2, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
+
+    //
+    _vec2 vPos3 = { 10.f, 50.f };
+    _vec3 rayPos, rayDir;
+    CCollisionMgr::GetInstance()->Get_Ray(&rayPos, &rayDir);
+
+    _tchar szDebug[128];
+    _stprintf_s(szDebug, L"RayPos(%.2f %.2f %.2f), Dir(%.2f %.2f %.2f)",
+        rayPos.x, rayPos.y, rayPos.z, rayDir.x, rayDir.y, rayDir.z);
+
+    CFontMgr::GetInstance()->Render_Font(L"Font_Default", szDebug, &vPos3, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
+
 }
 
 
@@ -163,6 +186,5 @@ CStage* CStage::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 
 void CStage::Free()
 {
-
     Engine::CScene::Free();
 }

@@ -32,7 +32,7 @@ void CCollisionMgr::Compute_Ray(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
 
 	vMousePos.x = ptMouse.x / (ViewPort.Width * 0.5f) - 1.f;
 	vMousePos.y = ptMouse.y / -(ViewPort.Height * 0.5f) + 1.f;
-	vMousePos.z = 0.f;
+	vMousePos.z = 1.f;
 
 	// 투영 -> 뷰 스페이스
 	D3DXMATRIX	matProj;

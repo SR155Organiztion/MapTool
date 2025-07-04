@@ -35,18 +35,22 @@ private:
 	void		Get_CamInfo(_vec3* vEye, _vec3*& vAt) {}
 
 	HRESULT		Create_Block();
+	void		Delete_Block();
 
 private:
 	_float		m_fSpeed;
 	_bool		m_bFix;
 	_bool		m_bCheck;
 	Engine::CCalculator* m_pCalculatorCom;
-	_bool		m_bClicked;
+	_bool		m_bClickedLB;
+	_bool		m_bClickedRB;
 	_bool		m_bPressedQ;
 	_bool		m_bPressedE;
 	_bool		m_bPressed1;
 	_bool		m_bPressed3;
 	_bool		m_bShowBox;
+
+	
 
 public:
 	static CDynamicCamera* Create(LPDIRECT3DDEVICE9 pGraphicDev,

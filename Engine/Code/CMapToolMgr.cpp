@@ -55,7 +55,7 @@ HRESULT CMapToolMgr::Save_Json()
 {
     MSG_BOX("저장호출");
     //테스트용
-    //Dummy_Data();
+    //Dummy_Data();     
     m_mapJson.clear();
     //////////////////////////////////////
     //데이터 종합

@@ -36,6 +36,11 @@ HRESULT CLayer::Add_GameObject(const _tchar* pObjTag, CGameObject* pGameObject)
 	return S_OK;
 }
 
+map<const _tchar*, CGameObject*>* CLayer::Get_ObjectMap()
+{
+	return &m_mapObject;
+}
+
 HRESULT CLayer::Ready_Layer()
 {
 	return S_OK;
