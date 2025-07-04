@@ -42,6 +42,8 @@ private:
 	_bool		m_bCheck;
 	Engine::CCalculator* m_pCalculatorCom;
 	_bool		m_bClicked;
+	_bool		m_bPressedQ;
+	_bool		m_bPressedE;
 	_bool		m_bShowBox;
 
 public:

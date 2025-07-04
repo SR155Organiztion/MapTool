@@ -11,7 +11,7 @@
 #include "CBlock.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
-	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false), m_bClicked(false)
+	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false), m_bClicked(false), m_bPressedQ(false), m_bPressedE(false)
 {
 }
 
@@ -48,7 +48,7 @@ _int CDynamicCamera::Update_GameObject(const _float& fTimeDelta)
 {
 	_int iExit = Engine::CCamera::Update_GameObject(fTimeDelta);
 
-	Key_Input(fTimeDelta);
+	
 
 	return iExit;
 }
@@ -56,6 +56,8 @@ _int CDynamicCamera::Update_GameObject(const _float& fTimeDelta)
 void CDynamicCamera::LateUpdate_GameObject(const _float& fTimeDelta)
 {
 	Engine::CCamera::LateUpdate_GameObject(fTimeDelta);
+
+	Key_Input(fTimeDelta);
 
 	if (false == m_bFix)
 	{
@@ -161,14 +163,37 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	else {
 		m_bClicked = false;
 	}
-
+	//우클릭
 	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_RB) & 0x80) {
 		CMapToolMgr::GetInstance()->Save_Json();
 	}
 
+	//블럭 방향회전
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_Q) & 0x80)
+	{
+		if (!m_bPressedQ) {
+			CMapToolMgr::GetInstance()->NextRotate();
+			m_bPressedQ = true;
+		}
+	}
+	else {
+		m_bPressedQ = false;
+	}
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_E) & 0x80)
+	{
+		if (!m_bPressedE) {
+			CMapToolMgr::GetInstance()->PrevRotate();
+			m_bPressedE = true;
+		}
+	}
+	else {
+		m_bPressedE = false;
+	}
+
+
+
 	if (false == m_bFix)
 		return;
-
 }
 
 void CDynamicCamera::Mouse_Move()
@@ -240,6 +265,9 @@ HRESULT CDynamicCamera::Create_Block()
 	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowBox", L"Com_Transform"))->Get_Info(INFO_POS, &vTmp);
 	pObjectTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
 
+	_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
+	pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+
 	_tchar szTag[64] = {};
 
 	while (true) {
@@ -256,7 +284,7 @@ HRESULT CDynamicCamera::Create_Block()
 		}
 	}
 
-	CMapToolMgr::GetInstance()->Plant_Block("NORMAL", vTmp, "DOWN");
+	CMapToolMgr::GetInstance()->Plant_Block("NORMAL", vTmp);
 	s_BlockIndex++;
 	return S_OK;
 }

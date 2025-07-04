@@ -84,7 +84,7 @@ private:
 	virtual ~CMapToolMgr();
 
 public:
-	void	Plant_Block(string _sType, _vec3 _vPos, string _sDir);		///설치한 블록의 정보를 벡터 리스트에 넣음
+	void	Plant_Block(string _sType, _vec3 _vPos);		///설치한 블록의 정보를 벡터 리스트에 넣음
 	void	Plant_Tile(string _sType, _vec3 _vPos, string _sDir);		///설치한 타일의 정보를 벡터 리스트에 넣음
 	void	Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
 	void	Plant_Camera(_vec3 _vEye, _vec3 _vAt);						///현재 바라보고 있는 곳의 Eye와 at을 저장
@@ -98,9 +98,14 @@ public:
 public:
 	S_STAGE Get_Data(string s);
 
+	void NextRotate();
+	void PrevRotate();
+	_vec3 Get_DirLook();
+	
 private:
 	void	Key_Input();				///키입력
 	void	Dummy_Data();				///테스트용
+	string	Dir_To_String();
 
 private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터
@@ -116,7 +121,7 @@ private:
 	vector<string>	m_sNameVec;					///전체 스테이지 이름
 	_uint			m_iSelectName;				///내가 선택중인 스테이지
 	string			m_sName;					///저장하거나 불러올 이름
-	DIRECTIONID		m_eDir;						///현재 선택중인 방향 값	(고정된 6 방향)
+	_uint			m_iDir;						///현재 선택중인 방향 값	(고정된 6 방향)
 	_vec3			m_vecDir;					///현재 선택중인 방향 벡터값(고정되지 않은 각도) 
 	_float			m_fAngle;					///현재 각도
 

@@ -14,7 +14,7 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Recipe, Block, Tiles, E
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
 CMapToolMgr::CMapToolMgr()
-    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_eDir(PX)
+    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(NX)
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
@@ -27,15 +27,15 @@ CMapToolMgr::~CMapToolMgr()
 {
 }
 
-void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos, string _sDir)
+void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos)
 {
-    S_BLOCK tBlock = { _sType, _vPos, _sDir };
+    S_BLOCK tBlock = { _sType, _vPos, Dir_To_String() };
     m_tBlockVec.push_back(tBlock);
 }
 
 void CMapToolMgr::Plant_Tile(string _sType, _vec3 _vPos, string _sDir)
 {
-    S_TILE tTile = { _sType, _vPos, _sDir };
+    S_TILE tTile = { _sType, _vPos, Dir_To_String() };
     m_tTileVec.push_back(tTile);
 }
 
@@ -50,8 +50,6 @@ void CMapToolMgr::Plant_Camera(_vec3 _vEye, _vec3 _vAt)
 void CMapToolMgr::Plant_Player(_int _iPlayer, _vec3 _vPos)
 {
 }
-
-
 
 HRESULT CMapToolMgr::Save_Json()
 {
@@ -159,6 +157,41 @@ S_STAGE CMapToolMgr::Get_Data(string s)
     return S_STAGE{};
 }
 
+void CMapToolMgr::NextRotate()
+{
+    ++m_iDir;
+    if (m_iDir >= static_cast<_uint>(DIR_END)) {
+        m_iDir = 0;
+    }
+}
+
+void CMapToolMgr::PrevRotate()
+{
+    if (m_iDir == 0) {
+        m_iDir = static_cast<_uint>(DIR_END) - 1;
+    }
+    else {
+        --m_iDir;
+    }
+}
+
+_vec3 CMapToolMgr::Get_DirLook()
+{
+    switch (m_iDir)
+    {
+    case Engine::PX:
+        return _vec3(0.f, 0.f, 0.f); 
+    case Engine::NX:
+        return _vec3(0.f, D3DXToRadian(90.f), 0.f); 
+    case Engine::PZ:
+        return _vec3(0.f, D3DXToRadian(180.f), 0.f);
+    case Engine::NZ:
+        return _vec3(0.f, D3DXToRadian(270.f), 0.f);
+    default:
+        return _vec3(0.f, 0.f, 0.f);
+    }
+}
+
 void CMapToolMgr::Key_Input()
 {
 }
@@ -183,6 +216,23 @@ void CMapToolMgr::Dummy_Data()
     m_sRecipeVec.push_back("apple");
     m_tCam = { v, v };
     m_tPlayer = { v , v };
+}
+
+string CMapToolMgr::Dir_To_String()
+{
+    switch (m_iDir)
+    {
+    case Engine::PX:
+        return "PX";
+    case Engine::NX:
+        return "NX";
+    case Engine::PZ:
+        return "PZ";
+    case Engine::NZ:
+        return "NZ";
+    default:
+        return "???";
+    }
 }
 
 void CMapToolMgr::Free()

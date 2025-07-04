@@ -36,6 +36,9 @@ _int CShowBox::Update_GameObject(const _float& fTimeDelta)
 
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
 
+    _vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
+    m_pTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+
     return iExit;
 }
 
@@ -61,7 +64,6 @@ void CShowBox::Render_GameObject()
 
     m_pTextureCom->Set_Texture(0);
 
-  
     if (FAILED(Set_Metarial()))
         return;
 
