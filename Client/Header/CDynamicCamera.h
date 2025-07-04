@@ -44,6 +44,8 @@ private:
 	_bool		m_bClicked;
 	_bool		m_bPressedQ;
 	_bool		m_bPressedE;
+	_bool		m_bPressed1;
+	_bool		m_bPressed3;
 	_bool		m_bShowBox;
 
 public:

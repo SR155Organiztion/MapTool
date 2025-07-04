@@ -6,8 +6,8 @@ namespace Engine
 #define	WINCX		800
 #define	WINCY		600
 
-#define	VTXCNTX		129
-#define	VTXCNTZ		129
+#define	VTXCNTX		15
+#define	VTXCNTZ		9
 
 #define VTXITV		1
 

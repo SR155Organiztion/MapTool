@@ -172,7 +172,7 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_Q) & 0x80)
 	{
 		if (!m_bPressedQ) {
-			CMapToolMgr::GetInstance()->NextRotate();
+			CMapToolMgr::GetInstance()->PrevRotate();
 			m_bPressedQ = true;
 		}
 	}
@@ -182,14 +182,34 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_E) & 0x80)
 	{
 		if (!m_bPressedE) {
-			CMapToolMgr::GetInstance()->PrevRotate();
+			CMapToolMgr::GetInstance()->NextRotate();
 			m_bPressedE = true;
 		}
 	}
 	else {
 		m_bPressedE = false;
 	}
-
+	///블럭 변경
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_1) & 0x80)
+	{
+		if (!m_bPressed1) {
+			CMapToolMgr::GetInstance()->PrevStation();
+			m_bPressed1 = true;
+		}
+	}
+	else {
+		m_bPressed1 = false;
+	}
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_3) & 0x80)
+	{
+		if (!m_bPressed3) {
+			CMapToolMgr::GetInstance()->NextStation();
+			m_bPressed3 = true;
+		}
+	}
+	else {
+		m_bPressed3 = false;
+	}
 
 
 	if (false == m_bFix)
@@ -267,6 +287,8 @@ HRESULT CDynamicCamera::Create_Block()
 
 	_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
 	pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+	
+	dynamic_cast<CBlock*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowStation()));
 
 	_tchar szTag[64] = {};
 
@@ -284,7 +306,7 @@ HRESULT CDynamicCamera::Create_Block()
 		}
 	}
 
-	CMapToolMgr::GetInstance()->Plant_Block("NORMAL", vTmp);
+	CMapToolMgr::GetInstance()->Plant_Block(vTmp);
 	s_BlockIndex++;
 	return S_OK;
 }

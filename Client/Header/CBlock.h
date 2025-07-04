@@ -22,15 +22,17 @@ public:
 	virtual			void		LateUpdate_GameObject(const _float& fTimeDelta);
 	virtual			void		Render_GameObject();
 
+	void						Set_TextureNum(_uint _eID);
 private:
 	HRESULT		Add_Component();
 	HRESULT		Set_Metarial();
 
 private:
-	Engine::CCubeTex* m_pBufferCom;
-	Engine::CTransform* m_pTransformCom;
-	Engine::CTexture* m_pTextureCom;
-	Engine::CCalculator* m_pCalculatorCom;
+	Engine::CCubeTex*		m_pBufferCom;
+	Engine::CTransform*		m_pTransformCom;
+	Engine::CTexture*		m_pTextureCom;
+	Engine::CCalculator*	m_pCalculatorCom;
+	_uint					m_iTextureNum;
 public:
 	static CBlock* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 

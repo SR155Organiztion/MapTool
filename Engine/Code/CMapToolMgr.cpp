@@ -27,9 +27,9 @@ CMapToolMgr::~CMapToolMgr()
 {
 }
 
-void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos)
+void CMapToolMgr::Plant_Block(_vec3 _vPos)
 {
-    S_BLOCK tBlock = { _sType, _vPos, Dir_To_String() };
+    S_BLOCK tBlock = { Block_To_String() , _vPos, Dir_To_String() };
     m_tBlockVec.push_back(tBlock);
 }
 
@@ -160,18 +160,16 @@ S_STAGE CMapToolMgr::Get_Data(string s)
 void CMapToolMgr::NextRotate()
 {
     ++m_iDir;
-    if (m_iDir >= static_cast<_uint>(DIR_END)) {
+    if (m_iDir == static_cast<_uint>(DIRECTIONID::DIR_END)) {
         m_iDir = 0;
     }
 }
 
 void CMapToolMgr::PrevRotate()
 {
-    if (m_iDir == 0) {
-        m_iDir = static_cast<_uint>(DIR_END) - 1;
-    }
-    else {
-        --m_iDir;
+    --m_iDir;
+    if (m_iDir < 0) {
+        m_iDir = static_cast<_uint>(DIRECTIONID::DIR_END) - 1;
     }
 }
 
@@ -192,8 +190,42 @@ _vec3 CMapToolMgr::Get_DirLook()
     }
 }
 
-void CMapToolMgr::Key_Input()
+void CMapToolMgr::NextStation()
 {
+    ++m_iStation;
+    if (m_iStation >= static_cast<_uint>(STATIONID::S_END)) {
+        m_iStation = 0;
+    }
+}
+
+void CMapToolMgr::PrevStation()
+{
+    --m_iStation;
+    if (m_iStation < 0) {
+        m_iStation = static_cast<_uint>(STATIONID::S_END) - 1;
+    }
+}
+
+_uint CMapToolMgr::Get_NowStation()
+{
+    return m_iStation;
+}
+
+const _tchar* CMapToolMgr::Imsi_Get_Dir()
+{
+    switch (m_iDir)
+    {
+    case Engine::DIRECTIONID::PX:
+        return L"PX";
+    case Engine::DIRECTIONID::NX:
+        return L"NX";
+    case Engine::DIRECTIONID::PZ:
+        return L"PZ";
+    case Engine::DIRECTIONID::NZ:
+        return L"NZ";
+    default:
+        return L"???";
+    }
 }
 
 void CMapToolMgr::Dummy_Data()
@@ -222,17 +254,61 @@ string CMapToolMgr::Dir_To_String()
 {
     switch (m_iDir)
     {
-    case Engine::PX:
+    case Engine::DIRECTIONID::PX:
         return "PX";
-    case Engine::NX:
+    case Engine::DIRECTIONID::NX:
         return "NX";
-    case Engine::PZ:
+    case Engine::DIRECTIONID::PZ:
         return "PZ";
-    case Engine::NZ:
+    case Engine::DIRECTIONID::NZ:
         return "NZ";
     default:
         return "???";
     }
+}
+
+string CMapToolMgr::Block_To_String()
+{
+    switch (m_iStation)
+    {
+    case Engine::S_INV:
+        return "InvWall";
+        break;
+    case Engine::S_EMPTY:
+        return "Empty";
+        break;
+    case Engine::S_CREATE:
+        return "Create_";
+        break;
+    case Engine::S_CHOP:
+        return "Chop";
+        break;
+    case Engine::S_GAS:
+        return "Gas";
+        break;
+    case Engine::S_PLATE:
+        return "Plate";
+        break;
+    case Engine::S_SINK_W:
+        return "Sink_Wash";
+        break;
+    case Engine::S_SINK_P:
+        return "Sink_Plate";
+        break;
+    case Engine::S_TRASH:
+        return "Trash";
+        break;
+    case Engine::S_SERVING:
+        return "Serving";
+        break;
+    case Engine::S_END:
+        return "???";
+        break;
+    default:
+        break;
+    }
+
+    return "???";
 }
 
 void CMapToolMgr::Free()

@@ -19,5 +19,9 @@ namespace Engine
 	enum MOUSEMOVESTATE { DIMS_X, DIMS_Y, DIMS_Z, DIMS_END };
 
 	enum DIRECTIONID { PX, PZ, NX, NZ , DIR_END };
+	enum STATIONID { S_INV, S_EMPTY, S_CREATE, S_CHOP, S_GAS, S_PLATE, S_SINK_W, S_SINK_P, S_TRASH, S_SERVING, S_END };
+	//블럭     	    투명벽    빈칸   음식상자   도마    가스    접시   물씽크대  접시싱크  쓰레기통  제출
+	enum CREATEID { C_SEAWEED, C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_RICE, C_PASTA, C_END};
+	//음식		  
 }
 #endif // Engine_Enum_h__
