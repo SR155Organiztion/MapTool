@@ -14,7 +14,7 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Recipe, Block, Tiles, E
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
 CMapToolMgr::CMapToolMgr()
-    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0)
+    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(NX)
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
@@ -27,15 +27,15 @@ CMapToolMgr::~CMapToolMgr()
 {
 }
 
-void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos, string _sDir)
+void CMapToolMgr::Plant_Block(_vec3 _vPos)
 {
-    S_BLOCK tBlock = { _sType, _vPos, _sDir };
+    S_BLOCK tBlock = { Block_To_String() , _vPos, Dir_To_String() };
     m_tBlockVec.push_back(tBlock);
 }
 
 void CMapToolMgr::Plant_Tile(string _sType, _vec3 _vPos, string _sDir)
 {
-    S_TILE tTile = { _sType, _vPos, _sDir };
+    S_TILE tTile = { _sType, _vPos, Dir_To_String() };
     m_tTileVec.push_back(tTile);
 }
 
@@ -50,8 +50,6 @@ void CMapToolMgr::Plant_Camera(_vec3 _vEye, _vec3 _vAt)
 void CMapToolMgr::Plant_Player(_int _iPlayer, _vec3 _vPos)
 {
 }
-
-
 
 HRESULT CMapToolMgr::Save_Json()
 {
@@ -159,8 +157,75 @@ S_STAGE CMapToolMgr::Get_Data(string s)
     return S_STAGE{};
 }
 
-void CMapToolMgr::Key_Input()
+void CMapToolMgr::NextRotate()
 {
+    ++m_iDir;
+    if (m_iDir == static_cast<_uint>(DIRECTIONID::DIR_END)) {
+        m_iDir = 0;
+    }
+}
+
+void CMapToolMgr::PrevRotate()
+{
+    --m_iDir;
+    if (m_iDir < 0) {
+        m_iDir = static_cast<_uint>(DIRECTIONID::DIR_END) - 1;
+    }
+}
+
+_vec3 CMapToolMgr::Get_DirLook()
+{
+    switch (m_iDir)
+    {
+    case Engine::PX:
+        return _vec3(0.f, 0.f, 0.f); 
+    case Engine::NX:
+        return _vec3(0.f, D3DXToRadian(90.f), 0.f); 
+    case Engine::PZ:
+        return _vec3(0.f, D3DXToRadian(180.f), 0.f);
+    case Engine::NZ:
+        return _vec3(0.f, D3DXToRadian(270.f), 0.f);
+    default:
+        return _vec3(0.f, 0.f, 0.f);
+    }
+}
+
+void CMapToolMgr::NextStation()
+{
+    ++m_iStation;
+    if (m_iStation >= static_cast<_uint>(STATIONID::S_END)) {
+        m_iStation = 0;
+    }
+}
+
+void CMapToolMgr::PrevStation()
+{
+    --m_iStation;
+    if (m_iStation < 0) {
+        m_iStation = static_cast<_uint>(STATIONID::S_END) - 1;
+    }
+}
+
+_uint CMapToolMgr::Get_NowStation()
+{
+    return m_iStation;
+}
+
+const _tchar* CMapToolMgr::Imsi_Get_Dir()
+{
+    switch (m_iDir)
+    {
+    case Engine::DIRECTIONID::PX:
+        return L"PX";
+    case Engine::DIRECTIONID::NX:
+        return L"NX";
+    case Engine::DIRECTIONID::PZ:
+        return L"PZ";
+    case Engine::DIRECTIONID::NZ:
+        return L"NZ";
+    default:
+        return L"???";
+    }
 }
 
 void CMapToolMgr::Dummy_Data()
@@ -183,6 +248,67 @@ void CMapToolMgr::Dummy_Data()
     m_sRecipeVec.push_back("apple");
     m_tCam = { v, v };
     m_tPlayer = { v , v };
+}
+
+string CMapToolMgr::Dir_To_String()
+{
+    switch (m_iDir)
+    {
+    case Engine::DIRECTIONID::PX:
+        return "PX";
+    case Engine::DIRECTIONID::NX:
+        return "NX";
+    case Engine::DIRECTIONID::PZ:
+        return "PZ";
+    case Engine::DIRECTIONID::NZ:
+        return "NZ";
+    default:
+        return "???";
+    }
+}
+
+string CMapToolMgr::Block_To_String()
+{
+    switch (m_iStation)
+    {
+    case Engine::S_INV:
+        return "InvWall";
+        break;
+    case Engine::S_EMPTY:
+        return "Empty";
+        break;
+    case Engine::S_CREATE:
+        return "Create_";
+        break;
+    case Engine::S_CHOP:
+        return "Chop";
+        break;
+    case Engine::S_GAS:
+        return "Gas";
+        break;
+    case Engine::S_PLATE:
+        return "Plate";
+        break;
+    case Engine::S_SINK_W:
+        return "Sink_Wash";
+        break;
+    case Engine::S_SINK_P:
+        return "Sink_Plate";
+        break;
+    case Engine::S_TRASH:
+        return "Trash";
+        break;
+    case Engine::S_SERVING:
+        return "Serving";
+        break;
+    case Engine::S_END:
+        return "???";
+        break;
+    default:
+        break;
+    }
+
+    return "???";
 }
 
 void CMapToolMgr::Free()

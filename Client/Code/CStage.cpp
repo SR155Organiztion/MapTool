@@ -8,6 +8,8 @@
 #include "CLightMgr.h"
 #include "CBlock.h"
 #include "CCollisionMgr.h"
+#include "CFontMgr.h"
+#include "CMapToolMgr.h"
 
 CStage::CStage(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CScene(pGraphicDev)
@@ -139,6 +141,9 @@ void CStage::LateUpdate_Scene(const _float& fTimeDelta)
 
 void CStage::Render_Scene()
 {
+    //임시 방향확인용
+    _vec2 vPos = { 10.f, 10.f };
+    CFontMgr::GetInstance()->Render_Font(L"Font_Default", CMapToolMgr::GetInstance()->Imsi_Get_Dir(), &vPos, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
 }
 
 

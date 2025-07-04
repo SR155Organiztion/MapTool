@@ -8,10 +8,10 @@
 #include "CCalculator.h"
 #include "CProtoMgr.h"
 #include "CMapToolMgr.h"
-
+#include "CBlock.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
-	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false), m_bClicked(false)
+	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false), m_bClicked(false), m_bPressedQ(false), m_bPressedE(false)
 {
 }
 
@@ -48,7 +48,7 @@ _int CDynamicCamera::Update_GameObject(const _float& fTimeDelta)
 {
 	_int iExit = Engine::CCamera::Update_GameObject(fTimeDelta);
 
-	Key_Input(fTimeDelta);
+	
 
 	return iExit;
 }
@@ -56,6 +56,8 @@ _int CDynamicCamera::Update_GameObject(const _float& fTimeDelta)
 void CDynamicCamera::LateUpdate_GameObject(const _float& fTimeDelta)
 {
 	Engine::CCamera::LateUpdate_GameObject(fTimeDelta);
+
+	Key_Input(fTimeDelta);
 
 	if (false == m_bFix)
 	{
@@ -154,20 +156,64 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	//설치
 	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_LB) & 0x80) {
 		if (!m_bClicked) {
+			Create_Block();
 			m_bClicked = true;
 		}
 	}
 	else {
 		m_bClicked = false;
 	}
-
+	//우클릭
 	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_RB) & 0x80) {
 		CMapToolMgr::GetInstance()->Save_Json();
 	}
 
+	//블럭 방향회전
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_Q) & 0x80)
+	{
+		if (!m_bPressedQ) {
+			CMapToolMgr::GetInstance()->PrevRotate();
+			m_bPressedQ = true;
+		}
+	}
+	else {
+		m_bPressedQ = false;
+	}
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_E) & 0x80)
+	{
+		if (!m_bPressedE) {
+			CMapToolMgr::GetInstance()->NextRotate();
+			m_bPressedE = true;
+		}
+	}
+	else {
+		m_bPressedE = false;
+	}
+	///블럭 변경
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_1) & 0x80)
+	{
+		if (!m_bPressed1) {
+			CMapToolMgr::GetInstance()->PrevStation();
+			m_bPressed1 = true;
+		}
+	}
+	else {
+		m_bPressed1 = false;
+	}
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_3) & 0x80)
+	{
+		if (!m_bPressed3) {
+			CMapToolMgr::GetInstance()->NextStation();
+			m_bPressed3 = true;
+		}
+	}
+	else {
+		m_bPressed3 = false;
+	}
+
+
 	if (false == m_bFix)
 		return;
-
 }
 
 void CDynamicCamera::Mouse_Move()
@@ -215,6 +261,54 @@ void CDynamicCamera::Mouse_Fix()
 	SetCursorPos(ptMouse.x, ptMouse.y);
 
 
+}
+
+HRESULT CDynamicCamera::Create_Block()
+{
+	static int s_BlockIndex = 0;
+
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"Block_Layer");
+
+	if (nullptr == pLayer)
+		return E_FAIL;
+
+	Engine::CGameObject* pGameObject = nullptr;
+
+	pGameObject = CBlock::Create(m_pGraphicDev);
+
+	if (nullptr == pGameObject)
+		return E_FAIL;
+
+	CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+	_vec3 vTmp;
+	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowBox", L"Com_Transform"))->Get_Info(INFO_POS, &vTmp);
+	pObjectTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
+
+	_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
+	pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+	
+	dynamic_cast<CBlock*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowStation()));
+
+	_tchar szTag[64] = {};
+
+	while (true) {
+		_stprintf_s(szTag, 64, L"Block_%d", s_BlockIndex);
+		_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
+		lstrcpy(pTag, szTag);
+
+		if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+			break; // 성공 시 탈출
+		}
+		else {
+			Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
+			++s_BlockIndex;
+		}
+	}
+
+	CMapToolMgr::GetInstance()->Plant_Block(vTmp);
+	s_BlockIndex++;
+	return S_OK;
 }
 
 CDynamicCamera* CDynamicCamera::Create(LPDIRECT3DDEVICE9 pGraphicDev, const _vec3* pEye, const _vec3* pAt, const _vec3* pUp, const _float& fFov, const _float& fAspect, const _float& fNear, const _float& fFar)

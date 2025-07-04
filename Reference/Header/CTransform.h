@@ -40,6 +40,10 @@ public:
 		m_vInfo[INFO_POS] = { _fX, _fY, _fZ };
 	}
 
+	void		Set_Look(_float _fX, _float _fY, _float _fZ)
+	{
+		m_vAngle = { _fX, _fY, _fZ };
+	}
 
 public:
 	HRESULT			Ready_Transform();
