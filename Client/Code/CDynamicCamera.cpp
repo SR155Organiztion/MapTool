@@ -222,7 +222,10 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 		m_bPressed3 = false;
 	}
 
-	
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_P) & 0x80)
+	{
+		CMapToolMgr::GetInstance()->Save_Json();
+	}
 
 	if (false == m_bFix)
 		return;
@@ -341,7 +344,7 @@ void CDynamicCamera::Delete_Block()
 		if (vBlockPos == vColPos) {
 			it->second->Release();
 			it = objectmap->erase(it);
-			//CMapToolMgr::GetInstance()->Break_Block(vColPos);
+			CMapToolMgr::GetInstance()->Break_Block(vColPos);
 		}
 		else {
 			it++;
