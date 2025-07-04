@@ -9,9 +9,10 @@
 #include "CProtoMgr.h"
 #include "CMapToolMgr.h"
 #include "CBlock.h"
+#include "CCollisionMgr.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
-	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false), m_bClicked(false), m_bPressedQ(false), m_bPressedE(false)
+	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false), m_bClickedLB(false), m_bClickedRB(false), m_bPressedQ(false), m_bPressedE(false)
 {
 }
 
@@ -155,17 +156,27 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	}
 	//설치
 	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_LB) & 0x80) {
-		if (!m_bClicked) {
-			Create_Block();
-			m_bClicked = true;
+		if (!m_bFix) {
+			if (!m_bClickedLB) {
+				Create_Block();
+				m_bClickedLB = true;
+			}
 		}
 	}
 	else {
-		m_bClicked = false;
+		m_bClickedLB = false;
 	}
 	//우클릭
 	if (CDInputMgr::GetInstance()->Get_DIMouseState(DIM_RB) & 0x80) {
-		CMapToolMgr::GetInstance()->Save_Json();
+		if (!m_bFix) {
+			if (!m_bClickedRB) {
+				Delete_Block();
+				m_bClickedRB = true;
+			}
+		}
+	}
+	else {
+		m_bClickedRB = false;
 	}
 
 	//블럭 방향회전
@@ -211,6 +222,10 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 		m_bPressed3 = false;
 	}
 
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_P) & 0x80)
+	{
+		CMapToolMgr::GetInstance()->Save_Json();
+	}
 
 	if (false == m_bFix)
 		return;
@@ -273,9 +288,7 @@ HRESULT CDynamicCamera::Create_Block()
 	if (nullptr == pLayer)
 		return E_FAIL;
 
-	Engine::CGameObject* pGameObject = nullptr;
-
-	pGameObject = CBlock::Create(m_pGraphicDev);
+	Engine::CGameObject* pGameObject = CBlock::Create(m_pGraphicDev);
 
 	if (nullptr == pGameObject)
 		return E_FAIL;
@@ -309,6 +322,34 @@ HRESULT CDynamicCamera::Create_Block()
 	CMapToolMgr::GetInstance()->Plant_Block(vTmp);
 	s_BlockIndex++;
 	return S_OK;
+}
+
+void CDynamicCamera::Delete_Block()
+{
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"Block_Layer");
+
+	auto objectmap = pLayer->Get_ObjectMap();
+	_vec3 vBlockPos, vColPos;
+	vColPos = CCollisionMgr::GetInstance()->Get_ColPos();
+
+	vColPos.x = floorf(vColPos.x) + 0.5f;
+	vColPos.y = floorf(vColPos.y) + 0.5f;
+	vColPos.z = floorf(vColPos.z) + 0.5f;
+
+	//모든 오브젝트를 순회
+	for (auto it = objectmap->begin(); it != objectmap->end();) {
+		dynamic_cast<CTransform*>(pLayer->Get_Component(ID_DYNAMIC, (it->first), L"Com_Transform"))->Get_Info(INFO_POS, &vBlockPos);
+		
+		if (vBlockPos == vColPos) {
+			it->second->Release();
+			it = objectmap->erase(it);
+			CMapToolMgr::GetInstance()->Break_Block(vColPos);
+		}
+		else {
+			it++;
+		}
+	}
 }
 
 CDynamicCamera* CDynamicCamera::Create(LPDIRECT3DDEVICE9 pGraphicDev, const _vec3* pEye, const _vec3* pAt, const _vec3* pUp, const _float& fFov, const _float& fAspect, const _float& fNear, const _float& fFar)

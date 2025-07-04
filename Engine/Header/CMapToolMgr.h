@@ -84,7 +84,8 @@ private:
 	virtual ~CMapToolMgr();
 
 public:
-	void	Plant_Block(_vec3 _vPos);		///설치한 블록의 정보를 벡터 리스트에 넣음
+	void	Plant_Block(_vec3 _vPos);									///설치한 블록의 정보를 벡터 리스트에 넣음
+	void	Break_Block(_vec3 _vPos);
 	void	Plant_Tile(string _sType, _vec3 _vPos, string _sDir);		///설치한 타일의 정보를 벡터 리스트에 넣음
 	void	Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
 	void	Plant_Camera(_vec3 _vEye, _vec3 _vAt);						///현재 바라보고 있는 곳의 Eye와 at을 저장

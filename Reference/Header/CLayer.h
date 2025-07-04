@@ -13,7 +13,7 @@ private:
 public:
 	CComponent*		Get_Component(COMPONENTID eID, const _tchar* pObjTag, const _tchar* pComponentTag);
 	HRESULT			Add_GameObject(const _tchar* pObjTag, CGameObject* pGameObject);
-
+	map<const _tchar*, CGameObject*>* Get_ObjectMap();
 public:
 	HRESULT			Ready_Layer();
 	_int			Update_Layer(const _float& fTimeDelta);

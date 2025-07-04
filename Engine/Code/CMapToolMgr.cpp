@@ -33,6 +33,18 @@ void CMapToolMgr::Plant_Block(_vec3 _vPos)
     m_tBlockVec.push_back(tBlock);
 }
 
+void CMapToolMgr::Break_Block(_vec3 _vPos)
+{
+    for (vector<S_BLOCK>::iterator it = m_tBlockVec.begin(); it != m_tBlockVec.end(); ) {
+        if ((*it).vPos == _vPos) {
+            it = m_tBlockVec.erase(it);
+        }
+        else {
+            it++;
+        }
+    }
+}
+
 void CMapToolMgr::Plant_Tile(string _sType, _vec3 _vPos, string _sDir)
 {
     S_TILE tTile = { _sType, _vPos, Dir_To_String() };
@@ -55,7 +67,7 @@ HRESULT CMapToolMgr::Save_Json()
 {
     MSG_BOX("저장호출");
     //테스트용
-    //Dummy_Data();
+    //Dummy_Data();     
     m_mapJson.clear();
     //////////////////////////////////////
     //데이터 종합

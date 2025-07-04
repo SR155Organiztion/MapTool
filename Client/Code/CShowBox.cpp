@@ -117,9 +117,9 @@ void CShowBox::Set_Greed(_vec3 _v)
 {
     _vec3 vTmp;
 
-    vTmp.x = floor(_v.x) + 0.5f;
-    vTmp.y = floor(_v.y) + 0.5f;
-    vTmp.z = floor(_v.z) + 0.5f;
+    vTmp.x = (_v.x >= 0) ? floor(_v.x) + 0.5f : ceil(_v.x) - 0.5f;
+    vTmp.y = (_v.y >= 0) ? floor(_v.y) + 0.5f : ceil(_v.y) - 0.5f;
+    vTmp.z = (_v.z >= 0) ? floor(_v.z) + 0.5f : ceil(_v.z) - 0.5f;
     
     m_pTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
 }

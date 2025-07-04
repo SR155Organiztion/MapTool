@@ -34,6 +34,7 @@ private:
 	Engine::CTransform* m_pTransformCom;
 	Engine::CTexture* m_pTextureCom;
 	_bool		m_bClicked;
+
 public:
 	static CShowBox* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 
