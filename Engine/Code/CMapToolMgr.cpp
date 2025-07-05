@@ -1,5 +1,6 @@
 #include "../Header/json.hpp"
 #include "CMapToolMgr.h"
+#include "CManagement.h"
 #include <fstream>
 
 using json = nlohmann::json;
@@ -83,7 +84,7 @@ HRESULT CMapToolMgr::Save_Json()
     m_mapJson.clear();
     //////////////////////////////////////
     //데이터 종합
-    S_STAGE stage = { m_tCam, m_tPlayer, m_sRecipeVec, m_tBlockVec, m_tTileVec, m_tEnvVec };
+    S_STAGE stage = { m_tCam, m_tPlayer, m_fTimer ,m_sRecipeVec, m_tBlockVec, m_tTileVec, m_tEnvVec };
     m_mapJson.insert(pair<string, S_STAGE>(m_sName, stage));
     json j = { m_mapJson };// 여기에 파라미터받기
 

@@ -31,7 +31,7 @@ private:
 	void		Mouse_Move();
 	void		Mouse_Fix();
 
-	void		Show_Peek() {}
+	void		ALL_RESET();
 	void		Get_CamInfo(_vec3* vEye, _vec3*& vAt) {}
 
 	//블럭생성
@@ -59,10 +59,11 @@ private:
 	_bool		m_bPressed1;
 	_bool		m_bPressed3;
 	_bool		m_bPressedR;
+	_bool		m_bPressedL;
 	_bool		m_bShowBox;
 
 	
-
+	vector<_tchar*> Release_tchar;
 public:
 	static CDynamicCamera* Create(LPDIRECT3DDEVICE9 pGraphicDev,
 									const _vec3* pEye,

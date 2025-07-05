@@ -14,7 +14,7 @@
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
-	m_bClickedLB(false), m_bClickedRB(false), m_bPressedQ(false), m_bPressedE(false), m_bPressedR(false)
+	m_bClickedLB(false), m_bClickedRB(false), m_bPressedQ(false), m_bPressedE(false), m_bPressedR(false), m_bPressedL(false)
 {
 }
 
@@ -233,6 +233,18 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 		m_bPressedR = false;
 	}
 
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_L) & 0x80)
+	{
+		if (!m_bPressedL) {
+			ALL_RESET();
+			m_bPressedL = true;
+		}
+	}
+	else {
+		m_bPressedL = false;
+	}
+
+
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_P) & 0x80)
 	{
 		CMapToolMgr::GetInstance()->Save_Json();
@@ -287,6 +299,29 @@ void CDynamicCamera::Mouse_Fix()
 	SetCursorPos(ptMouse.x, ptMouse.y);
 
 
+}
+
+void CDynamicCamera::ALL_RESET()
+{
+	CMapToolMgr::GetInstance()->Reset();
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"Environment_Layer");
+	for (auto it : *(pLayer->Get_ObjectMap())) {//; it != pLayer->Get_ObjectMap()->end(); ) 
+		Safe_Release(it.second);
+	}
+	(pLayer->Get_ObjectMap())->clear();
+
+	pLayer = pScene->Get_Layer(L"Tile_Layer");
+	for (auto it : *(pLayer->Get_ObjectMap())) {//; it != pLayer->Get_ObjectMap()->end(); ) 
+		Safe_Release(it.second);
+	}
+	(pLayer->Get_ObjectMap())->clear();
+
+	pLayer = pScene->Get_Layer(L"Block_Layer");
+	for (auto it : *(pLayer->Get_ObjectMap())) {//; it != pLayer->Get_ObjectMap()->end(); ) 
+		Safe_Release(it.second);
+	}
+	(pLayer->Get_ObjectMap())->clear();
 }
 
 void CDynamicCamera::Create_Objects()
@@ -360,6 +395,7 @@ HRESULT CDynamicCamera::Create_Block()
 		lstrcpy(pTag, szTag);
 
 		if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+			Release_tchar.push_back(pTag);
 			break; // ¼º°ø ½Ã Å»Ãâ
 		}
 		else {
@@ -434,6 +470,7 @@ HRESULT CDynamicCamera::Create_RcTile()
 		lstrcpy(pTag, szTag);
 
 		if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+			Release_tchar.push_back(pTag);
 			break; // ¼º°ø ½Ã Å»Ãâ
 		}
 		else {
@@ -442,6 +479,7 @@ HRESULT CDynamicCamera::Create_RcTile()
 		}
 	}
 
+	
 	CMapToolMgr::GetInstance()->Plant_Tile(vTmp);
 	++s_RcTileIndex;
 	return S_OK;
@@ -500,6 +538,9 @@ CDynamicCamera* CDynamicCamera::Create(LPDIRECT3DDEVICE9 pGraphicDev, const _vec
 
 void CDynamicCamera::Free()
 {
-	Engine::CCamera::Free();
+	for (auto& a : Release_tchar) {
+		Safe_Delete(a);
+	}
 
+	Engine::CCamera::Free();
 }

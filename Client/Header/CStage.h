@@ -15,6 +15,7 @@ public:
 	virtual			void		Render_Scene();
 
 private:
+	HRESULT		Ready_Basic_Layer(const _tchar* pLayerTag);
 	HRESULT		Ready_Environment_Layer(const _tchar* pLayerTag);
 	HRESULT		Ready_Tile_Layer(const _tchar* pLayerTag);
 	HRESULT		Ready_Block_Layer(const _tchar* pLayerTag);

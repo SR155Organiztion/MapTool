@@ -49,21 +49,7 @@ HRESULT CStage::Ready_Environment_Layer(const _tchar* pLayerTag)
 
     Engine::CGameObject* pGameObject = nullptr;
 
-    // dynamicCamera
-    _vec3	vEye{ 0.f, 10.f, -10.f };
-    _vec3	vAt{ 0.f, 0.f, 1.f };
-    _vec3	vUp{ 0.f , 1.f, 0.f };
-    pGameObject = CDynamicCamera::Create(m_pGraphicDev, &vEye, &vAt, &vUp);
-    if (nullptr == pGameObject)
-        return E_FAIL;
-    if (FAILED(pLayer->Add_GameObject(L"DynamicCamera", pGameObject)))
-        return E_FAIL;
-        
-    pGameObject = CTerrain::Create(m_pGraphicDev);
-    if (nullptr == pGameObject)
-        return E_FAIL;
-    if (FAILED(pLayer->Add_GameObject(L"Terrain", pGameObject)))
-        return E_FAIL;
+   
 
     m_mapLayer.insert({ pLayerTag, pLayer });
 
@@ -104,6 +90,22 @@ HRESULT CStage::Ready_GameObject_Layer(const _tchar* pLayerTag)
 
     Engine::CGameObject* pGameObject = nullptr;
 
+    // dynamicCamera
+    _vec3	vEye{ 0.f, 10.f, -10.f };
+    _vec3	vAt{ 0.f, 0.f, 1.f };
+    _vec3	vUp{ 0.f , 1.f, 0.f };
+    pGameObject = CDynamicCamera::Create(m_pGraphicDev, &vEye, &vAt, &vUp);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"DynamicCamera", pGameObject)))
+        return E_FAIL;
+
+    pGameObject = CTerrain::Create(m_pGraphicDev);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"Terrain", pGameObject)))
+        return E_FAIL;
+
     pGameObject = CShowBox::Create(m_pGraphicDev);
     if (nullptr == pGameObject)
         return E_FAIL;
@@ -128,6 +130,8 @@ HRESULT CStage::Ready_UI_Layer(const _tchar* pLayerTag)
         return E_FAIL;
 
     Engine::CGameObject* pGameObject = nullptr;
+
+
 
     m_mapLayer.insert({ pLayerTag, pLayer });
 

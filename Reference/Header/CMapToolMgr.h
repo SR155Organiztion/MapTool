@@ -68,6 +68,7 @@ struct S_PLAYER {
 struct S_STAGE {
 	S_CAM Cam;
 	S_PLAYER Player;
+	_float Time;
 	std::vector<string> Recipe;
 	std::vector<S_BLOCK> Block;
 	std::vector<S_TILE> Tiles;
@@ -128,9 +129,10 @@ private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터
 	vector<S_TILE>			m_tTileVec;			///현재 설치되어있는 타일의 데이터
 	vector<S_ENVIRONMENT>	m_tEnvVec;			///현재 설치 되어있는 환경블록의 데이터
-	vector<string>			m_sRecipeVec;		
+	vector<string>			m_sRecipeVec;		///현재 스테이지 
 	S_CAM					m_tCam;				///설치를 한 카메라의 
 	S_PLAYER				m_tPlayer;			///현재 플레이어들의 시작 위치
+	_float					m_fTimer;			///현재 스테이지의 게임시간
 
 	map<string, S_STAGE> m_mapJson;				///전체 스테이지의 데이터값
 	string				 m_sName;				///저장하거나 불러올 이름
