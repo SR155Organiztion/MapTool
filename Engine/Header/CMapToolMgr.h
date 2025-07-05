@@ -51,6 +51,7 @@ struct S_CAM {
 	_vec3 vEye;
 	_vec3 vAt;
 };
+
 /**
 * @struct S_PLAYER
 * @brief 카메라를 저장할 벡터 구조체
@@ -86,7 +87,8 @@ private:
 public:
 	void	Plant_Block(_vec3 _vPos);									///설치한 블록의 정보를 벡터 리스트에 넣음
 	void	Break_Block(_vec3 _vPos);
-	void	Plant_Tile(string _sType, _vec3 _vPos, string _sDir);		///설치한 타일의 정보를 벡터 리스트에 넣음
+	void	Plant_Tile(_vec3 _vPos);		///설치한 타일의 정보를 벡터 리스트에 넣음
+	void	Break_Tile(_vec3 _vPos);
 	void	Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
 	void	Plant_Camera(_vec3 _vEye, _vec3 _vAt);						///현재 바라보고 있는 곳의 Eye와 at을 저장
 	void	Plant_Player(_int _iPlayer,_vec3 _vPos);					///플레이어의 스폰 위치 설정
@@ -107,13 +109,20 @@ public:
 	void PrevStation();
 	_uint Get_NowStation();
 
-	//임시출력용
-	const _tchar* Imsi_Get_Dir();
+	void NextObject();
+	_uint Get_NowObject();
+
+	void NextRcTile();
+	void PrevRcTile();
+	_uint Get_NowRcTile();
+
+	const _tchar* Get_Dir();
 
 private:
 	void	Dummy_Data();				///테스트용
 	string	Dir_To_String();
 	string	Block_To_String();
+	string	Tile_To_String();
 
 private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터
@@ -124,16 +133,21 @@ private:
 	S_PLAYER				m_tPlayer;			///현재 플레이어들의 시작 위치
 
 	map<string, S_STAGE> m_mapJson;				///전체 스테이지의 데이터값
-	string			m_sName;					///저장하거나 불러올 이름
+	string				 m_sName;				///저장하거나 불러올 이름
 
-	_uint			m_iSelectName;				///내가 선택중인 스테이지
-
+	//스테이지-----------------------------------------------------------------------------------
+	_uint				 m_iSelectName;			///내가 선택중인 스테이지
+	//플레이어-----------------------------------------------------------------------------------
 	_uint			m_iSet_Player;				///현재 선택중인 플레이어
 	vector<string>	m_sNameVec;					///전체 스테이지 이름
-	
+	//오브젝트-----------------------------------------------------------------------------------
+	_int			m_iObject;					///현재 선택중인 오브젝트
+	//블럭---------------------------------------------------------------------------------------
 	_int			m_iStation;					///현재 선택중인 스테이션
 	_int			m_iIngredient;				///현재 선택중인 재료
-	
+	//타일---------------------------------------------------------------------------------------
+	_int			m_iRcTile;					///현재 선택중인 타일 이미지 번호
+	//각도---------------------------------------------------------------------------------------
 	_int			m_iDir;						///현재 선택중인 방향 값	(고정된 6 방향)
 	_vec3			m_vecDir;					///현재 선택중인 방향 벡터값(고정되지 않은 각도) 
 	_float			m_fAngle;					///현재 각도

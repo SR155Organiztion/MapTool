@@ -1,24 +1,24 @@
-#include "CTileSquareTex.h"
+#include "CRcTileTex.h"
 
-CTileSquareTex::CTileSquareTex()
+CRcTileTex::CRcTileTex()
 {
 }
 
-CTileSquareTex::CTileSquareTex(LPDIRECT3DDEVICE9 pGraphicDev)
+CRcTileTex::CRcTileTex(LPDIRECT3DDEVICE9 pGraphicDev)
 	: CVIBuffer(pGraphicDev)
 {
 }
 
-CTileSquareTex::CTileSquareTex(const CTileSquareTex& rhs)
+CRcTileTex::CRcTileTex(const CRcTileTex& rhs)
 	: CVIBuffer(rhs)
 {
 }
 
-CTileSquareTex::~CTileSquareTex()
+CRcTileTex::~CRcTileTex()
 {
 }
 
-HRESULT CTileSquareTex::Ready_Buffer()
+HRESULT CRcTileTex::Ready_Buffer()
 {
 	m_dwTriCnt = 2;
 	m_dwVtxCnt = 4;
@@ -37,16 +37,16 @@ HRESULT CTileSquareTex::Ready_Buffer()
 	// 버텍스 버퍼에 보관된 정점 중 첫 번째 정점의 주소를 얻어오는 매개 변수
 	m_pVB->Lock(0, 0, (void**)&pVertex, 0);
 
-	pVertex[0].vPosition = { -0.5f, 0.5f, 0.f };
+	pVertex[0].vPosition = { -0.5f, 0.f, 0.5f };
 	pVertex[0].vTexUV = { 0.f, 0.f };
 
-	pVertex[1].vPosition = { 0.5f, 0.5f, 0.f };
+	pVertex[1].vPosition = { 0.5f, 0.f, 0.5f };
 	pVertex[1].vTexUV = { 1.f, 0.f };
 
-	pVertex[2].vPosition = { 0.5f, -0.5f, 0.f };
+	pVertex[2].vPosition = { 0.5f, 0.f, -0.5f };
 	pVertex[2].vTexUV = { 1.f, 1.f };
 
-	pVertex[3].vPosition = { -0.5f, -0.5f, 0.f };
+	pVertex[3].vPosition = { -0.5f, 0.f, -0.5f };
 	pVertex[3].vTexUV = { 0.f, 1.f };
 
 	m_pVB->Unlock();
@@ -71,19 +71,19 @@ HRESULT CTileSquareTex::Ready_Buffer()
 	return S_OK;
 }
 
-void CTileSquareTex::Render_Buffer()
+void CRcTileTex::Render_Buffer()
 {
 	CVIBuffer::Render_Buffer();
 }
 
-CComponent* CTileSquareTex::Clone()
+CComponent* CRcTileTex::Clone()
 {
-	return new CTileSquareTex(*this);
+	return new CRcTileTex(*this);
 }
 
-CTileSquareTex* CTileSquareTex::Create(LPDIRECT3DDEVICE9 pGraphicDev)
+CRcTileTex* CRcTileTex::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 {
-	CTileSquareTex* pRcTex = new CTileSquareTex(pGraphicDev);
+	CRcTileTex* pRcTex = new CRcTileTex(pGraphicDev);
 
 	if (FAILED(pRcTex->Ready_Buffer()))
 	{
@@ -95,7 +95,7 @@ CTileSquareTex* CTileSquareTex::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 	return pRcTex;
 }
 
-void CTileSquareTex::Free()
+void CRcTileTex::Free()
 {
 	CVIBuffer::Free();
 }

@@ -11,7 +11,7 @@
 #include "CFontMgr.h"
 #include "CMapToolMgr.h"
 #include <iomanip> 
-
+#include "CShowRcTile.h"
 CStage::CStage(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CScene(pGraphicDev)
 {
@@ -110,6 +110,12 @@ HRESULT CStage::Ready_GameObject_Layer(const _tchar* pLayerTag)
     if (FAILED(pLayer->Add_GameObject(L"ShowBox", pGameObject)))
         return E_FAIL;
 
+    pGameObject = CShowRcTile::Create(m_pGraphicDev);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"ShowRcTile", pGameObject)))
+        return E_FAIL;
+
     m_mapLayer.insert({ pLayerTag, pLayer });
 
     return S_OK;
@@ -142,11 +148,11 @@ void CStage::LateUpdate_Scene(const _float& fTimeDelta)
 
 void CStage::Render_Scene()
 {
-    //임시 방향확인용
+    //방향확인
     _vec2 vPos = { 10.f, 10.f };
-    CFontMgr::GetInstance()->Render_Font(L"Font_Default", CMapToolMgr::GetInstance()->Imsi_Get_Dir(), &vPos, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
+    CFontMgr::GetInstance()->Render_Font(L"Font_Default", CMapToolMgr::GetInstance()->Get_Dir(), &vPos, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
 
-    //
+    //충돌 위치
     _vec2 vPos2 = { 10.f, 30.f };
     _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
 
@@ -156,7 +162,7 @@ void CStage::Render_Scene()
 
     CFontMgr::GetInstance()->Render_Font(L"Font_Default", dwColPos, &vPos2, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
 
-    //
+    //레이 위치, 방향
     _vec2 vPos3 = { 10.f, 50.f };
     _vec3 rayPos, rayDir;
     CCollisionMgr::GetInstance()->Get_Ray(&rayPos, &rayDir);

@@ -16,9 +16,6 @@
     <Filter Include="02. FrameMgr\Frame">
       <UniqueIdentifier>{fb06fe5b-5ad0-4364-ac07-7237037d4626}</UniqueIdentifier>
     </Filter>
-    <Filter Include="99. Header">
-      <UniqueIdentifier>{cc7b120b-0614-412f-a2e7-4694c46bb0fe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Management">
       <UniqueIdentifier>{bd24d70d-c742-4ed2-be1d-e3a02ae6cb4d}</UniqueIdentifier>
     </Filter>
@@ -91,9 +88,6 @@
     <Filter Include="11. MapToolMgr">
       <UniqueIdentifier>{e5a63b78-3844-476e-9333-9aeea733fb07}</UniqueIdentifier>
     </Filter>
-    <Filter Include="04. Component\00. VIBuffer\TileSquareTex">
-      <UniqueIdentifier>{b9d1e1fd-be39-46b9-a884-163a3c11bbdc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03. Management\02. GameObject">
       <UniqueIdentifier>{b29d663a-b3e6-4330-a212-f5abed48b195}</UniqueIdentifier>
     </Filter>
@@ -102,6 +96,15 @@
     </Filter>
     <Filter Include="12. CollisionMgr">
       <UniqueIdentifier>{b3bc810e-07ff-4fb2-8fb7-f441e4b4a2fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="13. ImguiMgr">
+      <UniqueIdentifier>{89c32805-6024-4915-a8ce-d62ac94d9167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99. Header">
+      <UniqueIdentifier>{cc7b120b-0614-412f-a2e7-4694c46bb0fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Component\00. VIBuffer\RcTile">
+      <UniqueIdentifier>{b9d1e1fd-be39-46b9-a884-163a3c11bbdc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -192,14 +195,17 @@
     <ClCompile Include="..\Code\CMapToolMgr.cpp">
       <Filter>11. MapToolMgr</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\CTileSquareTex.cpp">
-      <Filter>04. Component\00. VIBuffer\TileSquareTex</Filter>
+    <ClCompile Include="..\Code\CRcTileTex.cpp">
+      <Filter>04. Component\00. VIBuffer\RcTile</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CGameObject.cpp">
       <Filter>03. Management\02. GameObject</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CCollisionMgr.cpp">
       <Filter>12. CollisionMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CImguiMgr.cpp\CImguiMgr.cpp">
+      <Filter>13. ImguiMgr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -309,8 +315,8 @@
     <ClInclude Include="..\Header\CMapToolMgr.h">
       <Filter>11. MapToolMgr</Filter>
     </ClInclude>
-    <ClInclude Include="..\Header\CTileSquareTex.h">
-      <Filter>04. Component\00. VIBuffer\TileSquareTex</Filter>
+    <ClInclude Include="..\Header\CRcTileTex.h">
+      <Filter>04. Component\00. VIBuffer\RcTile</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\json.hpp">
       <Filter>99. Header</Filter>
@@ -320,6 +326,9 @@
     </ClInclude>
     <ClInclude Include="..\Header\CCollisionMgr.h">
       <Filter>12. CollisionMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CImguiMgr.h">
+      <Filter>13. ImguiMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

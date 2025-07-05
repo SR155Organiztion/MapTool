@@ -40,15 +40,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Object\04. Tile">
-      <UniqueIdentifier>{4609215f-3f26-44de-89e2-67302726b962}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\05. Block">
-      <UniqueIdentifier>{f5acdf0e-6f53-4457-8406-852672dd9f7c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\03. ShowBox">
-      <UniqueIdentifier>{0fc76c1b-7bde-4f3c-8060-ea728b2c96fb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Scene\Map">
       <UniqueIdentifier>{ed723cbb-566a-47a6-8ad8-e7060c557c9b}</UniqueIdentifier>
     </Filter>
@@ -66,6 +57,24 @@
     </Filter>
     <Filter Include="Object\99. Test\06. TestTerrain">
       <UniqueIdentifier>{e433daa4-3cc4-4da6-ba5b-75c03217abd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\03. Show">
+      <UniqueIdentifier>{366900cc-1418-4a77-90e8-8581e12fddcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\04. Plantable">
+      <UniqueIdentifier>{8feb8205-49b3-4351-8f1a-dab77b4999b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\03. Show\01. ShowBox">
+      <UniqueIdentifier>{0fc76c1b-7bde-4f3c-8060-ea728b2c96fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\03. Show\02. ShowRcTile">
+      <UniqueIdentifier>{d077a051-41d4-4d8f-b460-3fa132f08958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\04. Plantable\02. Tile">
+      <UniqueIdentifier>{4609215f-3f26-44de-89e2-67302726b962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\04. Plantable\01. Block">
+      <UniqueIdentifier>{f5acdf0e-6f53-4457-8406-852672dd9f7c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -118,16 +127,19 @@
       <Filter>01. Scene\Map</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CShowBox.h">
-      <Filter>Object\03. ShowBox</Filter>
+      <Filter>Object\03. Show\01. ShowBox</Filter>
     </ClInclude>
-    <ClInclude Include="..\Header\CTile.h">
-      <Filter>Object\04. Tile</Filter>
+    <ClInclude Include="..\Header\CRcTile.h">
+      <Filter>Object\04. Plantable\02. Tile</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CBlock.h">
-      <Filter>Object\05. Block</Filter>
+      <Filter>Object\04. Plantable\01. Block</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CTestTerrain.h">
       <Filter>Object\99. Test\06. TestTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CShowRcTile.h">
+      <Filter>Object\03. Show\02. ShowRcTile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -167,20 +179,23 @@
     <ClCompile Include="..\Code\CSkyBox.cpp">
       <Filter>Object\99. Test\05. SkyBox</Filter>
     </ClCompile>
-    <ClCompile Include="..\Code\CTile.cpp">
-      <Filter>Object\04. Tile</Filter>
-    </ClCompile>
     <ClCompile Include="..\Code\CBlock.cpp">
-      <Filter>Object\05. Block</Filter>
+      <Filter>Object\04. Plantable\01. Block</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CShowBox.cpp">
-      <Filter>Object\03. ShowBox</Filter>
+      <Filter>Object\03. Show\01. ShowBox</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CMap.cpp">
       <Filter>01. Scene\Map</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CTestTerrain.cpp">
       <Filter>Object\99. Test\06. TestTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CRcTile.cpp">
+      <Filter>Object\04. Plantable\02. Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CShowRcTile.cpp">
+      <Filter>Object\03. Show\02. ShowRcTile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

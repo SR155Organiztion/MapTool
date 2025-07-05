@@ -34,8 +34,18 @@ private:
 	void		Show_Peek() {}
 	void		Get_CamInfo(_vec3* vEye, _vec3*& vAt) {}
 
+	//블럭생성
+	void		Create_Objects();
+	void		Delete_Objects();
+	
 	HRESULT		Create_Block();
 	void		Delete_Block();
+
+	HRESULT		Create_RcTile();
+	void		Delete_RcTile();
+
+	HRESULT		Create_HexTile();
+	void		Delete_HexTile();
 
 private:
 	_float		m_fSpeed;
@@ -48,6 +58,7 @@ private:
 	_bool		m_bPressedE;
 	_bool		m_bPressed1;
 	_bool		m_bPressed3;
+	_bool		m_bPressedR;
 	_bool		m_bShowBox;
 
 	
