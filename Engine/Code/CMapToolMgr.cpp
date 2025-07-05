@@ -1,5 +1,6 @@
 #include "../Header/json.hpp"
 #include "CMapToolMgr.h"
+#include "CManagement.h"
 #include <fstream>
 
 using json = nlohmann::json;
@@ -14,7 +15,7 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Recipe, Block, Tiles, E
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
 CMapToolMgr::CMapToolMgr()
-    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(NX)
+    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(DIRECTIONID::NX), m_iObject(CREATEOBJECT_ID::O_BLOCK), m_iRcTile(0)
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
@@ -45,10 +46,22 @@ void CMapToolMgr::Break_Block(_vec3 _vPos)
     }
 }
 
-void CMapToolMgr::Plant_Tile(string _sType, _vec3 _vPos, string _sDir)
+void CMapToolMgr::Plant_Tile(_vec3 _vPos)
 {
-    S_TILE tTile = { _sType, _vPos, Dir_To_String() };
+    S_TILE tTile = { Tile_To_String(), _vPos, Dir_To_String()};
     m_tTileVec.push_back(tTile);
+}
+
+void CMapToolMgr::Break_Tile(_vec3 _vPos)
+{
+    for (vector<S_TILE>::iterator it = m_tTileVec.begin(); it != m_tTileVec.end(); ) {
+        if ((*it).vPos == _vPos) {
+            it = m_tTileVec.erase(it);
+        }
+        else {
+            it++;
+        }
+    }
 }
 
 void CMapToolMgr::Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir)
@@ -71,7 +84,7 @@ HRESULT CMapToolMgr::Save_Json()
     m_mapJson.clear();
     //////////////////////////////////////
     //데이터 종합
-    S_STAGE stage = { m_tCam, m_tPlayer, m_sRecipeVec, m_tBlockVec, m_tTileVec, m_tEnvVec };
+    S_STAGE stage = { m_tCam, m_tPlayer, m_fTimer ,m_sRecipeVec, m_tBlockVec, m_tTileVec, m_tEnvVec };
     m_mapJson.insert(pair<string, S_STAGE>(m_sName, stage));
     json j = { m_mapJson };// 여기에 파라미터받기
 
@@ -223,7 +236,41 @@ _uint CMapToolMgr::Get_NowStation()
     return m_iStation;
 }
 
-const _tchar* CMapToolMgr::Imsi_Get_Dir()
+void CMapToolMgr::NextObject()
+{
+    ++m_iObject;
+    if (m_iObject >= static_cast<_uint>(CREATEOBJECT_ID::O_END)) {
+        m_iObject = 0;
+    }
+}
+
+_uint CMapToolMgr::Get_NowObject()
+{
+    return m_iObject;
+}
+
+void CMapToolMgr::NextRcTile()
+{
+    ++m_iRcTile;
+    if (m_iRcTile >= static_cast<_uint>(STATIONID::S_END)) {
+        m_iRcTile = 0;
+    }
+}
+
+void CMapToolMgr::PrevRcTile()
+{
+    --m_iRcTile;
+    if (m_iRcTile < 0) {
+        m_iRcTile = static_cast<_uint>(STATIONID::S_END) - 1;
+    }
+}
+
+_uint CMapToolMgr::Get_NowRcTile()
+{
+    return m_iRcTile;
+}
+
+const _tchar* CMapToolMgr::Get_Dir()
 {
     switch (m_iDir)
     {
@@ -283,37 +330,37 @@ string CMapToolMgr::Block_To_String()
 {
     switch (m_iStation)
     {
-    case Engine::S_INV:
+    case Engine::STATIONID::S_INV:
         return "InvWall";
         break;
-    case Engine::S_EMPTY:
+    case Engine::STATIONID::S_EMPTY:
         return "Empty";
         break;
-    case Engine::S_CREATE:
+    case Engine::STATIONID::S_CREATE:
         return "Create_";
         break;
-    case Engine::S_CHOP:
+    case Engine::STATIONID::S_CHOP:
         return "Chop";
         break;
-    case Engine::S_GAS:
+    case Engine::STATIONID::S_GAS:
         return "Gas";
         break;
-    case Engine::S_PLATE:
+    case Engine::STATIONID::S_PLATE:
         return "Plate";
         break;
-    case Engine::S_SINK_W:
+    case Engine::STATIONID::S_SINK_W:
         return "Sink_Wash";
         break;
-    case Engine::S_SINK_P:
+    case Engine::STATIONID::S_SINK_P:
         return "Sink_Plate";
         break;
-    case Engine::S_TRASH:
+    case Engine::STATIONID::S_TRASH:
         return "Trash";
         break;
-    case Engine::S_SERVING:
+    case Engine::STATIONID::S_SERVING:
         return "Serving";
         break;
-    case Engine::S_END:
+    case Engine::STATIONID::S_END:
         return "???";
         break;
     default:
@@ -321,6 +368,20 @@ string CMapToolMgr::Block_To_String()
     }
 
     return "???";
+}
+
+string CMapToolMgr::Tile_To_String()
+{
+    switch (m_iRcTile)
+    {
+    case Engine::RT_1:
+        return "TILE_1";
+        break;
+    default:
+        break;
+    }
+
+    return string();
 }
 
 void CMapToolMgr::Free()

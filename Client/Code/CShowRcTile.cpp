@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "CShowBox.h"
+#include "CShowRcTile.h"
 #include "CProtoMgr.h"
 #include "CRenderer.h"
 #include "CManagement.h"
@@ -8,21 +8,21 @@
 #include "CBlock.h"
 #include "CDInputMgr.h"
 
-CShowBox::CShowBox(LPDIRECT3DDEVICE9 pGraphicDev)
-    : Engine::CGameObject(pGraphicDev)
+CShowRcTile::CShowRcTile(LPDIRECT3DDEVICE9 pGraphicDev)
+    : Engine::CGameObject(pGraphicDev), m_bClicked(false)
 {
 }
 
-CShowBox::CShowBox(const CGameObject& rhs)
+CShowRcTile::CShowRcTile(const CGameObject& rhs)
     : Engine::CGameObject(rhs)
 {
 }
 
-CShowBox::~CShowBox()
+CShowRcTile::~CShowRcTile()
 {
 }
 
-HRESULT CShowBox::Ready_GameObject()
+HRESULT CShowRcTile::Ready_GameObject()
 {
     if (FAILED(Add_Component()))
         return E_FAIL;
@@ -30,7 +30,7 @@ HRESULT CShowBox::Ready_GameObject()
     return S_OK;
 }
 
-_int CShowBox::Update_GameObject(const _float& fTimeDelta)
+_int CShowRcTile::Update_GameObject(const _float& fTimeDelta)
 {
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
@@ -42,10 +42,10 @@ _int CShowBox::Update_GameObject(const _float& fTimeDelta)
     return iExit;
 }
 
-void CShowBox::LateUpdate_GameObject(const _float& fTimeDelta)
+void CShowRcTile::LateUpdate_GameObject(const _float& fTimeDelta)
 {
     _vec3 vPos = CCollisionMgr::GetInstance()->Get_ColPos();
-    
+
     Set_Greed(vPos);
 
     Engine::CGameObject::LateUpdate_GameObject(fTimeDelta);
@@ -53,9 +53,9 @@ void CShowBox::LateUpdate_GameObject(const _float& fTimeDelta)
     return;
 }
 
-void CShowBox::Render_GameObject()
+void CShowRcTile::Render_GameObject()
 {
-    if (CMapToolMgr::GetInstance()->Get_NowObject() != CREATEOBJECT_ID::O_BLOCK)
+    if (CMapToolMgr::GetInstance()->Get_NowObject() != CREATEOBJECT_ID::O_RCTILE)
         return;
 
     D3DXMATRIX matWorld;
@@ -76,11 +76,11 @@ void CShowBox::Render_GameObject()
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
 
-HRESULT CShowBox::Add_Component()
+HRESULT CShowRcTile::Add_Component()
 {
     CComponent* pComponent = nullptr;
 
-    pComponent = m_pBufferCom = dynamic_cast<Engine::CCubeTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_CubeTex"));
+    pComponent = m_pBufferCom = dynamic_cast<Engine::CRcTileTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_RcTileTex"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });
@@ -99,7 +99,7 @@ HRESULT CShowBox::Add_Component()
     return S_OK;
 }
 
-HRESULT CShowBox::Set_Metarial()
+HRESULT CShowRcTile::Set_Metarial()
 {
     D3DMATERIAL9 tMetarial;
     ZeroMemory(&tMetarial, sizeof(D3DMATERIAL9));
@@ -116,33 +116,33 @@ HRESULT CShowBox::Set_Metarial()
     return S_OK;
 }
 
-void CShowBox::Set_Greed(_vec3 _v)
+void CShowRcTile::Set_Greed(_vec3 _v)
 {
     _vec3 vTmp;
 
     vTmp.x = (_v.x >= 0) ? floor(_v.x) + 0.5f : ceil(_v.x) - 0.5f;
-    vTmp.y = (_v.y >= 0) ? floor(_v.y) + 0.5f : ceil(_v.y) - 0.5f;
+    vTmp.y = (_v.y >= 0) ? floor(_v.y) : ceil(_v.y);
     vTmp.z = (_v.z >= 0) ? floor(_v.z) + 0.5f : ceil(_v.z) - 0.5f;
-    
+
     m_pTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
 }
 
 
-CShowBox* CShowBox::Create(LPDIRECT3DDEVICE9 pGraphicDev)
+CShowRcTile* CShowRcTile::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 {
-    CShowBox* pShowBox = new CShowBox(pGraphicDev);
+    CShowRcTile* pShowRcTileTex = new CShowRcTile(pGraphicDev);
 
-    if (FAILED(pShowBox->Ready_GameObject()))
+    if (FAILED(pShowRcTileTex->Ready_GameObject()))
     {
-        Safe_Release(pShowBox);
-        MSG_BOX("pShowBox Create Failed");
+        Safe_Release(pShowRcTileTex);
+        MSG_BOX("pShowRcTile Create Failed");
         return nullptr;
     }
 
-    return pShowBox;
+    return pShowRcTileTex;
 }
 
-void CShowBox::Free()
+void CShowRcTile::Free()
 {
     Engine::CGameObject::Free();
 }

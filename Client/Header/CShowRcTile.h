@@ -3,17 +3,17 @@
 
 namespace Engine
 {
-	class CCubeTex;
+	class CRcTileTex;
 	class CTransform;
 	class CTexture;
 }
 
-class CShowBox : public Engine::CGameObject
+class CShowRcTile : public Engine::CGameObject
 {
 private:
-	explicit CShowBox(LPDIRECT3DDEVICE9 pGraphicDev);
-	explicit CShowBox(const CGameObject& rhs);
-	virtual ~CShowBox();
+	explicit CShowRcTile(LPDIRECT3DDEVICE9 pGraphicDev);
+	explicit CShowRcTile(const CGameObject& rhs);
+	virtual ~CShowRcTile();
 
 public:
 	virtual			HRESULT		Ready_GameObject();
@@ -28,12 +28,13 @@ private:
 	void		Set_Greed(_vec3 _v);
 
 private:
-	Engine::CCubeTex* m_pBufferCom;
+	Engine::CRcTileTex* m_pBufferCom;
 	Engine::CTransform* m_pTransformCom;
-	Engine::CTexture* m_pTextureCom;
+	Engine::CTexture*	m_pTextureCom;
+	_bool		m_bClicked;
 
 public:
-	static CShowBox* Create(LPDIRECT3DDEVICE9 pGraphicDev);
+	static CShowRcTile* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 
 private:
 	virtual		void		Free();

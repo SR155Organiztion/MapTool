@@ -18,10 +18,15 @@ namespace Engine
 	enum MOUSEKEYSTATE { DIM_LB, DIM_RB, DIM_MB, DIM_END };
 	enum MOUSEMOVESTATE { DIMS_X, DIMS_Y, DIMS_Z, DIMS_END };
 
+	//방향			   +X  -Z  -X  -Z
 	enum DIRECTIONID { PX, PZ, NX, NZ , DIR_END };
+	//블럭     	    투명벽    빈칸   음식상자   도마    가스    접시   물씽크대  접시싱크  쓰레기통    제출
 	enum STATIONID { S_INV, S_EMPTY, S_CREATE, S_CHOP, S_GAS, S_PLATE, S_SINK_W, S_SINK_P, S_TRASH, S_SERVING, S_END };
-	//블럭     	    투명벽    빈칸   음식상자   도마    가스    접시   물씽크대  접시싱크  쓰레기통  제출
+	//음식
 	enum CREATEID { C_SEAWEED, C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_RICE, C_PASTA, C_END};
-	//음식		  
+	//사각타일
+	enum RCTILEID { RT_1 , RT_END};
+	//오브젝트			    블럭	사각타일   육각타일   환경
+	enum CREATEOBJECT_ID { O_BLOCK, O_RCTILE, O_HEXTILE, O_ENV, O_END };
 }
 #endif // Engine_Enum_h__
