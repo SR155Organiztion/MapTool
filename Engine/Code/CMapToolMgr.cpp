@@ -182,6 +182,11 @@ S_STAGE CMapToolMgr::Get_Data(string s)
     return S_STAGE{};
 }
 
+string CMapToolMgr::Get_Name()
+{
+    return m_sName;
+}
+
 void CMapToolMgr::NextRotate()
 {
     ++m_iDir;
@@ -376,12 +381,64 @@ string CMapToolMgr::Tile_To_String()
     {
     case Engine::RT_1:
         return "TILE_1";
+    case Engine::RT_END:
         break;
     default:
+        return "???";
         break;
     }
+    return "???";
+}
 
-    return string();
+_vec3 CMapToolMgr::String_To_Dir(string& _s)
+{
+    if (_s == "PX") return _vec3(0.f, 0.f, 0.f);
+    if (_s == "NX") return _vec3(0.f, D3DXToRadian(90.f), 0.f);
+    if (_s == "PZ") return _vec3(0.f, D3DXToRadian(180.f), 0.f);
+    if (_s == "NZ") return _vec3(0.f, D3DXToRadian(270.f), 0.f);
+
+    // 잘못된 문자열일 경우
+    return _vec3(0.f, 0.f, 0.f);
+}
+
+_uint CMapToolMgr::String_To_Block(string& _s)
+{
+    if (_s == "InvWall")
+        return Engine::STATIONID::S_INV;
+    else if (_s == "Empty")
+        return Engine::STATIONID::S_EMPTY;
+    else if (_s == "Create_")
+        return Engine::STATIONID::S_CREATE;
+    else if (_s == "Chop")
+        return Engine::STATIONID::S_CHOP;
+    else if (_s == "Gas")
+        return Engine::STATIONID::S_GAS;
+    else if (_s == "Plate")
+        return Engine::STATIONID::S_PLATE;
+    else if (_s == "Sink_Wash")
+        return Engine::STATIONID::S_SINK_W;
+    else if (_s == "Sink_Plate")
+        return Engine::STATIONID::S_SINK_P;
+    else if (_s == "Trash")
+        return Engine::STATIONID::S_TRASH;
+    else if (_s == "Serving")
+        return Engine::STATIONID::S_SERVING;
+    else if (_s == "???")
+        return Engine::STATIONID::S_END;
+
+    //에러
+    return -1;
+}
+
+_uint CMapToolMgr::String_To_Tile(string& _s)
+{
+    if (_s == "TILE_1")
+        return Engine::RCTILEID::RT_1;
+    else if (_s == "???")
+        return Engine::RCTILEID::RT_END;
+
+    //에러처리
+    return -1;
 }
 
 void CMapToolMgr::Free()
