@@ -11,6 +11,7 @@
 #include "CBlock.h"
 #include "CRcTile.h"
 #include "CCollisionMgr.h"
+#include "CImguiMgr.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -43,6 +44,8 @@ HRESULT CDynamicCamera::Ready_GameObject(const _vec3* pEye, const _vec3* pAt, co
 
 	m_fSpeed = 5.f;
 
+	LoadCallBackToImguiMgr();
+	ClearCallBackToImguiMgr();
 
 	return S_OK;
 }
@@ -233,30 +236,6 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 		m_bPressedR = false;
 	}
 
-	//리셋
-	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_L) & 0x80)
-	{
-		if (!m_bPressedL) {
-			ALL_RESET();
-			m_bPressedL = true;
-		}
-	}
-	else {
-		m_bPressedL = false;
-	}
-
-	//저장
-	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_P) & 0x80)
-	{
-		CMapToolMgr::GetInstance()->Save_Json();
-	}
-	//불러오기
-	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_O) & 0x80)
-	{
-		CMapToolMgr::GetInstance()->Load_Json();
-		Load_Objects();
-	}
-
 	if (false == m_bFix)
 		return;
 }
@@ -427,6 +406,20 @@ void CDynamicCamera::Load_Objects()
 		CMapToolMgr::GetInstance()->Plant_Block(it.vPos);
 		s_Index++;
 	}
+}
+
+void CDynamicCamera::LoadCallBackToImguiMgr()
+{
+	Engine::CImguiMgr::GetInstance()->SetLoadCallback([this]() {
+		this->Load_Objects();  // Load 시 실행될 함수
+		});
+}
+
+void CDynamicCamera::ClearCallBackToImguiMgr()
+{
+	Engine::CImguiMgr::GetInstance()->SetClearCallback([this]() {
+		this->ALL_RESET();  // Clear 시 실행될 함수
+		});
 }
 
 void CDynamicCamera::Create_Objects()
