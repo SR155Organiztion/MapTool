@@ -106,6 +106,18 @@
     <Filter Include="04. Component\00. VIBuffer\RcTile">
       <UniqueIdentifier>{b9d1e1fd-be39-46b9-a884-163a3c11bbdc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="100. Imgui">
+      <UniqueIdentifier>{7547cee0-bc08-4464-b64c-992108ff3b88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="100. Imgui\backends">
+      <UniqueIdentifier>{38cb9bee-7050-4295-a6ad-36049fd01d83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="100. Imgui\backends\a">
+      <UniqueIdentifier>{a3a8b4fd-b75f-42dd-8f6b-7eaf520b389e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="100. Imgui\backends\NewFilter1">
+      <UniqueIdentifier>{62208d96-dd6e-44d0-bc38-5cd24a022a1b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\CGraphicDev.cpp">
@@ -206,6 +218,27 @@
     </ClCompile>
     <ClCompile Include="..\Code\CImguiMgr.cpp\CImguiMgr.cpp">
       <Filter>13. ImguiMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Imgui\imgui.cpp">
+      <Filter>100. Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Imgui\imgui_demo.cpp">
+      <Filter>100. Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Imgui\imgui_draw.cpp">
+      <Filter>100. Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Imgui\imgui_tables.cpp">
+      <Filter>100. Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Imgui\imgui_widgets.cpp">
+      <Filter>100. Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Imgui\backends\imgui_impl_dx9.cpp">
+      <Filter>100. Imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Imgui\backends\imgui_impl_win32.cpp">
+      <Filter>100. Imgui\backends</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -330,8 +363,57 @@
     <ClInclude Include="..\Header\CImguiMgr.h">
       <Filter>13. ImguiMgr</Filter>
     </ClInclude>
+    <ClInclude Include="..\Imgui\imconfig.h">
+      <Filter>100. Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Imgui\imgui.h">
+      <Filter>100. Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Imgui\imgui_internal.h">
+      <Filter>100. Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Imgui\imstb_rectpack.h">
+      <Filter>100. Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Imgui\imstb_textedit.h">
+      <Filter>100. Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Imgui\imstb_truetype.h">
+      <Filter>100. Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Imgui\backends\imgui_impl_dx9.h">
+      <Filter>100. Imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Imgui\backends\imgui_impl_win32.h">
+      <Filter>100. Imgui\backends</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Engine.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Imgui\backends\sdlgpu3\shader.frag">
+      <Filter>100. Imgui\backends\a</Filter>
+    </None>
+    <None Include="..\Imgui\backends\sdlgpu3\shader.vert">
+      <Filter>100. Imgui\backends\a</Filter>
+    </None>
+    <None Include="..\Imgui\backends\vulkan\glsl_shader.vert">
+      <Filter>100. Imgui\backends\NewFilter1</Filter>
+    </None>
+    <None Include="..\Imgui\backends\vulkan\glsl_shader.frag">
+      <Filter>100. Imgui\backends\NewFilter1</Filter>
+    </None>
+    <None Include="..\Imgui\backends\vulkan\generate_spv.sh">
+      <Filter>100. Imgui\backends\NewFilter1</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Imgui\backends\sdlgpu3\build_instructions.txt">
+      <Filter>100. Imgui\backends\a</Filter>
+    </Text>
+    <Text Include="..\Imgui\backends\vulkan\build_instructions.txt">
+      <Filter>100. Imgui\backends\NewFilter1</Filter>
+    </Text>
   </ItemGroup>
 </Project>
