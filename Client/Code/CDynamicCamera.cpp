@@ -341,8 +341,9 @@ void CDynamicCamera::Load_Objects()
 
 	//씬 불러오기
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
-
-	CLayer* pLayer = pScene->Get_Layer(L"Block_Layer");
+	CLayer* pLayer;
+	//블럭레이어
+	pLayer = pScene->Get_Layer(L"Block_Layer");
 	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Block)) {
 		
 		if (nullptr == pLayer)
@@ -363,13 +364,54 @@ void CDynamicCamera::Load_Objects()
 		_vec3 vLook = CMapToolMgr::GetInstance()->String_To_Dir((it.Direction));
 		pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
 
-
-
 		//생성
 		_tchar szTag[64] = {};
 
 		while (true) {
 			_stprintf_s(szTag, 64, L"Block_%d", s_Index);
+			_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
+			lstrcpy(pTag, szTag);
+
+			if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+				Release_tchar.push_back(pTag);
+				break; // 성공 시 탈출
+			}
+			else {
+				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
+			}
+		}
+
+		CMapToolMgr::GetInstance()->Plant_Block(it.vPos);
+		s_Index++;
+	}
+
+	//타일레이어
+	pLayer = pScene->Get_Layer(L"Tile_Layer");
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Tiles)) {
+
+		if (nullptr == pLayer)
+			return;
+
+		//블럭 생성
+		Engine::CGameObject* pGameObject = CRcTile::Create(m_pGraphicDev);
+		if (nullptr == pGameObject)
+			return;
+		//위치 설정
+		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
+
+		//타입 설정
+		dynamic_cast<CRcTile*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_Tile(it.Tile_Type));
+
+		//방향 설정
+		_vec3 vLook = CMapToolMgr::GetInstance()->String_To_Dir((it.Direction));
+		pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+
+		//생성
+		_tchar szTag[64] = {};
+
+		while (true) {
+			_stprintf_s(szTag, 64, L"Tile_%d", s_Index);
 			_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
 			lstrcpy(pTag, szTag);
 
