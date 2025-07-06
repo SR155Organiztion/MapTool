@@ -101,6 +101,7 @@ public:
 
 public:
 	S_STAGE Get_Data(string s);
+	string Get_Name();
 
 	void NextRotate();
 	void PrevRotate();
@@ -119,11 +120,16 @@ public:
 
 	const _tchar* Get_Dir();
 
+	_vec3	String_To_Dir(string& _s);
+	_uint	String_To_Block(string& _s);
+	_uint	String_To_Tile(string& _s);
 private:
 	void	Dummy_Data();				///테스트용
 	string	Dir_To_String();
 	string	Block_To_String();
 	string	Tile_To_String();
+
+
 
 private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터

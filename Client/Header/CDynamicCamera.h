@@ -31,7 +31,8 @@ private:
 	void		Mouse_Move();
 	void		Mouse_Fix();
 
-	void		ALL_RESET();
+	void		ALL_RESET();		//맵매니저가 가진 현재맵의 모든데이터 증발 동시에 현재 씬의 모든 오브젝트 제거
+	void		Load_Objects();		//불러오기
 	void		Get_CamInfo(_vec3* vEye, _vec3*& vAt) {}
 
 	//블럭생성
