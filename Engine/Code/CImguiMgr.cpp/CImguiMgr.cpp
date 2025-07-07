@@ -121,10 +121,12 @@ void CImguiMgr::Update_Imgui()
     ImGui::SameLine();
 
     if (ImGui::Button("Delete")) {
-        if (m_ClearCallback) {
-            //CMapToolMgr::GetInstance()->;
-        }
+        CMapToolMgr::GetInstance()->Set_NoCreate();
+        CMapToolMgr::GetInstance()->Delete_Map(nameVec[current_item]);
     }
+
+
+
     ImGui::End();
 }
 

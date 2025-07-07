@@ -16,7 +16,7 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Time, Recipe, Block, Ti
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
 CMapToolMgr::CMapToolMgr()
-    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(DIRECTIONID::NX), m_iObject(CREATEOBJECT_ID::O_BLOCK), m_iRcTile(0), m_fTimer(0.f)
+    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(DIRECTIONID::NX), m_iObject(CREATEOBJECT_ID::O_BLOCK), m_iRcTile(0), m_fTimer(0.f), m_bCreate(true)
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
@@ -94,7 +94,7 @@ HRESULT CMapToolMgr::Save_Json()
         }
     }
     //없다면 추가함
-    if (!bFound) {
+    if (!bFound && m_bCreate) {
         m_mapJson.insert(pair<string, S_STAGE>(m_sName, stage));
     }
     json j = m_mapJson;
@@ -112,6 +112,7 @@ HRESULT CMapToolMgr::Save_Json()
     MSG_BOX("저장 완료");
     //한번 불러와서 확인
     Load_Json();
+    m_bCreate = true;
     return S_OK;
 }
 
@@ -167,6 +168,18 @@ void CMapToolMgr::Select_Map()
     m_tEnvVec = m_mapJson[m_sName].Environment;
 }
 
+void CMapToolMgr::Delete_Map(string _s)
+{
+    auto it = m_mapJson.find(_s);
+
+    if (it != m_mapJson.end()) {
+        Reset();
+        m_mapJson.erase(it);
+        
+        Save_Json();
+    }
+}
+
 void CMapToolMgr::Reset()
 {
     ZeroMemory(&m_tCam, sizeof(S_CAM));
@@ -176,6 +189,11 @@ void CMapToolMgr::Reset()
     m_tBlockVec.clear();
     m_tTileVec.clear();
     m_tEnvVec.clear();
+}
+
+void CMapToolMgr::Set_NoCreate()
+{
+    m_bCreate = false;
 }
 
 S_STAGE CMapToolMgr::Get_Data(string s)
