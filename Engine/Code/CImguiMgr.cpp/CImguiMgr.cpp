@@ -5,6 +5,8 @@
 #include "imgui_impl_win32.h"
 #include "imgui_impl_dx9.h"
 #include "CMapToolMgr.h"
+#include "CCollisionMgr.h"
+#include <sstream>
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -54,6 +56,7 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
     
     strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
+    fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
 
     return S_OK;
 }
@@ -66,10 +69,14 @@ void CImguiMgr::Update_Imgui()
 
     ImGui::Begin("MapTool");                       
 
+    //현재 씬 이름
     ImGui::InputText("Scene", szName, sizeof(szName));
-
+    
+    //저장 및 불러오기 및 초기화
     if (ImGui::Button("Save")) {                 
         if (m_LoadCallback) {
+            CMapToolMgr::GetInstance()->Set_Timer(fTimer);
+
             CMapToolMgr::GetInstance()->Save_Json();
         }
     }
@@ -81,6 +88,7 @@ void CImguiMgr::Update_Imgui()
             CMapToolMgr::GetInstance()->Load_Json();
             m_LoadCallback();
             strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
+            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
         }
     }
 
@@ -92,7 +100,7 @@ void CImguiMgr::Update_Imgui()
         }
     }
 
-    /// 맵 선텍창
+    /// 맵 선택창 /////////////////////////////////////////////////////////////////
     const auto& nameVec = *CMapToolMgr::GetInstance()->Get_NameVec();
 
     std::vector<std::string> labeledNames;
@@ -105,7 +113,7 @@ void CImguiMgr::Update_Imgui()
         comboItems.push_back(str.c_str());
 
     static int current_item = 0;
-
+    //현재 모든 맵 데이터 확인 선탁바
     if (ImGui::Combo("SceneList", &current_item, comboItems.data(), comboItems.size())) {
         nameVec[current_item];
     }
@@ -125,6 +133,29 @@ void CImguiMgr::Update_Imgui()
         CMapToolMgr::GetInstance()->Delete_Map(nameVec[current_item]);
     }
 
+    ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer));
+
+    // 디버그용 ////////////////////////////////////////////////////////////////
+    
+    //방향확인
+    string S = "Direction : " + CMapToolMgr::GetInstance()->Get_Dir();
+    ImGui::Text(S.c_str());
+
+    //충돌 위치
+    _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
+    char buf[64];
+    sprintf_s(buf, sizeof(buf), "X: %.2f | Y: %.2f | Z: %.2f", colpos.x, colpos.y, colpos.z);
+
+
+    //레이 위치+++++++
+     _vec3 RayPos, RayDir;
+    CCollisionMgr::GetInstance()->Get_Ray(&RayPos, &RayDir);
+    char buf1[64];
+    char buf2[64];
+    sprintf_s(buf1, sizeof(buf), "RayPos(X:%.2f | Y:%.2f | Z:%.2f)", RayPos.x, RayPos.y, RayPos.z);
+    sprintf_s(buf2, sizeof(buf), "RayDir(X:%.2f | Y:%.2f | Z:%.2f)", RayDir.x, RayDir.y, RayDir.z);
+    ImGui::Text(buf1);
+    ImGui::Text(buf2);
 
 
     ImGui::End();

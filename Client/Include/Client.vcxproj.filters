@@ -76,6 +76,9 @@
     <Filter Include="Object\04. Plantable\01. Block">
       <UniqueIdentifier>{f5acdf0e-6f53-4457-8406-852672dd9f7c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\04. Plantable\03. PlayerPoint">
+      <UniqueIdentifier>{ec7af5d5-585b-4fe1-9261-2470230bb6a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">

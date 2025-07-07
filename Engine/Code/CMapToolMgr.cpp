@@ -35,6 +35,12 @@ void CMapToolMgr::Plant_Block(_vec3 _vPos)
     m_tBlockVec.push_back(tBlock);
 }
 
+void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos, string _sDir)
+{
+    S_BLOCK tBlock = { _sType , _vPos, _sDir };
+    m_tBlockVec.push_back(tBlock);
+}
+
 void CMapToolMgr::Break_Block(_vec3 _vPos)
 {
     for (vector<S_BLOCK>::iterator it = m_tBlockVec.begin(); it != m_tBlockVec.end(); ) {
@@ -49,7 +55,13 @@ void CMapToolMgr::Break_Block(_vec3 _vPos)
 
 void CMapToolMgr::Plant_Tile(_vec3 _vPos)
 {
-    S_TILE tTile = { Tile_To_String(), _vPos, Dir_To_String()};
+    S_TILE tTile = { Tile_To_String(), _vPos, Dir_To_String() };
+    m_tTileVec.push_back(tTile);
+}
+
+void CMapToolMgr::Plant_Tile(string _sType, _vec3 _vPos, string _sDir)
+{
+    S_TILE tTile = { _sType, _vPos, _sDir };
     m_tTileVec.push_back(tTile);
 }
 
@@ -109,7 +121,7 @@ HRESULT CMapToolMgr::Save_Json()
         file << j.dump(2);
         file.close();
     }
-    MSG_BOX("저장 완료");
+
     //한번 불러와서 확인
     Load_Json();
     m_bCreate = true;
@@ -118,7 +130,6 @@ HRESULT CMapToolMgr::Save_Json()
 
 HRESULT CMapToolMgr::Load_Json()
 {
-    MSG_BOX("로드호출");
     Reset();
     m_mapJson.clear();
     m_sNameVec.clear();
@@ -153,10 +164,9 @@ HRESULT CMapToolMgr::Load_Json()
         file.close();
     }
 
-    MSG_BOX("로드완료");
     return S_OK;
 }
-        
+
 void CMapToolMgr::Select_Map()
 {
     m_tCam = m_mapJson[m_sName].Cam;
@@ -175,7 +185,11 @@ void CMapToolMgr::Delete_Map(string _s)
     if (it != m_mapJson.end()) {
         Reset();
         m_mapJson.erase(it);
-        
+
+        if (m_sName == _s && !m_mapJson.empty()) {
+            m_sName = m_mapJson.begin()->first;
+        }
+
         Save_Json();
     }
 }
@@ -219,7 +233,7 @@ void CMapToolMgr::Set_Name(string _s)
             return;
         }
     }
-    
+
     MSG_BOX("SetName Error");
 }
 
@@ -249,9 +263,9 @@ _vec3 CMapToolMgr::Get_DirLook()
     switch (m_iDir)
     {
     case Engine::PX:
-        return _vec3(0.f, 0.f, 0.f); 
+        return _vec3(0.f, 0.f, 0.f);
     case Engine::NX:
-        return _vec3(0.f, D3DXToRadian(90.f), 0.f); 
+        return _vec3(0.f, D3DXToRadian(90.f), 0.f);
     case Engine::PZ:
         return _vec3(0.f, D3DXToRadian(180.f), 0.f);
     case Engine::NZ:
@@ -316,20 +330,20 @@ _uint CMapToolMgr::Get_NowRcTile()
     return m_iRcTile;
 }
 
-const _tchar* CMapToolMgr::Get_Dir()
+string CMapToolMgr::Get_Dir()
 {
     switch (m_iDir)
     {
     case Engine::DIRECTIONID::PX:
-        return L"PX";
+        return "PX";
     case Engine::DIRECTIONID::NX:
-        return L"NX";
+        return "NX";
     case Engine::DIRECTIONID::PZ:
-        return L"PZ";
+        return "PZ";
     case Engine::DIRECTIONID::NZ:
-        return L"NZ";
+        return "NZ";
     default:
-        return L"???";
+        return "???";
     }
 }
 
@@ -339,12 +353,12 @@ void CMapToolMgr::Dummy_Data()
     m_sName = "Stage1";
 
     _vec3 v = { 1.f, 2.f, 3.f };
-    
+
     S_BLOCK b = { "A", v, "L" };
     m_tBlockVec.push_back(b);
     m_tBlockVec.push_back(b);
 
-    S_TILE t = { "T", v, "R"};
+    S_TILE t = { "T", v, "R" };
     m_tTileVec.push_back(t);
 
     S_ENVIRONMENT e = { "T", v, v };

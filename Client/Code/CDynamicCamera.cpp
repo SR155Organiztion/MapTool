@@ -12,6 +12,7 @@
 #include "CRcTile.h"
 #include "CCollisionMgr.h"
 #include "CImguiMgr.h"
+#include <tchar.h>
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -359,8 +360,8 @@ void CDynamicCamera::Load_Objects()
 				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
 			}
 		}
-
-		CMapToolMgr::GetInstance()->Plant_Block(it.vPos);
+		
+		CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction);
 		s_Index++;
 	}
 
@@ -403,7 +404,7 @@ void CDynamicCamera::Load_Objects()
 			}
 		}
 
-		CMapToolMgr::GetInstance()->Plant_Block(it.vPos);
+		CMapToolMgr::GetInstance()->Plant_Tile(it.Tile_Type, it.vPos, it.Direction);
 		s_Index++;
 	}
 }
@@ -515,6 +516,11 @@ void CDynamicCamera::Delete_Block()
 	auto objectmap = pLayer->Get_ObjectMap();
 	_vec3 vBlockPos, vColPos;
 	vColPos = CCollisionMgr::GetInstance()->Get_ColPos();
+
+	float ftmp = 0.f;
+	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
+		ftmp = 0.25f;
+	}
 
 	vColPos.x = (vColPos.x >= 0) ? floorf(vColPos.x) + 0.5f : ceil(vColPos.x) - 0.5f;
 	vColPos.y = (vColPos.y >= 0) ? floorf(vColPos.y) + 0.25f : ceil(vColPos.y) - 0.25f;
