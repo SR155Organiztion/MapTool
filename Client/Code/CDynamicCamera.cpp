@@ -516,9 +516,20 @@ void CDynamicCamera::Delete_Block()
 	_vec3 vBlockPos, vColPos;
 	vColPos = CCollisionMgr::GetInstance()->Get_ColPos();
 
+<<<<<<< Updated upstream
 	vColPos.x = floorf(vColPos.x) + 0.5f;
 	vColPos.y = floorf(vColPos.y) + 0.5f;
 	vColPos.z = floorf(vColPos.z) + 0.5f;
+=======
+	float ftmp = 0.f;
+	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
+		ftmp = 0.25f;
+	}
+
+	vColPos.x = (vColPos.x >= 0) ? floorf(vColPos.x) + 0.5f : ceil(vColPos.x) - 0.5f;
+	vColPos.y = (vColPos.y >= 0) ? floorf(vColPos.y) + (0.25f + ftmp): ceil(vColPos.y) - (0.25f + ftmp);
+	vColPos.z = (vColPos.z >= 0) ? floorf(vColPos.z) + 0.5f : ceil(vColPos.z) - 0.5f;
+>>>>>>> Stashed changes
 
 	//모든 오브젝트를 순회
 	for (auto it = objectmap->begin(); it != objectmap->end();) {

@@ -119,9 +119,16 @@ HRESULT CShowBox::Set_Metarial()
 void CShowBox::Set_Greed(_vec3 _v)
 {
     _vec3 vTmp;
-
+    float ftmp = 0.f;
+    if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
+        ftmp = 0.25f;
+    }
     vTmp.x = (_v.x >= 0) ? floor(_v.x) + 0.5f : ceil(_v.x) - 0.5f;
+<<<<<<< Updated upstream
     vTmp.y = (_v.y >= 0) ? floor(_v.y) + 0.5f : ceil(_v.y) - 0.5f;
+=======
+    vTmp.y = (_v.y >= 0) ? floor(_v.y) + (0.25f + ftmp) : ceil(_v.y) - (0.25f + ftmp);
+>>>>>>> Stashed changes
     vTmp.z = (_v.z >= 0) ? floor(_v.z) + 0.5f : ceil(_v.z) - 0.5f;
     
     m_pTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
