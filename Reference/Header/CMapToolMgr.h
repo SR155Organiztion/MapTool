@@ -68,7 +68,7 @@ struct S_PLAYER {
 struct S_STAGE {
 	S_CAM Cam;
 	S_PLAYER Player;
-	_float Time;
+	float Time;
 	std::vector<string> Recipe;
 	std::vector<S_BLOCK> Block;
 	std::vector<S_TILE> Tiles;
@@ -102,6 +102,8 @@ public:
 public:
 	S_STAGE Get_Data(string s);
 	string Get_Name();
+	void   Set_Name(string _s);
+	vector<string>* Get_NameVec();
 
 	void NextRotate();
 	void PrevRotate();

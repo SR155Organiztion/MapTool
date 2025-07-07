@@ -21,11 +21,15 @@ public:
 
 	void SetLoadCallback(std::function<void()> callback) { m_LoadCallback = std::move(callback); }
 	void SetClearCallback(std::function<void()> callback) { m_ClearCallback = std::move(callback); }
+
+	char* Get_Name() { return szName; }
 protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
 	std::function<void()>					m_LoadCallback;
 	std::function<void()>					m_ClearCallback;
 	char szName[64];
+
+
 
 private:
 	virtual void		Free();

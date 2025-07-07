@@ -140,7 +140,7 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 		m_vAt.y -= fTimeDelta * m_fSpeed;;
 	}
 	//마우스 고정
-	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_TAB) & 0x80)
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_LALT) & 0x80)
 	{
 		if (m_bCheck)
 			return;

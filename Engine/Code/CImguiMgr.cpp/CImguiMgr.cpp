@@ -53,6 +53,8 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
     
+    strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
+
     return S_OK;
 }
 
@@ -64,7 +66,6 @@ void CImguiMgr::Update_Imgui()
 
     ImGui::Begin("MapTool");                       
 
-    strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
     ImGui::InputText("Scene", szName, sizeof(szName));
 
     if (ImGui::Button("Save")) {                 
@@ -79,9 +80,9 @@ void CImguiMgr::Update_Imgui()
         if (m_LoadCallback) {
             CMapToolMgr::GetInstance()->Load_Json();
             m_LoadCallback();
+            strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
         }
     }
-
 
     ImGui::SameLine();
 
@@ -91,8 +92,39 @@ void CImguiMgr::Update_Imgui()
         }
     }
 
+    /// ¸Ê ¼±ÅØÃ¢
+    const auto& nameVec = *CMapToolMgr::GetInstance()->Get_NameVec();
 
-    //ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io.Framerate, io.Framerate);
+    std::vector<std::string> labeledNames;
+    for (int i = 0; i < nameVec.size(); ++i) {
+        labeledNames.push_back(nameVec[i] + "##" + std::to_string(i));
+    }
+
+    std::vector<const char*> comboItems;
+    for (const auto& str : labeledNames)
+        comboItems.push_back(str.c_str());
+
+    static int current_item = 0;
+
+    if (ImGui::Combo("SceneList", &current_item, comboItems.data(), comboItems.size())) {
+        nameVec[current_item];
+    }
+
+    if (ImGui::Button("SetScene")) {
+        if (m_LoadCallback) {
+            CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
+            CMapToolMgr::GetInstance()->Select_Map();
+            m_LoadCallback();
+        }
+    }
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Delete")) {
+        if (m_ClearCallback) {
+            //CMapToolMgr::GetInstance()->;
+        }
+    }
     ImGui::End();
 }
 
