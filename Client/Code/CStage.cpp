@@ -1,17 +1,19 @@
 #include "pch.h"
-#include "CStage.h"
-#include "CShowBox.h"
-#include "CTerrain.h"
-#include "CProtoMgr.h"
-#include "CDynamicCamera.h"
-#include "CSkyBox.h"
-#include "CLightMgr.h"
 #include "CBlock.h"
 #include "CCollisionMgr.h"
+#include "CDynamicCamera.h"
 #include "CFontMgr.h"
+#include "CLightMgr.h"
 #include "CMapToolMgr.h"
-#include <iomanip> 
+#include "CProtoMgr.h"
+#include "CShowBox.h"
 #include "CShowRcTile.h"
+#include "CSkyBox.h"
+#include "CStage.h"
+#include "CTerrain.h"
+#include <iomanip> 
+#include "CImguiMgr.h"
+
 CStage::CStage(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CScene(pGraphicDev)
 {
@@ -38,6 +40,8 @@ HRESULT CStage::Ready_Scene()
     if (FAILED(Ready_UI_Layer(L"UI_Layer")))
         return E_FAIL;
 
+    CImguiMgr::GetInstance()->Ready_Imgui(m_pGraphicDev, g_hWnd);
+
     return S_OK;
 }
 
@@ -48,8 +52,6 @@ HRESULT CStage::Ready_Environment_Layer(const _tchar* pLayerTag)
         return E_FAIL;
 
     Engine::CGameObject* pGameObject = nullptr;
-
-   
 
     m_mapLayer.insert({ pLayerTag, pLayer });
 
@@ -141,6 +143,7 @@ HRESULT CStage::Ready_UI_Layer(const _tchar* pLayerTag)
 _int CStage::Update_Scene(const _float& fTimeDelta)
 {
     CCollisionMgr::GetInstance()->Compute_Ray(m_pGraphicDev, g_hWnd);
+    CImguiMgr::GetInstance()->Update_Imgui();
 
     return Engine::CScene::Update_Scene(fTimeDelta);
 }
@@ -177,6 +180,7 @@ void CStage::Render_Scene()
 
     CFontMgr::GetInstance()->Render_Font(L"Font_Default", szDebug, &vPos3, D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
 
+    CImguiMgr::GetInstance()->Render_Imgui();
 }
 
 

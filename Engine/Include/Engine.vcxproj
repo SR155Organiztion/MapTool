@@ -116,7 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;ENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../Header; ../../Base;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Header;../../Base;../Imgui;../Imgui/backends;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -137,7 +137,7 @@ call Copy.bat</Command>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;ENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../Header; ../../Base;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Header;../../Base;../Imgui;../Imgui/backends;</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
@@ -194,6 +194,14 @@ call Copy.bat</Command>
     <ClInclude Include="..\Header\Engine_Struct.h" />
     <ClInclude Include="..\Header\Engine_Typedef.h" />
     <ClInclude Include="..\Header\json.hpp" />
+    <ClInclude Include="..\Imgui\backends\imgui_impl_dx9.h" />
+    <ClInclude Include="..\Imgui\backends\imgui_impl_win32.h" />
+    <ClInclude Include="..\Imgui\imconfig.h" />
+    <ClInclude Include="..\Imgui\imgui.h" />
+    <ClInclude Include="..\Imgui\imgui_internal.h" />
+    <ClInclude Include="..\Imgui\imstb_rectpack.h" />
+    <ClInclude Include="..\Imgui\imstb_textedit.h" />
+    <ClInclude Include="..\Imgui\imstb_truetype.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -230,9 +238,27 @@ call Copy.bat</Command>
     <ClCompile Include="..\Code\CTransform.cpp" />
     <ClCompile Include="..\Code\CTriCol.cpp" />
     <ClCompile Include="..\Code\CVIBuffer.cpp" />
+    <ClCompile Include="..\Imgui\backends\imgui_impl_dx9.cpp" />
+    <ClCompile Include="..\Imgui\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\Imgui\imgui.cpp" />
+    <ClCompile Include="..\Imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\Imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\Imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\Imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Engine.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Imgui\backends\sdlgpu3\shader.frag" />
+    <None Include="..\Imgui\backends\sdlgpu3\shader.vert" />
+    <None Include="..\Imgui\backends\vulkan\generate_spv.sh" />
+    <None Include="..\Imgui\backends\vulkan\glsl_shader.frag" />
+    <None Include="..\Imgui\backends\vulkan\glsl_shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Imgui\backends\sdlgpu3\build_instructions.txt" />
+    <Text Include="..\Imgui\backends\vulkan\build_instructions.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

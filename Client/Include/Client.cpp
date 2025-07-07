@@ -7,6 +7,7 @@
 #include "CMainApp.h"
 #include "CTimerMgr.h"
 #include "CFrameMgr.h"
+#include "CImguiMgr.h"
 
 #define MAX_LOADSTRING 100
 
@@ -63,7 +64,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     if (FAILED(CFrameMgr::GetInstance()->Ready_Frame(L"Frame60", 60.f)))
         return FALSE;
-
 
     // 기본 메시지 루프입니다:
     while (true)
@@ -185,6 +185,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    CImguiMgr::GetInstance()->Set_WndProc(hWnd, message, wParam, lParam);
     switch (message)
     {
     case WM_COMMAND:
