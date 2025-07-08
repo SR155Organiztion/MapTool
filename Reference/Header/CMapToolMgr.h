@@ -20,7 +20,6 @@ struct S_BLOCK {
 	string Direction;
 };
 
-
 /**
 * @struct S_Tile
 * @brief 타일 구조체
@@ -114,6 +113,8 @@ public:
 	string  Get_Name();
 	void    Set_Name(string _s);
 	void	Set_Timer(float _fTimer) { m_fTimer = _fTimer; }
+	void	Add_Recipe(string _s) { m_sRecipeVec.push_back(_s); }
+	vector<string>* Get_Recipe() { return &m_sRecipeVec; }
 	vector<string>* Get_NameVec();
 	
 

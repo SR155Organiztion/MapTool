@@ -57,6 +57,17 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     
     strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
     fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+    
+    {
+        m_mapRecipes["Fish sashimi"] = false;
+        m_mapRecipes["Shrimp sashimi"] = false;
+        m_mapRecipes["Fish sushi"] = false;
+        m_mapRecipes["Cucumber sushi"] = false;
+        m_mapRecipes["Lettuce salad"] = false;
+        m_mapRecipes["Letmato salad"] = false;
+        m_mapRecipes["Letmatober salad"] = false;
+        m_mapRecipes["Pasta "] = false;
+    }
 
     return S_OK;
 }
@@ -76,7 +87,10 @@ void CImguiMgr::Update_Imgui()
     if (ImGui::Button("Save")) {                 
         if (m_LoadCallback) {
             CMapToolMgr::GetInstance()->Set_Timer(fTimer);
-
+            for (auto it : m_mapRecipes) {
+                if(it.second == true)
+                    CMapToolMgr::GetInstance()->Add_Recipe(it.first);
+            }
             CMapToolMgr::GetInstance()->Save_Json();
         }
     }
@@ -89,6 +103,18 @@ void CImguiMgr::Update_Imgui()
             m_LoadCallback();
             strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
             fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+
+            for (auto& it : m_mapRecipes) {
+                it.second = false;
+            }
+            for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
+
+                for (auto& it : m_mapRecipes) {
+                    if (Recipe == it.first) {
+                        it.second = true;
+                    }
+                }
+            }
         }
     }
 
@@ -123,6 +149,19 @@ void CImguiMgr::Update_Imgui()
             CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
             CMapToolMgr::GetInstance()->Select_Map();
             strcpy_s(szName, nameVec[current_item].c_str());
+            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            for (auto& it : m_mapRecipes) {
+                it.second = false;
+            }
+            for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
+
+                for (auto& it : m_mapRecipes) {
+                    if (Recipe == it.first) {
+                        it.second = true;
+                    }
+                }
+            }
+
             m_LoadCallback();
         }
     }
@@ -134,7 +173,19 @@ void CImguiMgr::Update_Imgui()
         CMapToolMgr::GetInstance()->Delete_Map(nameVec[current_item]);
     }
 
+    // 타이머 설정 ////////////////////////////////////////////////////////////////
+
+
     ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer));
+
+
+    // 레시피 설정 ////////////////////////////////////////////////////////////////
+
+    if (ImGui::CollapsingHeader("Recipes")) {
+        for (auto& it : m_mapRecipes) {
+            ImGui::Checkbox(it.first.c_str(), &it.second);
+        }
+    }
 
     // 디버그용 ////////////////////////////////////////////////////////////////
     

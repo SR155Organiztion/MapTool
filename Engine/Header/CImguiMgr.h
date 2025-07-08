@@ -29,6 +29,8 @@ protected:
 	std::function<void()>					m_LoadCallback;
 	std::function<void()>					m_ClearCallback;
 	
+
+	map<string, _bool>						m_mapRecipes;
 	char szName[64];
 	float fTimer;
 
