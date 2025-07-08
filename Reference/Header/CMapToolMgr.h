@@ -25,12 +25,21 @@ struct S_BLOCK {
 * @struct S_Tile
 * @brief 타일 구조체
 */
+
 struct S_TILE {
 	string Tile_Type;
 	_vec3 vPos;
 	string Direction;
 };
 
+/**
+* @struct S_BLOCK
+* @brief 블럭 구조체
+*/
+struct S_GAMEOBJECT {
+	std::vector<S_BLOCK> Block;
+	std::vector<S_TILE> Tile;
+};
 
 /**
 * @struct S_ENVIRONMENT
@@ -41,7 +50,6 @@ struct S_ENVIRONMENT {
 	_vec3 vPos;
 	_vec3 Direction;
 };
-
 
 /**
 * @struct S_CAM
@@ -70,8 +78,7 @@ struct S_STAGE {
 	S_PLAYER Player;
 	float Time;
 	std::vector<string> Recipe;
-	std::vector<S_BLOCK> Block;
-	std::vector<S_TILE> Tiles;
+	S_GAMEOBJECT GameObject;
 	std::vector<S_ENVIRONMENT> Environment;
 };
 
@@ -104,8 +111,8 @@ public:
 	void	Set_NoCreate();
 public:
 	S_STAGE Get_Data(string s);
-	string Get_Name();
-	void   Set_Name(string _s);
+	string  Get_Name();
+	void    Set_Name(string _s);
 	void	Set_Timer(float _fTimer) { m_fTimer = _fTimer; }
 	vector<string>* Get_NameVec();
 	

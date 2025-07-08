@@ -8,10 +8,11 @@ using json = nlohmann::json;
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(_vec3, x, y, z)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_TILE, Tile_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_GAMEOBJECT, Block, Tile)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVIRONMENT, Env_Type, vPos, Direction)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_CAM, vEye, vAt)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_PLAYER, P1, P2)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Time, Recipe, Block, Tiles, Environment);
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Time, Recipe, GameObject, Environment);
 
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
@@ -173,8 +174,8 @@ void CMapToolMgr::Select_Map()
     m_tPlayer = m_mapJson[m_sName].Player;
     m_fTimer = m_mapJson[m_sName].Time;
     m_sRecipeVec = m_mapJson[m_sName].Recipe;
-    m_tBlockVec = m_mapJson[m_sName].Block;
-    m_tTileVec = m_mapJson[m_sName].Tiles;
+    m_tBlockVec = m_mapJson[m_sName].GameObject.Block;
+    m_tTileVec = m_mapJson[m_sName].GameObject.Tile;
     m_tEnvVec = m_mapJson[m_sName].Environment;
 }
 

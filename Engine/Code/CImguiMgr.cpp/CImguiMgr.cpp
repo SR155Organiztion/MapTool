@@ -122,6 +122,7 @@ void CImguiMgr::Update_Imgui()
         if (m_LoadCallback) {
             CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
             CMapToolMgr::GetInstance()->Select_Map();
+            strcpy_s(szName, nameVec[current_item].c_str());
             m_LoadCallback();
         }
     }

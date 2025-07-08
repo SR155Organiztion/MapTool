@@ -324,7 +324,7 @@ void CDynamicCamera::Load_Objects()
 	CLayer* pLayer;
 	//블럭레이어
 	pLayer = pScene->Get_Layer(L"Block_Layer");
-	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Block)) {
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).GameObject.Block)) {
 		
 		if (nullptr == pLayer)
 			return;
@@ -367,7 +367,7 @@ void CDynamicCamera::Load_Objects()
 
 	//타일레이어
 	pLayer = pScene->Get_Layer(L"Tile_Layer");
-	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Tiles)) {
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).GameObject.Tile)) {
 
 		if (nullptr == pLayer)
 			return;
@@ -517,13 +517,14 @@ void CDynamicCamera::Delete_Block()
 	_vec3 vBlockPos, vColPos;
 	vColPos = CCollisionMgr::GetInstance()->Get_ColPos();
 
+
 	float ftmp = 0.f;
 	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
 		ftmp = 0.25f;
 	}
 
 	vColPos.x = (vColPos.x >= 0) ? floorf(vColPos.x) + 0.5f : ceil(vColPos.x) - 0.5f;
-	vColPos.y = (vColPos.y >= 0) ? floorf(vColPos.y) + 0.25f : ceil(vColPos.y) - 0.25f;
+	vColPos.y = (vColPos.y >= 0) ? floorf(vColPos.y) + (0.25f + ftmp) : ceil(vColPos.y) - (0.25f + ftmp);
 	vColPos.z = (vColPos.z >= 0) ? floorf(vColPos.z) + 0.5f : ceil(vColPos.z) - 0.5f;
 
 	//모든 오브젝트를 순회
