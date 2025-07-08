@@ -59,14 +59,14 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
     
     {
-        m_mapRecipes["Fish sashimi"] = false;
-        m_mapRecipes["Shrimp sashimi"] = false;
-        m_mapRecipes["Fish sushi"] = false;
-        m_mapRecipes["Cucumber sushi"] = false;
-        m_mapRecipes["Lettuce salad"] = false;
-        m_mapRecipes["Letmato salad"] = false;
-        m_mapRecipes["Letmatober salad"] = false;
-        m_mapRecipes["Pasta "] = false;
+        m_mapRecipes["salad_lettuce"] = false;
+        m_mapRecipes["salad_lettuce_tomato"] = false;
+        m_mapRecipes["salad_cucumber_lettuce_tomato"] = false;
+        m_mapRecipes["sashimi_fish"] = false;
+        m_mapRecipes["sashimi_shrimp"] = false;
+        m_mapRecipes["sushi_fish"] = false;
+        m_mapRecipes["sushi_cucumber"] = false;
+        m_mapRecipes["pasta_tomato"] = false;
     }
 
     return S_OK;
