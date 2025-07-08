@@ -6,7 +6,7 @@
 
 using json = nlohmann::json;
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(_vec3, x, y, z)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction, Item)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_TILE, Tile_Type, vPos, Direction)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_GAMEOBJECT, Block, Tile)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVIRONMENT, Env_Type, vPos, Direction)
@@ -32,13 +32,13 @@ CMapToolMgr::~CMapToolMgr()
 
 void CMapToolMgr::Plant_Block(_vec3 _vPos)
 {
-    S_BLOCK tBlock = { Block_To_String() , _vPos, Dir_To_String() };
+    S_BLOCK tBlock = { Block_To_String() , _vPos, Dir_To_String(), Item_To_String() };
     m_tBlockVec.push_back(tBlock);
 }
 
-void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos, string _sDir)
+void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos, string _sDir, string _sItem)
 {
-    S_BLOCK tBlock = { _sType , _vPos, _sDir };
+    S_BLOCK tBlock = { _sType , _vPos, _sDir, _sItem };
     m_tBlockVec.push_back(tBlock);
 }
 
@@ -444,6 +444,13 @@ string CMapToolMgr::Tile_To_String()
         break;
     }
     return "???";
+}
+
+string CMapToolMgr::Item_To_String()
+{
+    
+
+    return string();
 }
 
 _vec3 CMapToolMgr::String_To_Dir(string& _s)

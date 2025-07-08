@@ -18,6 +18,7 @@ struct S_BLOCK {
 	string Block_Type;
 	_vec3 vPos;
 	string Direction;
+	string Item;
 };
 
 /**
@@ -93,10 +94,10 @@ private:
 
 public:
 	void	Plant_Block(_vec3 _vPos);		///설치한 블록의 정보를 벡터 리스트에 넣음
-	void    Plant_Block(string _sType, _vec3 _vPos, string _sDir); /// 저장용 블럭설치
+	void    Plant_Block(string _sType, _vec3 _vPos, string _sDir, string _sItem = ""); /// 불러오기용 블럭설치
 	void	Break_Block(_vec3 _vPos);
 	void	Plant_Tile(_vec3 _vPos);		///설치한 타일의 정보를 벡터 리스트에 넣음
-	void    Plant_Tile(string _sType, _vec3 _vPos, string _sDir); /// 저장용 블럭설치
+	void    Plant_Tile(string _sType, _vec3 _vPos, string _sDir); /// 불러오기용 블럭설치
 	void	Break_Tile(_vec3 _vPos);
 	void	Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
 	void	Plant_Camera(_vec3 _vEye, _vec3 _vAt);						///현재 바라보고 있는 곳의 Eye와 at을 저장
@@ -138,13 +139,13 @@ public:
 	_vec3	String_To_Dir(string& _s);
 	_uint	String_To_Block(string& _s);
 	_uint	String_To_Tile(string& _s);
-
+	
 private:
 	void	Dummy_Data();				///테스트용
 	string	Dir_To_String();
 	string	Block_To_String();
 	string	Tile_To_String();
-
+	string  Item_To_String();
 
 
 private:
