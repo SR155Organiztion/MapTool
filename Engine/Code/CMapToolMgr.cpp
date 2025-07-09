@@ -2,20 +2,22 @@
 #include "CMapToolMgr.h"
 #include "CManagement.h"
 #include <fstream>
+#include "CImguiMgr.h"
 
 using json = nlohmann::json;
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(_vec3, x, y, z)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction, Item)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_TILE, Tile_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_GAMEOBJECT, Block, Tile)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVIRONMENT, Env_Type, vPos, Direction)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_CAM, vEye, vAt)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_PLAYER, P1, P2)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Recipe, Block, Tiles, Environment);
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Time, Recipe, GameObject, Environment);
 
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
 CMapToolMgr::CMapToolMgr()
-    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(DIRECTIONID::NX), m_iObject(CREATEOBJECT_ID::O_BLOCK), m_iRcTile(0)
+    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(DIRECTIONID::NX), m_iObject(CREATEOBJECT_ID::O_BLOCK), m_iRcTile(0), m_fTimer(0.f), m_bCreate(true)
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
@@ -30,7 +32,13 @@ CMapToolMgr::~CMapToolMgr()
 
 void CMapToolMgr::Plant_Block(_vec3 _vPos)
 {
-    S_BLOCK tBlock = { Block_To_String() , _vPos, Dir_To_String() };
+    S_BLOCK tBlock = { Block_To_String() , _vPos, Dir_To_String(), Item_To_String() };
+    m_tBlockVec.push_back(tBlock);
+}
+
+void CMapToolMgr::Plant_Block(string _sType, _vec3 _vPos, string _sDir, string _sItem)
+{
+    S_BLOCK tBlock = { _sType , _vPos, _sDir, _sItem };
     m_tBlockVec.push_back(tBlock);
 }
 
@@ -48,7 +56,13 @@ void CMapToolMgr::Break_Block(_vec3 _vPos)
 
 void CMapToolMgr::Plant_Tile(_vec3 _vPos)
 {
-    S_TILE tTile = { Tile_To_String(), _vPos, Dir_To_String()};
+    S_TILE tTile = { Tile_To_String(), _vPos, Dir_To_String() };
+    m_tTileVec.push_back(tTile);
+}
+
+void CMapToolMgr::Plant_Tile(string _sType, _vec3 _vPos, string _sDir)
+{
+    S_TILE tTile = { _sType, _vPos, _sDir };
     m_tTileVec.push_back(tTile);
 }
 
@@ -78,40 +92,48 @@ void CMapToolMgr::Plant_Player(_int _iPlayer, _vec3 _vPos)
 
 HRESULT CMapToolMgr::Save_Json()
 {
-    MSG_BOX("저장호출");
-    //테스트용
-    //Dummy_Data();     
-    m_mapJson.clear();
-    //////////////////////////////////////
+    m_sName = CImguiMgr::GetInstance()->Get_Name();
     //데이터 종합
-    S_STAGE stage = { m_tCam, m_tPlayer, m_fTimer ,m_sRecipeVec, m_tBlockVec, m_tTileVec, m_tEnvVec };
-    m_mapJson.insert(pair<string, S_STAGE>(m_sName, stage));
-    json j = { m_mapJson };// 여기에 파라미터받기
 
+    S_STAGE stage = { m_tCam, m_tPlayer ,m_fTimer, m_sRecipeVec, m_tBlockVec, m_tTileVec, m_tEnvVec };
+    //저장하기 전 json에 있는 모든 맵의 키값을 스테이지 이름 벡터와 비교찾는다
+    bool bFound = false;
+    for (auto it = m_mapJson.begin(); it != m_mapJson.end(); ++it) {
+        //만약 겹치는 키 값이 있다면 그 키의 second를 비우고 현재 스테이지 데이터를 넣음
+        if ((*it).first == m_sName) {
+            (*it).second = stage;
+            bFound = true;
+            break;
+        }
+    }
+    //없다면 추가함
+    if (!bFound && m_bCreate) {
+        m_mapJson.insert(pair<string, S_STAGE>(m_sName, stage));
+    }
+    json j = m_mapJson;
     /////////////////////////////////////
     ///데이터 저장시점
     {
         std::ofstream file("../Bin/Data/SaveData.json");
-
         if (!file.is_open()) {
             MSG_BOX("저장 오류");
             return E_FAIL;
         }
-
         file << j.dump(2);
         file.close();
     }
 
-    MSG_BOX("저장 완료");
+    //한번 불러와서 확인
+    Load_Json();
+    m_bCreate = true;
     return S_OK;
 }
 
 HRESULT CMapToolMgr::Load_Json()
 {
-    MSG_BOX("로드호출");
     Reset();
     m_mapJson.clear();
-
+    m_sNameVec.clear();
     std::ifstream file("../Bin/Data/SaveData.json");
 
     if (!file.is_open()) {
@@ -125,51 +147,68 @@ HRESULT CMapToolMgr::Load_Json()
 
         bool firstKey = false;
         // 순회하며 각 요소를 map<string, S_STAGE>로 변환
-        for (const auto& Stage : j)
+        for (auto it = j.begin(); it != j.end(); ++it)
         {
-            if (!Stage.is_object()) continue;
+            const std::string& stageName = it.key();
+            const json& stageJson = it.value();
 
-            for (auto it = Stage.begin(); it != Stage.end(); ++it)
-            {
+            if (m_sNameVec.empty())
+                m_sName = stageName;
 
-                const std::string& stageName = it.key();
-                const json& stageJson = it.value();
-
-                if (!firstKey)
-                {
-                    m_sName = stageName;
-                    firstKey = true;
-                }
-                // 변환 시도
-                m_sNameVec.push_back(stageName);
-                S_STAGE stage = stageJson.get<S_STAGE>();
-                m_mapJson[stageName] = stage;
-            }
+            m_sNameVec.push_back(stageName);
+            S_STAGE stage = stageJson.get<S_STAGE>();
+            m_mapJson[stageName] = stage;
         }
+
         Select_Map();
 
         file.close();
     }
-    MSG_BOX("로드완료");
+
     return S_OK;
 }
-        
+
 void CMapToolMgr::Select_Map()
 {
-    m_sRecipeVec = m_mapJson[m_sName].Recipe;
-    m_tPlayer = m_mapJson[m_sName].Player;
     m_tCam = m_mapJson[m_sName].Cam;
-    m_tBlockVec = m_mapJson[m_sName].Block;
-    m_tTileVec = m_mapJson[m_sName].Tiles;
+    m_tPlayer = m_mapJson[m_sName].Player;
+    m_fTimer = m_mapJson[m_sName].Time;
+    m_sRecipeVec = m_mapJson[m_sName].Recipe;
+    m_tBlockVec = m_mapJson[m_sName].GameObject.Block;
+    m_tTileVec = m_mapJson[m_sName].GameObject.Tile;
     m_tEnvVec = m_mapJson[m_sName].Environment;
+}
+
+void CMapToolMgr::Delete_Map(string _s)
+{
+    auto it = m_mapJson.find(_s);
+
+    if (it != m_mapJson.end()) {
+        Reset();
+        m_mapJson.erase(it);
+
+        if (m_sName == _s && !m_mapJson.empty()) {
+            m_sName = m_mapJson.begin()->first;
+        }
+
+        Save_Json();
+    }
 }
 
 void CMapToolMgr::Reset()
 {
+    ZeroMemory(&m_tCam, sizeof(S_CAM));
+    ZeroMemory(&m_tPlayer, sizeof(S_PLAYER));
+    m_fTimer = 0.f;
+    m_sRecipeVec.clear();
     m_tBlockVec.clear();
     m_tTileVec.clear();
     m_tEnvVec.clear();
-    m_sRecipeVec.clear();
+}
+
+void CMapToolMgr::Set_NoCreate()
+{
+    m_bCreate = false;
 }
 
 S_STAGE CMapToolMgr::Get_Data(string s)
@@ -185,6 +224,23 @@ S_STAGE CMapToolMgr::Get_Data(string s)
 string CMapToolMgr::Get_Name()
 {
     return m_sName;
+}
+
+void CMapToolMgr::Set_Name(string _s)
+{
+    for (auto a : m_sNameVec) {
+        if (a == _s) {
+            m_sName = _s;
+            return;
+        }
+    }
+
+    MSG_BOX("SetName Error");
+}
+
+vector<string>* CMapToolMgr::Get_NameVec()
+{
+    return &m_sNameVec;
 }
 
 void CMapToolMgr::NextRotate()
@@ -208,9 +264,9 @@ _vec3 CMapToolMgr::Get_DirLook()
     switch (m_iDir)
     {
     case Engine::PX:
-        return _vec3(0.f, 0.f, 0.f); 
+        return _vec3(0.f, 0.f, 0.f);
     case Engine::NX:
-        return _vec3(0.f, D3DXToRadian(90.f), 0.f); 
+        return _vec3(0.f, D3DXToRadian(90.f), 0.f);
     case Engine::PZ:
         return _vec3(0.f, D3DXToRadian(180.f), 0.f);
     case Engine::NZ:
@@ -275,20 +331,20 @@ _uint CMapToolMgr::Get_NowRcTile()
     return m_iRcTile;
 }
 
-const _tchar* CMapToolMgr::Get_Dir()
+string CMapToolMgr::Get_Dir()
 {
     switch (m_iDir)
     {
     case Engine::DIRECTIONID::PX:
-        return L"PX";
+        return "PX";
     case Engine::DIRECTIONID::NX:
-        return L"NX";
+        return "NX";
     case Engine::DIRECTIONID::PZ:
-        return L"PZ";
+        return "PZ";
     case Engine::DIRECTIONID::NZ:
-        return L"NZ";
+        return "NZ";
     default:
-        return L"???";
+        return "???";
     }
 }
 
@@ -298,12 +354,12 @@ void CMapToolMgr::Dummy_Data()
     m_sName = "Stage1";
 
     _vec3 v = { 1.f, 2.f, 3.f };
-    
+
     S_BLOCK b = { "A", v, "L" };
     m_tBlockVec.push_back(b);
     m_tBlockVec.push_back(b);
 
-    S_TILE t = { "T", v, "R"};
+    S_TILE t = { "T", v, "R" };
     m_tTileVec.push_back(t);
 
     S_ENVIRONMENT e = { "T", v, v };
@@ -388,6 +444,13 @@ string CMapToolMgr::Tile_To_String()
         break;
     }
     return "???";
+}
+
+string CMapToolMgr::Item_To_String()
+{
+    
+
+    return string();
 }
 
 _vec3 CMapToolMgr::String_To_Dir(string& _s)

@@ -5,6 +5,8 @@
 #include "imgui_impl_win32.h"
 #include "imgui_impl_dx9.h"
 #include "CMapToolMgr.h"
+#include "CCollisionMgr.h"
+#include <sstream>
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -53,6 +55,20 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
     
+    strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
+    fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+    
+    {
+        m_mapRecipes["salad_lettuce"] = false;
+        m_mapRecipes["salad_lettuce_tomato"] = false;
+        m_mapRecipes["salad_cucumber_lettuce_tomato"] = false;
+        m_mapRecipes["sashimi_fish"] = false;
+        m_mapRecipes["sashimi_shrimp"] = false;
+        m_mapRecipes["sushi_fish"] = false;
+        m_mapRecipes["sushi_cucumber"] = false;
+        m_mapRecipes["pasta_tomato"] = false;
+    }
+
     return S_OK;
 }
 
@@ -64,11 +80,17 @@ void CImguiMgr::Update_Imgui()
 
     ImGui::Begin("MapTool");                       
 
-    strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
+    //현재 씬 이름
     ImGui::InputText("Scene", szName, sizeof(szName));
-
+    
+    //저장 및 불러오기 및 초기화
     if (ImGui::Button("Save")) {                 
         if (m_LoadCallback) {
+            CMapToolMgr::GetInstance()->Set_Timer(fTimer);
+            for (auto it : m_mapRecipes) {
+                if(it.second == true)
+                    CMapToolMgr::GetInstance()->Add_Recipe(it.first);
+            }
             CMapToolMgr::GetInstance()->Save_Json();
         }
     }
@@ -79,9 +101,22 @@ void CImguiMgr::Update_Imgui()
         if (m_LoadCallback) {
             CMapToolMgr::GetInstance()->Load_Json();
             m_LoadCallback();
+            strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
+            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+
+            for (auto& it : m_mapRecipes) {
+                it.second = false;
+            }
+            for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
+
+                for (auto& it : m_mapRecipes) {
+                    if (Recipe == it.first) {
+                        it.second = true;
+                    }
+                }
+            }
         }
     }
-
 
     ImGui::SameLine();
 
@@ -91,8 +126,90 @@ void CImguiMgr::Update_Imgui()
         }
     }
 
+    /// 맵 선택창 /////////////////////////////////////////////////////////////////
+    const auto& nameVec = *CMapToolMgr::GetInstance()->Get_NameVec();
 
-    //ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io.Framerate, io.Framerate);
+    std::vector<std::string> labeledNames;
+    for (int i = 0; i < nameVec.size(); ++i) {
+        labeledNames.push_back(nameVec[i] + "##" + std::to_string(i));
+    }
+
+    std::vector<const char*> comboItems;
+    for (const auto& str : labeledNames)
+        comboItems.push_back(str.c_str());
+
+    static int current_item = 0;
+    //현재 모든 맵 데이터 확인 선탁바
+    if (ImGui::Combo("SceneList", &current_item, comboItems.data(), comboItems.size())) {
+        nameVec[current_item];
+    }
+
+    if (ImGui::Button("SetScene")) {
+        if (m_LoadCallback) {
+            CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
+            CMapToolMgr::GetInstance()->Select_Map();
+            strcpy_s(szName, nameVec[current_item].c_str());
+            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            for (auto& it : m_mapRecipes) {
+                it.second = false;
+            }
+            for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
+
+                for (auto& it : m_mapRecipes) {
+                    if (Recipe == it.first) {
+                        it.second = true;
+                    }
+                }
+            }
+
+            m_LoadCallback();
+        }
+    }
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Delete")) {
+        CMapToolMgr::GetInstance()->Set_NoCreate();
+        CMapToolMgr::GetInstance()->Delete_Map(nameVec[current_item]);
+    }
+
+    // 타이머 설정 ////////////////////////////////////////////////////////////////
+
+
+    ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer));
+
+
+    // 레시피 설정 ////////////////////////////////////////////////////////////////
+
+    if (ImGui::CollapsingHeader("Recipes")) {
+        for (auto& it : m_mapRecipes) {
+            ImGui::Checkbox(it.first.c_str(), &it.second);
+        }
+    }
+
+    // 디버그용 ////////////////////////////////////////////////////////////////
+    
+    //방향확인
+    string S = "Direction : " + CMapToolMgr::GetInstance()->Get_Dir();
+    ImGui::Text(S.c_str());
+
+    //충돌 위치
+    _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
+    char buf[64];
+    sprintf_s(buf, sizeof(buf), "X: %.2f | Y: %.2f | Z: %.2f", colpos.x, colpos.y, colpos.z);
+
+
+    //레이 위치+++++++
+     _vec3 RayPos, RayDir;
+    CCollisionMgr::GetInstance()->Get_Ray(&RayPos, &RayDir);
+    char buf1[64];
+    char buf2[64];
+    sprintf_s(buf1, sizeof(buf), "RayPos(X:%.2f | Y:%.2f | Z:%.2f)", RayPos.x, RayPos.y, RayPos.z);
+    sprintf_s(buf2, sizeof(buf), "RayDir(X:%.2f | Y:%.2f | Z:%.2f)", RayDir.x, RayDir.y, RayDir.z);
+    ImGui::Text(buf1);
+    ImGui::Text(buf2);
+
+
     ImGui::End();
 }
 

@@ -12,6 +12,7 @@
 #include "CRcTile.h"
 #include "CCollisionMgr.h"
 #include "CImguiMgr.h"
+#include <tchar.h>
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -140,7 +141,7 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 		m_vAt.y -= fTimeDelta * m_fSpeed;;
 	}
 	//마우스 고정
-	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_TAB) & 0x80)
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_LALT) & 0x80)
 	{
 		if (m_bCheck)
 			return;
@@ -323,7 +324,7 @@ void CDynamicCamera::Load_Objects()
 	CLayer* pLayer;
 	//블럭레이어
 	pLayer = pScene->Get_Layer(L"Block_Layer");
-	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Block)) {
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).GameObject.Block)) {
 		
 		if (nullptr == pLayer)
 			return;
@@ -359,14 +360,14 @@ void CDynamicCamera::Load_Objects()
 				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
 			}
 		}
-
-		CMapToolMgr::GetInstance()->Plant_Block(it.vPos);
+		
+		CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction);
 		s_Index++;
 	}
 
 	//타일레이어
 	pLayer = pScene->Get_Layer(L"Tile_Layer");
-	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Tiles)) {
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).GameObject.Tile)) {
 
 		if (nullptr == pLayer)
 			return;
@@ -403,7 +404,7 @@ void CDynamicCamera::Load_Objects()
 			}
 		}
 
-		CMapToolMgr::GetInstance()->Plant_Block(it.vPos);
+		CMapToolMgr::GetInstance()->Plant_Tile(it.Tile_Type, it.vPos, it.Direction);
 		s_Index++;
 	}
 }
@@ -516,9 +517,15 @@ void CDynamicCamera::Delete_Block()
 	_vec3 vBlockPos, vColPos;
 	vColPos = CCollisionMgr::GetInstance()->Get_ColPos();
 
-	vColPos.x = floorf(vColPos.x) + 0.5f;
-	vColPos.y = floorf(vColPos.y) + 0.5f;
-	vColPos.z = floorf(vColPos.z) + 0.5f;
+
+	float ftmp = 0.f;
+	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
+		ftmp = 0.25f;
+	}
+
+	vColPos.x = (vColPos.x >= 0) ? floorf(vColPos.x) + 0.5f : ceil(vColPos.x) - 0.5f;
+	vColPos.y = (vColPos.y >= 0) ? floorf(vColPos.y) + (0.25f + ftmp) : ceil(vColPos.y) - (0.25f + ftmp);
+	vColPos.z = (vColPos.z >= 0) ? floorf(vColPos.z) + 0.5f : ceil(vColPos.z) - 0.5f;
 
 	//모든 오브젝트를 순회
 	for (auto it = objectmap->begin(); it != objectmap->end();) {
