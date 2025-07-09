@@ -8,11 +8,15 @@
 #include "CProtoMgr.h"
 #include "CShowBox.h"
 #include "CShowRcTile.h"
+#include "CShowPlayerPoint.h"
 #include "CSkyBox.h"
 #include "CStage.h"
 #include "CTerrain.h"
 #include <iomanip> 
 #include "CImguiMgr.h"
+#include "CPlayerPoint.h"
+
+
 
 CStage::CStage(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CScene(pGraphicDev)
@@ -120,6 +124,26 @@ HRESULT CStage::Ready_GameObject_Layer(const _tchar* pLayerTag)
     if (FAILED(pLayer->Add_GameObject(L"ShowRcTile", pGameObject)))
         return E_FAIL;
 
+    pGameObject = CShowPlayerPoint::Create(m_pGraphicDev);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"ShowPlayerPoint", pGameObject)))
+        return E_FAIL;
+
+    pGameObject = CPlayerPoint::Create(m_pGraphicDev);
+    dynamic_cast<CPlayerPoint*>(pGameObject)->Set_PlayerNum(0);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"1Player", pGameObject)))
+        return E_FAIL;
+
+    pGameObject = CPlayerPoint::Create(m_pGraphicDev);
+    dynamic_cast<CPlayerPoint*>(pGameObject)->Set_PlayerNum(1);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"2Player", pGameObject)))
+        return E_FAIL;
+
     m_mapLayer.insert({ pLayerTag, pLayer });
 
     return S_OK;
@@ -151,11 +175,13 @@ _int CStage::Update_Scene(const _float& fTimeDelta)
 void CStage::LateUpdate_Scene(const _float& fTimeDelta)
 {
     Engine::CScene::LateUpdate_Scene(fTimeDelta);
+    
 }
 
 void CStage::Render_Scene()
 {
     CImguiMgr::GetInstance()->Render_Imgui();
+    
 }
 
 

@@ -12,7 +12,7 @@ extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg
 
 IMPLEMENT_SINGLETON(CImguiMgr);
 
-CImguiMgr::CImguiMgr()
+CImguiMgr::CImguiMgr() : m_iCurrent_Item(0), m_iCurrent_Food(0)
 {
    
 }
@@ -58,16 +58,7 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
     fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
     
-    {
-        m_mapRecipes["salad_lettuce"] = false;
-        m_mapRecipes["salad_lettuce_tomato"] = false;
-        m_mapRecipes["salad_cucumber_lettuce_tomato"] = false;
-        m_mapRecipes["sashimi_fish"] = false;
-        m_mapRecipes["sashimi_shrimp"] = false;
-        m_mapRecipes["sushi_fish"] = false;
-        m_mapRecipes["sushi_cucumber"] = false;
-        m_mapRecipes["pasta_tomato"] = false;
-    }
+    m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
 
     return S_OK;
 }
@@ -104,11 +95,12 @@ void CImguiMgr::Update_Imgui()
             strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
             fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
 
+            m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
             for (auto& it : m_mapRecipes) {
                 it.second = false;
             }
             for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
-
+            
                 for (auto& it : m_mapRecipes) {
                     if (Recipe == it.first) {
                         it.second = true;
@@ -122,6 +114,7 @@ void CImguiMgr::Update_Imgui()
 
     if (ImGui::Button("Clear")) {
         if (m_ClearCallback) {
+            CMapToolMgr::GetInstance()->Reset();
             m_ClearCallback();
         }
     }
@@ -146,10 +139,13 @@ void CImguiMgr::Update_Imgui()
 
     if (ImGui::Button("SetScene")) {
         if (m_LoadCallback) {
+            CMapToolMgr::GetInstance()->Reset();
             CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
             CMapToolMgr::GetInstance()->Select_Map();
             strcpy_s(szName, nameVec[current_item].c_str());
             fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
+            
             for (auto& it : m_mapRecipes) {
                 it.second = false;
             }
@@ -175,9 +171,7 @@ void CImguiMgr::Update_Imgui()
 
     // 타이머 설정 ////////////////////////////////////////////////////////////////
 
-
-    ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer));
-
+    ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer)); 
 
     // 레시피 설정 ////////////////////////////////////////////////////////////////
 
@@ -187,8 +181,34 @@ void CImguiMgr::Update_Imgui()
         }
     }
 
+    // 상자 음식 설정 ////////////////////////////////////////////////////////////////
+
+    if (ImGui::CollapsingHeader("Food")) {
+        const char* foods[] = { "Seaweed", "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Rice", "Pasta"};
+        ImGui::Combo("Foods", &m_iCurrent_Food, foods, IM_ARRAYSIZE(foods));
+    }
+
+    // 블럭 아이템 설정 ////////////////////////////////////////////////////////////////
+
+    if (ImGui::CollapsingHeader("Item")) {
+        const char* tools[] = { "None", "Plate", "Extinguisher", "Frypan", "Pot" };
+        ImGui::Combo("Items", &m_iCurrent_Item, tools, IM_ARRAYSIZE(tools));
+    }
+
     // 디버그용 ////////////////////////////////////////////////////////////////
-    
+  
+        static int blockCount = 0;
+        static int tileCount = 0;
+        static int envCount = 0;
+        static int recipeCount = 0;
+
+        CMapToolMgr::GetInstance()->Print_CurrentDataCounts(blockCount, tileCount, envCount, recipeCount);
+
+        ImGui::Text("Block: %d", blockCount);
+        ImGui::Text("Tile: %d", tileCount);
+        ImGui::Text("Environment: %d", envCount);
+        ImGui::Text("Recipe: %d", recipeCount);
+
     //방향확인
     string S = "Direction : " + CMapToolMgr::GetInstance()->Get_Dir();
     ImGui::Text(S.c_str());
@@ -208,7 +228,6 @@ void CImguiMgr::Update_Imgui()
     sprintf_s(buf2, sizeof(buf), "RayDir(X:%.2f | Y:%.2f | Z:%.2f)", RayDir.x, RayDir.y, RayDir.z);
     ImGui::Text(buf1);
     ImGui::Text(buf2);
-
 
     ImGui::End();
 }

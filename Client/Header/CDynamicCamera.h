@@ -37,6 +37,9 @@ private:
 
 	void		LoadCallBackToImguiMgr();//Imgui에게 보내기
 	void		ClearCallBackToImguiMgr();//Imgui에게 보내기
+	
+	void		Prev_Type();
+	void		Next_Type();
 
 	//블럭생성
 	void		Create_Objects();
@@ -50,6 +53,9 @@ private:
 
 	HRESULT		Create_HexTile();
 	void		Delete_HexTile();
+
+	HRESULT		Create_Player();
+	void		Delete_Player();
 
 private:
 	_float		m_fSpeed;

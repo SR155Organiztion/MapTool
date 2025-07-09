@@ -1,6 +1,6 @@
 #pragma once
 #include "CGameObject.h"
-
+#include "CRcTile.h"
 namespace Engine
 {
 	class CCubeTex;
@@ -23,6 +23,8 @@ public:
 	virtual			void		Render_GameObject();
 
 	void						Set_TextureNum(_uint _eID);
+	void						Set_Create(_uint _eID);
+	void						Set_Tools(_uint _eID);
 private:
 	HRESULT		Add_Component();
 	HRESULT		Set_Metarial();
@@ -33,6 +35,12 @@ private:
 	Engine::CTexture*		m_pTextureCom;
 	Engine::CCalculator*	m_pCalculatorCom;
 	_uint					m_iTextureNum;
+
+	_bool				m_bShow;
+	Engine::CRcTileTex* m_pRcTileCom;
+	Engine::CTexture*	m_pRcTileTextureCom;
+	_uint				m_iTileTexNum;
+	
 public:
 	static CBlock* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 

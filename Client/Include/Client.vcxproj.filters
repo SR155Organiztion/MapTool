@@ -79,6 +79,9 @@
     <Filter Include="Object\04. Plantable\03. PlayerPoint">
       <UniqueIdentifier>{ec7af5d5-585b-4fe1-9261-2470230bb6a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\03. Show\03. CShowPlayerPoint">
+      <UniqueIdentifier>{7d20f82a-7769-4af5-8f31-2ce82d6dc887}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -144,6 +147,12 @@
     <ClInclude Include="..\Header\CShowRcTile.h">
       <Filter>Object\03. Show\02. ShowRcTile</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\CPlayerPoint.h">
+      <Filter>Object\04. Plantable\03. PlayerPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CShowPlayerPoint.h">
+      <Filter>Object\03. Show\03. CShowPlayerPoint</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -199,6 +208,12 @@
     </ClCompile>
     <ClCompile Include="..\Code\CShowRcTile.cpp">
       <Filter>Object\03. Show\02. ShowRcTile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CPlayerPoint.cpp">
+      <Filter>Object\04. Plantable\03. PlayerPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CShowPlayerPoint.cpp">
+      <Filter>Object\03. Show\03. CShowPlayerPoint</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

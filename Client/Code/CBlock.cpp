@@ -6,7 +6,7 @@
 #include "CMapToolMgr.h"
 
 CBlock::CBlock(LPDIRECT3DDEVICE9 pGraphicDev)
-    : Engine::CGameObject(pGraphicDev)
+    : Engine::CGameObject(pGraphicDev), m_iTextureNum(0), m_bShow(false)
 {
 }
 
@@ -21,8 +21,11 @@ CBlock::~CBlock()
 
 HRESULT CBlock::Ready_GameObject()
 {
+    m_bShow = false;
+         
     if (FAILED(Add_Component()))
         return E_FAIL;
+
 
     return S_OK;
 }
@@ -62,13 +65,25 @@ void CBlock::Render_GameObject()
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
     m_pTextureCom->Set_Texture(m_iTextureNum);
-
+    
 
     if (FAILED(Set_Metarial()))
         return;
 
     m_pBufferCom->Render_Buffer();
 
+    if(m_bShow){
+        matWorld._42 += 0.501f;
+
+        D3DXMATRIX matScale;
+        D3DXMatrixScaling(&matScale, 0.5f, 0.5f, 0.5f);
+        matWorld = matScale * matWorld;
+
+        m_pGraphicDev->SetTransform(D3DTS_WORLD, &matWorld);
+        
+        m_pRcTileTextureCom->Set_Texture(m_iTileTexNum);
+        m_pRcTileCom->Render_Buffer();
+    }
 
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
@@ -76,6 +91,45 @@ void CBlock::Render_GameObject()
 void CBlock::Set_TextureNum(_uint _iID)
 {
     m_iTextureNum = _iID;
+
+}
+
+void CBlock::Set_Create(_uint _eID)
+{
+    m_bShow = true;
+
+    CComponent* pComponent = nullptr;
+
+    pComponent = m_pRcTileCom = dynamic_cast<Engine::CRcTileTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_RcTileTex"));
+    if (nullptr == pComponent)
+        return;
+    m_mapComponent[ID_STATIC].insert({ L"Com_TileBuffer", pComponent });
+
+    pComponent = m_pRcTileTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_CreateTexture"));
+    if (nullptr == pComponent)
+        return;
+    m_mapComponent[ID_STATIC].insert({ L"Com_TileTexture", pComponent });
+
+    m_iTileTexNum = _eID;
+}
+
+void CBlock::Set_Tools(_uint _eID)
+{
+    m_bShow = true;
+
+    CComponent* pComponent = nullptr;
+
+    pComponent = m_pRcTileCom = dynamic_cast<Engine::CRcTileTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_RcTileTex"));
+    if (nullptr == pComponent)
+        return;
+    m_mapComponent[ID_STATIC].insert({ L"Com_TileBuffer", pComponent });
+
+    pComponent = m_pRcTileTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_ToolTexture"));
+    if (nullptr == pComponent)
+        return;
+    m_mapComponent[ID_STATIC].insert({ L"Com_TileTexture", pComponent });
+
+    m_iTileTexNum = _eID - 1;
 }
 
 HRESULT CBlock::Add_Component()

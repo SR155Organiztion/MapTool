@@ -116,6 +116,7 @@ public:
 	void	Set_Timer(float _fTimer) { m_fTimer = _fTimer; }
 	void	Add_Recipe(string _s) { m_sRecipeVec.push_back(_s); }
 	vector<string>* Get_Recipe() { return &m_sRecipeVec; }
+	const map<string, _bool>& Get_RecipeMap() { return m_mapRecipes; }
 	vector<string>* Get_NameVec();
 	
 
@@ -134,11 +135,24 @@ public:
 	void PrevRcTile();
 	_uint Get_NowRcTile();
 
+	void ChangePlayer();
+	_uint Get_NowPlayer();
+
 	string Get_Dir();
 
 	_vec3	String_To_Dir(string& _s);
 	_uint	String_To_Block(string& _s);
 	_uint	String_To_Tile(string& _s);
+	_uint   String_To_Food(string& _s);
+	_uint   String_To_Item(string& _s);
+
+	void Print_CurrentDataCounts(int& iBlockSize, int& iTileSize, int& iEnvSize, int& iRecipeSize)
+	{
+		iBlockSize	= (int)m_tBlockVec.size();
+		iTileSize	= (int)m_tTileVec.size();
+		iEnvSize	= (int)m_tEnvVec.size();
+		iRecipeSize = (int)m_sRecipeVec.size();
+	}
 	
 private:
 	void	Dummy_Data();				///테스트용
@@ -146,13 +160,15 @@ private:
 	string	Block_To_String();
 	string	Tile_To_String();
 	string  Item_To_String();
+	string  Food_To_String();
+
 
 
 private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터
 	vector<S_TILE>			m_tTileVec;			///현재 설치되어있는 타일의 데이터
 	vector<S_ENVIRONMENT>	m_tEnvVec;			///현재 설치 되어있는 환경블록의 데이터
-	vector<string>			m_sRecipeVec;		///현재 스테이지 
+	vector<string>			m_sRecipeVec;		///현재 스테이지가 실질적으로 가지고있는 레시피를 저장할공간
 	S_CAM					m_tCam;				///설치를 한 카메라의 
 	S_PLAYER				m_tPlayer;			///현재 플레이어들의 시작 위치
 	_float					m_fTimer;			///현재 스테이지의 게임시간
@@ -160,11 +176,12 @@ private:
 	map<string, S_STAGE> m_mapJson;				///전체 스테이지의 데이터값
 	string				 m_sName;				///저장하거나 불러올 이름
 
+	map<string, _bool>	 m_mapRecipes;			///현재 스테이지가 가지고있는 레시피 저장
 	//스테이지-----------------------------------------------------------------------------------
-	_uint				 m_iSelectName;			///내가 선택중인 스테이지
-	//플레이어-----------------------------------------------------------------------------------
-	_uint			m_iSet_Player;				///현재 선택중인 플레이어
+	_uint			m_iSelectName;				///내가 선택중인 스테이지
 	vector<string>	m_sNameVec;					///전체 스테이지 이름
+	//플레이어-----------------------------------------------------------------------------------
+	_uint			m_iPlayer;					///현재 선택중인 플레이어	
 	//오브젝트-----------------------------------------------------------------------------------
 	_int			m_iObject;					///현재 선택중인 오브젝트
 	//블럭---------------------------------------------------------------------------------------
