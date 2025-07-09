@@ -151,11 +151,13 @@ _int CStage::Update_Scene(const _float& fTimeDelta)
 void CStage::LateUpdate_Scene(const _float& fTimeDelta)
 {
     Engine::CScene::LateUpdate_Scene(fTimeDelta);
+    
 }
 
 void CStage::Render_Scene()
 {
     CImguiMgr::GetInstance()->Render_Imgui();
+    
 }
 
 

@@ -1,84 +1,74 @@
 #include "pch.h"
-#include "CShowBox.h"
+#include "CPlayerPoint.h"
 #include "CProtoMgr.h"
 #include "CRenderer.h"
 #include "CManagement.h"
-#include "CCollisionMgr.h"
 #include "CMapToolMgr.h"
-#include "CBlock.h"
-#include "CDInputMgr.h"
 
-CShowBox::CShowBox(LPDIRECT3DDEVICE9 pGraphicDev)
+CPlayerPoint::CPlayerPoint(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CGameObject(pGraphicDev)
 {
 }
 
-CShowBox::CShowBox(const CGameObject& rhs)
+CPlayerPoint::CPlayerPoint(const CGameObject& rhs)
     : Engine::CGameObject(rhs)
 {
 }
 
-CShowBox::~CShowBox()
+CPlayerPoint::~CPlayerPoint()
 {
 }
 
-HRESULT CShowBox::Ready_GameObject()
+HRESULT CPlayerPoint::Ready_GameObject()
 {
     if (FAILED(Add_Component()))
         return E_FAIL;
 
-    m_pTransformCom->m_vScale = { 0.7f, 0.7f, 0.7f };
-
     return S_OK;
 }
 
-_int CShowBox::Update_GameObject(const _float& fTimeDelta)
+_int CPlayerPoint::Update_GameObject(const _float& fTimeDelta)
 {
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
 
-    _vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
-    m_pTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
-
     return iExit;
 }
 
-void CShowBox::LateUpdate_GameObject(const _float& fTimeDelta)
+void CPlayerPoint::LateUpdate_GameObject(const _float& fTimeDelta)
 {
-    _vec3 vPos = CCollisionMgr::GetInstance()->Get_ColPos();
-    
-    Set_Greed(vPos);
-
     Engine::CGameObject::LateUpdate_GameObject(fTimeDelta);
 
     return;
 }
 
-void CShowBox::Render_GameObject()
+void CPlayerPoint::Render_GameObject()
 {
-    if (CMapToolMgr::GetInstance()->Get_NowObject() != CREATEOBJECT_ID::O_BLOCK)
-        return;
-
     D3DXMATRIX matWorld;
     m_pTransformCom->Get_World(&matWorld);
     m_pGraphicDev->SetTransform(D3DTS_WORLD, &matWorld);
 
-    m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
-    m_pGraphicDev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+    m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
-    m_pTextureCom->Set_Texture(CMapToolMgr::GetInstance()->Get_NowStation());
+    m_pTextureCom->Set_Texture(m_iTextureNum);
+
 
     if (FAILED(Set_Metarial()))
         return;
 
     m_pBufferCom->Render_Buffer();
 
-    m_pGraphicDev->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
 
-HRESULT CShowBox::Add_Component()
+void CPlayerPoint::Set_TextureNum(_uint _iID)
+{
+    m_iTextureNum = _iID;
+}
+
+HRESULT CPlayerPoint::Add_Component()
 {
     CComponent* pComponent = nullptr;
 
@@ -97,11 +87,15 @@ HRESULT CShowBox::Add_Component()
         return E_FAIL;
     m_mapComponent[ID_DYNAMIC].insert({ L"Com_Transform", pComponent });
 
+    pComponent = m_pCalculatorCom = dynamic_cast<Engine::CCalculator*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_Calculator"));
+    if (nullptr == pComponent)
+        return E_FAIL;
+    m_mapComponent[ID_DYNAMIC].insert({ L"Proto_Calculator", pComponent });
 
     return S_OK;
 }
 
-HRESULT CShowBox::Set_Metarial()
+HRESULT CPlayerPoint::Set_Metarial()
 {
     D3DMATERIAL9 tMetarial;
     ZeroMemory(&tMetarial, sizeof(D3DMATERIAL9));
@@ -118,38 +112,21 @@ HRESULT CShowBox::Set_Metarial()
     return S_OK;
 }
 
-void CShowBox::Set_Greed(_vec3 _v)
+CPlayerPoint* CPlayerPoint::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 {
-    _vec3 vTmp;
+    CPlayerPoint* pPlayerPoint = new CPlayerPoint(pGraphicDev);
 
-    float ftmp = 0.f;
-    if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
-        ftmp = 0.25f;
-    }
-
-    vTmp.x = (_v.x >= 0) ? floor(_v.x) + 0.5f : ceil(_v.x) - 0.5f;
-    vTmp.y = (_v.y >= 0) ? floor(_v.y) + (0.25f + ftmp) : ceil(_v.y) - (0.25f + ftmp);
-    vTmp.z = (_v.z >= 0) ? floor(_v.z) + 0.5f : ceil(_v.z) - 0.5f;
-    
-    m_pTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
-}
-
-
-CShowBox* CShowBox::Create(LPDIRECT3DDEVICE9 pGraphicDev)
-{
-    CShowBox* pShowBox = new CShowBox(pGraphicDev);
-
-    if (FAILED(pShowBox->Ready_GameObject()))
+    if (FAILED(pPlayerPoint->Ready_GameObject()))
     {
-        Safe_Release(pShowBox);
-        MSG_BOX("pShowBox Create Failed");
+        Safe_Release(pPlayerPoint);
+        MSG_BOX("pBlock Create Failed");
         return nullptr;
     }
 
-    return pShowBox;
+    return pPlayerPoint;
 }
 
-void CShowBox::Free()
+void CPlayerPoint::Free()
 {
     Engine::CGameObject::Free();
 }

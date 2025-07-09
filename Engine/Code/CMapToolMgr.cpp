@@ -24,6 +24,17 @@ CMapToolMgr::CMapToolMgr()
     m_tEnvVec.clear();
     m_sRecipeVec.clear();
     m_mapJson.clear();
+
+    {
+        m_mapRecipes["salad_lettuce"] = false;
+        m_mapRecipes["salad_lettuce_tomato"] = false;
+        m_mapRecipes["salad_cucumber_lettuce_tomato"] = false;
+        m_mapRecipes["sashimi_fish"] = false;
+        m_mapRecipes["sashimi_shrimp"] = false;
+        m_mapRecipes["sushi_fish"] = false;
+        m_mapRecipes["sushi_cucumber"] = false;
+        m_mapRecipes["pasta_tomato"] = false;
+    }
 }
 
 CMapToolMgr::~CMapToolMgr()
@@ -177,6 +188,13 @@ void CMapToolMgr::Select_Map()
     m_tBlockVec = m_mapJson[m_sName].GameObject.Block;
     m_tTileVec = m_mapJson[m_sName].GameObject.Tile;
     m_tEnvVec = m_mapJson[m_sName].Environment;
+
+    for (const auto& recipeName : m_sRecipeVec) {
+        auto it = m_mapRecipes.find(recipeName);
+        if (it != m_mapRecipes.end()) {
+            it->second = true;  // 키가 같으면 bool 값을 true로 설정
+        }
+    }
 }
 
 void CMapToolMgr::Delete_Map(string _s)
@@ -204,6 +222,16 @@ void CMapToolMgr::Reset()
     m_tBlockVec.clear();
     m_tTileVec.clear();
     m_tEnvVec.clear();
+    {
+        m_mapRecipes["salad_lettuce"] = false;
+        m_mapRecipes["salad_lettuce_tomato"] = false;
+        m_mapRecipes["salad_cucumber_lettuce_tomato"] = false;
+        m_mapRecipes["sashimi_fish"] = false;
+        m_mapRecipes["sashimi_shrimp"] = false;
+        m_mapRecipes["sushi_fish"] = false;
+        m_mapRecipes["sushi_cucumber"] = false;
+        m_mapRecipes["pasta_tomato"] = false;
+    }
 }
 
 void CMapToolMgr::Set_NoCreate()
@@ -398,7 +426,7 @@ string CMapToolMgr::Block_To_String()
         return "Empty";
         break;
     case Engine::STATIONID::S_CREATE:
-        return "Create_";
+        return ("Create_" + Food_To_String());
         break;
     case Engine::STATIONID::S_CHOP:
         return "Chop";
@@ -448,9 +476,52 @@ string CMapToolMgr::Tile_To_String()
 
 string CMapToolMgr::Item_To_String()
 {
-    
+    switch (CImguiMgr::GetInstance()->Get_CurItem())
+    {
+    case Engine::I_NONE:
+        return "";
+    case Engine::I_PLATE:
+        return "Plate";
+    case Engine::I_EXTINGUISHER:
+        return "Extinguisher";
+    case Engine::I_FRIPAN:
+        return "Fripan";
+    case Engine::I_POT:
+        return "Pot";
+    case Engine::I_END:
+        return "";
+    default:
+        break;
+    }
 
-    return string();
+    return "";
+}
+
+string CMapToolMgr::Food_To_String()
+{
+    switch (CImguiMgr::GetInstance()->Get_CurFood())
+    {
+    case Engine::C_SEAWEED:
+        return "Seaweed";
+    case Engine::C_LETTUCE:
+        return "Lettuce";
+    case Engine::C_TOMATO:
+        return "Tomato";
+    case Engine::C_CUCUMBER:
+        return "Cucumber";
+    case Engine::C_FISH:
+        return "Fish";
+    case Engine::C_SHRIMP:
+        return "Shrimp";
+    case Engine::C_RICE:
+        return "Rice";
+    case Engine::C_PASTA:
+        return "Pasta";
+    case Engine::C_END:
+    default:
+        return "";
+    }
+    return "";
 }
 
 _vec3 CMapToolMgr::String_To_Dir(string& _s)
@@ -466,12 +537,14 @@ _vec3 CMapToolMgr::String_To_Dir(string& _s)
 
 _uint CMapToolMgr::String_To_Block(string& _s)
 {
+    if (_s.find("Create_") == 0) {
+        return Engine::STATIONID::S_CREATE;
+    }
+
     if (_s == "InvWall")
         return Engine::STATIONID::S_INV;
     else if (_s == "Empty")
         return Engine::STATIONID::S_EMPTY;
-    else if (_s == "Create_")
-        return Engine::STATIONID::S_CREATE;
     else if (_s == "Chop")
         return Engine::STATIONID::S_CHOP;
     else if (_s == "Gas")
@@ -502,6 +575,41 @@ _uint CMapToolMgr::String_To_Tile(string& _s)
 
     //에러처리
     return -1;
+}
+
+_uint CMapToolMgr::String_To_Food(string& _s)
+{
+    static const std::unordered_map<std::string, int> foodMap = {
+        {"Seaweed", Engine::CREATEID::C_SEAWEED},
+        {"Lettuce", Engine::CREATEID::C_LETTUCE},
+        {"Tomato", Engine::CREATEID::C_TOMATO},
+        {"Cucumber", Engine::CREATEID::C_CUCUMBER},
+        {"Fish", Engine::CREATEID::C_FISH},
+        {"Shrimp", Engine::CREATEID::C_SHRIMP},
+        {"Rice", Engine::CREATEID::C_RICE},
+        {"Pasta", Engine::CREATEID::C_PASTA}
+    };
+
+    auto it = foodMap.find(_s);
+    if (it != foodMap.end())
+        return it->second;
+
+    return Engine::CREATEID::C_END; // 또는 -1 등 적절한 예외 처리
+    return _uint();
+}
+
+_uint CMapToolMgr::String_To_Item(string& _s)
+{
+    if (_s == "Plate")
+        return Engine::I_PLATE;
+    else if (_s == "Extinguisher")
+        return Engine::I_EXTINGUISHER;
+    else if (_s == "Fripan")
+        return Engine::I_FRIPAN;
+    else if (_s == "Pot")
+        return Engine::I_POT;
+    else
+        return Engine::I_NONE; // 혹은 예외 처리
 }
 
 void CMapToolMgr::Free()

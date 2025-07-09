@@ -144,6 +144,9 @@
     <ClInclude Include="..\Header\CShowRcTile.h">
       <Filter>Object\03. Show\02. ShowRcTile</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\CPlayerPoint.h">
+      <Filter>Object\04. Plantable\03. PlayerPoint</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -199,6 +202,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\CShowRcTile.cpp">
       <Filter>Object\03. Show\02. ShowRcTile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CPlayerPoint.cpp">
+      <Filter>Object\04. Plantable\03. PlayerPoint</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

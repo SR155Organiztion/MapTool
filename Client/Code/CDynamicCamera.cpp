@@ -141,7 +141,7 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 		m_vAt.y -= fTimeDelta * m_fSpeed;;
 	}
 	//마우스 고정
-	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_LALT) & 0x80)
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_Z) & 0x80)
 	{
 		if (m_bCheck)
 			return;
@@ -339,6 +339,22 @@ void CDynamicCamera::Load_Objects()
 
 		//타입 설정
 		dynamic_cast<CBlock*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_Block(it.Block_Type));
+		
+		//만약에 음식 상자 타입이면 추가로 생성하라
+		if (CMapToolMgr::GetInstance()->String_To_Block(it.Block_Type) == Engine::STATIONID::S_CREATE) {
+			const string prefix = "Create_";
+			if (it.Block_Type.find(prefix) == 0 && it.Block_Type.length() > prefix.length()) {
+				string szFood = (it.Block_Type.substr(prefix.length())); // "Create_" 이후 문자열만 반환
+
+				dynamic_cast<CBlock*>(pGameObject)->Set_Create(CMapToolMgr::GetInstance()->String_To_Food(szFood));
+			}
+			
+		}
+
+		//만약에 아이템이 비어있지 않다면 추가로 생성하라
+		if (it.Item != "") {
+			dynamic_cast<CBlock*>(pGameObject)->Set_Tools(CMapToolMgr::GetInstance()->String_To_Item(it.Item));
+		}
 
 		//방향 설정
 		_vec3 vLook = CMapToolMgr::GetInstance()->String_To_Dir((it.Direction));
@@ -360,7 +376,6 @@ void CDynamicCamera::Load_Objects()
 				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
 			}
 		}
-		
 		CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction);
 		s_Index++;
 	}
@@ -485,6 +500,16 @@ HRESULT CDynamicCamera::Create_Block()
 	pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
 	
 	dynamic_cast<CBlock*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowStation()));
+
+	//만약에 음식 상자 타입이면 추가로 생성하라
+	if ((CMapToolMgr::GetInstance()->Get_NowStation() == Engine::STATIONID::S_CREATE)) {
+		dynamic_cast<CBlock*>(pGameObject)->Set_Create(CImguiMgr::GetInstance()->Get_CurFood());
+	}
+
+	//만약에 아이템이 비어있지 않다면 추가로 생성하라
+	if (CImguiMgr::GetInstance()->Get_CurItem() != Engine::ITEMID::I_NONE) {
+		dynamic_cast<CBlock*>(pGameObject)->Set_Tools(CImguiMgr::GetInstance()->Get_CurItem());
+	}
 
 	_tchar szTag[64] = {};
 
