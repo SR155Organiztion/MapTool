@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "CShowRcTile.h"
+#include "CShowPlayerPoint.h"
 #include "CProtoMgr.h"
 #include "CRenderer.h"
 #include "CManagement.h"
@@ -8,21 +8,21 @@
 #include "CBlock.h"
 #include "CDInputMgr.h"
 
-CShowRcTile::CShowRcTile(LPDIRECT3DDEVICE9 pGraphicDev)
-    : Engine::CGameObject(pGraphicDev), m_bClicked(false)
+CShowPlayerPoint::CShowPlayerPoint(LPDIRECT3DDEVICE9 pGraphicDev)
+    : Engine::CGameObject(pGraphicDev)
 {
 }
 
-CShowRcTile::CShowRcTile(const CGameObject& rhs)
+CShowPlayerPoint::CShowPlayerPoint(const CGameObject& rhs)
     : Engine::CGameObject(rhs)
 {
 }
 
-CShowRcTile::~CShowRcTile()
+CShowPlayerPoint::~CShowPlayerPoint()
 {
 }
 
-HRESULT CShowRcTile::Ready_GameObject()
+HRESULT CShowPlayerPoint::Ready_GameObject()
 {
     if (FAILED(Add_Component()))
         return E_FAIL;
@@ -30,7 +30,7 @@ HRESULT CShowRcTile::Ready_GameObject()
     return S_OK;
 }
 
-_int CShowRcTile::Update_GameObject(const _float& fTimeDelta)
+_int CShowPlayerPoint::Update_GameObject(const _float& fTimeDelta)
 {
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
@@ -38,11 +38,12 @@ _int CShowRcTile::Update_GameObject(const _float& fTimeDelta)
 
     _vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
     m_pTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+    m_pTransformCom->m_vScale = { 0.7f, 0.7f, 0.7f };
 
     return iExit;
 }
 
-void CShowRcTile::LateUpdate_GameObject(const _float& fTimeDelta)
+void CShowPlayerPoint::LateUpdate_GameObject(const _float& fTimeDelta)
 {
     _vec3 vPos = CCollisionMgr::GetInstance()->Get_ColPos();
 
@@ -53,9 +54,9 @@ void CShowRcTile::LateUpdate_GameObject(const _float& fTimeDelta)
     return;
 }
 
-void CShowRcTile::Render_GameObject()
+void CShowPlayerPoint::Render_GameObject()
 {
-    if (CMapToolMgr::GetInstance()->Get_NowObject() != CREATEOBJECT_ID::O_RCTILE)
+    if (CMapToolMgr::GetInstance()->Get_NowObject() != CREATEOBJECT_ID::O_SPAWN)
         return;
 
     D3DXMATRIX matWorld;
@@ -65,7 +66,7 @@ void CShowRcTile::Render_GameObject()
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
     m_pGraphicDev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
 
-    m_pTextureCom->Set_Texture(CMapToolMgr::GetInstance()->Get_NowRcTile());
+    m_pTextureCom->Set_Texture(CMapToolMgr::GetInstance()->Get_NowPlayer());
 
     if (FAILED(Set_Metarial()))
         return;
@@ -76,16 +77,16 @@ void CShowRcTile::Render_GameObject()
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
 
-HRESULT CShowRcTile::Add_Component()
+HRESULT CShowPlayerPoint::Add_Component()
 {
     CComponent* pComponent = nullptr;
 
-    pComponent = m_pBufferCom = dynamic_cast<Engine::CRcTileTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_RcTileTex"));
+    pComponent = m_pBufferCom = dynamic_cast<Engine::CCubeTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_CubeTex"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });
 
-    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_StationTexture"));
+    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_PlayerTexture"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Texture", pComponent });
@@ -99,7 +100,7 @@ HRESULT CShowRcTile::Add_Component()
     return S_OK;
 }
 
-HRESULT CShowRcTile::Set_Metarial()
+HRESULT CShowPlayerPoint::Set_Metarial()
 {
     D3DMATERIAL9 tMetarial;
     ZeroMemory(&tMetarial, sizeof(D3DMATERIAL9));
@@ -116,33 +117,33 @@ HRESULT CShowRcTile::Set_Metarial()
     return S_OK;
 }
 
-void CShowRcTile::Set_Greed(_vec3 _v)
+void CShowPlayerPoint::Set_Greed(_vec3 _v)
 {
     _vec3 vTmp;
 
     vTmp.x = (_v.x >= 0) ? floor(_v.x) + 0.5f : ceil(_v.x) - 0.5f;
-    vTmp.y = (_v.y >= 0) ? floor(_v.y) : ceil(_v.y);
+    vTmp.y = (_v.y >= 0) ? floor(_v.y) + 0.5f : ceil(_v.y) - 0.5f;
     vTmp.z = (_v.z >= 0) ? floor(_v.z) + 0.5f : ceil(_v.z) - 0.5f;
 
     m_pTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
 }
 
 
-CShowRcTile* CShowRcTile::Create(LPDIRECT3DDEVICE9 pGraphicDev)
+CShowPlayerPoint* CShowPlayerPoint::Create(LPDIRECT3DDEVICE9 pGraphicDev)
 {
-    CShowRcTile* pShowRcTileTex = new CShowRcTile(pGraphicDev);
+    CShowPlayerPoint* pShowPlayerPoint = new CShowPlayerPoint(pGraphicDev);
 
-    if (FAILED(pShowRcTileTex->Ready_GameObject()))
+    if (FAILED(pShowPlayerPoint->Ready_GameObject()))
     {
-        Safe_Release(pShowRcTileTex);
-        MSG_BOX("pShowRcTile Create Failed");
+        Safe_Release(pShowPlayerPoint);
+        MSG_BOX("pShowPlayerPoint Create Failed");
         return nullptr;
     }
 
-    return pShowRcTileTex;
+    return pShowPlayerPoint;
 }
 
-void CShowRcTile::Free()
+void CShowPlayerPoint::Free()
 {
     Engine::CGameObject::Free();
 }

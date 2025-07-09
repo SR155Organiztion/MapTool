@@ -13,6 +13,7 @@
 #include "CCollisionMgr.h"
 #include "CImguiMgr.h"
 #include <tchar.h>
+#include "CPlayerPoint.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -208,7 +209,7 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_1) & 0x80)
 	{
 		if (!m_bPressed1) {
-			CMapToolMgr::GetInstance()->PrevStation();
+			Prev_Type();
 			m_bPressed1 = true;
 		}
 	}
@@ -218,7 +219,7 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_3) & 0x80)
 	{
 		if (!m_bPressed3) {
-			CMapToolMgr::GetInstance()->NextStation();
+			Next_Type();
 			m_bPressed3 = true;
 		}
 	}
@@ -290,24 +291,47 @@ void CDynamicCamera::ALL_RESET()
 {
 	CMapToolMgr::GetInstance()->Reset();
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+
+	//환경 레이어
 	CLayer* pLayer = pScene->Get_Layer(L"Environment_Layer");
-	for (auto it : *(pLayer->Get_ObjectMap())) {//; it != pLayer->Get_ObjectMap()->end(); ) 
+	for (auto it : *(pLayer->Get_ObjectMap())) {
 		Safe_Release(it.second);
 	}
 	(pLayer->Get_ObjectMap())->clear();
 
+	//타일 레이어
 	pLayer = pScene->Get_Layer(L"Tile_Layer");
-	for (auto it : *(pLayer->Get_ObjectMap())) {//; it != pLayer->Get_ObjectMap()->end(); ) 
+	for (auto it : *(pLayer->Get_ObjectMap())) {
 		Safe_Release(it.second);
 	}
 	(pLayer->Get_ObjectMap())->clear();
 
+	//블럭 레이어
 	pLayer = pScene->Get_Layer(L"Block_Layer");
-	for (auto it : *(pLayer->Get_ObjectMap())) {//; it != pLayer->Get_ObjectMap()->end(); ) 
+	for (auto it : *(pLayer->Get_ObjectMap())) {
 		Safe_Release(it.second);
 	}
 	(pLayer->Get_ObjectMap())->clear();
 
+	//게임오브젝트 레이어
+	pLayer = pScene->Get_Layer(L"GameObject_Layer");
+	map<const _tchar*, CGameObject*>* pObjectMap = pLayer->Get_ObjectMap();
+	map<const _tchar*, CGameObject*>::iterator iter;
+	CGameObject* pObj;
+	_vec3 vTmp = { 0.f, 0.f, 0.f };
+
+	iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"1Player"));
+	pObj = iter->second;
+	CMapToolMgr::GetInstance()->Plant_Player(CMapToolMgr::GetInstance()->Get_NowPlayer(), vTmp);
+	dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(FALSE);
+	dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(vTmp);
+	
+	iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"2Player"));
+	pObj = iter->second;
+	CMapToolMgr::GetInstance()->Plant_Player(CMapToolMgr::GetInstance()->Get_NowPlayer(), vTmp);
+	dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(FALSE);
+	dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(vTmp);
+	
 	for (auto& a : Release_tchar) {
 		Safe_Delete(a);
 	}
@@ -422,6 +446,34 @@ void CDynamicCamera::Load_Objects()
 		CMapToolMgr::GetInstance()->Plant_Tile(it.Tile_Type, it.vPos, it.Direction);
 		s_Index++;
 	}
+
+	//게임 오브젝트 레이어
+	pLayer = pScene->Get_Layer(L"GameObject_Layer");
+	map<const _tchar*, CGameObject*>* pObjectMap = pLayer->Get_ObjectMap();
+	map<const _tchar*, CGameObject*>::iterator iter;
+	CGameObject* pObj;
+
+	iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"1Player"));
+	pObj = iter->second;
+	_vec3 pos1 = CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Player.P1;
+	if (pos1.x != 0.f && pos1.y != 0.f && pos1.z != 0.f) {
+		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(TRUE);
+		dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(pos1);
+	}
+	else {
+		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(FALSE);
+	}
+
+	iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"2Player"));
+	pObj = iter->second;
+	_vec3 pos2 = CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Player.P2;
+	if (pos2.x != 0.f && pos2.y != 0.f && pos2.z != 0.f) {
+		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(TRUE);
+		dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(pos2);
+	}
+	else {
+		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(FALSE);
+	}
 }
 
 void CDynamicCamera::LoadCallBackToImguiMgr()
@@ -438,6 +490,55 @@ void CDynamicCamera::ClearCallBackToImguiMgr()
 		});
 }
 
+void CDynamicCamera::Prev_Type()
+{
+	switch (CMapToolMgr::GetInstance()->Get_NowObject())
+	{
+	case Engine::O_BLOCK:
+		CMapToolMgr::GetInstance()->PrevStation();
+		break;
+	case Engine::O_RCTILE:
+		CMapToolMgr::GetInstance()->PrevRcTile();
+		break;
+	case Engine::O_HEXTILE:
+		break;
+	case Engine::O_ENV:
+		break;
+	case Engine::O_SPAWN:
+		CMapToolMgr::GetInstance()->ChangePlayer();
+		break;
+	case Engine::O_END:
+		break;
+	default:
+		break;
+	}
+}
+
+void CDynamicCamera::Next_Type()
+{
+	switch (CMapToolMgr::GetInstance()->Get_NowObject())
+	{
+	case Engine::O_BLOCK:
+		CMapToolMgr::GetInstance()->NextStation();
+		break;
+	case Engine::O_RCTILE:
+		CMapToolMgr::GetInstance()->NextRcTile();
+		break;
+	case Engine::O_HEXTILE:
+		break;
+	case Engine::O_ENV:
+		break;
+	case Engine::O_SPAWN:
+		CMapToolMgr::GetInstance()->ChangePlayer();
+		break;
+	case Engine::O_END:
+		break;
+	default:
+		break;
+	}
+
+}
+
 void CDynamicCamera::Create_Objects()
 {
 	switch (CMapToolMgr::GetInstance()->Get_NowObject())
@@ -452,6 +553,8 @@ void CDynamicCamera::Create_Objects()
 		break;
 	case O_ENV:
 		break;
+	case O_SPAWN:
+		Create_Player();
 	default:
 		break;
 	}
@@ -471,6 +574,8 @@ void CDynamicCamera::Delete_Objects()
 		break;
 	case O_ENV:
 		break;
+	case O_SPAWN:
+		Delete_Player();
 	default:
 		break;
 	}
@@ -649,6 +754,49 @@ HRESULT CDynamicCamera::Create_HexTile()
 }
 
 void CDynamicCamera::Delete_HexTile()
+{
+}
+
+HRESULT CDynamicCamera::Create_Player()
+{
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"GameObject_Layer");
+
+	if (nullptr == pLayer)
+		return E_FAIL;
+
+    map<const _tchar*, CGameObject*>* pObjectMap = pLayer->Get_ObjectMap();
+	if (nullptr == pObjectMap)
+		return E_FAIL;
+
+	//showPoint의 위치
+	_vec3 vTmp;
+	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowPlayerPoint", L"Com_Transform"))->Get_Info(INFO_POS, &vTmp);
+
+	map<const _tchar*, CGameObject*>::iterator iter;
+
+	if (CMapToolMgr::GetInstance()->Get_NowPlayer() == 0) {
+		iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"1Player"));
+		CMapToolMgr::GetInstance()->Plant_Player(CMapToolMgr::GetInstance()->Get_NowPlayer(), vTmp);
+	}
+	if (CMapToolMgr::GetInstance()->Get_NowPlayer() == 1) {
+		iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"2Player"));
+		CMapToolMgr::GetInstance()->Plant_Player(CMapToolMgr::GetInstance()->Get_NowPlayer(), vTmp);
+	}
+
+	if (iter != pObjectMap->end())
+	{
+		CGameObject* pObj = iter->second;
+
+		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(TRUE);
+		dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(vTmp);
+		
+	}
+
+	return S_OK;
+}
+
+void CDynamicCamera::Delete_Player()
 {
 }
 

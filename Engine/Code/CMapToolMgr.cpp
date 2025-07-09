@@ -17,7 +17,7 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Time, Recipe, GameObjec
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
 CMapToolMgr::CMapToolMgr()
-    : m_fAngle(0.f), m_iSet_Player(0), m_sName("None"), m_iSelectName(0), m_iDir(DIRECTIONID::NX), m_iObject(CREATEOBJECT_ID::O_BLOCK), m_iRcTile(0), m_fTimer(0.f), m_bCreate(true)
+    : m_fAngle(0.f), m_iPlayer(0), m_sName("None"), m_iSelectName(0), m_iDir(DIRECTIONID::NX), m_iObject(CREATEOBJECT_ID::O_BLOCK), m_iRcTile(0), m_fTimer(0.f), m_bCreate(true)
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
@@ -99,6 +99,12 @@ void CMapToolMgr::Plant_Camera(_vec3 _vEye, _vec3 _vAt)
 
 void CMapToolMgr::Plant_Player(_int _iPlayer, _vec3 _vPos)
 {
+    if (_iPlayer == 0) {
+        m_tPlayer.P1 = _vPos;
+    }
+    else {
+        m_tPlayer.P2 = _vPos;
+    }
 }
 
 HRESULT CMapToolMgr::Save_Json()
@@ -341,7 +347,7 @@ _uint CMapToolMgr::Get_NowObject()
 void CMapToolMgr::NextRcTile()
 {
     ++m_iRcTile;
-    if (m_iRcTile >= static_cast<_uint>(STATIONID::S_END)) {
+    if (m_iRcTile >= static_cast<_uint>(RCTILEID::RT_END)) {
         m_iRcTile = 0;
     }
 }
@@ -350,13 +356,28 @@ void CMapToolMgr::PrevRcTile()
 {
     --m_iRcTile;
     if (m_iRcTile < 0) {
-        m_iRcTile = static_cast<_uint>(STATIONID::S_END) - 1;
+        m_iRcTile = static_cast<_uint>(RCTILEID::RT_END) - 1;
     }
 }
 
 _uint CMapToolMgr::Get_NowRcTile()
 {
     return m_iRcTile;
+}
+
+void CMapToolMgr::ChangePlayer()
+{
+    if (m_iPlayer == 0) {
+        m_iPlayer = 1;
+    }
+    else {
+        m_iPlayer = 0;
+    }
+}
+
+_uint CMapToolMgr::Get_NowPlayer()
+{
+    return m_iPlayer;
 }
 
 string CMapToolMgr::Get_Dir()

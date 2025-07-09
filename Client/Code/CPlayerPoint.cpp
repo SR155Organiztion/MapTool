@@ -24,6 +24,8 @@ HRESULT CPlayerPoint::Ready_GameObject()
     if (FAILED(Add_Component()))
         return E_FAIL;
 
+    m_bPlanted = false;
+
     return S_OK;
 }
 
@@ -45,13 +47,16 @@ void CPlayerPoint::LateUpdate_GameObject(const _float& fTimeDelta)
 
 void CPlayerPoint::Render_GameObject()
 {
+    if (!m_bPlanted)
+        return;
+
     D3DXMATRIX matWorld;
     m_pTransformCom->Get_World(&matWorld);
     m_pGraphicDev->SetTransform(D3DTS_WORLD, &matWorld);
 
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
-    m_pTextureCom->Set_Texture(m_iTextureNum);
+    m_pTextureCom->Set_Texture(m_iPlayerNum);
 
 
     if (FAILED(Set_Metarial()))
@@ -63,9 +68,19 @@ void CPlayerPoint::Render_GameObject()
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
 
-void CPlayerPoint::Set_TextureNum(_uint _iID)
+void CPlayerPoint::Set_PlayerNum(_uint _iID)
 {
-    m_iTextureNum = _iID;
+    m_iPlayerNum = _iID;
+}
+
+void CPlayerPoint::Set_Pos(_vec3 _vPos)
+{
+    m_pTransformCom->Set_Pos(_vPos.x, _vPos.y, _vPos.z);
+}
+
+void CPlayerPoint::Set_Plant(_bool _b)
+{
+    m_bPlanted = _b;
 }
 
 HRESULT CPlayerPoint::Add_Component()
@@ -77,7 +92,7 @@ HRESULT CPlayerPoint::Add_Component()
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });
 
-    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_StationTexture"));
+    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_PlayerTexture"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Texture", pComponent });
@@ -86,11 +101,6 @@ HRESULT CPlayerPoint::Add_Component()
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_DYNAMIC].insert({ L"Com_Transform", pComponent });
-
-    pComponent = m_pCalculatorCom = dynamic_cast<Engine::CCalculator*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_Calculator"));
-    if (nullptr == pComponent)
-        return E_FAIL;
-    m_mapComponent[ID_DYNAMIC].insert({ L"Proto_Calculator", pComponent });
 
     return S_OK;
 }

@@ -6,15 +6,14 @@ namespace Engine
 	class CCubeTex;
 	class CTransform;
 	class CTexture;
-	class CCalculator;
 }
 
-class CPlayerPoint : public Engine::CGameObject
+class CShowPlayerPoint : public Engine::CGameObject
 {
 private:
-	explicit CPlayerPoint(LPDIRECT3DDEVICE9 pGraphicDev);
-	explicit CPlayerPoint(const CGameObject& rhs);
-	virtual ~CPlayerPoint();
+	explicit CShowPlayerPoint(LPDIRECT3DDEVICE9 pGraphicDev);
+	explicit CShowPlayerPoint(const CGameObject& rhs);
+	virtual ~CShowPlayerPoint();
 
 public:
 	virtual			HRESULT		Ready_GameObject();
@@ -22,23 +21,19 @@ public:
 	virtual			void		LateUpdate_GameObject(const _float& fTimeDelta);
 	virtual			void		Render_GameObject();
 
-	void						Set_PlayerNum(_uint _eID);
-	void						Set_Pos(_vec3 _vPos);
-	void						Set_Plant(_bool _b);
 private:
 	HRESULT		Add_Component();
 	HRESULT		Set_Metarial();
 
+	void		Set_Greed(_vec3 _v);
+
 private:
-	Engine::CCubeTex*	m_pBufferCom;
+	Engine::CCubeTex* m_pBufferCom;
 	Engine::CTransform* m_pTransformCom;
-	Engine::CTexture*	m_pTextureCom;
-	
-	_uint				m_iPlayerNum;
-	_bool				m_bPlanted;
+	Engine::CTexture* m_pTextureCom;
 
 public:
-	static CPlayerPoint* Create(LPDIRECT3DDEVICE9 pGraphicDev);
+	static CShowPlayerPoint* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 
 private:
 	virtual		void		Free();

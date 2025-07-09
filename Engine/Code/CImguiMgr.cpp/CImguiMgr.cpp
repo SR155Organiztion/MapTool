@@ -171,9 +171,7 @@ void CImguiMgr::Update_Imgui()
 
     // 타이머 설정 ////////////////////////////////////////////////////////////////
 
-
-    ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer));
-
+    ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer)); 
 
     // 레시피 설정 ////////////////////////////////////////////////////////////////
 
@@ -230,7 +228,6 @@ void CImguiMgr::Update_Imgui()
     sprintf_s(buf2, sizeof(buf), "RayDir(X:%.2f | Y:%.2f | Z:%.2f)", RayDir.x, RayDir.y, RayDir.z);
     ImGui::Text(buf1);
     ImGui::Text(buf2);
-
 
     ImGui::End();
 }
