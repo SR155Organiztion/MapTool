@@ -15,6 +15,7 @@
 #include <iomanip> 
 #include "CImguiMgr.h"
 #include "CPlayerPoint.h"
+#include "CHexTile.h"
 
 
 
@@ -139,6 +140,12 @@ HRESULT CStage::Ready_GameObject_Layer(const _tchar* pLayerTag)
 
     pGameObject = CPlayerPoint::Create(m_pGraphicDev);
     dynamic_cast<CPlayerPoint*>(pGameObject)->Set_PlayerNum(1);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"2Player", pGameObject)))
+        return E_FAIL;
+
+    pGameObject = CHexTile::Create(m_pGraphicDev);
     if (nullptr == pGameObject)
         return E_FAIL;
     if (FAILED(pLayer->Add_GameObject(L"2Player", pGameObject)))
