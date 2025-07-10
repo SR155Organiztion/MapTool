@@ -32,6 +32,8 @@ private:
 	Engine::CTexture*	 m_pTextureCom;
 	Engine::CCalculator* m_pCalculatorCom;
 
+	_bool	m_bEnable;
+
 public:
 	static CTerrain* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 

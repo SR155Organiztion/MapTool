@@ -14,6 +14,7 @@
 #include "CImguiMgr.h"
 #include <tchar.h>
 #include "CPlayerPoint.h"
+#include "CHexTile.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -231,6 +232,17 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	{
 		if (!m_bPressedR) {
 			CMapToolMgr::GetInstance()->NextObject();
+			m_bPressedR = true;
+		}
+	}
+	else {
+		m_bPressedR = false;
+	}
+
+	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_P) & 0x80)
+	{
+		if (!m_bPressedR) {
+			Create_HexTile();
 			m_bPressedR = true;
 		}
 	}
@@ -550,6 +562,7 @@ void CDynamicCamera::Create_Objects()
 		Create_RcTile();
 		break;
 	case O_HEXTILE:
+		Create_HexTile();
 		break;
 	case O_ENV:
 		break;
@@ -750,7 +763,61 @@ void CDynamicCamera::Delete_RcTile()
 
 HRESULT CDynamicCamera::Create_HexTile()
 {
-	return E_NOTIMPL;
+	static int s_HexTileIndex = 0;
+	int iRow, iCol;
+	iRow = iCol = 30;
+
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"Tile_Layer");
+
+	if (nullptr == pLayer)
+		return E_FAIL;
+
+	float fHexRadius = 0.5f;
+	float fHexHeight = sqrtf(3.f) * fHexRadius;  // 높이 = √3 * r
+
+	for (int i = 0; i < iCol; ++i) { //z
+		for (int j = 0; j < iRow; ++j) { //x
+
+			Engine::CGameObject* pGameObject = CHexTile::Create(m_pGraphicDev);
+
+			if (nullptr == pGameObject)
+				return E_FAIL;
+
+			CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+			
+			_vec3 vTmp = { 0.f ,0.f, 0.f };
+			
+			vTmp.x = j * 1.5f * fHexRadius;
+			vTmp.z = i * fHexHeight;
+			if (j % 2 == 1)
+				vTmp.z += fHexHeight * 0.5f;
+
+			pObjectTransformCom->Set_Pos(vTmp.x, 0.f, vTmp.z);
+
+			_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
+			//pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+
+			_tchar szTag[64] = {};
+			while (true) {
+				_stprintf_s(szTag, 64, L"HexTile_%d", s_HexTileIndex);
+				_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
+				lstrcpy(pTag, szTag);
+
+				if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+					Release_tchar.push_back(pTag);
+					break; // 성공 시 탈출
+				}
+				else {
+					Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
+					++s_HexTileIndex;
+				}
+			}
+		}
+	}
+
+
+	return S_OK;
 }
 
 void CDynamicCamera::Delete_HexTile()

@@ -4,12 +4,12 @@
 #include "CRenderer.h"
 
 CTerrain::CTerrain(LPDIRECT3DDEVICE9 pGraphicDev)
-    : Engine::CGameObject(pGraphicDev)
+    : Engine::CGameObject(pGraphicDev), m_bEnable(true)
 {
 }
 
 CTerrain::CTerrain(const CGameObject& rhs)
-    : Engine::CGameObject(rhs)
+    : Engine::CGameObject(rhs), m_bEnable(true)
 {
 }
 
@@ -29,6 +29,9 @@ HRESULT CTerrain::Ready_GameObject()
 
 _int CTerrain::Update_GameObject(const _float& fTimeDelta)
 {
+    if (!m_bEnable)
+        return 0;
+
     m_pCalculatorCom->Calculate_AABB(m_pBufferCom->Get_Min(), m_pBufferCom->Get_Max());
 
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
@@ -40,12 +43,18 @@ _int CTerrain::Update_GameObject(const _float& fTimeDelta)
 
 void CTerrain::LateUpdate_GameObject(const _float& fTimeDelta)
 {
+    if (!m_bEnable)
+        return;
+
     Engine::CGameObject::LateUpdate_GameObject(fTimeDelta);
     
 }
 
 void CTerrain::Render_GameObject()
 {
+    if (!m_bEnable)
+        return;
+
     D3DXMATRIX matWorld;
     m_pTransformCom->Get_World(&matWorld);
     m_pGraphicDev->SetTransform(D3DTS_WORLD, &matWorld);

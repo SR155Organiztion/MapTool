@@ -29,10 +29,10 @@ private:
 
 
 private:
-	Engine::CHexTileTex* m_pBufferCom;
-	Engine::CTransform* m_pTransformCom;
-	Engine::CTexture* m_pTextureCom;
-	Engine::CCalculator* m_pCalculatorCom;
+	Engine::CHexTileTex*	m_pBufferCom;
+	Engine::CTransform*		m_pTransformCom;
+	Engine::CTexture*		m_pTextureCom;
+	Engine::CCalculator*	m_pCalculatorCom;
 	_uint					m_iTextureNum;
 public:
 	static CHexTile* Create(LPDIRECT3DDEVICE9 pGraphicDev);

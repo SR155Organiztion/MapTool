@@ -23,6 +23,8 @@ HRESULT CHexTile::Ready_GameObject()
     if (FAILED(Add_Component()))
         return E_FAIL;
 
+    //m_pTransformCom->m_vScale = { 2.f, 2.f, 2.f };
+
     return S_OK;
 }
 
