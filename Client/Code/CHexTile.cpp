@@ -30,6 +30,16 @@ HRESULT CHexTile::Ready_GameObject()
 
 _int CHexTile::Update_GameObject(const _float& fTimeDelta)
 {
+    _vec3 vPos;
+    m_pTransformCom->Get_Info(INFO_POS, &vPos);
+    _vec3 min = *(m_pBufferCom->Get_Min());
+    min = { min.x + vPos.x, min.y + vPos.y ,min.z + vPos.z };
+
+    _vec3 max = *(m_pBufferCom->Get_Max());
+    max = { max.x + vPos.x, max.y + vPos.y ,max.z + vPos.z };
+
+    m_pCalculatorCom->Calculate_AABB(&min, &max);
+
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
@@ -78,7 +88,7 @@ HRESULT CHexTile::Add_Component()
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });
 
-    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_TerrainTexture"));
+    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_HexTileTexture"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Texture", pComponent });
@@ -88,6 +98,10 @@ HRESULT CHexTile::Add_Component()
         return E_FAIL;
     m_mapComponent[ID_DYNAMIC].insert({ L"Com_Transform", pComponent });
 
+    pComponent = m_pCalculatorCom = dynamic_cast<Engine::CCalculator*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_Calculator"));
+    if (nullptr == pComponent)
+        return E_FAIL;
+    m_mapComponent[ID_DYNAMIC].insert({ L"Proto_Calculator", pComponent });
 
     return S_OK;
 }

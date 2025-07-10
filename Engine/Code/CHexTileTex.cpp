@@ -22,6 +22,8 @@ HRESULT CHexTileTex::Ready_Buffer()
 {
 	m_dwTriCnt = 6;
 	m_dwVtxCnt = 7;
+	m_vMax = { 0.5f, 0.f, 0.5f };
+	m_vMin = { -0.5f, 0.f, -0.5f };
 	m_dwVtxSize = sizeof(VTXTEX);
 	m_dwFVF = FVF_TEX;
 

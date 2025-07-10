@@ -10,9 +10,10 @@
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
+
 IMPLEMENT_SINGLETON(CImguiMgr);
 
-CImguiMgr::CImguiMgr() : m_iCurrent_Item(0), m_iCurrent_Food(0)
+CImguiMgr::CImguiMgr() : m_iCurrent_Item(0), m_iCurrent_Food(0), m_bTerrainEnable(true)
 {
    
 }
@@ -195,6 +196,15 @@ void CImguiMgr::Update_Imgui()
         ImGui::Combo("Items", &m_iCurrent_Item, tools, IM_ARRAYSIZE(tools));
     }
 
+    if (ImGui::CollapsingHeader("Terrain")) {
+        ImGui::Checkbox(m_bTerrainEnable ? "Enable" : "Disable" , &m_bTerrainEnable);
+        ImGui::SameLine();
+        if (ImGui::Button("Change")) {
+            m_bTerrainEnable ? m_bTerrainEnable = false : m_bTerrainEnable = true;
+            m_TerrianEnableCallback();
+        }
+    }
+
     // 디버그용 ////////////////////////////////////////////////////////////////
   
         static int blockCount = 0;
@@ -217,15 +227,15 @@ void CImguiMgr::Update_Imgui()
     _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
     char buf[64];
     sprintf_s(buf, sizeof(buf), "X: %.2f | Y: %.2f | Z: %.2f", colpos.x, colpos.y, colpos.z);
-
-
+    ImGui::Text(buf);
+        
     //레이 위치+++++++
      _vec3 RayPos, RayDir;
     CCollisionMgr::GetInstance()->Get_Ray(&RayPos, &RayDir);
     char buf1[64];
     char buf2[64];
-    sprintf_s(buf1, sizeof(buf), "RayPos(X:%.2f | Y:%.2f | Z:%.2f)", RayPos.x, RayPos.y, RayPos.z);
-    sprintf_s(buf2, sizeof(buf), "RayDir(X:%.2f | Y:%.2f | Z:%.2f)", RayDir.x, RayDir.y, RayDir.z);
+    sprintf_s(buf1, sizeof(buf1), "RayPos(X:%.2f | Y:%.2f | Z:%.2f)", RayPos.x, RayPos.y, RayPos.z);
+    sprintf_s(buf2, sizeof(buf2), "RayDir(X:%.2f | Y:%.2f | Z:%.2f)", RayDir.x, RayDir.y, RayDir.z);
     ImGui::Text(buf1);
     ImGui::Text(buf2);
 

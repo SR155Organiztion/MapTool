@@ -22,10 +22,12 @@ public:
 	virtual			void		LateUpdate_GameObject(const _float& fTimeDelta);
 	virtual			void		Render_GameObject();
 
+	void		Set_Enable() { m_bEnable ? m_bEnable = false : m_bEnable = true; }
 private:
 	HRESULT		Add_Component();
 	HRESULT		Set_Material();
 	
+
 private:
 	Engine::CTerrainTex* m_pBufferCom;
 	Engine::CTransform*	 m_pTransformCom;
@@ -33,7 +35,7 @@ private:
 	Engine::CCalculator* m_pCalculatorCom;
 
 	_bool	m_bEnable;
-
+	
 public:
 	static CTerrain* Create(LPDIRECT3DDEVICE9 pGraphicDev);
 

@@ -71,6 +71,13 @@ void CMapToolMgr::Plant_Tile(_vec3 _vPos)
     m_tTileVec.push_back(tTile);
 }
 
+void CMapToolMgr::Plant_HexTile(_vec3 _vPos)
+{
+    S_TILE tTile = { "TileHex", _vPos, Dir_To_String()};
+    m_tTileVec.push_back(tTile);
+}
+
+
 void CMapToolMgr::Plant_Tile(string _sType, _vec3 _vPos, string _sDir)
 {
     S_TILE tTile = { _sType, _vPos, _sDir };
