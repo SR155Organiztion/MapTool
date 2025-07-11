@@ -230,7 +230,7 @@ void CImguiMgr::Update_Imgui()
     ImGui::Text(buf);
         
     //레이 위치+++++++
-     _vec3 RayPos, RayDir;
+    _vec3 RayPos, RayDir;
     CCollisionMgr::GetInstance()->Get_Ray(&RayPos, &RayDir);
     char buf1[64];
     char buf2[64];

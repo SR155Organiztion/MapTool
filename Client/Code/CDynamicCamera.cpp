@@ -676,7 +676,7 @@ HRESULT CDynamicCamera::Create_Block()
 		dynamic_cast<CBlock*>(pGameObject)->Set_Create(CImguiMgr::GetInstance()->Get_CurFood());
 	}
 
-	//만약에 아이템이 비어있지 않다면 추가로 생성하라
+	//만약에 아이템이 있다면 추가로 생성하라
 	if (CImguiMgr::GetInstance()->Get_CurItem() != Engine::ITEMID::I_NONE) {
 		dynamic_cast<CBlock*>(pGameObject)->Set_Tools(CImguiMgr::GetInstance()->Get_CurItem());
 	}
