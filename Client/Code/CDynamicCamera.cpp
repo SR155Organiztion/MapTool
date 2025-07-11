@@ -851,7 +851,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 			CMapToolMgr::GetInstance()->Plant_HexTile(vTmp);
 
 			_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
-			//pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+			pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
 
 			_tchar szTag[64] = {};
 			while (true) {

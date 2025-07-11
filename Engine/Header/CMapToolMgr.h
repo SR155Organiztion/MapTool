@@ -38,17 +38,27 @@ struct S_TILE {
 */
 struct S_GAMEOBJECT {
 	std::vector<S_BLOCK> Block;
-	std::vector<S_TILE> Tile;
 };
 
 /**
 * @struct S_ENVIRONMENT
 * @brief 환경 구조물 구조체
 */
-struct S_ENVIRONMENT {
+
+struct S_ENVOBJECT {
 	string Env_Type;
 	_vec3 vPos;
 	_vec3 Direction;
+};
+
+/**
+* @struct S_ENVIRONMENT
+* @brief 환경 구조물 구조체
+*/
+
+struct S_ENVIRONMENT {
+	std::vector<S_TILE> Tile;
+	std::vector<S_ENVOBJECT> EnvObject;
 };
 
 /**
@@ -79,7 +89,7 @@ struct S_STAGE {
 	float Time;
 	std::vector<string> Recipe;
 	S_GAMEOBJECT GameObject;
-	std::vector<S_ENVIRONMENT> Environment;
+	S_ENVIRONMENT Environment;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -151,7 +161,7 @@ public:
 	{
 		iBlockSize	= (int)m_tBlockVec.size();
 		iTileSize	= (int)m_tTileVec.size();
-		iEnvSize	= (int)m_tEnvVec.size();
+		iEnvSize	= (int)m_tEnvObjVec.size();
 		iRecipeSize = (int)m_sRecipeVec.size();
 	}
 	
@@ -168,7 +178,7 @@ private:
 private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터
 	vector<S_TILE>			m_tTileVec;			///현재 설치되어있는 타일의 데이터
-	vector<S_ENVIRONMENT>	m_tEnvVec;			///현재 설치 되어있는 환경블록의 데이터
+	vector<S_ENVOBJECT>		m_tEnvObjVec;		///현재 설치 되어있는 환경오브젝트의 데이터
 	vector<string>			m_sRecipeVec;		///현재 스테이지가 실질적으로 가지고있는 레시피를 저장할공간
 	S_CAM					m_tCam;				///설치를 한 카메라의 
 	S_PLAYER				m_tPlayer;			///현재 플레이어들의 시작 위치
