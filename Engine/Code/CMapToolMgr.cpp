@@ -582,7 +582,7 @@ _uint CMapToolMgr::String_To_Block(string& _s)
 
 _uint CMapToolMgr::String_To_Tile(string& _s)
 {
-    if (_s == "TILE_1")
+    if (_s == "Tile_1")
         return Engine::RCTILEID::RT_1;
     else if (_s == "???")
         return Engine::RCTILEID::RT_END;

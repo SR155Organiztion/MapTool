@@ -41,8 +41,8 @@ struct S_GAMEOBJECT {
 };
 
 /**
-* @struct S_ENVIRONMENT
-* @brief 환경 구조물 구조체
+* @struct S_ENVOjbect
+* @brief 환경 오브젝트의 오브젝트 구조체
 */
 
 struct S_ENVOBJECT {
@@ -53,7 +53,7 @@ struct S_ENVOBJECT {
 
 /**
 * @struct S_ENVIRONMENT
-* @brief 환경 구조물 구조체
+* @brief 환경 오브젝트 구조체
 */
 
 struct S_ENVIRONMENT {
