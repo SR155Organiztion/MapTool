@@ -412,28 +412,6 @@ string CMapToolMgr::Get_Dir()
     }
 }
 
-void CMapToolMgr::Dummy_Data()
-{
-    MSG_BOX("더미호출");
-    m_sName = "Stage1";
-
-    _vec3 v = { 1.f, 2.f, 3.f };
-
-    S_BLOCK b = { "A", v, "L" };
-    m_tBlockVec.push_back(b);
-    m_tBlockVec.push_back(b);
-
-    S_TILE t = { "T", v, "R" };
-    m_tTileVec.push_back(t);
-
-    S_ENVIRONMENT e = { "T", v, v };
-    m_tEnvVec.push_back(e);
-
-    m_sRecipeVec.push_back("apple");
-    m_tCam = { v, v };
-    m_tPlayer = { v , v };
-}
-
 string CMapToolMgr::Dir_To_String()
 {
     switch (m_iDir)
@@ -500,7 +478,7 @@ string CMapToolMgr::Tile_To_String()
     switch (m_iRcTile)
     {
     case Engine::RT_1:
-        return "TILE_1";
+        return "Tile_1";
     case Engine::RT_END:
         break;
     default:

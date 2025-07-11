@@ -419,7 +419,7 @@ void CDynamicCamera::Load_Objects()
 
 	//타일레이어
 	pLayer = pScene->Get_Layer(L"Tile_Layer");
-	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).GameObject.Tile)) {
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Environment.Tile)) {
 
 		if (nullptr == pLayer)
 			return;

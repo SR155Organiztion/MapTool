@@ -166,14 +166,11 @@ public:
 	}
 	
 private:
-	void	Dummy_Data();				///테스트용
 	string	Dir_To_String();
 	string	Block_To_String();
 	string	Tile_To_String();
 	string  Item_To_String();
 	string  Food_To_String();
-
-
 
 private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터
