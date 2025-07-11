@@ -413,7 +413,7 @@ void CDynamicCamera::Load_Objects()
 				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
 			}
 		}
-		CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction);
+		CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction, it.Item);
 		s_Index++;
 	}
 
@@ -507,6 +507,7 @@ void CDynamicCamera::Load_Objects()
 	else {
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(FALSE);
 	}
+	CMapToolMgr::GetInstance()->Plant_Player(0, pos1);
 
 	iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"2Player"));
 	pObj = iter->second;
@@ -518,6 +519,7 @@ void CDynamicCamera::Load_Objects()
 	else {
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(FALSE);
 	}
+	CMapToolMgr::GetInstance()->Plant_Player(0, pos2);
 }
 
 void CDynamicCamera::LoadCallBackToImguiMgr()
