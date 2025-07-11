@@ -21,6 +21,7 @@ public:
 
 	void SetLoadCallback(std::function<void()> callback) { m_LoadCallback = std::move(callback); }
 	void SetClearCallback(std::function<void()> callback) { m_ClearCallback = std::move(callback); }
+	void SetTerrianEnableCallback(std::function<void()> callback) { m_TerrianEnableCallback = std::move(callback); }
 
 	char* Get_Name() { return szName; }
 	_int Get_CurItem() { return m_iCurrent_Item; }
@@ -29,11 +30,12 @@ protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
 	std::function<void()>					m_LoadCallback;
 	std::function<void()>					m_ClearCallback;
-	
+	std::function<void()>					m_TerrianEnableCallback;
 
 	map<string, _bool>						m_mapRecipes;
 	_int m_iCurrent_Item;
 	_int m_iCurrent_Food;
+	_bool m_bTerrainEnable;
 	char szName[64];
 	float fTimer;
 

@@ -168,6 +168,7 @@ call Copy.bat</Command>
     <ClInclude Include="..\Header\CFrameMgr.h" />
     <ClInclude Include="..\Header\CGameObject.h" />
     <ClInclude Include="..\Header\CGraphicDev.h" />
+    <ClInclude Include="..\Header\CHexTileTex.h" />
     <ClInclude Include="..\Header\CImguiMgr.h" />
     <ClInclude Include="..\Header\CLayer.h" />
     <ClInclude Include="..\Header\CLight.h" />
@@ -219,6 +220,7 @@ call Copy.bat</Command>
     <ClCompile Include="..\Code\CFrameMgr.cpp" />
     <ClCompile Include="..\Code\CGameObject.cpp" />
     <ClCompile Include="..\Code\CGraphicDev.cpp" />
+    <ClCompile Include="..\Code\CHexTileTex.cpp" />
     <ClCompile Include="..\Code\CImguiMgr.cpp\CImguiMgr.cpp" />
     <ClCompile Include="..\Code\CLayer.cpp" />
     <ClCompile Include="..\Code\CLight.cpp" />

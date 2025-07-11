@@ -15,6 +15,7 @@
 #include <iomanip> 
 #include "CImguiMgr.h"
 #include "CPlayerPoint.h"
+#include "CHexTile.h"
 
 
 

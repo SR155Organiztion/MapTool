@@ -118,6 +118,9 @@
     <Filter Include="100. Imgui\backends\NewFilter1">
       <UniqueIdentifier>{62208d96-dd6e-44d0-bc38-5cd24a022a1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Component\00. VIBuffer\HexTile">
+      <UniqueIdentifier>{ca4af0f8-2bfa-49c0-a7e5-4f279387ffe5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Code\CGraphicDev.cpp">
@@ -239,6 +242,9 @@
     </ClCompile>
     <ClCompile Include="..\Imgui\backends\imgui_impl_win32.cpp">
       <Filter>100. Imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CHexTileTex.cpp">
+      <Filter>04. Component\00. VIBuffer\HexTile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -386,6 +392,9 @@
     </ClInclude>
     <ClInclude Include="..\Imgui\backends\imgui_impl_win32.h">
       <Filter>100. Imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CHexTileTex.h">
+      <Filter>04. Component\00. VIBuffer\HexTile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

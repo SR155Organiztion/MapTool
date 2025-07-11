@@ -37,6 +37,8 @@ private:
 
 	void		LoadCallBackToImguiMgr();//Imgui에게 보내기
 	void		ClearCallBackToImguiMgr();//Imgui에게 보내기
+	void		TerrianEnableCallBackToImguiMgr();
+	void		TerrianEnable();
 	
 	void		Prev_Type();
 	void		Next_Type();
@@ -70,8 +72,8 @@ private:
 	_bool		m_bPressed3;
 	_bool		m_bPressedR;
 	_bool		m_bPressedL;
+	_bool		m_bPressedP;
 	_bool		m_bShowBox;
-
 	
 	vector<_tchar*> Release_tchar;
 public:
