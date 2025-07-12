@@ -531,6 +531,8 @@ string CMapToolMgr::Food_To_String()
         return "Rice";
     case Engine::C_PASTA:
         return "Pasta";
+    case Engine::C_TOMATOSOUP:
+        return "TomatoSoup";
     case Engine::C_END:
     default:
         return "";
@@ -601,7 +603,8 @@ _uint CMapToolMgr::String_To_Food(string& _s)
         {"Fish", Engine::CREATEID::C_FISH},
         {"Shrimp", Engine::CREATEID::C_SHRIMP},
         {"Rice", Engine::CREATEID::C_RICE},
-        {"Pasta", Engine::CREATEID::C_PASTA}
+        {"Pasta", Engine::CREATEID::C_PASTA},
+        {"TomatoSoup", Engine::CREATEID::C_TOMATOSOUP}
     };
 
     auto it = foodMap.find(_s);

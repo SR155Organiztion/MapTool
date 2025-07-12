@@ -185,7 +185,7 @@ void CImguiMgr::Update_Imgui()
     // 상자 음식 설정 ////////////////////////////////////////////////////////////////
 
     if (ImGui::CollapsingHeader("Food")) {
-        const char* foods[] = { "Seaweed", "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Rice", "Pasta"};
+        const char* foods[] = { "Seaweed", "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Rice", "Pasta", "TomatoSoup"};
         ImGui::Combo("Foods", &m_iCurrent_Food, foods, IM_ARRAYSIZE(foods));
     }
 

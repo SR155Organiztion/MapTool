@@ -23,7 +23,7 @@ namespace Engine
 	//블럭     	    투명벽    빈칸   음식상자   도마    가스    접시   물씽크대  접시싱크  쓰레기통    제출
 	enum STATIONID { S_INV, S_EMPTY, S_CREATE, S_CHOP, S_GAS, S_PLATE, S_SINK_W, S_SINK_P, S_TRASH, S_SERVING, S_END };
 	//음식
-	enum CREATEID { C_SEAWEED, C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_RICE, C_PASTA, C_END};
+	enum CREATEID { C_SEAWEED, C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_RICE, C_PASTA, C_TOMATOSOUP, C_END};
 	//사각타일     파랑3  파랑4 분홍4
  	enum RCTILEID { RT_1 ,RT_2, RT_3, RT_END};
 	//오브젝트			    블럭	사각타일   육각타일   환경  시작지점
