@@ -847,7 +847,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 			if (j % 2 == 1)
 				vTmp.z += fHexHeight * 0.5f;
 
-			pObjectTransformCom->Set_Pos(vTmp.x, 0.f, vTmp.z);
+			pObjectTransformCom->Set_Pos(vTmp.x, -0.25f, vTmp.z);
 			CMapToolMgr::GetInstance()->Plant_HexTile(vTmp);
 
 			_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
