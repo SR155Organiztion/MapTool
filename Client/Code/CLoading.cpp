@@ -70,6 +70,10 @@ _uint CLoading::Loaing_ForStage()
 	(L"Proto_HexTileTex", Engine::CHexTileTex::Create(m_pGraphicDev))))
 		return E_FAIL;
 
+	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
+	(L"Proto_HexPrismTex", Engine::CHexPrismTex::Create(m_pGraphicDev))))
+		return E_FAIL;
+
 	lstrcpy(m_szLoading, L"Texture Component Loading...........................");
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
@@ -97,13 +101,17 @@ _uint CLoading::Loaing_ForStage()
 		return E_FAIL;
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
-	(L"Proto_HexTileTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Tile/HexTile.png", TEX_NORMAL))))
+	(L"Proto_HexTileTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Tile/HexTile_%d.png", TEX_NORMAL, 2))))
+		return E_FAIL;
+
+	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
+	(L"Proto_RcTileTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Tile/RcTile_%d.png", TEX_NORMAL, 3))))
 		return E_FAIL;
 
 	lstrcpy(m_szLoading, L"Etc Component Loading...........................");
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
-	(L"Proto_Transform", Engine::CTransform::Create(m_pGraphicDev))))
+	(L"Proto_Transform", Engine::CTransform::Create(m_pGraphicDev)))) 
 		return E_FAIL;
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype

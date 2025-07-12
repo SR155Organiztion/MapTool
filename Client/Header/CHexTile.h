@@ -4,6 +4,7 @@
 namespace Engine
 {
 	class CHexTileTex;
+	class CHexPrismTex;
 	class CTransform;
 	class CTexture;
 	class CCalculator;
@@ -29,7 +30,8 @@ private:
 
 
 private:
-	Engine::CHexTileTex*	m_pBufferCom;
+	Engine::CHexTileTex*	m_pTileBufferCom;
+	Engine::CHexPrismTex*	m_pPrismBufferCom;
 	Engine::CTransform*		m_pTransformCom;
 	Engine::CTexture*		m_pTextureCom;
 	Engine::CCalculator*	m_pCalculatorCom;

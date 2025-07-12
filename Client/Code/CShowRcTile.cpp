@@ -85,7 +85,7 @@ HRESULT CShowRcTile::Add_Component()
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });
 
-    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_StationTexture"));
+    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_RcTileTexture"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Texture", pComponent });

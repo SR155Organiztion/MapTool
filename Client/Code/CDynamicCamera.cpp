@@ -819,7 +819,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 {
 	static int s_HexTileIndex = 0;
 	int iRow, iCol;
-	iRow = iCol = 30;
+	iRow = iCol = 5;
 
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
 	CLayer* pLayer = pScene->Get_Layer(L"Tile_Layer");
@@ -851,7 +851,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 			CMapToolMgr::GetInstance()->Plant_HexTile(vTmp);
 
 			_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
-			pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+			//pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
 
 			_tchar szTag[64] = {};
 			while (true) {

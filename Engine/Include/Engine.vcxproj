@@ -196,6 +196,7 @@ call Copy.bat</Command>
     <ClInclude Include="..\Header\Engine_Macro.h" />
     <ClInclude Include="..\Header\Engine_Struct.h" />
     <ClInclude Include="..\Header\Engine_Typedef.h" />
+    <ClInclude Include="..\Header\CHexPrismTex.h" />
     <ClInclude Include="..\Header\json.hpp" />
     <ClInclude Include="..\Imgui\backends\imgui_impl_dx9.h" />
     <ClInclude Include="..\Imgui\backends\imgui_impl_win32.h" />
@@ -242,6 +243,7 @@ call Copy.bat</Command>
     <ClCompile Include="..\Code\CTransform.cpp" />
     <ClCompile Include="..\Code\CTriCol.cpp" />
     <ClCompile Include="..\Code\CVIBuffer.cpp" />
+    <ClCompile Include="..\Code\CHexPrismTex.cpp" />
     <ClCompile Include="..\Imgui\backends\imgui_impl_dx9.cpp" />
     <ClCompile Include="..\Imgui\backends\imgui_impl_win32.cpp" />
     <ClCompile Include="..\Imgui\imgui.cpp" />
