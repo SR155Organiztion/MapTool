@@ -32,10 +32,10 @@ _int CHexTile::Update_GameObject(const _float& fTimeDelta)
 {
     _vec3 vPos;
     m_pTransformCom->Get_Info(INFO_POS, &vPos);
-    _vec3 min = *(m_pBufferCom->Get_Min());
+    _vec3 min = *(m_pPrismBufferCom->Get_Min());
     min = { min.x + vPos.x, min.y + vPos.y ,min.z + vPos.z };
 
-    _vec3 max = *(m_pBufferCom->Get_Max());
+    _vec3 max = *(m_pPrismBufferCom->Get_Max());
     max = { max.x + vPos.x, max.y + vPos.y ,max.z + vPos.z };
 
     m_pCalculatorCom->Calculate_AABB(&min, &max);
@@ -43,6 +43,10 @@ _int CHexTile::Update_GameObject(const _float& fTimeDelta)
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
+
+    if (GetAsyncKeyState('M')) {
+        m_pTransformCom->Rotation(ROT_X, 1.f * fTimeDelta);
+    }
 
     return iExit;
 }
@@ -60,17 +64,20 @@ void CHexTile::Render_GameObject()
     m_pTransformCom->Get_World(&matWorld);
     m_pGraphicDev->SetTransform(D3DTS_WORLD, &matWorld);
 
-    m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
-    //m_pGraphicDev->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
+    m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 
-    m_pTextureCom->Set_Texture(m_iTextureNum);
 
     if (FAILED(Set_Metarial()))
         return;
+    
+    //±âµÕ Ãâ·Â
+    m_pTextureCom->Set_Texture(0);
+    m_pPrismBufferCom->Render_Buffer();
 
-    m_pBufferCom->Render_Buffer();
+    //¹Ù´Ú Ãâ·Â
+    m_pTextureCom->Set_Texture(1);
+    m_pTileBufferCom->Render_Buffer();
 
-    // m_pGraphicDev->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
 
@@ -83,7 +90,12 @@ HRESULT CHexTile::Add_Component()
 {
     CComponent* pComponent = nullptr;
 
-    pComponent = m_pBufferCom = dynamic_cast<Engine::CHexTileTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_HexTileTex"));
+    pComponent = m_pTileBufferCom = dynamic_cast<Engine::CHexTileTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_HexTileTex"));
+    if (nullptr == pComponent)
+        return E_FAIL;
+    m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });
+
+    pComponent = m_pPrismBufferCom = dynamic_cast<Engine::CHexPrismTex*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_HexPrismTex"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });

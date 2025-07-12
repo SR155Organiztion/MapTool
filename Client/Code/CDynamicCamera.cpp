@@ -419,7 +419,7 @@ void CDynamicCamera::Load_Objects()
 
 	//타일레이어
 	pLayer = pScene->Get_Layer(L"Tile_Layer");
-	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).GameObject.Tile)) {
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Environment.Tile)) {
 
 		if (nullptr == pLayer)
 			return;
@@ -819,7 +819,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 {
 	static int s_HexTileIndex = 0;
 	int iRow, iCol;
-	iRow = iCol = 30;
+	iRow = iCol = 5;
 
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
 	CLayer* pLayer = pScene->Get_Layer(L"Tile_Layer");
@@ -847,7 +847,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 			if (j % 2 == 1)
 				vTmp.z += fHexHeight * 0.5f;
 
-			pObjectTransformCom->Set_Pos(vTmp.x, 0.f, vTmp.z);
+			pObjectTransformCom->Set_Pos(vTmp.x, -0.25f, vTmp.z);
 			CMapToolMgr::GetInstance()->Plant_HexTile(vTmp);
 
 			_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();

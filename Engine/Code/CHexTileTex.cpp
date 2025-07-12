@@ -20,10 +20,8 @@ CHexTileTex::~CHexTileTex()
 
 HRESULT CHexTileTex::Ready_Buffer()
 {
-	m_dwTriCnt = 6;
-	m_dwVtxCnt = 7;
-	m_vMax = { 0.5f, 0.f, 0.5f };
-	m_vMin = { -0.5f, 0.f, -0.5f };
+	m_dwTriCnt = 6;                           // 6개의 삼각형
+	m_dwVtxCnt = 7;                           // 중심점 + 둘레 6개
 	m_dwVtxSize = sizeof(VTXTEX);
 	m_dwFVF = FVF_TEX;
 
@@ -33,12 +31,14 @@ HRESULT CHexTileTex::Ready_Buffer()
 	if (FAILED(CVIBuffer::Ready_Buffer()))
 		return E_FAIL;
 
-
+	// 2. 버텍스 설정
 	VTXTEX* pVertex = nullptr;
 	m_pVB->Lock(0, 0, (void**)&pVertex, 0);
 
 	// 중심점
-	pVertex[0].vPosition = { 0.f, 0.f, 0.f };
+	float y = -0.251f;
+
+	pVertex[0].vPosition = { 0.f, y, 0.f };
 	pVertex[0].vTexUV = { 0.5f, 0.5f };
 
 	// 시계방향으로 둘레 6개
@@ -48,7 +48,7 @@ HRESULT CHexTileTex::Ready_Buffer()
 		float x = 0.5f * cosf(angle);
 		float z = 0.5f * sinf(angle);
 
-		pVertex[i + 1].vPosition = { x, 0.f, z };
+		pVertex[i + 1].vPosition = { x, y, z };
 		pVertex[i + 1].vTexUV = { 0.5f + x, 0.5f - z }; // UV는 중앙기준
 	}
 
@@ -62,7 +62,7 @@ HRESULT CHexTileTex::Ready_Buffer()
 	{
 		pIndex[i]._0 = 0;
 		pIndex[i]._1 = i + 1;
-		pIndex[i]._2 = (i + 1) % 6 + 1;
+		pIndex[i]._2 = (i + 1) % 6 + 1;  // 반시계방향으로 순서 변경
 	}
 
 	m_pIB->Unlock();

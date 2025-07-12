@@ -40,9 +40,6 @@
     <Filter Include="05. ProtoMgr">
       <UniqueIdentifier>{c1d37408-864a-4271-b41d-ba49e663c909}</UniqueIdentifier>
     </Filter>
-    <Filter Include="04. Component\00. VIBuffer\RcCol">
-      <UniqueIdentifier>{e78c1569-49fa-428c-a430-0612f8a0f956}</UniqueIdentifier>
-    </Filter>
     <Filter Include="04. Component\01. Transform">
       <UniqueIdentifier>{08f46cba-1ab0-48c9-a68d-58ae6f09090e}</UniqueIdentifier>
     </Filter>
@@ -120,6 +117,12 @@
     </Filter>
     <Filter Include="04. Component\00. VIBuffer\HexTile">
       <UniqueIdentifier>{ca4af0f8-2bfa-49c0-a7e5-4f279387ffe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Component\00. VIBuffer\HexPrismTex">
+      <UniqueIdentifier>{c79b6577-cd2a-4a46-969b-2c224e6bb2c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Component\00. VIBuffer\RcCol">
+      <UniqueIdentifier>{e78c1569-49fa-428c-a430-0612f8a0f956}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +248,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\CHexTileTex.cpp">
       <Filter>04. Component\00. VIBuffer\HexTile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CHexPrismTex.cpp">
+      <Filter>04. Component\00. VIBuffer\HexPrismTex</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -395,6 +401,9 @@
     </ClInclude>
     <ClInclude Include="..\Header\CHexTileTex.h">
       <Filter>04. Component\00. VIBuffer\HexTile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CHexPrismTex.h">
+      <Filter>04. Component\00. VIBuffer\HexPrismTex</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

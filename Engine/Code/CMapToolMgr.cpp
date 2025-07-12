@@ -5,13 +5,20 @@
 #include "CImguiMgr.h"
 
 using json = nlohmann::json;
+
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(_vec3, x, y, z)
+
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction, Item)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_GAMEOBJECT, Block)
+
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_TILE, Tile_Type, vPos, Direction)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_GAMEOBJECT, Block, Tile)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVIRONMENT, Env_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVOBJECT, Env_Type, vPos, Direction)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVIRONMENT, Tile, EnvObject)
+
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_CAM, vEye, vAt)
+
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_PLAYER, P1, P2)
+
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Time, Recipe, GameObject, Environment);
 
 IMPLEMENT_SINGLETON(CMapToolMgr)
@@ -21,7 +28,7 @@ CMapToolMgr::CMapToolMgr()
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
-    m_tEnvVec.clear();
+    m_tEnvObjVec.clear();
     m_sRecipeVec.clear();
     m_mapJson.clear();
 
@@ -118,8 +125,9 @@ HRESULT CMapToolMgr::Save_Json()
 {
     m_sName = CImguiMgr::GetInstance()->Get_Name();
     //데이터 종합
-
-    S_STAGE stage = { m_tCam, m_tPlayer ,m_fTimer, m_sRecipeVec, m_tBlockVec, m_tTileVec, m_tEnvVec };
+    S_GAMEOBJECT GameObject = { m_tBlockVec };
+    S_ENVIRONMENT Environmnet = { m_tTileVec , m_tEnvObjVec };
+    S_STAGE stage = { m_tCam, m_tPlayer ,m_fTimer, m_sRecipeVec, GameObject, Environmnet };
     //저장하기 전 json에 있는 모든 맵의 키값을 스테이지 이름 벡터와 비교찾는다
     bool bFound = false;
     for (auto it = m_mapJson.begin(); it != m_mapJson.end(); ++it) {
@@ -199,8 +207,8 @@ void CMapToolMgr::Select_Map()
     m_fTimer = m_mapJson[m_sName].Time;
     m_sRecipeVec = m_mapJson[m_sName].Recipe;
     m_tBlockVec = m_mapJson[m_sName].GameObject.Block;
-    m_tTileVec = m_mapJson[m_sName].GameObject.Tile;
-    m_tEnvVec = m_mapJson[m_sName].Environment;
+    m_tTileVec = m_mapJson[m_sName].Environment.Tile;
+    m_tEnvObjVec = m_mapJson[m_sName].Environment.EnvObject;
 
     for (const auto& recipeName : m_sRecipeVec) {
         auto it = m_mapRecipes.find(recipeName);
@@ -234,7 +242,7 @@ void CMapToolMgr::Reset()
     m_sRecipeVec.clear();
     m_tBlockVec.clear();
     m_tTileVec.clear();
-    m_tEnvVec.clear();
+    m_tEnvObjVec.clear();
     {
         m_mapRecipes["salad_lettuce"] = false;
         m_mapRecipes["salad_lettuce_tomato"] = false;
@@ -404,28 +412,6 @@ string CMapToolMgr::Get_Dir()
     }
 }
 
-void CMapToolMgr::Dummy_Data()
-{
-    MSG_BOX("더미호출");
-    m_sName = "Stage1";
-
-    _vec3 v = { 1.f, 2.f, 3.f };
-
-    S_BLOCK b = { "A", v, "L" };
-    m_tBlockVec.push_back(b);
-    m_tBlockVec.push_back(b);
-
-    S_TILE t = { "T", v, "R" };
-    m_tTileVec.push_back(t);
-
-    S_ENVIRONMENT e = { "T", v, v };
-    m_tEnvVec.push_back(e);
-
-    m_sRecipeVec.push_back("apple");
-    m_tCam = { v, v };
-    m_tPlayer = { v , v };
-}
-
 string CMapToolMgr::Dir_To_String()
 {
     switch (m_iDir)
@@ -492,7 +478,7 @@ string CMapToolMgr::Tile_To_String()
     switch (m_iRcTile)
     {
     case Engine::RT_1:
-        return "TILE_1";
+        return "Tile_1";
     case Engine::RT_END:
         break;
     default:
@@ -596,7 +582,7 @@ _uint CMapToolMgr::String_To_Block(string& _s)
 
 _uint CMapToolMgr::String_To_Tile(string& _s)
 {
-    if (_s == "TILE_1")
+    if (_s == "Tile_1")
         return Engine::RCTILEID::RT_1;
     else if (_s == "???")
         return Engine::RCTILEID::RT_END;
@@ -644,7 +630,7 @@ void CMapToolMgr::Free()
 {
     m_tBlockVec.clear();
     m_tTileVec.clear();
-    m_tEnvVec.clear();
+    m_tEnvObjVec.clear();
     m_sRecipeVec.clear();
     m_mapJson.clear();
 }
