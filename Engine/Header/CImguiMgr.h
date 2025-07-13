@@ -26,6 +26,7 @@ public:
 	char* Get_Name() { return szName; }
 	_int Get_CurItem() { return m_iCurrent_Item; }
 	_int Get_CurFood() { return m_iCurrent_Food; }
+
 protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
 	std::function<void()>					m_LoadCallback;

@@ -360,6 +360,44 @@ void CDynamicCamera::Load_Objects()
 	//씬 불러오기
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
 	CLayer* pLayer;
+
+	//환경오브젝트 레이어
+	pLayer = pScene->Get_Layer(L"Environment_Layer");
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Environment.EnvObject)) {
+		
+		if (nullptr == pLayer)
+			return;
+
+		//환경오브젝트 생성
+		Engine::CGameObject* pGameObject = CEnvObject::Create(m_pGraphicDev);
+		if (nullptr == pGameObject)
+			return;
+
+		//위치 설정
+		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
+
+		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
+
+		_tchar szTag[64] = {};
+
+		while (true) {
+			_stprintf_s(szTag, 64, L"EnvObj_%d", s_Index);
+			_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
+			lstrcpy(pTag, szTag);
+
+			if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+				Release_tchar.push_back(pTag);
+				CMapToolMgr::GetInstance()->Plant_Environment(it.Env_Type, it.vPos, it.Direction);
+				s_Index++;
+				break; // 성공 시 탈출
+			}
+			else {
+				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
+			}
+		}
+	}
+
 	//블럭레이어
 	pLayer = pScene->Get_Layer(L"Block_Layer");
 	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).GameObject.Block)) {
@@ -371,6 +409,7 @@ void CDynamicCamera::Load_Objects()
 		Engine::CGameObject* pGameObject = CBlock::Create(m_pGraphicDev);
 		if (nullptr == pGameObject)
 			return;
+
 		//위치 설정
 		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
@@ -408,14 +447,14 @@ void CDynamicCamera::Load_Objects()
 
 			if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
 				Release_tchar.push_back(pTag);
+				CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction, it.Item);
+				s_Index++;
 				break; // 성공 시 탈출
 			}
 			else {
 				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
 			}
 		}
-		CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction, it.Item);
-		s_Index++;
 	}
 
 	//타일레이어
