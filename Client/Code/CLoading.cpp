@@ -74,10 +74,6 @@ _uint CLoading::Loaing_ForStage()
 	(L"Proto_HexPrismTex", Engine::CHexPrismTex::Create(m_pGraphicDev))))
 		return E_FAIL;
 
-	//if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
-	//(L"Proto_RcTex", Engine::CRcTex::Create(m_pGraphicDev))))
-	//	return E_FAIL;
-
 	lstrcpy(m_szLoading, L"Texture Component Loading...........................");
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
