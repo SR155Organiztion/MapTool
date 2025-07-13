@@ -48,7 +48,7 @@ struct S_GAMEOBJECT {
 struct S_ENVOBJECT {
 	string Env_Type;
 	_vec3 vPos;
-	float Direction;
+	float fAngle;
 };
 
 /**
