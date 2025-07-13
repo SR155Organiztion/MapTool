@@ -34,6 +34,8 @@ HRESULT CShowEnvObject::Ready_GameObject()
 
 _int CShowEnvObject::Update_GameObject(const _float& fTimeDelta)
 {
+    m_pTransformCom->m_vAngle.y = CMapToolMgr::GetInstance()->Get_NowAngle();
+
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
@@ -83,7 +85,7 @@ HRESULT CShowEnvObject::Add_Component()
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });
 
-    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_ShowEnvObjectTexture"));
+    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_EnvObjectTexture"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Texture", pComponent });

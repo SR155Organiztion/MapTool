@@ -115,6 +115,18 @@ void CMapToolMgr::Plant_Environment(string _sType, _vec3 _vPos, float _fAngle)
     m_tEnvObjVec.push_back(tEnvObj);
 }
 
+void CMapToolMgr::Break_Environment(_vec3 _vPos)
+{
+    for (vector<S_ENVOBJECT>::iterator it = m_tEnvObjVec.begin(); it != m_tEnvObjVec.end(); ) {
+        if ((*it).vPos == _vPos) {
+            it = m_tEnvObjVec.erase(it);
+        }
+        else {
+            it++;
+        }
+    }
+}
+
 void CMapToolMgr::Plant_Camera(_vec3 _vEye, _vec3 _vAt)
 {
 }
@@ -345,19 +357,19 @@ _vec3 CMapToolMgr::Get_DirLook()
     }
 }
 
-void CMapToolMgr::TurnRight()
+void CMapToolMgr::TurnRight(_float _fTimeDelta)
 {
-    m_fAngle -= 1.f;
+    m_fAngle -= 1.f * _fTimeDelta;
 }
 
-void CMapToolMgr::TurnLeft()
+void CMapToolMgr::TurnLeft(_float _fTimeDelta)
 {
-    m_fAngle += 1.f;
+    m_fAngle += 1.f * _fTimeDelta;
 }
 
 _float CMapToolMgr::Get_NowAngle()
 {
-    return _float();
+    return m_fAngle;
 }
 
 void CMapToolMgr::NextStation()

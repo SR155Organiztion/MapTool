@@ -3,6 +3,7 @@
 #include "CProtoMgr.h"
 #include "CRenderer.h"
 #include "CManagement.h"
+#include "CMapToolMgr.h"
 
 CEnvObject::CEnvObject(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CGameObject(pGraphicDev)
@@ -28,6 +29,7 @@ HRESULT CEnvObject::Ready_GameObject()
 
 _int CEnvObject::Update_GameObject(const _float& fTimeDelta)
 {
+
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
@@ -65,6 +67,11 @@ void CEnvObject::Render_GameObject()
 void CEnvObject::Set_TextureNum(_uint _iID)
 {
     m_iTextureNum = _iID;
+}
+
+void CEnvObject::Set_Angle(_float _fAngle)
+{
+    m_pTransformCom->m_vAngle.y = _fAngle;
 }
 
 HRESULT CEnvObject::Add_Component()

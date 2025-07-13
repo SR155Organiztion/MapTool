@@ -23,12 +23,13 @@ public:
 	virtual			void		Render_GameObject();
 
 	void						Set_TextureNum(_uint _iID);
+	void						Set_Angle(_float _fAngle);
 private:
 	HRESULT		Add_Component();
 	HRESULT		Set_Metarial();
 
 private:
-	Engine::CRcTex* m_pBufferCom;
+	Engine::CRcTex*		m_pBufferCom;
 	Engine::CTransform* m_pTransformCom;
 	Engine::CTexture*   m_pTextureCom;
 
