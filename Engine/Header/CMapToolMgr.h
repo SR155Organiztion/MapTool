@@ -48,7 +48,7 @@ struct S_GAMEOBJECT {
 struct S_ENVOBJECT {
 	string Env_Type;
 	_vec3 vPos;
-	_vec3 Direction;
+	float Direction;
 };
 
 /**
@@ -106,11 +106,15 @@ public:
 	void	Plant_Block(_vec3 _vPos);		///설치한 블록의 정보를 벡터 리스트에 넣음
 	void    Plant_Block(string _sType, _vec3 _vPos, string _sDir, string _sItem = ""); /// 불러오기용 블럭설치
 	void	Break_Block(_vec3 _vPos);
+	
 	void	Plant_Tile(_vec3 _vPos);		///설치한 타일의 정보를 벡터 리스트에 넣음
 	void	Plant_HexTile(_vec3 _vPos);
 	void    Plant_Tile(string _sType, _vec3 _vPos, string _sDir); /// 불러오기용 블럭설치
 	void	Break_Tile(_vec3 _vPos);
-	void	Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
+	
+	void	Plant_Environment(_vec3 _vPos);
+	void	Plant_Environment(string _sType, _vec3 _vPos, float _fAngle);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
+
 	void	Plant_Camera(_vec3 _vEye, _vec3 _vAt);						///현재 바라보고 있는 곳의 Eye와 at을 저장
 	void	Plant_Player(_int _iPlayer,_vec3 _vPos);					///플레이어의 스폰 위치 설정
 
@@ -136,6 +140,10 @@ public:
 	void NextRotate();
 	void PrevRotate();
 	_vec3 Get_DirLook();
+
+	void TurnRight();
+	void TurnLeft();
+	_float Get_NowAngle();
 	
 	void NextStation();
 	void PrevStation();
@@ -160,6 +168,7 @@ public:
 	_uint	String_To_Tile(string& _s);
 	_uint   String_To_Food(string& _s);
 	_uint   String_To_Item(string& _s);
+	_uint	String_To_EnvObj(string& _s);
 
 	void Print_CurrentDataCounts(int& iBlockSize, int& iTileSize, int& iEnvSize, int& iRecipeSize)
 	{
@@ -175,6 +184,7 @@ private:
 	string	Tile_To_String();
 	string  Item_To_String();
 	string  Food_To_String();
+	string  EnvObj_To_String();
 
 private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터

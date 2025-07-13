@@ -103,8 +103,16 @@ void CMapToolMgr::Break_Tile(_vec3 _vPos)
     }
 }
 
-void CMapToolMgr::Plant_Environment(string _sType, _vec3 _vPos, _vec3 _vDir)
+void CMapToolMgr::Plant_Environment(_vec3 _vPos)
 {
+    S_ENVOBJECT tEnvObj = { EnvObj_To_String() , _vPos, m_fAngle};
+    m_tEnvObjVec.push_back(tEnvObj);
+}
+
+void CMapToolMgr::Plant_Environment(string _sType, _vec3 _vPos, float _fAngle)
+{
+    S_ENVOBJECT tEnvObj = { _sType , _vPos, _fAngle };
+    m_tEnvObjVec.push_back(tEnvObj);
 }
 
 void CMapToolMgr::Plant_Camera(_vec3 _vEye, _vec3 _vAt)
@@ -337,6 +345,21 @@ _vec3 CMapToolMgr::Get_DirLook()
     }
 }
 
+void CMapToolMgr::TurnRight()
+{
+    m_fAngle -= 1.f;
+}
+
+void CMapToolMgr::TurnLeft()
+{
+    m_fAngle += 1.f;
+}
+
+_float CMapToolMgr::Get_NowAngle()
+{
+    return _float();
+}
+
 void CMapToolMgr::NextStation()
 {
     ++m_iStation;
@@ -491,11 +514,14 @@ string CMapToolMgr::Tile_To_String()
     switch (m_iRcTile)
     {
     case Engine::RT_1:
-        return "Tile_1";
+        return "Tile_Blue33";
+    case Engine::RT_2:
+        return "Tile_Blue44";
+    case Engine::RT_3:
+        return "Tile_Pink44";
     case Engine::RT_END:
         break;
     default:
-        return "???";
         break;
     }
     return "???";
@@ -516,11 +542,9 @@ string CMapToolMgr::Item_To_String()
     case Engine::I_POT:
         return "Pot";
     case Engine::I_END:
-        return "";
     default:
         break;
     }
-
     return "";
 }
 
@@ -546,7 +570,20 @@ string CMapToolMgr::Food_To_String()
         return "Pasta";
     case Engine::C_END:
     default:
-        return "";
+        break;
+    }
+    return "";
+}
+
+string CMapToolMgr::EnvObj_To_String()
+{
+    switch (m_iEnvObject)
+    {
+    case Engine::E_DUMMY:
+        return "Dummy";
+    case Engine::E_END:
+    default:
+        break;
     }
     return "";
 }
@@ -595,8 +632,12 @@ _uint CMapToolMgr::String_To_Block(string& _s)
 
 _uint CMapToolMgr::String_To_Tile(string& _s)
 {
-    if (_s == "Tile_1")
+    if (_s == "Tile_Blue33")
         return Engine::RCTILEID::RT_1;
+    else if (_s == "Tile_Blue44")
+        return Engine::RCTILEID::RT_2;
+    else if (_s == "Tile_Pink44")
+        return Engine::RCTILEID::RT_3;
     else if (_s == "???")
         return Engine::RCTILEID::RT_END;
 
@@ -637,6 +678,11 @@ _uint CMapToolMgr::String_To_Item(string& _s)
         return Engine::I_POT;
     else
         return Engine::I_NONE; // 혹은 예외 처리
+}
+
+_uint CMapToolMgr::String_To_EnvObj(string& _s)
+{
+    return _uint();
 }
 
 void CMapToolMgr::Free()

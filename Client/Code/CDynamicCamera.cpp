@@ -959,7 +959,7 @@ HRESULT CDynamicCamera::Create_EnvObject()
 
 		if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
 			Release_tchar.push_back(pTag);
-			//CMapToolMgr::GetInstance()->Plant_Environment();
+			CMapToolMgr::GetInstance()->Plant_Environment(vTmp);
 			s_BlockIndex++;
 			break; // 성공 시 탈출
 		}
