@@ -292,6 +292,18 @@ vector<string>* CMapToolMgr::Get_NameVec()
     return &m_sNameVec;
 }
 
+void CMapToolMgr::NextObject()
+{
+    ++m_iObject;
+    if (m_iObject >= static_cast<_uint>(CREATEOBJECT_ID::O_END)) {
+        m_iObject = 0;
+    }
+}
+
+_uint CMapToolMgr::Get_NowObject()
+{
+    return m_iObject;
+}
 void CMapToolMgr::NextRotate()
 {
     ++m_iDir;
@@ -346,18 +358,6 @@ _uint CMapToolMgr::Get_NowStation()
     return m_iStation;
 }
 
-void CMapToolMgr::NextObject()
-{
-    ++m_iObject;
-    if (m_iObject >= static_cast<_uint>(CREATEOBJECT_ID::O_END)) {
-        m_iObject = 0;
-    }
-}
-
-_uint CMapToolMgr::Get_NowObject()
-{
-    return m_iObject;
-}
 
 void CMapToolMgr::NextRcTile()
 {
@@ -378,6 +378,19 @@ void CMapToolMgr::PrevRcTile()
 _uint CMapToolMgr::Get_NowRcTile()
 {
     return m_iRcTile;
+}
+
+void CMapToolMgr::NextEnvObject()
+{
+}
+
+void CMapToolMgr::PrevEnvObject()
+{
+}
+
+_uint CMapToolMgr::Get_NowEnvObject()
+{
+    return _uint();
 }
 
 void CMapToolMgr::ChangePlayer()

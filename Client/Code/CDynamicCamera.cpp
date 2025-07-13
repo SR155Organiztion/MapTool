@@ -15,6 +15,7 @@
 #include <tchar.h>
 #include "CPlayerPoint.h"
 #include "CHexTile.h"
+#include "CEnvObject.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -569,6 +570,7 @@ void CDynamicCamera::Prev_Type()
 	case Engine::O_HEXTILE:
 		break;
 	case Engine::O_ENV:
+		CMapToolMgr::GetInstance()->PrevEnvObject();
 		break;
 	case Engine::O_SPAWN:
 		CMapToolMgr::GetInstance()->ChangePlayer();
@@ -593,6 +595,7 @@ void CDynamicCamera::Next_Type()
 	case Engine::O_HEXTILE:
 		break;
 	case Engine::O_ENV:
+		CMapToolMgr::GetInstance()->NextEnvObject();
 		break;
 	case Engine::O_SPAWN:
 		CMapToolMgr::GetInstance()->ChangePlayer();
@@ -619,6 +622,7 @@ void CDynamicCamera::Create_Objects()
 		Create_HexTile();
 		break;
 	case O_ENV:
+		Create_EnvObject();
 		break;
 	case O_SPAWN:
 		Create_Player();
@@ -640,6 +644,7 @@ void CDynamicCamera::Delete_Objects()
 	case O_HEXTILE:
 		break;
 	case O_ENV:
+		Delete_EnvObject();
 		break;
 	case O_SPAWN:
 		Delete_Player();
@@ -917,6 +922,56 @@ HRESULT CDynamicCamera::Create_Player()
 }
 
 void CDynamicCamera::Delete_Player()
+{
+}
+
+HRESULT CDynamicCamera::Create_EnvObject()
+{
+	static int s_BlockIndex = 0;
+
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"Environment_Layer");
+
+	if (nullptr == pLayer)
+		return E_FAIL;
+
+	Engine::CGameObject* pGameObject = CEnvObject::Create(m_pGraphicDev);
+
+	if (nullptr == pGameObject)
+		return E_FAIL;
+
+	CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+	_vec3 vTmp;
+	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vTmp);
+	pObjectTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
+
+	//_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
+	//pObjectTransformCom->Set_Look(vLook.x, vLook.y, vLook.z);
+
+	dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
+
+	_tchar szTag[64] = {};
+
+	while (true) {
+		_stprintf_s(szTag, 64, L"EnvObject_%d", s_BlockIndex);
+		_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
+		lstrcpy(pTag, szTag);
+
+		if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+			Release_tchar.push_back(pTag);
+			//CMapToolMgr::GetInstance()->Plant_Environment();
+			s_BlockIndex++;
+			break; // 성공 시 탈출
+		}
+		else {
+			Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
+			++s_BlockIndex;
+		}
+	}
+	return S_OK;
+}
+
+void CDynamicCamera::Delete_EnvObject()
 {
 }
 

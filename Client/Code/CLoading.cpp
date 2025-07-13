@@ -74,6 +74,10 @@ _uint CLoading::Loaing_ForStage()
 	(L"Proto_HexPrismTex", Engine::CHexPrismTex::Create(m_pGraphicDev))))
 		return E_FAIL;
 
+	//if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
+	//(L"Proto_RcTex", Engine::CRcTex::Create(m_pGraphicDev))))
+	//	return E_FAIL;
+
 	lstrcpy(m_szLoading, L"Texture Component Loading...........................");
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
@@ -106,6 +110,14 @@ _uint CLoading::Loaing_ForStage()
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
 	(L"Proto_RcTileTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Tile/RcTile_%d.png", TEX_NORMAL, 3))))
+		return E_FAIL;
+
+	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
+	(L"Proto_ShowEnvObjectTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/ShowEnvObject.png", TEX_NORMAL))))
+		return E_FAIL;
+
+	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
+	(L"Proto_EnvObjectTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/EnvObject_%d.png", TEX_NORMAL, 1))))
 		return E_FAIL;
 
 	lstrcpy(m_szLoading, L"Etc Component Loading...........................");
