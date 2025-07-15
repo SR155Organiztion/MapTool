@@ -13,7 +13,7 @@ extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg
 
 IMPLEMENT_SINGLETON(CImguiMgr);
 
-CImguiMgr::CImguiMgr() : m_iCurrent_Item(0), m_iCurrent_Food(0), m_bTerrainEnable(true)
+CImguiMgr::CImguiMgr() : m_iCurrent_Item(0), m_iCurrent_Food(0), m_bTerrainEnable(true), iX(0), iY(0)
 {
    
 }
@@ -61,6 +61,8 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     
     m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
 
+    iX = iY = 0;
+
     return S_OK;
 }
 
@@ -79,6 +81,7 @@ void CImguiMgr::Update_Imgui()
     if (ImGui::Button("Save")) {                 
         if (m_LoadCallback) {
             CMapToolMgr::GetInstance()->Set_Timer(fTimer);
+            CMapToolMgr::GetInstance()->Set_MapSize(iX, iY);
             for (auto it : m_mapRecipes) {
                 if(it.second == true)
                     CMapToolMgr::GetInstance()->Add_Recipe(it.first);
@@ -91,11 +94,22 @@ void CImguiMgr::Update_Imgui()
 
     if (ImGui::Button("Load")) {   
         if (m_LoadCallback) {
+            //불러오기
             CMapToolMgr::GetInstance()->Load_Json();
+            //오브젝트들
             m_LoadCallback();
+           
+            //맵이름
             strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
-            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            
+            //맵사이즈
+            iX = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iX;
+            iY = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iY;
 
+            //타이머
+            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            
+            //레시피
             m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
             for (auto& it : m_mapRecipes) {
                 it.second = false;
@@ -143,10 +157,16 @@ void CImguiMgr::Update_Imgui()
             CMapToolMgr::GetInstance()->Reset();
             CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
             CMapToolMgr::GetInstance()->Select_Map();
+            //스테이지 이름
             strcpy_s(szName, nameVec[current_item].c_str());
+            //맵사이즈
+            iX = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iX;
+            iY = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iY;
+            //타이머
             fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            //레시피
             m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
-            
+
             for (auto& it : m_mapRecipes) {
                 it.second = false;
             }
@@ -185,7 +205,7 @@ void CImguiMgr::Update_Imgui()
     // 상자 음식 설정 ////////////////////////////////////////////////////////////////
 
     if (ImGui::CollapsingHeader("Food")) {
-        const char* foods[] = { "Seaweed", "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Rice", "Pasta"};
+        const char* foods[] = { "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Seaweed", "Rice", "Pasta", "TomatoSoup"};
         ImGui::Combo("Foods", &m_iCurrent_Food, foods, IM_ARRAYSIZE(foods));
     }
 
@@ -196,6 +216,8 @@ void CImguiMgr::Update_Imgui()
         ImGui::Combo("Items", &m_iCurrent_Item, tools, IM_ARRAYSIZE(tools));
     }
 
+    // 지형 설정 ////////////////////////////////////////////////////////////////
+
     if (ImGui::CollapsingHeader("Terrain")) {
         ImGui::Checkbox(m_bTerrainEnable ? "Enable" : "Disable" , &m_bTerrainEnable);
         ImGui::SameLine();
@@ -203,6 +225,27 @@ void CImguiMgr::Update_Imgui()
             m_bTerrainEnable ? m_bTerrainEnable = false : m_bTerrainEnable = true;
             m_TerrianEnableCallback();
         }
+        
+        ImGui::PushItemWidth(100);
+        ImGui::InputInt("X", &iX, sizeof(int));
+        ImGui::SameLine();
+        ImGui::InputInt("Y", &iY, sizeof(int));
+        ImGui::PopItemWidth();
+    }
+
+    // 환경오브젝트 설정 ////////////////////////////////////////////////////////////////
+
+    if (ImGui::CollapsingHeader("EnvObj")) {
+        static float pos[3] = { 1.0f, 1.0f, 1.0f };
+
+        ImGui::Text("Now Obj : ");
+        ImGui::SameLine();
+        ImGui::Text(CMapToolMgr::GetInstance()->EnvObj_To_String().c_str());
+
+        // Position 텍스트와 드래그 위젯 정렬
+        ImGui::Text("Position");
+        ImGui::SameLine(100); // X 위치를 지정해 간격 조정 (예: 100픽셀부터 시작)
+        ImGui::DragFloat3("##Position", pos, 0.1f, 1.0f, 5.0f);
     }
 
     // 디버그용 ////////////////////////////////////////////////////////////////
@@ -213,7 +256,7 @@ void CImguiMgr::Update_Imgui()
         static int recipeCount = 0;
 
         CMapToolMgr::GetInstance()->Print_CurrentDataCounts(blockCount, tileCount, envCount, recipeCount);
-
+        ImGui::Text("=====================================");
         ImGui::Text("Block: %d", blockCount);
         ImGui::Text("Tile: %d", tileCount);
         ImGui::Text("Environment: %d", envCount);

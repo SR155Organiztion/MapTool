@@ -79,14 +79,20 @@
     <Filter Include="Object\04. Plantable\03. PlayerPoint">
       <UniqueIdentifier>{ec7af5d5-585b-4fe1-9261-2470230bb6a7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\03. Show\03. CShowPlayerPoint">
-      <UniqueIdentifier>{7d20f82a-7769-4af5-8f31-2ce82d6dc887}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Object\04. Plantable\02. Tile\RcTile">
       <UniqueIdentifier>{ec9b6d45-68e7-4015-80bf-10054f0713eb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object\04. Plantable\02. Tile\HexTile">
       <UniqueIdentifier>{3d7974be-4f27-432a-8e73-4a3ad858d314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\04. Plantable\04. EnvObject">
+      <UniqueIdentifier>{a9cf99e1-bdcc-48ad-8db3-6f3d2a663e8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\03. Show\04. ShowEnvObject">
+      <UniqueIdentifier>{39b4094c-25e3-44ef-aa0f-5e8fa5e5afed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\03. Show\03. ShowPlayerPoint">
+      <UniqueIdentifier>{7d20f82a-7769-4af5-8f31-2ce82d6dc887}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -154,13 +160,19 @@
       <Filter>Object\04. Plantable\03. PlayerPoint</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CShowPlayerPoint.h">
-      <Filter>Object\03. Show\03. CShowPlayerPoint</Filter>
+      <Filter>Object\03. Show\03. ShowPlayerPoint</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CRcTile.h">
       <Filter>Object\04. Plantable\02. Tile\RcTile</Filter>
     </ClInclude>
     <ClInclude Include="..\Header\CHexTile.h">
       <Filter>Object\04. Plantable\02. Tile\HexTile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CShowEnvObject.h">
+      <Filter>Object\03. Show\04. ShowEnvObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Header\CEnvObject.h">
+      <Filter>Object\04. Plantable\04. EnvObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -219,13 +231,19 @@
       <Filter>Object\04. Plantable\03. PlayerPoint</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CShowPlayerPoint.cpp">
-      <Filter>Object\03. Show\03. CShowPlayerPoint</Filter>
+      <Filter>Object\03. Show\03. ShowPlayerPoint</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CRcTile.cpp">
       <Filter>Object\04. Plantable\02. Tile\RcTile</Filter>
     </ClCompile>
     <ClCompile Include="..\Code\CHexTile.cpp">
       <Filter>Object\04. Plantable\02. Tile\HexTile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CShowEnvObject.cpp">
+      <Filter>Object\03. Show\04. ShowEnvObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CEnvObject.cpp">
+      <Filter>Object\04. Plantable\04. EnvObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

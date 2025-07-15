@@ -59,6 +59,9 @@ private:
 	HRESULT		Create_Player();
 	void		Delete_Player();
 
+	HRESULT		Create_EnvObject();
+	void		Delete_EnvObject();
+
 private:
 	_float		m_fSpeed;
 	_bool		m_bFix;

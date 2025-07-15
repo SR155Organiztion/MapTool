@@ -27,6 +27,7 @@ HRESULT CBackGround::Ready_GameObject()
 
 _int CBackGround::Update_GameObject(const _float& fTimeDelta)
 {
+
     Engine::CGameObject::Update_GameObject(fTimeDelta);
 
     CRenderer::GetInstance()->Add_RenderGroup(RENDER_PRIORITY, this);

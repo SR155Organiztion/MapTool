@@ -15,6 +15,7 @@
 #include <tchar.h>
 #include "CPlayerPoint.h"
 #include "CHexTile.h"
+#include "CEnvObject.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -189,6 +190,10 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	//블럭 방향회전
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_Q) & 0x80)
 	{
+		if (CMapToolMgr::GetInstance()->Get_NowObject() == Engine::CREATEOBJECT_ID::O_ENV) {
+			CMapToolMgr::GetInstance()->TurnLeft(fTimeDelta);
+		}
+
 		if (!m_bPressedQ) {
 			CMapToolMgr::GetInstance()->PrevRotate();
 			m_bPressedQ = true;
@@ -199,9 +204,15 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	}
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_E) & 0x80)
 	{
-		if (!m_bPressedE) {
-			CMapToolMgr::GetInstance()->NextRotate();
-			m_bPressedE = true;
+		if (CMapToolMgr::GetInstance()->Get_NowObject() == Engine::CREATEOBJECT_ID::O_ENV) {
+			CMapToolMgr::GetInstance()->TurnRight(fTimeDelta);
+			
+		}
+		else {
+			if (!m_bPressedE) {
+				CMapToolMgr::GetInstance()->NextRotate();
+				m_bPressedE = true;
+			}
 		}
 	}
 	else {
@@ -359,6 +370,44 @@ void CDynamicCamera::Load_Objects()
 	//씬 불러오기
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
 	CLayer* pLayer;
+
+	//환경오브젝트 레이어
+	pLayer = pScene->Get_Layer(L"Environment_Layer");
+	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Environment.EnvObject)) {
+		
+		if (nullptr == pLayer)
+			return;
+
+		//환경오브젝트 생성
+		Engine::CGameObject* pGameObject = CEnvObject::Create(m_pGraphicDev);
+		if (nullptr == pGameObject)
+			return;
+
+		//위치 설정
+		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
+		
+		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
+		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.fAngle);
+		_tchar szTag[64] = {};
+
+		while (true) {
+			_stprintf_s(szTag, 64, L"EnvObj_%d", s_Index);
+			_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
+			lstrcpy(pTag, szTag);
+
+			if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+				Release_tchar.push_back(pTag);
+				CMapToolMgr::GetInstance()->Plant_Environment(it.Env_Type, it.vPos, it.fAngle);
+				s_Index++;
+				break; // 성공 시 탈출
+			}
+			else {
+				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
+			}
+		}
+	}
+
 	//블럭레이어
 	pLayer = pScene->Get_Layer(L"Block_Layer");
 	for (auto it : (CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).GameObject.Block)) {
@@ -370,6 +419,7 @@ void CDynamicCamera::Load_Objects()
 		Engine::CGameObject* pGameObject = CBlock::Create(m_pGraphicDev);
 		if (nullptr == pGameObject)
 			return;
+
 		//위치 설정
 		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
@@ -407,14 +457,15 @@ void CDynamicCamera::Load_Objects()
 
 			if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
 				Release_tchar.push_back(pTag);
+				CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction, it.Item);
+				s_Index++;
 				break; // 성공 시 탈출
 			}
 			else {
 				Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
 			}
 		}
-		CMapToolMgr::GetInstance()->Plant_Block(it.Block_Type, it.vPos, it.Direction, it.Item);
-		s_Index++;
+
 	}
 
 	//타일레이어
@@ -501,6 +552,9 @@ void CDynamicCamera::Load_Objects()
 	pObj = iter->second;
 	_vec3 pos1 = CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Player.P1;
 	if (pos1.x != 0.f && pos1.y != 0.f && pos1.z != 0.f) {
+		//불러오는 플레이어 위치 보정
+		pos1.y -= 0.5f;
+
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(TRUE);
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(pos1);
 	}
@@ -513,13 +567,16 @@ void CDynamicCamera::Load_Objects()
 	pObj = iter->second;
 	_vec3 pos2 = CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Player.P2;
 	if (pos2.x != 0.f && pos2.y != 0.f && pos2.z != 0.f) {
+		//불러오는 플레이어 위치 보정
+		pos2.y -= 0.5f;
+
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(TRUE);
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(pos2);
 	}
 	else {
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(FALSE);
 	}
-	CMapToolMgr::GetInstance()->Plant_Player(0, pos2);
+	CMapToolMgr::GetInstance()->Plant_Player(1, pos2);
 }
 
 void CDynamicCamera::LoadCallBackToImguiMgr()
@@ -569,6 +626,7 @@ void CDynamicCamera::Prev_Type()
 	case Engine::O_HEXTILE:
 		break;
 	case Engine::O_ENV:
+		CMapToolMgr::GetInstance()->PrevEnvObject();
 		break;
 	case Engine::O_SPAWN:
 		CMapToolMgr::GetInstance()->ChangePlayer();
@@ -593,6 +651,7 @@ void CDynamicCamera::Next_Type()
 	case Engine::O_HEXTILE:
 		break;
 	case Engine::O_ENV:
+		CMapToolMgr::GetInstance()->NextEnvObject();
 		break;
 	case Engine::O_SPAWN:
 		CMapToolMgr::GetInstance()->ChangePlayer();
@@ -619,6 +678,7 @@ void CDynamicCamera::Create_Objects()
 		Create_HexTile();
 		break;
 	case O_ENV:
+		Create_EnvObject();
 		break;
 	case O_SPAWN:
 		Create_Player();
@@ -640,6 +700,7 @@ void CDynamicCamera::Delete_Objects()
 	case O_HEXTILE:
 		break;
 	case O_ENV:
+		Delete_EnvObject();
 		break;
 	case O_SPAWN:
 		Delete_Player();
@@ -819,7 +880,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 {
 	static int s_HexTileIndex = 0;
 	int iRow, iCol;
-	iRow = iCol = 5;
+	iRow = iCol = 40;
 
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
 	CLayer* pLayer = pScene->Get_Layer(L"Tile_Layer");
@@ -843,11 +904,12 @@ HRESULT CDynamicCamera::Create_HexTile()
 			_vec3 vTmp = { 0.f ,0.f, 0.f };
 			
 			vTmp.x = j * 1.5f * fHexRadius;
+			vTmp.y = -0.25f;
 			vTmp.z = i * fHexHeight;
 			if (j % 2 == 1)
 				vTmp.z += fHexHeight * 0.5f;
 
-			pObjectTransformCom->Set_Pos(vTmp.x, -0.25f, vTmp.z);
+			pObjectTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
 			CMapToolMgr::GetInstance()->Plant_HexTile(vTmp);
 
 			_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
@@ -895,6 +957,7 @@ HRESULT CDynamicCamera::Create_Player()
 
 	map<const _tchar*, CGameObject*>::iterator iter;
 
+
 	if (CMapToolMgr::GetInstance()->Get_NowPlayer() == 0) {
 		iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"1Player"));
 		CMapToolMgr::GetInstance()->Plant_Player(CMapToolMgr::GetInstance()->Get_NowPlayer(), vTmp);
@@ -918,6 +981,85 @@ HRESULT CDynamicCamera::Create_Player()
 
 void CDynamicCamera::Delete_Player()
 {
+}
+
+HRESULT CDynamicCamera::Create_EnvObject()
+{
+	static int s_BlockIndex = 0;
+
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"Environment_Layer");
+
+	if (nullptr == pLayer)
+		return E_FAIL;
+
+	Engine::CGameObject* pGameObject = CEnvObject::Create(m_pGraphicDev);
+
+	if (nullptr == pGameObject)
+		return E_FAIL;
+
+	CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+	_vec3 vTmp;
+	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vTmp);
+	pObjectTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
+
+	dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
+	dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
+
+	_tchar szTag[64] = {};
+
+	while (true) {
+		_stprintf_s(szTag, 64, L"EnvObject_%d", s_BlockIndex);
+		_tchar* pTag = new _tchar[lstrlen(szTag) + 1];
+		lstrcpy(pTag, szTag);
+
+		if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
+			Release_tchar.push_back(pTag);
+			CMapToolMgr::GetInstance()->Plant_Environment(vTmp);
+			s_BlockIndex++;
+			break; // 성공 시 탈출
+		}
+		else {
+			Safe_Delete(pTag); // 실패 시 메모리 해제 후 시도 계속
+			++s_BlockIndex;
+		}
+	}
+	return S_OK;
+}
+
+void CDynamicCamera::Delete_EnvObject()
+{
+	CScene* pScene = CManagement::GetInstance()->Get_Scene();
+	CLayer* pLayer = pScene->Get_Layer(L"Environment_Layer");
+
+	auto objectmap = pLayer->Get_ObjectMap();
+	_vec3 vEnvPos, vColPos;
+	vColPos = CCollisionMgr::GetInstance()->Get_ColPos();
+
+	float ftmp = 0.f;
+	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
+		ftmp = 0.25f;
+	}
+
+	float xMin, xMax, zMin, zMax;
+	xMin = vColPos.x - 0.25f;
+	xMax = vColPos.x + 0.25f;
+	zMin = vColPos.z - 0.25f;
+	zMax = vColPos.z + 0.25f;
+
+	//모든 오브젝트를 순회
+	for (auto it = objectmap->begin(); it != objectmap->end();) {
+		dynamic_cast<CTransform*>(pLayer->Get_Component(ID_DYNAMIC, (it->first), L"Com_Transform"))->Get_Info(INFO_POS, &vEnvPos);
+
+		if (xMin < vEnvPos.x && vEnvPos.x < xMax && zMin < vEnvPos.z && vEnvPos.z < zMax) {
+			it->second->Release();
+			it = objectmap->erase(it);
+			CMapToolMgr::GetInstance()->Break_Environment(vEnvPos);
+		}
+		else {
+			it++;
+		}
+	}
 }
 
 CDynamicCamera* CDynamicCamera::Create(LPDIRECT3DDEVICE9 pGraphicDev, const _vec3* pEye, const _vec3* pAt, const _vec3* pUp, const _float& fFov, const _float& fAspect, const _float& fNear, const _float& fFar)

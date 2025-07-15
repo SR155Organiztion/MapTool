@@ -157,6 +157,7 @@
     <ClInclude Include="..\Header\CBackGround.h" />
     <ClInclude Include="..\Header\CBlock.h" />
     <ClInclude Include="..\Header\CDynamicCamera.h" />
+    <ClInclude Include="..\Header\CEnvObject.h" />
     <ClInclude Include="..\Header\CHexTile.h" />
     <ClInclude Include="..\Header\CLoading.h" />
     <ClInclude Include="..\Header\CLogo.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="..\Header\CPlayer.h" />
     <ClInclude Include="..\Header\CPlayerPoint.h" />
     <ClInclude Include="..\Header\CShowBox.h" />
+    <ClInclude Include="..\Header\CShowEnvObject.h" />
     <ClInclude Include="..\Header\CShowPlayerPoint.h" />
     <ClInclude Include="..\Header\CShowRcTile.h" />
     <ClInclude Include="..\Header\CSkyBox.h" />
@@ -183,6 +185,7 @@
     <ClCompile Include="..\Code\CBackGround.cpp" />
     <ClCompile Include="..\Code\CBlock.cpp" />
     <ClCompile Include="..\Code\CDynamicCamera.cpp" />
+    <ClCompile Include="..\Code\CEnvObject.cpp" />
     <ClCompile Include="..\Code\CHexTile.cpp" />
     <ClCompile Include="..\Code\CLoading.cpp" />
     <ClCompile Include="..\Code\CLogo.cpp" />
@@ -192,6 +195,7 @@
     <ClCompile Include="..\Code\CPlayer.cpp" />
     <ClCompile Include="..\Code\CPlayerPoint.cpp" />
     <ClCompile Include="..\Code\CShowBox.cpp" />
+    <ClCompile Include="..\Code\CShowEnvObject.cpp" />
     <ClCompile Include="..\Code\CShowPlayerPoint.cpp" />
     <ClCompile Include="..\Code\CShowRcTile.cpp" />
     <ClCompile Include="..\Code\CSkyBox.cpp" />
