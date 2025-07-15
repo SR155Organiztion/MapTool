@@ -16,7 +16,7 @@
 #include "CImguiMgr.h"
 #include "CPlayerPoint.h"
 #include "CHexTile.h"
-
+#include "CShowEnvObject.h"
 
 
 CStage::CStage(LPDIRECT3DDEVICE9 pGraphicDev)
@@ -129,6 +129,12 @@ HRESULT CStage::Ready_GameObject_Layer(const _tchar* pLayerTag)
     if (nullptr == pGameObject)
         return E_FAIL;
     if (FAILED(pLayer->Add_GameObject(L"ShowPlayerPoint", pGameObject)))
+        return E_FAIL;
+
+    pGameObject = CShowEnvObject::Create(m_pGraphicDev);
+    if (nullptr == pGameObject)
+        return E_FAIL;
+    if (FAILED(pLayer->Add_GameObject(L"ShowEnvObject", pGameObject)))
         return E_FAIL;
 
     pGameObject = CPlayerPoint::Create(m_pGraphicDev);

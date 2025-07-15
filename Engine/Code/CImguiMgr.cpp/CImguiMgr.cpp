@@ -13,7 +13,7 @@ extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg
 
 IMPLEMENT_SINGLETON(CImguiMgr);
 
-CImguiMgr::CImguiMgr() : m_iCurrent_Item(0), m_iCurrent_Food(0), m_bTerrainEnable(true)
+CImguiMgr::CImguiMgr() : m_iCurrent_Item(0), m_iCurrent_Food(0), m_bTerrainEnable(true), iX(0), iY(0)
 {
    
 }
@@ -61,6 +61,8 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     
     m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
 
+    iX = iY = 0;
+
     return S_OK;
 }
 
@@ -72,13 +74,14 @@ void CImguiMgr::Update_Imgui()
 
     ImGui::Begin("MapTool");                       
 
-    //ÇöÀç ¾À ÀÌ¸§
+    //í˜„ìž¬ ì”¬ ì´ë¦„
     ImGui::InputText("Scene", szName, sizeof(szName));
     
-    //ÀúÀå ¹× ºÒ·¯¿À±â ¹× ÃÊ±âÈ­
+    //ì €ìž¥ ë° ë¶ˆëŸ¬ì˜¤ê¸° ë° ì´ˆê¸°í™”
     if (ImGui::Button("Save")) {                 
         if (m_LoadCallback) {
             CMapToolMgr::GetInstance()->Set_Timer(fTimer);
+            CMapToolMgr::GetInstance()->Set_MapSize(iX, iY);
             for (auto it : m_mapRecipes) {
                 if(it.second == true)
                     CMapToolMgr::GetInstance()->Add_Recipe(it.first);
@@ -91,11 +94,22 @@ void CImguiMgr::Update_Imgui()
 
     if (ImGui::Button("Load")) {   
         if (m_LoadCallback) {
+            //ë¶ˆëŸ¬ì˜¤ê¸°
             CMapToolMgr::GetInstance()->Load_Json();
+            //ì˜¤ë¸Œì íŠ¸ë“¤
             m_LoadCallback();
+           
+            //ë§µì´ë¦„
             strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
-            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            
+            //ë§µì‚¬ì´ì¦ˆ
+            iX = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iX;
+            iY = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iY;
 
+            //íƒ€ì´ë¨¸
+            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            
+            //ë ˆì‹œí”¼
             m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
             for (auto& it : m_mapRecipes) {
                 it.second = false;
@@ -120,7 +134,7 @@ void CImguiMgr::Update_Imgui()
         }
     }
 
-    /// ¸Ê ¼±ÅÃÃ¢ /////////////////////////////////////////////////////////////////
+    /// ë§µ ì„ íƒì°½ /////////////////////////////////////////////////////////////////
     const auto& nameVec = *CMapToolMgr::GetInstance()->Get_NameVec();
 
     std::vector<std::string> labeledNames;
@@ -133,7 +147,7 @@ void CImguiMgr::Update_Imgui()
         comboItems.push_back(str.c_str());
 
     static int current_item = 0;
-    //ÇöÀç ¸ðµç ¸Ê µ¥ÀÌÅÍ È®ÀÎ ¼±Å¹¹Ù
+    //í˜„ìž¬ ëª¨ë“  ë§µ ë°ì´í„° í™•ì¸ ì„ íƒë°”
     if (ImGui::Combo("SceneList", &current_item, comboItems.data(), comboItems.size())) {
         nameVec[current_item];
     }
@@ -143,10 +157,16 @@ void CImguiMgr::Update_Imgui()
             CMapToolMgr::GetInstance()->Reset();
             CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
             CMapToolMgr::GetInstance()->Select_Map();
+            //ìŠ¤í…Œì´ì§€ ì´ë¦„
             strcpy_s(szName, nameVec[current_item].c_str());
+            //ë§µì‚¬ì´ì¦ˆ
+            iX = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iX;
+            iY = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iY;
+            //íƒ€ì´ë¨¸
             fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+            //ë ˆì‹œí”¼
             m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
-            
+
             for (auto& it : m_mapRecipes) {
                 it.second = false;
             }
@@ -170,11 +190,11 @@ void CImguiMgr::Update_Imgui()
         CMapToolMgr::GetInstance()->Delete_Map(nameVec[current_item]);
     }
 
-    // Å¸ÀÌ¸Ó ¼³Á¤ ////////////////////////////////////////////////////////////////
+    // íƒ€ì´ë¨¸ ì„¤ì • ////////////////////////////////////////////////////////////////
 
     ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer)); 
 
-    // ·¹½ÃÇÇ ¼³Á¤ ////////////////////////////////////////////////////////////////
+    // ë ˆì‹œí”¼ ì„¤ì • ////////////////////////////////////////////////////////////////
 
     if (ImGui::CollapsingHeader("Recipes")) {
         for (auto& it : m_mapRecipes) {
@@ -182,19 +202,21 @@ void CImguiMgr::Update_Imgui()
         }
     }
 
-    // »óÀÚ À½½Ä ¼³Á¤ ////////////////////////////////////////////////////////////////
+    // ìƒìž ìŒì‹ ì„¤ì • ////////////////////////////////////////////////////////////////
 
     if (ImGui::CollapsingHeader("Food")) {
-        const char* foods[] = { "Seaweed", "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Rice", "Pasta", "TomatoSoup"};
+        const char* foods[] = { "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Seaweed", "Rice", "Pasta", "TomatoSoup"};
         ImGui::Combo("Foods", &m_iCurrent_Food, foods, IM_ARRAYSIZE(foods));
     }
 
-    // ºí·° ¾ÆÀÌÅÛ ¼³Á¤ ////////////////////////////////////////////////////////////////
+    // ë¸”ëŸ­ ì•„ì´í…œ ì„¤ì • ////////////////////////////////////////////////////////////////
 
     if (ImGui::CollapsingHeader("Item")) {
         const char* tools[] = { "None", "Plate", "Extinguisher", "Frypan", "Pot" };
         ImGui::Combo("Items", &m_iCurrent_Item, tools, IM_ARRAYSIZE(tools));
     }
+
+    // ì§€í˜• ì„¤ì • ////////////////////////////////////////////////////////////////
 
     if (ImGui::CollapsingHeader("Terrain")) {
         ImGui::Checkbox(m_bTerrainEnable ? "Enable" : "Disable" , &m_bTerrainEnable);
@@ -203,9 +225,30 @@ void CImguiMgr::Update_Imgui()
             m_bTerrainEnable ? m_bTerrainEnable = false : m_bTerrainEnable = true;
             m_TerrianEnableCallback();
         }
+        
+        ImGui::PushItemWidth(100);
+        ImGui::InputInt("X", &iX, sizeof(int));
+        ImGui::SameLine();
+        ImGui::InputInt("Y", &iY, sizeof(int));
+        ImGui::PopItemWidth();
     }
 
-    // µð¹ö±×¿ë ////////////////////////////////////////////////////////////////
+    // í™˜ê²½ì˜¤ë¸Œì íŠ¸ ì„¤ì • ////////////////////////////////////////////////////////////////
+
+    if (ImGui::CollapsingHeader("EnvObj")) {
+        static float pos[3] = { 1.0f, 1.0f, 1.0f };
+
+        ImGui::Text("Now Obj : ");
+        ImGui::SameLine();
+        ImGui::Text(CMapToolMgr::GetInstance()->EnvObj_To_String().c_str());
+
+        // Position í…ìŠ¤íŠ¸ì™€ ë“œëž˜ê·¸ ìœ„ì ¯ ì •ë ¬
+        ImGui::Text("Position");
+        ImGui::SameLine(100); // X ìœ„ì¹˜ë¥¼ ì§€ì •í•´ ê°„ê²© ì¡°ì • (ì˜ˆ: 100í”½ì…€ë¶€í„° ì‹œìž‘)
+        ImGui::DragFloat3("##Position", pos, 0.1f, 1.0f, 5.0f);
+    }
+
+    // ë””ë²„ê·¸ìš© ////////////////////////////////////////////////////////////////
   
         static int blockCount = 0;
         static int tileCount = 0;
@@ -213,23 +256,23 @@ void CImguiMgr::Update_Imgui()
         static int recipeCount = 0;
 
         CMapToolMgr::GetInstance()->Print_CurrentDataCounts(blockCount, tileCount, envCount, recipeCount);
-
+        ImGui::Text("=====================================");
         ImGui::Text("Block: %d", blockCount);
         ImGui::Text("Tile: %d", tileCount);
         ImGui::Text("Environment: %d", envCount);
         ImGui::Text("Recipe: %d", recipeCount);
 
-    //¹æÇâÈ®ÀÎ
+    //ë°©í–¥í™•ì¸
     string S = "Direction : " + CMapToolMgr::GetInstance()->Get_Dir();
     ImGui::Text(S.c_str());
 
-    //Ãæµ¹ À§Ä¡
+    //ì¶©ëŒ ìœ„ì¹˜
     _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
     char buf[64];
     sprintf_s(buf, sizeof(buf), "X: %.2f | Y: %.2f | Z: %.2f", colpos.x, colpos.y, colpos.z);
     ImGui::Text(buf);
         
-    //·¹ÀÌ À§Ä¡+++++++
+    //ë ˆì´ ìœ„ì¹˜+++++++
     _vec3 RayPos, RayDir;
     CCollisionMgr::GetInstance()->Get_Ray(&RayPos, &RayDir);
     char buf1[64];

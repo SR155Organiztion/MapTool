@@ -26,6 +26,7 @@ public:
 	char* Get_Name() { return szName; }
 	_int Get_CurItem() { return m_iCurrent_Item; }
 	_int Get_CurFood() { return m_iCurrent_Food; }
+
 protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
 	std::function<void()>					m_LoadCallback;
@@ -38,7 +39,7 @@ protected:
 	_bool m_bTerrainEnable;
 	char szName[64];
 	float fTimer;
-
+	int iX, iY;
 
 private:
 	virtual void		Free();
