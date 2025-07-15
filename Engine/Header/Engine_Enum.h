@@ -31,6 +31,6 @@ namespace Engine
 	//오브젝트			    블럭	사각타일   육각타일   환경  시작지점
 	enum CREATEOBJECT_ID { O_BLOCK, O_RCTILE, O_HEXTILE, O_ENV, O_SPAWN ,O_END };
 	//아이템
-	enum ITEMID { I_NONE, I_PLATE, I_EXTINGUISHER, I_FRIPAN, I_POT, I_END };
+	enum ITEMID { I_NONE, I_PLATE, I_EXTINGUISHER, I_FRYPAN, I_POT, I_END };
 }
 #endif // Engine_Enum_h__

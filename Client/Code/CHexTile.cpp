@@ -63,12 +63,6 @@ void CHexTile::Render_GameObject()
     D3DXMATRIX matWorld;
     m_pTransformCom->Get_World(&matWorld);
     m_pGraphicDev->SetTransform(D3DTS_WORLD, &matWorld);
-
-    m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
-
-
-    if (FAILED(Set_Metarial()))
-        return;
     
     //±âµÕ Ãâ·Â
     m_pTextureCom->Set_Texture(0);
@@ -78,7 +72,6 @@ void CHexTile::Render_GameObject()
     m_pTextureCom->Set_Texture(1);
     m_pTileBufferCom->Render_Buffer();
 
-    m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
 
 void CHexTile::Set_TextureNum(_uint _iID)

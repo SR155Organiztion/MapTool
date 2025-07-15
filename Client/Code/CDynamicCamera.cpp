@@ -388,7 +388,7 @@ void CDynamicCamera::Load_Objects()
 		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
 		
 		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
-		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.Direction);
+		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.fAngle);
 		_tchar szTag[64] = {};
 
 		while (true) {
@@ -398,7 +398,7 @@ void CDynamicCamera::Load_Objects()
 
 			if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
 				Release_tchar.push_back(pTag);
-				CMapToolMgr::GetInstance()->Plant_Environment(it.Env_Type, it.vPos, it.Direction);
+				CMapToolMgr::GetInstance()->Plant_Environment(it.Env_Type, it.vPos, it.fAngle);
 				s_Index++;
 				break; // ¼º°ø ½Ã Å»Ãâ
 			}
@@ -874,7 +874,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 {
 	static int s_HexTileIndex = 0;
 	int iRow, iCol;
-	iRow = iCol = 20;
+	iRow = iCol = 40;
 
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
 	CLayer* pLayer = pScene->Get_Layer(L"Tile_Layer");

@@ -49,6 +49,7 @@ struct S_ENVOBJECT {
 	string Env_Type;
 	_vec3 vPos;
 	float fAngle;
+	_vec3 vScale;
 };
 
 /**
@@ -65,9 +66,9 @@ struct S_ENVIRONMENT {
 * @struct S_CAM
 * @brief 카메라를 저장할 벡터 구조체
 */
-struct S_CAM {
-	_vec3 vEye;
-	_vec3 vAt;
+struct S_MAPSIZE {
+	int iX;
+	int iY;
 };
 
 /**
@@ -84,7 +85,7 @@ struct S_PLAYER {
 * @brief 스테이지의 모든 정보를 가진 구조체
 */
 struct S_STAGE {
-	S_CAM Cam;
+	S_MAPSIZE MapSize;
 	S_PLAYER Player;
 	float Time;
 	std::vector<string> Recipe;
@@ -150,7 +151,6 @@ public:
 	void PrevStation();
 	_uint Get_NowStation();
 
-
 	void NextRcTile();
 	void PrevRcTile();
 	_uint Get_NowRcTile();
@@ -192,7 +192,7 @@ private:
 	vector<S_TILE>			m_tTileVec;			///현재 설치되어있는 타일의 데이터
 	vector<S_ENVOBJECT>		m_tEnvObjVec;		///현재 설치 되어있는 환경오브젝트의 데이터
 	vector<string>			m_sRecipeVec;		///현재 스테이지가 실질적으로 가지고있는 레시피를 저장할공간
-	S_CAM					m_tCam;				///설치를 한 카메라의 
+	S_MAPSIZE				m_tMapSize;			///현재 맵 크기
 	S_PLAYER				m_tPlayer;			///현재 플레이어들의 시작 위치
 	_float					m_fTimer;			///현재 스테이지의 게임시간
 

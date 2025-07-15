@@ -12,14 +12,14 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_BLOCK, Block_Type, vPos, Direction, Item)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_GAMEOBJECT, Block)
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_TILE, Tile_Type, vPos, Direction)
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVOBJECT, Env_Type, vPos, fAngle)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVOBJECT, Env_Type, vPos, fAngle, vScale)
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_ENVIRONMENT, Tile, EnvObject)
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_CAM, vEye, vAt)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_MAPSIZE, iX, iY)
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_PLAYER, P1, P2)
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, Cam, Player, Time, Recipe, GameObject, Environment);
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, MapSize, Player, Time, Recipe, GameObject, Environment);
 
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
@@ -147,7 +147,7 @@ HRESULT CMapToolMgr::Save_Json()
     //데이터 종합
     S_GAMEOBJECT GameObject = { m_tBlockVec };
     S_ENVIRONMENT Environmnet = { m_tTileVec , m_tEnvObjVec };
-    S_STAGE stage = { m_tCam, m_tPlayer ,m_fTimer, m_sRecipeVec, GameObject, Environmnet };
+    S_STAGE stage = { m_tMapSize, m_tPlayer ,m_fTimer, m_sRecipeVec, GameObject, Environmnet };
     //저장하기 전 json에 있는 모든 맵의 키값을 스테이지 이름 벡터와 비교찾는다
     bool bFound = false;
     for (auto it = m_mapJson.begin(); it != m_mapJson.end(); ++it) {
@@ -222,7 +222,7 @@ HRESULT CMapToolMgr::Load_Json()
 
 void CMapToolMgr::Select_Map()
 {
-    m_tCam = m_mapJson[m_sName].Cam;
+    m_tMapSize = m_mapJson[m_sName].MapSize;
     m_tPlayer = m_mapJson[m_sName].Player;
     m_fTimer = m_mapJson[m_sName].Time;
     m_sRecipeVec = m_mapJson[m_sName].Recipe;
@@ -256,7 +256,7 @@ void CMapToolMgr::Delete_Map(string _s)
 
 void CMapToolMgr::Reset()
 {
-    ZeroMemory(&m_tCam, sizeof(S_CAM));
+    ZeroMemory(&m_tMapSize, sizeof(S_MAPSIZE));
     ZeroMemory(&m_tPlayer, sizeof(S_PLAYER));
     m_fTimer = 0.f;
     m_sRecipeVec.clear();
@@ -549,8 +549,8 @@ string CMapToolMgr::Item_To_String()
         return "Plate";
     case Engine::I_EXTINGUISHER:
         return "Extinguisher";
-    case Engine::I_FRIPAN:
-        return "Fripan";
+    case Engine::I_FRYPAN:
+        return "Frypan";
     case Engine::I_POT:
         return "Pot";
     case Engine::I_END:
@@ -684,8 +684,8 @@ _uint CMapToolMgr::String_To_Item(string& _s)
         return Engine::I_PLATE;
     else if (_s == "Extinguisher")
         return Engine::I_EXTINGUISHER;
-    else if (_s == "Fripan")
-        return Engine::I_FRIPAN;
+    else if (_s == "Frypan")
+        return Engine::I_FRYPAN;
     else if (_s == "Pot")
         return Engine::I_POT;
     else
