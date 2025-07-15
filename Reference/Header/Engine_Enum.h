@@ -5,7 +5,7 @@ namespace Engine
 {
 	enum WINMODE { MODE_FULL, MODE_WIN };
 
-	// Dynamic ÄÄÆ÷³ÍÆ® °æ¿ì ¸Å ÇÁ·¹ÀÓ¸¶´Ù °»½ÅÇØ¾ßÇÏ´Â ÄÄÆ÷³ÍÆ® Áý´Ü
+	// Dynamic ì»´í¬ë„ŒíŠ¸ ê²½ìš° ë§¤ í”„ë ˆìž„ë§ˆë‹¤ ê°±ì‹ í•´ì•¼í•˜ëŠ” ì»´í¬ë„ŒíŠ¸ ì§‘ë‹¨
 	enum COMPONENTID { ID_DYNAMIC, ID_STATIC, ID_END };
 
 	enum INFO {	INFO_RIGHT, INFO_UP, INFO_LOOK, INFO_POS, INFO_END };
@@ -18,19 +18,19 @@ namespace Engine
 	enum MOUSEKEYSTATE { DIM_LB, DIM_RB, DIM_MB, DIM_END };
 	enum MOUSEMOVESTATE { DIMS_X, DIMS_Y, DIMS_Z, DIMS_END };
 
-	//¹æÇâ			   +X  -Z  -X  -Z
+	//ë°©í–¥			   +X  -Z  -X  -Z
 	enum DIRECTIONID { PX, PZ, NX, NZ , DIR_END };
-	//ºí·°     	    Åõ¸íº®    ºóÄ­   À½½Ä»óÀÚ   µµ¸¶    °¡½º    Á¢½Ã   ¹°¾ÅÅ©´ë  Á¢½Ã½ÌÅ©  ¾²·¹±âÅë    Á¦Ãâ
+	//ë¸”ëŸ­     	    íˆ¬ëª…ë²½    ë¹ˆì¹¸   ìŒì‹ìƒìž   ë„ë§ˆ    ê°€ìŠ¤    ì ‘ì‹œ   ë¬¼ì”½í¬ëŒ€  ì ‘ì‹œì‹±í¬  ì“°ë ˆê¸°í†µ    ì œì¶œ
 	enum STATIONID { S_INV, S_EMPTY, S_CREATE, S_CHOP, S_GAS, S_PLATE, S_SINK_W, S_SINK_P, S_TRASH, S_SERVING, S_END };
-	//È¯°æ				 ´õ¹Ì
+	//í™˜ê²½				 ë”ë¯¸
 	enum ENVIRONMENTID { E_DUMMY, E_END };
-	//À½½Ä
+	//ìŒì‹
 	enum CREATEID { C_SEAWEED, C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_RICE, C_PASTA, C_END};
-	//»ç°¢Å¸ÀÏ     ÆÄ¶û3  ÆÄ¶û4 ºÐÈ«4 È¸µ¹  °Ëµ¹
+	//ì‚¬ê°íƒ€ì¼     íŒŒëž‘3  íŒŒëž‘4 ë¶„í™4 íšŒëŒ  ê²€ëŒ
  	enum RCTILEID { RT_0, RT_1, RT_2, RT_3, RT_4, RT_5, RT_END};
-	//¿ÀºêÁ§Æ®			    ºí·°	»ç°¢Å¸ÀÏ   À°°¢Å¸ÀÏ   È¯°æ  ½ÃÀÛÁöÁ¡
+	//ì˜¤ë¸Œì íŠ¸			    ë¸”ëŸ­	ì‚¬ê°íƒ€ì¼   ìœ¡ê°íƒ€ì¼   í™˜ê²½  ì‹œìž‘ì§€ì 
 	enum CREATEOBJECT_ID { O_BLOCK, O_RCTILE, O_HEXTILE, O_ENV, O_SPAWN ,O_END };
-	//¾ÆÀÌÅÛ
+	//ì•„ì´í…œ
 	enum ITEMID { I_NONE, I_PLATE, I_EXTINGUISHER, I_FRYPAN, I_POT, I_END };
 }
 #endif // Engine_Enum_h__

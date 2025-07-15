@@ -133,7 +133,7 @@ void CMapToolMgr::Plant_Camera(_vec3 _vEye, _vec3 _vAt)
 
 void CMapToolMgr::Plant_Player(_int _iPlayer, _vec3 _vPos)
 {
-    //ÀúÀåÇÒ¶§ ÇÃ·¹ÀÌ¾î À§Ä¡Á¶Àı
+    //ì €ì¥í• ë•Œ í”Œë ˆì´ì–´ ìœ„ì¹˜ì¡°ì ˆ
     _vPos.y += 0.5f;
 
     if (_iPlayer == 0) {
@@ -147,38 +147,38 @@ void CMapToolMgr::Plant_Player(_int _iPlayer, _vec3 _vPos)
 HRESULT CMapToolMgr::Save_Json()
 {
     m_sName = CImguiMgr::GetInstance()->Get_Name();
-    //µ¥ÀÌÅÍ Á¾ÇÕ
+    //ë°ì´í„° ì¢…í•©
     S_GAMEOBJECT GameObject = { m_tBlockVec };
     S_ENVIRONMENT Environmnet = { m_tTileVec , m_tEnvObjVec };
     S_STAGE stage = { m_tMapSize, m_tPlayer ,m_fTimer, m_sRecipeVec, GameObject, Environmnet };
-    //ÀúÀåÇÏ±â Àü json¿¡ ÀÖ´Â ¸ğµç ¸ÊÀÇ Å°°ªÀ» ½ºÅ×ÀÌÁö ÀÌ¸§ º¤ÅÍ¿Í ºñ±³Ã£´Â´Ù
+    //ì €ì¥í•˜ê¸° ì „ jsonì— ìˆëŠ” ëª¨ë“  ë§µì˜ í‚¤ê°’ì„ ìŠ¤í…Œì´ì§€ ì´ë¦„ ë²¡í„°ì™€ ë¹„êµì°¾ëŠ”ë‹¤
     bool bFound = false;
     for (auto it = m_mapJson.begin(); it != m_mapJson.end(); ++it) {
-        //¸¸¾à °ãÄ¡´Â Å° °ªÀÌ ÀÖ´Ù¸é ±× Å°ÀÇ second¸¦ ºñ¿ì°í ÇöÀç ½ºÅ×ÀÌÁö µ¥ÀÌÅÍ¸¦ ³ÖÀ½
+        //ë§Œì•½ ê²¹ì¹˜ëŠ” í‚¤ ê°’ì´ ìˆë‹¤ë©´ ê·¸ í‚¤ì˜ secondë¥¼ ë¹„ìš°ê³  í˜„ì¬ ìŠ¤í…Œì´ì§€ ë°ì´í„°ë¥¼ ë„£ìŒ
         if ((*it).first == m_sName) {
             (*it).second = stage;
             bFound = true;
             break;
         }
     }
-    //¾ø´Ù¸é Ãß°¡ÇÔ
+    //ì—†ë‹¤ë©´ ì¶”ê°€í•¨
     if (!bFound && m_bCreate) {
         m_mapJson.insert(pair<string, S_STAGE>(m_sName, stage));
     }
     json j = m_mapJson;
     /////////////////////////////////////
-    ///µ¥ÀÌÅÍ ÀúÀå½ÃÁ¡
+    ///ë°ì´í„° ì €ì¥ì‹œì 
     {
         std::ofstream file("../Bin/Data/SaveData.json");
         if (!file.is_open()) {
-            MSG_BOX("ÀúÀå ¿À·ù");
+            MSG_BOX("ì €ì¥ ì˜¤ë¥˜");
             return E_FAIL;
         }
         file << j.dump(2);
         file.close();
     }
 
-    //ÇÑ¹ø ºÒ·¯¿Í¼­ È®ÀÎ
+    //í•œë²ˆ ë¶ˆëŸ¬ì™€ì„œ í™•ì¸
     Load_Json();
     m_bCreate = true;
     return S_OK;
@@ -192,7 +192,7 @@ HRESULT CMapToolMgr::Load_Json()
     std::ifstream file("../Bin/Data/SaveData.json");
 
     if (!file.is_open()) {
-        MSG_BOX("ÆÄÀÏ ¿­±â ½ÇÆĞ");
+        MSG_BOX("íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨");
         return E_FAIL;
     }
 
@@ -201,7 +201,7 @@ HRESULT CMapToolMgr::Load_Json()
         file >> j;
 
         bool firstKey = false;
-        // ¼øÈ¸ÇÏ¸ç °¢ ¿ä¼Ò¸¦ map<string, S_STAGE>·Î º¯È¯
+        // ìˆœíšŒí•˜ë©° ê° ìš”ì†Œë¥¼ map<string, S_STAGE>ë¡œ ë³€í™˜
         for (auto it = j.begin(); it != j.end(); ++it)
         {
             const std::string& stageName = it.key();
@@ -236,7 +236,7 @@ void CMapToolMgr::Select_Map()
     for (const auto& recipeName : m_sRecipeVec) {
         auto it = m_mapRecipes.find(recipeName);
         if (it != m_mapRecipes.end()) {
-            it->second = true;  // Å°°¡ °°À¸¸é bool °ªÀ» true·Î ¼³Á¤
+            it->second = true;  // í‚¤ê°€ ê°™ìœ¼ë©´ bool ê°’ì„ trueë¡œ ì„¤ì •
         }
     }
 }
@@ -289,7 +289,7 @@ S_STAGE CMapToolMgr::Get_Data(string s)
     if (it != m_mapJson.end())
         return it->second;
 
-    MSG_BOX("¾ø´Â ½ºÅ×ÀÌÁö");
+    MSG_BOX("ì—†ëŠ” ìŠ¤í…Œì´ì§€");
     return S_STAGE{};
 }
 
@@ -493,7 +493,7 @@ _vec3 CMapToolMgr::String_To_Dir(string& _s)
     if (_s == "PZ") return _vec3(0.f, D3DXToRadian(180.f), 0.f);
     if (_s == "NZ") return _vec3(0.f, D3DXToRadian(270.f), 0.f);
 
-    // Àß¸øµÈ ¹®ÀÚ¿­ÀÏ °æ¿ì
+    // ì˜ëª»ëœ ë¬¸ìì—´ì¼ ê²½ìš°
     return _vec3(0.f, 0.f, 0.f);
 }
 
@@ -567,7 +567,7 @@ _uint CMapToolMgr::String_To_Block(string& _s)
     else if (_s == "???")
         return Engine::STATIONID::S_END;
 
-    //¿¡·¯
+    //ì—ëŸ¬
     return -1;
 }
 
@@ -607,7 +607,7 @@ _uint CMapToolMgr::String_To_Tile(string& _s)
     else if (_s == "???")
         return Engine::RCTILEID::RT_END;
 
-    //¿¡·¯Ã³¸®
+    //ì—ëŸ¬ì²˜ë¦¬
     return -1;
 }
 
@@ -642,7 +642,7 @@ _uint CMapToolMgr::String_To_Item(string& _s)
     else if (_s == "Pot")
         return Engine::I_POT;
     else
-        return Engine::I_NONE; // È¤Àº ¿¹¿Ü Ã³¸®
+        return Engine::I_NONE; // í˜¹ì€ ì˜ˆì™¸ ì²˜ë¦¬
 }
 
 string CMapToolMgr::Food_To_String()
@@ -665,6 +665,8 @@ string CMapToolMgr::Food_To_String()
         return "Rice";
     case Engine::C_PASTA:
         return "Pasta";
+    case Engine::C_TOMATOSOUP:
+        return "TomatoSoup";
     case Engine::C_END:
     default:
         break;
@@ -681,14 +683,15 @@ _uint CMapToolMgr::String_To_Food(string& _s)
         {"Fish", Engine::CREATEID::C_FISH},
         {"Shrimp", Engine::CREATEID::C_SHRIMP},
         {"Rice", Engine::CREATEID::C_RICE},
-        {"Pasta", Engine::CREATEID::C_PASTA}
+        {"Pasta", Engine::CREATEID::C_PASTA},
+        {"TomatoSoup", Engine::CREATEID::C_TOMATOSOUP}
     };
 
     auto it = foodMap.find(_s);
     if (it != foodMap.end())
         return it->second;
 
-    return Engine::CREATEID::C_END; // ¶Ç´Â -1 µî ÀûÀıÇÑ ¿¹¿Ü Ã³¸®
+    return Engine::CREATEID::C_END; // ë˜ëŠ” -1 ë“± ì ì ˆí•œ ì˜ˆì™¸ ì²˜ë¦¬
     return _uint();
 }
 
