@@ -133,6 +133,9 @@ void CMapToolMgr::Plant_Camera(_vec3 _vEye, _vec3 _vAt)
 
 void CMapToolMgr::Plant_Player(_int _iPlayer, _vec3 _vPos)
 {
+    //저장할때 플레이어 위치조절
+    _vPos.y += 0.5f;
+
     if (_iPlayer == 0) {
         m_tPlayer.P1 = _vPos;
     }
@@ -312,6 +315,13 @@ vector<string>* CMapToolMgr::Get_NameVec()
     return &m_sNameVec;
 }
 
+
+void CMapToolMgr::Set_MapSize(int _iX, int _iY)
+{
+    m_tMapSize.iX = _iX;
+    m_tMapSize.iY = _iY;
+}
+
 void CMapToolMgr::NextObject()
 {
     ++m_iObject;
@@ -476,6 +486,16 @@ string CMapToolMgr::Dir_To_String()
         return "???";
     }
 }
+_vec3 CMapToolMgr::String_To_Dir(string& _s)
+{
+    if (_s == "PX") return _vec3(0.f, 0.f, 0.f);
+    if (_s == "NX") return _vec3(0.f, D3DXToRadian(90.f), 0.f);
+    if (_s == "PZ") return _vec3(0.f, D3DXToRadian(180.f), 0.f);
+    if (_s == "NZ") return _vec3(0.f, D3DXToRadian(270.f), 0.f);
+
+    // 잘못된 문자열일 경우
+    return _vec3(0.f, 0.f, 0.f);
+}
 
 string CMapToolMgr::Block_To_String()
 {
@@ -520,97 +540,6 @@ string CMapToolMgr::Block_To_String()
 
     return "???";
 }
-
-string CMapToolMgr::Tile_To_String()
-{
-    switch (m_iRcTile)
-    {
-    case Engine::RT_1:
-        return "Tile_Blue33";
-    case Engine::RT_2:
-        return "Tile_Blue44";
-    case Engine::RT_3:
-        return "Tile_Pink44";
-    case Engine::RT_END:
-        break;
-    default:
-        break;
-    }
-    return "???";
-}
-
-string CMapToolMgr::Item_To_String()
-{
-    switch (CImguiMgr::GetInstance()->Get_CurItem())
-    {
-    case Engine::I_NONE:
-        return "";
-    case Engine::I_PLATE:
-        return "Plate";
-    case Engine::I_EXTINGUISHER:
-        return "Extinguisher";
-    case Engine::I_FRYPAN:
-        return "Frypan";
-    case Engine::I_POT:
-        return "Pot";
-    case Engine::I_END:
-    default:
-        break;
-    }
-    return "";
-}
-
-string CMapToolMgr::Food_To_String()
-{
-    switch (CImguiMgr::GetInstance()->Get_CurFood())
-    {
-    case Engine::C_SEAWEED:
-        return "Seaweed";
-    case Engine::C_LETTUCE:
-        return "Lettuce";
-    case Engine::C_TOMATO:
-        return "Tomato";
-    case Engine::C_CUCUMBER:
-        return "Cucumber";
-    case Engine::C_FISH:
-        return "Fish";
-    case Engine::C_SHRIMP:
-        return "Shrimp";
-    case Engine::C_RICE:
-        return "Rice";
-    case Engine::C_PASTA:
-        return "Pasta";
-    case Engine::C_END:
-    default:
-        break;
-    }
-    return "";
-}
-
-string CMapToolMgr::EnvObj_To_String()
-{
-    switch (m_iEnvObject)
-    {
-    case Engine::E_DUMMY:
-        return "Dummy";
-    case Engine::E_END:
-    default:
-        break;
-    }
-    return "";
-}
-
-_vec3 CMapToolMgr::String_To_Dir(string& _s)
-{
-    if (_s == "PX") return _vec3(0.f, 0.f, 0.f);
-    if (_s == "NX") return _vec3(0.f, D3DXToRadian(90.f), 0.f);
-    if (_s == "PZ") return _vec3(0.f, D3DXToRadian(180.f), 0.f);
-    if (_s == "NZ") return _vec3(0.f, D3DXToRadian(270.f), 0.f);
-
-    // 잘못된 문자열일 경우
-    return _vec3(0.f, 0.f, 0.f);
-}
-
 _uint CMapToolMgr::String_To_Block(string& _s)
 {
     if (_s.find("Create_") == 0) {
@@ -642,14 +571,39 @@ _uint CMapToolMgr::String_To_Block(string& _s)
     return -1;
 }
 
+string CMapToolMgr::Tile_To_String()
+{
+    switch (m_iRcTile)
+    {
+    case Engine::RT_0:
+        return "Tile_Blue33";
+    case Engine::RT_1:
+        return "Tile_Blue44";
+    case Engine::RT_2:
+        return "Tile_Pink44";
+    case Engine::RT_3:
+        return "Tile_StoneGray";
+    case Engine::RT_4:
+        return "Tile_StoneWhite";
+    case Engine::RT_END:
+        break;
+    default:
+        break;
+    }
+    return "???";
+}
 _uint CMapToolMgr::String_To_Tile(string& _s)
 {
     if (_s == "Tile_Blue33")
-        return Engine::RCTILEID::RT_1;
+        return Engine::RCTILEID::RT_0;
     else if (_s == "Tile_Blue44")
-        return Engine::RCTILEID::RT_2;
+        return Engine::RCTILEID::RT_1;
     else if (_s == "Tile_Pink44")
+        return Engine::RCTILEID::RT_2;
+    else if (_s == "Tile_StoneGray")
         return Engine::RCTILEID::RT_3;
+    else if (_s == "Tile_StoneWhite")
+        return Engine::RCTILEID::RT_4;
     else if (_s == "???")
         return Engine::RCTILEID::RT_END;
 
@@ -657,6 +611,66 @@ _uint CMapToolMgr::String_To_Tile(string& _s)
     return -1;
 }
 
+string CMapToolMgr::Item_To_String()
+{
+    switch (CImguiMgr::GetInstance()->Get_CurItem())
+    {
+    case Engine::I_NONE:
+        return "";
+    case Engine::I_PLATE:
+        return "Plate";
+    case Engine::I_EXTINGUISHER:
+        return "Extinguisher";
+    case Engine::I_FRYPAN:
+        return "Frypan";
+    case Engine::I_POT:
+        return "Pot";
+    case Engine::I_END:
+    default:
+        break;
+    }
+    return "";
+}
+_uint CMapToolMgr::String_To_Item(string& _s)
+{
+    if (_s == "Plate")
+        return Engine::I_PLATE;
+    else if (_s == "Extinguisher")
+        return Engine::I_EXTINGUISHER;
+    else if (_s == "Frypan")
+        return Engine::I_FRYPAN;
+    else if (_s == "Pot")
+        return Engine::I_POT;
+    else
+        return Engine::I_NONE; // 혹은 예외 처리
+}
+
+string CMapToolMgr::Food_To_String()
+{
+    switch (CImguiMgr::GetInstance()->Get_CurFood())
+    {
+    case Engine::C_SEAWEED:
+        return "Seaweed";
+    case Engine::C_LETTUCE:
+        return "Lettuce";
+    case Engine::C_TOMATO:
+        return "Tomato";
+    case Engine::C_CUCUMBER:
+        return "Cucumber";
+    case Engine::C_FISH:
+        return "Fish";
+    case Engine::C_SHRIMP:
+        return "Shrimp";
+    case Engine::C_RICE:
+        return "Rice";
+    case Engine::C_PASTA:
+        return "Pasta";
+    case Engine::C_END:
+    default:
+        break;
+    }
+    return "";
+}
 _uint CMapToolMgr::String_To_Food(string& _s)
 {
     static const std::unordered_map<std::string, int> foodMap = {
@@ -678,24 +692,23 @@ _uint CMapToolMgr::String_To_Food(string& _s)
     return _uint();
 }
 
-_uint CMapToolMgr::String_To_Item(string& _s)
+string CMapToolMgr::EnvObj_To_String()
 {
-    if (_s == "Plate")
-        return Engine::I_PLATE;
-    else if (_s == "Extinguisher")
-        return Engine::I_EXTINGUISHER;
-    else if (_s == "Frypan")
-        return Engine::I_FRYPAN;
-    else if (_s == "Pot")
-        return Engine::I_POT;
-    else
-        return Engine::I_NONE; // 혹은 예외 처리
+    switch (m_iEnvObject)
+    {
+    case Engine::E_DUMMY:
+        return "Dummy";
+    case Engine::E_END:
+    default:
+        break;
+    }
+    return "";
 }
-
 _uint CMapToolMgr::String_To_EnvObj(string& _s)
 {
     return _uint();
 }
+
 
 void CMapToolMgr::Free()
 {

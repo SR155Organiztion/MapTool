@@ -552,6 +552,9 @@ void CDynamicCamera::Load_Objects()
 	pObj = iter->second;
 	_vec3 pos1 = CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Player.P1;
 	if (pos1.x != 0.f && pos1.y != 0.f && pos1.z != 0.f) {
+		//불러오는 플레이어 위치 보정
+		pos1.y -= 0.5f;
+
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(TRUE);
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(pos1);
 	}
@@ -564,13 +567,16 @@ void CDynamicCamera::Load_Objects()
 	pObj = iter->second;
 	_vec3 pos2 = CMapToolMgr::GetInstance()->Get_Data(CMapToolMgr::GetInstance()->Get_Name()).Player.P2;
 	if (pos2.x != 0.f && pos2.y != 0.f && pos2.z != 0.f) {
+		//불러오는 플레이어 위치 보정
+		pos2.y -= 0.5f;
+
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(TRUE);
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Pos(pos2);
 	}
 	else {
 		dynamic_cast<CPlayerPoint*>(pObj)->Set_Plant(FALSE);
 	}
-	CMapToolMgr::GetInstance()->Plant_Player(0, pos2);
+	CMapToolMgr::GetInstance()->Plant_Player(1, pos2);
 }
 
 void CDynamicCamera::LoadCallBackToImguiMgr()
@@ -898,11 +904,12 @@ HRESULT CDynamicCamera::Create_HexTile()
 			_vec3 vTmp = { 0.f ,0.f, 0.f };
 			
 			vTmp.x = j * 1.5f * fHexRadius;
+			vTmp.y = -0.25f;
 			vTmp.z = i * fHexHeight;
 			if (j % 2 == 1)
 				vTmp.z += fHexHeight * 0.5f;
 
-			pObjectTransformCom->Set_Pos(vTmp.x, -0.25f, vTmp.z);
+			pObjectTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
 			CMapToolMgr::GetInstance()->Plant_HexTile(vTmp);
 
 			_vec3 vLook = CMapToolMgr::GetInstance()->Get_DirLook();
@@ -949,6 +956,7 @@ HRESULT CDynamicCamera::Create_Player()
 	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowPlayerPoint", L"Com_Transform"))->Get_Info(INFO_POS, &vTmp);
 
 	map<const _tchar*, CGameObject*>::iterator iter;
+
 
 	if (CMapToolMgr::GetInstance()->Get_NowPlayer() == 0) {
 		iter = std::find_if(pObjectMap->begin(), pObjectMap->end(), CTag_Finder(L"1Player"));

@@ -39,7 +39,7 @@ protected:
 	_bool m_bTerrainEnable;
 	char szName[64];
 	float fTimer;
-
+	int iX, iY;
 
 private:
 	virtual void		Free();

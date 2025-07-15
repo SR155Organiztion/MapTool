@@ -135,7 +135,8 @@ public:
 	vector<string>* Get_Recipe() { return &m_sRecipeVec; }
 	const map<string, _bool>& Get_RecipeMap() { return m_mapRecipes; }
 	vector<string>* Get_NameVec();
-	
+	void	Set_MapSize(int _iX, int _iY);
+
 	void NextObject();
 	_uint Get_NowObject();
 
@@ -164,12 +165,25 @@ public:
 
 	string Get_Dir();
 
+	//글자 변환
 	_vec3	String_To_Dir(string& _s);
+	string	Dir_To_String();
+
 	_uint	String_To_Block(string& _s);
+	string	Block_To_String();
+
 	_uint	String_To_Tile(string& _s);
+	string	Tile_To_String();
+
 	_uint   String_To_Food(string& _s);
+	string  Item_To_String();
+
 	_uint   String_To_Item(string& _s);
+	string  Food_To_String();
+
 	_uint	String_To_EnvObj(string& _s);
+	string  EnvObj_To_String();
+
 
 	void Print_CurrentDataCounts(int& iBlockSize, int& iTileSize, int& iEnvSize, int& iRecipeSize)
 	{
@@ -178,14 +192,6 @@ public:
 		iEnvSize	= (int)m_tEnvObjVec.size();
 		iRecipeSize = (int)m_sRecipeVec.size();
 	}
-	
-private:
-	string	Dir_To_String();
-	string	Block_To_String();
-	string	Tile_To_String();
-	string  Item_To_String();
-	string  Food_To_String();
-	string  EnvObj_To_String();
 
 private:
 	vector<S_BLOCK>			m_tBlockVec;		///현재 설치되어있는 블록의 데이터
