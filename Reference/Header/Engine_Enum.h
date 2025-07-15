@@ -1,4 +1,4 @@
-#ifndef Engine_Enum_h__
+﻿#ifndef Engine_Enum_h__
 #define Engine_Enum_h__
 
 namespace Engine
@@ -25,8 +25,8 @@ namespace Engine
 	//환경				 더미
 	enum ENVIRONMENTID { E_DUMMY, E_END };
 	//음식
-	enum CREATEID { C_SEAWEED, C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_RICE, C_PASTA, C_END};
-	//사각타일     파랑3  파랑4 분홍4 회돌  검돌
+	enum CREATEID { C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_SEAWEED, C_RICE, C_PASTA, C_TOMATOSOUP, C_END};
+	//타일		   파33   파44  핑44  돌갈  돌베   X     끝
  	enum RCTILEID { RT_0, RT_1, RT_2, RT_3, RT_4, RT_5, RT_END};
 	//오브젝트			    블럭	사각타일   육각타일   환경  시작지점
 	enum CREATEOBJECT_ID { O_BLOCK, O_RCTILE, O_HEXTILE, O_ENV, O_SPAWN ,O_END };

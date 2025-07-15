@@ -383,10 +383,10 @@ void CDynamicCamera::Load_Objects()
 		if (nullptr == pGameObject)
 			return;
 
-		//위치 설정
+		//위치,크기 설정
 		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
-		
+		pObjectTransformCom->m_vScale = it.vScale;
 		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
 		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.fAngle);
 		_tchar szTag[64] = {};
@@ -398,7 +398,7 @@ void CDynamicCamera::Load_Objects()
 
 			if (SUCCEEDED(pLayer->Add_GameObject(pTag, pGameObject))) {
 				Release_tchar.push_back(pTag);
-				CMapToolMgr::GetInstance()->Plant_Environment(it.Env_Type, it.vPos, it.fAngle);
+				CMapToolMgr::GetInstance()->Plant_Environment(it.Env_Type, it.vPos, it.fAngle, it.vScale);
 				s_Index++;
 				break; // 성공 시 탈출
 			}
@@ -1002,10 +1002,10 @@ HRESULT CDynamicCamera::Create_EnvObject()
 	_vec3 vTmp;
 	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vTmp);
 	pObjectTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
-
+	pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
 	dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
 	dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
-
+	
 	_tchar szTag[64] = {};
 
 	while (true) {

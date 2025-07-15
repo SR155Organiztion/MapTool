@@ -114,7 +114,7 @@ public:
 	void	Break_Tile(_vec3 _vPos);
 	
 	void	Plant_Environment(_vec3 _vPos);
-	void	Plant_Environment(string _sType, _vec3 _vPos, float _fAngle);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
+	void	Plant_Environment(string _sType, _vec3 _vPos, float _fAngle, _vec3 _vScale);	///설치한 환경 오브젝트를 벡터 리스트에 넣음
 	void	Break_Environment(_vec3 _vPos);
 
 	void	Plant_Camera(_vec3 _vEye, _vec3 _vAt);						///현재 바라보고 있는 곳의 Eye와 at을 저장
