@@ -26,6 +26,7 @@ public:
 	char* Get_Name() { return szName; }
 	_int Get_CurItem() { return m_iCurrent_Item; }
 	_int Get_CurFood() { return m_iCurrent_Food; }
+	_vec3 Get_NowScale() { return m_vScale; }
 
 protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
@@ -40,7 +41,7 @@ protected:
 	char szName[64];
 	float fTimer;
 	int iX, iY;
-
+	_vec3 m_vScale;
 private:
 	virtual void		Free();
 

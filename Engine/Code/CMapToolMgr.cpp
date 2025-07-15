@@ -105,11 +105,11 @@ void CMapToolMgr::Break_Tile(_vec3 _vPos)
 
 void CMapToolMgr::Plant_Environment(_vec3 _vPos)
 {
-    S_ENVOBJECT tEnvObj = { EnvObj_To_String() , _vPos, m_fAngle};
+    S_ENVOBJECT tEnvObj = { EnvObj_To_String() , _vPos, m_fAngle, CImguiMgr::GetInstance()->Get_NowScale()};
     m_tEnvObjVec.push_back(tEnvObj);
 }
 
-void CMapToolMgr::Plant_Environment(string _sType, _vec3 _vPos, float _fAngle)
+void CMapToolMgr::Plant_Environment(string _sType, _vec3 _vPos, float _fAngle, _vec3 vScale)
 {
     S_ENVOBJECT tEnvObj = { _sType , _vPos, _fAngle };
     m_tEnvObjVec.push_back(tEnvObj);
@@ -582,9 +582,9 @@ string CMapToolMgr::Tile_To_String()
     case Engine::RT_2:
         return "Tile_Pink44";
     case Engine::RT_3:
-        return "Tile_StoneGray";
+        return "Tile_StoneBrown";
     case Engine::RT_4:
-        return "Tile_StoneWhite";
+        return "Tile_StoneBeige";
     case Engine::RT_END:
         break;
     default:
@@ -600,9 +600,9 @@ _uint CMapToolMgr::String_To_Tile(string& _s)
         return Engine::RCTILEID::RT_1;
     else if (_s == "Tile_Pink44")
         return Engine::RCTILEID::RT_2;
-    else if (_s == "Tile_StoneGray")
+    else if (_s == "Tile_StoneBrown")
         return Engine::RCTILEID::RT_3;
-    else if (_s == "Tile_StoneWhite")
+    else if (_s == "Tile_StoneBeige")
         return Engine::RCTILEID::RT_4;
     else if (_s == "???")
         return Engine::RCTILEID::RT_END;

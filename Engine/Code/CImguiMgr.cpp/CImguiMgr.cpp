@@ -62,7 +62,7 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
 
     iX = iY = 0;
-
+    m_vScale = { 1.0f, 1.0f, 1.0f };
     return S_OK;
 }
 
@@ -217,39 +217,37 @@ void CImguiMgr::Update_Imgui()
     }
 
     // 지형 설정 ////////////////////////////////////////////////////////////////
+    {
+        if (ImGui::CollapsingHeader("Terrain")) {
+            ImGui::Checkbox(m_bTerrainEnable ? "Enable" : "Disable", &m_bTerrainEnable);
+            ImGui::SameLine();
+            if (ImGui::Button("Change")) {
+                m_bTerrainEnable ? m_bTerrainEnable = false : m_bTerrainEnable = true;
+                m_TerrianEnableCallback();
+            }
 
-    if (ImGui::CollapsingHeader("Terrain")) {
-        ImGui::Checkbox(m_bTerrainEnable ? "Enable" : "Disable" , &m_bTerrainEnable);
-        ImGui::SameLine();
-        if (ImGui::Button("Change")) {
-            m_bTerrainEnable ? m_bTerrainEnable = false : m_bTerrainEnable = true;
-            m_TerrianEnableCallback();
+            ImGui::PushItemWidth(100);
+            ImGui::InputInt("X", &iX, sizeof(int));
+            ImGui::SameLine();
+            ImGui::InputInt("Y", &iY, sizeof(int));
+            ImGui::PopItemWidth();
         }
-        
-        ImGui::PushItemWidth(100);
-        ImGui::InputInt("X", &iX, sizeof(int));
-        ImGui::SameLine();
-        ImGui::InputInt("Y", &iY, sizeof(int));
-        ImGui::PopItemWidth();
     }
-
     // 환경오브젝트 설정 ////////////////////////////////////////////////////////////////
+    {
+        if (ImGui::CollapsingHeader("EnvObj")) {
+            ImGui::Text("Now Obj : ");
+            ImGui::SameLine();
+            ImGui::Text(CMapToolMgr::GetInstance()->EnvObj_To_String().c_str());
 
-    if (ImGui::CollapsingHeader("EnvObj")) {
-        static float pos[3] = { 1.0f, 1.0f, 1.0f };
-
-        ImGui::Text("Now Obj : ");
-        ImGui::SameLine();
-        ImGui::Text(CMapToolMgr::GetInstance()->EnvObj_To_String().c_str());
-
-        // Position 텍스트와 드래그 위젯 정렬
-        ImGui::Text("Position");
-        ImGui::SameLine(100); // X 위치를 지정해 간격 조정 (예: 100픽셀부터 시작)
-        ImGui::DragFloat3("##Position", pos, 0.1f, 1.0f, 5.0f);
+            // Position 텍스트와 드래그 위젯 정렬
+            ImGui::Text("Position");
+            ImGui::SameLine(100); // X 위치를 지정해 간격 조정 (예: 100픽셀부터 시작)
+            ImGui::DragFloat3("##Position", m_vScale, 0.1f, 1.0f, 5.0f);
+        }
     }
-
     // 디버그용 ////////////////////////////////////////////////////////////////
-  
+    {
         static int blockCount = 0;
         static int tileCount = 0;
         static int envCount = 0;
@@ -262,25 +260,26 @@ void CImguiMgr::Update_Imgui()
         ImGui::Text("Environment: %d", envCount);
         ImGui::Text("Recipe: %d", recipeCount);
 
-    //방향확인
-    string S = "Direction : " + CMapToolMgr::GetInstance()->Get_Dir();
-    ImGui::Text(S.c_str());
+        //방향확인
+        string S = "Direction : " + CMapToolMgr::GetInstance()->Get_Dir();
+        ImGui::Text(S.c_str());
 
-    //충돌 위치
-    _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
-    char buf[64];
-    sprintf_s(buf, sizeof(buf), "X: %.2f | Y: %.2f | Z: %.2f", colpos.x, colpos.y, colpos.z);
-    ImGui::Text(buf);
-        
-    //레이 위치+++++++
-    _vec3 RayPos, RayDir;
-    CCollisionMgr::GetInstance()->Get_Ray(&RayPos, &RayDir);
-    char buf1[64];
-    char buf2[64];
-    sprintf_s(buf1, sizeof(buf1), "RayPos(X:%.2f | Y:%.2f | Z:%.2f)", RayPos.x, RayPos.y, RayPos.z);
-    sprintf_s(buf2, sizeof(buf2), "RayDir(X:%.2f | Y:%.2f | Z:%.2f)", RayDir.x, RayDir.y, RayDir.z);
-    ImGui::Text(buf1);
-    ImGui::Text(buf2);
+        //충돌 위치
+        _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
+        char buf[64];
+        sprintf_s(buf, sizeof(buf), "X: %.2f | Y: %.2f | Z: %.2f", colpos.x, colpos.y, colpos.z);
+        ImGui::Text(buf);
+
+        //레이 위치+++++++
+        _vec3 RayPos, RayDir;
+        CCollisionMgr::GetInstance()->Get_Ray(&RayPos, &RayDir);
+        char buf1[64];
+        char buf2[64];
+        sprintf_s(buf1, sizeof(buf1), "RayPos(X:%.2f | Y:%.2f | Z:%.2f)", RayPos.x, RayPos.y, RayPos.z);
+        sprintf_s(buf2, sizeof(buf2), "RayDir(X:%.2f | Y:%.2f | Z:%.2f)", RayDir.x, RayDir.y, RayDir.z);
+        ImGui::Text(buf1);
+        ImGui::Text(buf2);
+    }
 
     ImGui::End();
 }
