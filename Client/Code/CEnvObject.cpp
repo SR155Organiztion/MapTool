@@ -32,7 +32,23 @@ _int CEnvObject::Update_GameObject(const _float& fTimeDelta)
 
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 
-    CRenderer::GetInstance()->Add_RenderGroup(RENDER_NONALPHA, this);
+    _matrix matWorld, matView, matBill;
+
+    m_pTransformCom->Get_World(&matWorld);
+    m_pGraphicDev->GetTransform(D3DTS_VIEW, &matView);
+    D3DXMatrixIdentity(&matBill);
+    D3DXMatrixInverse(&matView, 0, &matView);
+
+    _vec3	vViewScale, vViewTrans;
+    D3DXQUATERNION qViewRot;
+    D3DXMatrixDecompose(&vViewScale, &qViewRot, &vViewTrans, &matView);
+    _matrix matViewRot;  D3DXMatrixRotationQuaternion(&matViewRot, &qViewRot);
+
+    matWorld = matViewRot * matWorld;
+
+    m_pTransformCom->m_matWorld = matWorld;
+
+    CRenderer::GetInstance()->Add_RenderGroup(RENDER_ALPHA, this);
 
     return iExit;
 }
@@ -72,6 +88,11 @@ void CEnvObject::Set_TextureNum(_uint _iID)
 void CEnvObject::Set_Angle(_float _fAngle)
 {
     m_pTransformCom->m_vAngle.y = _fAngle;
+}
+
+void CEnvObject::Set_Scale(_vec3 _vScale)
+{
+    m_pTransformCom->m_vScale = _vScale;
 }
 
 HRESULT CEnvObject::Add_Component()

@@ -60,7 +60,7 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
     
     m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
-
+    m_iStage = STAGE_END;
     iX = iY = 0;
     m_vScale = { 1.0f, 1.0f, 1.0f };
     return S_OK;
@@ -78,146 +78,147 @@ void CImguiMgr::Update_Imgui()
     ImGui::InputText("Scene", szName, sizeof(szName));
     
     //저장 및 불러오기 및 초기화
-    if (ImGui::Button("Save")) {                 
-        if (m_LoadCallback) {
-            CMapToolMgr::GetInstance()->Set_Timer(fTimer);
-            CMapToolMgr::GetInstance()->Set_MapSize(iX, iY);
-            for (auto it : m_mapRecipes) {
-                if(it.second == true)
-                    CMapToolMgr::GetInstance()->Add_Recipe(it.first);
+    {
+        if (ImGui::Button("Save")) {
+            if (m_LoadCallback) {
+                CMapToolMgr::GetInstance()->Set_Timer(fTimer);
+                CMapToolMgr::GetInstance()->Set_MapSize(iX, iY);
+                for (auto it : m_mapRecipes) {
+                    if (it.second == true)
+                        CMapToolMgr::GetInstance()->Add_Recipe(it.first);
+                }
+                CMapToolMgr::GetInstance()->Save_Json();
             }
-            CMapToolMgr::GetInstance()->Save_Json();
         }
-    }
 
-    ImGui::SameLine();
+        ImGui::SameLine();
 
-    if (ImGui::Button("Load")) {   
-        if (m_LoadCallback) {
-            //불러오기
-            CMapToolMgr::GetInstance()->Load_Json();
-            //오브젝트들
-            m_LoadCallback();
-           
-            //맵이름
-            strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
-            
-            //맵사이즈
-            iX = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iX;
-            iY = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iY;
+        if (ImGui::Button("Load")) {
+            if (m_LoadCallback) {
+                //불러오기
+                CMapToolMgr::GetInstance()->Load_Json();
+                //오브젝트들
+                m_LoadCallback();
 
-            //타이머
-            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
-            
-            //레시피
-            m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
-            for (auto& it : m_mapRecipes) {
-                it.second = false;
-            }
-            for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
-            
+                //맵이름
+                strcpy_s(szName, sizeof(szName), CMapToolMgr::GetInstance()->Get_Name().c_str());
+
+                //맵사이즈
+                iX = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iX;
+                iY = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iY;
+
+                //타이머
+                fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+
+                //레시피
+                m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
                 for (auto& it : m_mapRecipes) {
-                    if (Recipe == it.first) {
-                        it.second = true;
+                    it.second = false;
+                }
+                for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
+
+                    for (auto& it : m_mapRecipes) {
+                        if (Recipe == it.first) {
+                            it.second = true;
+                        }
                     }
                 }
             }
         }
-    }
 
-    ImGui::SameLine();
+        ImGui::SameLine();
 
-    if (ImGui::Button("Clear")) {
-        if (m_ClearCallback) {
-            CMapToolMgr::GetInstance()->Reset();
-            m_ClearCallback();
+        if (ImGui::Button("Clear")) {
+            if (m_ClearCallback) {
+                CMapToolMgr::GetInstance()->Reset();
+                m_ClearCallback();
+            }
         }
     }
-
     /// 맵 선택창 /////////////////////////////////////////////////////////////////
-    const auto& nameVec = *CMapToolMgr::GetInstance()->Get_NameVec();
+    {
+        const auto& nameVec = *CMapToolMgr::GetInstance()->Get_NameVec();
 
-    std::vector<std::string> labeledNames;
-    for (int i = 0; i < nameVec.size(); ++i) {
-        labeledNames.push_back(nameVec[i] + "##" + std::to_string(i));
-    }
+        std::vector<std::string> labeledNames;
+        for (int i = 0; i < nameVec.size(); ++i) {
+            labeledNames.push_back(nameVec[i] + "##" + std::to_string(i));
+        }
 
-    std::vector<const char*> comboItems;
-    for (const auto& str : labeledNames)
-        comboItems.push_back(str.c_str());
+        std::vector<const char*> comboItems;
+        for (const auto& str : labeledNames)
+            comboItems.push_back(str.c_str());
 
-    static int current_item = 0;
-    //현재 모든 맵 데이터 확인 선탁바
-    if (ImGui::Combo("SceneList", &current_item, comboItems.data(), comboItems.size())) {
-        nameVec[current_item];
-    }
+        static int current_item = 0;
+        //현재 모든 맵 데이터 확인 선탁바
+        if (ImGui::Combo("SceneList", &current_item, comboItems.data(), comboItems.size())) {
+            nameVec[current_item];
+        }
 
-    if (ImGui::Button("SetScene")) {
-        if (m_LoadCallback) {
-            CMapToolMgr::GetInstance()->Reset();
-            CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
-            CMapToolMgr::GetInstance()->Select_Map();
-            //스테이지 이름
-            strcpy_s(szName, nameVec[current_item].c_str());
-            //맵사이즈
-            iX = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iX;
-            iY = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iY;
-            //타이머
-            fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
-            //레시피
-            m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
-
-            for (auto& it : m_mapRecipes) {
-                it.second = false;
-            }
-            for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
+        if (ImGui::Button("SetScene")) {
+            if (m_LoadCallback) {
+                CMapToolMgr::GetInstance()->Reset();
+                CMapToolMgr::GetInstance()->Set_Name(nameVec[current_item]);
+                CMapToolMgr::GetInstance()->Select_Map();
+                //스테이지 이름
+                strcpy_s(szName, nameVec[current_item].c_str());
+                //맵사이즈
+                iX = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iX;
+                iY = CMapToolMgr::GetInstance()->Get_Data(szName).MapSize.iY;
+                //타이머
+                fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
+                //레시피
+                m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
 
                 for (auto& it : m_mapRecipes) {
-                    if (Recipe == it.first) {
-                        it.second = true;
+                    it.second = false;
+                }
+                for (const auto Recipe : (CMapToolMgr::GetInstance()->Get_Data(szName).Recipe)) {
+
+                    for (auto& it : m_mapRecipes) {
+                        if (Recipe == it.first) {
+                            it.second = true;
+                        }
                     }
                 }
+
+                m_LoadCallback();
             }
+        }
 
-            m_LoadCallback();
+        ImGui::SameLine();
+
+        if (ImGui::Button("Delete")) {
+            CMapToolMgr::GetInstance()->Set_NoCreate();
+            CMapToolMgr::GetInstance()->Delete_Map(nameVec[current_item]);
         }
     }
-
-    ImGui::SameLine();
-
-    if (ImGui::Button("Delete")) {
-        CMapToolMgr::GetInstance()->Set_NoCreate();
-        CMapToolMgr::GetInstance()->Delete_Map(nameVec[current_item]);
-    }
-
     // 타이머 설정 ////////////////////////////////////////////////////////////////
-
-    ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer)); 
-
+    {
+        ImGui::InputFloat("Timer", &fTimer, sizeof(fTimer));
+    }
     // 레시피 설정 ////////////////////////////////////////////////////////////////
-
-    if (ImGui::CollapsingHeader("Recipes")) {
-        for (auto& it : m_mapRecipes) {
-            ImGui::Checkbox(it.first.c_str(), &it.second);
+    {
+        if (ImGui::CollapsingHeader("Recipes")) {
+            for (auto& it : m_mapRecipes) {
+                ImGui::Checkbox(it.first.c_str(), &it.second);
+            }
         }
     }
-
     // 상자 음식 설정 ////////////////////////////////////////////////////////////////
-
-    if (ImGui::CollapsingHeader("Food")) {
-        const char* foods[] = { "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Seaweed", "Rice", "Pasta", "TomatoSoup"};
-        ImGui::Combo("Foods", &m_iCurrent_Food, foods, IM_ARRAYSIZE(foods));
+    {
+        if (ImGui::CollapsingHeader("Food")) {
+            const char* foods[] = { "Lettuce", "Tomato", "Cucumber", "Fish", "Shrimp", "Seaweed", "Rice", "Pasta", "Tomatosoup" };
+            ImGui::Combo("Foods", &m_iCurrent_Food, foods, IM_ARRAYSIZE(foods));
+        }
     }
-
     // 블럭 아이템 설정 ////////////////////////////////////////////////////////////////
-
-    if (ImGui::CollapsingHeader("Item")) {
-        const char* tools[] = { "None", "Plate", "Extinguisher", "Frypan", "Pot" };
-        ImGui::Combo("Items", &m_iCurrent_Item, tools, IM_ARRAYSIZE(tools));
+    {
+        if (ImGui::CollapsingHeader("Item")) {
+            const char* tools[] = { "None", "Plate", "Extinguisher", "Frypan", "Pot" };
+            ImGui::Combo("Items", &m_iCurrent_Item, tools, IM_ARRAYSIZE(tools));
+        }
     }
-
-
-    // ���� ���� ////////////////////////////////////////////////////////////////
+    // 지형 설정 ////////////////////////////////////////////////////////////////
     {
         if (ImGui::CollapsingHeader("Terrain")) {
             ImGui::Checkbox(m_bTerrainEnable ? "Enable" : "Disable", &m_bTerrainEnable);
@@ -234,21 +235,23 @@ void CImguiMgr::Update_Imgui()
             ImGui::PopItemWidth();
         }
     }
-
-    // ȯ�������Ʈ ���� ////////////////////////////////////////////////////////////////
+    // 환경오브젝트 설정 ////////////////////////////////////////////////////////////////
     {
         if (ImGui::CollapsingHeader("EnvObj")) {
             ImGui::Text("Now Obj : ");
             ImGui::SameLine();
             ImGui::Text(CMapToolMgr::GetInstance()->EnvObj_To_String().c_str());
 
-            // Position �ؽ�Ʈ�� �巡�� ���� ����
-            ImGui::Text("Position");
-            ImGui::SameLine(100); // X ��ġ�� ������ ���� ���� (��: 100�ȼ����� ����)
+            // 스케일
+            ImGui::Text("Scale");
+            ImGui::SameLine(100); // 
             ImGui::DragFloat3("##Position", m_vScale, 0.1f, 1.0f, 5.0f);
+
+            const char* stage[] = { "Stage0", "Stage1", "Stage2", "Stage3", "Stage4", "Stage5", "Stage6" };
+            ImGui::Combo("Stages", &m_iStage, stage, IM_ARRAYSIZE(stage));
         }
     }
-    // ����׿� ////////////////////////////////////////////////////////////////
+    // 디버그용 ////////////////////////////////////////////////////////////////
     {
 
         static int blockCount = 0;

@@ -136,6 +136,7 @@ public:
 	const map<string, _bool>& Get_RecipeMap() { return m_mapRecipes; }
 	vector<string>* Get_NameVec();
 	void	Set_MapSize(int _iX, int _iY);
+	vector<S_ENVOBJECT>* Get_EnvObjectVec() { return &m_tEnvObjVec; }
 
 	void NextObject();
 	_uint Get_NowObject();
@@ -176,14 +177,16 @@ public:
 	string	Tile_To_String();
 
 	_uint   String_To_Food(string& _s);
-	string  Item_To_String();
+	string  Food_To_String();
 
 	_uint   String_To_Item(string& _s);
-	string  Food_To_String();
+	string  Item_To_String();
 
 	_uint	String_To_EnvObj(string& _s);
 	string  EnvObj_To_String();
 
+	string Stage_To_String();
+	_uint  String_To_Stage();
 
 	void Print_CurrentDataCounts(int& iBlockSize, int& iTileSize, int& iEnvSize, int& iRecipeSize)
 	{

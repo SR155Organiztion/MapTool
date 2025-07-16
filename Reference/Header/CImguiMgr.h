@@ -27,6 +27,7 @@ public:
 	_int Get_CurItem() { return m_iCurrent_Item; }
 	_int Get_CurFood() { return m_iCurrent_Food; }
 	_vec3 Get_NowScale() { return m_vScale; }
+	_int Get_Stage() { return m_iStage; }
 
 protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
@@ -42,6 +43,7 @@ protected:
 	float fTimer;
 	int iX, iY;
 	_vec3 m_vScale;
+	_int m_iStage;
 private:
 	virtual void		Free();
 

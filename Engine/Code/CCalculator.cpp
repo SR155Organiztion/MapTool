@@ -26,38 +26,49 @@ void CCalculator::Calculate_AABB(_vec3* _vMin, _vec3* _vMax)
 {
     _vec3 vRayPos, vRayDir;
     CCollisionMgr::GetInstance()->Get_Ray(&vRayPos, &vRayDir);
-
-    // Normalize direction (안정성)
     D3DXVec3Normalize(&vRayDir, &vRayDir);
 
-    float tMin = (_vMin->x - vRayPos.x) / vRayDir.x;
-    float tMax = (_vMax->x - vRayPos.x) / vRayDir.x;
-    if (tMin > tMax) std::swap(tMin, tMax);
+    float tMin = -FLT_MAX, tMax = FLT_MAX;
+    _vec3 vNormal = { 0.f, 0.f, 0.f };
 
-    float tyMin = (_vMin->y - vRayPos.y) / vRayDir.y;
-    float tyMax = (_vMax->y - vRayPos.y) / vRayDir.y;
-    if (tyMin > tyMax) std::swap(tyMin, tyMax);
+    for (int i = 0; i < 3; ++i)
+    {
+        float rayDir = vRayDir[i];
+        float rayOri = vRayPos[i];
+        float boxMin = (*_vMin)[i];
+        float boxMax = (*_vMax)[i];
 
-    if ((tMin > tyMax) || (tyMin > tMax))
+        if (fabs(rayDir) < 1e-6f)
+        {
+            if (rayOri < boxMin || rayOri > boxMax)
+                return;
+            continue;
+        }
+
+        float invD = 1.f / rayDir;
+        float t0 = (boxMin - rayOri) * invD;
+        float t1 = (boxMax - rayOri) * invD;
+        if (t0 > t1) std::swap(t0, t1);
+
+        if (t0 > tMin)
+        {
+            tMin = t0;
+            vNormal = { 0.f, 0.f, 0.f };
+            vNormal[i] = (invD < 0.f) ? 1.f : -1.f; // 충돌면 법선
+        }
+
+        tMax = min(tMax, t1);
+        if (tMax < tMin)
+            return;
+    }
+
+    if (tMin < 0.f)
         return;
 
-    if (tyMin > tMin) tMin = tyMin;
-    if (tyMax < tMax) tMax = tyMax;
+    _vec3 vColPos = vRayPos + vRayDir * tMin;
 
-    float tzMin = (_vMin->z - vRayPos.z) / vRayDir.z;
-    float tzMax = (_vMax->z - vRayPos.z) / vRayDir.z;
-    if (tzMin > tzMax) std::swap(tzMin, tzMax);
-
-    if ((tMin > tzMax) || (tzMin > tMax))
-        return;
-
-    if (tzMin > tMin) tMin = tzMin;
-    if (tzMax < tMax) tMax = tzMax;
-
-    if (tMin < 0.0f)
-        return; // Ray가 박스 뒤에서 시작
-
-    CCollisionMgr::GetInstance()->Set_ColPos((vRayPos + vRayDir * tMin));
+    CCollisionMgr::GetInstance()->Set_ColPos(vColPos);
+    CCollisionMgr::GetInstance()->Set_ColNormal(vNormal); // <-- 법선 저장
 }
 
 

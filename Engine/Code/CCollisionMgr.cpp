@@ -64,9 +64,19 @@ void CCollisionMgr::Set_ColPos(_vec3 _v)
     m_vColPos = _v;
 }
 
+void CCollisionMgr::Set_ColNormal(_vec3 _vNormal)
+{
+	m_vColNormal = _vNormal;
+}
+
 _vec3 CCollisionMgr::Get_ColPos()
 {
     return m_vColPos;
+}
+
+_vec3 CCollisionMgr::Get_ColNormal()
+{
+	return m_vColNormal;
 }
 
 void CCollisionMgr::Free()

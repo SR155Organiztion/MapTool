@@ -24,6 +24,7 @@ public:
 
 	void						Set_TextureNum(_uint _iID);
 	void						Set_Angle(_float _fAngle);
+	void						Set_Scale(_vec3  _vScale);
 private:
 	HRESULT		Add_Component();
 	HRESULT		Set_Metarial();

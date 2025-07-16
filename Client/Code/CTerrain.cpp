@@ -29,6 +29,9 @@ HRESULT CTerrain::Ready_GameObject()
 
 _int CTerrain::Update_GameObject(const _float& fTimeDelta)
 {
+    if (!m_bEnable)
+        return 0;
+
     m_pCalculatorCom->Calculate_AABB(m_pBufferCom->Get_Min(), m_pBufferCom->Get_Max());
 
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
