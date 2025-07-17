@@ -269,6 +269,7 @@ void CMapToolMgr::Reset()
     m_tBlockVec.clear();
     m_tTileVec.clear();
     m_tEnvObjVec.clear();
+    m_tEnvObjVec.clear();
     {
         m_mapRecipes["salad_lettuce"] = false;
         m_mapRecipes["salad_lettuce_tomato"] = false;
@@ -431,7 +432,7 @@ _uint CMapToolMgr::Get_NowRcTile()
 void CMapToolMgr::NextEnvObject()
 {
     ++m_iEnvObject;
-    if (m_iEnvObject >= static_cast<_uint>(RCTILEID::RT_END)) {
+    if (m_iEnvObject >= static_cast<_uint>(ENVIRONMENTID::E_END)) {
         m_iEnvObject = 0;
     }
 }
@@ -721,6 +722,16 @@ string CMapToolMgr::EnvObj_To_String()
         return "Tree_3";
     case Engine::ENVIRONMENTID::E_TREE_4:
         return "Tree_4";
+    case Engine::ENVIRONMENTID::E_PLANT_1:
+        return "Plant_1";
+    case Engine::ENVIRONMENTID::E_PLANT_2:
+        return "Plant_2";
+    case Engine::ENVIRONMENTID::E_FLOWER_1:
+        return "Flower_1";
+    case Engine::ENVIRONMENTID::E_FLOWER_2:
+        return "Flower_2";
+    case Engine::ENVIRONMENTID::E_CASTLE:
+        return "Castle";
     case Engine::E_END:
     default:
         break;
@@ -741,6 +752,16 @@ _uint CMapToolMgr::String_To_EnvObj(string& _s)
         return Engine::ENVIRONMENTID::E_TREE_3;
     else if (_s == "Tree_4")
         return Engine::ENVIRONMENTID::E_TREE_4;
+    else if (_s == "Plant_1")
+        return Engine::ENVIRONMENTID::E_PLANT_1;
+    else if (_s == "Plant_2")
+        return Engine::ENVIRONMENTID::E_PLANT_2;
+    else if (_s == "Flower_1")
+        return Engine::ENVIRONMENTID::E_FLOWER_1;
+    else if (_s == "Flower_2")
+        return Engine::ENVIRONMENTID::E_FLOWER_2;
+    else if (_s == "Castle")
+        return Engine::ENVIRONMENTID::E_CASTLE;
     else
         return Engine::E_END; // 혹은 예외 처리
 }

@@ -148,6 +148,7 @@ public:
 	vector<string>* Get_NameVec();
 	void	Set_MapSize(int _iX, int _iY);
 	vector<S_ENVOBJECT>* Get_EnvObjectVec() { return &m_tEnvObjVec; }
+	void	Set_Angle(_float _fAngle) { m_fAngle = _fAngle; }
 
 	void NextObject();
 	_uint Get_NowObject();
@@ -234,7 +235,7 @@ private:
 	//타일---------------------------------------------------------------------------------------
 	_int			m_iRcTile;					///현재 선택중인 타일 이미지 번호
 	//환경오브젝트-------------------------------------------------------------------------------
-	_uint			m_iEnvObject;				///현재 선택중인 환경오브젝트 번호
+	_int			m_iEnvObject;				///현재 선택중인 환경오브젝트 번호
 	//각도---------------------------------------------------------------------------------------
 	_int			m_iDir;						///현재 선택중인 방향 값	(고정된 6 방향)
 	_vec3			m_vecDir;					///현재 선택중인 방향 벡터값(고정되지 않은 각도) 

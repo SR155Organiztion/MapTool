@@ -881,7 +881,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 {
 	static int s_HexTileIndex = 0;
 	int iRow, iCol;
-	iRow = iCol = 40;
+	iRow = iCol = 20;
 
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
 	CLayer* pLayer = pScene->Get_Layer(L"Tile_Layer");
@@ -1003,7 +1003,7 @@ HRESULT CDynamicCamera::Create_EnvObject()
 	_vec3 vObjectPos;
 	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
 	pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
-	pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y + (CImguiMgr::GetInstance()->Get_NowScale().y), vObjectPos.z);
+	pObjectTransformCom->Set_Pos(vObjectPos.x, (vObjectPos.y + CImguiMgr::GetInstance()->Get_OffsetY()), vObjectPos.z);
 	dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
 	dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
 	

@@ -65,7 +65,7 @@ void CShowEnvObject::Render_GameObject()
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
     m_pGraphicDev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
 
-    m_pTextureCom->Set_Texture(CMapToolMgr::GetInstance()->Get_NowStation());
+    m_pTextureCom->Set_Texture();
 
     if (FAILED(Set_Metarial()))
         return;

@@ -35,6 +35,9 @@ namespace Engine
 	//환경				 
 	enum ENVIRONMENTID { E_FLAG,
 						 E_TREE_1, E_TREE_2, E_TREE_3, E_TREE_4,
+						 E_PLANT_1, E_PLANT_2, 
+					     E_FLOWER_1, E_FLOWER_2,
+						 E_CASTLE,
 						 E_END };
 
 }

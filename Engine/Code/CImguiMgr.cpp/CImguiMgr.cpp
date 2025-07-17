@@ -63,6 +63,7 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     m_iStage = STAGE_END;
     iX = iY = 0;
     m_vScale = { 1.0f, 1.0f, 1.0f };
+    m_fOffestY = 0;
     return S_OK;
 }
 
@@ -245,12 +246,16 @@ void CImguiMgr::Update_Imgui()
             ImGui::Text("Now Obj : ");
             ImGui::SameLine();
             ImGui::Text(CMapToolMgr::GetInstance()->EnvObj_To_String().c_str());
+            ImGui::SameLine();
+            if (ImGui::Button("ResetAngle")) {
+                CMapToolMgr::GetInstance()->Set_Angle(0.f);
+            }
 
             // 스케일
             ImGui::Text("Scale");
             ImGui::SameLine(100); // 
-            ImGui::DragFloat3("##Position", m_vScale, 0.1f, 0.0f, 5.0f);
-
+            ImGui::DragFloat3("##Position", m_vScale, 0.01f, 0.0f, 5.0f);
+            ImGui::DragFloat("Offset_Y", &m_fOffestY, 0.01f, 0.f, 10.f);
             const char* stage[] = { "Stage0", "Stage1", "Stage2", "Stage3", "Stage4", "Stage5", "Stage6" };
             ImGui::Combo("Stages", &m_iStage, stage, IM_ARRAYSIZE(stage));
         }
@@ -285,17 +290,17 @@ void CImguiMgr::Update_Imgui()
         ImGui::Text("Environment: %d", envCount);
         ImGui::Text("Recipe: %d", recipeCount);
 
-        //����Ȯ��
+        //현재 설치할 방향
         string S = "Direction : " + CMapToolMgr::GetInstance()->Get_Dir();
         ImGui::Text(S.c_str());
 
-        //�浹 ��ġ
+        //충돌지점 표시
         _vec3 colpos = CCollisionMgr::GetInstance()->Get_ColPos();
         char buf[64];
         sprintf_s(buf, sizeof(buf), "X: %.2f | Y: %.2f | Z: %.2f", colpos.x, colpos.y, colpos.z);
         ImGui::Text(buf);
 
-        //���� ��ġ+++++++
+        //레이 표시
         _vec3 RayPos, RayDir;
         CCollisionMgr::GetInstance()->Get_Ray(&RayPos, &RayDir);
         char buf1[64];
