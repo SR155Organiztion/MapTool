@@ -65,7 +65,7 @@ void CShowEnvObject::Render_GameObject()
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
     m_pGraphicDev->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
 
-    m_pTextureCom->Set_Texture(CMapToolMgr::GetInstance()->Get_NowStation());
+    m_pTextureCom->Set_Texture();
 
     if (FAILED(Set_Metarial()))
         return;
@@ -85,7 +85,7 @@ HRESULT CShowEnvObject::Add_Component()
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Buffer", pComponent });
 
-    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_EnvObjectTexture"));
+    pComponent = m_pTextureCom = dynamic_cast<Engine::CTexture*>(CProtoMgr::GetInstance()->Clone_Prototype(L"Proto_ShowEnvObjectTexture"));
     if (nullptr == pComponent)
         return E_FAIL;
     m_mapComponent[ID_STATIC].insert({ L"Com_Texture", pComponent });

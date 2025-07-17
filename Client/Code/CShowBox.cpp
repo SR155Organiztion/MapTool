@@ -47,8 +47,8 @@ _int CShowBox::Update_GameObject(const _float& fTimeDelta)
 void CShowBox::LateUpdate_GameObject(const _float& fTimeDelta)
 {
     _vec3 vPos = CCollisionMgr::GetInstance()->Get_ColPos();
-    
-    Set_Greed(vPos);
+    _vec3 vNormal = CCollisionMgr::GetInstance()->Get_ColNormal();
+    Set_Greed(vPos, vNormal);
 
     Engine::CGameObject::LateUpdate_GameObject(fTimeDelta);
 
@@ -118,19 +118,20 @@ HRESULT CShowBox::Set_Metarial()
     return S_OK;
 }
 
-void CShowBox::Set_Greed(_vec3 _v)
+void CShowBox::Set_Greed(_vec3 _vPos, _vec3 _vNormal)
 {
     _vec3 vTmp;
 
-    float ftmp = 0.f;
+    float fOffsetY = 0.f;
     if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
-        ftmp = 0.25f;
+        fOffsetY = 0.25f;
     }
 
-    vTmp.x = (_v.x >= 0) ? floor(_v.x) + 0.5f : ceil(_v.x) - 0.5f;
-    vTmp.y = (_v.y >= 0) ? floor(_v.y) + (0.25f + ftmp) : ceil(_v.y) - (0.25f + ftmp);
-    vTmp.z = (_v.z >= 0) ? floor(_v.z) + 0.5f : ceil(_v.z) - 0.5f;
-    
+    // 먼저 위치를 격자 단위로 스냅
+    vTmp.x = floorf(_vPos.x + _vNormal.x * 0.5f) + 0.5f;
+    vTmp.y = floorf(_vPos.y + _vNormal.y * 0.5f) + 0.5f;
+    vTmp.z = floorf(_vPos.z + _vNormal.z * 0.5f) + 0.5f;
+
     m_pTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
 }
 

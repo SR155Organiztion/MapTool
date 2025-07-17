@@ -1,4 +1,4 @@
-#include "../Header/json.hpp"
+﻿#include "../Header/json.hpp"
 #include "CMapToolMgr.h"
 #include "CManagement.h"
 #include <fstream>
@@ -19,7 +19,9 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_MAPSIZE, iX, iY)
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_PLAYER, P1, P2)
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, MapSize, Player, Time, Recipe, GameObject, Environment);
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_EVENT, bEvent, fEventTime)
+
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, MapSize, Player, Time, Event, Recipe, GameObject, Environment);
 
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
@@ -31,7 +33,8 @@ CMapToolMgr::CMapToolMgr()
     m_tEnvObjVec.clear();
     m_sRecipeVec.clear();
     m_mapJson.clear();
-
+    m_tEvent.bEvent = false;
+    m_tEvent.fEventTime = 0.f;
     {
         m_mapRecipes["salad_lettuce"] = false;
         m_mapRecipes["salad_lettuce_tomato"] = false;
@@ -111,7 +114,7 @@ void CMapToolMgr::Plant_Environment(_vec3 _vPos)
 
 void CMapToolMgr::Plant_Environment(string _sType, _vec3 _vPos, float _fAngle, _vec3 vScale)
 {
-    S_ENVOBJECT tEnvObj = { _sType , _vPos, _fAngle };
+    S_ENVOBJECT tEnvObj = { _sType , _vPos, _fAngle, vScale };
     m_tEnvObjVec.push_back(tEnvObj);
 }
 
@@ -150,7 +153,7 @@ HRESULT CMapToolMgr::Save_Json()
     //데이터 종합
     S_GAMEOBJECT GameObject = { m_tBlockVec };
     S_ENVIRONMENT Environmnet = { m_tTileVec , m_tEnvObjVec };
-    S_STAGE stage = { m_tMapSize, m_tPlayer ,m_fTimer, m_sRecipeVec, GameObject, Environmnet };
+    S_STAGE stage = { m_tMapSize, m_tPlayer , m_fTimer, m_tEvent, m_sRecipeVec, GameObject, Environmnet };
     //저장하기 전 json에 있는 모든 맵의 키값을 스테이지 이름 벡터와 비교찾는다
     bool bFound = false;
     for (auto it = m_mapJson.begin(); it != m_mapJson.end(); ++it) {
@@ -355,7 +358,7 @@ _vec3 CMapToolMgr::Get_DirLook()
     switch (m_iDir)
     {
     case Engine::PX:
-        return _vec3(0.f, 0.f, 0.f);
+        return _vec3(0.f, D3DXToRadian(0.f), 0.f);
     case Engine::NX:
         return _vec3(0.f, D3DXToRadian(90.f), 0.f);
     case Engine::PZ:
@@ -427,15 +430,23 @@ _uint CMapToolMgr::Get_NowRcTile()
 
 void CMapToolMgr::NextEnvObject()
 {
+    ++m_iEnvObject;
+    if (m_iEnvObject >= static_cast<_uint>(ENVIRONMENTID::E_END)) {
+        m_iEnvObject = 0;
+    }
 }
 
 void CMapToolMgr::PrevEnvObject()
 {
+    --m_iEnvObject;
+    if (m_iEnvObject < 0) {
+        m_iEnvObject = static_cast<_uint>(ENVIRONMENTID::E_END) - 1;
+    }
 }
 
 _uint CMapToolMgr::Get_NowEnvObject()
 {
-    return _uint();
+    return m_iEnvObject;
 }
 
 void CMapToolMgr::ChangePlayer()
@@ -649,8 +660,6 @@ string CMapToolMgr::Food_To_String()
 {
     switch (CImguiMgr::GetInstance()->Get_CurFood())
     {
-    case Engine::C_SEAWEED:
-        return "Seaweed";
     case Engine::C_LETTUCE:
         return "Lettuce";
     case Engine::C_TOMATO:
@@ -661,12 +670,14 @@ string CMapToolMgr::Food_To_String()
         return "Fish";
     case Engine::C_SHRIMP:
         return "Shrimp";
+    case Engine::C_SEAWEED:
+        return "Seaweed";
     case Engine::C_RICE:
         return "Rice";
     case Engine::C_PASTA:
         return "Pasta";
     case Engine::C_TOMATOSOUP:
-        return "TomatoSoup";
+        return "Tomatosoup";
     case Engine::C_END:
     default:
         break;
@@ -684,7 +695,7 @@ _uint CMapToolMgr::String_To_Food(string& _s)
         {"Shrimp", Engine::CREATEID::C_SHRIMP},
         {"Rice", Engine::CREATEID::C_RICE},
         {"Pasta", Engine::CREATEID::C_PASTA},
-        {"TomatoSoup", Engine::CREATEID::C_TOMATOSOUP}
+        {"Tomatosoup", Engine::CREATEID::C_TOMATOSOUP}
     };
 
     auto it = foodMap.find(_s);
@@ -697,10 +708,29 @@ _uint CMapToolMgr::String_To_Food(string& _s)
 
 string CMapToolMgr::EnvObj_To_String()
 {
+    //case Engine::ENVIRONMENTID:
     switch (m_iEnvObject)
     {
-    case Engine::E_DUMMY:
-        return "Dummy";
+    case Engine::ENVIRONMENTID::E_FLAG:
+        return ("Flag" + Stage_To_String());
+    case Engine::ENVIRONMENTID::E_TREE_1:
+        return "Tree_1";
+    case Engine::ENVIRONMENTID::E_TREE_2:
+        return "Tree_2";
+    case Engine::ENVIRONMENTID::E_TREE_3:
+        return "Tree_3";
+    case Engine::ENVIRONMENTID::E_TREE_4:
+        return "Tree_4";
+    case Engine::ENVIRONMENTID::E_PLANT_1:
+        return "Plant_1";
+    case Engine::ENVIRONMENTID::E_PLANT_2:
+        return "Plant_2";
+    case Engine::ENVIRONMENTID::E_FLOWER_1:
+        return "Flower_1";
+    case Engine::ENVIRONMENTID::E_FLOWER_2:
+        return "Flower_2";
+    case Engine::ENVIRONMENTID::E_CASTLE:
+        return "Castle";
     case Engine::E_END:
     default:
         break;
@@ -709,9 +739,61 @@ string CMapToolMgr::EnvObj_To_String()
 }
 _uint CMapToolMgr::String_To_EnvObj(string& _s)
 {
-    return _uint();
+    if (_s.find("Flag") == 0) {
+        return Engine::ENVIRONMENTID::E_FLAG;
+    }
+
+    if (_s == "Tree_1")
+        return Engine::ENVIRONMENTID::E_TREE_1;
+    else if (_s == "Tree_2")
+        return Engine::ENVIRONMENTID::E_TREE_2;
+    else if (_s == "Tree_3")
+        return Engine::ENVIRONMENTID::E_TREE_3;
+    else if (_s == "Tree_4")
+        return Engine::ENVIRONMENTID::E_TREE_4;
+    else if (_s == "Plant_1")
+        return Engine::ENVIRONMENTID::E_PLANT_1;
+    else if (_s == "Plant_2")
+        return Engine::ENVIRONMENTID::E_PLANT_2;
+    else if (_s == "Flower_1")
+        return Engine::ENVIRONMENTID::E_FLOWER_1;
+    else if (_s == "Flower_2")
+        return Engine::ENVIRONMENTID::E_FLOWER_2;
+    else if (_s == "Castle")
+        return Engine::ENVIRONMENTID::E_CASTLE;
+    else
+        return Engine::E_END; // 혹은 예외 처리
 }
 
+string CMapToolMgr::Stage_To_String()
+{
+    switch (CImguiMgr::GetInstance()->Get_Stage())
+    {
+    case Engine::STAGE_0:
+        return "_S0";
+    case Engine::STAGE_1:
+        return "_S1";
+    case Engine::STAGE_2:
+        return "_S2";
+    case Engine::STAGE_3:
+        return "_S3";
+    case Engine::STAGE_4:
+        return "_S4";
+    case Engine::STAGE_5:
+        return "_S5";
+    case Engine::STAGE_6:
+        return "_S6";
+    case Engine::STAGE_END:
+    default:
+        return "_??";
+    }
+
+    return "_??";
+}
+_uint CMapToolMgr::String_To_Stage()
+{
+    return _uint();
+}
 
 void CMapToolMgr::Free()
 {

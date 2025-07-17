@@ -27,7 +27,8 @@ public:
 	_int Get_CurItem() { return m_iCurrent_Item; }
 	_int Get_CurFood() { return m_iCurrent_Food; }
 	_vec3 Get_NowScale() { return m_vScale; }
-
+	_int Get_Stage() { return m_iStage; }
+	float Get_OffsetY() { return m_fOffestY; }
 protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
 	std::function<void()>					m_LoadCallback;
@@ -42,6 +43,11 @@ protected:
 	float fTimer;
 	int iX, iY;
 	_vec3 m_vScale;
+	_int m_iStage;
+	float m_fOffestY;
+	bool m_bEvent;
+	float m_fEventTime;
+
 private:
 	virtual void		Free();
 

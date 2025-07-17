@@ -25,7 +25,7 @@ private:
 	HRESULT		Add_Component();
 	HRESULT		Set_Metarial();
 
-	void		Set_Greed(_vec3 _v);
+	void		Set_Greed(_vec3 _vPos, _vec3 _vNormal);
 
 private:
 	Engine::CCubeTex* m_pBufferCom;
