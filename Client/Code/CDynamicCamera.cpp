@@ -1002,8 +1002,9 @@ HRESULT CDynamicCamera::Create_EnvObject()
 	CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 	_vec3 vObjectPos;
 	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
+	vObjectPos.y += CImguiMgr::GetInstance()->Get_OffsetY();
 	pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
-	pObjectTransformCom->Set_Pos(vObjectPos.x, (vObjectPos.y + CImguiMgr::GetInstance()->Get_OffsetY()), vObjectPos.z);
+	pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
 	dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
 	dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
 	
@@ -1019,8 +1020,9 @@ HRESULT CDynamicCamera::Create_EnvObject()
 				//현재 설치되어있는 환경오브젝트의 블럭을 모두순회하여
 				for (auto obj = pLayer->Get_ObjectMap()->begin();
 						  obj != pLayer->Get_ObjectMap()->end();) {
-					//데이터에 있었던 같은 포지션의 깃발의 정보를 찾아
-					if (dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS] == EnvVec->vPos) {
+					//데이터에 있었던 x축과 z이 같은 깃발의 정보를 찾아
+					if (dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS].x == EnvVec->vPos.x &&
+						dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS].z == EnvVec->vPos.z) {
 						//그 깃발의 벡터의 포지션을 변경
 						EnvVec->vPos = vObjectPos;
 						//그 오브젝트의 포지션도 변경

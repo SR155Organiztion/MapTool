@@ -269,7 +269,6 @@ void CMapToolMgr::Reset()
     m_tBlockVec.clear();
     m_tTileVec.clear();
     m_tEnvObjVec.clear();
-    m_tEnvObjVec.clear();
     {
         m_mapRecipes["salad_lettuce"] = false;
         m_mapRecipes["salad_lettuce_tomato"] = false;
