@@ -19,7 +19,9 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_MAPSIZE, iX, iY)
 
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_PLAYER, P1, P2)
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, MapSize, Player, Time, Recipe, GameObject, Environment);
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_EVENT, bEvent, fEventTime)
+
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(S_STAGE, MapSize, Player, Time, Event, Recipe, GameObject, Environment);
 
 IMPLEMENT_SINGLETON(CMapToolMgr)
 
@@ -31,7 +33,8 @@ CMapToolMgr::CMapToolMgr()
     m_tEnvObjVec.clear();
     m_sRecipeVec.clear();
     m_mapJson.clear();
-
+    m_tEvent.bEvent = false;
+    m_tEvent.fEventTime = 0.f;
     {
         m_mapRecipes["salad_lettuce"] = false;
         m_mapRecipes["salad_lettuce_tomato"] = false;
@@ -150,7 +153,7 @@ HRESULT CMapToolMgr::Save_Json()
     //데이터 종합
     S_GAMEOBJECT GameObject = { m_tBlockVec };
     S_ENVIRONMENT Environmnet = { m_tTileVec , m_tEnvObjVec };
-    S_STAGE stage = { m_tMapSize, m_tPlayer ,m_fTimer, m_sRecipeVec, GameObject, Environmnet };
+    S_STAGE stage = { m_tMapSize, m_tPlayer , m_fTimer, m_tEvent, m_sRecipeVec, GameObject, Environmnet };
     //저장하기 전 json에 있는 모든 맵의 키값을 스테이지 이름 벡터와 비교찾는다
     bool bFound = false;
     for (auto it = m_mapJson.begin(); it != m_mapJson.end(); ++it) {

@@ -1002,8 +1002,8 @@ HRESULT CDynamicCamera::Create_EnvObject()
 	CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 	_vec3 vObjectPos;
 	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
-	pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
 	pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
+	pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y + (CImguiMgr::GetInstance()->Get_NowScale().y), vObjectPos.z);
 	dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
 	dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
 	

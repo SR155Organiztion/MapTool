@@ -83,6 +83,7 @@ void CImguiMgr::Update_Imgui()
             if (m_LoadCallback) {
                 CMapToolMgr::GetInstance()->Set_Timer(fTimer);
                 CMapToolMgr::GetInstance()->Set_MapSize(iX, iY);
+                CMapToolMgr::GetInstance()->Set_Event(m_bEvent, m_fEventTime);
                 for (auto it : m_mapRecipes) {
                     if (it.second == true)
                         CMapToolMgr::GetInstance()->Add_Recipe(it.first);
@@ -110,6 +111,9 @@ void CImguiMgr::Update_Imgui()
                 //타이머
                 fTimer = CMapToolMgr::GetInstance()->Get_Data(szName).Time;
 
+                //이벤트
+                m_bEvent = CMapToolMgr::GetInstance()->Get_Data(szName).Event.bEvent;
+                m_fEventTime = CMapToolMgr::GetInstance()->Get_Data(szName).Event.fEventTime;
                 //레시피
                 m_mapRecipes = CMapToolMgr::GetInstance()->Get_RecipeMap();
                 for (auto& it : m_mapRecipes) {
@@ -245,12 +249,27 @@ void CImguiMgr::Update_Imgui()
             // 스케일
             ImGui::Text("Scale");
             ImGui::SameLine(100); // 
-            ImGui::DragFloat3("##Position", m_vScale, 0.1f, 1.0f, 5.0f);
+            ImGui::DragFloat3("##Position", m_vScale, 0.1f, 0.0f, 5.0f);
 
             const char* stage[] = { "Stage0", "Stage1", "Stage2", "Stage3", "Stage4", "Stage5", "Stage6" };
             ImGui::Combo("Stages", &m_iStage, stage, IM_ARRAYSIZE(stage));
         }
     }
+
+    // 이벤트타이머 ////////////////////////////////////////////////////////////////
+    {
+        if (ImGui::CollapsingHeader("Event")) {
+            // 스케일
+            ImGui::Checkbox(m_bEvent ? "Enable" : "Disable", & m_bEvent);
+            ImGui::SameLine();
+            if (ImGui::Button("bEvent")) {
+                m_bEvent ? m_bEvent = false : m_bEvent = true;
+            }
+
+            ImGui::InputFloat("EventTime", &m_fEventTime, sizeof(m_fEventTime));
+        }
+    }
+
     // 디버그용 ////////////////////////////////////////////////////////////////
     {
 

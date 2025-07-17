@@ -81,6 +81,15 @@ struct S_PLAYER {
 };
 
 /**
+* @struct S_EVENT
+* @brief 카메라를 저장할 벡터 구조체
+*/
+struct S_EVENT {
+	bool bEvent;
+	float fEventTime;
+};
+
+/**
 * @struct S_STAGE
 * @brief 스테이지의 모든 정보를 가진 구조체
 */
@@ -88,6 +97,7 @@ struct S_STAGE {
 	S_MAPSIZE MapSize;
 	S_PLAYER Player;
 	float Time;
+	S_EVENT Event;
 	std::vector<string> Recipe;
 	S_GAMEOBJECT GameObject;
 	S_ENVIRONMENT Environment;
@@ -131,6 +141,7 @@ public:
 	string  Get_Name();
 	void    Set_Name(string _s);
 	void	Set_Timer(float _fTimer) { m_fTimer = _fTimer; }
+	void    Set_Event(bool _bEvent, float _fTime) { m_tEvent.bEvent = _bEvent; m_tEvent.fEventTime = _fTime; }
 	void	Add_Recipe(string _s) { m_sRecipeVec.push_back(_s); }
 	vector<string>* Get_Recipe() { return &m_sRecipeVec; }
 	const map<string, _bool>& Get_RecipeMap() { return m_mapRecipes; }
@@ -203,6 +214,7 @@ private:
 	vector<string>			m_sRecipeVec;		///현재 스테이지가 실질적으로 가지고있는 레시피를 저장할공간
 	S_MAPSIZE				m_tMapSize;			///현재 맵 크기
 	S_PLAYER				m_tPlayer;			///현재 플레이어들의 시작 위치
+	S_EVENT					m_tEvent;			///현재 스테이지에서 발생할 이벤트 여부와시간
 	_float					m_fTimer;			///현재 스테이지의 게임시간
 
 	map<string, S_STAGE> m_mapJson;				///전체 스테이지의 데이터값

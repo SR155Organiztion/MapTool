@@ -44,6 +44,10 @@ protected:
 	int iX, iY;
 	_vec3 m_vScale;
 	_int m_iStage;
+
+	bool m_bEvent;
+	float m_fEventTime;
+
 private:
 	virtual void		Free();
 

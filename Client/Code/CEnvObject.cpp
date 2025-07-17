@@ -68,14 +68,14 @@ void CEnvObject::Render_GameObject()
 
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
     //m_pGraphicDev->SetRenderState(D3DRS_FILLMODE, D3DFILL_WIREFRAME);
-
+    m_pGraphicDev->SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
     m_pTextureCom->Set_Texture(m_iTextureNum);
 
     if (FAILED(Set_Metarial()))
         return;
 
     m_pBufferCom->Render_Buffer();
-
+    m_pGraphicDev->SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
     // m_pGraphicDev->SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
     m_pGraphicDev->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
