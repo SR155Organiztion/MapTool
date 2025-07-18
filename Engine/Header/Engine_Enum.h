@@ -32,12 +32,14 @@ namespace Engine
 	enum ITEMID { I_NONE, I_PLATE, I_EXTINGUISHER, I_FRYPAN, I_POT, I_END };
 	//스테이지
 	enum STAGEID { STAGE_0, STAGE_1, STAGE_2, STAGE_3, STAGE_4, STAGE_5, STAGE_6, STAGE_END }; 
-	//환경				 
+	//환경			     //RcTex
 	enum ENVIRONMENTID { E_FLAG,
 						 E_TREE_1, E_TREE_2, E_TREE_3, E_TREE_4,
 						 E_PLANT_1, E_PLANT_2, 
 					     E_FLOWER_1, E_FLOWER_2,
 						 E_CASTLE,
+						 //CubeTex
+						 E_STONEWALL, E_WOODWALL,
 						 E_END };
 
 }
