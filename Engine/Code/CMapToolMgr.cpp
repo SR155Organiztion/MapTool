@@ -731,6 +731,10 @@ string CMapToolMgr::EnvObj_To_String()
         return "Flower_2";
     case Engine::ENVIRONMENTID::E_CASTLE:
         return "Castle";
+    case Engine::ENVIRONMENTID::E_STONEWALL:
+        return "Stonewall";
+    case Engine::ENVIRONMENTID::E_WOODWALL:
+        return "Woodwall";
     case Engine::E_END:
     default:
         break;
@@ -761,6 +765,10 @@ _uint CMapToolMgr::String_To_EnvObj(string& _s)
         return Engine::ENVIRONMENTID::E_FLOWER_2;
     else if (_s == "Castle")
         return Engine::ENVIRONMENTID::E_CASTLE;
+    else if (_s == "Stonewall")
+        return Engine::ENVIRONMENTID::E_STONEWALL;
+    else if (_s == "Woodwall")
+        return Engine::ENVIRONMENTID::E_WOODWALL;
     else
         return Engine::E_END; // 혹은 예외 처리
 }
