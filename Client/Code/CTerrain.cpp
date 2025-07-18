@@ -22,7 +22,7 @@ HRESULT CTerrain::Ready_GameObject()
     if (FAILED(Add_Component()))
         return E_FAIL;
 
-    //m_pTransformCom->Set_Sca
+    m_pTransformCom->Set_Pos(-2.f, 0.f, -2.f);
 
     return S_OK;
 }

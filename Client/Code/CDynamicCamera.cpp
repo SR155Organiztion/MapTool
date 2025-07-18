@@ -16,6 +16,7 @@
 #include "CPlayerPoint.h"
 #include "CHexTile.h"
 #include "CEnvObject.h"
+#include "CEnvCube.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -378,18 +379,38 @@ void CDynamicCamera::Load_Objects()
 		if (nullptr == pLayer)
 			return;
 
-		//환경오브젝트 생성
-		Engine::CGameObject* pGameObject = CEnvObject::Create(m_pGraphicDev);
-		if (nullptr == pGameObject)
-			return;
+		Engine::CGameObject* pGameObject;
 
-		//위치,크기 설정
-		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
-		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
-		pObjectTransformCom->m_vScale = it.vScale;
-		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
-		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.fAngle);
-		dynamic_cast<CEnvObject*>(pGameObject)->Set_Scale(it.vScale);
+		if (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) < Engine::ENVIRONMENTID::E_STONEWALL) {
+			//환경오브젝트 생성
+			pGameObject = CEnvObject::Create(m_pGraphicDev);
+
+			if (nullptr == pGameObject)
+				return;
+
+			//위치,크기 설정
+			CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+			pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
+			pObjectTransformCom->m_vScale = it.vScale;
+			dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
+			dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.fAngle);
+			dynamic_cast<CEnvObject*>(pGameObject)->Set_Scale(it.vScale);
+		}
+		else {
+			pGameObject = CEnvCube::Create(m_pGraphicDev);
+
+			if (nullptr == pGameObject)
+				return;
+
+			//위치,크기 설정
+			CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+			pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
+			pObjectTransformCom->m_vScale = it.vScale;
+			int _iTextureNum = (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) - static_cast<_int>(Engine::ENVIRONMENTID::E_STONEWALL));
+			dynamic_cast<CEnvCube*>(pGameObject)->Set_TextureNum(_iTextureNum);
+			dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle(it.fAngle);
+			dynamic_cast<CEnvCube*>(pGameObject)->Set_Scale(it.vScale);
+		}
 		_tchar szTag[64] = {};
 
 		while (true) {
@@ -881,7 +902,7 @@ HRESULT CDynamicCamera::Create_HexTile()
 {
 	static int s_HexTileIndex = 0;
 	int iRow, iCol;
-	iRow = iCol = 20;
+	iRow = iCol = 6;
 
 	CScene* pScene = CManagement::GetInstance()->Get_Scene();
 	CLayer* pLayer = pScene->Get_Layer(L"Tile_Layer");
@@ -994,47 +1015,69 @@ HRESULT CDynamicCamera::Create_EnvObject()
 	if (nullptr == pLayer)
 		return E_FAIL;
 
-	Engine::CGameObject* pGameObject = CEnvObject::Create(m_pGraphicDev);
-
-	if (nullptr == pGameObject)
-		return E_FAIL;
-
-	CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+	Engine::CGameObject* pGameObject;
 	_vec3 vObjectPos;
-	dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
-	vObjectPos.y += CImguiMgr::GetInstance()->Get_OffsetY();
-	pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
-	pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
-	dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
-	dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
-	
-	//만약 깃발일때 스테이지가 존재한다면 그 정보를 변경한다
-	if (CMapToolMgr::GetInstance()->Get_NowEnvObject() == E_FLAG) {
-		//현재 선택하려는 깃발정보 가져와 비교
-		string szObject = CMapToolMgr::GetInstance()->EnvObj_To_String();
-		//현재 스테이지의 전체 오브젝트 맵을 순환
-		for (auto EnvVec = CMapToolMgr::GetInstance()->Get_EnvObjectVec()->begin();
-				  EnvVec != CMapToolMgr::GetInstance()->Get_EnvObjectVec()->end();) {
-			//지금 깃발정보와 타입 이름이 같을 경우
-			if (EnvVec->Env_Type == szObject) {
-				//현재 설치되어있는 환경오브젝트의 블럭을 모두순회하여
-				for (auto obj = pLayer->Get_ObjectMap()->begin();
-						  obj != pLayer->Get_ObjectMap()->end();) {
-					//데이터에 있었던 x축과 z이 같은 깃발의 정보를 찾아
-					if (dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS].x == EnvVec->vPos.x &&
-						dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS].z == EnvVec->vPos.z) {
-						//그 깃발의 벡터의 포지션을 변경
-						EnvVec->vPos = vObjectPos;
-						//그 오브젝트의 포지션도 변경
-						dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS] = vObjectPos;
-						return S_OK;
+	//Cube텍스쳐가 아닐때
+	if (CMapToolMgr::GetInstance()->Get_NowEnvObject() < Engine::ENVIRONMENTID::E_STONEWALL) {
+		pGameObject = CEnvObject::Create(m_pGraphicDev);
+
+		if (nullptr == pGameObject)
+			return E_FAIL;
+
+		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+		dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
+		vObjectPos.y += CImguiMgr::GetInstance()->Get_OffsetY();
+		pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
+		pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
+		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
+		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
+
+		//만약 깃발일때 스테이지가 존재한다면 그 정보를 변경한다
+		if (CMapToolMgr::GetInstance()->Get_NowEnvObject() == E_FLAG) {
+			//현재 선택하려는 깃발정보 가져와 비교
+			string szObject = CMapToolMgr::GetInstance()->EnvObj_To_String();
+			//현재 스테이지의 전체 오브젝트 맵을 순환
+			for (auto EnvVec = CMapToolMgr::GetInstance()->Get_EnvObjectVec()->begin();
+				EnvVec != CMapToolMgr::GetInstance()->Get_EnvObjectVec()->end();) {
+				//지금 깃발정보와 타입 이름이 같을 경우
+				if (EnvVec->Env_Type == szObject) {
+					//현재 설치되어있는 환경오브젝트의 블럭을 모두순회하여
+					for (auto obj = pLayer->Get_ObjectMap()->begin();
+						obj != pLayer->Get_ObjectMap()->end();) {
+						//데이터에 있었던 x축과 z이 같은 깃발의 정보를 찾아
+						if (dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS].x == EnvVec->vPos.x &&
+							dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS].z == EnvVec->vPos.z) {
+							//그 깃발의 벡터의 포지션을 변경
+							EnvVec->vPos = vObjectPos;
+							//그 오브젝트의 포지션도 변경
+							dynamic_cast<CTransform*>(obj->second->Get_Component(ID_DYNAMIC, L"Com_Transform"))->m_vInfo[INFO_POS] = vObjectPos;
+							return S_OK;
+						}
+						obj++;
 					}
-					obj++;
 				}
+				EnvVec++;
 			}
-			EnvVec++;
 		}
 	}
+	//CubeTex일때
+	else {
+		pGameObject = CEnvCube::Create(m_pGraphicDev);
+
+		if (nullptr == pGameObject)
+			return E_FAIL;
+
+		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+		dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
+		vObjectPos.y += CImguiMgr::GetInstance()->Get_OffsetY();
+		pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
+		pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
+
+		_int _iTexture = (CMapToolMgr::GetInstance()->Get_NowEnvObject() - static_cast<_int>(Engine::ENVIRONMENTID::E_STONEWALL));
+		dynamic_cast<CEnvCube*>(pGameObject)->Set_TextureNum(_iTexture);
+		dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
+	}
+
 
 	_tchar szTag[64] = {};
 

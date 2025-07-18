@@ -64,6 +64,7 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     iX = iY = 0;
     m_vScale = { 1.0f, 1.0f, 1.0f };
     m_fOffestY = 0;
+    m_bInvWallEnable = true;
     return S_OK;
 }
 
@@ -223,12 +224,12 @@ void CImguiMgr::Update_Imgui()
             ImGui::Combo("Items", &m_iCurrent_Item, tools, IM_ARRAYSIZE(tools));
         }
     }
-    // 지형 설정 ////////////////////////////////////////////////////////////////
+    // 표시 설정 ////////////////////////////////////////////////////////////////
     {
-        if (ImGui::CollapsingHeader("Terrain")) {
+        if (ImGui::CollapsingHeader("Terrain, Wall")) {
             ImGui::Checkbox(m_bTerrainEnable ? "Enable" : "Disable", &m_bTerrainEnable);
             ImGui::SameLine();
-            if (ImGui::Button("Change")) {
+            if (ImGui::Button("TChange")) {
                 m_bTerrainEnable ? m_bTerrainEnable = false : m_bTerrainEnable = true;
                 m_TerrianEnableCallback();
             }
@@ -238,6 +239,12 @@ void CImguiMgr::Update_Imgui()
             ImGui::SameLine();
             ImGui::InputInt("Y", &iY, sizeof(int));
             ImGui::PopItemWidth();
+
+            ImGui::Checkbox(m_bInvWallEnable ? "Enable" : "Disable", & m_bInvWallEnable);
+            ImGui::SameLine();
+            if (ImGui::Button("IChange")) {
+                m_bInvWallEnable ? m_bInvWallEnable = false : m_bInvWallEnable = true;
+            }
         }
     }
     // 환경오브젝트 설정 ////////////////////////////////////////////////////////////////
