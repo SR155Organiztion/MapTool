@@ -379,18 +379,38 @@ void CDynamicCamera::Load_Objects()
 		if (nullptr == pLayer)
 			return;
 
-		//환경오브젝트 생성
-		Engine::CGameObject* pGameObject = CEnvObject::Create(m_pGraphicDev);
-		if (nullptr == pGameObject)
-			return;
+		Engine::CGameObject* pGameObject;
 
-		//위치,크기 설정
-		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
-		pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
-		pObjectTransformCom->m_vScale = it.vScale;
-		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
-		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.fAngle);
-		dynamic_cast<CEnvObject*>(pGameObject)->Set_Scale(it.vScale);
+		if (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) < Engine::ENVIRONMENTID::E_STONEWALL) {
+			//환경오브젝트 생성
+			pGameObject = CEnvObject::Create(m_pGraphicDev);
+
+			if (nullptr == pGameObject)
+				return;
+
+			//위치,크기 설정
+			CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+			pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
+			pObjectTransformCom->m_vScale = it.vScale;
+			dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
+			dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.fAngle);
+			dynamic_cast<CEnvObject*>(pGameObject)->Set_Scale(it.vScale);
+		}
+		else {
+			pGameObject = CEnvCube::Create(m_pGraphicDev);
+
+			if (nullptr == pGameObject)
+				return;
+
+			//위치,크기 설정
+			CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+			pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
+			pObjectTransformCom->m_vScale = it.vScale;
+			int _iTextureNum = (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) - static_cast<_int>(Engine::ENVIRONMENTID::E_STONEWALL));
+			dynamic_cast<CEnvCube*>(pGameObject)->Set_TextureNum(_iTextureNum);
+			dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle(it.fAngle);
+			dynamic_cast<CEnvCube*>(pGameObject)->Set_Scale(it.vScale);
+		}
 		_tchar szTag[64] = {};
 
 		while (true) {
