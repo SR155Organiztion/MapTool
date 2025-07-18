@@ -29,6 +29,8 @@ public:
 	_vec3 Get_NowScale() { return m_vScale; }
 	_int Get_Stage() { return m_iStage; }
 	float Get_OffsetY() { return m_fOffestY; }
+	bool Get_InvWallEnable() { return m_bInvWallEnable; }
+
 protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
 	std::function<void()>					m_LoadCallback;
@@ -47,7 +49,7 @@ protected:
 	float m_fOffestY;
 	bool m_bEvent;
 	float m_fEventTime;
-
+	_bool m_bInvWallEnable;
 private:
 	virtual void		Free();
 

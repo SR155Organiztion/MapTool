@@ -359,9 +359,9 @@ _vec3 CMapToolMgr::Get_DirLook()
     {
     case Engine::PX:
         return _vec3(0.f, D3DXToRadian(0.f), 0.f);
-    case Engine::NX:
-        return _vec3(0.f, D3DXToRadian(90.f), 0.f);
     case Engine::PZ:
+        return _vec3(0.f, D3DXToRadian(90.f), 0.f);
+    case Engine::NX:
         return _vec3(0.f, D3DXToRadian(180.f), 0.f);
     case Engine::NZ:
         return _vec3(0.f, D3DXToRadian(270.f), 0.f);
