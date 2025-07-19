@@ -596,6 +596,8 @@ string CMapToolMgr::Tile_To_String()
         return "Tile_StoneBrown";
     case Engine::RT_4:
         return "Tile_StoneBeige";
+    case Engine::RT_5:
+        return "Tile_Wood";
     case Engine::RT_END:
         break;
     default:
@@ -615,6 +617,8 @@ _uint CMapToolMgr::String_To_Tile(string& _s)
         return Engine::RCTILEID::RT_3;
     else if (_s == "Tile_StoneBeige")
         return Engine::RCTILEID::RT_4;
+    else if (_s == "Tile_Wood")
+        return Engine::RCTILEID::RT_5;
     else if (_s == "???")
         return Engine::RCTILEID::RT_END;
 
