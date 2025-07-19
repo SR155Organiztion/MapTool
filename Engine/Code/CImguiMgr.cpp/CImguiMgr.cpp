@@ -263,6 +263,7 @@ void CImguiMgr::Update_Imgui()
             ImGui::SameLine(100); // 
             ImGui::DragFloat3("##Position", m_vScale, 0.01f, 0.0f, 5.0f);
             ImGui::DragFloat("Offset_Y", &m_fOffestY, 0.01f, 0.f, 10.f);
+            ImGui::InputFloat("Angle", &m_fAngle, sizeof(m_fAngle));
             const char* stage[] = { "Stage0", "Stage1", "Stage2", "Stage3", "Stage4", "Stage5", "Stage6" };
             ImGui::Combo("Stages", &m_iStage, stage, IM_ARRAYSIZE(stage));
         }

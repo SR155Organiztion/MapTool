@@ -192,7 +192,7 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_Q) & 0x80)
 	{
 		if (CMapToolMgr::GetInstance()->Get_NowObject() == Engine::CREATEOBJECT_ID::O_ENV) {
-			CMapToolMgr::GetInstance()->TurnLeft(fTimeDelta);
+			CImguiMgr::GetInstance()->TurnLeft(fTimeDelta);
 		}
 
 		if (!m_bPressedQ) {
@@ -206,7 +206,7 @@ void CDynamicCamera::Key_Input(const _float& fTimeDelta)
 	if (CDInputMgr::GetInstance()->Get_DIKeyState(DIK_E) & 0x80)
 	{
 		if (CMapToolMgr::GetInstance()->Get_NowObject() == Engine::CREATEOBJECT_ID::O_ENV) {
-			CMapToolMgr::GetInstance()->TurnRight(fTimeDelta);
+			CImguiMgr::GetInstance()->TurnRight(fTimeDelta);
 			
 		}
 		else {
@@ -411,6 +411,7 @@ void CDynamicCamera::Load_Objects()
 			dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle(it.fAngle);
 			dynamic_cast<CEnvCube*>(pGameObject)->Set_Scale(it.vScale);
 		}
+
 		_tchar szTag[64] = {};
 
 		while (true) {
@@ -1030,7 +1031,7 @@ HRESULT CDynamicCamera::Create_EnvObject()
 		pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
 		pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
 		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
-		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
+		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CImguiMgr::GetInstance()->Get_Angle()));
 
 		//만약 깃발일때 스테이지가 존재한다면 그 정보를 변경한다
 		if (CMapToolMgr::GetInstance()->Get_NowEnvObject() == E_FLAG) {
@@ -1075,7 +1076,7 @@ HRESULT CDynamicCamera::Create_EnvObject()
 
 		_int _iTexture = (CMapToolMgr::GetInstance()->Get_NowEnvObject() - static_cast<_int>(Engine::ENVIRONMENTID::E_STONEWALL));
 		dynamic_cast<CEnvCube*>(pGameObject)->Set_TextureNum(_iTexture);
-		dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle((CMapToolMgr::GetInstance()->Get_NowAngle()));
+		dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle((CImguiMgr::GetInstance()->Get_Angle()));
 	}
 
 

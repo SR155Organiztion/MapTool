@@ -7,6 +7,7 @@
 #include "CMapToolMgr.h"
 #include "CBlock.h"
 #include "CDInputMgr.h"
+#include "CImguiMgr.h"
 
 CShowEnvObject::CShowEnvObject(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CGameObject(pGraphicDev)
@@ -34,7 +35,7 @@ HRESULT CShowEnvObject::Ready_GameObject()
 
 _int CShowEnvObject::Update_GameObject(const _float& fTimeDelta)
 {
-    m_pTransformCom->m_vAngle.y = CMapToolMgr::GetInstance()->Get_NowAngle();
+    m_pTransformCom->m_vAngle.y = CImguiMgr::GetInstance()->Get_Angle();
 
     _uint iExit = Engine::CGameObject::Update_GameObject(fTimeDelta);
 

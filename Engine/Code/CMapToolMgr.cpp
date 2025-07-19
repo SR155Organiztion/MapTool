@@ -108,7 +108,7 @@ void CMapToolMgr::Break_Tile(_vec3 _vPos)
 
 void CMapToolMgr::Plant_Environment(_vec3 _vPos)
 {
-    S_ENVOBJECT tEnvObj = { EnvObj_To_String() , _vPos, m_fAngle, CImguiMgr::GetInstance()->Get_NowScale()};
+    S_ENVOBJECT tEnvObj = { EnvObj_To_String() , _vPos, CImguiMgr::GetInstance()->Get_Angle(), CImguiMgr::GetInstance()->Get_NowScale()};
     m_tEnvObjVec.push_back(tEnvObj);
 }
 
@@ -370,20 +370,20 @@ _vec3 CMapToolMgr::Get_DirLook()
     }
 }
 
-void CMapToolMgr::TurnRight(_float _fTimeDelta)
-{
-    m_fAngle -= 1.f * _fTimeDelta;
-}
-
-void CMapToolMgr::TurnLeft(_float _fTimeDelta)
-{
-    m_fAngle += 1.f * _fTimeDelta;
-}
-
-_float CMapToolMgr::Get_NowAngle()
-{
-    return m_fAngle;
-}
+//void CMapToolMgr::TurnRight(_float _fTimeDelta)
+//{
+//    m_fAngle -= 1.f * _fTimeDelta;
+//}
+//
+//void CMapToolMgr::TurnLeft(_float _fTimeDelta)
+//{
+//    m_fAngle += 1.f * _fTimeDelta;
+//}
+//
+//_float CMapToolMgr::Get_NowAngle()
+//{
+//    return m_fAngle;
+//}
 
 void CMapToolMgr::NextStation()
 {
@@ -500,8 +500,8 @@ string CMapToolMgr::Dir_To_String()
 _vec3 CMapToolMgr::String_To_Dir(string& _s)
 {
     if (_s == "PX") return _vec3(0.f, 0.f, 0.f);
-    if (_s == "NX") return _vec3(0.f, D3DXToRadian(90.f), 0.f);
-    if (_s == "PZ") return _vec3(0.f, D3DXToRadian(180.f), 0.f);
+    if (_s == "NX") return _vec3(0.f, D3DXToRadian(180.f), 0.f);
+    if (_s == "PZ") return _vec3(0.f, D3DXToRadian(90.f), 0.f);
     if (_s == "NZ") return _vec3(0.f, D3DXToRadian(270.f), 0.f);
 
     // 잘못된 문자열일 경우

@@ -30,6 +30,10 @@ public:
 	_int Get_Stage() { return m_iStage; }
 	float Get_OffsetY() { return m_fOffestY; }
 	bool Get_InvWallEnable() { return m_bInvWallEnable; }
+	
+	void TurnRight(_float _fTimeDelta) { m_fAngle -= 45.f * _fTimeDelta; }
+	void TurnLeft(_float _fTimeDelta) { m_fAngle += 45.f * _fTimeDelta; }
+	float Get_Angle() { return D3DXToRadian(m_fAngle); }
 
 protected:
 	LPDIRECT3DDEVICE9						m_pGraphicDev;
@@ -50,6 +54,7 @@ protected:
 	bool m_bEvent;
 	float m_fEventTime;
 	_bool m_bInvWallEnable;
+	float m_fAngle;
 private:
 	virtual void		Free();
 
