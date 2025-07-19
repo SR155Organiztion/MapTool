@@ -715,29 +715,29 @@ string CMapToolMgr::EnvObj_To_String()
     //case Engine::ENVIRONMENTID:
     switch (m_iEnvObject)
     {
-    case Engine::ENVIRONMENTID::E_FLAG:
+    case Engine::ENVIRONMENTID::E_R_FLAG:
         return ("Flag" + Stage_To_String());
-    case Engine::ENVIRONMENTID::E_TREE_1:
+    case Engine::ENVIRONMENTID::E_R_TREE_1:
         return "Tree_1";
-    case Engine::ENVIRONMENTID::E_TREE_2:
+    case Engine::ENVIRONMENTID::E_R_TREE_2:
         return "Tree_2";
-    case Engine::ENVIRONMENTID::E_TREE_3:
+    case Engine::ENVIRONMENTID::E_R_TREE_3:
         return "Tree_3";
-    case Engine::ENVIRONMENTID::E_TREE_4:
+    case Engine::ENVIRONMENTID::E_R_TREE_4:
         return "Tree_4";
-    case Engine::ENVIRONMENTID::E_PLANT_1:
+    case Engine::ENVIRONMENTID::E_R_PLANT_1:
         return "Plant_1";
-    case Engine::ENVIRONMENTID::E_PLANT_2:
+    case Engine::ENVIRONMENTID::E_R_PLANT_2:
         return "Plant_2";
-    case Engine::ENVIRONMENTID::E_FLOWER_1:
+    case Engine::ENVIRONMENTID::E_R_FLOWER_1:
         return "Flower_1";
-    case Engine::ENVIRONMENTID::E_FLOWER_2:
+    case Engine::ENVIRONMENTID::E_R_FLOWER_2:
         return "Flower_2";
-    case Engine::ENVIRONMENTID::E_CASTLE:
+    case Engine::ENVIRONMENTID::E_R_CASTLE:
         return "Castle";
-    case Engine::ENVIRONMENTID::E_STONEWALL:
+    case Engine::ENVIRONMENTID::E_C_STONEWALL:
         return "Stonewall";
-    case Engine::ENVIRONMENTID::E_WOODWALL:
+    case Engine::ENVIRONMENTID::E_C_WOODWALL:
         return "Woodwall";
     case Engine::E_END:
     default:
@@ -748,31 +748,31 @@ string CMapToolMgr::EnvObj_To_String()
 _uint CMapToolMgr::String_To_EnvObj(string& _s)
 {
     if (_s.find("Flag") == 0) {
-        return Engine::ENVIRONMENTID::E_FLAG;
+        return Engine::ENVIRONMENTID::E_R_FLAG;
     }
 
     if (_s == "Tree_1")
-        return Engine::ENVIRONMENTID::E_TREE_1;
+        return Engine::ENVIRONMENTID::E_R_TREE_1;
     else if (_s == "Tree_2")
-        return Engine::ENVIRONMENTID::E_TREE_2;
+        return Engine::ENVIRONMENTID::E_R_TREE_2;
     else if (_s == "Tree_3")
-        return Engine::ENVIRONMENTID::E_TREE_3;
+        return Engine::ENVIRONMENTID::E_R_TREE_3;
     else if (_s == "Tree_4")
-        return Engine::ENVIRONMENTID::E_TREE_4;
+        return Engine::ENVIRONMENTID::E_R_TREE_4;
     else if (_s == "Plant_1")
-        return Engine::ENVIRONMENTID::E_PLANT_1;
+        return Engine::ENVIRONMENTID::E_R_PLANT_1;
     else if (_s == "Plant_2")
-        return Engine::ENVIRONMENTID::E_PLANT_2;
+        return Engine::ENVIRONMENTID::E_R_PLANT_2;
     else if (_s == "Flower_1")
-        return Engine::ENVIRONMENTID::E_FLOWER_1;
+        return Engine::ENVIRONMENTID::E_R_FLOWER_1;
     else if (_s == "Flower_2")
-        return Engine::ENVIRONMENTID::E_FLOWER_2;
+        return Engine::ENVIRONMENTID::E_R_FLOWER_2;
     else if (_s == "Castle")
-        return Engine::ENVIRONMENTID::E_CASTLE;
+        return Engine::ENVIRONMENTID::E_R_CASTLE;
     else if (_s == "Stonewall")
-        return Engine::ENVIRONMENTID::E_STONEWALL;
+        return Engine::ENVIRONMENTID::E_C_STONEWALL;
     else if (_s == "Woodwall")
-        return Engine::ENVIRONMENTID::E_WOODWALL;
+        return Engine::ENVIRONMENTID::E_C_WOODWALL;
     else
         return Engine::E_END; // 혹은 예외 처리
 }

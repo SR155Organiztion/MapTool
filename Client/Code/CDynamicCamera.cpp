@@ -381,7 +381,7 @@ void CDynamicCamera::Load_Objects()
 
 		Engine::CGameObject* pGameObject;
 
-		if (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) < Engine::ENVIRONMENTID::E_STONEWALL) {
+		if (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) < Engine::ENVIRONMENTID::E_C_STONEWALL) {
 			//환경오브젝트 생성
 			pGameObject = CEnvObject::Create(m_pGraphicDev);
 
@@ -406,7 +406,7 @@ void CDynamicCamera::Load_Objects()
 			CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 			pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
 			pObjectTransformCom->m_vScale = it.vScale;
-			int _iTextureNum = (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) - static_cast<_int>(Engine::ENVIRONMENTID::E_STONEWALL));
+			int _iTextureNum = (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) - static_cast<_int>(Engine::ENVIRONMENTID::E_C_STONEWALL));
 			dynamic_cast<CEnvCube*>(pGameObject)->Set_TextureNum(_iTextureNum);
 			dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle(it.fAngle);
 			dynamic_cast<CEnvCube*>(pGameObject)->Set_Scale(it.vScale);
@@ -1019,7 +1019,7 @@ HRESULT CDynamicCamera::Create_EnvObject()
 	Engine::CGameObject* pGameObject;
 	_vec3 vObjectPos;
 	//Cube텍스쳐가 아닐때
-	if (CMapToolMgr::GetInstance()->Get_NowEnvObject() < Engine::ENVIRONMENTID::E_STONEWALL) {
+	if (CMapToolMgr::GetInstance()->Get_NowEnvObject() < Engine::ENVIRONMENTID::E_C_STONEWALL) {
 		pGameObject = CEnvObject::Create(m_pGraphicDev);
 
 		if (nullptr == pGameObject)
@@ -1027,14 +1027,14 @@ HRESULT CDynamicCamera::Create_EnvObject()
 
 		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 		dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
-		vObjectPos.y += CImguiMgr::GetInstance()->Get_OffsetY();
+		vObjectPos += CImguiMgr::GetInstance()->Get_Offset();
 		pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
 		pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
 		dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowEnvObject()));
 		dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle((CImguiMgr::GetInstance()->Get_Angle()));
 
 		//만약 깃발일때 스테이지가 존재한다면 그 정보를 변경한다
-		if (CMapToolMgr::GetInstance()->Get_NowEnvObject() == E_FLAG) {
+		if (CMapToolMgr::GetInstance()->Get_NowEnvObject() == E_R_FLAG) {
 			//현재 선택하려는 깃발정보 가져와 비교
 			string szObject = CMapToolMgr::GetInstance()->EnvObj_To_String();
 			//현재 스테이지의 전체 오브젝트 맵을 순환
@@ -1070,11 +1070,11 @@ HRESULT CDynamicCamera::Create_EnvObject()
 
 		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 		dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
-		vObjectPos.y += CImguiMgr::GetInstance()->Get_OffsetY();
+		vObjectPos += CImguiMgr::GetInstance()->Get_Offset();
 		pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
 		pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
 
-		_int _iTexture = (CMapToolMgr::GetInstance()->Get_NowEnvObject() - static_cast<_int>(Engine::ENVIRONMENTID::E_STONEWALL));
+		_int _iTexture = (CMapToolMgr::GetInstance()->Get_NowEnvObject() - static_cast<_int>(Engine::ENVIRONMENTID::E_C_STONEWALL));
 		dynamic_cast<CEnvCube*>(pGameObject)->Set_TextureNum(_iTexture);
 		dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle((CImguiMgr::GetInstance()->Get_Angle()));
 	}

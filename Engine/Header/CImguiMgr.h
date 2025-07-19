@@ -28,7 +28,7 @@ public:
 	_int Get_CurFood() { return m_iCurrent_Food; }
 	_vec3 Get_NowScale() { return m_vScale; }
 	_int Get_Stage() { return m_iStage; }
-	float Get_OffsetY() { return m_fOffestY; }
+	_vec3 Get_Offset() { return m_vOffset; }
 	bool Get_InvWallEnable() { return m_bInvWallEnable; }
 	
 	void TurnRight(_float _fTimeDelta) { m_fAngle -= 45.f * _fTimeDelta; }
@@ -50,7 +50,7 @@ protected:
 	int iX, iY;
 	_vec3 m_vScale;
 	_int m_iStage;
-	float m_fOffestY;
+	_vec3 m_vOffset;
 	bool m_bEvent;
 	float m_fEventTime;
 	_bool m_bInvWallEnable;
