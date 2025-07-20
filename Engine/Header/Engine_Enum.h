@@ -39,7 +39,7 @@ namespace Engine
 					     E_R_FLOWER_1, E_R_FLOWER_2,
 						 E_R_CASTLE,
 						 //CubeTex
-						 E_C_STONEWALL, E_C_WOODWALL, E_C_BASKET,
+						 E_C_STONEWALL, E_C_WOODWALL, E_C_BASKET, E_C_BARRIER,
 						 E_END };
 
 }

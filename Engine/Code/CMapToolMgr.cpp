@@ -739,6 +739,10 @@ string CMapToolMgr::EnvObj_To_String()
         return "Stonewall";
     case Engine::ENVIRONMENTID::E_C_WOODWALL:
         return "Woodwall";
+    case Engine::ENVIRONMENTID::E_C_BASKET:
+        return "Basketwall";
+    case Engine::ENVIRONMENTID::E_C_BARRIER:
+        return "Barrierwall";
     case Engine::E_END:
     default:
         break;
@@ -773,6 +777,10 @@ _uint CMapToolMgr::String_To_EnvObj(string& _s)
         return Engine::ENVIRONMENTID::E_C_STONEWALL;
     else if (_s == "Woodwall")
         return Engine::ENVIRONMENTID::E_C_WOODWALL;
+    else if (_s == "Basketwall")
+        return Engine::ENVIRONMENTID::E_C_BASKET;
+    else if (_s == "Barrierwall")
+        return Engine::ENVIRONMENTID::E_C_BARRIER;
     else
         return Engine::E_END; // 혹은 예외 처리
 }
