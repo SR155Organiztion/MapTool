@@ -157,6 +157,7 @@
     <ClInclude Include="..\Header\CBackGround.h" />
     <ClInclude Include="..\Header\CBlock.h" />
     <ClInclude Include="..\Header\CDynamicCamera.h" />
+    <ClInclude Include="..\Header\CEnvCube.h" />
     <ClInclude Include="..\Header\CEnvObject.h" />
     <ClInclude Include="..\Header\CHexTile.h" />
     <ClInclude Include="..\Header\CLoading.h" />
@@ -185,6 +186,7 @@
     <ClCompile Include="..\Code\CBackGround.cpp" />
     <ClCompile Include="..\Code\CBlock.cpp" />
     <ClCompile Include="..\Code\CDynamicCamera.cpp" />
+    <ClCompile Include="..\Code\CEnvCube.cpp" />
     <ClCompile Include="..\Code\CEnvObject.cpp" />
     <ClCompile Include="..\Code\CHexTile.cpp" />
     <ClCompile Include="..\Code\CLoading.cpp" />

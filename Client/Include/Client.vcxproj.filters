@@ -94,6 +94,9 @@
     <Filter Include="Object\03. Show\03. ShowPlayerPoint">
       <UniqueIdentifier>{7d20f82a-7769-4af5-8f31-2ce82d6dc887}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\04. Plantable\05. EnvCube">
+      <UniqueIdentifier>{9678f1dd-a4ed-464a-9df1-ce30d84c2dc8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -174,6 +177,9 @@
     <ClInclude Include="..\Header\CEnvObject.h">
       <Filter>Object\04. Plantable\04. EnvObject</Filter>
     </ClInclude>
+    <ClInclude Include="..\Header\CEnvCube.h">
+      <Filter>Object\04. Plantable\05. EnvCube</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -244,6 +250,9 @@
     </ClCompile>
     <ClCompile Include="..\Code\CEnvObject.cpp">
       <Filter>Object\04. Plantable\04. EnvObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Code\CEnvCube.cpp">
+      <Filter>Object\04. Plantable\05. EnvCube</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

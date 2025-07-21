@@ -105,7 +105,7 @@ _uint CLoading::Loaing_ForStage()
 		return E_FAIL;
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
-	(L"Proto_RcTileTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Tile/RcTile_%d.png", TEX_NORMAL, 5))))
+	(L"Proto_RcTileTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Tile/RcTile_%d.png", TEX_NORMAL, 6))))
 		return E_FAIL;
 	
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
@@ -113,7 +113,11 @@ _uint CLoading::Loaing_ForStage()
 		return E_FAIL;
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
-	(L"Proto_EnvObjectTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/EnvObject_%d.png", TEX_NORMAL, 10))))
+	(L"Proto_EnvObjectTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/EnvObject_%d.png", TEX_NORMAL, 20))))
+		return E_FAIL;
+
+	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
+	(L"Proto_EnvCubeTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/EnvCube_%d.dds", TEX_CUBE, 9))))
 		return E_FAIL;
 
 	lstrcpy(m_szLoading, L"Etc Component Loading...........................");

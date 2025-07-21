@@ -63,7 +63,8 @@ HRESULT CImguiMgr::Ready_Imgui(LPDIRECT3DDEVICE9 pGraphicDev, HWND hWnd)
     m_iStage = STAGE_END;
     iX = iY = 0;
     m_vScale = { 1.0f, 1.0f, 1.0f };
-    m_fOffestY = 0;
+    m_vOffset = { 0.f, 0.f, 0.f };
+    m_bInvWallEnable = true;
     return S_OK;
 }
 
@@ -223,12 +224,12 @@ void CImguiMgr::Update_Imgui()
             ImGui::Combo("Items", &m_iCurrent_Item, tools, IM_ARRAYSIZE(tools));
         }
     }
-    // 지형 설정 ////////////////////////////////////////////////////////////////
+    // 표시 설정 ////////////////////////////////////////////////////////////////
     {
-        if (ImGui::CollapsingHeader("Terrain")) {
+        if (ImGui::CollapsingHeader("Terrain, Wall")) {
             ImGui::Checkbox(m_bTerrainEnable ? "Enable" : "Disable", &m_bTerrainEnable);
             ImGui::SameLine();
-            if (ImGui::Button("Change")) {
+            if (ImGui::Button("TChange")) {
                 m_bTerrainEnable ? m_bTerrainEnable = false : m_bTerrainEnable = true;
                 m_TerrianEnableCallback();
             }
@@ -238,6 +239,12 @@ void CImguiMgr::Update_Imgui()
             ImGui::SameLine();
             ImGui::InputInt("Y", &iY, sizeof(int));
             ImGui::PopItemWidth();
+
+            ImGui::Checkbox(m_bInvWallEnable ? "Enable" : "Disable", & m_bInvWallEnable);
+            ImGui::SameLine();
+            if (ImGui::Button("IChange")) {
+                m_bInvWallEnable ? m_bInvWallEnable = false : m_bInvWallEnable = true;
+            }
         }
     }
     // 환경오브젝트 설정 ////////////////////////////////////////////////////////////////
@@ -252,10 +259,15 @@ void CImguiMgr::Update_Imgui()
             }
 
             // 스케일
-            ImGui::Text("Scale");
-            ImGui::SameLine(100); // 
-            ImGui::DragFloat3("##Position", m_vScale, 0.01f, 0.0f, 5.0f);
-            ImGui::DragFloat("Offset_Y", &m_fOffestY, 0.01f, 0.f, 10.f);
+            ImGui::PushItemWidth(150.0f);
+
+            ImGui::DragFloat3("Scale", m_vScale, 0.01f, 0.0f, 5.0f);
+
+            ImGui::DragFloat3("Offset", m_vOffset, 0.01f, -10.0f, 10.0f);
+
+            ImGui::PopItemWidth();
+
+            ImGui::InputFloat("Angle", &m_fAngle, sizeof(m_fAngle));
             const char* stage[] = { "Stage0", "Stage1", "Stage2", "Stage3", "Stage4", "Stage5", "Stage6" };
             ImGui::Combo("Stages", &m_iStage, stage, IM_ARRAYSIZE(stage));
         }

@@ -157,9 +157,9 @@ public:
 	void PrevRotate();
 	_vec3 Get_DirLook();
 
-	void TurnRight(_float _fTimeDelta);
-	void TurnLeft(_float _fTimeDelta);
-	_float Get_NowAngle();
+	//void TurnRight(_float _fTimeDelta);
+	//void TurnLeft(_float _fTimeDelta);
+	//_float Get_NowAngle();
 	
 	void NextStation();
 	void PrevStation();
@@ -239,7 +239,7 @@ private:
 	//각도---------------------------------------------------------------------------------------
 	_int			m_iDir;						///현재 선택중인 방향 값	(고정된 6 방향)
 	_vec3			m_vecDir;					///현재 선택중인 방향 벡터값(고정되지 않은 각도) 
-	_float			m_fAngle;					///현재 각도
+	_float			m_fAngle;					///현재 각도 <<  EnvObj 각도는 Imgui에서 관리
 	_bool			m_bCreate;					///데이터를 생성할건지 여부
 
 private:

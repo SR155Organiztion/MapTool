@@ -24,7 +24,7 @@ namespace Engine
 	enum STATIONID { S_INV, S_EMPTY, S_CREATE, S_CHOP, S_GAS, S_PLATE, S_SINK_W, S_SINK_P, S_TRASH, S_SERVING, S_END };
 	//음식
 	enum CREATEID { C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_SEAWEED, C_RICE, C_PASTA, C_TOMATOSOUP, C_END};
-	//타일		   파33   파44  핑44  돌갈  돌베   X     끝
+	//타일		   파33   파44  핑44  돌갈  돌베  나무     끝
  	enum RCTILEID { RT_0, RT_1, RT_2, RT_3, RT_4, RT_5, RT_END};
 	//오브젝트			    블럭	사각타일   육각타일   환경  시작지점
 	enum CREATEOBJECT_ID { O_BLOCK, O_RCTILE, O_HEXTILE, O_ENV, O_SPAWN ,O_END };
@@ -32,12 +32,19 @@ namespace Engine
 	enum ITEMID { I_NONE, I_PLATE, I_EXTINGUISHER, I_FRYPAN, I_POT, I_END };
 	//스테이지
 	enum STAGEID { STAGE_0, STAGE_1, STAGE_2, STAGE_3, STAGE_4, STAGE_5, STAGE_6, STAGE_END }; 
-	//환경				 
-	enum ENVIRONMENTID { E_FLAG,
-						 E_TREE_1, E_TREE_2, E_TREE_3, E_TREE_4,
-						 E_PLANT_1, E_PLANT_2, 
-					     E_FLOWER_1, E_FLOWER_2,
-						 E_CASTLE,
+	//환경			     //RcTex
+	enum ENVIRONMENTID { E_R_FLAG,
+						 E_R_TREE_1, E_R_TREE_2, E_R_TREE_3, E_R_TREE_4,
+						 E_R_PLANT_1, E_R_PLANT_2,
+					     E_R_FLOWER_1, E_R_FLOWER_2,
+						 E_R_CASTLE,
+						 E_R_CHERRYTREE, E_R_BAMBOO, E_R_TORCH, E_R_HYDRANT, E_R_CONE, E_R_PIGEON, E_R_SANDBAG,
+						 E_R_TRAFFIC_1, E_R_TRAFFIC_2, E_R_TRAFFIC_3,
+						 //CubeTex 
+						 E_C_STONEWALL_1, E_C_STONEWALL_2, E_C_WOODWALL, E_C_BASKET, E_C_BARRIER,
+						 E_C_TABLE_1, E_C_TABLE_2, E_C_TABLE_3, E_C_TABLE_4,
+						 //RcTile
+						 E_T_CAR,
 						 E_END };
 
 }

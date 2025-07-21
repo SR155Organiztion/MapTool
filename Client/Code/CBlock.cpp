@@ -4,7 +4,7 @@
 #include "CRenderer.h"
 #include "CManagement.h"
 #include "CMapToolMgr.h"
-
+#include "CImguiMgr.h"
 CBlock::CBlock(LPDIRECT3DDEVICE9 pGraphicDev)
     : Engine::CGameObject(pGraphicDev), m_iTextureNum(0), m_bShow(false)
 {
@@ -32,6 +32,11 @@ HRESULT CBlock::Ready_GameObject()
 
 _int CBlock::Update_GameObject(const _float& fTimeDelta)
 {
+    if (!CImguiMgr::GetInstance()->Get_InvWallEnable()) {
+        if (m_iTextureNum == 0)
+            return 0;
+    }
+
     _vec3 vPos;
     m_pTransformCom->Get_Info(INFO_POS, &vPos);
     _vec3 min = *(m_pBufferCom->Get_Min());
@@ -58,6 +63,12 @@ void CBlock::LateUpdate_GameObject(const _float& fTimeDelta)
 
 void CBlock::Render_GameObject()
 {
+    if (!CImguiMgr::GetInstance()->Get_InvWallEnable()) {
+        if (m_iTextureNum == 0)
+            return;
+    }
+
+
     D3DXMATRIX matWorld;
     m_pTransformCom->Get_World(&matWorld);
     m_pGraphicDev->SetTransform(D3DTS_WORLD, &matWorld);

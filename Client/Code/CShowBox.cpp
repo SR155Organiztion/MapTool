@@ -129,7 +129,7 @@ void CShowBox::Set_Greed(_vec3 _vPos, _vec3 _vNormal)
 
     // 먼저 위치를 격자 단위로 스냅
     vTmp.x = floorf(_vPos.x + _vNormal.x * 0.5f) + 0.5f;
-    vTmp.y = floorf(_vPos.y + _vNormal.y * 0.5f) + 0.5f;
+    vTmp.y = floorf(_vPos.y + _vNormal.y * 0.5f) + 0.25f + fOffsetY;
     vTmp.z = floorf(_vPos.z + _vNormal.z * 0.5f) + 0.5f;
 
     m_pTransformCom->Set_Pos(vTmp.x, vTmp.y, vTmp.z);
