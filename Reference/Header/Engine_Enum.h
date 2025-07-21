@@ -38,8 +38,13 @@ namespace Engine
 						 E_R_PLANT_1, E_R_PLANT_2,
 					     E_R_FLOWER_1, E_R_FLOWER_2,
 						 E_R_CASTLE,
-						 //CubeTex
-						 E_C_STONEWALL, E_C_WOODWALL, E_C_BASKET, E_C_BARRIER,
+						 E_R_CHERRYTREE, E_R_BAMBOO, E_R_TORCH, E_R_HYDRANT, E_R_CONE, E_R_PIGEON, E_R_SANDBAG,
+						 E_R_TRAFFIC_1, E_R_TRAFFIC_2, E_R_TRAFFIC_3,
+						 //CubeTex 
+						 E_C_STONEWALL_1, E_C_STONEWALL_2, E_C_WOODWALL, E_C_BASKET, E_C_BARRIER,
+						 E_C_TABLE_1, E_C_TABLE_2, E_C_TABLE_3, E_C_TABLE_4,
+						 //RcTile
+						 E_T_CAR,
 						 E_END };
 
 }

@@ -381,7 +381,7 @@ void CDynamicCamera::Load_Objects()
 
 		Engine::CGameObject* pGameObject;
 
-		if (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) < Engine::ENVIRONMENTID::E_C_STONEWALL) {
+		if (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) < Engine::ENVIRONMENTID::E_C_STONEWALL_1) {
 			//환경오브젝트 생성
 			pGameObject = CEnvObject::Create(m_pGraphicDev);
 
@@ -406,7 +406,7 @@ void CDynamicCamera::Load_Objects()
 			CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
 			pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
 			pObjectTransformCom->m_vScale = it.vScale;
-			int _iTextureNum = (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) - static_cast<_int>(Engine::ENVIRONMENTID::E_C_STONEWALL));
+			int _iTextureNum = (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) - static_cast<_int>(Engine::ENVIRONMENTID::E_C_STONEWALL_1));
 			dynamic_cast<CEnvCube*>(pGameObject)->Set_TextureNum(_iTextureNum);
 			dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle(it.fAngle);
 			dynamic_cast<CEnvCube*>(pGameObject)->Set_Scale(it.vScale);
@@ -1019,7 +1019,7 @@ HRESULT CDynamicCamera::Create_EnvObject()
 	Engine::CGameObject* pGameObject;
 	_vec3 vObjectPos;
 	//Cube텍스쳐가 아닐때
-	if (CMapToolMgr::GetInstance()->Get_NowEnvObject() < Engine::ENVIRONMENTID::E_C_STONEWALL) {
+	if (CMapToolMgr::GetInstance()->Get_NowEnvObject() < Engine::ENVIRONMENTID::E_C_STONEWALL_1) {
 		pGameObject = CEnvObject::Create(m_pGraphicDev);
 
 		if (nullptr == pGameObject)
@@ -1074,7 +1074,7 @@ HRESULT CDynamicCamera::Create_EnvObject()
 		pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
 		pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
 
-		_int _iTexture = (CMapToolMgr::GetInstance()->Get_NowEnvObject() - static_cast<_int>(Engine::ENVIRONMENTID::E_C_STONEWALL));
+		_int _iTexture = (CMapToolMgr::GetInstance()->Get_NowEnvObject() - static_cast<_int>(Engine::ENVIRONMENTID::E_C_STONEWALL_1));
 		dynamic_cast<CEnvCube*>(pGameObject)->Set_TextureNum(_iTexture);
 		dynamic_cast<CEnvCube*>(pGameObject)->Set_Angle((CImguiMgr::GetInstance()->Get_Angle()));
 	}

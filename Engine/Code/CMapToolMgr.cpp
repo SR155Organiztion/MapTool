@@ -735,14 +735,45 @@ string CMapToolMgr::EnvObj_To_String()
         return "Flower_2";
     case Engine::ENVIRONMENTID::E_R_CASTLE:
         return "Castle";
-    case Engine::ENVIRONMENTID::E_C_STONEWALL:
-        return "Stonewall";
+    case Engine::ENVIRONMENTID::E_R_CHERRYTREE:
+        return "CherryTree";
+    case Engine::ENVIRONMENTID::E_R_BAMBOO:
+        return "Bamboo";
+    case Engine::ENVIRONMENTID::E_R_TORCH:
+        return "Torch";
+    case Engine::ENVIRONMENTID::E_R_HYDRANT:
+        return "Hydrant";
+    case Engine::ENVIRONMENTID::E_R_CONE:
+        return "Cone";
+    case Engine::ENVIRONMENTID::E_R_PIGEON:
+        return "Pigeon";
+    case Engine::ENVIRONMENTID::E_R_SANDBAG:
+        return "SandBag";
+    case Engine::ENVIRONMENTID::E_R_TRAFFIC_1:
+        return "TrafficLight_1";
+    case Engine::ENVIRONMENTID::E_R_TRAFFIC_2:
+        return "TrafficLight_2";
+    case Engine::ENVIRONMENTID::E_R_TRAFFIC_3:
+        return "TrafficLight_3";
+    //Cube
+    case Engine::ENVIRONMENTID::E_C_STONEWALL_1:
+        return "StoneWall_1";
+    case Engine::ENVIRONMENTID::E_C_STONEWALL_2:
+        return "StoneWall_2";
     case Engine::ENVIRONMENTID::E_C_WOODWALL:
-        return "Woodwall";
+        return "WoodWall";
     case Engine::ENVIRONMENTID::E_C_BASKET:
-        return "Basketwall";
+        return "Basket";
     case Engine::ENVIRONMENTID::E_C_BARRIER:
-        return "Barrierwall";
+        return "Barrier";
+    case Engine::ENVIRONMENTID::E_C_TABLE_1:
+        return "Table_1";
+    case Engine::ENVIRONMENTID::E_C_TABLE_2:
+        return "Table_2";
+    case Engine::ENVIRONMENTID::E_C_TABLE_3:
+        return "Table_3";
+    case Engine::ENVIRONMENTID::E_C_TABLE_4:
+        return "Table_4";
     case Engine::E_END:
     default:
         break;
@@ -773,14 +804,45 @@ _uint CMapToolMgr::String_To_EnvObj(string& _s)
         return Engine::ENVIRONMENTID::E_R_FLOWER_2;
     else if (_s == "Castle")
         return Engine::ENVIRONMENTID::E_R_CASTLE;
-    else if (_s == "Stonewall")
-        return Engine::ENVIRONMENTID::E_C_STONEWALL;
-    else if (_s == "Woodwall")
+    else if (_s == "CherryTree")
+        return Engine::ENVIRONMENTID::E_R_CHERRYTREE;
+    else if (_s == "Bamboo")
+        return Engine::ENVIRONMENTID::E_R_BAMBOO;
+    else if (_s == "Torch")
+        return Engine::ENVIRONMENTID::E_R_TORCH;
+    else if (_s == "Hydrant")
+        return Engine::ENVIRONMENTID::E_R_HYDRANT;
+    else if (_s == "Cone")
+        return Engine::ENVIRONMENTID::E_R_CONE;
+    else if (_s == "Pigeon")
+        return Engine::ENVIRONMENTID::E_R_PIGEON;
+    else if (_s == "SandBag")
+        return Engine::ENVIRONMENTID::E_R_SANDBAG;
+    else if (_s == "TrafficLight_1")
+        return Engine::ENVIRONMENTID::E_R_TRAFFIC_1;
+    else if (_s == "TrafficLight_2")
+        return Engine::ENVIRONMENTID::E_R_TRAFFIC_2;
+    else if (_s == "TrafficLight_3")
+        return Engine::ENVIRONMENTID::E_R_TRAFFIC_3;
+    //Cube
+    else if (_s == "StoneWall_1")
+        return Engine::ENVIRONMENTID::E_C_STONEWALL_1;
+    else if (_s == "StoneWall_2")
+        return Engine::ENVIRONMENTID::E_C_STONEWALL_2;
+    else if (_s == "WoodWall")
         return Engine::ENVIRONMENTID::E_C_WOODWALL;
-    else if (_s == "Basketwall")
+    else if (_s == "Basket")
         return Engine::ENVIRONMENTID::E_C_BASKET;
-    else if (_s == "Barrierwall")
+    else if (_s == "Barrier")
         return Engine::ENVIRONMENTID::E_C_BARRIER;
+    else if (_s == "Table_1")
+        return Engine::ENVIRONMENTID::E_C_TABLE_1;
+    else if (_s == "Table_2")
+        return Engine::ENVIRONMENTID::E_C_TABLE_2;
+    else if (_s == "Table_3")
+        return Engine::ENVIRONMENTID::E_C_TABLE_3;
+    else if (_s == "Table_4")
+        return Engine::ENVIRONMENTID::E_C_TABLE_4;
     else
         return Engine::E_END; // 혹은 예외 처리
 }
