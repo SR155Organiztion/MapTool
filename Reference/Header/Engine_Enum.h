@@ -20,8 +20,8 @@ namespace Engine
 
 	//방향			   
 	enum DIRECTIONID { PZ, PX, NZ, NX , DIR_END };
-	//블럭     	    투명벽    빈칸   음식상자   도마    가스    접시   물씽크대  접시싱크  쓰레기통    제출
-	enum STATIONID { S_INV, S_EMPTY, S_CREATE, S_CHOP, S_GAS, S_PLATE, S_SINK_W, S_SINK_P, S_TRASH, S_SERVING, S_END };
+	//블럭     	    투명벽    빈칸   음식상자   도마    가스    접시   물씽크대  접시싱크  쓰레기통    제출		디스펜서
+	enum STATIONID { S_INV, S_EMPTY, S_CREATE, S_CHOP, S_GAS, S_PLATE, S_SINK_W, S_SINK_P, S_TRASH, S_SERVING, S_DISPENSER, S_END };
 	//음식
 	enum CREATEID { C_LETTUCE, C_TOMATO, C_CUCUMBER, C_FISH, C_SHRIMP, C_SEAWEED, C_RICE, C_PASTA, C_TOMATOSOUP, C_END};
 	//타일		   파33   파44  핑44  돌갈  돌베  나무     끝

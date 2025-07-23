@@ -123,7 +123,7 @@ void CShowBox::Set_Greed(_vec3 _vPos, _vec3 _vNormal)
     _vec3 vTmp;
 
     float fOffsetY = 0.f;
-    if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
+    if (CMapToolMgr::GetInstance()->Get_NowStation() == 0 || 10) {
         fOffsetY = 0.25f;
     }
 

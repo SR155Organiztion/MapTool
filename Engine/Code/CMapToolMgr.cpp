@@ -545,6 +545,8 @@ string CMapToolMgr::Block_To_String()
     case Engine::STATIONID::S_END:
         return "???";
         break;
+    case Engine::STATIONID::S_DISPENSER:
+        return ("Dispenser_" + Food_To_String());
     default:
         break;
     }
@@ -555,6 +557,9 @@ _uint CMapToolMgr::String_To_Block(string& _s)
 {
     if (_s.find("Create_") == 0) {
         return Engine::STATIONID::S_CREATE;
+    }
+    if (_s.find("Dispenser_") == 0) {
+        return Engine::STATIONID::S_DISPENSER;
     }
 
     if (_s == "InvWall")

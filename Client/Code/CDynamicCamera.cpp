@@ -450,8 +450,8 @@ void CDynamicCamera::Load_Objects()
 		//타입 설정
 		dynamic_cast<CBlock*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_Block(it.Block_Type));
 		
-		//만약에 음식 상자 타입이면 추가로 생성하라
-		if (CMapToolMgr::GetInstance()->String_To_Block(it.Block_Type) == Engine::STATIONID::S_CREATE) {
+		//만약에 음식 상자 타입이면 추가로 생성하라 ++ 디스펜서도
+		if (CMapToolMgr::GetInstance()->String_To_Block(it.Block_Type) == Engine::STATIONID::S_CREATE || Engine::STATIONID::S_DISPENSER) {
 			const string prefix = "Create_";
 			if (it.Block_Type.find(prefix) == 0 && it.Block_Type.length() > prefix.length()) {
 				string szFood = (it.Block_Type.substr(prefix.length())); // "Create_" 이후 문자열만 반환
@@ -757,8 +757,8 @@ HRESULT CDynamicCamera::Create_Block()
 	
 	dynamic_cast<CBlock*>(pGameObject)->Set_TextureNum((CMapToolMgr::GetInstance()->Get_NowStation()));
 
-	//만약에 음식 상자 타입이면 추가로 생성하라
-	if ((CMapToolMgr::GetInstance()->Get_NowStation() == Engine::STATIONID::S_CREATE)) {
+	//만약에 음식 상자 타입이면 추가로 생성하라 ++ 디스펜서도 추가로 생성
+	if ((CMapToolMgr::GetInstance()->Get_NowStation() == Engine::STATIONID::S_CREATE || Engine::STATIONID::S_DISPENSER)) {
 		dynamic_cast<CBlock*>(pGameObject)->Set_Create(CImguiMgr::GetInstance()->Get_CurFood());
 	}
 
@@ -800,7 +800,7 @@ void CDynamicCamera::Delete_Block()
 
 
 	float ftmp = 0.f;
-	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0) {
+	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0 || 10) {
 		ftmp = 0.25f;
 	}
 
