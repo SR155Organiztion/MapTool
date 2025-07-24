@@ -113,11 +113,15 @@ _uint CLoading::Loaing_ForStage()
 		return E_FAIL;
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
-	(L"Proto_EnvObjectTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/EnvObject_%d.png", TEX_NORMAL, 20))))
+	(L"Proto_EnvObjectTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/EnvObject_%d.png", TEX_NORMAL, 21))))
 		return E_FAIL;
 
 	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
 	(L"Proto_EnvCubeTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/EnvCube_%d.dds", TEX_CUBE, 9))))
+		return E_FAIL;
+
+	if (FAILED(CProtoMgr::GetInstance()->Ready_Prototype
+	(L"Proto_EnvTileTexture", Engine::CTexture::Create(m_pGraphicDev, L"../Bin/Resource/Texture/Environment/EnvTile_%d.png", TEX_NORMAL, 1))))
 		return E_FAIL;
 
 	lstrcpy(m_szLoading, L"Etc Component Loading...........................");

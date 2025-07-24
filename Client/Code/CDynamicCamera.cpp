@@ -17,6 +17,7 @@
 #include "CHexTile.h"
 #include "CEnvObject.h"
 #include "CEnvCube.h"
+#include "CEnvTile.h"
 
 CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pGraphicDev)
 	: Engine::CCamera(pGraphicDev), m_bFix(false), m_bCheck(false),
@@ -395,6 +396,21 @@ void CDynamicCamera::Load_Objects()
 			dynamic_cast<CEnvObject*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type));
 			dynamic_cast<CEnvObject*>(pGameObject)->Set_Angle(it.fAngle);
 			dynamic_cast<CEnvObject*>(pGameObject)->Set_Scale(it.vScale);
+		}
+		else if (CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) >= Engine::ENVIRONMENTID::E_T_CAR) {
+			pGameObject = CEnvTile::Create(m_pGraphicDev);
+
+			if (nullptr == pGameObject)
+				return;
+
+			//위치,크기 설정
+			CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+			pObjectTransformCom->Set_Pos(it.vPos.x, it.vPos.y, it.vPos.z);
+			pObjectTransformCom->m_vScale = it.vScale;
+			dynamic_cast<CEnvTile*>(pGameObject)->Set_TextureNum(CMapToolMgr::GetInstance()->String_To_EnvObj(it.Env_Type) - static_cast<_int>(Engine::ENVIRONMENTID::E_T_CAR));
+			dynamic_cast<CEnvTile*>(pGameObject)->Set_Angle(it.fAngle);
+			dynamic_cast<CEnvTile*>(pGameObject)->Set_Scale(it.vScale);
+
 		}
 		else {
 			pGameObject = CEnvCube::Create(m_pGraphicDev);
@@ -802,7 +818,8 @@ void CDynamicCamera::Delete_Block()
 
 
 	float ftmp = 0.f;
-	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0 || 10) {
+	if (CMapToolMgr::GetInstance()->Get_NowStation() == 0 || 
+		CMapToolMgr::GetInstance()->Get_NowStation() == 10) {
 		ftmp = 0.25f;
 	}
 
@@ -1062,6 +1079,22 @@ HRESULT CDynamicCamera::Create_EnvObject()
 				EnvVec++;
 			}
 		}
+	}
+	else if (CMapToolMgr::GetInstance()->Get_NowEnvObject() >= Engine::ENVIRONMENTID::E_T_CAR) {
+		pGameObject = CEnvTile::Create(m_pGraphicDev);
+
+		if (nullptr == pGameObject)
+			return E_FAIL;
+
+		CTransform* pObjectTransformCom = dynamic_cast<CTransform*>(pGameObject->Get_Component(ID_DYNAMIC, L"Com_Transform"));
+		dynamic_cast<CTransform*>(CManagement::GetInstance()->Get_Component(ID_DYNAMIC, L"GameObject_Layer", L"ShowEnvObject", L"Com_Transform"))->Get_Info(INFO_POS, &vObjectPos);
+		vObjectPos += CImguiMgr::GetInstance()->Get_Offset();
+		pObjectTransformCom->m_vScale = CImguiMgr::GetInstance()->Get_NowScale();
+		pObjectTransformCom->Set_Pos(vObjectPos.x, vObjectPos.y, vObjectPos.z);
+
+		_int _iTexture = (CMapToolMgr::GetInstance()->Get_NowEnvObject() - static_cast<_int>(Engine::ENVIRONMENTID::E_T_CAR));
+		dynamic_cast<CEnvTile*>(pGameObject)->Set_TextureNum(_iTexture);
+		dynamic_cast<CEnvTile*>(pGameObject)->Set_Angle((CImguiMgr::GetInstance()->Get_Angle()));\
 	}
 	//CubeTex일때
 	else {

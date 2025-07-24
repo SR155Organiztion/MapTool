@@ -742,8 +742,10 @@ string CMapToolMgr::EnvObj_To_String()
         return "Castle";
     case Engine::ENVIRONMENTID::E_R_CHERRYTREE:
         return "CherryTree";
-    case Engine::ENVIRONMENTID::E_R_BAMBOO:
-        return "Bamboo";
+    case Engine::ENVIRONMENTID::E_R_BAMBOO_1:
+        return "Bamboo_1";
+    case Engine::ENVIRONMENTID::E_R_BAMBOO_2:
+        return "Bamboo_2";
     case Engine::ENVIRONMENTID::E_R_TORCH:
         return "Torch";
     case Engine::ENVIRONMENTID::E_R_HYDRANT:
@@ -779,6 +781,10 @@ string CMapToolMgr::EnvObj_To_String()
         return "Table_3";
     case Engine::ENVIRONMENTID::E_C_TABLE_4:
         return "Table_4";
+    //TileTex
+    case Engine::ENVIRONMENTID::E_T_CAR:
+        return "Car";
+
     case Engine::E_END:
     default:
         break;
@@ -811,8 +817,10 @@ _uint CMapToolMgr::String_To_EnvObj(string& _s)
         return Engine::ENVIRONMENTID::E_R_CASTLE;
     else if (_s == "CherryTree")
         return Engine::ENVIRONMENTID::E_R_CHERRYTREE;
-    else if (_s == "Bamboo")
-        return Engine::ENVIRONMENTID::E_R_BAMBOO;
+    else if (_s == "Bamboo_1")
+        return Engine::ENVIRONMENTID::E_R_BAMBOO_1;
+    else if (_s == "Bamboo_2")
+        return Engine::ENVIRONMENTID::E_R_BAMBOO_2;
     else if (_s == "Torch")
         return Engine::ENVIRONMENTID::E_R_TORCH;
     else if (_s == "Hydrant")
@@ -848,6 +856,10 @@ _uint CMapToolMgr::String_To_EnvObj(string& _s)
         return Engine::ENVIRONMENTID::E_C_TABLE_3;
     else if (_s == "Table_4")
         return Engine::ENVIRONMENTID::E_C_TABLE_4;
+    //TileTex
+    else if (_s == "Car")
+        return Engine::ENVIRONMENTID::E_T_CAR;
+
     else
         return Engine::E_END; // 혹은 예외 처리
 }
